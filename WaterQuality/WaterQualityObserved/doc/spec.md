@@ -15,7 +15,7 @@ Water Quality data model is intended to represent water quality parameters at a 
     + Normative References: [https://tools.ietf.org/html/draft-ietf-geojson-03](https://tools.ietf.org/html/draft-ietf-geojson-03)
     + Mandatory if `address` is not present.
     
-+ `address`: Civic address where the container is located. 
++ `address`: Civic address where the Water Quality measurement is taken.
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not present. 
 	
