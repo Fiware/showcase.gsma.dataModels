@@ -42,4 +42,6 @@ pages:
       - 'WasteContainerIsle'   : 'WasteManagement/WasteContainerIsle/doc/spec.md'
       - 'WasteContainerModel'  : 'WasteManagement/WasteContainerModel/doc/spec.md'
       - 'WasteContainer'       : 'WasteManagement/WasteContainer/doc/spec.md'
-  -  'Water Quality'           : 'WaterQuality/doc/introduction.md'
+  -  'Water Quality':
+      - 'Introduction'         : 'WaterQuality/doc/introduction.md'
+      - 'WaterQualityObserved' : 'WaterQuality/WaterQualityObserved/doc/spec.md'
