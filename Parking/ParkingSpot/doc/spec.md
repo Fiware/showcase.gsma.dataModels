@@ -45,7 +45,8 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
         + `dateUpdated` : Timestamp which reflects the date when the attribute value was obtained. 
               + Type: [DateTime](https://schema.org/DateTime)
               + Optional
-        + `TimeInstant` : Timestamp saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
+        + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
+        saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations. 
               + Type: [DateTime]((https://schema.org/DateTime). here can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
@@ -78,7 +79,8 @@ only one group is allowed per parking spot.
         + Other values as per application needs
     + Mandatory
     
-+ `TimeInstant` : Timestamp saved by FIWARE's IoT Agent. Note: This attribute has not been harmonized
++ `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
+saved by FIWARE's IoT Agent. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations. 
     + Attribute type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
