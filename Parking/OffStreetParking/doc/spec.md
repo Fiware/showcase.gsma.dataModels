@@ -6,7 +6,7 @@ A site, off street, intended to park vehicles, managed independently and with su
 and clearly marked access points (entrances and exits).
 If necessary, and for management purposes or to deal with multi-location parking sites,
 it can be divided into different zones modelled by the entity type [ParkingGroup](../../ParkingGroup/doc/spec.md) .
-In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of type *offStreetParking*. 
+In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of type *offStreetParking*.
 
 ## Data Model
 
@@ -35,7 +35,7 @@ In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of typ
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
 
-+ `category` : Parking site's category. The purpose of this field is to allow to tag, generally speaking, off street parking entities.
++ `category` : Parking site's category(ies). The purpose of this field is to allow to tag, generally speaking, off street parking entities.
 Particularities and detailed descriptions should be found under the corresponding specific attributes.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values:
@@ -53,8 +53,7 @@ Particularities and detailed descriptions should be found under the correspondin
     + Mandatory
     
 + `allowedVehicleType` : Vehicle type(s) allowed. The first element of this array *MUST* be the principal
-vehicle type allowed i.e. the one used for reporting the `availableSpotNumber` attribute.
-Free spot numbers of other allowed vehicle types will be reported under the attribute `extraSpotNumber`
+vehicle type allowed. Free spot numbers of other allowed vehicle types might be reported under the attribute `extraSpotNumber`
 and through specific entities of type *ParkingGroup*. 
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed Values: The following values defined by *VehicleTypeEnum*,
@@ -65,7 +64,7 @@ and through specific entities of type *ParkingGroup*.
            `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
     + Mandatory
     
-+ `chargeType` : Type of charge performed by the parking site on a general basis. 
++ `chargeType` : Type(s) of charge performed by the parking site. 
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Some of those defined by the DATEX II version 2.3 *ChargeTypeEnum* enumeration:
         + (`flat`, `minimum`, `maximum`, `additionalIntervalPrice` `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
@@ -73,16 +72,23 @@ and through specific entities of type *ParkingGroup*.
         + Any other application-specific
     + Mandatory
     
-+ `requiredPermit` : This attribute captures what permit(s) might be needed to park at this site on a general basis. Semantics
++ `requiredPermit` : This attribute captures what permit(s) might be needed to park at this site. Semantics
 is that at least *one of* these permits is needed to park. When a permit is composed by more than one item (and)
 they can be combined with a ",". For instance "residentPermit,disabledPermit" stays that both, at the same time,
 a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed. 
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: The following, defined by the *PermitTypeEnum* enumeration of DATEX II version 2.3.
         + oneOf (`employeePermit`, `studentPermit`, `fairPermit`, `governmentPermit`,  `residentPermit`,
-        `specificIdentifiedVehiclePermit`, `visitorPermit`)
+        `specificIdentifiedVehiclePermit`, `visitorPermit`, `noPermitNeeded`)
         + Any other application-specific
     + Mandatory
+    
++ `occupancyDetectionType` : Occupancy detection method(s).
+    + Attribute type: List of [Text](http://schema.org/Text)
+    + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
+        + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
+        + Or any other application-specific
+    + Mandatory    
     
 + `acceptedPaymentMethod` : Accepted payment method(s).
     + Normative references: https://schema.org/acceptedPaymentMethod
@@ -105,7 +111,7 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
         + Or any other value useful for the application and not covered above.
     + Optional
     
-+ `usageScenario` : Usage scenario. Gives more details to the `category` attribute. 
++ `usageScenario` : Usage scenario(s). Gives more details to the `category` attribute. 
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Those defined by the enumeration *ParkingUsageScenarioEnum* of DATEX II version 2.3:
         + (`truckParking`, `parkAndRide`, `parkAndCycle`,	`parkAndWalk`, `kissAndRide`, `	liftshare`, `carSharing`,
@@ -153,15 +159,15 @@ A `null` or empty value indicates an indefinite duration.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
     
-+ `totalSpotNumber` : The total number of spots offered globally by this parking site. 
++ `totalSpotNumber` : The total number of spots offered by this parking site. 
 This number can be difficult to be obtained for those parking locations on which spots are not clearly marked by lines.
     + Attribute type: [Number](http://schema.org/Number)
     + Allowed values: Any positive integer number or 0. 
     + Normative references: DATEX 2 version 2.3 attribute *parkingNumberOfSpaces* of the *ParkingRecord* class.
     + Optional
 
-+ `availableSpotNumber` : The number of spots available globally for the principal allowed vehicle type,
-excluding reserved spaces, such as those for disabled people,long term parkers and so on.
++ `availableSpotNumber` : The number of spots available (*including* all vehicle types or reserved spaces,
+such as those for disabled people, long term parkers and so on).
 This might be harder to estimate at those parking locations on which spots borders are not clearly marked by lines.
     + Attribute type: [Number](http://schema.org/Number)
     + Allowed values: A positive integer number, including 0. It must lower or equal than `totalSpotNumber`. 
@@ -174,10 +180,9 @@ This might be harder to estimate at those parking locations on which spots borde
 A/ Those reserved for special purposes and usually require a permit. Permit details will be found at
 parking group level (entity of type `ParkingGroup`).
 B/ Those reserved for other vehicle types different than the principal allowed vehicle type.
-C/ Any other parking spot not subject to the general condition rules conveyed by this entity.
+C/ Any other group of parking spots not subject to the general condition rules conveyed by this entity.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: A positive integer number, including 0. `extraSpotNumber` plus `availableSpotNumber` must be lower than or
-    equal to `totalSpotNumber`. 
+    + Allowed values: A positive integer number, including 0. 
     + Metadata:
         + `timestamp` : Timestamp of the last attribute update
         + Type: [DateTime](https://schema.org/DateTime)
@@ -203,13 +208,6 @@ it conveys what is such special location.
         + (`airportTerminal`, `exhibitonCentre`, `shoppingCentre`, `specificFacility`, `trainStation`,
         `campground`, `themePark`, `ferryTerminal`, `vehicleOnRailTerminal`, `coachStation`, `cableCarStation`, `publicTransportStation`,
         `market`, `religiousCentre`, `conventionCentre`, `cinema`, `skilift`, `hotel`, `other`)
-    + Optional
-    
-+ `occupancyDetectionType` : Occupancy detection method(s).
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
-        + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
-        + Or any other application-specific
     + Optional
     
 + `status` : Status of the parking site. 
@@ -347,7 +345,7 @@ Long stay parking. Maximum 4 days. Charging depends on time spent.
       "layout": ["singleLevel"],
       "chargeType": ["temporaryPrice"],
       "allowedVehicleType": ["car"],
-      "maximumParkingDuration": “P4D”,
+      "maximumParkingDuration": "P4D",
       "requiredPermit": null,
       "address": {
           "streetAddress": "Paseo de Zorrilla, 96",
@@ -362,20 +360,39 @@ Off street parking with an specific area devoted to residents (100 spots).
        "id": "parking-example-234",
        "type": "OffStreetParking",
        "name": "La Farola 1",
-       "category": ["public", "shortTerm", "mediumTerm", "forResidents"],
-       "chargeType": ["temporaryPrice"],   /* Root entity states the general case */ 
+       "category": ["public", "shortTerm", "longTerm", "forResidents"],
+       "chargeType": ["temporaryPrice", "annualTax"],
        "totalSpotNumber": 250,
        "availableSpotNumber": 100,
        "extraSpotNumber": 60,
-       "refParkingGroup": [“example-234-g-residentes”],
-       "requiredPermit": [] /* Generally speaking no permit */
+       "refParkingGroup": ["example-234-g-regular", "example-234-g-residents"],
+       "requiredPermit": ["noPermit", "residentPermit"] /* Generally speaking no permit */
        /* Other required fields (Check model) */
     }
 
-Subrogated parking group to denote those parking spots devoted for residents. 
+Two different groups are needed:
+
+1/ Subrogated parking group to denote regular parking spots. 
 
     { 
-      "id": "example-234-g-residentes",
+      "id": "example-234-g-regular",
+      "type": "ParkingGroup",
+      "name": "La Farola 1 - Público General", 
+      "chargeType": ["temporaryPrice"],       
+      "category": ["offstreet", "shortTerm"],  
+      "totalSpotNumber": 150,
+      "availableSpotNumber": 40,
+      "requiredPermit": null,
+      "refParkingSite": "parking-example-234",
+      "allowedVehicleType": "car",
+      "maximumParkingDuration": "PT2H"
+      /* Other required fields (Check model) */
+    }
+
+2/ Subrogated parking group to denote those parking spots devoted for residents. 
+
+    { 
+      "id": "example-234-g-residents",
       "type": "ParkingGroup",
       "name": "La Farola 1 - Residentes", 
       "chargeType": ["annualTax"],   /* Annual payment for residents */
@@ -384,7 +401,8 @@ Subrogated parking group to denote those parking spots devoted for residents.
       "availableSpotNumber": 60,
       "requiredPermit": "residentPermit",
       "refParkingSite": "parking-example-234",
-      "allowedVehicleType": "car"
+      "allowedVehicleType": "car",
+      "maximumParkingDuration": null
       /* Other required fields (Check model) */
     }
 
@@ -395,24 +413,41 @@ Private parking only for employees. A devoted visitor zone.
       "type": "OffStreetParking",
       "name": "Distrito T - Parking Oeste",
       "category": ["private", "underground", "mediumTerm", "forEmployees", "onlyWithPermit", "forVisitors"],
-      "requiredPermit": ["employeePermit"],
+      "requiredPermit": ["employeePermit", "visitorPermit"],
       "chargeType": ["free"],
       "allowedVehicleType": ["car"],
       "maximumParkingDuration": "PT12H",
       "totalSpotNumber": 250,
       "availableSpotNumber": 100,
       "extraSpotNumber": 10,
-      "refParkingGroup": ["dt-p1-visitor-group"]
+      "refParkingGroup": ["dt-p1-employee-group", "dt-p1-visitor-group"]
        /* Other required fields (Check model) */
     }
+
+Two different groups are needed:
+
+1/ Subrogated parking group modelling regular employee's spots.
+
+    {
+      "id": "dt-p1-employee-group",
+      "type": "ParkingGroup",
+      "category": ["offstreet", "onlyWithPermit", "shortTerm"],
+      "totalSpotNumber": 230,
+      "availableSpotNumber": 50,
+      "requiredPermit": "employeePermit",
+      "chargeType": ["free"],
+      "refParkingSite": "district-telefonica-parking-1",
+      "allowedVehicleType": "car"
+      /* Other required fields (Check model) */
+    }    
     
-Subrogated parking group modelling visitor's spots.
+2/ Subrogated parking group modelling visitor's spots.
 
     {
       "id": "dt-p1-visitor-group",
       "type": "ParkingGroup",
       "category": ["offstreet", "onlyWithPermit", "shortTerm"],
-      "totalSpotNumber": 15,
+      "totalSpotNumber": 20,
       "availableSpotNumber": 10,
       "requiredPermit": "visitorPermit",
       "chargeType": ["free"],
