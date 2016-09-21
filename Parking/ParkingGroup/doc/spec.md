@@ -120,13 +120,12 @@ Applications *SHOULD* inspect the value of this property at parent's level if it
         + Type: [DateTime](https://schema.org/DateTime)
     + Optional
             
-+ `occupancyDetectionType` : Occupancy detection method(s).
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
-    + Attribute type: List of [Text](http://schema.org/Text)
++ `occupancyDetectionType` : Occupancy detection method.
+    + Attribute type: [Text](http://schema.org/Text)
     + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
         + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
         + Or any other application-specific
-    + Optional
+    + Mandatory
     
 + `parkingMode` : Parking mode(s).
 Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 

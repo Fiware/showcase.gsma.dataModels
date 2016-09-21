@@ -134,7 +134,7 @@ This value must aggregate free spots from all groups devoted to special parking 
     + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
         + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
         + Or any other application-specific
-    + Optional
+    + Mandatory
         
 + `parkingMode` : Parking mode(s).
     + Attribute type: List of [Text](http://schema.org/Text)
