@@ -81,7 +81,7 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
         + oneOf (`employeePermit`, `studentPermit`, `fairPermit`, `governmentPermit`,  `residentPermit`, `specificIdentifiedVehiclePermit`,
         `disabledPermit`, `visitorPermit`, `blueZonePermit`, `careTakingPermit`, `carpoolingPermit`,
         `carSharingPermit`, `emergencyVehiclePermit`,
-        `maintenanceVehiclePermit`, `roadWorksPermit`, `taxiPermit`, `transportationPermit`)
+        `maintenanceVehiclePermit`, `roadWorksPermit`, `taxiPermit`, `transportationPermit`, `noPermitNeeded`)
         + Any other application-specific
     + Mandatory
     
@@ -89,7 +89,8 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
 It is an structured value which must contain a subproperty per each required permit, indicating when the permit is active.
 If nothing specified (or `null`) for a permit it will mean that a permit is always required. `null`or empty object means always active. 
 The syntax must be conformant with schema.org (opening hours specification)[https://schema.org/openingHours]. For instance,
-        a blue zone which is only active on dayweeks will be encoded as "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
+        a blue zone which is only active on dayweeks will be encoded as "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
     + Attribute type: [StructuredValue](http://schema.org/StructuredValue)
     + Mandatory. It can be `null`. 
 

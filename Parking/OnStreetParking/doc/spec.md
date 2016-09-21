@@ -43,7 +43,7 @@ In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of typ
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
 
-+ `chargeType` : Type of charge performed by the parking site on a general basis. 
++ `chargeType` : Type of charge(s) performed by the parking site. 
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Some of those defined by the DATEX II version 2.3 *ChargeTypeEnum* enumeration:
         + (`flat`, `minimum`, `maximum`, `additionalIntervalPrice` `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
@@ -51,7 +51,7 @@ In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of typ
         + Any other application-specific
     + Mandatory
     
-+ `requiredPermit` : This attribute captures what permit(s) might be needed to park at this site on a general basis. Semantics
++ `requiredPermit` : This attribute captures what permit(s) might be needed to park at this site. Semantics
 is that at least *one of* these permits is needed to park. When a permit is composed by more than one item (and)
 they can be combined with a ",". For instance "residentPermit,disabledPermit" stays that both, at the same time,
 a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed. 
@@ -60,7 +60,7 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
         + oneOf (`fairPermit`, `governmentPermit`,  `residentPermit`,
         `disabledPermit`, `blueZonePermit`, `careTakingPermit`, `carpoolingPermit`,
         `carSharingPermit`, `emergencyVehiclePermit`, `maintenanceVehiclePermit`, `roadWorksPermit`,
-        `taxiPermit`, `transportationPermit`)
+        `taxiPermit`, `transportationPermit`, `noPermitNeeded`)
         + Any other application-specific
     + Mandatory. It can be `null`. 
     
@@ -81,7 +81,7 @@ The syntax must be conformant with schema.org (opening hours specification)[http
            `motorcycleWithSideCar`, `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
     + Mandatory
 
- + `maximumAParkingDuration` : Maximum allowed stay at site, on a general basis, encoded as a ISO8601 duration.
+ + `maximumAParkingDuration` : Maximum allowed stay at site encoded as a ISO8601 duration.
 A `null` or empty value indicates an indefinite duration.  
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
@@ -102,14 +102,14 @@ A `null` or empty value indicates an indefinite duration.
     + Attribute type: [Boolean](https://schema.org/Boolean)
     + Optional
 
-+ `totalSpotNumber` : The total number of spots offered globally by this parking site. 
++ `totalSpotNumber` : The total number of spots offered by this parking site. 
 This number can be difficult to be obtained for those parking locations on which spots are not clearly marked by lines.
     + Attribute type: [Number](http://schema.org/Number)
     + Allowed values: Any positive integer number or 0. 
     + Normative references: DATEX 2 version 2.3 attribute *parkingNumberOfSpaces* of the *ParkingRecord* class.
     + Optional
 
-+ `availableSpotNumber` : The number of spots available globally, excluding reserved spaces, such as those for disabled people,
++ `availableSpotNumber` : The number of spots available globally, including reserved spaces, such as those for disabled people,
 long term parkers and so on.
 This might be harder to estimate at those parking locations on which spots borders are not clearly marked by lines.
     + Attribute type: [Number](http://schema.org/Number)
@@ -186,12 +186,12 @@ Main `OnstreetParking` entity.
       "category": ["blueZone", "shortTerm", "forDisabled"],
       "allowedVehicleType": "car",
       "chargeType": ["temporaryFee"],
-      "requiredPermit": ["blueZonePermit"],
+      "requiredPermit": ["blueZonePermit", "disabledPermit"],
       "permitActiveHours": {
         "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
       },
       "maximumAllowedStay": "PT2H",
-      "availableSpotNumber": 1,
+      "availableSpotNumber": 3,
       "totalSpotNumber": 6,
       "extraSpotNumber": 2,
       "dateModified": "2016-06-02T09:25:55.00Z",
@@ -208,10 +208,28 @@ Main `OnstreetParking` entity.
         ]
       },
       "areaServed": "Zona Centro",
-      "refParkingGroup: ["daoiz-velarde-1-5-disabled"]
+      "refParkingGroup: ["daoiz-velarde-1-5-main", daoiz-velarde-1-5-disabled"]
     }
 
-Subrogated `ParkingGroup`. `refPArkingSite` is a pointer to the root entity. All the parking spots are free. 
+Two different parking groups are needed in this case:
+
+A/ Subrogated `ParkingGroup` which gives details about the regular parking spots
+
+    {
+      "id": "daoiz-velarde-1-5-main",
+      "type": "ParkingGroup",
+      "category": ["onstreet", "blueZone", "shortTerm"],
+      "allowedVehicleType": "car",
+      "chargeType": ["temporaryFee"],
+      "refParkingSite": "daoiz-velarde-1-5",
+      "totalSpotNumber": 4,
+      "availableSpotNumber": 1,
+      "requiredPermit": "blueZonePermit"
+      /* Other required attributes */
+    }
+
+
+B/ Subrogated `ParkingGroup`. `refPArkingSite` is a pointer to the root entity. All the parking spots are free. 
 
     {
       "id": "daoiz-velarde-1-5-disabled",
@@ -223,22 +241,8 @@ Subrogated `ParkingGroup`. `refPArkingSite` is a pointer to the root entity. All
       "description": "Two parking spots reserved for disabled people",
       "totalSpotNumber": 2,
       "availableSpotNumber": 2,
-      "location": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-3.80356167695194, 43.46296641666926 ],
-            [-3.803161973253841,43.46301091092682 ],
-            [-3.803147082548618,43.462879859445884],
-            [-3.803536474744068,43.462838666196674],
-            [-3.80356167695194, 43.46296641666926]
-          ]
-        ]
-      },
-      "requiredPermit": "disabledPermit,blueZonePermit",
-      "permitActiveHours": {
-        "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
-      }
+      "requiredPermit": "disabledPermit,blueZonePermit"
+      /* Other required attributes */
     }
 
 ## Test it with a real service
