@@ -129,7 +129,7 @@ A model of waste container which captures the static properties of a class of co
        "width": 0.50,
        "height": 0.80,
        "depth": 0.40,
-       "volumeStored": 150,
+       "cargoVolume": 150,
        "brandName": "Contenedores Ejemplo",
        "modelName": "C1",
        "compliantWith": ["UNE-EN 840-2:2013"],
