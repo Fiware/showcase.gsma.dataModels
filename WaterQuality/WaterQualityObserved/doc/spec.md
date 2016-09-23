@@ -155,7 +155,7 @@ Water Quality data model is intended to represent water quality parameters at a 
     + Default unit: milligrams per liter (mg/L).
     + Optional		
 	 
-+ `timestamp` : Last update timestamp of this entity
++ `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
