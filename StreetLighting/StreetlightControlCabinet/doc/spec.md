@@ -102,7 +102,7 @@ responsible, district, neighbourhood, etc.
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Kilowatts per hour (Kwh).
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -110,7 +110,7 @@ responsible, district, neighbourhood, etc.
     + Attribute type: [Number](https://schema.org/Number)
     + Default currency: Euros. (Other currencies might be expressed using a metadata attribute)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -119,7 +119,7 @@ since the metering start date (`dateMeteringStarted`).
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: KiloVolts-Ampere-Reactive per hour (Kvar).
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -131,7 +131,7 @@ since the metering start date (`dateMeteringStarted`).
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Kilowatts per hour.
     + Attribute metadata:
-        + `dateUpdated`: Timestamp which reflects the date and time at which the referred reading was obtained.
+        + `timestamp`: Timestamp which reflects the date and time at which the referred reading was obtained.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -148,7 +148,7 @@ since the metering start date (`dateMeteringStarted`).
     + Attribute Type: [Number](http://schema.org/Number)
     + Default unit: KiloWatts. 
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -156,7 +156,7 @@ since the metering start date (`dateMeteringStarted`).
     + Attribute Type: [Number](http://schema.org/Number)
     + Default unit: KiloVolts-Ampere-Reactive (Kvar). 
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
@@ -165,7 +165,7 @@ by subproperties which name will be equal to the name of each of the alternating
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Default unit: Kilowatts
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
@@ -175,7 +175,7 @@ current phases, typically R, S, T.
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Default unit: KiloVolts-Ampere-Reactive (Kvar)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional    
        
@@ -183,7 +183,7 @@ current phases, typically R, S, T.
     + Attribute Type: [Number](http://schema.org/Number)
     + Allowed values: A number between -1 and 1.
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -191,7 +191,7 @@ current phases, typically R, S, T.
     + Attribute Type: [Number](http://schema.org/Number)
     + Allowed values: A number between -1 and 1.
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
    
@@ -201,7 +201,7 @@ will be equal to the phase name, typically `R`, `S`, `T`.
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Default unit: Ampers
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
@@ -211,7 +211,7 @@ will be equal to the phase name, typically `R`, `S`, `T`.
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Default unit: Volts
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 

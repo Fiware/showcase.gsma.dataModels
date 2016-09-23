@@ -44,14 +44,14 @@ Typically it will contain an identifier that will allow to obtain more informati
     + Allowed values: one Of (`ok`, `defectiveLamp`, `columnIssue`, `brokenLantern`)
         + Or any other value meaningful to the application and not covered by the values above. 
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Mandatory
 
 + `powerState` : Streetlight's power state.
     + Attribute type: [Text](http://schema.org/Text)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     + Optional
@@ -63,21 +63,21 @@ Typically it will contain an identifier that will allow to obtain more informati
 + `dateLastLampChange` : Timestamp of the last change of lamp made. If `null` it will mean that the lamp has never been changed. 
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
 + `dateLastSwitchingOn` : Timestamp of the last switching on.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
 + `dateLastSwitchingOff` : Timestamp of the last switching off.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
@@ -122,7 +122,7 @@ of this property are wall-mounted streetlights.
     + Attribute Type: [Number](http://schema.org/Number)
     + Allowed values: A number between 0 and 1.
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     

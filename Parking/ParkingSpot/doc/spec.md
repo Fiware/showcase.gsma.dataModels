@@ -42,7 +42,7 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed Values: one Of (`occupied`, `free`, `closed`, `unknown`)
     + Metadata:
-        + `dateUpdated` : Timestamp which reflects the date when the attribute value was obtained. 
+        + `timestamp` : Timestamp which reflects the date when the attribute value was obtained. 
               + Type: [DateTime](https://schema.org/DateTime)
               + Optional
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)

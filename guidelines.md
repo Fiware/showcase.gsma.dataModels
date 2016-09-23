@@ -75,7 +75,7 @@ the latter would be the creation date of the (digital) entity representing the w
 
 ## Dynamic attributes
 
-+ Use a metadata attribute named `dateUpdated` for capturing the last update timestamp of a dynamic attribute. Please note
++ Use a metadata attribute named `timestamp` for capturing the last update timestamp of a dynamic attribute. Please note
 that this is the actual date at which the measured value was obtained (from a sensor, by visual observation, etc.), and that
 date might be different than the date (metadata attribute named `dateModified` as per NGSIv2) at which the attribute
 of the digital entity was updated, as typically there might be delay,

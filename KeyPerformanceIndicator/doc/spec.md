@@ -96,7 +96,7 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `currentStanding` : The KPI's current standing as per its `kpiValue`.
     + Attribute type: [Text](http://schema.org/Text)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Allowed values: one Of (`very good`, `good`, `fair`, `bad`, `very bad`)
     + Optional
@@ -104,7 +104,7 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `kpiValue` :
     + Attribute type: It can be of any type. 
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Mandatory
     
@@ -120,7 +120,7 @@ Example `KPI-2016-2018-Incidences-Street`.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
       
-+ `dateUpdated` : Last update date of the KPI data. This can be different than the last update date of the KPI's value.
++ `dateModified` : Last update date of the KPI data. This can be different than the last update date of the KPI's value.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
     
@@ -159,7 +159,7 @@ hint which can help to identify the KPI coverage.
       },
       "calculationMethod": "automatic",
       "calculationFrequency": "monthly",
-      "dateUpdated": "2016-06-29T15:59:09.224Z",
+      "dateModified": "2016-06-29T15:59:09.224Z",
       "dateNextCalculation": "2016-07-31",
       "address": {
         "addressLocality": "Ciudad",

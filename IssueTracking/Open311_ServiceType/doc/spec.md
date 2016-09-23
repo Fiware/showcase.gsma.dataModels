@@ -52,7 +52,7 @@ FIWARE / OASC recommends the following additional fields as an extension to the 
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `dateUpdated` : Last update date of this service type.
++ `dateModified` : Last update date of this service type.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 

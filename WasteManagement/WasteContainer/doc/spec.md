@@ -24,7 +24,7 @@ When the container is full it must be equal to `1.0`. When the container is empt
 possible to determine the current filling level it must be equal to `null`. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
@@ -37,7 +37,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
 + `cargoWeight` : Weight of the container load.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations. 
@@ -50,7 +50,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
 + `temperature` : Temperature inside the container. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
@@ -63,7 +63,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
 + `methaneConcentration` : Methane (CH4) concentration inside the container.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
@@ -161,7 +161,7 @@ entities of type `WasteContainerIsle` are not being modelled specifically. Other
         + `dropped`. Container has been dropped for some reason.
         + `moved`. Container has been moved from its regular position and has not come back.
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
@@ -216,7 +216,7 @@ It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty.
     + Type: [Number](https://schema.org/Number)
     + Allowed values: Interval [0,1]
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
@@ -232,7 +232,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
 + `deviceState` : State of the principal IoT device which monitors this container. Attribute value can depend on the device provider. 
     + Type: [Text](https://schema.org/Text)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations. 

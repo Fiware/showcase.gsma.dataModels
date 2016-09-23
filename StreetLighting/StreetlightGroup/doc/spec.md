@@ -22,7 +22,7 @@ responsible, district, neighbourhood, etc.
 + `powerState` : Streetlight group's power state.
     + Attribute type: [Text](http://schema.org/Text)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     + Optional
@@ -34,14 +34,14 @@ responsible, district, neighbourhood, etc.
 + `dateLastSwitchingOn` : Timestamp of the last switching on.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
 + `dateLastSwitchingOff` : Timestamp of the last switching off.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
@@ -55,7 +55,7 @@ responsible, district, neighbourhood, etc.
         + `hours` : Hours. 
             + Normative References: Value must be compliant with [https://schema.org/openingHours](https://schema.org/openingHours)
     + Attribute metadata:
-        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+        + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
         
@@ -63,7 +63,7 @@ responsible, district, neighbourhood, etc.
     + Attribute Type: List of [Text](http://schema.org/Text)
     + Allowed values: (`night-ON`, `night-OFF`, `night-LOW`, `always-ON`, `day-ON`, `day-OFF`, `day-LOW`)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -71,14 +71,14 @@ responsible, district, neighbourhood, etc.
     + Attribute Type: [Number](http://schema.org/Number)
     + Allowed values: A number between 0 and 1.
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
         
 + `activeProgramId` : Identifier of the active program for this streetlight group.
     + Attribute type: [Text](https://schema.org/Text)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional 
     

@@ -22,7 +22,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `temperature` : Temperature. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: Celsius Degrees.
     + Optional
@@ -30,7 +30,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `conductivity` : Electrical Conductivity. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: Siemens per meter (S/m).
     + Optional	
@@ -38,7 +38,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `conductance` : Specific Conductance. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: Siemens per meter at 25 ºC (S/m).
     + Optional	
@@ -46,7 +46,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `tss` : Total suspended solids. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional		
@@ -54,7 +54,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `tds` : Total dissolved solids. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional	
@@ -62,7 +62,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `turbidity` : Amount of light scattered by particles in the water column. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: Formazin Turbidity Unit (FTU).
     + Optional	
@@ -70,7 +70,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `salinity` : Amount of salts dissolved in water. 
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: Parts per thousand (ppt).
     + Optional		
@@ -78,7 +78,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `pH` : acidity or basicity of an aqueous solution.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: Negative of the logarithm to base 10 of the activity of the hydrogen ion.
     + Optional
@@ -86,7 +86,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `orp` : Oxidation-Reduction potential.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: millivolts (mV).
     + Optional
@@ -94,7 +94,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `O2` : Level of free, non-compound oxygen present.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional	
@@ -102,7 +102,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `Chla` : Concentration of chlorophyll A.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: micrograms per liter.
     + Optional		
@@ -110,7 +110,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `PE` : Concentration of pigment phycoerythrin which can be measured to estimate cyanobacteria concentrations specifically.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: micrograms per liter.
     + Optional	
@@ -118,7 +118,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `PC` : Concentration of pigment phycocyanin which can be measured to estimate cyanobacteria concentrations specifically.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: micrograms per liter.
     + Optional		
@@ -126,7 +126,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `NH4` : Concentration of ammonium.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional	
@@ -134,7 +134,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `NH3` : Concentration of ammonia.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional	
@@ -142,7 +142,7 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `Cl-` : Concentration of chlorides.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional	
@@ -150,12 +150,12 @@ Water Quality data model is intended to represent water quality parameters at a 
 + `NO3` : Concentration of nitrates.
     + Attribute type: [Number](http://schema.org/Number)
     + Attribute metadata:
-        + `dateUpdated`: Timestamp when the last update of the attribute happened.
+        + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Default unit: milligrams per liter (mg/L).
     + Optional		
 	 
-+ `dateUpdated` : Last update timestamp of this entity
++ `timestamp` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
