@@ -103,7 +103,8 @@ The registration identifier is numeric or alphanumeric and is unique within the 
 
 + `serviceProvided` : Service(s) provided by (or associated to) the vehicle.
     + Attribute type: List of [Text](https:/schema.org/Text)
-    + Allowed values: (`WasteManagement`, `ParksAndGardens`, `Construction`, `Lighting`, `CargoTransport`, `Transit`, `Maintenance`)
+    + Allowed values: (`WasteContainerPickup`, `ParksAndGardens`, `Construction`, `Lighting`, `CargoTransport`, `Transit`, `Maintainance`).
+    Or any other value needed by an specific application. 
 
 + `vehicleSpecialUsage` : Indicates whether the vehicle has been used for special purposes, like commercial rental,
 driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
@@ -130,6 +131,8 @@ responsible, district, neighbourhood, etc.
     
 + `status` : Vehicle status 
     + One of (`parked`, `onRoute`, `outOfOrder`, `stopped`)
+    + Attribute type: [Text](https://schema.org/Text)
+    + Optional
 
 + `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
@@ -155,7 +158,7 @@ responsible, district, neighbourhood, etc.
       "cargoWeight": 314,
       "fuelType": "gasoil",
       "status": "onroute",
-      "serviceProvided": ["WasteManagement"],
+      "serviceProvided": ["WasteContainerPickup"],
       "areaServed": "Centro",
       "refVehicleModel": "vehiclemodel:econic",
       "vehiclePlateIdentifier": "3456ABC"
