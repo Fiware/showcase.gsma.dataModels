@@ -9,20 +9,20 @@ use_directory_urls: false
 theme: readthedocs
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
 pages:
-  - Home: index.md
-  - Guidelines  : guidelines.md
-  - Alarms                      : 'Alarm/doc/introduction.md'
-  - Ambient:
+  - 'Home': index.md
+  - 'Guidelines'  : guidelines.md
+  - 'Alarms'                     : 'Alarm/doc/introduction.md'
+  - 'Ambient':
       - 'AmbientObserved'        : 'AmbientObserved/doc/spec.md'
       - 'AirQualityThreshold'    : 'AirQualityThreshold/doc/spec.md'
   - 'Civic Issue Tracking':
       - 'Introduction'                 : 'IssueTracking/doc/introduction.md'
       - 'Open311:ServiceType'          : 'IssueTracking/Open311_ServiceType/doc/spec.md' 
       - 'Open311:ServiceRequest'       : 'IssueTracking/Open311_ServiceRequest/doc/spec.md'
-  - Device                             : 'Sensor/doc/introduction.md'    
-  - Indicators:
+  - 'Device'                           : 'Sensor/doc/introduction.md'    
+  - 'Indicators':
       - 'KeyPerformanceIndicator' : 'KeyPerformanceIndicator/doc/spec.md'
-  - Parking:
+  - 'Parking':
       - 'Introduction'         : 'Parking/doc/introduction.md' 
       - 'OffStreetParking'     : 'Parking/OffStreetParking/doc/spec.md'
       - 'OnStreetParking'      : 'Parking/OnStreetParking/doc/spec.md'
@@ -30,7 +30,7 @@ pages:
       - 'ParkingAccess'        : 'Parking/ParkingAccess/doc/spec.md' 
       - 'ParkingSpot'          : 'Parking/ParkingSpot/doc/spec.md'
   - 'Parks & Gardens'          : 'ParksAndGardens/doc/introduction.md'          
-  - Points of Interest: 
+  - 'Points of Interest': 
       - 'WeatherStation'       : 'PointOfInterest/WeatherStation/doc/spec.md'
       - 'AirQualityStation'    : 'PointOfInterest/AirQualityStation/doc/spec.md'
   -  'Street Lighting':
@@ -39,11 +39,11 @@ pages:
       - 'StreetlightModel'          : 'StreetLighting/StreetlightModel/doc/spec.md'
       - 'StreetlightGroup'          : 'StreetLighting/StreetlightGroup/doc/spec.md'
       - 'StreetlightControlCabinet' : 'StreetLighting/StreetlightControlCabinet/doc/spec.md'
-  - `Vehicle'
+  - 'Vehicle':
       - 'Introduction'         : 'Vehicle/doc/introduction.md'
       - 'Vehicle'              : 'Vehicle/Vehicle/doc/spec.md'
       - 'VehicleModel'         : 'Vehicle/VehicleModel/doc/spec.md'
-  -  Weather:
+  -  'Weather':
       - 'WeatherObserved'      : 'Weather/WeatherObserved/doc/spec.md'
       - 'WeatherForecast'      : 'Weather/WeatherForecast/doc/spec.md'
       - 'WeatherAlarm'         : 'Weather/WeatherAlarm/doc/spec.md'

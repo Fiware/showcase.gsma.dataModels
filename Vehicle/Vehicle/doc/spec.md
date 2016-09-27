@@ -85,10 +85,6 @@ The registration identifier is numeric or alphanumeric and is unique within the 
             + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
     + Optional
 
-+ `fuelType` : The type of fuel suitable for the engine or engines of the vehicle.
-    + Normative References: [https://schema.org/fuelType](https://schema.org/fuelType)
-    + Optional
-
 + `vehicleConfiguration` : A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
     + Normative References: [https://schema.org/vehicleConfiguration](https://schema.org/vehicleConfiguration)
     + Optional
@@ -103,10 +99,11 @@ The registration identifier is numeric or alphanumeric and is unique within the 
 
 + `serviceProvided` : Service(s) provided by (or associated to) the vehicle.
     + Attribute type: List of [Text](https:/schema.org/Text)
-    + Allowed values: (`WasteContainerPickup`, `ParksAndGardens`, `Construction`, `Lighting`, `CargoTransport`, `Transit`, `Maintainance`).
+    + Allowed values: (`wasteContainerPickup`, `parksAndGardens`, `construction`, `lighting`,
+    `cargoTransport`, `urbanTransit`, `maintenance`, `fireBrigade`, `police`).
     Or any other value needed by an specific application. 
 
-+ `vehicleSpecialUsage` : Indicates whether the vehicle has been used for special purposes, like commercial rental,
++ `vehicleSpecialUsage` : Indicates whether the vehicle is been used for special purposes, like commercial rental,
 driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
     + Normative References: [https://auto.schema.org/vehicleSpecialUsage](https://auto.schema.org/vehicleSpecialUsage)
     + Optional
@@ -156,7 +153,6 @@ responsible, district, neighbourhood, etc.
       "name": "C Recogida 1",
       "speed": 50,
       "cargoWeight": 314,
-      "fuelType": "gasoil",
       "status": "onroute",
       "serviceProvided": ["WasteContainerPickup"],
       "areaServed": "Centro",
