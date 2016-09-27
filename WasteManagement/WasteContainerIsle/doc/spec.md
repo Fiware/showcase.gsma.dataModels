@@ -40,7 +40,7 @@ A geographical area which keeps one or more waste containers.
         + Any other value meaningful to the application.
     + Optional
 
-+ `containers` : List of containers present in the isle.
++ `refWasteContainer` : List of containers present in the isle.
     + Attribute type: List of references to [WasteContainer](../../WasteContainer/doc/spec.md) entities. 
     + Allowed values. Container's id.
     + Optional
