@@ -7,10 +7,11 @@ These models have been devised to be as generic as possible, thus allowing to de
 
 + Private Vehicles. 
 + Public Vehicles (Buses, Trains, etc.).  
-+ Municipal Vehicles
++ Municipal Vehicles (pick up lorries, cleaning units, ...)
++ Special Vehicles (ambulances, fire brigades, ...)
 
 The main entities identified are:
 
 + [Vehicle](../Vehicle/doc/spec.md) .It represents a vehicle with all its individual characteristics. 
-+ [VehiclerModel](../WasteContainerModel/doc/spec.md) .
++ [VehicleModel](../VehicleModel/doc/spec.md) .
 It represents a model of vehicle, capturing its static properties such as dimensions, materials or features.

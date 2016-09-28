@@ -18,9 +18,9 @@ This entity models a particular vehicle model, including all properties which ar
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
     
-+ `vehicleType` : Type of vehicle.
++ `vehicleType` : Type of the vehicle represented by this model.
     + Attribute type: [Text](https://schema.org/Text)
-   + Allowed Values: The following values defined by *VehicleTypeEnum*,
+    + Allowed Values: The following values defined by *VehicleTypeEnum*,
     [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip):
         + (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
            `carWithCaravan`, `carWithTrailer`, `lorry`, `moped`,
@@ -93,11 +93,11 @@ duration with the given vehicle (e.g. liters per 100 km).
     + Normative References: [https://schema.org/image](https://schema.org/image)
     + Optional
 
-+ `dateModified` : Last update timestamp of this entity
++ `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `dateCreated` : Creation timestamp of this entity
++ `dateCreated` : Creation timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
     
