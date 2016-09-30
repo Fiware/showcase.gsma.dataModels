@@ -12,14 +12,15 @@ pages:
   - 'Home': index.md
   - 'Guidelines'  : guidelines.md
   - 'Alarms'                     : 'Alarm/doc/introduction.md'
-  - 'Ambient':
-      - 'AmbientObserved'        : 'AmbientObserved/doc/spec.md'
-      - 'AirQualityThreshold'    : 'AirQualityThreshold/doc/spec.md'
   - 'Civic Issue Tracking':
       - 'Introduction'                 : 'IssueTracking/doc/introduction.md'
       - 'Open311:ServiceType'          : 'IssueTracking/Open311_ServiceType/doc/spec.md' 
       - 'Open311:ServiceRequest'       : 'IssueTracking/Open311_ServiceRequest/doc/spec.md'
-  - 'Device'                           : 'Sensor/doc/introduction.md'    
+  - 'Device'                           : 'Sensor/doc/introduction.md'
+  - 'Environment':
+      - 'Introduction'           : 'Environment/doc/introduction.md'
+      - 'AirQualityObserved'     : 'Environment/AirQualityObserved/doc/spec.md'
+      - 'AirQualityThreshold'    : 'Environment/AirQualityThreshold/doc/spec.md'
   - 'Indicators':
       - 'KeyPerformanceIndicator' : 'KeyPerformanceIndicator/doc/spec.md'
   - 'Parking':
