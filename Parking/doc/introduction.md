@@ -2,7 +2,9 @@
 
 These data models are intended to model entities relevant for parking use cases in smart cities scenarios.
 When feasible these models reuse types, properties and enumerations from
-[DATEX II version 2.3](http://www.datex2.eu/content/parking-publications-extension-v10a).
+[DATEX II version 2.3](http://www.datex2.eu/content/parking-publications-extension-v10a). A data dictionary for
+DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://datexbrowser.tamtamresearch.com/).
+
 Nonetheless, these data models are intended to NGSI-based systems and
 many simplifications has been made with respect to DATEX II version 2.3. 
  

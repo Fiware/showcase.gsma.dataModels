@@ -3,7 +3,11 @@
 ## Description
 
 A site, open space zone, on street, (metered or not) with direct access from a road, intended to park vehicles.
-In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of type *onStreetParking*. 
+In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of type *onStreetParking*.
+
+A data dictionary for
+DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://datexbrowser.tamtamresearch.com/).
+
 
 ## Data Model
 

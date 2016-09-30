@@ -8,6 +8,9 @@ If necessary, and for management purposes or to deal with multi-location parking
 it can be divided into different zones modelled by the entity type [ParkingGroup](../../ParkingGroup/doc/spec.md) .
 In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of type *offStreetParking*.
 
+A data dictionary for
+DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://datexbrowser.tamtamresearch.com/).
+
 ## Data Model
 
 + `id` : Unique identifier. 
