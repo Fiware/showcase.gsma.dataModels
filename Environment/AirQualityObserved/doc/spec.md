@@ -110,7 +110,7 @@ This data model has been developed in cooperation with mobile operators and the 
         "coordinates": [40.423852777777775, -3.712247222222222]
       },
       "source": "http://datos.madrid.es",
-      "measurands": [
+      "measurand": [
          "CO, 500, M1, Carbon Monoxide",
          "NO, 45, M1, Nitrogen Monoxide",
          "NO2, 69, M1, Nitrogen Dioxide",
