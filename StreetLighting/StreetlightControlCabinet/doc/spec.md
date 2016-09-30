@@ -95,12 +95,12 @@ responsible, district, neighbourhood, etc.
 
 + `maximumPowerAvailable` : The maximum power available (by contract) for the circuits controlled by this cabinet.
     + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: Kilowatts
+    + Default unit: Kilowatts (kW)
     + Optional
     
  + `energyConsumed` :  Energy consumed by the circuits controlled since metering started (since `dateMeteringStarted`).
     + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kilowatts per hour (Kwh).
+    + Default unit: Kilowatts per hour (kWh).
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -117,7 +117,7 @@ responsible, district, neighbourhood, etc.
 + `reactiveEnergyConsumed` : Energy consumed (with regards to reactive power) by circuits
 since the metering start date (`dateMeteringStarted`).
     + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: KiloVolts-Ampere-Reactive per hour (Kvar).
+    + Default unit: KiloVolts-Ampere-Reactive per hour (kVArh).
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -129,7 +129,7 @@ since the metering start date (`dateMeteringStarted`).
 
 + `lastMeterReading` : Value of the last reading obtained from the energy consumed metering system.
     + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kilowatts per hour.
+    + Default unit: Kilowatts per hour (kWh).
     + Attribute metadata:
         + `timestamp`: Timestamp which reflects the date and time at which the referred reading was obtained.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -141,12 +141,12 @@ since the metering start date (`dateMeteringStarted`).
     
 + `frequency` : The working frequency of the circuit.
     + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: Hertz
+    + Default unit: Hertz (Hz)
     + Optional
         
 + `totalActivePower` : Active power currently consumed (counting all phases).
     + Attribute Type: [Number](http://schema.org/Number)
-    + Default unit: KiloWatts. 
+    + Default unit: KiloWatts (kW). 
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -154,7 +154,7 @@ since the metering start date (`dateMeteringStarted`).
     
 + `totalReactivePower` : Reactive power currently consumed (counting all phases).
     + Attribute Type: [Number](http://schema.org/Number)
-    + Default unit: KiloVolts-Ampere-Reactive (Kvar). 
+    + Default unit: KiloVolts-Ampere-Reactive (kVArh). 
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -163,7 +163,7 @@ since the metering start date (`dateMeteringStarted`).
 + `activePower` : Active power consumed  per phase. The actual values will be conveyed
 by subproperties which name will be equal to the name of each of the alternating current phases, typically R, S, T. 
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
-    + Default unit: Kilowatts
+    + Default unit: Kilowatts (kW)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -173,7 +173,7 @@ by subproperties which name will be equal to the name of each of the alternating
 by subproperties which name will be equal to the name of each of the alternating
 current phases, typically R, S, T. 
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
-    + Default unit: KiloVolts-Ampere-Reactive (Kvar)
+    + Default unit: KiloVolts-Ampere-Reactive (kVArh)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -197,9 +197,10 @@ current phases, typically R, S, T.
    
 + `intensity` : Electric intensity. The actual values will be conveyed
 by one subproperty per alternating current phase.  The name of each subproperty
-will be equal to the phase name, typically `R`, `S`, `T`. 
+will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions.
+In Europe they are typically named as `R`, `S`, `T`. 
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
-    + Default unit: Ampers
+    + Default unit: Ampers (A)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
@@ -207,24 +208,25 @@ will be equal to the phase name, typically `R`, `S`, `T`.
 
 + `voltage` : Electric tension. The actual values will be conveyed
 by one subproperty alternating current phase.  The name of each subproperty
-will be equal to the phase name, typically `R`, `S`, `T`. 
+will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions.
+In Europe they are typically named as `R`, `S`, `T`.  
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
-    + Default unit: Volts
+    + Default unit: Volts (V)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
-+ `thdrVoltage` : Total harmonic distortion (R) of the voltage. The actual values will be conveyed
-by one subproperty per alternating current phase.  The name of each subproperty
-will be equal to the phase name, typically `R`, `S`, `T`. 
++ `thdrVoltage` : Total harmonic distortion (R) of The name of each subproperty
+will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions.
+In Europe they are typically named as `R`, `S`, `T`. 
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Allowed values: A number between 0 and 1
     + Optional
 
-+ `thdrIntensity` : Total harmonic distortion (R) of intensity. The actual values will be conveyed
-by one subproperty alternating current phase.  The name of each subproperty
-will be equal to the phase name, typically `R`, `S`, `T`. 
++ `thdrIntensity` : Total harmonic distortion (R) of intensity. The name of each subproperty
+will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions.
+In Europe they are typically named as `R`, `S`, `T`. 
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Allowed values: A value between 0 and 1
     + Optional

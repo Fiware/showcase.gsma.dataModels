@@ -23,12 +23,12 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
 
 + `maxPowerConsumption` : Maximum power consumption supported by the lantern.
     + Attribute type: List of [Number](https://schema.org/Number).
-    + Default unit: Watts
+    + Default unit: Watts (W)
     + Optional
     
 + `minPowerConsumption` : Minimum power consumption supported by the lantern.
     + Attribute type: List of [Number](https://schema.org/Number).
-    + Default unit: Watts
+    + Default unit: Watts (W)
     + Optional    
 
 + `columnBrandName` : Name of the column's brand.
@@ -76,7 +76,7 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     
 + `lanternWeight` : Lantern's weight.
     + Attribute type: [Number](https://schema.org/Number).
-    + Default Unit: Kilograms
+    + Default Unit: Kilograms (kg)
     + See also: [https://schema.org/weight](https://schema.org/weight)
     + Optional    
 
@@ -97,7 +97,7 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     
  + `lampWeight` : Lamp's weight.
     + Attribute type: [Number](https://schema.org/Number).
-    + Default Unit: Kilograms
+    + Default Unit: Kilograms (kg)
     + See also: [https://schema.org/weight](https://schema.org/weight)
     + Optional
     
@@ -114,7 +114,7 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
 
 + `colorTemperature` : *Correlated* color temperature of the lamp. 
     + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kelvin degrees
+    + Default unit: Kelvin degrees (K)
     + Optional
 
 + `colorRenderingIndex` : Color rendering index of the lamp.
@@ -123,12 +123,12 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
 
 + `luminousFlux` :  Maximum light output which can be provided by the lamp.
     + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Lumens
+    + Default unit: Lumens (lm)
     + Optional  
 
 + `powerConsumption` : (Nominal) power consumption made by the lamp.
     + Attribute type: List of [Number](https://schema.org/Number).
-    + Default unit: Watts
+    + Default unit: Watts (W)
     + Optional
 
 + `compliantWith` : A list of standards to which this streetlight model is compliant with. 
