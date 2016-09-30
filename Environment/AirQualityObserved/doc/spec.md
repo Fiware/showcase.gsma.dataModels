@@ -29,7 +29,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + Mandatory
     
 + `temperature` : Air's temperature observed.
-    + Attribute type: [Number](https://schema.org/(Number)
+    + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Degrees centigrades.
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
@@ -37,7 +37,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + Optional
 
 + `relativeHumidity` : Air's relative humidity observed (percentage, expressed in parts per one).
-    + Attribute type: [Number](https://schema.org/(Number)
+    + Attribute type: [Number](https://schema.org/Number)
     + Allowed values: A number between `0` and `1`. 
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
@@ -45,7 +45,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + Optional
 
 + `precipitation` : Precipitation level observed.
-    + Attribute type: [Number](https://schema.org/(Number)
+    + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Liters per square meter.
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
@@ -53,15 +53,15 @@ This data model has been developed in cooperation with mobile operators and the 
     + Optional 
 
 + `windDirection` : The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number.
-    + Attribute type: [Number](https://schema.org/(Number)
+    + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Decimal degrees
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
     + Optional 
 
-+ `windSpeed` : The observed wind speed in m/s, encoded as a Number
-    + Attribute type: [Number](https://schema.org/(Number)
++ `windSpeed` : The observed wind speed in m/s, encoded as a Number.
+    + Attribute type: [Number](https://schema.org/Number)
     + Default unit: meters per second
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
@@ -72,7 +72,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
     + Optional
 
-+ `refDevice` : A reference to the device which captured this observation
++ `refDevice` : A reference to the device which captured this observation.
     + Attribute type: Reference to an entity of type `Device`
     + Optional
 
@@ -84,7 +84,7 @@ This data model has been developed in cooperation with mobile operators and the 
 
 The number of air pollutants represented can vary. As a result the model prescribes the following attributes to convey those parameters: 
 
-+ `measurand` : An array of strings containing details (see format below) about each *air quality* measurand observed.
++ `measurand` : An array of strings containing details (see format below) about *each air quality measurand* observed.
     + Attribute type: List of [Text](https://schema.org/Text).
     + Allowed values: Each element of the array must be a string with the following format (comma separated list of values):
 `<measurand>, <observedValue>, <unitcode>, <description>`, where:
