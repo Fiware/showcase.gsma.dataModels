@@ -28,21 +28,6 @@ This data model has been developed in cooperation with mobile operators and the 
     + Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601 interval represented as [Text](https://schema.org/Text). 
     + Mandatory
     
-+ `measurand` : An array of strings containing details (see format below) about each *air quality* measurand observed.
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: Each element of the array must be a string with the following format (comma separated list of values):
-`<measurand>, <observedValue>, <unitcode>, <description>, <timestamp>`, where:
-        + `measurand` : corresponds to the chemical formula (or mnemonic) of the measurand, ex. CO.
-        + `observedValue` : corresponds to the value for the measurand as a number. 
-        + `unitCode` : The unit code (text) of measurement given using the
-        [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters)
-        + `description` : short description of the measurand.
-        + `timestamp` : optional timestamp for the observed value in ISO8601 format.
-        It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level. 
-        + Examples:
-    `"CO,500,GP,Carbon Monoxide"  "NO,45,GQ,Nitrogen Monoxide" "NO2,69,GQ,Nitrogen Dioxide" "NOx,139,GQ,Nitrogen oxides" "SO2,11,GQ,Sulfur Dioxide"`
-    + Mandatory
-    
 + `temperature` : Air's temperature observed.
     + Attribute type: [Number](https://schema.org/(Number)
     + Attribute metadata:
@@ -94,6 +79,35 @@ This data model has been developed in cooperation with mobile operators and the 
     + Attribute type: Reference to an entity of type `PointOfInterest`
     + Optional
 
+## Representing air pollutants
+
+The number of air pollutants represented can vary. As a result the model prescribes the following attributes to convey those parameters: 
+
++ `measurand` : An array of strings containing details (see format below) about each *air quality* measurand observed.
+    + Attribute type: List of [Text](https://schema.org/Text).
+    + Allowed values: Each element of the array must be a string with the following format (comma separated list of values):
+`<measurand>, <observedValue>, <unitcode>, <description>`, where:
+        + `measurand` : corresponds to the chemical formula (or mnemonic) of the measurand, ex. CO.
+        + `observedValue` : corresponds to the value for the measurand as a number. 
+        + `unitCode` : The unit code (text) of measurement given using the
+        [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
+        For instance, `GP` represents milligrams per cubic meter and `GQ` represents micrograms per cubic meter.
+        + `description` : short description of the measurand.
+        + Examples:
+    `"CO,500,GP,Carbon Monoxide"  "NO,45,GQ,Nitrogen Monoxide" "NO2,69,GQ,Nitrogen Dioxide" "NOx,139,GQ,Nitrogen oxides" "SO2,11,GQ,Sulfur Dioxide"`
+    + Mandatory
+
++ In order to enable a proper management of the *historical evolution* of the concentrations of the different pollutants,
+*for each* element described by the `measurand` array list there *MAY* be an attribute which name *MUST* be exactly equal to the
+measurand name described on the `measurand` array. The structure of such an attribute will be as follows:
+    + Attribute name: Equal to the name of the measurand, for instance `CO`.
+    + Attribute type: [Number](https://schema.org/Number)
+    + Attribute value: Exactly equal (same unit of measurement) to the value provided in the `measurand` array. 
+    + Attribute metadata:
+        + `timestamp` : optional timestamp for the observed value in ISO8601 format.
+        It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level.
+            + Type: [DateTime](https://schema.org/DateTime)
+    
 ## Examples of use
 
     {
@@ -110,6 +124,11 @@ This data model has been developed in cooperation with mobile operators and the 
         "coordinates": [-3.712247222222222, 40.423852777777775]
       },
       "source": "http://datos.madrid.es",
+      "precipitation": 0,
+      "relativeHumidity": 0.54,
+      "temperature": 12.2,
+      "windDirection": 186,
+      "windSpeed": 0.64,
       "measurand": [
          "CO, 500, GP, Carbon Monoxide",
          "NO, 45, GQ, Nitrogen Monoxide",
@@ -117,10 +136,16 @@ This data model has been developed in cooperation with mobile operators and the 
          "NOx, 139, GQ, Nitrogen oxides",
          "SO2, 11, GQ, Sulfur Dioxide"
       ],
-      "precipitation": 0,
-      "relativeHumidity": 0.54,
-      "temperature": 12.2,
-      "windDirection": 186,
-      "windSpeed": 0.64,
+      "CO": 500,
+      "NO": 45,
+      "NO2": 69,
+      "NOx": 139,
+      "SO2": 11,
       "refPointOfInterest": "28079004-Pza. de España"
     }
+    
+## Use it with a real service
+
+## Open Issues
+
+* Should `measurand` be an `StructuredValue` instead of an array? 
