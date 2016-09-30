@@ -30,14 +30,15 @@ This data model has been developed in cooperation with mobile operators and the 
     
 + `temperature` : Air's temperature observed.
     + Attribute type: [Number](https://schema.org/(Number)
+    + Default unit: Degrees centigrades.
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
     + Optional
 
-+ `relativeHumidity` : Air's relative humidity observed.
++ `relativeHumidity` : Air's relative humidity observed (percentage, expressed in parts per one).
     + Attribute type: [Number](https://schema.org/(Number)
-    + Allowed values: A number between 0 and 1. 
+    + Allowed values: A number between `0` and `1`. 
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
