@@ -40,7 +40,7 @@ This data model has been developed in cooperation with mobile operators and the 
         + `timestamp` : optional timestamp for the observed value in ISO8601 format.
         It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level. 
         + Examples:
-    `"CO,500,M1,Carbon Monoxide"  "NO,45,M1,Nitrogen Monoxide" "NO2,69,M1,Nitrogen Dioxide" "NOx,139,M1,Nitrogen oxides" "SO2,11,M1,Sulfur Dioxide"`
+    `"CO,500,GP,Carbon Monoxide"  "NO,45,GQ,Nitrogen Monoxide" "NO2,69,GQ,Nitrogen Dioxide" "NOx,139,GQ,Nitrogen oxides" "SO2,11,GQ,Sulfur Dioxide"`
     + Mandatory
     
 + `temperature` : Air's temperature observed.
@@ -111,11 +111,11 @@ This data model has been developed in cooperation with mobile operators and the 
       },
       "source": "http://datos.madrid.es",
       "measurand": [
-         "CO, 500, M1, Carbon Monoxide",
-         "NO, 45, M1, Nitrogen Monoxide",
-         "NO2, 69, M1, Nitrogen Dioxide",
-         "NOx, 139, M1, Nitrogen oxides",
-         "SO2, 11, M1, Sulfur Dioxide"
+         "CO, 500, GP, Carbon Monoxide",
+         "NO, 45, GQ, Nitrogen Monoxide",
+         "NO2, 69, GQ, Nitrogen Dioxide",
+         "NOx, 139, GQ, Nitrogen oxides",
+         "SO2, 11, GQ, Sulfur Dioxide"
       ],
       "precipitation": 0,
       "relativeHumidity": 0.54,
