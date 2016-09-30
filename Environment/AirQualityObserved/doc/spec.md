@@ -118,7 +118,7 @@ This data model has been developed in cooperation with mobile operators and the 
          "SO2, 11, M1, Sulfur Dioxide"
       ],
       "precipitation": 0,
-      "relativeHumidity": 54,
+      "relativeHumidity": 0.54,
       "temperature": 12.2,
       "windDirection": 186,
       "windSpeed": 0.64,
