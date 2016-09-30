@@ -107,7 +107,7 @@ This data model has been developed in cooperation with mobile operators and the 
       "dateObserved": "2016-03-15T11:00:00/2016-03-15T12:00:00",
       "location": {
         "type": "Point",
-        "coordinates": [40.423852777777775, -3.712247222222222]
+        "coordinates": [-3.712247222222222, 40.423852777777775]
       },
       "source": "http://datos.madrid.es",
       "measurand": [
