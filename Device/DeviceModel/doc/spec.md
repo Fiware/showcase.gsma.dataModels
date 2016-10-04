@@ -1,0 +1,112 @@
+# Device Model
+
+## Description
+
+This entity captures the static properties of a Device. 
+
+## Data Model
+
++ `id` : Unique identifier. 
+
++ `type` : Entity type. It must be equal to `DeviceModel`.
+
++ `category` : Device's category(ies).
+    + Attribute type: List of [Text](https://schema.org/Text)
+    + Allowed values, one of the following or any other meaningful to the application:
+        + `sensor` : A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. 
+           [https://w3id.org/saref#Sensor](https://w3id.org/saref#Sensor).
+        + `actuator` : A device responsible for moving or controlling a mechanism or system.
+           [https://w3id.org/saref#Actuator](https://w3id.org/saref#Actuator).
+        + `meter` : A device built to accurately detect and display a quantity in a form readable by a human being.
+           Partially defined by [SAREF](https://w3id.org/saref#Meter).
+        + `HVAC` : Heating, Ventilation and Air Conditioning (HVAC) device that provides indoor environmental comfort.
+           [https://w3id.org/saref#HVAC](https://w3id.org/saref#HVAC).
+        + `network` : A device used to connect other devices in a network, such as hub, switch or router in a LAN or Sensor network.
+           [(https://w3id.org/saref#Network](https://w3id.org/saref#Network).
+        + `multimedia` : A device designed to display, store, record or play multimedia content such as audio, images, animation, video.
+           [https://w3id.org/saref#Multimedia](https://w3id.org/saref#Multimedia)
+    + Mandatory
+
++ `controlledProperty` : Anything that can be sensed, measured or controlled by.
+    + Attribute type: List of [Text](https://schema.org/Text)
+    + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
+        + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`,
+        `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`,
+        `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`,
+        `gasComsumption`, `electricityConsumption`)
+    + Mandatory
+        
++ `function` :  The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function.
+    Defined by [SAREF](https://w3id.org/saref#Function).
+    + Attribute type: List of [Text](https://schema.org/Text)
+    + Allowed values: (`levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`), from SAREF.
+    + Optional
+    
+ `supportedProtocol` : Supported protocol(s) or networks.
+    + Attribute type: List of [Text](https://schema.org/Text).
+    + Allowed values: (`ul20`, `mqtt`, `lwm2m`, `http`, `websocket`, `onem2m`, `sigfox`, `lora`,
+    `nb-iot`, `ec-gsm-iot`, `lte-m`, `cat-m`, `3g`, `grps`)  or any other value meaningful for an application. 
+    + Optional
+    
++ `supportedUnits` : Units of measurement supported by the device.
+    + Attribute type: List of [Text](https://schema.org/Text).
+    + Allowed values: The unit code (text) of measurement given using the
+        [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
+    + Optional
+
++ `brandName` : Device's brand name.
+    + Attribute type: [Text](https://schema.org/Text)
+    + See also: [https://schema.org/brand](https://schema.org/brand)
+    + Mandatory
+
++ `modelName` : Device's model name.
+    + Attribute type: [Text](https://schema.org/Text)
+    + See also: [https://schema.org/model](https://schema.org/model)
+    + Mandatory
+
++ `manufacturerName` : Device's manufacturer name.
+    + Attribute type: [Text](https://schema.org/Text)
+    + See also: [https://schema.org/model](https://schema.org/model)
+    + Mandatory
+
++ `name` : Name given to this device model.
+    + Normative References: [https://schema.org/name](https://schema.org/name)
+    + Mandatory
+    
++ `description` : Device's description
+    + Normative References: [description](https://schema.org/description)
+    + Optional
+
++ `documentation` : A link to device's documentation.
+    + Attribute type: [URL](https://schema.org/URL)
+    + Optional
+
++ `image` : A link to an image depicting the concerned device.
+    + Normative References: [https://schema.org/image](https://schema.org/image)
+    + Optional
+
++ `dateModified` : Last update timestamp of this entity.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional
+
++ `dateCreated` : Entity's creation timestamp.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional    
+
+## Examples
+
+    {
+      "id": "myDevice-wastecontainer-sensor-345",
+      "type": "DeviceModel",
+      "name": "myDevice Sensor for Containers 345",
+      "brandName": "myDevice",
+      "modelName": "S4Container 345",
+      "manufacturerName": "myDevice Inc.",
+      "category": ["sensor"],
+      "function": ["sensing"],
+      "controlledProperty": ["fillingLevel", "temperature"]
+    }
+
+## Test it with a real service
+
+## Issues
