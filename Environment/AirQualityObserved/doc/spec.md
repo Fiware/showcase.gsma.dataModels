@@ -32,9 +32,51 @@ This data model has been developed in cooperation with mobile operators and the 
     + Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601 interval represented as [Text](https://schema.org/Text). 
     + Mandatory
     
++ `source` : A sequence of characters giving the source of the entity data.
+    + Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    + Optional
+
++ `refDevice` : A reference to the device(s) which captured this observation.
+    + Attribute type: Reference to an entity of type `Device`
+    + Optional
+
++ `refPointOfInterest` : A reference to a point of interest (usually an air quality station) associated to this observation.
+    + Attribute type: Reference to an entity of type `PointOfInterest`
+    + Optional    
+
+### Representing air pollutants
+
+The number of air pollutants represented can vary. As a result the model prescribes the following attributes to convey those parameters: 
+
++ `measurand` : An array of strings containing details (see format below) about *each air quality measurand* observed.
+    + Attribute type: List of [Text](https://schema.org/Text).
+    + Allowed values: Each element of the array must be a string with the following format (comma separated list of values):
+`<measurand>, <observedValue>, <unitcode>, <description>`, where:
+        + `measurand` : corresponds to the chemical formula (or mnemonic) of the measurand, ex. CO.
+        + `observedValue` : corresponds to the value for the measurand as a number. 
+        + `unitCode` : The unit code (text) of measurement given using the
+        [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
+        For instance, `GP` represents milligrams per cubic meter and `GQ` represents micrograms per cubic meter.
+        + `description` : short description of the measurand.
+        + Examples:
+    `"CO,500,GP,Carbon Monoxide"  "NO,45,GQ,Nitrogen Monoxide" "NO2,69,GQ,Nitrogen Dioxide" "NOx,139,GQ,Nitrogen oxides" "SO2,11,GQ,Sulfur Dioxide"`
+    + Mandatory
+
++ In order to enable a proper management of the *historical evolution* of the concentrations of the different pollutants,
+*for each* element described by the `measurand` array list there *MAY* be an attribute which name *MUST* be exactly equal to the
+measurand name described on the `measurand` array. The structure of such an attribute will be as follows:
+    + Attribute name: Equal to the name of the measurand, for instance `CO`.
+    + Attribute type: [Number](https://schema.org/Number)
+    + Attribute value: Exactly equal (same unit of measurement) to the value provided in the `measurand` array. 
+    + Attribute metadata:
+        + `timestamp` : optional timestamp for the observed value in ISO8601 format.
+        It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level.
+            + Type: [DateTime](https://schema.org/DateTime)
+
+    
 ### Representing airquality-related weather conditions
 
-Certain weather conditions may have an impact on the observed air quality. There are two options for representing them:
+Certain weather conditions have an influence over the observed air quality. There are two options for representing them:
 
 + A/ Through a linked entity of type `WeatherObserved` (attribute named `refWeatherObserved`) which will capture the associated weather conditions.
 + B/ Through a set of attributes which denote the different meteorological conditions under which the air quality data was captured. 
@@ -103,46 +145,6 @@ Below is a list of typical weather observed parameters which may be included inl
         by the `dateObserved` attribute at entity level.
     + Optional
 
-+ `source` : A sequence of characters giving the source of the entity data.
-    + Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-    + Optional
-
-+ `refDevice` : A reference to the device(s) which captured this observation.
-    + Attribute type: Reference to an entity of type `Device`
-    + Optional
-
-+ `refPointOfInterest` : A reference to a point of interest (usually an air quality station) associated to this observation.
-    + Attribute type: Reference to an entity of type `PointOfInterest`
-    + Optional
-
-### Representing air pollutants
-
-The number of air pollutants represented can vary. As a result the model prescribes the following attributes to convey those parameters: 
-
-+ `measurand` : An array of strings containing details (see format below) about *each air quality measurand* observed.
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: Each element of the array must be a string with the following format (comma separated list of values):
-`<measurand>, <observedValue>, <unitcode>, <description>`, where:
-        + `measurand` : corresponds to the chemical formula (or mnemonic) of the measurand, ex. CO.
-        + `observedValue` : corresponds to the value for the measurand as a number. 
-        + `unitCode` : The unit code (text) of measurement given using the
-        [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
-        For instance, `GP` represents milligrams per cubic meter and `GQ` represents micrograms per cubic meter.
-        + `description` : short description of the measurand.
-        + Examples:
-    `"CO,500,GP,Carbon Monoxide"  "NO,45,GQ,Nitrogen Monoxide" "NO2,69,GQ,Nitrogen Dioxide" "NOx,139,GQ,Nitrogen oxides" "SO2,11,GQ,Sulfur Dioxide"`
-    + Mandatory
-
-+ In order to enable a proper management of the *historical evolution* of the concentrations of the different pollutants,
-*for each* element described by the `measurand` array list there *MAY* be an attribute which name *MUST* be exactly equal to the
-measurand name described on the `measurand` array. The structure of such an attribute will be as follows:
-    + Attribute name: Equal to the name of the measurand, for instance `CO`.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Attribute value: Exactly equal (same unit of measurement) to the value provided in the `measurand` array. 
-    + Attribute metadata:
-        + `timestamp` : optional timestamp for the observed value in ISO8601 format.
-        It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level.
-            + Type: [DateTime](https://schema.org/DateTime)
     
 ## Examples of use
 
