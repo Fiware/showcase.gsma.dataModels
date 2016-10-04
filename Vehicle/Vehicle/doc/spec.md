@@ -18,7 +18,8 @@ A vehicle.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
 
-+ `location` : Vehicle's last known location represented by a GeoJSON Point. 
++ `location` : Vehicle's last known location represented by a GeoJSON Point. Such point may contain the vehicle's altitude as the third component of the
+`coordinates` array. 
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Attribute metadata:
@@ -35,11 +36,22 @@ A vehicle.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
-+ `speed` : Vehicle's last known speed.
++ `speed` : Denotes the magnitude of the horizontal component of the vehicle's current velocity and is specified in Kilometers per Hour.
+If provided, the value of the speed attribute must be a non-negative real number. `null` may be used if `speed` is transiently unknown for some reason.    
     + Attribute type: [Number](https:/schema.org/Number)
     + Default unit: Kilometers per hour
     + Attribute metadata:
-        + `timestamp`: Timestamp which captures when the vehicle was moving at that speed.
+        + `timestamp` : Timestamp which captures when the vehicle was moving at that speed.
+        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
+            + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
+    + Optional
+    
++ `heading` : Denotes the direction of travel of the vehicle and is specified in degrees,
+where 0° ≤ `heading` < 360°, counting clockwise relative to the true north.  If the vehicle is stationary (i.e. the value of the `speed` attribute is `0`),
+then the value of the heading attribute must be equal to `null`. `null` may be used if `heading` is transiently unknown for some reason.   
+    + Attribute type: [Number](https://schema.org)
+    + Attribute metadata:
+        + `timestamp` :  Timestamp which captures when the vehicle was heading towards such direction.
         This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
     + Optional
