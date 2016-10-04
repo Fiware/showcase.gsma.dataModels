@@ -21,6 +21,7 @@ pages:
       - 'Introduction'           : 'Environment/doc/introduction.md'
       - 'AirQualityObserved'     : 'Environment/AirQualityObserved/doc/spec.md'
       - 'AirQualityThreshold'    : 'Environment/AirQualityThreshold/doc/spec.md'
+      - 'WaterQualityObserved'   : 'Environment/WaterQualityObserved/doc/spec.md'
   - 'Indicators':
       - 'KeyPerformanceIndicator' : 'KeyPerformanceIndicator/doc/spec.md'
   - 'Parking':
