@@ -158,13 +158,18 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     {
       "id": "device-9845A",
       "type": "Device",
-      "batteryLevel": 0.68,
       "category": ["sensor"],
+      "controlledProperty": ["fillingLevel","temperature"],
+      "controlledAsset": ["wastecontainer-Osuna-100"],
+      "ipAddress": "192.14.56.78",
+      "mcc": "214",
+      "mnc": "07",
       "batteryLevel": 0.75,
       "serialNumer": "9845A",
       "refDeviceModel": ""myDevice-wastecontainer-sensor-345",
       "value": "l=0.22;t=21.2",
-      "state": "ok"
+      "deviceState": "ok",
+      "dateFirstUsed": "2014-09-11",
     }
 
 
@@ -174,4 +179,6 @@ T.B.D.
 
 ## Issues
 
-+ Is function really needed?
++ Is `function` really needed?
++ Do we need a `state` attribute as it happens in SAREF?
++ Check consistency with oneM2M and SAREF ontologies. 
