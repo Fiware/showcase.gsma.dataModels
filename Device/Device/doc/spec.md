@@ -119,7 +119,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Allowed values: Interval [0,1]
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
-        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/README.md#TimeInstant)
+        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
@@ -127,7 +127,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Type: [Text](https://schema.org/Text)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
-        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/README.md#TimeInstant)
+        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
@@ -141,7 +141,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     + Attribute type: Any type, depending on the device. Usually [Text](https://schema.org/Text) or [QuantitativeValue](https://schema.org/QuantitativeValue).
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
-        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/README.md#TimeInstant)
+        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
