@@ -207,7 +207,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
     + Optional
 
 + `refDevice` : Reference to the device(s) used to monitor this container.
-    + Attribute type: List of Reference of [Device](../../../Device/doc/spec.md)
+    + Attribute type: List of Reference of to entity(ies) of type [Device](../../../Device/Device/doc/spec.md)
     + Optional
 
 ## Examples of use
