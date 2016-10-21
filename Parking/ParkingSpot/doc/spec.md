@@ -86,8 +86,8 @@ to keep backwards compatibility with current FIWARE reference implementations.
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
     + Optional
 
-+ `deviceId` : The device identifier (it could be the serial number) of the sensor used to monitor this parking spot.
-    + Attribute type: [Text](https://schema.org/Text)
++ `refDevice` : The device representing the physical sensor used to monitor this parking spot.
+    + Attribute type: Reference to entity of type [Device](../../../Device/Device/doc/spec.md)
     + Optional
 
 ## Examples of use
