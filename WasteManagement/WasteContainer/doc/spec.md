@@ -206,38 +206,8 @@ to keep backwards compatibility with current FIWARE reference implementations.
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
     + Optional
 
-+ `deviceId` : The identifier (it could be the serial number) of the principal IoT device used to monitor this container.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-
-+ `deviceBatteryLevel` : Battery level of the principal IoT device which monitors this container.
-It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty.
-`null` when cannot be determined.
-    + Type: [Number](https://schema.org/Number)
-    + Allowed values: Interval [0,1]
-    + Attribute metadata:
-        + `timestamp`: Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-        + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
-        saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
-to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
-    is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
-    + Optional
-
-+ `deviceProviderName` : Provider's name of the principal IoT device which monitors this container.
-    + Type: [Text](https://schema.org/Text)
-    + Optional
-
-+ `deviceState` : State of the principal IoT device which monitors this container. Attribute value can depend on the device provider.
-    + Type: [Text](https://schema.org/Text)
-    + Attribute metadata:
-        + `timestamp`: Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-        + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
-to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
-    is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
++ `refDevice` : Reference to the device(s) used to monitor this container.
+    + Attribute type: List of Reference of [Device](../../../Device/doc/spec.md)
     + Optional
 
 ## Examples of use
@@ -257,7 +227,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
        "dateNextActuation": "2016-06-28",
        "status": "ok",
        "category": ["underground"],
-       "deviceBatteryLevel": 0.6
+       "refDevice": ["device-Fleming:12a:1]
     }
 
 
