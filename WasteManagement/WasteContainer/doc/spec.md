@@ -235,5 +235,3 @@ to keep backwards compatibility with current FIWARE reference implementations.
 
 ## Open issues
 
-* Add a `refDevice` to hold reference(s) to the IoT Device(s) bound to this entity.
-* `deviceState` : Define a taxonomy of values, which should be human readable.
