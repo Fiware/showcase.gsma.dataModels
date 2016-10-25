@@ -1,0 +1,154 @@
+{
+    "id": {
+        "type": "Text",
+        "required": true
+    },
+    "type": {
+        "type": "Text",
+        "allowedvalues": "Device",
+        "required": true
+    },
+    "category": {
+        "type": "TextList",
+        "allowedvalues": {
+            "from": "/Device/DeviceModel/schema.json",
+            "attribute": "category"
+        }
+    },
+    "controlledProperty": {
+        "type": "TextList",
+        "allowedvalues": {
+            "from": "/Device/DeviceModel/schema.json",
+            "attribute": "controlledProperty"
+        }
+    },
+    "controlledAsset": {
+        "type": "TextList",
+        "allowedvalues": {
+            "from": "*",
+            "attribute": "id"
+        }
+    },
+    "mnc": {
+        "type": "Text",
+        "allowedvalues": "*"
+    },
+    "mcc": {
+        "type": "Text",
+        "allowedvalues": "*"
+    },
+    "macAddress": {
+        "type": "Text",
+        "allowedvalues": "*"
+    },
+    "ipAddress": {
+        "type": "Text",
+        "allowedvalues": "*"
+    },
+    "supportedProtocol": {
+        "type": "TextList",
+        "allowedvalues": {
+            "from": "/Device/DeviceModel/schema.json",
+            "attribute": "supportedProtocol"
+        }
+    },
+    "configuration": {
+        "type": "StructuredValue",
+        "metadata": {
+            "dateModified": {
+                "type": "DateTime"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "allowedvalues": {
+            "normative": "https://tools.ietf.org/html/rfc7946"
+        }
+    },
+    "name": {
+        "type": "name",
+        "allowedvalues": {
+            "normative": "https://schema.org/name"
+        }
+    },
+    "description": {
+        "type": "description",
+        "allowedvalues": {
+            "normative": "https://schema.org/description"
+        }
+    },
+    "dateInstalled": {
+        "type": "DateTime"
+    },
+    "dateFirstUsed": {
+        "type": "DateTime"
+    },
+    "dateManufactured": {
+        "type": "DateTime"
+    },
+    "hardwareVersion": {
+        "type": "Text"
+    },
+    "hardwareVersion": {
+        "type": "Text"
+    },
+    "firmwareVersion": {
+        "type": "Text"
+    },
+    "osVersion": {
+        "type": "Text"
+    },
+    "dateLastCalibration": {
+        "type": "DateTime"
+    },
+    "provider": {
+        "type": "provider",
+        "allowedvalues": {
+            "normative": "https://schema.org/provider"
+        }
+    },
+    "refDeviceModel": {
+        "type": "Text",
+        "allowedvalues": {
+            "from": "/Device/DeviceModel/schema.json",
+            "attribute": "id"
+        }
+    },
+    "batteryLevel": {
+        "type": "Number",
+        "allowedvalues": {
+            "interval": [0.0, 1.0]
+        },
+        "metadata": {
+            "timestamp": {
+                "type": "DateTime"
+            }
+        }
+    },
+    "deviceState": {
+        "type": "Text",
+        "metadata": {
+            "timestamp": {
+                "type": "DateTime"
+            }
+        }
+    },
+    "dateLastValueReported": {
+        "type": "DateTime"
+    },
+    "value": {
+        "type": ["Text", "QuantitativeValue"],
+        "metadata": {
+            "timestamp": {
+                "type": "DateTime"
+            }
+        }
+    },
+    "dateModified": {
+        "type": "DateTime"
+    },
+    "dateCreated": {
+        "type": "DateTime"
+    }
+}
