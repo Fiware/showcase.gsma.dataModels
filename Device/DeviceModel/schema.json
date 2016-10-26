@@ -1,4 +1,7 @@
 {
+    "domain": "Device",
+    "name": "DeviceModel",
+    "attributes":{
     "id": {
         "descr": "Unique identifier.",
         "type": "Text",
@@ -97,4 +100,5 @@
         "descr": "Entity's creation timestamp.",
         "type": "DateTime"
     }
+}
 }

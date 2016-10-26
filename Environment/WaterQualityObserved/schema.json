@@ -1,4 +1,7 @@
 {
+    "domain": "Environment",
+    "name": "WaterQualityObserved",
+    "attributes":{
     "id": {
         "descr": "Unique identifier.",
         "type": "Text",
@@ -224,4 +227,5 @@
     "dateModified": {
         "type": "DateTime"
     }
+}
 }

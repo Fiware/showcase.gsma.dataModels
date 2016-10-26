@@ -1,195 +1,199 @@
 {
-    "id": {
-        "descr": "Unique identifier.",
-        "type": "Text",
-        "mandatory": true
-    },
-    "type": {
-        "descr": "Entity type. It must be equal to Device.",
-        "type": "Text",
-        "allowedvalues": "Device",
-        "mandatory": true
-    },
-    "category": {
-        "descr": "See attribute category from DeviceModel. Optional but recommended to optimize queries.",
-        "type": "TextList",
-        "allowedvalues": {
-            "from": "/Device/DeviceModel/schema.json",
-            "attribute": "category"
-        }
-    },
-    "controlledProperty": {
-        "descr": "See attribute controlledProperty from DeviceModel. Optional but recommended to optimize queries.",
-        "type": "TextList",
-        "allowedvalues": {
-            "from": "/Device/DeviceModel/schema.json",
-            "attribute": "controlledProperty"
-        }
-    },
-    "controlledAsset": {
-        "descr": "The asset(s) (building, object, etc.) controlled by the device.",
-        "type": "TextList",
-        "allowedvalues": {
-            "from": "*",
-            "attribute": "id"
-        }
-    },
-    "mnc": {
-        "descr": "This property identifies the Mobile Network Code (MNC) of the network the device is attached to. The MNC is used in combination with a Mobile Country Code (MCC) (also known as a \"MCC / MNC tuple\") to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and 3G / 4G public land mobile networks and some satellite mobile networks.",
-        "type": "Text",
-        "allowedvalues": "*"
-    },
-    "mcc": {
-        "descr": "Mobile Country Code - This property identifies univoquely the country of the mobile network the device is attached to.",
-        "type": "Text",
-        "allowedvalues": "*"
-    },
-    "macAddress": {
-        "descr": "The MAC address of the device.",
-        "type": "Text",
-        "allowedvalues": "*"
-    },
-    "ipAddress": {
-        "descr": "The IP address of the device. It can be a comma separated list of values if the device has more than one IP address.",
-        "type": "Text",
-        "allowedvalues": "*"
-    },
-    "supportedProtocol": {
-        "descr": "See attribute supportedProtocol from DeviceModel. Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at DeviceModel level.",
-        "type": "TextList",
-        "allowedvalues": {
-            "from": "/Device/DeviceModel/schema.json",
-            "attribute": "supportedProtocol"
-        }
-    },
-    "configuration": {
-        "descr": "Device's technical configuration. This attribute is intended to be a dictionary of properties which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model.",
-        "type": "StructuredValue",
-        "metadata": {
-            "dateModified": {
-                "descr": "It captures the last modification timestamp of this attribute.",
-                "type": "DateTime"
-            }
-        }
-    },
-    "location": {
-        "descr": "Location of this device represented by a GeoJSON geometry of type point.",
-        "type": "geo:json",
-        "allowedvalues": {
-            "normative": "https://tools.ietf.org/html/rfc7946"
-        }
-    },
-    "name": {
-        "descr": "A mnemonic name given to the device.",
-        "type": "name",
-        "allowedvalues": {
-            "normative": "https://schema.org/name"
-        }
-    },
-    "description": {
-        "descr": "Device's description.",
-        "type": "description",
-        "allowedvalues": {
-            "normative": "https://schema.org/description"
-        }
-    },
-    "dateInstalled": {
-        "descr": "A timestamp which denotes when the device was installed (if it requires installation).",
-        "type": "DateTime"
-    },
-    "dateFirstUsed": {
-        "descr": "A timestamp which denotes when the device was first used.",
-        "type": "DateTime"
-    },
-    "dateManufactured": {
-        "descr": "A timestamp which denotes when the device was manufactured.",
-        "type": "DateTime"
-    },
-    "hardwareVersion": {
-        "descr": "The hardware version of this device.",
-        "type": "Text"
-    },
-    "hardwareVersion": {
-        "descr": "The software version of this device.",
-        "type": "Text"
-    },
-    "firmwareVersion": {
-        "descr": "The firmware version of this device.",
-        "type": "Text"
-    },
-    "osVersion": {
-        "descr": "The version of the host operating system device.",
-        "type": "Text"
-    },
-    "dateLastCalibration": {
-        "descr": "A timestamp which denotes when the last calibration of the device happened.",
-        "type": "DateTime"
-    },
-    "serialNumber":{
-        "descr": "The serial number assigned by the manufacturer.",
-        "type": "serialNumber",
-        "allowedvalues": {
-            "normative": "https://schema.org/serialNumber"
-        }
-    },
-    "provider": {
-        "descr": "The provider of the device.",
-        "type": "provider",
-        "allowedvalues": {
-            "normative": "https://schema.org/provider"
-        }
-    },
-    "refDeviceModel": {
-        "descr": "The device's model.",
-        "type": "Text",
-        "allowedvalues": {
-            "from": "/Device/DeviceModel/schema.json",
-            "attribute": "id"
-        }
-    },
-    "batteryLevel": {
-        "descr": "Device's battery level. It must be equal to 1.0 when battery is full. 0.0 when battery ìs empty. null when cannot be determined.",
-        "type": "Number",
-        "allowedvalues": {
-            "interval": [0.0, 1.0]
+    "domain": "Device",
+    "name": "Device",
+    "attributes": {
+        "id": {
+            "descr": "Unique identifier.",
+            "type": "Text",
+            "mandatory": true
         },
-        "metadata": {
-            "descr": "Timestamp when the last update of the attribute happened. This value can also appear as a FIWARE TimeInstant",
-            "timestamp": {
-                "type": "DateTime"
+        "type": {
+            "descr": "Entity type. It must be equal to Device.",
+            "type": "Text",
+            "allowedvalues": "Device",
+            "mandatory": true
+        },
+        "category": {
+            "descr": "See attribute category from DeviceModel. Optional but recommended to optimize queries.",
+            "type": "TextList",
+            "allowedvalues": {
+                "from": "/Device/DeviceModel/schema.json",
+                "attribute": "category"
             }
-        }
-    },
-    "deviceState": {
-        "descr": "State of this device from an operational point of view. Its value can be vendor dependent.",
-        "type": "Text",
-        "metadata": {
-            "descr": "Timestamp when the last update of the attribute happened. This value can also appear as a FIWARE TimeInstant",
-            "timestamp": {
-                "type": "DateTime"
+        },
+        "controlledProperty": {
+            "descr": "See attribute controlledProperty from DeviceModel. Optional but recommended to optimize queries.",
+            "type": "TextList",
+            "allowedvalues": {
+                "from": "/Device/DeviceModel/schema.json",
+                "attribute": "controlledProperty"
             }
-        }
-    },
-    "dateLastValueReported": {
-        "descr": "A timestamp which denotes the last time when the device successfully reported data to the cloud.",
-        "type": "DateTime"
-    },
-    "value": {
-        "descr": "A observed or reported value. For actuator devices, it is an attribute that allows a controlling application to change the actuation setting. For instance, a switch device which is currently on can report a value \"on\"of type Text. Obviously, in order to toggle the referred switch, this attribute value will have to be changed to \"off\".",
-        "type": ["Text", "QuantitativeValue"],
-        "metadata": {
-            "timestamp": {
+        },
+        "controlledAsset": {
+            "descr": "The asset(s) (building, object, etc.) controlled by the device.",
+            "type": "TextList",
+            "allowedvalues": {
+                "from": "*",
+                "attribute": "id"
+            }
+        },
+        "mnc": {
+            "descr": "This property identifies the Mobile Network Code (MNC) of the network the device is attached to. The MNC is used in combination with a Mobile Country Code (MCC) (also known as a \"MCC / MNC tuple\") to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and 3G / 4G public land mobile networks and some satellite mobile networks.",
+            "type": "Text",
+            "allowedvalues": "*"
+        },
+        "mcc": {
+            "descr": "Mobile Country Code - This property identifies univoquely the country of the mobile network the device is attached to.",
+            "type": "Text",
+            "allowedvalues": "*"
+        },
+        "macAddress": {
+            "descr": "The MAC address of the device.",
+            "type": "Text",
+            "allowedvalues": "*"
+        },
+        "ipAddress": {
+            "descr": "The IP address of the device. It can be a comma separated list of values if the device has more than one IP address.",
+            "type": "Text",
+            "allowedvalues": "*"
+        },
+        "supportedProtocol": {
+            "descr": "See attribute supportedProtocol from DeviceModel. Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at DeviceModel level.",
+            "type": "TextList",
+            "allowedvalues": {
+                "from": "/Device/DeviceModel/schema.json",
+                "attribute": "supportedProtocol"
+            }
+        },
+        "configuration": {
+            "descr": "Device's technical configuration. This attribute is intended to be a dictionary of properties which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model.",
+            "type": "StructuredValue",
+            "metadata": {
+                "dateModified": {
+                    "descr": "It captures the last modification timestamp of this attribute.",
+                    "type": "DateTime"
+                }
+            }
+        },
+        "location": {
+            "descr": "Location of this device represented by a GeoJSON geometry of type point.",
+            "type": "geo:json",
+            "allowedvalues": {
+                "normative": "https://tools.ietf.org/html/rfc7946"
+            }
+        },
+        "name": {
+            "descr": "A mnemonic name given to the device.",
+            "type": "name",
+            "allowedvalues": {
+                "normative": "https://schema.org/name"
+            }
+        },
+        "description": {
+            "descr": "Device's description.",
+            "type": "description",
+            "allowedvalues": {
+                "normative": "https://schema.org/description"
+            }
+        },
+        "dateInstalled": {
+            "descr": "A timestamp which denotes when the device was installed (if it requires installation).",
+            "type": "DateTime"
+        },
+        "dateFirstUsed": {
+            "descr": "A timestamp which denotes when the device was first used.",
+            "type": "DateTime"
+        },
+        "dateManufactured": {
+            "descr": "A timestamp which denotes when the device was manufactured.",
+            "type": "DateTime"
+        },
+        "hardwareVersion": {
+            "descr": "The hardware version of this device.",
+            "type": "Text"
+        },
+        "hardwareVersion": {
+            "descr": "The software version of this device.",
+            "type": "Text"
+        },
+        "firmwareVersion": {
+            "descr": "The firmware version of this device.",
+            "type": "Text"
+        },
+        "osVersion": {
+            "descr": "The version of the host operating system device.",
+            "type": "Text"
+        },
+        "dateLastCalibration": {
+            "descr": "A timestamp which denotes when the last calibration of the device happened.",
+            "type": "DateTime"
+        },
+        "serialNumber":{
+            "descr": "The serial number assigned by the manufacturer.",
+            "type": "serialNumber",
+            "allowedvalues": {
+                "normative": "https://schema.org/serialNumber"
+            }
+        },
+        "provider": {
+            "descr": "The provider of the device.",
+            "type": "provider",
+            "allowedvalues": {
+                "normative": "https://schema.org/provider"
+            }
+        },
+        "refDeviceModel": {
+            "descr": "The device's model.",
+            "type": "Text",
+            "allowedvalues": {
+                "from": "/Device/DeviceModel/schema.json",
+                "attribute": "id"
+            }
+        },
+        "batteryLevel": {
+            "descr": "Device's battery level. It must be equal to 1.0 when battery is full. 0.0 when battery ìs empty. null when cannot be determined.",
+            "type": "Number",
+            "allowedvalues": {
+                "interval": [0.0, 1.0]
+            },
+            "metadata": {
                 "descr": "Timestamp when the last update of the attribute happened. This value can also appear as a FIWARE TimeInstant",
-                "type": "DateTime"
+                "timestamp": {
+                    "type": "DateTime"
+                }
             }
+        },
+        "deviceState": {
+            "descr": "State of this device from an operational point of view. Its value can be vendor dependent.",
+            "type": "Text",
+            "metadata": {
+                "descr": "Timestamp when the last update of the attribute happened. This value can also appear as a FIWARE TimeInstant",
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            }
+        },
+        "dateLastValueReported": {
+            "descr": "A timestamp which denotes the last time when the device successfully reported data to the cloud.",
+            "type": "DateTime"
+        },
+        "value": {
+            "descr": "A observed or reported value. For actuator devices, it is an attribute that allows a controlling application to change the actuation setting. For instance, a switch device which is currently on can report a value \"on\"of type Text. Obviously, in order to toggle the referred switch, this attribute value will have to be changed to \"off\".",
+            "type": ["Text", "QuantitativeValue"],
+            "metadata": {
+                "timestamp": {
+                    "descr": "Timestamp when the last update of the attribute happened. This value can also appear as a FIWARE TimeInstant",
+                    "type": "DateTime"
+                }
+            }
+        },
+        "dateModified": {
+            "descr": "Last update timestamp of this entity.",
+            "type": "DateTime"
+        },
+        "dateCreated": {
+            "descr": "Entity's creation timestamp.",
+            "type": "DateTime"
         }
-    },
-    "dateModified": {
-        "descr": "Last update timestamp of this entity.",
-        "type": "DateTime"
-    },
-    "dateCreated": {
-        "descr": "Entity's creation timestamp.",
-        "type": "DateTime"
     }
 }
