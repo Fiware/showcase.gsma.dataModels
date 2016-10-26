@@ -1,0 +1,100 @@
+{
+    "id": {
+        "descr": "Unique identifier.",
+        "type": "Text",
+        "mandatory": true
+    },
+    "type": {
+        "descr": "Entity type. It must be equal to DeviceModel.",
+        "type": "Text",
+        "allowedvalues": "DeviceModel",
+        "mandatory": true
+    },
+    "category": {
+        "descr": "Device's category(ies).",
+        "type": "TextList",
+        "allowedvalues": ["sensor","actuator","meter","HVAC","network","multimedia"],
+        "normative": "https://w3id.org/saref",
+        "mandatory": true
+    },
+    "controlledProperty": {
+        "descr": "Anything that can be sensed, measured or controlled by.",
+        "type": "TextList",
+        "allowedvalues": ["temperature", "humidity", "light", "motion", "fillingLevel", "occupancy", "power", "pressure", "smoke", "energy", "airPollution", "noiseLevel", "weatherConditions", "precipitation", "windSpeed", "windDirection", "barometricPressure", "solarRadiation", "depth", "pH", "pressure", "conductivity", "conductance", "tss", "tds", "turbidity", "salinity", "orp", "cdom", "waterPollution", "location", "speed", "heading", "weight", "waterConsumption", "gasComsumption", "electricityConsumption"],
+        "mandatory": true
+    },
+    "function": {
+        "descr": "The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function. Defined by SAREF.",
+        "type": "TextList",
+        "allowedvalues":["levelControl", "sensing", "onOff", "openClose", "metering",   "eventNotification"]
+    },
+    "supportedProtocol": {
+        "descr": "Supported protocol(s) or networks.",
+        "type": "TextList",
+        "allowedvalues":["ul20", "mqtt", "lwm2m", "http", "websocket", "onem2m", "sigfox", "lora", "nb-iot", "ec-gsm-iot", "lte-m", "cat-m", "3g", "grps"]
+    },
+    "supportedUnits": {
+        "descr": "Units of measurement supported by the device.",
+        "type": "TextList",
+        "allowedvalues": {
+            "normative": "http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes"
+        }
+    },
+    "brandName": {
+        "descr": "Device's brand name.",
+        "type": "Text",
+        "allowedvalues": {
+            "normative": "https://schema.org/brand"
+        }
+    },
+    "modelName": {
+        "descr": "Device's model name.",
+        "type": "Text",
+        "allowedvalues": {
+            "normative": "https://schema.org/model"
+        }
+    },
+    "manufacturerName": {
+        "descr": "Device's manufacturer name.",
+        "type": "Text",
+        "allowedvalues": {
+            "normative": "https://schema.org/model"
+        }
+    },
+    "name": {
+        "descr": "Name given to this device model.",
+        "type": "name",
+        "allowedvalues": {
+            "normative": "https://schema.org/name"
+        }
+    },
+    "description": {
+        "descr": "Device's description",
+        "type": "description",
+        "allowedvalues": {
+            "normative": "https://schema.org/description"
+        }
+    },
+    "description": {
+        "descr": "A link to device's documentation.",
+        "type": "URL",
+        "allowedvalues": {
+            "normative": "https://schema.org/URL"
+        }
+    },
+    "image":{
+        "descr": "A link to an image depicting the concerned device.",
+        "type": "URL",
+        "allowedvalues": {
+            "normative": "https://schema.org/image"
+        }
+    },
+    "dateModified": {
+        "descr": "Last update timestamp of this entity.",
+        "type": "DateTime"
+    },
+    "dateCreated": {
+        "descr": "Entity's creation timestamp.",
+        "type": "DateTime"
+    }
+}
