@@ -1,5 +1,6 @@
 {
-    "namespace": "Vehicle/VehicleModel",
+    "namespace": "Vehicle",
+    "name": "VehicleModel",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",

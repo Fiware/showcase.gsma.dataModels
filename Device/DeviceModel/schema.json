@@ -1,5 +1,6 @@
 {
-    "namespace": "Device/DeviceModel",
+    "namespace": "Device",
+    "name": "DeviceModel",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",

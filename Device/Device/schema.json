@@ -1,5 +1,6 @@
 {
-    "namespace": "Environment/WaterQualityObserved",
+    "namespace": "Environment",
+    "name": "WaterQualityObserved",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",

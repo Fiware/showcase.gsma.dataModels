@@ -1,5 +1,6 @@
 {
-    "namespace": "Environment/WaterQualityObserved",
+    "namespace": "Environment",
+    "name": "WaterQualityObserved",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",
@@ -19,7 +20,11 @@
                 "normative": "https://tools.ietf.org/html/rfc7946"
             },
             "mandatory-if": [
-                {"attribute":"address", "rule":"equals", "value":"undefined"}
+                {
+                    "attribute": "address",
+                    "rule": "equals",
+                    "value": "undefined"
+                }
             ]
         },
         "address": {
@@ -29,7 +34,11 @@
                 "normative": "https://schema.org/address"
             },
             "mandatory-if": [
-                {"attribute":"location", "rule":"equals", "value":"undefined"}
+                {
+                    "attribute": "location",
+                    "rule": "equals",
+                    "value": "undefined"
+                }
             ]
         },
         "temperature": {

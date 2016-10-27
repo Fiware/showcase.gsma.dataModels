@@ -1,5 +1,6 @@
 {
-    "namespace": "Vehicle/Vehicle",
+    "namespace": "Vehicle",
+    "name": "Vehicle",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",
@@ -39,7 +40,7 @@
             "type": "TextList",
             "mandatory": true,
             "allowedvalues": {
-                "values" :["public", "private", "municipalServices", "specialUsage", "tracked", "nonTracked", "*"]
+                "values": ["public", "private", "municipalServices", "specialUsage", "tracked", "nonTracked", "*"]
             }
         },
         "location": {
@@ -213,7 +214,7 @@
             "descr": "Higher level area served by this vehicle. It can be used to group vehicles per responsible, district, neighbourhood, etc.",
             "type": "Text"
         },
-        "serviceStatus":{
+        "serviceStatus": {
             "descr": "Vehicle status (from the point of view of the service provided, so it could not apply to private vehicles).",
             "type": "Text",
             "allowedvalues": {
