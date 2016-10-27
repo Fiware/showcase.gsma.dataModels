@@ -237,6 +237,7 @@
             }
         },
         "dateModified": {
+            "descr": "Last update timestamp of this entity.",
             "type": "DateTime"
         }
     }

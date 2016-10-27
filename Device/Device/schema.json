@@ -1,6 +1,6 @@
 {
-    "namespace": "Environment",
-    "name": "WaterQualityObserved",
+    "namespace": "Device",
+    "name": "Device",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",
