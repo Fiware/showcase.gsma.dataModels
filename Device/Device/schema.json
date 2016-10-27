@@ -1,6 +1,5 @@
 {
-    "domain": "Device",
-    "name": "Device",
+    "namespace": "Environment/WaterQualityObserved",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",
@@ -128,7 +127,7 @@
             "descr": "A timestamp which denotes when the last calibration of the device happened.",
             "type": "DateTime"
         },
-        "serialNumber":{
+        "serialNumber": {
             "descr": "The serial number assigned by the manufacturer.",
             "type": "serialNumber",
             "allowedvalues": {

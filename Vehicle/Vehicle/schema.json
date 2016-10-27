@@ -1,0 +1,243 @@
+{
+    "domain": "Vehicle",
+    "name": "Vehicle",
+    "attributes": {
+        "id": {
+            "descr": "Unique identifier.",
+            "type": "Text",
+            "mandatory": true
+        },
+        "type": {
+            "descr": "Entity type. It must be equal to Device.",
+            "type": "Text",
+            "allowedvalues": "Vehicle",
+            "mandatory": true
+        },
+        "name": {
+            "descr": "Name given to this vehicle.",
+            "type": "name",
+            "allowedvalues": {
+                "normative": "https://schema.org/name"
+            }
+        },
+        "description": {
+            "descr": "Vehicle's description.",
+            "type": "description",
+            "allowedvalues": {
+                "normative": "https://schema.org/description"
+            }
+        },
+        "vehicleType": {
+            "descr": "Type of vehicle from the point of view of its structural characteristics. This is different than the vehicle category",
+            "type": "Text",
+            "allowedvalues": {
+                "values": ["agriculturalVehicle", "bicycle", "bus", "minibus", "car", "caravan", "tram", "tanker", "carWithCaravan", "carWithTrailer", "lorry", "moped", "tanker", "motorcycle", "motorcycleWithSideCar", "motorscooter", "trailer", "van", "caravan", "constructionOrMaintenanceVehicle", "trolley", "binTrolley", "sweepingMachine", "cleaningTrolley"]
+            },
+            "mandatory": true
+        },
+        "category": {
+            "descr": "Vehicle category(ies) from an external point of view. This is different than the vehicle type (car, lorry, etc.) represented by the vehicleType property.",
+            "type": "TextList",
+            "mandatory": true,
+            "allowedvalues": {
+                "values" :["public", "private", "municipalServices", "specialUsage", "tracked", "nonTracked", "*"]
+            }
+        },
+        "location": {
+            "descr": "Vehicle's last known location represented by a GeoJSON Point. Such point may contain the vehicle's altitude as the third component of the coordinates array.",
+            "type": "geo:json",
+            "allowedvalues": {
+                "normative": "https://tools.ietf.org/html/rfc7946"
+            },
+            "metadata": {
+                "timestamp": {
+                    "descr": "Timestamp which captures when the vehicle was at that location. This value can also appear as a FIWARE TimeInstant",
+                    "type": "DateTime",
+                    "mandatory": true
+                }
+            },
+            "mandatory-if": [
+                {
+                    "attribute": "category",
+                    "rule": "contains",
+                    "value": ["tracked"]
+                }
+            ]
+        },
+        "previousLocation": {
+            "descr": "Vehicle's previous location represented by a GeoJSON Point. Such point may contain the previous vehicle's altitude as the third component of thecoordinates array.",
+            "type": "geo:json",
+            "allowedvalues": {
+                "normative": "https://tools.ietf.org/html/rfc7946"
+            },
+            "metadata": {
+                "timestamp": {
+                    "descr": "Timestamp which captures when the vehicle was at that location. This value can also appear as a FIWARE TimeInstant",
+                    "type": "DateTime",
+                    "mandatory": true
+                }
+            }
+        },
+        "speed": {
+            "descr": "Denotes the magnitude of the horizontal component of the vehicle's current velocity and is specified in Kilometers per Hour. If provided, the value of the speed attribute must be a non-negative real number. null MAY be used if speed is transiently unknown for some reason.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "descr": "Timestamp which captures when the vehicle was at that location. This value can also appear as a FIWARE TimeInstant",
+                    "type": "DateTime",
+                    "mandatory": true
+                }
+            },
+            "unit": {
+                "symbol": "km/h",
+                "descr": "Kilometers per hour"
+            },
+            "mandatory-if": [
+                {
+                    "attribute": "category",
+                    "rule": "contains",
+                    "value": ["tracked"]
+                }
+            ]
+        },
+        "azimuth": {
+            "descr": "Denotes the magnitude of the horizontal component of the vehicle's current velocity and is specified in Kilometers per Hour. If provided, the value of the speed attribute must be a non-negative real number. null MAY be used if speed is transiently unknown for some reason.",
+            "type": "Number",
+            "mandatory-if": [
+                {
+                    "attribute": "category",
+                    "rule": "contains",
+                    "value": ["tracked"]
+                }
+            ]
+        },
+        "cargoWeight": {
+            "descr": "Current weight of the vehicle's cargo.",
+            "type": "Number",
+            "unit": {
+                "symbol": "kg",
+                "descr": "Kilograms"
+            }
+        },
+        "vehicleIdentificationNumber": {
+            "descr": "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/vehicleIdentificationNumber"
+            },
+            "mandatory-if": [
+                {
+                    "attribute": "vehiclePlateIdentifier",
+                    "rule": "equals",
+                    "value": "undefined"
+                }
+            ]
+        },
+        "vehiclePlateIdentifier": {
+            "descr": "An identifier or code displayed on a vehicle registration plate attached to the vehicle used for official identification purposes. The registration identifier is numeric or alphanumeric and is unique within the issuing authority's region.",
+            "type": "Text",
+            "mandatory-if": [
+                {
+                    "attribute": "vehicleIdentificationNumber",
+                    "rule": "equals",
+                    "value": "undefined"
+                }
+            ]
+        },
+        "dateFirstUsed": {
+            "descr": "Timestamp which denotes when the vehicle was first used.",
+            "type": "DateTime"
+        },
+        "purchaseDate": {
+            "descr": "The date the item e.g. vehicle was purchased by the current owner.",
+            "type": "Date",
+            "allowedvalues": {
+                "normative": "https://schema.org/purchaseDate"
+            }
+        },
+        "mileageFromOdometer": {
+            "descr": "The total distance travelled by the particular vehicle since its initial production, as read from its odometer.",
+            "type": "Number",
+            "allowedvalues": {
+                "normative": "https://schema.org/mileageFromOdometer"
+            }
+        },
+        "vehicleConfiguration": {
+            "descr": "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/vehicleConfiguration"
+            }
+        },
+        "color": {
+            "descr": "Vehicle's color.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/color"
+            }
+        },
+        "owner": {
+            "descr": "Vehicle's owner.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": ["https://schema.org/Person", "https://schema.org/Organization"]
+            }
+        },
+        "feature": {
+            "descr": "Service(s) the vehicle is capable of providing or it is assigned to.",
+            "type": "TextList",
+            "allowedvalues": ["gps", "airbag", "overspeed", "abs", "wifi", "backCamera", "proximitySensor", "disabledRamp", "alarm", "internetConnection"],
+            "obs": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
+        },
+        "serviceProvided": {
+            "descr": "Feature(s) incorporated by the vehicle.",
+            "type": "TextList",
+            "allowedvalues": {
+                "values": ["garbageCollection, parksAndGardens, construction, streetLighting, roadSignalling, cargoTransport, urbanTransit, maintenance, streetCleaning, wasteContainerCleaning, auxiliaryServices goodsSelling, fairground, specialTransport", "*"]
+            },
+            "obs": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
+        },
+        "vehicleSpecialUsage": {
+            "descr": "Feature(s) incorporated by the vehicle.",
+            "type": "TextList",
+            "allowedvalues": {
+                "values": ["taxi", "ambulance", "police", "fireBrigade", "schoolTransportation", "military", "*"],
+                "normative": "https://auto.schema.org/vehicleSpecialUsage"
+            },
+            "obs": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
+        },
+        "refVehicleModel": {
+            "allowedvalues": {
+                "from": "/Vehicle/VehicleModel/schema.json",
+                "attribute": "id"
+            }
+        },
+        "areaServed": {
+            "descr": "Higher level area served by this vehicle. It can be used to group vehicles per responsible, district, neighbourhood, etc.",
+            "type": "Text"
+        },
+        "serviceStatus":{
+            "descr": "Vehicle status (from the point of view of the service provided, so it could not apply to private vehicles).",
+            "type": "Text",
+            "allowedvalues": {
+                "values": ["parked", "onRoute", "broken", "outOfService", "schoolTransportation", "military", "*"],
+                "normative": "https://auto.schema.org/vehicleSpecialUsage"
+            },
+            "metadata": {
+                "timestamp": {
+                    "descr": "Timestamp which captures when the vehicle was at that location. This value can also appear as a FIWARE TimeInstant",
+                    "type": "DateTime",
+                    "mandatory": true
+                }
+            }
+        },
+        "dateModified": {
+            "descr": "Last update timestamp of this entity.",
+            "type": "DateTime"
+        },
+        "dateCreated": {
+            "descr": "Entity's creation timestamp.",
+            "type": "DateTime"
+        }
+    }
+}
