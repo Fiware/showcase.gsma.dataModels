@@ -1,0 +1,158 @@
+{
+    "namespace": "Vehicle/Vehicle",
+    "attributes": {
+        "id": {
+            "descr": "Unique identifier.",
+            "type": "Text",
+            "mandatory": true
+        },
+        "type": {
+            "descr": "Entity type. It must be equal to Device.",
+            "type": "Text",
+            "allowedvalues": "Vehicle",
+            "mandatory": true
+        },
+        "name": {
+            "descr": "Name given to this vehicle.",
+            "type": "name",
+            "allowedvalues": {
+                "normative": "https://schema.org/name"
+            }
+        },
+        "description": {
+            "descr": "Vehicle's description.",
+            "type": "description",
+            "allowedvalues": {
+                "normative": "https://schema.org/description"
+            }
+        },
+        "vehicleType": {
+            "descr": "Type of vehicle from the point of view of its structural characteristics.",
+            "type": "Text",
+            "allowedvalues": {
+                "values": ["agriculturalVehicle", "bicycle", "bus", "minibus", "car", "caravan", "tram", "tanker", "carWithCaravan", "carWithTrailer", "lorry", "moped", "tanker", "motorcycle", "motorcycleWithSideCar", "motorscooter", "trailer", "van", "caravan", "constructionOrMaintenanceVehicle", "trolley", "binTrolley", "sweepingMachine", "cleaningTrolley"]
+            },
+            "mandatory": true
+        },
+        "brandName": {
+            "descr": "Vehicle's brand name.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/brand"
+            },
+            "mandatory": true
+        },
+        "modelName": {
+            "descr": "Vehicle's model name.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/model"
+            },
+            "mandatory": true
+        },
+        "manufacturerName": {
+            "descr": "Vehicle's manufacturer name.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/model"
+            },
+            "mandatory": true
+        },
+        "vehicleModelDate": {
+            "descr": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+            "type": "Date",
+            "allowedvalues": {
+                "normative": "https://schema.org/vehicleModelDate"
+            }
+        },
+        "cargoVolume": {
+            "descr": "The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.",
+            "type": "Number",
+            "allowedvalues": {
+                "normative": "https://schema.org/cargoVolume"
+            },
+            "unit": {
+                "symbol": "L",
+                "descr": "Liters"
+            },
+            "note": "If only a single value is provided (type Number) it will refer to the maximum volume."
+        },
+        "fuelType": {
+            "descr": "The type of fuel suitable for the engine or engines of the vehicle.",
+            "type": "Text",
+            "allowedvalues": {
+                "values": ["gasoline", "petrol(unleaded)", "petrol(leaded)", "petrol", "diesel", "electric", "hydrogen", "lpg", "autogas", "cng", "biodiesel", "ethanol", "hybrid electric/petrol", "hybrid electric/diesel", "other"],
+                "normative": "https://schema.org/fuelType"
+            }
+        },
+        "fuelConsumption": {
+            "descr": "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).",
+            "type": "Number",
+            "allowedvalues": {
+                "normative": "https://schema.org/fuelConsumption"
+            },
+            "unit": {
+                "symbol": "L/100 km",
+                "descr": "liters per 100 kilometer"
+            }
+        },
+        "height": {
+            "descr": "Vehicle's height",
+            "type": "Number",
+            "allowedvalues": {
+                "normative": "https://schema.org/height"
+            }
+        },
+        "width": {
+            "descr": "Vehicle's width.",
+            "type": "Number",
+            "allowedvalues": {
+                "normative": "https://schema.org/width"
+            }
+        },
+        "depth": {
+            "descr": "Vehicle's depth.",
+            "type": "Number",
+            "allowedvalues": {
+                "normative": "https://schema.org/depth"
+            }
+        },
+        "weight": {
+            "descr": "Vehicle's weight.",
+            "type": "",
+            "allowedvalues": {
+                "normative": "https://schema.org/weight"
+            }
+        },
+        "vehicleEngine": {
+            "descr": "Information about the engine or engines of the vehicle.",
+            "type": "",
+            "allowedvalues": {
+                "normative": "https://schema.org/vehicleEngine"
+            },
+            "note": "This property could be at vehicle level as well."
+        },
+        "url": {
+            "descr": "URL which provides a description of this vehicle model.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/url"
+            }
+        },
+        "image": {
+            "descr": " Image which depicts this vehicle model.",
+            "type": "Text",
+            "allowedvalues": {
+                "normative": "https://schema.org/image"
+            }
+        },
+        "dateModified": {
+            "descr": "Last update timestamp of this entity.",
+            "type": "DateTime"
+        },
+        "dateCreated": {
+            "descr": "Entity's creation timestamp.",
+            "type": "DateTime"
+        }
+    }
+}

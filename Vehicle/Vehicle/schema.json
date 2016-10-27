@@ -1,6 +1,5 @@
 {
-    "domain": "Vehicle",
-    "name": "Vehicle",
+    "namespace": "Vehicle/Vehicle",
     "attributes": {
         "id": {
             "descr": "Unique identifier.",
@@ -187,15 +186,14 @@
             "descr": "Service(s) the vehicle is capable of providing or it is assigned to.",
             "type": "TextList",
             "allowedvalues": ["gps", "airbag", "overspeed", "abs", "wifi", "backCamera", "proximitySensor", "disabledRamp", "alarm", "internetConnection"],
-            "obs": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
+            "note": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
         },
         "serviceProvided": {
             "descr": "Feature(s) incorporated by the vehicle.",
             "type": "TextList",
             "allowedvalues": {
                 "values": ["garbageCollection, parksAndGardens, construction, streetLighting, roadSignalling, cargoTransport, urbanTransit, maintenance, streetCleaning, wasteContainerCleaning, auxiliaryServices goodsSelling, fairground, specialTransport", "*"]
-            },
-            "obs": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
+            }
         },
         "vehicleSpecialUsage": {
             "descr": "Feature(s) incorporated by the vehicle.",
@@ -203,8 +201,7 @@
             "allowedvalues": {
                 "values": ["taxi", "ambulance", "police", "fireBrigade", "schoolTransportation", "military", "*"],
                 "normative": "https://auto.schema.org/vehicleSpecialUsage"
-            },
-            "obs": "In order to represent multiple instances of a feature it can be used the following syntax: \"<feature>,<occurences>\". For example, a car with 4 airbags will be represented by \"airbag,4\""
+            }
         },
         "refVehicleModel": {
             "allowedvalues": {
