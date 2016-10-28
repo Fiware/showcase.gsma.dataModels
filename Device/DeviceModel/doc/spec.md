@@ -53,6 +53,12 @@ This entity captures the static properties of a Device.
     + Allowed values: The unit code (text) of measurement given using the
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
     + Optional
+    
++ `energyLimitationClass` : Device's class of energy limitation as per RFC 7228.
+    + Attribute type: [Text](https://schema.org/Text)
+    + Normative References: [RFC7228] (https://tools.ietf.org/html/rfc7228#page-11)
+    + Allowed values: (`E0`, `E1`, `E2`, `E9`)
+    + Optional
 
 + `brandName` : Device's brand name.
     + Attribute type: [Text](https://schema.org/Text)
