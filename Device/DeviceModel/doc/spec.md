@@ -26,6 +26,13 @@ This entity captures the static properties of a Device.
         + `multimedia` : A device designed to display, store, record or play multimedia content such as audio, images, animation, video.
            [https://w3id.org/saref#Multimedia](https://w3id.org/saref#Multimedia)
     + Mandatory
+    
++ `deviceClass` : Class of constrained device as specified by RFC 7228.
+If the device is not a constrained device this property can be left as `null` or undefined. 
+    + Attribute type: [Text](https://schema.org/Text)
+    + Normative References: [RFC7228] (https://tools.ietf.org/html/rfc7228#section-3)
+    + Allowed values: (`C0`, `C1`, `C2`)
+    + Optional
 
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: List of [Text](https://schema.org/Text)
