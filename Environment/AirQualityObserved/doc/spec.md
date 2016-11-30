@@ -184,6 +184,13 @@ Below is a list of typical weather observed parameters which may be included inl
     
 ## Use it with a real service
 
+To get access to a public instance offering air quality observed data please have a look at the [GSMA's API Directory](http://apidirectory.connectedliving.gsma.com/api/air-quality-spain). 
+
+The instance described [here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing) has been set up by the FIWARE Community.
+
+
+```curl -S -H 'fiware-service:airquality' -H 'fiware-servicepath:/Spain_Madrid' -H 'x-auth-token:<my_token>' "http://130.206.118.244:1027/v2/entities?options=keyValues&q=dateObserved:2016-11-28T12:00;stationCode:'28079004'"```
+
 ## Open Issues
 
 * Should `measurand` be an `StructuredValue` instead of an array? 
