@@ -88,7 +88,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + See [WeatherObserved.windSpeed](../../WeatherObserved/doc/spec.md) for description and units.
     + Optional
  
- + `dayMinimum` : Minimum values forecasted for the reported period.
++ `dayMinimum` : Minimum values forecasted for the reported period.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
     + Subattributes:
         + `temperature` : Minimum temperature. Same semantics and units as `WeatherForecast.temperature`.
@@ -96,13 +96,18 @@ This data model has been developed in cooperation with mobile operators and the 
         + `relativeHumidity`. Minimum relative humidity. Same semantics and units as `WeatherForecast.relativeHumidity`.
     + Optional
  
- + `dayMaximum` : Maximum values for the reported period.
++ `dayMaximum` : Maximum values for the reported period.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
     + Subattributes:
         + `temperature` : Maximum temperature. See `WeatherForecast.temperature` for description and units.
         + `feelLikesTemperature`. Maximum feels like temperature. Same semantics and units as `WeatherForecast.feelsLikeTemperature`.
         + `relativeHumidity`. Maximum relative humidity. Same semantics and units as `WeatherForecast.relativeHumidity`.
-      
+ 
++ `uVIndexMax` : The maximum UV index for the period, based on the World Health Organization's UV Index measure-
+    + Attribute type: [Number](https://schema.org/Number)
+    + Optional
+
+
 ## Examples of use
 
 ```
@@ -111,12 +116,12 @@ This data model has been developed in cooperation with mobile operators and the 
     
 ## Use it with a real service
 
-To get access to a public instance offering weather observed data please have a look at the [GSMA's API Directory](http://apidirectory.connectedliving.gsma.com/api/weather-spain). 
+To get access to a public instance offering weather forecast data please have a look at the [GSMA's API Directory](http://apidirectory.connectedliving.gsma.com/api/weather-spain). 
 
-The instance described [here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing) has been set up by the FIWARE Community.
+The instance described [here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing) has been set up by the FIWARE Community and Telefónica.
 
 What is the weather forecast today in Valladolid (Spain)?
 
-```curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>' "http://130.206.118.244:1027/v2/entities?type=WeatherObserved&q=dateObserved:2016-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"```
+```curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>' "http://130.206.118.244:1027/v2/entities?type=WeatherForecast&q=dateObserved:2016-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"```
 
 ## Open Issues
