@@ -52,7 +52,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: one Of (`clearNight`,`sunnyDay`, `partlyCloudy`, `mist`, `fog`, `cloudy`, `overcast`, `lightRainShower`, `drizzle`,
                               `lightRain`, `heavyRainShower`, `heavyRain`, `sleetShower`, `sleet`, `hailShower`, `hail`, `lightSnow`,
-                                `shower`, `lightSnow, `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`)
+                                `shower`, `lightSnow`, `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`)
     + Optional
     
 + `dewPoint` : The dew point encoded as a number.
