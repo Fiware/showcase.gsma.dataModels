@@ -50,7 +50,7 @@ This data model has been developed in cooperation with mobile operators and the 
     
 + `weatherType` : The observed weather type.
     + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: One Of (`clearNight`,`sunnyDay`, `partlyCloudy`, `mist`, `fog`, `cloudy`, `overcast`, `lightRainShower`, `drizzle`,
+    + Allowed values: One of (`clearNight`,`sunnyDay`, `partlyCloudy`, `mist`, `fog`, `cloudy`, `overcast`, `lightRainShower`, `drizzle`,
                               `lightRain`, `heavyRainShower`, `heavyRain`, `sleetShower`, `sleet`, `hailShower`, `hail`, `lightSnow`,
                                 `shower`, `lightSnow`, `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`)
     + Optional
@@ -63,7 +63,7 @@ This data model has been developed in cooperation with mobile operators and the 
     
 + `visibility` : Visibility reported. 
     + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: One Of (`veryPoor`, `poor`, `moderate`, `good`, `veryGood`, `excellent`)
+    + Allowed values: One of (`veryPoor`, `poor`, `moderate`, `good`, `veryGood`, `excellent`)
     + Optional
 
 + `temperature` : Air's temperature observed.
