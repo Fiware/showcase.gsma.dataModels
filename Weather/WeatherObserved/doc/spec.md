@@ -98,9 +98,9 @@ This data model has been developed in cooperation with mobile operators and the 
         by the `dateObserved` attribute at entity level.
     + Optional 
 
-+ `windSpeed` : The observed wind speed in Km/h, encoded as a Number.
++ `windSpeed` : The observed wind speed in m/s, encoded as a Number.
     + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kilometers per hour
+    + Default unit: meters per second
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
@@ -172,7 +172,9 @@ The instance described [here](https://docs.google.com/document/d/1lHP7XS-7TNzsxL
 
 What was the weather observed today at 07:00 UTC in Valladolid (Spain)?
 
-```curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>' "http://130.206.118.244:1027/v2/entities?type=WeatherObserved&q=dateObserved:2016-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"```
+```curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>'
+"http://130.206.118.244:1027/v2/entities?type=WeatherObserved
+&q=dateObserved:2016-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"```
 
 ## Open Issues
 
