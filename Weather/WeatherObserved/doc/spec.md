@@ -48,11 +48,12 @@ This data model has been developed in cooperation with mobile operators and the 
     + Attribute type: Reference to an entity of type `PointOfInterest`
     + Optional
     
-+ `weatherType` : The observed weather type.
++ `weatherType` : The observed weather type. It is represented by a comma separated list of weather statuses, for instance `overcast, lightRain`. A proposed
+mapping for Spanish terms can be found [here](https://github.com/Fiware/dataModels/blob/master/Weather/WeatherForecast/spain_weather_forecast_harvest.py#L135). 
     + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: One of (`clearNight`,`sunnyDay`, `partlyCloudy`, `mist`, `fog`, `cloudy`, `overcast`, `lightRainShower`, `drizzle`,
-                              `lightRain`, `heavyRainShower`, `heavyRain`, `sleetShower`, `sleet`, `hailShower`, `hail`, `lightSnow`,
-                                `shower`, `lightSnow`, `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`)
+    + Allowed values: A combination of (`clearNight`,`sunnyDay`, `slightlyCloudy`, `partlyCloudy`, `mist`, `fog`, `highClouds`, `cloudy`, `veryCloudy`,
+        `overcast`, `lightRainShower`, `drizzle`, `lightRain`, `heavyRainShower`, `heavyRain`, `sleetShower`, `sleet`,
+        `hailShower`, `hail`, `shower`, `lightSnow`, `snow`, `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`) or any other extended value. 
     + Optional
     
 + `dewPoint` : The dew point encoded as a number.

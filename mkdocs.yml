@@ -49,6 +49,7 @@ pages:
       - 'Vehicle'              : 'Vehicle/Vehicle/doc/spec.md'
       - 'VehicleModel'         : 'Vehicle/VehicleModel/doc/spec.md'
   -  'Weather':
+      - 'Introduction'         : 'Weather/doc/introduction.md'
       - 'WeatherObserved'      : 'Weather/WeatherObserved/doc/spec.md'
       - 'WeatherForecast'      : 'Weather/WeatherForecast/doc/spec.md'
       - 'WeatherAlarm'         : 'Weather/WeatherAlarm/doc/spec.md'
