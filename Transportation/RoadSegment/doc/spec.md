@@ -53,7 +53,7 @@ This data model has been developed in cooperation with mobile operators and the 
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory
     
-+ `startPoint` : THe start point of this road segment encoded as a GeoJSON point. 
++ `startPoint` : The start point of this road segment encoded as a GeoJSON point. 
     + Attribute type: `geo:json`
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory
