@@ -1,0 +1,13 @@
+{
+    "id": "question",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Word or set of words that represent a particular question related to health.",
+	"type": "string",
+
+    "references": [ 
+		{
+            "description": "Sentence given as an answer to fulfill a form.",
+            "url": "Pending to be included."
+        }
+    ]
+}

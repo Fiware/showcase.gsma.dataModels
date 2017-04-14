@@ -1,0 +1,49 @@
+{
+    "id": "distance-unit",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents distance",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "The SNOMED code represents distance (qualifier value).",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/246132006"
+        }
+    ],
+
+    "allOf": [
+        {
+            "$ref": "unit-value-1.x.json"
+        },
+        {
+            "properties": {
+                "unit": {
+                    "references": [
+                        {
+                            "description": "The unit of measure of the element. Basic unit is millimeters (mm). Allowed values are drawn from the SI Length Units (non-UCUM).",
+                            "url": "http://download.hl7.de/documents/ucum/ucumdata.html"
+                        },
+                        {
+                            "description": "The SNOMED code represents MilliMeter per seconds.",
+                            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/258993000"
+                        },
+                        {
+                            "description": "The SNOMED code represents CentiMeter per seconds.",
+                            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/258990002"
+                        },
+                        {
+                            "description": "The SNOMED code represents Meter per seconds.",
+                            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/258710007"
+                        }
+                    ],
+
+                    "enum": [
+                        "mm",
+                        "cm",
+                        "m"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+  	"id": "questionnaire",
+  	"$schema": "http://json-schema.org/draft-04/schema#",
+   	"description": "This schema represents a questionnaire filled from medical staff after supervising physical test.",
+   	"type": "object",
+
+	"references": [
+        {
+            "description": "Pending to be included.",
+            "url": "Pending to be included."
+        }
+    ],
+
+   	"definitions": {
+		"test_identificator": {
+	    	"$ref": "test-identificator-1.x.json"
+	  	},
+	  	"user_identificator": {
+	    	"$ref": "user-identificator-1.x.json"
+	  	},
+	  	"question_identificator": {
+	    	"$ref": "question-identificator-1.x.json"
+	  	},
+	  	"answer": {
+	    	"$ref": "answer-to-question-1.x.json"
+	  	},
+	  	"last_update": {
+	    	"$ref": "date-time-1.x.json"
+	  	}
+   	},
+
+   	"properties": {
+   		"testIdentificator": {
+	    	"$ref": "#/definitions/test_identificator"
+	  	},
+	  	"patientIdentificator": {
+	    	"$ref": "#/definitions/user_identificator"
+	  	},
+	  	"questionIdentificator": {
+	    	"$ref": "#/definitions/question_identificator"
+	  	},
+	  	"answer": {
+	    	"$ref": "#/definitions/answer_to_question"
+	  	},
+	  	"lastUpdate": {
+	    	"$ref": "#/definitions/date_time"
+	  	}
+   	},
+
+   "required": [
+   		"test",
+   		"userIdentificator",
+   		"questionIdentificator",
+   		"answer",
+   		"lastUpdate"
+   ]  
+}

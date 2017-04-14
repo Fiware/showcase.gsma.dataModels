@@ -1,0 +1,44 @@
+{
+    "id": "walk-speed",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents the average walking speed.",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "The SNOMED code represents the walking performance (observable entity).",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/129006008"
+        }
+    ],
+
+    "definitions": {
+        "duration_unit_value": {
+            "$ref": "duration-unit-value-1.x.json"
+        }
+    },
+
+    "properties": {
+        "walk_speed": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/duration_unit_value"
+                },
+                {
+                    "properties": {
+                        "unit": {
+                            "enum": [
+                                "sec",
+                                "min",
+                                "h"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    "required": [
+        "walk_speed"
+    ]
+}

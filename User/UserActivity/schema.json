@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "https://smartsdk.github.io/dataModels/User/UserActivity/schema.json",
+    "title": "FIWARE - User Activity schema",
+    "description": "Information on the current activity performed by an anonymized user in a given point in time",
+    "type": "object",
+    "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "refObject": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refActivityType": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refTarget": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refActor": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "type": {
+          "type": "string",
+            "enum": [
+              "UserActivity"
+            ],
+          "description": "NGSI Entity type"
+        }
+      }
+    }],
+    "required": [
+        "refActivityType",
+        "refActor",
+        "description",
+        "type",
+        "id"
+    ]
+}

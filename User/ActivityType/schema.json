@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "https://smartsdk.github.io/dataModels/User/ActivityType/schema.json",
+    "title": "FIWARE - Activity schema",
+    "description": "Define activity types",
+    "type": "object",
+    "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+            "enum": [
+              "ActivityType"
+            ],
+          "description": "NGSI Entity type"
+        }
+      }
+    }],
+    "required": [
+        "description",
+        "type",
+        "id"
+    ]
+}

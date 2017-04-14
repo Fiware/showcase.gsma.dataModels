@@ -1,0 +1,57 @@
+{  
+   "id": "patient",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "description": "This schema represents demographic data to identify patients.",
+   "type": "object",
+
+	"references": [
+        {
+            "description": "Pending to be included.",
+            "url": "Pending to be included."
+        }
+    ],
+
+   "definitions": {
+	   "user_identification": {  
+	      "$ref": "user_identification-1.x.json"
+	   },
+	   "gender": {  
+	      "$ref": "gender-1.x.json"
+	   },
+	   "birthday": {  
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+	   },
+	   "created": {  
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+	   },
+	   "last_update": {  
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+	   }
+   },
+
+   "properties": {
+	   "userIdentification": {  
+	      "$ref": "#/definitions/user_identification"
+	   },
+	   "gender": {  
+	      "$ref": "#/definitions/gender"
+	   },
+	   "birthday": {  
+	      "$ref": "#/definitions/birthday"
+	   },
+	   "created": {  
+	      "$ref": "#/definitions/date_time"
+	   },
+	   "lastUpdate": {  
+	      "$ref": "#/definitions/date_time"
+	   }
+   },
+
+   "required": [
+   		"userIdentification",
+   		"gender",
+   		"birthday",
+   		"created",
+   		"lastUpdate"
+   ]  
+}

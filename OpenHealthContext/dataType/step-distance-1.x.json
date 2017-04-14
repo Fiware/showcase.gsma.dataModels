@@ -1,0 +1,42 @@
+{
+    "id": "step-distance",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents the average distance in between two steps.",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "The SNOMED code represents distance (qualifier value)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/246132006"
+        }
+    ],
+
+    "definitions": {
+        "distanca_unit_value": {
+            "$ref": "distance-unit-value-1.x.json"
+        }
+    },
+
+    "properties": {
+        "step_distance": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/distance_unit_value"
+                },
+                {
+                    "properties": {
+                        "unit": {
+                            "enum": [
+                                "mm",
+                                "cm"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+
+    "required": [
+        "step_distance"
+    ]
+}

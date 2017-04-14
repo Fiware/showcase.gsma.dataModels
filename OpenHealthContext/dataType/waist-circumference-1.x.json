@@ -1,0 +1,41 @@
+{
+    "id": "waist-circumference",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents a person's waist circumference, either a single body weight measurement, or for the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures).",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "The SNOMED code represents Body weight measure (observable entity).",
+            "url": " http://purl.bioontology.org/ontology/SNOMEDCT/276361009"
+        }
+    ],
+
+    "definitions": {
+        "length_unit_value": {
+            "$ref": "length-unit-value-1.x.json"
+        },
+        "time_frame": {
+            "$ref": "time-frame-1.x.json"
+        },
+        "descriptive_statistic": {
+            "$ref": "descriptive-statistic-1.x.json"
+        }
+    },
+
+    "properties": {
+        "waist_circumference": {
+            "$ref": "#/definitions/length_unit_value"
+        },
+        "effective_time_frame": {
+            "$ref": "#/definitions/time_frame"
+        },
+        "descriptive_statistic": {
+            "$ref": "#/definitions/descriptive_statistic"
+        }
+    },
+
+    "required": [ 
+        "waist_circumference"
+    ]
+}

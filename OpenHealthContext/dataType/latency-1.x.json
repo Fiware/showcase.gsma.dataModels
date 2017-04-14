@@ -1,0 +1,43 @@
+{
+    "id": "latency",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents the average time in between two events.",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "The SNOMED code represents the gait function (observable entity).",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/63448001"
+        }
+    ],
+
+    "definitions": {
+        "duration_unit_value": {
+            "$ref": "duration-unit-value-1.x.json"
+        }
+    },
+
+    "properties": {
+        "step_latency": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/duration_unit_value"
+                },
+                {
+                    "properties": {
+                        "unit": {
+                            "enum": [
+                                "sec",
+                                "min"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    "required": [
+        "step_latency"
+    ]
+}

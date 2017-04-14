@@ -1,0 +1,30 @@
+{
+    "id": "test-type",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Physical test to measure risk of fall.",
+    "type": "string",
+
+    "references": [
+      {
+        "value": "Timed Up and Go",
+        "description": "Rehab Measures: Timed Up and Go",
+        "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/PrintView.aspx?ID=903"
+      },
+      {
+        "value": "30 second sit to stand test",
+        "description": "Rehab Measures: 30 second sit to stand test",
+        "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/DispForm.aspx?ID=1122"
+      },
+      {
+        "value": "4-Stage Balance Test",
+        "description": "Rehab Measures: 4-Stage Balance Test",
+        "url": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
+      }
+    ],
+
+    "enum": [
+      "Timed Up and Go",
+      "30 second sit to stand test",
+      "4-Stage Balance Test"
+    ]
+}

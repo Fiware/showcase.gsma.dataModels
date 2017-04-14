@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "https://smartsdk.github.io/dataModels/User/UserContext/schema.json",
+    "title": "FIWARE - User Context schema",
+    "description": "Information on the context of an anonymized in a given point in time",
+    "type": "object",
+    "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+    "properties": {
+        "refActivity": {
+                  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refDevice": {
+           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refUser": {
+           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "UserContext"
+          ],
+          "description": "NGSI Entity type"
+        }
+    }
+ }
+],
+    "required": [
+        "refUser",
+        "type",
+        "id"
+    ]
+}

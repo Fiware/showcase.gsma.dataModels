@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "https://smartsdk.github.io/dataModels/User/Notification/schema.json",
+    "title": "FIWARE - Notification schema",
+    "description": "Notifies an event observed by a user in a given location",
+    "type": "object",
+    "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "properties": {
+        "eventObserved": {
+          "oneOf": [
+            { "type": "string", "format": "date-time" },
+            { "type": "object",
+              "properties": {
+                "start": { "type": "string", "format": "date-time" },
+                "end": { "type": "string", "format": "date-time" }
+              }
+            }
+          ]
+        },
+        "severity": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+        },
+        "eventType": {
+          "type": "string",
+          "enum": [
+            "TrafficJam",
+            "DiseaseEpisode",
+            "CarAccident",
+            "ObservedWeather",
+            "SuspiciousEvent"
+          ]
+        },
+        "refEvent": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refUser": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "type": {
+          "type": "string",
+            "enum": [
+              "Notification"
+            ],
+          "description": "NGSI Entity type"
+        }
+      }
+    }],
+    "required": [
+        "eventObserved",
+        "refUser",
+        "description",
+        "type",
+        "id"
+    ]
+}

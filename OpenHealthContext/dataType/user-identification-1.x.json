@@ -1,0 +1,13 @@
+{
+    "id": "user-identification",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Unique value either created or provided from an entity to identify a single user.",
+    "type": "string",
+
+    "references": [
+        {
+            "description": "The SNOMED code represents an identifier (property).",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/118522005"
+        }
+    ]
+}

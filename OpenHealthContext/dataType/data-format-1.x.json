@@ -1,0 +1,24 @@
+{
+    "id": "data-format",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema defines data format used along the gathering process.",
+    "type": "string",
+
+    "references": [
+        {
+            "value": "csv",
+            "description": "A csv file encodes a number of record that may contain multiple fields separeated from each other by a comma character. Each record is located on a separate line, delimited by a line break (CRLF).",
+            "url": "https://tools.ietf.org/html/rfc4180"
+        },
+        {
+            "value": "tsv",
+            "description": "A tsv file encodes a number of records that may contain multiple fields. Each field value is represented as text which are separated from each other by a tab character.",
+            "url": "http://www.iana.org/assignments/media-types/text/tab-separated-values"
+        }
+    ],
+
+    "enum": [
+        "csv",
+        "tsv"
+    ]
+}
