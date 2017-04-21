@@ -4,7 +4,9 @@
 
 Smart Spots are devices which provide the technology to allow users to interact (suggestions mailbox, co-creation, …) or to obtain extra information (tourism, infotainment, …). The data model contains resources to configure the interaction service such as the broadcasted URL (probably will be a shortened url), the interval between broadcasts (frequency), the availability of the service, transmission power in function of the area to cover, etc.
 
-These resources (except the references to other entities) are mapped from a real device. For that reason, the changes in any of the values of this entity will modify the value in the real device.
+In addition to the presented data model, this entity inherits the Device data model. This means that by hierarchy, the SmartSpot entity is a child or specialization of a Device.
+
+These resources (except references to other entities) are mapped from a real device. For that reason, the changes in any of the values of this entity will modify the value in the real device.
 
 ## Data Model
 
@@ -12,7 +14,7 @@ These resources (except the references to other entities) are mapped from a real
 
 + `type` : Entity type. It must be equal to `SmartSpot`.
 
-+ `physicalURL` : Physical URL broadcasted by the device.
++ `announcedUrl` : URL broadcasted by the device.
     + Attribute type: [URL](https://schema.org/URL)
     + Mandatory    
 
@@ -32,7 +34,11 @@ These resources (except the references to other entities) are mapped from a real
 
 + `announcementInterval` : Interval in milliseconds between announcements.
     + Attribute Type: [Number](https://schema.org/Number)
-    + Optional      
+    + Optional     
+
++ `availability`: Specifies the time intervals in which the announcements will be sent.
+    + Attribute type: [openingHours](https://schema.org/openingHours)
+    + Optional 
 
 + `refSmartPointOfInteraction` : Reference to the Smart Point of Interaction which includes this Smart Spot.
     + Attribute type: Reference to an entity of type [SmartPointOfInteraction](https://github.com/Fiware/dataModels/blob/master/SmartPointOfInteraction/SmartPointOfInteraction/doc/spec.md)
@@ -48,11 +54,12 @@ These resources (except the references to other entities) are mapped from a real
 {
   "id": "SSPOT-F94C51A295D9",
   "type": "SmartSpot",
-  "physicalUrl" : "https://hpoi.info/325531235437",
+  "announcedUrl" : "https://hpoi.info/325531235437",
   "signalStrenght": "high",
   "bluetoothChannel": "37-38-39",
   "areaRadius": 30,
   "announcementInterval": 500,
+  "availability": "Tu,Th 16:00-20:00",
   "refSmartPointOfInteraction": "SPOI-ES-4326",
   "refDevice": "Device-ES-09aab934a8"
 }
@@ -64,13 +71,5 @@ T.B.D.
 
 ## Open Issues
 
-* Include "location" field? Currently not inserted since it could be obtained from "Device" data model.
-
 * Provide JSON Schema
 
-* It could be interesting define the "availability" field where to set the intervals where the announcements will be sent, but this should be studied and defined carefully. 
-
-  * ISO8601 contemplates recurring time intervals but seems it is not enought to represent "each monday from 10:00 to 11:00".
-    * An "ugly" solution could be introduce several fields such as "MondayAvailability", "TuesdayAvailability" where to set simple time intervals: ``` "MondayAvailability": [ "T09:00:00Z/T14:00:00Z", "T15:00:00Z/T19:00:00Z" ], ```
-
-  * RFC2445 could be a solution but introduce or write a parser is maybe too heavy for embedded programming.
