@@ -44,10 +44,6 @@ These resources (except references to other entities) are mapped from a real dev
     + Attribute type: Reference to an entity of type [SmartPointOfInteraction](https://github.com/Fiware/dataModels/blob/master/SmartPointOfInteraction/SmartPointOfInteraction/doc/spec.md)
     + Optional
 
-+ `refDevice` : A reference to the device(s) which is providing this interative area.
-    + Attribute type: Reference to an entity of type `Device`
-    + Optional    
-
 ## Examples of use
 
 ```json
@@ -60,8 +56,7 @@ These resources (except references to other entities) are mapped from a real dev
   "areaRadius": 30,
   "announcementInterval": 500,
   "availability": "Tu,Th 16:00-20:00",
-  "refSmartPointOfInteraction": "SPOI-ES-4326",
-  "refDevice": "Device-ES-09aab934a8"
+  "refSmartPointOfInteraction": "SPOI-ES-4326"
 }
 ```
     
