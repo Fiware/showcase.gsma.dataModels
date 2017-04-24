@@ -1,0 +1,78 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "https://fiware.github.io/dataModels/PointOfInteraction/SmartSpot/doc/schema.json",
+	"title": "FIWARE - Smart Point of Interest",
+	"description": "Smart Point of Interest",
+	"type": "object",
+	"allOf": [{
+		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+	}, {
+		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+	}, {
+		"properties": {
+			"type": {
+				"type": "string",
+				"enum": [
+					"SmartSpot"
+				],
+				"description": "NGSI Entity type"
+			},
+			"announcedUrl": {
+				"type": "string",
+				"format": "url",
+				"description": "URL broadcasted by the device"
+			},
+			"signalStrenght": {
+				"type": "string",
+				"enum": [
+					"lowest", 
+					"medium", 
+					"highest"
+				],
+				"description": "Signal strength to adjust the announcement range"
+			},
+			"bluetoothChannel": {
+				"type": "string",
+				"enum": [
+						"37", 
+						"38", 
+						"39",
+						"37,38", 
+						"38,39", 
+						"37,39",
+						"37,38,39"
+				],
+				"description": "Bluetooth channels where to transmit the announcement"
+			},
+			"areaCovered": {
+				"type": "integer",
+				"minimum": 1,
+				"maximum": 1000,
+				"description": "Radius of the spot coverage area in meters"
+			},
+			"announcementPeriod": {
+				"type": "integer",
+				"minimum": 100,
+				"maximum": 4000,
+				"description": "Interval between announcements"
+			},
+			"availability": {
+				"type": "string",
+				"description": "Specifies the time intervals in which this interactive service is available, but this is a general information while SmartSpots have their own real availability in order to allow advanced configurations"
+			},
+			"refSmartPointOfInteraction": {
+				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
+				"description": "Reference to the Smart Point of Interaction which includes this Smart Spot"
+			}
+		}
+	}],
+	"required": [
+		"id",
+		"type",
+		"announcedUrl",
+		"signalStrenght",
+		"bluetoothChannel",
+		"announcementPeriod",
+		"availability"
+	]
+}
