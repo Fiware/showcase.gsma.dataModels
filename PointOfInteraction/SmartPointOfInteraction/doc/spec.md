@@ -67,7 +67,3 @@ This entity is purely virtual, is not a device mapping.
 ## Use it with a real service
 
 T.B.D.
-
-## Open Issues
-
-* Provide JSON Schema

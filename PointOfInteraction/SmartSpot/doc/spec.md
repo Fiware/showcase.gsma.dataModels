@@ -63,8 +63,3 @@ In addition to the presented data model, this entity inherits the Device data mo
 ## Use it with a real service
 
 T.B.D.
-
-## Open Issues
-
-* Provide JSON Schema
-
