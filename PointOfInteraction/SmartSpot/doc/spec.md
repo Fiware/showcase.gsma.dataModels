@@ -2,7 +2,7 @@
 
 ## Description
 
-Smart Spots are devices which provide the the technology which allows users to get access to smart points of interaction so that they can obtain extra information (infotainment, …), provide suggestions (suggestions mailbox, …) or generate new content (co-creation, …). The data model contains resources to configure the interaction service such as the broadcasted URL (typically shortened), the interval between broadcasts (frequency), the availability of the service, transmission power depending on the area to be covered, etc.
+Smart Spots are devices which provide the the technology which allows users to get access to smart points of interaction so that they can obtain extra information (infotainment, etc.), provide suggestions (suggestions mailbox, etc.) or generate new content (co-creation, etc.). The data model contains resources to configure the interaction service such as the broadcasted URL (typically shortened), the period between broadcasts, the availability of the service, transmission power depending on the area to be covered, etc.
 
 In addition to the presented data model, this entity inherits the Device data model. This means that by hierarchy, the `SmartSpot` entity type is a subtype of `[Device](https://github.com/Fiware/dataModels/blob/master/Device/Device/doc/spec.md)` and as a result it can be the subject of any of the properties that an entity of type `[Device](https://github.com/Fiware/dataModels/blob/master/Device/Device/doc/spec.md)` may have.
 
@@ -26,12 +26,12 @@ In addition to the presented data model, this entity inherits the Device data mo
     + Allowed values: "37", "38", "39", "37,38", "38,39", "37,39" or "37,38,39".
     + Mandatory  
 
-+ `areaCovered` : Radius of the spot coverage area in meters.
++ `areaCoveredRadius` : Radius of the spot coverage area in meters.
     + Attribute Type: [Number](https://schema.org/Number)
 	+ Default unit: Meters.
     + Optional      
 
-+ `announcementPeriod` : Interval between announcements.
++ `announcementPeriod` : Period between announcements.
     + Attribute Type: [Number](https://schema.org/Number)
 	+ Default unit: Milliseconds.
     + Mandatory     
@@ -53,7 +53,7 @@ In addition to the presented data model, this entity inherits the Device data mo
   "announcedUrl" : "https://hpoi.info/325531235437",
   "signalStrenght": "high",
   "bluetoothChannel": "37-38-39",
-  "areaCovered": 30,
+  "areaCoveredRadius": 30,
   "announcementPeriod": 500,
   "availability": "Tu,Th 16:00-20:00",
   "refSmartPointOfInteraction": "SPOI-ES-4326"

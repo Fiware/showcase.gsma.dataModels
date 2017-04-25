@@ -7,8 +7,6 @@
 	"allOf": [{
 		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
 	}, {
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
-	}, {
 		"properties": {
 			"type": {
 				"type": "string",
@@ -44,21 +42,20 @@
 				],
 				"description": "Bluetooth channels where to transmit the announcement"
 			},
-			"areaCovered": {
+			"areaCoveredRadius": {
 				"type": "integer",
 				"minimum": 1,
-				"maximum": 1000,
 				"description": "Radius of the spot coverage area in meters"
 			},
 			"announcementPeriod": {
 				"type": "integer",
 				"minimum": 100,
 				"maximum": 4000,
-				"description": "Interval between announcements"
+				"description": "Period between announcements in milliseconds"
 			},
 			"availability": {
 				"type": "string",
-				"description": "Specifies the time intervals in which this interactive service is available, but this is a general information while SmartSpots have their own real availability in order to allow advanced configurations"
+				"description": "Specifies the time intervals in which this interactive service is available, but this is a general information while Smart Spots have their own real availability in order to allow advanced configurations"
 			},
 			"refSmartPointOfInteraction": {
 				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
