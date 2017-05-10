@@ -16,13 +16,13 @@ Data Model
 
 -   `type` : Entity type. It must be equal to `BikeHireDockingStation`.
 
--   `dateCreated` : Entity's creation timestamp
+-   `dateCreated` : Entity's creation timestamp.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
 
     -   Optional
 
--   `dateModified` : Last update timestamp of this entity
+-   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
 
@@ -43,7 +43,7 @@ Data Model
 
     -   Mandatory if `location` is not defined.
 
--   `name` : Name given to the docking station
+-   `name` : Name given to the docking station.
 
     -   Normative References: <https://schema.org/name>
 
@@ -80,13 +80,13 @@ Data Model
 
     -   Metadata:
 
-        -   `timestamp` : Timestamp of the last attribute update
+        -   `timestamp` : Timestamp of the last attribute update.
 
         -   Type: [DateTime](https://schema.org/DateTime)
 
     -   Optional
 
--   `outofserviceSlotNumber` : The number of slots that are out of order and
+-   `outOfServiceSlotNumber` : The number of slots that are out of order and
     cannot be used to hire or park a bike.
 
     -   Attribute type: [Number](http://schema.org/Number)
@@ -110,7 +110,7 @@ Data Model
 
     -   Metadata:
 
-        -   `timestamp` : Timestamp of the last attribute update
+        -   `timestamp` : Timestamp of the last attribute update.
 
         -   Type: [DateTime](https://schema.org/DateTime)
 
@@ -129,7 +129,7 @@ Data Model
 
     -   Metadata:
 
-        -   `timestamp` : Timestamp of the last attribute update
+        -   `timestamp` : Timestamp of the last attribute update.
 
         -   Type: [DateTime](https://schema.org/DateTime)
 
@@ -137,7 +137,7 @@ Data Model
 
         -   (`operative`, `outOfService`, `withIncidence`, `full`, `almostFull`)
 
-        -   Or any other application-specific
+        -   Or any other application-specific.
 
     -   Optional
 
