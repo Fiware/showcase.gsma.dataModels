@@ -4,7 +4,7 @@
 
 Smart Spots are devices which provide the the technology which allows users to get access to smart points of interaction so that they can obtain extra information (infotainment, etc.), provide suggestions (suggestions mailbox, etc.) or generate new content (co-creation, etc.). The data model contains resources to configure the interaction service such as the broadcasted URL (typically shortened), the period between broadcasts, the availability of the service, transmission power depending on the area to be covered, etc.
 
-In addition to the presented data model, this entity inherits the Device data model. This means that by hierarchy, the `SmartSpot` entity type is a subtype of `[Device](../../../Device/Device/doc/spec.md)` and as a result it can be the subject of any of the properties that an entity of type `[Device](../../../Device/Device/doc/spec.md)` may have.
+In addition to the presented data model, this entity inherits the Device data model. This means that by hierarchy, the `SmartSpot` entity type is a subtype of [Device](../../../Device/Device/doc/spec.md) and as a result it can be the subject of any of the properties that an entity of type [Device](../../../Device/Device/doc/spec.md) may have.
 
 ## Data Model
 
