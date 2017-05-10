@@ -4,7 +4,7 @@
 
 A Smart Point of Interaction defines a place with technology to interact with users, for example, through Beacon technology from Apple, Eddystone/Physical-Web from Google or other proximity-based interfaces. Since the interactive area could be composed by more than one device providing the technology, this model encompasses a group of SmartSpot devices.
 
-The data model includes information regarding the area/surface covered by the technology (i.e., the area covered by Bluetooth Low Energy-based Beacon), a way to specify the functionality intervals (i.e. when interactive points are available) and the link to the multimedia resource where users will interact (i.e. Web Apps, etc.). Additionally, the data model may reference to another NGSI entity such as a Parking, a Point of Interest (POI), etc. with enriched interaction provided by this Smart Point of Interaction.
+The data model includes information regarding the area/surface covered by the technology (i.e., the area covered by Bluetooth Low Energy-based Beacon), a way to specify the functionality intervals (i.e. when interactive points are available) and a link to a multimedia resource intended to user interaction (i.e. Web Apps, etc.). Additionally, the data model may reference to another NGSI entity such as a Parking, a Point of Interest (POI), etc. with enriched interaction provided by this Smart Point of Interaction.
 
 
 ## Data Model
@@ -18,26 +18,25 @@ The data model includes information regarding the area/surface covered by the te
     + Allowed values: `information`, `entertainment`, `infotainment`, `co-creation` or any other extended value defined by the application.
     + Mandatory
     
-+ `areaCovered` : Defines the area covered by the Smart Point of Interaction using geoJSON format.
++ `areaCovered` : Defines the area covered by the Smart Point of Interaction using geoJSON format. It can be represented by a feature of type `Polygon` or `Multipolygon`.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-	+ Suggested sub-types: More descriptive GeoJSON types to specify the area are 'Polygon' and 'Multipolygon'.
     + Optional    
     
-+ `applicationUrl` : This field specifies the real URL containing the solution or application (information, co-creation, etc) while the SmartSport 'announcedUrl' field specifies the broadcasted URL which could be this same URL or a shortened one.
++ `applicationUrl` : This field specifies the real URL containing the solution or application (information, co-creation, etc) while the SmartSpot 'announcedUrl' field specifies the broadcasted URL which could be this same URL or a shortened one.
     + Attribute type: [URL](https://schema.org/URL)
     + Mandatory    
 
-+ `availability`: Specifies the time intervals in which this interactive service is available, but this is a general information while Smart Spots have their own real availability in order to allow advanced configurations. If nothing specified (or null) it will mean that the functionality is always on. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
++ `availability`: Specifies the time intervals in which this interactive service is generally available. It is noteworthy that Smart Spots have their own real availability in order to allow advanced configurations. If nothing specified (or `null`) it will mean that the functionality is always on. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
     + Attribute type: [Text](https://schema.org/Text)
-    + Mandatory. It can be null.
+    + Mandatory. It can be `null`.
 
 + `refRelatedEntity` : List of entities improved with this Smart Point of Interaction. The entity type could be any such as a “Parking”, “Point of Interest”, etc.
-    + Attribute type: List of entities.
+    + Attribute type: List of references to entities.
     + Optional    
 
 + `refSmartSpot` : References to the “Smart Spot” devices which are part of the Smart Point of Interaction.
-    + Attribute type: Reference to one or more entity of type [SmartSpot](../../SmartSpot/doc/spec.md)
+    + Attribute type: Reference to one or more entities of type [SmartSpot](../../SmartSpot/doc/spec.md)
     + Optional    
 
 ## Examples of use

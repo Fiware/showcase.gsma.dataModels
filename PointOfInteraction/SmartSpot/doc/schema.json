@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"id": "https://fiware.github.io/dataModels/PointOfInteraction/SmartSpot/doc/schema.json",
-	"title": "FIWARE - Smart Point of Interest",
-	"description": "Smart Point of Interest",
+	"title": "FIWARE - Smart Spot",
+	"description": "FIWARE Smart Spot entity schema intended for validation tools",
 	"type": "object",
 	"allOf": [{
 		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"

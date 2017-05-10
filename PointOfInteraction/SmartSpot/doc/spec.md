@@ -36,9 +36,9 @@ In addition to the presented data model, this entity inherits the Device data mo
 	+ Default unit: Milliseconds.
     + Mandatory     
 
-+ `availability`: Specifies the functionality intervals in which the announcements will be sent. If nothing specified (or null) it will mean that the functionality is always on. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
++ `availability`: Specifies the functionality intervals in which the announcements will be sent. If nothing specified (or `null`) it will mean that the functionality is always on. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
     + Attribute type: [Text](https://schema.org/Text)
-    + Mandatory. It can be null.
+    + Mandatory. It can be `null`.
 
 + `refSmartPointOfInteraction` : Reference to the Smart Point of Interaction which includes this Smart Spot.
     + Attribute type: Reference to an entity of type [SmartPointOfInteraction](../../SmartPointOfInteraction/doc/spec.md)

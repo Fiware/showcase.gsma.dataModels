@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"id": "https://fiware.github.io/dataModels/PointOfInteraction/SmartPointOfInteraction/doc/schema.json",
-	"title": "FIWARE - Smart Point of Interest",
-	"description": "Smart Point of Interest",
+	"title": "FIWARE - Smart Point of Interaction",
+	"description": "FIWARE Smart Point of Interaction entity schema intended for validation tools",
 	"type": "object",
 	"allOf": [{
 		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
@@ -46,11 +46,17 @@
 				"description": "Specifies the functionality intervals in which the announcements will be sent"
 			},
 			"refRelatedEntity": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
+				"type": "array",
+				"items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+				"minItems": 1,
+				"uniqueItems": true,
 				"description": "List of entities improved with this Smart Point of Interaction. The entity type could be any such as a “Parking”, “Point of Interest”, etc"
 			},
 			"refSmartSpot": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
+				"type": "array",
+				"items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+				"minItems": 1,
+				"uniqueItems": true,
 				"description": "Reference to one or more entity of type SmartSpot"
 			}
 		}
