@@ -11,7 +11,7 @@
       [25.774, -80.190] 
     ]]
   },
-  "applicationUrl": "https://www.fiware.org",
+  "applicationUrl": "http://www.example.org",
   "availability": "Tu,Th 16:00-20:00",
   "refRelatedEntity": "POI-PlazaCazorla-3123",
   "refSmartSpot": [ "SSPOT-F94C58E29DD5", "SSPOT-F94C53E21DD2", "SSPOT-F94C51A295D9"]

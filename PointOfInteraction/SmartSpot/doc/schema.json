@@ -42,7 +42,7 @@
 				],
 				"description": "Bluetooth channels where to transmit the announcement"
 			},
-			"areaCoveredRadius": {
+			"coverageRadius": {
 				"type": "integer",
 				"minimum": 1,
 				"description": "Radius of the spot coverage area in meters"
