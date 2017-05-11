@@ -41,13 +41,10 @@
 				"items": {
 					"type": "string",
 					"enum": [
-						"open",
-						"closed",
-						"closedAbnormal",
-						"openingTimesInForce",
+						"working",
+						"outOfService",
+						"withIncidence",
 						"full",
-						"fullAtEntrance",
-						"spacesAvailable",
 						"almostFull"
 					]
 				},
@@ -63,18 +60,6 @@
 			"contactPoint": {
 				"type": "object"
 			},
-			"refParkingAccess": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-			},
-			"refParkingGroup": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-			},
-			"refParkingSpot": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-			},
-			"aggregateRating": {
-				"type": "object"
-			}
 		}
 	}],
 	"required": [
