@@ -27,7 +27,7 @@ The data model includes information regarding the area/surface covered by the te
     + Attribute type: [URL](https://schema.org/URL)
     + Mandatory    
 
-+ `availability`: Specifies the time intervals in which this interactive service is generally available. It is noteworthy that Smart Spots have their own real availability in order to allow advanced configurations. If nothing specified (or `null`) it will mean that the functionality is always on. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
++ `availability`: Specifies the time intervals in which this interactive service is generally available. It is noteworthy that Smart Spots have their own real availability in order to allow advanced configurations. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
     + Attribute type: [Text](https://schema.org/Text)
     + Mandatory. It can be `null`.
 

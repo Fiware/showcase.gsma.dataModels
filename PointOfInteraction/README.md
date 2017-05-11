@@ -8,4 +8,4 @@ A smart point of interaction is composed mainly by two entities:
 
 Next illustration shows the data model architecture:
 
-![general image](https://drive.google.com/uc?export=view&id=0B3if5y6_qyk3MGtSMFhyaW12LTA "general image")
+<p align="center"><img width="500" alt="general view" src="https://drive.google.com/uc?export=view&id=0B3if5y6_qyk3MGtSMFhyaW12LTA"></p>

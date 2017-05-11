@@ -2,9 +2,9 @@
 
 ## Description
 
-Smart Spots are devices which provide the the technology which allows users to get access to smart points of interaction so that they can obtain extra information (infotainment, etc.), provide suggestions (suggestions mailbox, etc.) or generate new content (co-creation, etc.). The data model contains resources to configure the interaction service such as the broadcasted URL (typically shortened), the period between broadcasts, the availability of the service, transmission power depending on the area to be covered, etc.
+Smart Spots are devices which provide the technology which allows users to get access to smart points of interaction so that they can obtain extra information (infotainment, etc.), provide suggestions (suggestions mailbox, etc.) or generate new content (co-creation, etc.). The data model contains resources to configure the interaction service such as the broadcasted URL (typically shortened), the period between broadcasts, the availability of the service, transmission power depending on the area to be covered, etc.
 
-In addition to the presented data model, this entity inherits the Device data model. This means that by hierarchy, the `SmartSpot` entity type is a subtype of [Device](../../../Device/Device/doc/spec.md) and as a result it can be the subject of any of the properties that an entity of type [Device](../../../Device/Device/doc/spec.md) may have.
+In addition to the presented data model, this entity type inherits from the [Device](../../../Device/Device/doc/spec.md) entity type. This means that by hierarchy, the `SmartSpot` entity type is a subtype of [Device](../../../Device/Device/doc/spec.md) and as a result it can be the subject of any of the properties that an entity of type [Device](../../../Device/Device/doc/spec.md) may have.
 
 ## Data Model
 
@@ -36,7 +36,7 @@ In addition to the presented data model, this entity inherits the Device data mo
 	+ Default unit: Milliseconds.
     + Mandatory     
 
-+ `availability`: Specifies the functionality intervals in which the announcements will be sent. If nothing specified (or `null`) it will mean that the functionality is always on. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
++ `availability`: Specifies the functionality intervals in which the announcements will be sent. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
     + Attribute type: [Text](https://schema.org/Text)
     + Mandatory. It can be `null`.
 
