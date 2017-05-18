@@ -1,0 +1,112 @@
+{
+    "namespace": "Device",
+    "name": "DeviceModel",
+    "attributes": {
+        "id": {
+            "description": "Unique identifier.",
+            "type": "Text",
+            "mandatory": true
+        },
+        "type": {
+            "description": "Entity type. It must be equal to DeviceModel.",
+            "type": "Text",
+            "allowedValues": "DeviceModel",
+            "mandatory": true
+        },
+        "category": {
+            "description": "Device's category(ies).",
+            "type": "TextList",
+            "allowedValues": {
+                "values": ["sensor", "actuator", "meter", "HVAC", "network", "multimedia"]
+            },
+            "normative": "https://w3id.org/saref",
+            "mandatory": true
+        },
+        "controlledProperty": {
+            "description": "Anything that can be sensed, measured or controlled by.",
+            "type": "TextList",
+            "allowedValues": {
+                "values": ["temperature", "humidity", "light", "motion", "fillingLevel", "occupancy", "power", "pressure", "smoke", "energy", "airPollution", "noiseLevel", "weatherConditions", "precipitation", "windSpeed", "windDirection", "barometricPressure", "solarRadiation", "depth", "pH", "pressure", "conductivity", "conductance", "tss", "tds", "turbidity", "salinity", "orp", "cdom", "waterPollution", "location", "speed", "heading", "weight", "waterConsumption", "gasComsumption", "electricityConsumption"]
+            },
+            "mandatory": true
+        },
+        "function": {
+            "description": "The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function. Defined by SAREF.",
+            "type": "TextList",
+            "allowedValues": {
+                "values": ["levelControl", "sensing", "onOff", "openClose", "metering", "eventNotification"]
+            }
+        },
+        "supportedProtocol": {
+            "description": "Supported protocol(s) or networks.",
+            "type": "TextList",
+            "allowedValues": {
+                "values": ["ul20", "mqtt", "lwm2m", "http", "websocket", "onem2m", "sigfox", "lora", "nb-iot", "ec-gsm-iot", "lte-m", "cat-m", "3g", "grps"]
+            }
+        },
+        "supportedUnits": {
+            "description": "Units of measurement supported by the device.",
+            "type": "TextList",
+            "allowedValues": {
+                "normative": "http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes"
+            }
+        },
+        "brandName": {
+            "description": "Device's brand name.",
+            "type": "Text",
+            "allowedValues": {
+                "normative": "https://schema.org/brand"
+            }
+        },
+        "modelName": {
+            "description": "Device's model name.",
+            "type": "Text",
+            "allowedValues": {
+                "normative": "https://schema.org/model"
+            }
+        },
+        "manufacturerName": {
+            "description": "Device's manufacturer name.",
+            "type": "Text",
+            "allowedValues": {
+                "normative": "https://schema.org/model"
+            }
+        },
+        "name": {
+            "description": "Name given to this device model.",
+            "type": "name",
+            "allowedValues": {
+                "normative": "https://schema.org/name"
+            }
+        },
+        "description": {
+            "description": "Device's description",
+            "type": "description",
+            "allowedValues": {
+                "normative": "https://schema.org/description"
+            }
+        },
+        "description": {
+            "description": "A link to device's documentation.",
+            "type": "URL",
+            "allowedValues": {
+                "normative": "https://schema.org/URL"
+            }
+        },
+        "image": {
+            "description": "A link to an image depicting the concerned device.",
+            "type": "URL",
+            "allowedValues": {
+                "normative": "https://schema.org/image"
+            }
+        },
+        "dateModified": {
+            "description": "Last update timestamp of this entity.",
+            "type": "DateTime"
+        },
+        "dateCreated": {
+            "description": "Entity's creation timestamp.",
+            "type": "DateTime"
+        }
+    }
+}
