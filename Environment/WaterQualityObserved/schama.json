@@ -1,0 +1,244 @@
+{
+    "namespace": "Environment",
+    "name": "WaterQualityObserved",
+    "attributes": {
+        "id": {
+            "description": "Unique identifier.",
+            "type": "Text",
+            "mandatory": true
+        },
+        "type": {
+            "description": "Entity type. It must be equal to WaterQualityObserved.",
+            "type": "Text",
+            "allowedValues": "WaterQualityObserved",
+            "mandatory": true
+        },
+        "location": {
+            "description": "Location where measurements have been taken, represented by a GeoJSON Point.",
+            "type": "geo:json",
+            "allowedValues": {
+                "normative": "https://tools.ietf.org/html/rfc7946"
+            },
+            "mandatory-if": [
+                {
+                    "attribute": "address",
+                    "rule": "equals",
+                    "value": "undefined"
+                }
+            ]
+        },
+        "address": {
+            "description": "Civic address where the Water Quality measurement is taken.",
+            "type": "address",
+            "allowedValues": {
+                "normative": "https://schema.org/address"
+            },
+            "mandatory-if": [
+                {
+                    "attribute": "location",
+                    "rule": "equals",
+                    "value": "undefined"
+                }
+            ]
+        },
+        "temperature": {
+            "description": "Temperature.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "Cº",
+                "description": "Celsius Degrees"
+            }
+        },
+        "conductivity": {
+            "description": "Electrical Conductivity.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "S/m",
+                "description": "Siemens per meter"
+            }
+        },
+        "conductance": {
+            "description": "Specific Conductance.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "S/m",
+                "description": "Siemens per meter at 25 ºC"
+            }
+        },
+        "tss": {
+            "description": "Total suspended solids.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "tds": {
+            "description": "Total dissolved solids.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "turbidity": {
+            "description": "Amount of light scattered by particles in the water column.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "FTU",
+                "description": "Formazin Turbidity Unit"
+            }
+        },
+        "salinity": {
+            "description": "Amount of salts dissolved in water.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "ppt",
+                "description": "Parts per thousand"
+            }
+        },
+        "pH": {
+            "description": "acidity or basicity of an aqueous solution.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "",
+                "description": "Negative of the logarithm to base 10 of the activity of the hydrogen ion."
+            }
+        },
+        "orp": {
+            "description": "Oxidation-Reduction potential.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mV",
+                "description": "millivolts"
+            }
+        },
+        "O2": {
+            "description": "Level of free, non-compound oxygen present.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "Chla": {
+            "description": "Concentration of chlorophyll A.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "PE": {
+            "description": "Concentration of pigment phycoerythrin which can be measured to estimate cyanobacteria concentrations specifically.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "NH4": {
+            "description": "Concentration of ammonia.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "Cl": {
+            "description": "Concentration of chlorides.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "NO3": {
+            "description": "Concentration of nitrates.",
+            "type": "Number",
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime"
+                }
+            },
+            "unit": {
+                "symbol": "mg/L",
+                "description": "milligrams per liter"
+            }
+        },
+        "dateModified": {
+            "description": "Last update timestamp of this entity.",
+            "type": "DateTime"
+        }
+    }
+}
