@@ -1,0 +1,20 @@
+{ 
+  "fiware": {
+    "importSchemas": ["common-schema.json","geometry-schema.json"],
+    "warnings": "true",
+    "warningChecks": ["schemaExist","docExist","docFolderExist","exampleExist","modelNameValid","readmeExist"],
+    "recursiveScan": true,
+    "validateExamples": true,
+    "loadModelCommonSchemas": true,
+    "importExternalSchemaFolders": true,
+    "resolveRemoteSchemas": false,
+    "ignoreFolders": ["harvest","auxiliary"],
+    "externalSchemaFolders" : ["externalSchema"],
+    "docFolders": ["doc"]
+  },
+  "ajv":{
+   "missingRefs": "true",
+   "extendRefs": "true",
+   "allErrors": true
+  }
+}

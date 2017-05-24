@@ -1,0 +1,32 @@
+{
+  "name": "fiware-data-models-checker",
+  "version": "0.1.0",
+  "description": "A simple checker for FIWARE Data Models",
+  "main": "test.js",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "dependencies": {
+    "nconf": "^0.8.0", 
+    "request": "^2.81.0",
+    "glob": "^7.0.3",
+    "ajv": "^4.0.0"
+  },
+  "engines": {
+    "node": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fiware/dataModels"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Federico Facca <name.surname@martel-innovate.com> (https://martel-innovate.com)",
+  "contributors": [
+    "N/A"
+  ],
+  "license": "MIT"
+}
