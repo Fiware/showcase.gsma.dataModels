@@ -138,6 +138,12 @@
 				"minItems": 1,
 				"uniqueItems": true
 			},
+			"priceRatePerMinute": {
+			       "type": "number"
+			},
+			"priceCurrency": {
+			       "type": "string"
+			},
 			"layout": {
 				"type": "array",
 				"items": {
