@@ -239,7 +239,15 @@ it conveys what is such special location.
 + `provider` : Parking site service provider.
     + Normative references: [https://schema.org/provider](https://schema.org/provider)
     + Optional
+
++ `measuresPeriod` : The measures period.
+    + Attribute type: [Number](http://schema.org/Number)
+    + Optional
     
++ `measuresPeriodUnit` : The measures period unit.
+    + Attribute type: [Text](http://schema.org/Text)
+    + Optional
+
 + `contactPoint` : Parking site contact point.
     + Normative references: [https://schema.org/contactPoint](https://schema.org/contactPoint)
     + Optional
