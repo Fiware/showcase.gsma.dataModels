@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/Questionnaire/Question/schema.json",
+  "title": "FIWARE - Questionnaire - Question schema",
+  "description": "A sentence worded or expressed to provide an inquiry.",
+  "type": "object",
+  "references": [
+    {
+      "description": "A single question written to provide specific information."
+    }
+  ],
+  "definitions": {
+    "id": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "type": {
+      "description": "NGSI Entity type",
+      "type": "string",
+      "enum": [
+        "Question"
+      ]
+    },
+    "refQuestionnaire": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "language": {
+      "references": [
+        {
+          "description": "Codes for the representation of names of languages based on the ISO 639-1:2010.",
+          "url": "https://www.iso.org/obp/ui/#iso:std:39535:en"
+        }
+      ],
+      "type": "string"
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    },
+    "refQuestionnaire": {
+      "$ref": "#/definitions/refQuestionnaire"
+    },
+    "language": {
+      "$ref": "#/definitions/language"
+    },
+    "dateModified": {
+      "$ref": "#/definitions/dateModified"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "refQuestionnaire",
+    "language",
+    "dateModified"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/PhysicalTest/schema.json",
+  "title": "FIWARE - Physical test schema",
+  "description": "Represents a physical test performed. It concentrates sensor data collected along a controlled test from a physical device carried/worn by a user while performing a supervised physical test.",
+  "type": "object",
+  "references": [
+    {
+      "description": "This schema has been created to fulfill the technical fetching need of mobile devices’ sensors used on physical test aimed to measure the risk of fall.",
+      "url": "Pending to be included."
+    }
+  ],
+  "definitions": {
+    "id": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "type": {
+      "description": "NGSI Entity type",
+      "type": "string",
+      "enum": [
+        "PhysicalTest"
+      ]
+    },
+    "testType": {
+      "description": "Physical test to measure risk of fall.",
+      "type": "string",
+      "references": [
+        {
+          "value": "Timed Up and Go",
+          "description": "Rehab Measures: Timed Up and Go",
+          "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/PrintView.aspx?ID=903"
+        },
+        {
+          "value": "30 second sit to stand test",
+          "description": "Rehab Measures: 30 second sit to stand test",
+          "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/DispForm.aspx?ID=1122"
+        },
+        {
+          "value": "4-Stage Balance Test",
+          "description": "Rehab Measures: 4-Stage Balance Test",
+          "url": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
+        }
+      ],
+      "enum": [
+        "Timed Up and Go",
+        "30 second sit to stand test",
+        "4-Stage Balance Test"
+      ]
+    },
+    "balanceTestType": {
+      "description": "Physical test to measure risk of fall by assess static balance.",
+      "type": "string",
+      "references": [
+        {
+          "value": "Side by Side",
+          "description": "Rehab Measures: Timed Up and Go.",
+          "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        },
+        {
+          "value": "Semi-Tandem",
+          "description": "Rehab Measures: 30 second sit to stand test.",
+          "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        },
+        {
+          "value": "Tandem (Full)",
+          "description": "Rehab Measures: Four Step Square Test.",
+          "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        },
+        {
+          "value": "Single-Leg Stance",
+          "description": "Rehab Measures: Four Step Square Test.",
+          "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        }
+      ],
+      "enum": [
+        "Side by Side",
+        "Semi-Tandem",
+        "Tandem (Full)",
+        "Single-Leg Stance"
+      ]
+    },
+    "refUser": {
+      "type": "string",
+      "format": "uri"
+    },
+    "refDevice": {
+      "type": "array",
+      "items": {
+        "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "dateTestStarted": {},
+    "dateTestEnded": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    },
+    "testType": {
+      "$ref": "#/definitions/testType"
+    },
+    "balanceTestType": {
+      "$ref": "#/definitions/balanceTestType"
+    },
+    "refUser": {
+      "$ref": "#/definitions/refUser"
+    },
+    "refDevice": {
+      "$ref": "#/definitions/refDevice"
+    },
+    "dateTestStarted": {
+      "$ref": "#/definitions/dateTestStarted"
+    },
+    "dateTestEnded": {
+      "$ref": "#/definitions/dateTestEnded"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "testType",
+    "refUser",
+    "refDevice",
+    "dateTestStarted",
+    "dateTestEnded"
+  ]
+}

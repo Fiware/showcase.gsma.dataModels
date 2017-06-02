@@ -25,6 +25,13 @@ This entity captures the static properties of a Device.
            [(https://w3id.org/saref#Network](https://w3id.org/saref#Network).
         + `multimedia` : A device designed to display, store, record or play multimedia content such as audio, images, animation, video.
            [https://w3id.org/saref#Multimedia](https://w3id.org/saref#Multimedia)
+        + `medicalDevice` : A medical device that is especially targeted at acute and continuing health data, such as patient monitors, ventilators, infusion pumps, ECG devices, etc. 
+           [https://www.iso.org/obp/ui/#iso:std:iso-ieee:11073:en](https://www.iso.org/obp/ui/#iso:std:iso-ieee:11073:en).
+           + `metadata` :
+            + `Allowed value` : (bloodPressureMonitor, glucoseMeter, pulseOximeter, weighingScale, thermometer).
+                [http://standards.ieee.org/news/2013/ieee_11073_medical-device_communication.html](http://standards.ieee.org/news/2013/ieee_11073_medical-device_communication.html)
+        + `smartphone` : A specific product line (such as iPhone) that performs many of the functions of a computer, typically having a touchscreen interface, Internet access, and an operating system capable of running downloaded apps.
+           [https://schema.org/ContactPoint](https://schema.org/ContactPoint)
     + Mandatory
     
 + `deviceClass` : Class of constrained device as specified by RFC 7228.
@@ -37,10 +44,7 @@ If the device is not a constrained device this property can be left as `null` or
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
-        + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`,
-        `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`,
-        `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`,
-        `gasComsumption`, `electricityConsumption`)
+        + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`, `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`, `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`, `gasComsumption`, `electricityConsumption`, `acceleration`, `orientation`)
     + Mandatory
         
 + `function` :  The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function.

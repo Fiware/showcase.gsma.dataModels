@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ajv validate --v5 -s $1 -r schema-common.json -r geometry-schema.json -d $2
+ajv validate --v5 -s $1 -r common-schema.json -r geometry-schema.json -d $2

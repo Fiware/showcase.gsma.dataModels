@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/Questionnaire/schema.json",
+  "title": "FIWARE - Questionnaire schema",
+  "description": "Set of questions written questions for the purposes of a specific survey or statistical study.",
+  "type": "object",
+  "references": [
+    {
+      "description": "Questionnaire to collect qualitative information observed along a performed test. There might be one questionnaire per each test type."
+    }
+  ],
+  "definitions": {
+    "id": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "type": {
+      "description": "NGSI Entity type",
+      "type": "string",
+      "enum": [
+        "Questionnaire"
+      ]
+    },
+    "questionnaireType": {
+      "description": "Physical test to measure risk of fall.",
+      "type": "string",
+      "references": [
+        {
+          "value": "Timed Up and Go",
+          "description": "Rehab Measures: Timed Up and Go",
+          "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/PrintView.aspx?ID=903"
+        },
+        {
+          "value": "30 second sit to stand test",
+          "description": "Rehab Measures: 30 second sit to stand test",
+          "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/DispForm.aspx?ID=1122"
+        },
+        {
+          "value": "4-Stage Balance Test",
+          "description": "Rehab Measures: 4-Stage Balance Test",
+          "url": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
+        }
+      ],
+      "enum": [
+        "Timed Up and Go",
+        "30 second sit to stand test",
+        "4-Stage Balance Test"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    },
+    "questionnaireType": {
+      "$ref": "#/definitions/questionnaireType"
+    },
+    "description": {
+      "$ref": "#/definitions/description"
+    },
+    "dateModified": {
+      "$ref": "#/definitions/dateModified"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "questionnaireType",
+    "description",
+    "dateModified"
+  ]
+}

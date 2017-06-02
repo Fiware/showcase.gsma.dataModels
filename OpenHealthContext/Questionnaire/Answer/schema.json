@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/Questionnaire/Answer/schema.json",
+  "title": "FIWARE - Questionnaire - Answer schema",
+  "description": "Represents an answer for a specific question.",
+  "type": "object",
+  "references": [
+    {
+      "description": "A single answer written to provide a complete view of a given question."
+    }
+  ],
+  "definitions": {
+    "id": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "type": {
+      "description": "NGSI Entity type",
+      "type": "string",
+      "enum": [
+        "Answer"
+      ]
+    },
+    "refQuestion": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "refUser": {
+      "type": "string",
+      "format": "uri"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    },
+    "refQuestion": {
+      "$ref": "#/definitions/refQuestion"
+    },
+    "answer": {
+      "$ref": "#/definitions/answer"
+    },
+    "dateModified": {
+      "$ref": "#/definitions/dateModified"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "refQuestion",
+    "refUser",
+    "answer",
+    "dateModified"
+  ]
+}
