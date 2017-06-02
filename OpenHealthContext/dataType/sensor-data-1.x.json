@@ -1,0 +1,70 @@
+{
+    "id": "sensor-data",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": " This schema represents a set of sensor data collected by a mobile device used by a user while performing a supervised physical test.",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "Pending to be included.",
+            "url": "Pending to be included."
+        }
+    ],
+
+    "definitions": {
+        "data_format": {
+            "$ref": "data-format-1.x.json"
+        },
+        "device_type": {
+            "$ref": "device-type-1.x.json"
+        },
+        "model": {
+            "description": "Device model.",
+            "type": "string"
+        },
+        "brand": {
+            "description": "Device brand defined from respective manufacture.",
+            "type": "string"
+        },
+        "software": {
+            "description": "Software version defined from installed program that is gathering sensor data from respective device.",
+            "type": "string"
+        },
+        "library": {
+            "description": "Sofware version or description to further identify the library used by the main software to collect sensor data.",
+            "type": "string"
+        }
+    },
+
+    "properties": {
+        "data": {
+            "description": "Collection of values product of the sensor device used while performing the physical test. Respective collection of values is tabular separated to avoid ambiguity.",
+            "type": "object",
+            
+            "properties": {
+                "format": {
+                    "$ref": "#/definitions/data_format"
+                },
+                "device": {
+                    "$ref": "#/definitions/device_type"
+                },
+                "model": {
+                    "$ref": "#/definitions/model"
+                },
+                "brand": {
+                    "$ref": "#/definitions/brand"
+                },
+                "software": {
+                    "$ref": "#/definitions/software"
+                },
+                "library": {
+                    "$ref": "#/definitions/library"
+                }
+            }
+        }
+    },
+
+    "required": [
+        "data"
+    ]
+}

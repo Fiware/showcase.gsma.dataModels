@@ -1,0 +1,24 @@
+{
+    "id": "sensor-detail",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema defines sensors devices used to obtain information from mobile devices.",
+    "type": "object",
+
+    "references": [
+    	{
+            "value": "Accelerometer",
+            "description": "Device that measures proper acceleration",
+            "url": "https://www.w3.org/TR/accelerometer/"
+      	},
+      	{
+            "value": "Orientation",
+            "description": "Position of the device relative to the earth's frame of reference.",
+            "url": "https://www.w3.org/TR/orientation-event/"
+      	}
+    ],    
+
+    "enum": [
+    	"Accelerometer",
+      	"Orientation"
+    ]
+}

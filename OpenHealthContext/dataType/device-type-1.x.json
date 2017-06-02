@@ -1,0 +1,24 @@
+{
+    "id": "device-type",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema defines a set of diverse devices used to obtain information in the scope of mobile sensing.",
+    "type": "string",
+
+    "references": [
+        {
+            "value": "Smartphone",
+            "description": "A smartphone is a mobile phone that includes advanced functionality beyond making phone calls and sending text messages.",
+            "url": "https://techterms.com/definition/smartphone"
+        },
+        {
+            "value": "Smartwatch",
+            "description": "A smartwatch is a wearable computing device marketed as more than a cell phone.",
+            "url": "https://www.techopedia.com/definition/24915/smart-watch"
+        }
+    ],
+  
+    "enum": [
+        "Smartphone",
+        "Smartwatch"
+    ]
+}

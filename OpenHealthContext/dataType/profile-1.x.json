@@ -1,0 +1,18 @@
+{
+    "id": "profile",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Type of user to refere.",
+    "type": "string",
+
+    "references": [
+        {
+            "description": "Pending to include.",
+            "url": "Pending to include."
+        }
+    ],
+
+    "enum": [
+        "Patient",
+        "Clinician"
+    ]
+}

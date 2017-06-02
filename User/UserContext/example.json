@@ -1,0 +1,13 @@
+{
+  "id": "UserContext1",
+  "type": "UserContext",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -4.754444444,
+      41.640833333
+    ]
+  },
+  "refActivity": "http://contextbroker:1026/v2/entities/UserActivity1",
+  "refUser": "https://account.lab.fiware.org/users/1"
+}

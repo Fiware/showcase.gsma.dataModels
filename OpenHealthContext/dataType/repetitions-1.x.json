@@ -1,0 +1,13 @@
+{
+    "id": "repetitions",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents the number of times of repetitions performed along a particular test.",
+    "type": "number",
+
+    "references": [
+        {
+            "description": "The value represents a number of repetitions. No units are included.",
+            "url": "Pending to be included."
+        }
+    ]
+}

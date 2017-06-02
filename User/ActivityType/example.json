@@ -1,0 +1,5 @@
+{
+  "id": "ActivityType1",
+  "type": "ActivityType",
+  "description": "ActivityType1 represents the action of driving. A person (the actor of the action) drive a car (the object action) to a destination (the target of the action)",
+}

@@ -1,0 +1,81 @@
+{
+    "id": "sensor-type",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema defines sensors devices used to obtain information from mobile devices, in which metadata is an important element.",
+    "type": "object",
+
+    "references": [
+        {
+            "description": "Collection of values product of the sensor devices. Metadata information is an important element of this schema, so further analysis might be conducted based on historical well-documented data.",
+            "url": "Pending to be included."
+        }
+    ],
+
+    "definitions": {
+        "name": {
+            "description": "Sensor name given from manufacture.",
+            "type": "string"
+        },
+        "vendor": {
+            "description": "Company that manufactured the sensor.",
+            "type": "string"
+        },
+        "version": {
+            "description": "Sensor version number/folio.",
+            "type": "string"
+        },
+        "sensor_detail": {
+            "$ref": "sensor-detail-1.x.json"
+        },
+        "sensor_power": {
+            "description": "Power consumption.",
+            "$ref": "sensor-power-1.x.json"
+        },
+        "sensor_resolution": {
+            "description": "The resolution of the data acquired is ultimately determined by the analog to digital converter.",
+            "$ref": "sensor-resolution-1.x.json"
+        },
+        "sensor_range": {
+            "description": "Maximum swing",
+            "$ref": "sensor-resolution-1.x.json"
+        },
+        "sensor_speed": {
+            "description": "Frequency of data collection.",
+            "$ref": "sensor-speed-1.x.json"
+        }
+    },
+
+    "properties": {
+        "sensor": {
+            "type": "#/definitions/sensor_detail",
+
+            "properties": {
+                  "name": {
+                      "$ref": "#/definitions/name"
+                  },
+                  "vendor": {
+                      "$ref": "#/definitions/vendor"
+                  },
+                  "version": {
+                      "$ref": "#/definitions/version"
+                  },
+                  "power": {
+                      "$ref": "#/definitions/sensor_power"
+                  },
+                  "resolution": {
+                      "$ref": "#/definitions/sensor_resolution"
+                  },
+                  "max_range": {
+                      "$ref": "#/definitions/sensor_range"
+                  },
+                  "speed": {  
+                      "$ref": "#/definitions/sensor_speed"
+                  }
+            }
+        }
+    },
+
+    "required": [
+        "sensor"
+    ]
+}

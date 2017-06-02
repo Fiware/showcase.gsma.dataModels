@@ -1,0 +1,36 @@
+{
+    "id": "balance-test",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Physical test to measure risk of fall by assess static balance.",
+    "type": "string",
+
+    "references": [
+        {
+            "value": "Side by Side",
+            "description": "Rehab Measures: Timed Up and Go.",
+            "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        },
+        {
+            "value": "Semi-Tandem",
+            "description": "Rehab Measures: 30 second sit to stand test.",
+            "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        },
+        {
+            "value": "Tandem (Full)",
+            "description": "Rehab Measures: Four Step Square Test.",
+            "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        },
+        {
+            "value": "Single-Leg Stance",
+            "description": "Rehab Measures: Four Step Square Test.",
+            "url": "https://www.med.unc.edu/aging/cgec/exercise-program/medicare-coding-guides-for-fall-risk-related-impairments/G-Codes_Four-Stage-Balance-Test.pdf"
+        }
+    ],
+
+    "enum": [
+        "Side by Side",
+        "Semi-Tandem",
+        "Tandem (Full)",
+        "Single-Leg Stance"
+    ]
+}

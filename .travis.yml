@@ -1,0 +1,12 @@
+language: node_js
+
+install:
+ - sudo apt-get -qq update
+ - sudo apt-get install -y shunit2
+
+before_script:
+ - npm install ajv
+ - npm install -g ajv-cli
+
+script:
+ - sh test/ci-test-weather.sh

@@ -1,0 +1,13 @@
+{
+    "id": "balance-index",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents a balance index.",
+    "type": "number",
+
+    "references": [
+        {
+            "description": "The value represents the balance index calculated based on the methodology of a Balance System SD (BIODEX).",
+            "url": "http://www.biodex.com/physical-medicine/products/balance/balance-system-sd"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{   
+    "id": "physical-test",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "This schema represents a physical test performed. It concentrates sensor data collected along a controlled test from a physical device carried/worn by a user while performing a supervised physical test.",
+    "type": "object",
+    
+    "references": [
+        {
+            "description": "This schema has been created to fulfill the technical fetching need of mobile devices’ sensors used on physical test aimed to measure the risk of fall.",
+            "url": "Pending to be included."
+        }
+    ],
+    
+    "definitions": {
+        "test_type": {
+            "$ref": "test-type-1.x.json"
+        },
+        "sensor_type": {
+            "$ref": "sensor-type-1.x.json"
+        },
+        "sensor_speed": {
+            "$ref": "sensor-speed-1.x.json"
+        },
+        "sensor_data": {
+            "$ref": "sensor-data-1.x.json"
+        },
+        "date_time": {
+            "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+        }
+    },
+    
+    "properties": {
+        "test": {
+            "$ref": "#/definitions/test_type"
+        },
+        "sensor": {
+            "$ref": "#/definitions/sensor_type"
+        },
+        "speed": {
+            "$ref": "#/definitions/sensor_speed"
+        },
+        "data": {
+            "$ref": "#/definitions/sensor_data"
+        },
+        "time": {
+            "$ref": "#/definitions/date_time"
+        },
+    },
+    
+    "required": [
+        "test", 
+        "sensor", 
+        "speed", 
+        "data", 
+        "time"
+    ]
+}
