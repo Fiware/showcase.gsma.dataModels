@@ -97,6 +97,15 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
     + Normative references: https://schema.org/acceptedPaymentMethod
     + Optional
     
++ `priceRatePerMinute` : Price rate per minute.
+    + Attribute type: [Number](https://schema.org/Number)
+    + Optional
+    
++ `priceCurrency` : Price currency of price rate per minute.
+    + Attribute type: [Text](http://schema.org/Text)
+    + Normative references: https://schema.org/priceCurrency  https://schema.org/priceCurrency 
+    + Optional    
+        
 + `description` : Description about the parking site. 
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
