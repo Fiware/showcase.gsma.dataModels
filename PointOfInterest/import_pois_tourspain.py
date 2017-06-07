@@ -40,7 +40,7 @@ in_error_entities = 0
 
 # Sanitize string to avoid forbidden characters by Orion
 def sanitize(str_in):
-  return re.sub(r"[<(>)\"\'=;]", "", str_in)
+  return re.sub(r"[<(>)\"\'=;\n\r]", "", str_in)
 
 def transform_data(source_folder_param):
   index_poi_type = 0
