@@ -18,6 +18,6 @@ The main entities identified are:
 + [TrafficFlowObserved](../TrafficFlowObserved/doc/spec.md). It represents an observation about flow of traffic.
 + [Road](../Road/doc/spec.md). It contains a harmonised geographic and contextual description of a Road.
 + [RoadSegment](../RoadSegment/doc/spec.md). It contains a harmonised geographic and contextual description of a road segment.
-+ [Vehicle](../Vehicle/doc/spec.md). It represents a vehicle with all its individual characteristics. 
-+ [VehicleModel](../VehicleModel/doc/spec.md).
++ [Vehicle](../Vehicle/Vehicle/doc/spec.md). It represents a vehicle with all its individual characteristics.
++ [VehicleModel](../Vehicle/VehicleModel/doc/spec.md).
 It represents a model of vehicle, capturing its static properties such as dimensions, materials or features.
