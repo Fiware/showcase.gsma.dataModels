@@ -69,22 +69,21 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 In order to enable a proper management of the the concentrations of the different pollutants,
 *for each* pollutant (measurand) there must be an attribute which name *MUST* be exactly equal the chemical formula (or mnemonic) of the measurand, ex. CO.
 The structure of such an attribute will be as follows:
-    + Attribute name: Equal to the name of the measurand, for instance `CO`.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Attribute value: corresponds to the value for the measurand as a number.
-    + Attribute metadata:
-        + `timestamp` : optional timestamp for the observed value in ISO8601 format.
+  + Attribute name: Equal to the name of the measurand, for instance `CO`.
+  + Attribute type: [Number](https://schema.org/Number)
+  + Attribute value: corresponds to the value for the measurand as a number.
+  + Attribute metadata:
+    + `timestamp` : optional timestamp for the observed value in ISO8601 format.
         It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level.
-            + Type: [DateTime](https://schema.org/DateTime)
-        + `unitCode` : The unit code (text) of measurement given using the
-        [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
-        For instance, `GP` represents milligrams per cubic meter and `GQ` represents micrograms per cubic meter.
-            + Type: [Text](https://schema.org/Text)
-            + Mandatory
-        + `description` : short description of the measurand
-            + Type: [Text](https://schema.org/Text)
-            + Optional
-
+      + Type: [DateTime](https://schema.org/DateTime)
+    + `unitCode` : The unit code (text) of measurement given using the
+      [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
+      For instance, `GP` represents milligrams per cubic meter and `GQ` represents micrograms per cubic meter.
+      + Type: [Text](https://schema.org/Text)
+      + Mandatory
+    + `description` : short description of the measurand
+      + Type: [Text](https://schema.org/Text)
+      + Optional
 
 ### Representing qualitative levels of the different air pollutants
 
@@ -92,16 +91,16 @@ In order to enable a proper management of the qualitative levels of the differen
 *for each* pollutant (measurand) there might be an attribute which name *MUST* be exactly equal to the concatenation of the
 chemical formula (or mnemonic) of the measurand with the string `_Level`, ex. `CO_Level`. To be more precise, 
 the structure of such an attribute will be as follows:
-    + Attribute name: Equal to the name of the measurand plus the suffix `_Level`, for instance `CO_Level`.
-    + Attribute type: [Number](https://schema.org/Text)
-    + Attribute value: one of (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
-    + Attribute metadata:
-        + `description` : short description of the measurand and its related qualitative level
-            + Type: [Text](https://schema.org/Text)
-            + Optional
-        + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
-            + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-            + Mandatory
+  + Attribute name: Equal to the name of the measurand plus the suffix `_Level`, for instance `CO_Level`.
+  + Attribute type: [Number](https://schema.org/Text)
+  + Attribute value: one of (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
+  + Attribute metadata:
+    + `description` : short description of the measurand and its related qualitative level
+      + Type: [Text](https://schema.org/Text)
+      + Optional
+    + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
+      + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+      + Mandatory
 
 ### Representing airquality-related weather conditions
 
