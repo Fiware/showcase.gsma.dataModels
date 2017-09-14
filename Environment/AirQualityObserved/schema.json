@@ -19,12 +19,20 @@
         "dateObserved": {
           "type": "string"
         },
-        "measurand": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1
+        "airQualityIndex": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "airQualityLevel": {
+          "type": "string",
+          "enum": [
+                   "good",
+                   "moderate",
+                   "unhealthyForSensitiveGroups",
+                   "unhealthy",
+                   "veryUnhealthy",
+                   "hazardous"
+                  ]
         },
         "refDevice": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
@@ -42,7 +50,6 @@
     "id",
     "type",
     "dateObserved",
-    "location",
-    "measurand"
+    "location"
   ]
 }

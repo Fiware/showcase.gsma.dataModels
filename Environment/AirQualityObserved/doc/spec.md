@@ -92,7 +92,7 @@ In order to enable a proper management of the qualitative levels of the differen
 chemical formula (or mnemonic) of the measurand with the string `_Level`, ex. `CO_Level`. To be more precise, 
 the structure of such an attribute will be as follows:
   + Attribute name: Equal to the name of the measurand plus the suffix `_Level`, for instance `CO_Level`.
-  + Attribute type: [Number](https://schema.org/Text)
+  + Attribute type: [Text](https://schema.org/Text)
   + Attribute value: one of (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
   + Attribute metadata:
     + `description` : short description of the measurand and its related qualitative level
@@ -144,7 +144,7 @@ Below is the description of the attribute to be used for option A/.
       "NOx": 139,
       "SO2": 11,
       "CO_Level": "good",
-      "NO_Level": "goderate",
+      "NO_Level": "moderate",
       "refPointOfInterest": "28079004-Pza. de España"
     }
     
@@ -159,7 +159,3 @@ What was the air quality observed today at noon UTC at the "Plaza de España" (M
 ```curl -S -H 'fiware-service:airquality' -H 'fiware-servicepath:/Spain_Madrid' -H 'x-auth-token:<my_token>'
 "http://130.206.118.244:1027/v2/entities?options=keyValues
 &q=dateObserved:2016-11-28T12:00;stationCode:'28079004'"```
-
-## Open Issues
-
-* Should `measurand` be an `StructuredValue` instead of an array? 

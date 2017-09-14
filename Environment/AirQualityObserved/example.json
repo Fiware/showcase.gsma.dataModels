@@ -17,17 +17,13 @@
   "temperature": 12.2,
   "windDirection": 186,
   "windSpeed": 0.64,
-  "measurand": [
-     "CO, 500, GP, Carbon Monoxide",
-     "NO, 45, GQ, Nitrogen Monoxide",
-     "NO2, 69, GQ, Nitrogen Dioxide",
-     "NOx, 139, GQ, Nitrogen oxides",
-     "SO2, 11, GQ, Sulfur Dioxide"
-  ],
+  "airQualityLevel": "moderate",
+  "airQualityIndex": 65,
   "CO": 500,
   "NO": 45,
   "NO2": 69,
   "NOx": 139,
   "SO2": 11,
+  "CO_Level": "moderate",
   "refPointOfInterest": "28079004-Pza.deEspanya"
 }
