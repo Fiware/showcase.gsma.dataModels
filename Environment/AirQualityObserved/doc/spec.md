@@ -45,7 +45,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
   + Attribute metadata:
     + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
       + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-      + Optional
+      + Mandatory
   + Optional
   
 + `airQualityIndex` : Air quality index corresponding to the air quality observed.
@@ -66,7 +66,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 ### Representing air pollutants
 
-+ In order to enable a proper management of the the concentrations of the different pollutants,
+In order to enable a proper management of the the concentrations of the different pollutants,
 *for each* pollutant (measurand) there must be an attribute which name *MUST* be exactly equal the chemical formula (or mnemonic) of the measurand, ex. CO.
 The structure of such an attribute will be as follows:
     + Attribute name: Equal to the name of the measurand, for instance `CO`.
@@ -88,7 +88,7 @@ The structure of such an attribute will be as follows:
 
 ### Representing qualitative levels of the different air pollutants
 
-+ In order to enable a proper management of the qualitative levels of the different pollutants,
+In order to enable a proper management of the qualitative levels of the different pollutants,
 *for each* pollutant (measurand) there might be an attribute which name *MUST* be exactly equal to the concatenation of the
 chemical formula (or mnemonic) of the measurand with the string `_Level`, ex. `CO_Level`. To be more precise, 
 the structure of such an attribute will be as follows:
@@ -101,7 +101,7 @@ the structure of such an attribute will be as follows:
             + Optional
         + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
             + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-          + Optional
+            + Mandatory
 
 ### Representing airquality-related weather conditions
 
@@ -138,18 +138,14 @@ Below is the description of the attribute to be used for option A/.
       "temperature": 12.2,
       "windDirection": 186,
       "windSpeed": 0.64,
-      "measurand": [
-         "CO, 500, GP, Carbon Monoxide",
-         "NO, 45, GQ, Nitrogen Monoxide",
-         "NO2, 69, GQ, Nitrogen Dioxide",
-         "NOx, 139, GQ, Nitrogen oxides",
-         "SO2, 11, GQ, Sulfur Dioxide"
-      ],
+      "airQualityLevel": "Moderate",
       "CO": 500,
       "NO": 45,
       "NO2": 69,
       "NOx": 139,
       "SO2": 11,
+      "CO_Level": "Good",
+      "NO_Level": "Moderate",
       "refPointOfInterest": "28079004-Pza. de España"
     }
     
