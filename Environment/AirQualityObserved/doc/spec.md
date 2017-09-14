@@ -66,26 +66,12 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 ### Representing air pollutants
 
-The number of air pollutants represented can vary. As a result the model prescribes the following attributes to convey those parameters: 
-
-+ `measurandl : An array of strings containing details (see format below) about *each air quality measurand* observed.
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: Each element of the array must be a string with the following format (comma separated list of values):
-b<measurand>, <observedValue>, <unitcode>, <description>r, where:
-        + `measurand` : corresponds to 
-        + `observedValue` : corresponds to the value for the measurand as a number. 
-        + `unitCode` : 
-        + `description` : short description of the measurand.
-        + Examples:
-    `"CO,500,GP,Carbon Monoxide"  "NO,45,GQ,Nitrogen Monoxide" "NO2,69,GQ,Nitrogen Dioxide" "NOx,139,GQ,Nitrogen oxides" "SO2,11,GQ,Sulfur Dioxide"`
-    + Mandatory
-
 + In order to enable a proper management of the the concentrations of the different pollutants,
-*for each* pollutant there must be an attribute which name *MUST* be exactly equal the chemical formula (or mnemonic) of the measurand, ex. CO.
-. The structure of such an attribute will be as follows:
+*for each* pollutant (measurand) there must be an attribute which name *MUST* be exactly equal the chemical formula (or mnemonic) of the measurand, ex. CO.
+The structure of such an attribute will be as follows:
     + Attribute name: Equal to the name of the measurand, for instance `CO`.
     + Attribute type: [Number](https://schema.org/Number)
-    + Attribute value: Exactly equal (same unit of measurement) to the value provided in the `measurand` array. 
+    + Attribute value: corresponds to the value for the measurand as a number.
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value in ISO8601 format.
         It can be ommitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level.
@@ -94,8 +80,28 @@ b<measurand>, <observedValue>, <unitcode>, <description>r, where:
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
         For instance, `GP` represents milligrams per cubic meter and `GQ` represents micrograms per cubic meter.
             + Type: [Text](https://schema.org/Text)
+            + Mandatory
         + `description` : short description of the measurand
             + Type: [Text](https://schema.org/Text)
+            + Optional
+
+
+### Representing qualitative levels of the different air pollutants
+
++ In order to enable a proper management of the qualitative levels of the different pollutants,
+*for each* pollutant (measurand) there might be an attribute which name *MUST* be exactly equal to the concatenation of the
+chemical formula (or mnemonic) of the measurand with the string `_Level`, ex. `CO_Level`. To be more precise, 
+the structure of such an attribute will be as follows:
+    + Attribute name: Equal to the name of the measurand plus the suffix `_Level`, for instance `CO_Level`.
+    + Attribute type: [Number](https://schema.org/Text)
+    + Attribute value: one of (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
+    + Attribute metadata:
+        + `description` : short description of the measurand and its related qualitative level
+            + Type: [Text](https://schema.org/Text)
+            + Optional
+        + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
+            + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+          + Optional
 
 ### Representing airquality-related weather conditions
 
@@ -106,7 +112,7 @@ Certain weather conditions have an influence over the observed air quality. Ther
 
 Below is the description of the attribute to be used for option A/. 
 
-+ `refWeatherObserved` : Weather observed associated to the air quality conditions described by this entity.
++ `refWeatherObserved : Weather observed associated to the air quality conditions described by this entity.
     + Attribute type: Reference to a [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md) entity.
     + Optional
     
