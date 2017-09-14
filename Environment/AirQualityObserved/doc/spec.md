@@ -137,14 +137,14 @@ Below is the description of the attribute to be used for option A/.
       "temperature": 12.2,
       "windDirection": 186,
       "windSpeed": 0.64,
-      "airQualityLevel": "Moderate",
+      "airQualityLevel": "moderate",
       "CO": 500,
       "NO": 45,
       "NO2": 69,
       "NOx": 139,
       "SO2": 11,
-      "CO_Level": "Good",
-      "NO_Level": "Moderate",
+      "CO_Level": "good",
+      "NO_Level": "goderate",
       "refPointOfInterest": "28079004-Pza. de España"
     }
     
