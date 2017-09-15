@@ -40,7 +40,8 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     
 + `airQualityLevel` : Overall qualitative level of health concern corresponding to the air quality observed.
   + Attribute type: [Text](https://schema.org/Text)
-  + Example values defined by the [USA EPA Agency](): (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
+  + Example values defined by the [USA EPA Agency](https://airnow.gov/index.cfm?action=aqibasics.aqi):
+  (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
   As this can be different between countries, regulations or implementations, the set of allowed values will depend on the reference specification used.
   It is recommended that implementations use the same naming conventions as exemplified above (lower case starting words, camel case when compound terms are used)
   + Attribute metadata:
