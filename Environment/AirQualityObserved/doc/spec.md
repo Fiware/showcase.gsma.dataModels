@@ -64,11 +64,11 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
   + Optional
 
 + `refDevice` : A reference to the device(s) which captured this observation.
-    + Attribute type: Reference to an entity of type `Device
+    + Attribute type: Reference to an entity of type `Device`
     + Optional
 
 + `refPointOfInterest` : A reference to a point of interest (usually an air quality station) associated to this observation.
-    + Attribute type: Reference to an entity of type `PointOfInterest
+    + Attribute type: Reference to an entity of type `PointOfInterest`
     + Optional    
 
 ### Representing air pollutants
@@ -113,12 +113,12 @@ the structure of such an attribute will be as follows:
 
 Certain weather conditions have an influence over the observed air quality. There are two options for representing them:
 
-+ A/ Through a linked entity of type `WeatherObserved (attribute named `refWeatherObservedd).
++ A/ Through a linked entity of type `WeatherObserved` (attribute named `refWeatherObserved`).
 + B/ Through a group of weather-related properties already defined by [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md). 
 
 Below is the description of the attribute to be used for option A/. 
 
-+ `refWeatherObserved : Weather observed associated to the air quality conditions described by this entity.
++ `refWeatherObserved` : Weather observed associated to the air quality conditions described by this entity.
     + Attribute type: Reference to a [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md) entity.
     + Optional
     
