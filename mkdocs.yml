@@ -23,7 +23,6 @@ pages:
   - 'Environment':
       - 'Introduction'           : 'Environment/doc/introduction.md'
       - 'AirQualityObserved'     : 'Environment/AirQualityObserved/doc/spec.md'
-      - 'AirQualityThreshold'    : 'Environment/AirQualityThreshold/doc/spec.md'
       - 'WaterQualityObserved'   : 'Environment/WaterQualityObserved/doc/spec.md'
       - 'NoiseLevelObserved'     : 'Environment/NoiseLevelObserved/doc/spec.md'
   - 'Indicators':

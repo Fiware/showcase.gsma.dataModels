@@ -19,6 +19,7 @@
   "windSpeed": 0.64,
   "airQualityLevel": "moderate",
   "airQualityIndex": 65,
+  "reliability": 0.7,
   "CO": 500,
   "NO": 45,
   "NO2": 69,

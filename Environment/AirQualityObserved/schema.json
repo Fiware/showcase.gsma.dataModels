@@ -25,14 +25,12 @@
         },
         "airQualityLevel": {
           "type": "string",
-          "enum": [
-                   "good",
-                   "moderate",
-                   "unhealthyForSensitiveGroups",
-                   "unhealthy",
-                   "veryUnhealthy",
-                   "hazardous"
-                  ]
+          "minLength": 2
+        },
+        "reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1.0
         },
         "refDevice": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"

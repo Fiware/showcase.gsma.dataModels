@@ -40,8 +40,9 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     
 + `airQualityLevel` : Overall qualitative level of health concern corresponding to the air quality observed.
   + Attribute type: [Text](https://schema.org/Text)
-  + Allowed values: (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
-  Other values might be allowed depending on the reference specification used. 
+  + Example values defined by the [USA EPA Agency](): (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`, `hazardous`).
+  As this can be different between countries, regulations or implementations, the set of allowed values will depend on the reference specification used.
+  It is recommended that implementations use the same naming conventions as exemplified above (lower case starting words, camel case when compound terms are used)
   + Attribute metadata:
     + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
       + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
@@ -54,6 +55,11 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     + `referenceSpecification` : Specification that must be taken as reference when interpreting or calculating the supplied air quality index. 
       + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
       + Optional
+  + Optional
+  
++ `reliability` : Reliability (percentage, expressed in parts per one) corresponding to the air quality observed.
+  + Attribute type: [Number](https://schema.org/Number)
+  + Allowed values: Interval [0,1]
   + Optional
 
 + `refDevice` : A reference to the device(s) which captured this observation.
@@ -138,6 +144,7 @@ Below is the description of the attribute to be used for option A/.
       "windDirection": 186,
       "windSpeed": 0.64,
       "airQualityLevel": "moderate",
+      "reliability": 0.9,
       "CO": 500,
       "NO": 45,
       "NO2": 69,
