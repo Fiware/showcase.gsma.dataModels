@@ -1,6 +1,7 @@
 #!bin/python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 from flask import Flask, jsonify, request, Response
 import urllib2
 import StringIO
@@ -14,7 +15,7 @@ def get_data(row, index, conversion=float, factor=1.0):
   out = None
   
   value = row[index]
-  if(value <> ''):
+  if(value != ''):
     out = conversion(value) / factor
     
   return out
@@ -37,7 +38,7 @@ def get_weather_observed(request):
       elif items[0] == 'country':
         country = items[1]
     
-    if not station_code or not country or country <> 'ES':
+    if not station_code or not country or country != 'ES':
       return Response(json.dumps([]), mimetype='application/json')
     
     source = weather_observed.format(station_code, station_code)
@@ -59,7 +60,7 @@ def get_weather_observed(request):
         index += 1
         continue
       
-      print row
+      print(row)
       
       observation = {
         'type': 'WeatherObserved'
@@ -84,5 +85,5 @@ def get_weather_observed(request):
       
       out.append(observation)
     
-    print out
+    print(out)
     return Response(json.dumps(out), mimetype='application/json')

@@ -2,6 +2,7 @@
 """
 Gets weather forecast from the portuguese meteorological service, ipma.pt
 """
+from __future__ import print_function
 
 import urllib2
 import json
@@ -36,7 +37,7 @@ def get_weather_forecasted_pt(locality):
   f = urllib2.urlopen(req)
   data = json.loads(f.read())
   
-  print data
+  print(data)
   out = []
   maxMinDay = { }
     
@@ -75,7 +76,7 @@ def get_weather_forecasted_pt(locality):
     day_now = now.date()
     day_wf = valid_to.date()
     
-    if day_now <> day_wf:
+    if day_now != day_wf:
       continue
     
     obj = {
@@ -95,7 +96,7 @@ def get_weather_forecasted_pt(locality):
       }
     
     hr = get_data(forecast, 'hR')
-    if hr <> None:
+    if hr != None:
       hr = hr / 100
     else:
       hr = None

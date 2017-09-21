@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import with_statement
+from __future__ import print_function
 import csv
 import datetime
 import json
@@ -14,6 +15,11 @@ from pytz import timezone
 import contextlib
 import copy
 
+
+try:
+  xrange          # Python 2
+except NameError:
+  xrange = range  # Python 3
 
 # Entity type
 AMBIENT_TYPE_NAME = 'AirQualityObserved'
@@ -181,7 +187,7 @@ def get_air_quality_madrid():
           
         hour += 1
     
-      print len(stations[station_code])
+      print(len(stations[station_code]))
     
     # Now persisting data to Orion Context Broker
     for station in stations:
@@ -309,7 +315,7 @@ def read_station_csv():
     
     index = 0
     for row in reader:
-      if index <> 0:
+      if index != 0:
         station_code = row[2]
         station_name = row[3]
         station_address = row[4]

@@ -11,7 +11,7 @@ def main():
   reader = csv.reader(csvfile, delimiter=';')
   index = 0
   for row in reader:
-    if index <> 0:
+    if index != 0:
       latitude = row[5].strip()
       longitude = row[6].strip()
       

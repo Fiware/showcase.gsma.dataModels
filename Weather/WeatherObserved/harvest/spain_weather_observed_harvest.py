@@ -68,7 +68,7 @@ def get_data(row, index, conversion=float, factor=1.0):
   out = None
   
   value = row[index]
-  if(value <> ''):
+  if(value != ''):
     out = conversion(value) / factor
     
   return out
@@ -91,13 +91,13 @@ def get_weather_observed_spain():
       try: f = urllib2.urlopen(req)
       except urllib2.URLError as e:
         logger.error('Error while calling: %s : %s', source, e)
-        if f <> None:
+        if f != None:
           f.close()
         continue
     
       csv_data = f.read()
       
-      if csv_data.find('initial-scale') <> -1:
+      if csv_data.find('initial-scale') != -1:
         logger.debug('Skipping: %s', station_code)
         continue
       
@@ -224,7 +224,7 @@ def read_station_csv():
     reader = csv.reader(csvfile, delimiter=',')
     index = 0
     for row in reader:
-      if index <> 0:
+      if index != 0:
         station_code = row[2]
         station_name = row[3]
         station_address = row[4]

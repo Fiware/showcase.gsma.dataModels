@@ -3,6 +3,7 @@
 # The notification messages are listened and data is sent to FIWARE GSMA instance
 
 from __future__ import with_statement
+from __future__ import print_function
 import json
 from  flask import Flask, jsonify, request, Response
 import urllib2
@@ -74,7 +75,7 @@ def process():
     return ('', 200)
 
   subscriptionId = data['subscriptionId']
-  if subscriptionId <> SUBSCRIPTION_ID:
+  if subscriptionId != SUBSCRIPTION_ID:
     app.logger.warn('Subscription id : %s. Not recognized!!', subscriptionId)
     return ('', 200)
   
@@ -86,11 +87,11 @@ def process():
 
 
 if __name__ == "__main__":
-  print 'Running'
+  print('Running')
   handler = build_logger_handler()
   app.logger.addHandler(handler)
   
-  print handler
+  print(handler)
   
   app.logger.debug('Starting server ....')
   

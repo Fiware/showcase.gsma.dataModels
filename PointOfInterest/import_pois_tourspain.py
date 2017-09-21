@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import with_statement
+from __future__ import print_function
 import sys
 import os
 import xml.dom.minidom
@@ -194,7 +195,7 @@ def import_data():
   for poi_type in pois:
     poi_list = pois[poi_type]
     
-    print poi_type, len(poi_list)
+    print(poi_type, len(poi_list))
     
     post_data(poi_list)
 
@@ -234,5 +235,5 @@ if __name__ == '__main__':
   transform_data(sys.argv[1])
   import_data()
   
-  print "Persisted entities: ", persisted_entities
-  print "In error entities: ", in_error_entities
+  print("Persisted entities: ", persisted_entities)
+  print("In error entities: ", in_error_entities)

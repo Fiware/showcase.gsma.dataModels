@@ -125,7 +125,7 @@ def get_weather_forecasted_pt(locality):
     day_now = now.date()
     day_wf = valid_to.date()
     
-    if day_now <> day_wf:
+    if day_now != day_wf:
       continue
     
     obj = {
@@ -153,7 +153,7 @@ def get_weather_forecasted_pt(locality):
       }
     
     hr = get_data(forecast, 'hR')
-    if hr <> None:
+    if hr != None:
       hr = hr / 100
     else:
       hr = None

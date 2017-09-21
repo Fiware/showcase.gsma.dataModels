@@ -1,6 +1,7 @@
 #!bin/python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 from flask import Flask, jsonify, request, Response
 import urllib2
 import xml.dom.minidom
@@ -64,7 +65,7 @@ def get_data(row, index, conversion=float, factor=1.0):
   out = None
   
   value = row[index]
-  if(value <> ''):
+  if(value != ''):
     out = conversion(value) / factor
     
   return out
@@ -92,7 +93,7 @@ def get_weather_forecasted(request):
     if country == 'PT' and address_locality:
       return Response(json.dumps(get_weather_forecasted_pt(address_locality)), mimetype='application/json')
     
-    if not country or (not postal_code in postal_codes and not address_locality in localities) or country <> 'ES':
+    if not country or (not postal_code in postal_codes and not address_locality in localities) or country != 'ES':
       return Response(json.dumps([]), mimetype='application/json')
     
     param = ''
@@ -190,7 +191,7 @@ def parse_aemet_forecast(forecast, date):
   get_parameter_data(humidity_node, periods, 'relativeHumidity', 100.0)
   
   for period in periods:
-    print period
+    print(period)
   
   for period in periods:
     period_items = period.split('-')

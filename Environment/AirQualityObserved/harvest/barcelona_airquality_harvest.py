@@ -13,6 +13,7 @@
 '''
 
 from __future__ import with_statement
+from __future__ import print_function
 import datetime
 import json
 import urllib2
@@ -97,7 +98,7 @@ def get_air_quality_barcelona(target_stations):
     try: f = urllib2.urlopen(station_req)
     except urllib2.URLError as e:
       logger.error('Error while calling: %s : %s', service_url1, e)
-      if f <> None:
+      if f != None:
         f.close()
       continue
       
@@ -112,7 +113,7 @@ def get_air_quality_barcelona(target_stations):
     try: f2 = urllib2.urlopen(data_req)
     except urllib2.URLError as e:
       logger.error('Error while calling: %s : %s', service_url2, e)
-      if f2 <> None:
+      if f2 != None:
         f2.close()
       continue
     
@@ -138,7 +139,7 @@ def get_air_quality_barcelona(target_stations):
       counter = 0
       hour = 0
       for v in values:
-        if v['valor'] <> '':
+        if v['valor'] != '':
           # Last three values are averages and should be discarded
           if counter >= (len(values) -3):
             break
@@ -188,7 +189,7 @@ def get_air_quality_barcelona(target_stations):
   # Now persisting data to Orion Context Broker
   for a_station in entity_data:
     data_for_station = entity_data[a_station]
-    print len(data_for_station)
+    print(len(data_for_station))
     if len(data_for_station):
       last_measurement = data_for_station[-1]
       last_measurement['id'] = 'Barcelona-AirQualityObserved' + '-' + last_measurement['stationCode']['value'] + '-' + 'latest'

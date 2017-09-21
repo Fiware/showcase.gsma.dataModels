@@ -1,6 +1,7 @@
 #!../bin/python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 import csv
 import datetime
 import json
@@ -11,6 +12,11 @@ import StringIO
 import sys
 
 import ngsi_helper
+
+try:
+  xrange          # Python 2
+except NameError:
+  xrange = range  # Python 3
 
 app = Flask(__name__)
 
@@ -188,7 +194,7 @@ def get_air_quality_madrid(target_stations, target_hour=-1):
       property_desc = other_descriptions[magnitude]
       is_other = True
     
-    print 'processing'
+    print('processing')
     sys.stdout.flush()
       
     hour = 0
@@ -243,7 +249,7 @@ def get_air_quality_madrid(target_stations, target_hour=-1):
     index_from = 0
     index_to = len(station_data)
     station_data = stations[station]
-    if target_hour <> -1:
+    if target_hour != -1:
      index_from = target_hour
      index_to = index_from + 1
       
@@ -263,7 +269,7 @@ def read_station_csv():
     
     index = 0
     for row in reader:
-      if index <> 0:
+      if index != 0:
         station_code = row[2]
         station_name = row[3]
         station_address = row[4]
