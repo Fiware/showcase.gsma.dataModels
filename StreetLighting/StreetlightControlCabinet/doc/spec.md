@@ -28,7 +28,7 @@ responsible, district, neighbourhood, etc.
 
 + `refStreetlightGroup` : Streetlight group(s) controlled. 
     + Attribute type: List of references to entities of type [StreetlightGroup](../../StreetlightGroup/doc/spec.md).
-    + Mandatory
+    + Optional
 
 + `brandName` : Name of the cabinet's brand.
     + Attribute type: [Text](https://schema.org/Text)
@@ -96,6 +96,14 @@ responsible, district, neighbourhood, etc.
 + `maximumPowerAvailable` : The maximum power available (by contract) for the circuits controlled by this cabinet.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Kilowatts (kW)
+    + Optional
+
++ `powerState` : StreetlightControlCabinet's power state, when no `refStreetlightGroup` is defined.
+    + Attribute type: [Text](http://schema.org/Text)
+    + Attribute metadata:
+        + `dateUpdated` : Timestamp when the last update of the attribute happened.
+            + Type: [DateTime](http://schema.org/DateTime)
+    + Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     + Optional
     
  + `energyConsumed` :  Energy consumed by the circuits controlled since metering started (since `dateMeteringStarted`).
