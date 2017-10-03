@@ -7,7 +7,6 @@ features and availability of bikes and free slots.
 
 ## Data Model
 
-
 A JSON Schema corresponding to this data model can be found [here](http://fiware.github.io/dataModels/Transportation/BikeHire/schema.json).
 
 +   `id` : Unique identifier.
@@ -16,16 +15,12 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 +   `dateCreated` : Entity's creation timestamp.
     +   Attribute type: [DateTime](https://schema.org/DateTime)
-    +   Normative References:
-        [http://schema.org/DateTime](http://schema.org/DateTime)[
-        ](http://schema.org/DateTime)
+    +   Normative References: [DateTime](http://schema.org/DateTime)
     +   Optional
 
 +   `dateModified` : Last update timestamp of this entity.
     +   Attribute type: [DateTime](https://schema.org/DateTime)
-    +   Normative References:
-        [http://schema.org/DateTime](http://schema.org/DateTime)[
-        ](http://schema.org/DateTime)
+    +   Normative References:[DateTime](http://schema.org/DateTime)
     +   Optional
 
 +   `location` : Geolocation of the station represented by a GeoJSON
@@ -124,24 +119,24 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 Bike hire docking station real time data in Malaga
 
-	{
-	   "id": "malaga-bici-7"
-	   "type": "BikeHireDockingStation",
-	   "name": "07-Diputacion",
-	   "location": {
-		 "coordinates": [-4.43573, 36.699694],
-		  "type": "Point"
-	   },
-	   "availableBikeNumber": 18,
-	   "freeSlotNumber": 10,
-	   "address": {
-		  "streetAddress": "Paseo Antonio Banderas (Diputación)",
-		  "addressLocality": "Malaga",
-		  "addressCountry": "España"
-	   },
-	   "description": "Punto de alquiler de bicicletas próximo a Diputación",
-	   "dateModified": "2017-05-09T09:25:55.00Z"
-	}
+    {
+       "id": "malaga-bici-7"
+       "type": "BikeHireDockingStation",
+       "name": "07-Diputacion",
+       "location": {
+         "coordinates": [-4.43573, 36.699694],
+          "type": "Point"
+       },
+       "availableBikeNumber": 18,
+       "freeSlotNumber": 10,
+       "address": {
+          "streetAddress": "Paseo Antonio Banderas (Diputación)",
+          "addressLocality": "Malaga",
+          "addressCountry": "España"
+       },
+       "description": "Punto de alquiler de bicicletas próximo a Diputación",
+       "dateModified": "2017-05-09T09:25:55.00Z"
+    }
 
 ## Use it with a real service
 
