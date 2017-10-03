@@ -9,7 +9,8 @@ import csv
 import datetime
 import json
 
-weather_observed = "http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv?k=cle&l={}&datos=det&w=0&f=temperatura&x=h6"
+weather_observed = ("http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv"
+                    "?k=cle&l={}&datos=det&w=0&f=temperatura&x=h6")
 
 
 def get_data(row, index, conversion=float, factor=1.0):
