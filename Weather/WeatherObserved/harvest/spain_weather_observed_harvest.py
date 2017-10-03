@@ -74,7 +74,8 @@ logger = None
 
 madrid_tz = timezone('CET')
 
-weather_observed = "http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv?k=cle&l={}&datos=det&w=0&f=temperatura&x=h6"
+weather_observed = ("http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv"
+                    "?k=cle&l={}&datos=det&w=0&f=temperatura&x=h6")
 
 # Statistics for tracking purposes
 persisted_entities = 0
