@@ -1,19 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
-def parse(ngsi_obj):
-    out = []
-    if 'contextResponses' in ngsi_obj:
-        responses = ngsi_obj['contextResponses']
-        for response in responses:
-            element = response['contextElement']
-            attributes = element['attributes']
-            out.append({
-                'id': element['id'],
-                'location': {
-                    'type': 'geo:point',
-                    'value': attributes[0]['value']
-                }
-            })
+def element_dict(response):
+    elelment = response['contextElement']
+    return {'id': element['id'],
+            'location': {
+                'type': 'geo:point',
+                'value': element['attributes'][0]['value']}}
 
-    return out
+
+def parse(ngsi_obj):
+    return [element_dict(response) for response
+            in ngsi_obj.get('contextResponses', [])]
