@@ -2,7 +2,7 @@
 
 
 def element_dict(response):
-    elelment = response['contextElement']
+    element = response['contextElement']
     return {'id': element['id'],
             'location': {
                 'type': 'geo:point',
