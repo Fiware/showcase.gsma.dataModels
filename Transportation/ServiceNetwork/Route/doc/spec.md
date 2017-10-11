@@ -2,7 +2,7 @@
 
 ## Description
 
-This entity model a particular transport route model, including all properties which are commom to multiple itinerary instances belonging to such model. This data model is based on the the [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs/) that defines a common format for transportation schedules and associated geographic information. A route is a way to identify a journey that is regularly made by a given transport in an agency.
+This entity model a particular transport route model, including all properties which are commom to multiple itinerary instances belonging to such model. A route is a way to identify a journey that is regularly made by a given transport in an agency.
 
 ## Data Model
 

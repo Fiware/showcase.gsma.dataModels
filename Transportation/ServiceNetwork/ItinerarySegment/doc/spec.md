@@ -48,21 +48,23 @@ location which will be contained in that entity's instance.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory if `refArrival is not present.
 
-+ `refDeparture` : Transaction's emitter entity's id.
++ `refDeparture` : Segment's departure entity's id.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue).
         + Subproperties:
             + `entityType` : Entity type which is the departuring point.
                 + Type: [Text](http://schema.org/Text)
             + `id` : Entities id.
                 + Type: List of [Text](http://schema.org/Text)
+    + Optional
 
-+ `refArrival` : Transaction's receiver entity's id.
++ `refArrival` : Segment's arrival entity's id.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue).
         + Subproperties:
             + `entityType` : Entity type which the arrival point.
                 + Type: [Text](http://schema.org/Text)
             + `id` : Entities id.
                 + Type: List of [Text](http://schema.org/Text)
+    + Optional
 
 + `scheduledDeparture` : Timestamp which represents when the departure should be made.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
