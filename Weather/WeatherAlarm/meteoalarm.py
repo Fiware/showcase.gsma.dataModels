@@ -102,7 +102,7 @@ def get_weather_alarms(request):
                         alarm_index += 1
                         obj = {
                             'type': 'WeatherAlarm',
-                            'id': 'WeatherAlarm' + '-' + uid + '-' + str(alarm_index),
+                            'id': 'WeatherAlarm-{}-{}'.format(uid, alarm_index),
                             'validity': {
                                 'from': '',
                                 'to': ''},
@@ -138,9 +138,9 @@ def remove_duplicates(array_data):
     out = []
 
     for data in array_data:
-        key = data['address']['addressCountry'] + data['address']['addressRegion'] +\
-            data['awarenessLevel'] + data['awarenessType'] +\
-            data['validity']['from'] + data['validity']['to']
+        key = ('{address[addressCountry]}{address[addressRegion]}'
+               '{awarenessLevel}{awarenessType}'
+               '{validity[from]}{validity[to]}').format(**data)
 
         if key not in alarms_duplicates:
             alarms_duplicates[key] = data
@@ -153,22 +153,8 @@ def parse_alarm(alarm_string):
     elements = alarm_string.split(' ')
     awt = elements[0].split(':')[1]
     level = elements[1].split(':')[1]
-
-    if level:
-        level_num = int(level)
-    else:
-        level_num = -1
-
-    out = {
-        'level': level_num,
-        'levelColor': '',
-        'awt': ''
+    return {
+        'level': int(level) if level else -1,
+        'levelColor': awareness_level_dict.get(level, ''),
+        'awt': awareness_level_dict.get(awt, '')
     }
-
-    if level in awareness_level_dict:
-        out['levelColor'] = awareness_level_dict[level]
-
-    if awt in awareness_type_dict:
-        out['awt'] = awareness_type_dict[awt]
-
-    return out
