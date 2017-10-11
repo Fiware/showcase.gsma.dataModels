@@ -18,8 +18,27 @@ An itinerary scheduled for a time period, it can be for just one day (by setting
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
 
-- `refRoute`: Route this itinerary belongs to.
++ `refRoute`: Route this itinerary belongs to.
     + Attribute type: Reference to a [Route](../../Route/doc/spec.md)
+    + Mandatory
+
++ `vehicleType`: Describes the type of transportation used on a route
+    + Attribute type: [Number](https://github.com/schema.org/Number)
+    + Allowed values:
+        + `tram` : Any light rail or street level system within a metropolitan area
+        + `subway` : Any underground rail system within a metropolitan area
+        + `rail` : Used for intercity or long-distance travel
+        + `bus` : Used for short- and long-distance bus routes
+        + `ferry` : Used for short- and long-distance boat service
+        + `cablecar` : Used for street-level cable cars where the cable runs beneath the car
+        + `gondola` : Suspended cable car. Typically used for aerial cable cars where the car is suspended from the cable
+        + `funicular` : Any rail system designed for steep inclines
+        + `car` : Particular vehicle
+        + `van` : 
+        + `truck` : 
+        + `electriccar` :
+        - Any other value meaningfull for the scenario
+
     + Mandatory
 
 + `startDate` : When the itinerary weeekdays start.
