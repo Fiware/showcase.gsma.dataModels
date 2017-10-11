@@ -21,7 +21,7 @@ const path = require('path');
     },
     "w" : {
       alias: 'fiware:warnings',
-      describe: 'How to handle FIWARE Data Models checks warnings.\n true (default) - print warnings, but does not fail. \n ignore -  do nothing and do not pring warnings.\n fail - print warnings, and fails.',
+      describe: 'How to handle FIWARE Data Models checks warnings.\n true (default) - print warnings, but does not fail. \n ignore -  do nothing and do not print warnings.\n fail - print warnings, and fails.',
       type: 'string'
     },
     "p" : {
@@ -35,7 +35,7 @@ const path = require('path');
       describe: 'Print the help message',
       demand: false
     }
-  },"Usage: nodejs test.js -p DataModel -w ignore -i common-schema.json,geometry-schema.json")
+  },"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]")
    .env()
    .file('config.json')
    .defaults({
@@ -56,7 +56,7 @@ const path = require('path');
   });
 
 /* print help */
-if (nconf.get('h')){ 
+if (nconf.get('h')){
   nconf.stores.argv.showHelp();
   return;
 }
@@ -89,7 +89,7 @@ catch (err) {
 
 /* load configuration */
 var warnings = {};
-var errors = {}; 
+var errors = {};
 var validSchemas = {};
 var validExamples = {};
 
@@ -105,7 +105,7 @@ var failErrors = !nconf.get('ajv:allErrors');
 //load a remote schema
 function loadSchema(uri,callback) {
    request(uri,call);
-     
+
    var call = function(err, res, body) {
                 if (err || res.statusCode >= 400)
                        callback(err || new Error('Loading error: ' + res.statusCode));
@@ -197,7 +197,7 @@ var docFolderExist = function (fullPath) {
 
 //check if a folder name is valid for a data model
 var modelNameValid = function (fullPath) {
-  if (fullPath.charAt(0) != fullPath.charAt(0).toUpperCase()) 
+  if (fullPath.charAt(0) != fullPath.charAt(0).toUpperCase())
     if (addWarning(fullPath, "Model folder names should start in capital letter") && failWarnings)
       throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
@@ -286,10 +286,10 @@ var fileExists = function (basePath,regex) {
     var counter=0;
     var regexp = new RegExp(regex);
     files.forEach( function(item) {
-      if(regexp.test(item)){ 
+      if(regexp.test(item)){
        counter++;
       }
-    }); 
+    });
     if (counter>0) return true;
     else return false;
 };
@@ -298,11 +298,11 @@ var docValid = function(fullpath){
    console.log("*** docValid: not implemented ***");
 };
 
-var docValidLinks = function(fullpath){ 
+var docValidLinks = function(fullpath){
    console.log("*** docValidLinks: not implemented ***");
 };
 
-var idMatching = function(fullpath){ 
+var idMatching = function(fullpath){
    console.log("*** idMatching: not implemented ***");
 };
 
@@ -312,7 +312,7 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
     var ajv = new Ajv(ajvOptions);
     addSchemas(commonSchemas, ajv.addSchema, 'schema');
     var validate;
-    try {     
+    try {
      if(!nconf.get("fiware:resolveRemoteSchemas")){
          validate = ajv.compile(schema);
             /* istanbul ignore else */
@@ -323,7 +323,7 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
                 if(failErrors) throw new Error(validate.errors);
             }
      } else {
-        /* 
+        /*
            function validateAsync (err, result) {
               if (err) {
                 addError(fullPath, 'Schema '+ file +' is invalid: '+err.message);
@@ -336,11 +336,11 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
             ajv.compileAsync(schema, validateAsync);
        */
        throw new Error("asynch compile is not implemented, don't use yet fiware:resolveRemoteSchemas option");
-       console.error("**** asynch compile is not implemented, don't use yet the fiware:resolveRemoteSchemas option ****");  
+       console.error("**** asynch compile is not implemented, don't use yet the fiware:resolveRemoteSchemas option ****");
      }
    } catch (err) {
      addError(fullPath, 'Schema '+ file +' is invalid, if one or more schemas cannot be retrieved, try using remote validation (fiware:resolveRemoteSchemas=true), check if "fiware:loadModelCommonSchemas" is enabled (if missing schemas are FIWARE common schemas) or store third party schemas in the "externalSchema" folder: '+err.message);
-     if(failErrors) throw new Error(err.message);  
+     if(failErrors) throw new Error(err.message);
   }
   return validate;
 };
@@ -348,7 +348,7 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
 // load schemas local to FIWARE Data Model (that should be named using *-schema.json pattern
 var loadLocalSchemas = function (fullPath) {
    var files;
-   if (fullPath != ".") 
+   if (fullPath != ".")
      files = getFiles(fullPath + path.sep + "*-schema.json");
    else
      files = getFiles("*-schema.json");
@@ -368,7 +368,7 @@ var validateExamples = function (fullPath,validate) {
          if(failErrors) throw new Error("Fail on Error:" + JSON.stringify(errors,null, '\t'));
        }
        if (validate(data))
-         addValidExample(fullPath,fileName +" is valid");	
+         addValidExample(fullPath,fileName +" is valid");
        else {
          addError(fullPath, 'Example '+ fileName +' is invalid: '+JSON.stringify(validate.errors,null));
          if(failErrors) throw new Error("Fail on Error:" + JSON.stringify(errors,null, '\t'));
@@ -382,7 +382,7 @@ var validateExamples = function (fullPath,validate) {
 var addUniqueToArray = function (array1, array2){
  var result =  Array.from(array1);
  array2.forEach(function(item2){
-   if (!array1.includes(item2)) 
+   if (!array1.includes(item2))
      result.push(item2);
  });
  return result;
@@ -397,10 +397,10 @@ var dive = function (basePath,schemas) {
   var relativePath = path.relative(".",basePath);
 
   var files = fs.readdirSync(basePath);
-   
+
   var localCommonSchemas=Array.from(schemas);
 
-  if (nconf.get("fiware:loadModelCommonSchemas")) 
+  if (nconf.get("fiware:loadModelCommonSchemas"))
      localCommonSchemas=addUniqueToArray(localCommonSchemas,loadLocalSchemas(basePath));
 
   files.forEach(function(fileName){
@@ -424,10 +424,10 @@ var dive = function (basePath,schemas) {
 
             //dive in again if recursion is enabled
            if (nconf.get("fiware:recursiveScan")) dive(fullPath,localCommonSchemas);
-         
+
            if (relativePath != "" && docFolders.includes(path.basename(fullPath)) && !ignoreWarnings){
               if (warningChecks.includes("docExist")) docExist(fullPath);
-           }         
+           }
            //schema compilation and example validation
            var validate;
            if (relativePath != "" && fileExists(fullPath,"schema.json")) {
