@@ -156,5 +156,5 @@ def parse_alarm(alarm_string):
     return {
         'level': int(level) if level else -1,
         'levelColor': awareness_level_dict.get(level, ''),
-        'awt': awareness_level_dict.get(awt, '')
+        'awt': awareness_type_dict.get(awt, '')
     }
