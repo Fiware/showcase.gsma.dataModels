@@ -44,6 +44,35 @@ Note: JSON Schemas only capture the NGSI simplified representation (`options=key
 
 Contributions should come in the form of pull requests. 
 
+New data models should be added under a folder structured as follow:
+- `NewModel/`
+  - `doc/`
+    - `spec.md`: A data model description based on the [data model template](datamodel_template.md), e.g. [spec.md of WeatherObserved](Weather/WeatherObserved/doc/spec.md).
+  - `README.md`: A summary file (as an extract from the spec file), e.g. [README.md of WeatherObserved](Weather/WeatherObserved/README.md)
+  - `schema.json`: The JSON Schema definition, e.g. [schema.json of WeatherObserved](Weather/WeatherObserved/schema.json)
+  - `example.json`: One or more JSON example file, e.g. [example.json of WeatherObserved](Weather/WeatherObserved/example.json)
+
+The name of the folder should be match the entity type used in the JSON Schema (e.g. `NewModel`). For data models including more entities, a hierarchical folder should be used. The father folder can include common JSON schemas shared among the entities. e.g.:
+
+- `NewModel/`
+  - `doc/`
+    - `spec.md`
+  - `README.md`
+  - `newmodel-schema.json`: the common schema for the different entities.
+  - `NewModelEntityOne/`
+    - `doc/`
+      - `spec.md`
+    - `README.md`
+    - `schema.json`
+    - `example.json`
+  - `NewModelEntityTwo/`
+    - `doc/`
+      - `spec.md`
+    - `README.md`
+    - `schema.json`
+    - `example.json`
+
+
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: LICENSE
 
