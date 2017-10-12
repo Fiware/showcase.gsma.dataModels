@@ -15,7 +15,7 @@ weather_observed = ("http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}
 
 def get_data(row, index, conversion=float, factor=1.0):
     value = row[index]
-    return conversion(value) / factor if value != '' else None
+    return None if value == '' else conversion(value) / factor
 
 
 def get_weather_observed(request):
