@@ -1,6 +1,6 @@
 {
 	"name": "fiware-model-validator",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A simple validator for FIWARE Data Models",
 	"keywords": [
 		"node",

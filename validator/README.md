@@ -70,4 +70,4 @@ Options available are:
 ## Compiling the validator
 Should you want to change the code of the validator, to install your modified version, you  simple need compile it with the following command:
 
-``npm install``
+``npm install -g``
