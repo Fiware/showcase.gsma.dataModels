@@ -37,49 +37,48 @@ nconf.argv({
     describe: 'Print the help message',
     demand: false
   }
-},"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]");
-nconf.file('config.json');
+},"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]").file('config.json');
 
-if (!nconf.get('fiware:importSchemas')) {
+if (nconf.get('fiware:importSchemas') == null) {
   nconf.set('fiware:importSchemas', ['common-schema.json','geometry-schema.json']);
 }
-if (!nconf.get('fiware:warnings')) {
+if (nconf.get('fiware:warnings') == null) {
   nconf.set('fiware:warnings', 'true');
 }
-if (!nconf.get('fiware:warningChecks')) {
+if (nconf.get('fiware:warningChecks') == null) {
   nconf.set('fiware:warningChecks', ['schemaExist','docExist','docFolderExist','exampleExist','modelNameValid','readmeExist']);
 }
-if (!nconf.get('fiware:recursiveScan')) {
+if (nconf.get('fiware:recursiveScan') == null) {
   nconf.set('fiware:recursiveScan', true);
 }
-if (!nconf.get('fiware:validateExamples')) {
+if (nconf.get('fiware:validateExamples') == null) {
   nconf.set('fiware:validateExamples', true);
 }
-if (!nconf.get('fiware:loadModelCommonSchemas')) {
+if (nconf.get('fiware:loadModelCommonSchemas') == null) {
   nconf.set('fiware:loadModelCommonSchemas', true);
 }
-if (!nconf.get('fiware:importExternalSchemaFolders')) {
+if (nconf.get('fiware:importExternalSchemaFolders') == null) {
   nconf.set('fiware:importExternalSchemaFolders', true);
 }
-if (!nconf.get('fiware:resolveRemoteSchemas')) {
+if (nconf.get('fiware:resolveRemoteSchemas') == null) {
   nconf.set('fiware:resolveRemoteSchemas', false);
 }
-if (!nconf.get('fiware:ignoreFolders')) {
+if (nconf.get('fiware:ignoreFolders') == null) {
   nconf.set('fiware:ignoreFolders', ['harvest','auxiliary']);
 }
-if (!nconf.get('fiware:docFolders')) {
+if (nconf.get('fiware:docFolders') == null) {
   nconf.set('fiware:docFolders', ['doc']);
 }
-if (!nconf.get('fiware:externalSchemaFolders')) {
+if (nconf.get('fiware:externalSchemaFolders') == null) {
   nconf.set('fiware:externalSchemaFolders', ['externalSchema']);
 }
-if (!nconf.get('ajv:missingRefs')) {
+if (nconf.get('ajv:missingRefs') == null) {
   nconf.set('ajv:missingRefs', 'true');
 }
-if (!nconf.get('ajv:extendRefs')) {
+if (nconf.get('ajv:extendRefs') == null) {
   nconf.set('ajv:extendRefs', 'fail');
 }
-if (!nconf.get('ajv:allErrors')) {
+if (nconf.get('ajv:allErrors') == null) {
   nconf.set('ajv:allErrors', true);
 }
 
