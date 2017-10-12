@@ -33,7 +33,7 @@ FIWARE_SPATH = '/Portugal'
 
 
 def decode_wind_direction(direction):
-    dictionary = {
+    return {
         '9': 180,  # North
         '5': 0,    # South
         '3': -90,  # East
@@ -42,12 +42,7 @@ def decode_wind_direction(direction):
         '8': 135,  # Northwest
         '4': -45,  # Southeast
         '6': 45    # Southwest
-    }
-
-    if direction in dictionary:
-        return dictionary[direction]
-    else:
-        return None
+    }.get(direction, None)
 
 
 # Sanitize string to avoid forbidden characters by Orion
@@ -139,11 +134,7 @@ def get_weather_observed_portugal():
 
 
 def get_value(value, scale=1):
-    out = value / scale
-    if value < 0:
-        out = None
-
-    return out
+    return None if value < 0 else value / scale
 
 # POST data to an Orion Context Broker instance using NGSIv2 API
 
@@ -203,8 +194,7 @@ def load_station_data():
         url='http://www.ipma.pt/resources.www/transf/obs-sup/stations.json')
 
     with contextlib.closing(urllib2.urlopen(req)) as f:
-        json_str = f.read()
-        data = json.loads(json_str)
+        data = json.loads(f.read())
 
         for station in data:
             station_code = str(station['properties']['idEstacao'])
