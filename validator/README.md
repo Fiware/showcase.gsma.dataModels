@@ -12,7 +12,7 @@ The FIWARE Data Model validator perform the following checks for each Data Model
 * existence of README file
 
 ##  Install the validator
-To install the validator on your machine, you need nodejs 4.0.0+. Instructions on how
+To install the validator on your machine, you need nodejs 7.0.0+. Instructions on how
 to install nodejs are available [here](https://nodejs.org/en/download/package-manager/).
 
 Once nodejs installed in your system, you can install the validator with the following command:
