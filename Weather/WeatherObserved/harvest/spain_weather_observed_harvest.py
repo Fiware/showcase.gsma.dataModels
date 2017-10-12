@@ -90,7 +90,7 @@ FIWARE_SPATH = '/Spain'
 
 
 def decode_wind_direction(direction):
-    dictionary = {
+    return {
         'Norte': 180,
         'Sur': 0,
         'Este': -90,
@@ -99,12 +99,7 @@ def decode_wind_direction(direction):
         'Noroeste': 135,
         'Sureste': -45,
         'Suroeste': 45
-    }
-
-    if direction in dictionary:
-        return dictionary[direction]
-    else:
-        return None
+    }.get(direction, None)
 
 
 # Sanitize string to avoid forbidden characters by Orion
@@ -113,21 +108,13 @@ def sanitize(str_in):
 
 
 def get_data(row, index, conversion=float, factor=1.0):
-    out = None
-
     value = row[index]
-    if(value != ''):
-        out = conversion(value) / factor
-
-    return out
+    return None if value == '' else conversion(value) / factor 
 
 
 def get_weather_observed_spain():
-    num = 0
-
     for station_code in station_data:
         out = []
-        num += 1
         if station_code in station_code_exceptions:
             continue
 
