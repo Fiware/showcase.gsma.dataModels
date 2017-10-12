@@ -264,7 +264,7 @@ def post_station_data_batch(station_code, data):
             e.code,
             e.read())
         logger.debug('Data which failed: %s', data_as_str)
-        in_error_entities = in_error_entities + 1
+        in_error_entities += 1
 
 
 # Reads station data from CSV file
