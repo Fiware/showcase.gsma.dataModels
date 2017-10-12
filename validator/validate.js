@@ -479,3 +479,4 @@ console.log("*** ValidSchemas ***: "+JSON.stringify(validSchemas,null, '\t'));
 console.log("*** ValidExamples ***: "+JSON.stringify(validExamples,null, '\t'));
 console.log("*** Warnings ***: "+JSON.stringify(warnings,null, '\t'));
 console.log("*** Errors ***: "+JSON.stringify(errors,null, '\t'));
+if (Object.keys(errors).length != 0) throw new Error(JSON.stringify(errors,null, '\t'));
