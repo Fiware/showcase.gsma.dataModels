@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require("fs");
     nconf = require('nconf');
     util = require('util');
@@ -35,10 +37,9 @@ const path = require('path');
       describe: 'Print the help message',
       demand: false
     }
-  },"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]")
-   .env()
-   .file('config.json')
-   .defaults({
+  },"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]");
+  nconf.file('config.json');
+  nconf.defaults({
      'fiware:importSchemas': ['common-schema.json','geometry-schema.json'],
      'fiware:warnings': 'true',
      'fiware:warningChecks': ['schemaExist','docExist','docFolderExist','exampleExist','modelNameValid','readmeExist'],
