@@ -1,4 +1,4 @@
-{ 
+{
   "fiware": {
     "importSchemas": ["common-schema.json","geometry-schema.json"],
     "warnings": "true",
@@ -6,9 +6,9 @@
     "recursiveScan": true,
     "validateExamples": true,
     "loadModelCommonSchemas": true,
-    "importExternalSchemaFolders": true,
+    "importExternalSchemaFolders": false,
     "resolveRemoteSchemas": false,
-    "ignoreFolders": ["harvest","auxiliary"],
+    "ignoreFolders": ["harvest","auxiliary","validator"],
     "externalSchemaFolders" : ["externalSchema"],
     "docFolders": ["doc"]
   },

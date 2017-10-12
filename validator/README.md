@@ -22,7 +22,7 @@ npm install -g fiware-model-validator
 ```
 
 ## Using the validator
-To use the validator:
+To use the validator, execute it from the root of the DataModel repository:
 ```
 validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]
 ```
@@ -36,6 +36,8 @@ Command line available options are:
   * `fail` - print warnings, and fails.         
 * ``-p, --fiware:path``. The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)
 * ``-h, --help``. Print the help message
+
+If you want to execute `validate` outside the root directory and you want to import the common schemas, you have to import them using the correct path.
 
 ### Default configuration
 For a more fine grained configuration you can create a `config.json` file. An example is provided in the repository.
@@ -55,6 +57,7 @@ Options available are:
   * `readmeExist`: existence of README file
 * `fiware:recursiveScan`: enable or disable the recursive scanning of directory. Default value: `true`
 * `fiware:validateExamples`: enable or disable the validation of JSON Examples. Default value: `true`
+* `fiware:loadModelCommonSchemas`: automatically include any file named ``*-schema.json`` in data path.
 * `fiware:ignoreFolders`: The list of folder names that should be ignored. Default value: `['harvest','auxiliary']`
 * `fiware:docFolders`: The list of folder names that are expected to contain Documentation: Default value: `['doc']`
 * `ajv:missingRefs`: handling of missing referenced schemas. See [ajv](https://github.com/epoberezkin/ajv) for more details. Option values:
@@ -63,8 +66,8 @@ Options available are:
   * `fail` - to log error and successfully compile schema but fail validation if this rule is checked.
 * `ajv:extendRefs`: validation of other keywords when $ref is present in the schema. See [ajv](https://github.com/epoberezkin/ajv) for more details. Option values:
   * `ignore` - when $ref is used other keywords are ignored (as per JSON Reference standard). A warning will be logged during the schema compilation.
-  * `fail (default)` - if other validation keywords are used together with $ref the exception will be thrown when the schema is compiled. This option is recomended to make sure schema has no keywords that are ignored, which can be confusing.
-  * `true` - validate all keywords in the schemas with $ref (the default behaviour in versions before 5.0.0).
+  * `fail (default)` - if other validation keywords are used together with $ref the exception will be thrown when the schema is compiled. This option is recommended to make sure schema has no keywords that are ignored, which can be confusing.
+  * `true` - validate all keywords in the schemas with $ref (the default behaviour in versions before ajv 5.0.0).
 * `ajv:allErrors`: when `true` check all rules collecting all errors, when `false` return after the first error. See [ajv](https://github.com/epoberezkin/ajv) for more details. Default value: `true`
 
 ## Compiling the validator

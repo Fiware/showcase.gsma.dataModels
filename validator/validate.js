@@ -135,7 +135,7 @@ function loadSchema(uri,callback) {
 
   var call = function(err, res, body) {
     if (err || res.statusCode >= 400)
-    callback(err || new Error('Loading error: ' + res.statusCode));
+      callback(err || new Error('Loading error: ' + res.statusCode));
     else {
       callback(null,JSON.parse(body));
     }
@@ -202,7 +202,7 @@ var openFile = function (filename, suffix){
 var docExist = function (fullPath){
   if (!fileExists(fullPath, "spec.md") && !fileExists(fullPath, "introduction.md"))
   if (addWarning(fullPath, "does not include a documentation file name spec.md or introduction.md") && failWarnings)
-  throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
+    throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
 
 //check if a documentation folder exists in a given path
@@ -213,20 +213,21 @@ var docFolderExist = function (fullPath) {
       fs.lstatSync(path.join(fullPath, value)).isDirectory();
       counter++;
     } catch (err) {
+
     }
   });
 
   if (counter == 0) addWarning(fullPath, "does not include a documentation folder");
   if (warningChecks.includes("docExist") && counter == 0)
   if (addWarning(fullPath, "does not include a documentation file name spec.md or introduction.md") && failWarnings)
-  throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
+    throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
 
 //check if a folder name is valid for a data model
 var modelNameValid = function (fullPath) {
   if (fullPath.charAt(0) != fullPath.charAt(0).toUpperCase())
   if (addWarning(fullPath, "Model folder names should start in capital letter") && failWarnings)
-  throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
+    throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
 
 //add message to map
@@ -234,9 +235,9 @@ var addMessageToMap = function (modelPath, message, map) {
   var rootModel = getRootModelName(modelPath);
   fullMessage = modelPath +": "+ message;
   if (map[rootModel]!=null)
-  map[rootModel].push(fullMessage);
+    map[rootModel].push(fullMessage);
   else
-  map[rootModel]=[fullMessage];
+    map[rootModel]=[fullMessage];
   return true;
 };
 
@@ -276,7 +277,7 @@ var containsModelFolders = function (basePath) {
       var fullPath = path.join(basePath, fileName);
       var stat=fs.lstatSync(fullPath);
       if (stat && stat.isDirectory() && !ignoreFolders.includes(path.basename(fullPath)) && !docFolders.includes(path.basename(fullPath)) && !externalSchemaFolders.includes(path.basename(fullPath)))
-      folderCounter++;
+        folderCounter++;
     } catch (err) {
       console.log("***ERROR*** "+err );
       if(failErrors) throw new Error(err);
@@ -290,21 +291,21 @@ var containsModelFolders = function (basePath) {
 var readmeExist = function(fullPath){
   if (!fileExists(fullPath,"README.md"))
   if (addWarning(fullPath, "does not include a Readme file README.md") && failWarnings)
-  throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
+    throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
 
 //check if a folder includes a schema file
 var schemaExist = function(fullPath){
   if (!containsModelFolders(fullPath) && !fileExists(fullPath,"schema.json"))
   if (addWarning(fullPath, "does not include a JSON Schema file schema.json") && failWarnings)
-  throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
+    throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
 
 //check if a folder includes one or more example files
 var exampleExist = function (fullPath){
   if (!containsModelFolders(fullPath) && !fileExists(fullPath,"example*.json"))
   if (addWarning(fullPath, "does not include a JSON Example file example*.json") && failWarnings)
-  throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
+    throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));
 };
 
 //if a file matching a given regular expression exists in a given path returns true, otherwise false
@@ -352,33 +353,33 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
     } else {
       /*
       function validateAsync (err, result) {
-      if (err) {
-      addError(fullPath, 'Schema '+ file +' is invalid: '+err.message);
-      if(failErrors) throw new Error(err.message);
-    } else {
-    addValidSchema(fullPath, 'Schema '+ file +' is valid');
+        if (err) {
+          addError(fullPath, 'Schema '+ file +' is invalid: '+err.message);
+          if(failErrors) throw new Error(err.message);
+        } else {
+          addValidSchema(fullPath, 'Schema '+ file +' is valid');
+        }
+          validate = result;
+        };
+        ajv.compileAsync(schema, validateAsync);
+      */
+      throw new Error("asynch compile is not implemented, don't use yet fiware:resolveRemoteSchemas option");
+      console.error("**** asynch compile is not implemented, don't use yet the fiware:resolveRemoteSchemas option ****");
+    }
+  } catch (err) {
+    addError(fullPath, 'Schema '+ file +' is invalid, if one or more schemas cannot be retrieved, try using remote validation (fiware:resolveRemoteSchemas=true), check if "fiware:loadModelCommonSchemas" is enabled (if missing schemas are FIWARE common schemas) or store third party schemas in the "externalSchema" folder: '+err.message);
+    if(failErrors) throw new Error(err.message);
   }
-  validate = result;
-};
-ajv.compileAsync(schema, validateAsync);
-*/
-throw new Error("asynch compile is not implemented, don't use yet fiware:resolveRemoteSchemas option");
-console.error("**** asynch compile is not implemented, don't use yet the fiware:resolveRemoteSchemas option ****");
-}
-} catch (err) {
-  addError(fullPath, 'Schema '+ file +' is invalid, if one or more schemas cannot be retrieved, try using remote validation (fiware:resolveRemoteSchemas=true), check if "fiware:loadModelCommonSchemas" is enabled (if missing schemas are FIWARE common schemas) or store third party schemas in the "externalSchema" folder: '+err.message);
-  if(failErrors) throw new Error(err.message);
-}
-return validate;
+  return validate;
 };
 
 // load schemas local to FIWARE Data Model (that should be named using *-schema.json pattern
 var loadLocalSchemas = function (fullPath) {
   var files;
   if (fullPath != ".")
-  files = getFiles(fullPath + path.sep + "*-schema.json");
+    files = getFiles(fullPath + path.sep + "*-schema.json");
   else
-  files = getFiles("*-schema.json");
+    files = getFiles("*-schema.json");
   return files;
 };
 
