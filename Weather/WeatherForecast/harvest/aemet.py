@@ -52,26 +52,20 @@ def index():
 
 @app.route('/v2/entities', methods=['GET'])
 def get_weather():
-    entity_type = request.args.get('type')
-
-    if entity_type == 'WeatherForecast':
-        return get_weather_forecasted(request)
-    elif entity_type == 'WeatherObserved':
-        return get_weather_observed(request)
-    elif entity_type == 'WeatherAlarm':
-        return get_weather_alarms(request)
+    func = {
+        'WeatherForecast': get_weather_forecasted,
+        'WeatherObserved': get_weather_observed,
+        'WeatherAlarm': get_weather_alarms
+    }.get(request.args.get('type'))
+    if func:
+        return func(request)
     else:
         return Response(json.dumps([]), mimetype='application/json')
 
 
 def get_data(row, index, conversion=float, factor=1.0):
-    out = None
-
     value = row[index]
-    if(value != ''):
-        out = conversion(value) / factor
-
-    return out
+    return None if value == '' else conversion(value) / factor
 
 
 def get_weather_forecasted(request):
@@ -118,10 +112,11 @@ def get_weather_forecasted(request):
 
     address_locality = DOMTree.getElementsByTagName(
         'nombre')[0].firstChild.nodeValue
-    address = {}
-    address['addressCountry'] = country
-    address['postalCode'] = postal_code
-    address['addressLocality'] = address_locality
+    address = {
+        'addressCountry': country,
+        'postalCode': postal_code,
+        'addressLocality': address_locality
+    }
 
     created = DOMTree.getElementsByTagName('elaborado')[0].firstChild.nodeValue
 
@@ -132,15 +127,13 @@ def get_weather_forecasted(request):
     for forecast in forecasts:
         date = forecast.getAttribute('fecha')
         normalizedForecast = parse_aemet_forecast(forecast, date)
-        counter = 1
-        for f in normalizedForecast:
+        for i, f in enumerate(normalizedForecast):
             f['type'] = 'WeatherForecast'
             f['id'] = generate_id(
-                postal_code, country, date) + '_' + str(counter)
+                postal_code, country, date) + '_' + str(i + 1)
             f['address'] = address
             f['dateCreated'] = created
             f['source'] = source
-            counter += 1
             out.append(f)
 
     return Response(json.dumps(out), mimetype='application/json')
@@ -154,9 +147,7 @@ def parse_aemet_forecast(forecast, date):
 
     pops = forecast.getElementsByTagName('prob_precipitacion')
     for pop in pops:
-        period = pop.getAttribute('periodo')
-        if not period:
-            period = '00-24'
+        period = pop.getAttribute('periodo') or '00-24'
         if pop.firstChild and pop.firstChild.nodeValue:
             insert_into_period(
                 periods, period, 'precipitationProbability', float(
@@ -165,9 +156,7 @@ def parse_aemet_forecast(forecast, date):
     period = None
     weather_types = forecast.getElementsByTagName('estado_cielo')
     for weather_type in weather_types:
-        period = weather_type.getAttribute('periodo')
-        if not period:
-            period = '00-24'
+        period = weather_type.getAttribute('periodo') or '00-24'
         if weather_type.firstChild and weather_type.firstChild.nodeValue:
             insert_into_period(periods, period, 'weatherType',
                                weather_type.getAttribute('descripcion'))
@@ -175,9 +164,7 @@ def parse_aemet_forecast(forecast, date):
     period = None
     wind_data = forecast.getElementsByTagName('viento')
     for wind in wind_data:
-        period = wind.getAttribute('periodo')
-        if not period:
-            period = '00-24'
+        period = wind.getAttribute('periodo') or '00-24'
         wind_direction = wind.getElementsByTagName('direccion')[0]
         wind_speed = wind.getElementsByTagName('velocidad')[0]
         if wind_speed.firstChild and wind_speed.firstChild.nodeValue:
@@ -212,9 +199,7 @@ def parse_aemet_forecast(forecast, date):
         print(period)
 
     for period in periods:
-        period_items = period.split('-')
-        period_start = period_items[0]
-        period_end = period_items[1]
+        period_start, period_end = period.split('-')[:2]
         end_hour = int(period_end)
         end_date = copy.deepcopy(parsed_date)
         if end_hour > 23:
@@ -222,28 +207,24 @@ def parse_aemet_forecast(forecast, date):
             end_date = parsed_date + datetime.timedelta(days=1)
 
         start_date = parsed_date.replace(
-            hour=int(period_start), minute=0, second=0)
+            hour = int(period_start), minute=0, second=0)
         end_date = end_date.replace(hour=end_hour, minute=0, second=0)
 
         objPeriod = periods[period]
-        objPeriod['validity'] = {}
-        objPeriod['validity']['from'] = start_date.isoformat()
-        objPeriod['validity']['to'] = end_date.isoformat()
-
-        maximum = {}
-        objPeriod['dayMaximum'] = maximum
-        minimum = {}
-        objPeriod['dayMinimum'] = minimum
-
-        maximum['temperature'] = max_temp
-        minimum['temperature'] = min_temp
-
-        maximum['relativeHumidity'] = max_humidity
-        minimum['relativeHumidity'] = min_humidity
-
-        maximum['feelsLikeTemperature'] = max_temp_feels
-        minimum['feelsLikeTemperature'] = min_temp_feels
-
+        objPeriod['validity'] = {
+            'from': start_date.isoformat(),
+            'to': end_date.isoformat()
+        }
+        objPeriod['dayMaximum'] = {
+            'temperature': max_temp,
+            'relativeHumidity': max_humidity,
+            'feelsLikeTemperature': max_temp_feels
+        }
+        objPeriod['dayMinimum'] = {
+            'temperature': min_temp,
+            'relativeHumidity'] = min_humidity,
+            'feelsLikeTemperature'] = min_temp_feels
+        }
         out.append(objPeriod)
 
     return out
@@ -252,14 +233,9 @@ def parse_aemet_forecast(forecast, date):
 def get_parameter_data(node, periods, parameter, factor=1.0):
     param_periods = node.getElementsByTagName('dato')
     for param in param_periods:
-        hour_str = param.getAttribute('hora')
-        hour = int(hour_str)
+        hour = int(param.getAttribute('hora'))
         interval_start = hour - 6
-        interval_start_str = str(interval_start)
-        if interval_start < 10:
-            interval_start_str = '0' + str(interval_start)
-
-        period = interval_start_str + '-' + hour_str
+        period = '{:02}-{:02}'.format(interval_start, hour)
         if param.firstChild and param.firstChild.nodeValue:
             param_val = float(param.firstChild.nodeValue)
             insert_into_period(periods, period, parameter, param_val / factor)
@@ -268,12 +244,11 @@ def get_parameter_data(node, periods, parameter, factor=1.0):
 def insert_into_period(periods, period, attribute, value):
     if period not in periods:
         periods[period] = {}
-
     periods[period][attribute] = value
 
 
 def generate_id(postal_code, country, date):
-    return postal_code + '_' + country + '_' + date
+    return '_'.join(postal_code, country, date)
 
 
 if __name__ == '__main__':
