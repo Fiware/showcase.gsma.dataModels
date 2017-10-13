@@ -207,7 +207,7 @@ def parse_aemet_forecast(forecast, date):
             end_date = parsed_date + datetime.timedelta(days=1)
 
         start_date = parsed_date.replace(
-            hour = int(period_start), minute=0, second=0)
+            hour=int(period_start), minute=0, second=0)
         end_date = end_date.replace(hour=end_hour, minute=0, second=0)
 
         objPeriod = periods[period]
@@ -222,8 +222,8 @@ def parse_aemet_forecast(forecast, date):
         }
         objPeriod['dayMinimum'] = {
             'temperature': min_temp,
-            'relativeHumidity'] = min_humidity,
-            'feelsLikeTemperature'] = min_temp_feels
+            'relativeHumidity': min_humidity,
+            'feelsLikeTemperature': min_temp_feels
         }
         out.append(objPeriod)
 
