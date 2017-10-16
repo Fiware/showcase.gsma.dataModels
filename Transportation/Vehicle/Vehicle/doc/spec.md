@@ -17,7 +17,7 @@ A vehicle.
 + `description` : Vehicle description. 
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
-    
+
 + `vehicleType` : Type of vehicle from the point of view of its structural characteristics.
 This is different than the vehicle category (see below).
     + Attribute type: [Text](https://schema.org/Text)
@@ -28,7 +28,7 @@ This is different than the vehicle category (see below).
            `motorcycle`, `motorcycleWithSideCar`, `motorscooter`, `trailer`, `van`, `caravan`, `constructionOrMaintenanceVehicle`)
         + (`trolley`, `binTrolley`, `sweepingMachine`, `cleaningTrolley`)
     + Mandatory
-    
+
 + `category` : Vehicle category(ies) from an external point of view.
 This is different than the vehicle type (car, lorry, etc.) represented by the `vehicleType` property.
     + Attribute type: List of [Text](https:/schema.org/Text)
@@ -49,7 +49,7 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
             + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
             + Mandatory
     + Mandatory only if `category` contains `tracked`. 
-    
+
 + `previousLocation` : Vehicle's previous location represented by a GeoJSON Point. Such point may contain the previous vehicle's
 *altitude* as the third component of the`coordinates` array.
     + Attribute type: `geo:json`.
@@ -59,7 +59,7 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
             + Type: [DateTime](http://schema.org/DateTime)
             + Mandatory
     + Optional
-    
+
 + `speed` : Denotes the magnitude of the horizontal component of the vehicle's current velocity and is specified in Kilometers per Hour.
 If provided, the value of the speed attribute must be a non-negative real number. `null` *MAY* be used if `speed` is transiently unknown for some reason.    
     + Attribute type: [Number](https:/schema.org/Number)
@@ -70,7 +70,7 @@ If provided, the value of the speed attribute must be a non-negative real number
             + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
             + Mandatory
     + Mandatory only if `category` contains `tracked`.
-    
+
 + `heading` : Denotes the direction of travel of the vehicle and is specified in decimal degrees,
 where 0° ≤ `heading` < 360°, counting clockwise relative to the true north.  If the vehicle is stationary (i.e. the value of the `speed` attribute is `0`),
 then the value of the heading attribute must be equal to `null`. `null` *MAY* be used if `heading` is transiently unknown for some reason.   
@@ -96,7 +96,7 @@ then the value of the heading attribute must be equal to `null`. `null` *MAY* be
 to identify individual motor vehicles.
     + Normative References: [https://schema.org/vehicleIdentificationNumber](https://schema.org/vehicleIdentificationNumber)
     + Mandatory if `vehiclePlateIdentifier` is not defined.
-    
+
 + `vehiclePlateIdentifier` : An identifier or code displayed on a vehicle registration plate attached to the vehicle used for official identification purposes.
 The registration identifier is numeric or alphanumeric and is unique within the issuing authority's region.
     + Normative References: DATEX II `vehicleRegistrationPlateIdentifier`

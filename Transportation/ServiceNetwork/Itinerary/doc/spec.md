@@ -22,23 +22,12 @@ An itinerary scheduled for a time period, it can be for just one day (by setting
     + Attribute type: Reference to a [Route](../../Route/doc/spec.md)
     + Mandatory
 
-+ `vehicleType`: Describes the type of transportation used on a route
-    + Attribute type: [Number](https://github.com/schema.org/Number)
-    + Allowed values:
-        + `tram` : Any light rail or street level system within a metropolitan area
-        + `subway` : Any underground rail system within a metropolitan area
-        + `rail` : Used for intercity or long-distance travel
-        + `bus` : Used for short- and long-distance bus routes
-        + `ferry` : Used for short- and long-distance boat service
-        + `cablecar` : Used for street-level cable cars where the cable runs beneath the car
-        + `gondola` : Suspended cable car. Typically used for aerial cable cars where the car is suspended from the cable
-        + `funicular` : Any rail system designed for steep inclines
-        + `car` : Particular vehicle
-        + `van` : 
-        + `truck` : 
-        + `electriccar` :
-        - Any other value meaningfull for the scenario
++ `refSegments`: ItinerarySegments that compose to this itinerary
+    + Attribute type: List of references to a [ItinerarySegment](../../ItinerarySegment/doc/spec.md)
+    + Mandatory
 
++ `vehicleType`: Type of vehicle from the point of view of its structural characteristics.
+    + See definition at [Vehicle](../../Vehicle/doc/spec.md).
     + Mandatory
 
 + `startDate` : When the itinerary weeekdays start.
@@ -49,7 +38,7 @@ An itinerary scheduled for a time period, it can be for just one day (by setting
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `weekdays` : The weekdays that this trip refers to.
++ `weekdays` : The weekdays that this trip is scheduled to be performed.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values (Informative):
         + `monday'
@@ -62,11 +51,8 @@ An itinerary scheduled for a time period, it can be for just one day (by setting
     + Optional
 
 + `scheduledPath` : Itinerary's scheduled path geometry represented by a GeoJSON LineString. 
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
-
-+ `performedPath` : Performed path of the vehicle, to be updated while vehicle is travelling. A geometry represented by a GeoJSON LineString. 
-    + Normative References: [https://schema.org/description](https://schema.org/description)
+    + Attribute type: `geo:json`.
+    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Optional
 
 ## Example
@@ -74,13 +60,10 @@ An itinerary scheduled for a time period, it can be for just one day (by setting
     {
       "id": "itinerary:89237",
       "type": "Itinerary",
-      "name": "Itinerary 12",
-      "description": "Bus Itinerary for 2017-09-22",
-      "segeemnts": [
-            { "id": "wastecontainer:27" , "type": "WasteContainer" , "dateScheduled" : "2017-09-22T15:05:59.408Z" },
-            { "id": "wastecontainer:92" , "type": "WasteContainer" , "dateScheduled" : "2017-09-22T15:09:23.788Z" },
-            ],
-      "refAssignedVehicle" : "vehicle-512"
+      "name": "B25-8:10",
+      "description": "Bus line 25 from Metro Tacubaya to La Valenciana, itinerary departing at 08:10",
+      "refRoute" : "route:194",
+      "refSegments": ["itinerarysegment:89237","itinerarysegment:89238","itinerarysegment:89239","itinerarysegment:89240","itinerarysegment:89241"],
     }
     
 ## Test it with a real service

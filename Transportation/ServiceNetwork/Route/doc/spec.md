@@ -22,7 +22,7 @@ This entity model a particular transport route model, including all properties w
 	- Attribute type: https://schema.org/Text
 	- Optional 
 
-- ```refAgency```: Agency this route operated by.
+- ```operatedBy```: Agency this route operated by.
         - Attribute type: Reference to a [Agency](../../Agency/doc/spec.md)
         - Mandatory
 
@@ -39,10 +39,10 @@ This entity model a particular transport route model, including all properties w
 
 ```
 {
-	"id": "routeID",
+	"id": "route:194",
         "type": "Route",
-	"short_name": "SAUSA"
-	"long_name": "Metro Tacubaya - La Valenciana"
-	"vehicleType": "rail"
+	"short_name": "SAUSA",
+	"long_name": "Metro Tacubaya - La Valenciana",
+	"operatedBy": "CC"
 }
 ```
