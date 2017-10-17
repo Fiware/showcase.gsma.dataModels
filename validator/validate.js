@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+"use strict";
 
 var fs = require("fs");
-nconf = require('nconf');
-util = require('util');
-request = require('request');
-glob = require('glob');
+var nconf = require('nconf');
+var util = require('util');
+var request = require('request');
+var glob = require('glob');
 var Ajv  = require('ajv');
 
 const path = require('path');
@@ -17,17 +18,17 @@ const path = require('path');
 //   4. defaults
 nconf.argv({
   "i": {
-    alias: 'fiware:importSchemas',
+    alias: 'dmv:importSchemas',
     describe: 'Additional schemas that will be included during validation. Default imported schemas are: common-schema.json, geometry-schema.json',
     type: 'array'
   },
   "w" : {
-    alias: 'fiware:warnings',
+    alias: 'dmv:warnings',
     describe: 'How to handle FIWARE Data Models checks warnings.\n true (default) - print warnings, but does not fail. \n ignore -  do nothing and do not print warnings.\n fail - print warnings, and fails.',
     type: 'string'
   },
   "p" : {
-    alias: 'fiware:path',
+    alias: 'dmv:path',
     describe: 'The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)',
     demand: false,
     type: 'string'
@@ -39,38 +40,38 @@ nconf.argv({
   }
 },"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]").file('config.json');
 
-if (nconf.get('fiware:importSchemas') == null) {
-  nconf.set('fiware:importSchemas', ['common-schema.json','geometry-schema.json']);
+if (nconf.get('dmv:importSchemas') == null) {
+  nconf.set('dmv:importSchemas', ['common-schema.json','geometry-schema.json']);
 }
-if (nconf.get('fiware:warnings') == null) {
-  nconf.set('fiware:warnings', 'true');
+if (nconf.get('dmv:warnings') == null) {
+  nconf.set('dmv:warnings', 'true');
 }
-if (nconf.get('fiware:warningChecks') == null) {
-  nconf.set('fiware:warningChecks', ['schemaExist','docExist','docFolderExist','exampleExist','modelNameValid','readmeExist']);
+if (nconf.get('dmv:warningChecks') == null) {
+  nconf.set('dmv:warningChecks', ['schemaExist','docExist','docFolderExist','exampleExist','modelNameValid','readmeExist']);
 }
-if (nconf.get('fiware:recursiveScan') == null) {
-  nconf.set('fiware:recursiveScan', true);
+if (nconf.get('dmv:recursiveScan') == null) {
+  nconf.set('dmv:recursiveScan', true);
 }
-if (nconf.get('fiware:validateExamples') == null) {
-  nconf.set('fiware:validateExamples', true);
+if (nconf.get('dmv:validateExamples') == null) {
+  nconf.set('dmv:validateExamples', true);
 }
-if (nconf.get('fiware:loadModelCommonSchemas') == null) {
-  nconf.set('fiware:loadModelCommonSchemas', true);
+if (nconf.get('dmv:loadModelCommonSchemas') == null) {
+  nconf.set('dmv:loadModelCommonSchemas', true);
 }
-if (nconf.get('fiware:importExternalSchemaFolders') == null) {
-  nconf.set('fiware:importExternalSchemaFolders', true);
+if (nconf.get('dmv:importExternalSchemaFolders') == null) {
+  nconf.set('dmv:importExternalSchemaFolders', true);
 }
-if (nconf.get('fiware:resolveRemoteSchemas') == null) {
-  nconf.set('fiware:resolveRemoteSchemas', false);
+if (nconf.get('dmv:resolveRemoteSchemas') == null) {
+  nconf.set('dmv:resolveRemoteSchemas', false);
 }
-if (nconf.get('fiware:ignoreFolders') == null) {
-  nconf.set('fiware:ignoreFolders', ['harvest','auxiliary']);
+if (nconf.get('dmv:ignoreFolders') == null) {
+  nconf.set('dmv:ignoreFolders', ['harvest','auxiliary']);
 }
-if (nconf.get('fiware:docFolders') == null) {
-  nconf.set('fiware:docFolders', ['doc']);
+if (nconf.get('dmv:docFolders') == null) {
+  nconf.set('dmv:docFolders', ['doc']);
 }
-if (nconf.get('fiware:externalSchemaFolders') == null) {
-  nconf.set('fiware:externalSchemaFolders', ['externalSchema']);
+if (nconf.get('dmv:externalSchemaFolders') == null) {
+  nconf.set('dmv:externalSchemaFolders', ['externalSchema']);
 }
 if (nconf.get('ajv:missingRefs') == null) {
   nconf.set('ajv:missingRefs', 'true');
@@ -90,7 +91,7 @@ if (nconf.get('h')){
 
 /* Check configuration */
 try {
-  nconf.required(['fiware:path']);
+  nconf.required(['dmv:path']);
 } catch (err) {
   process.exitCode = -1;
   console.error("\n Invalid Configuration:"+err.message+"\n");
@@ -101,7 +102,7 @@ try {
 /* Check if path is valid */
 try {
   // Query the entry
-  stats = fs.lstatSync(nconf.get('fiware:path'));
+  stats = fs.lstatSync(nconf.get('dmv:path'));
 
   // Is it a directory?
   if (!stats.isDirectory()) {
@@ -120,13 +121,13 @@ var errors = {};
 var validSchemas = {};
 var validExamples = {};
 
-var ignoreFolders = nconf.get('fiware:ignoreFolders');
-var docFolders = nconf.get('fiware:docFolders');
+var ignoreFolders = nconf.get('dmv:ignoreFolders');
+var docFolders = nconf.get('dmv:docFolders');
 ignoreFolders = ignoreFolders.concat(['.git','node_modules']);
-var warningChecks = nconf.get('fiware:warningChecks');
-var externalSchemaFolders = nconf.get('fiware:externalSchemaFolders');
-var ignoreWarnings = (nconf.get('fiware:warnings') == 'ignore');
-var failWarnings = (nconf.get('fiware:warnings') == 'fail');
+var warningChecks = nconf.get('dmv:warningChecks');
+var externalSchemaFolders = nconf.get('dmv:externalSchemaFolders');
+var ignoreWarnings = (nconf.get('dmv:warnings') == 'ignore');
+var failWarnings = (nconf.get('dmv:warnings') == 'fail');
 var failErrors = !nconf.get('ajv:allErrors');
 
 //load a remote schema
@@ -341,7 +342,7 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
   addSchemas(commonSchemas, ajv.addSchema, 'schema');
   var validate;
   try {
-    if(!nconf.get("fiware:resolveRemoteSchemas")){
+    if(!nconf.get("dmv:resolveRemoteSchemas")){
       validate = ajv.compile(schema);
       /* istanbul ignore else */
       if (typeof validate == 'function') {
@@ -351,11 +352,11 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
         if(failErrors) throw new Error(validate.errors);
       }
     } else {
-      throw new Error("asynch compile is not implemented, don't use yet fiware:resolveRemoteSchemas option");
-      console.error("**** asynch compile is not implemented, don't use yet the fiware:resolveRemoteSchemas option ****");
+      throw new Error("asynch compile is not implemented, don't use yet dmv:resolveRemoteSchemas option");
+      console.error("**** asynch compile is not implemented, don't use yet the dmv:resolveRemoteSchemas option ****");
     }
   } catch (err) {
-    addError(fullPath, 'Schema '+ file +' is invalid, if one or more schemas cannot be retrieved, try using remote validation (fiware:resolveRemoteSchemas=true), check if "fiware:loadModelCommonSchemas" is enabled (if missing schemas are FIWARE common schemas) or store third party schemas in the "externalSchema" folder: '+err.message);
+    addError(fullPath, 'Schema '+ file +' is invalid, if one or more schemas cannot be retrieved, try using remote validation (dmv:resolveRemoteSchemas=true), check if "dmv:loadModelCommonSchemas" is enabled (if missing schemas are FIWARE common schemas) or store third party schemas in the "externalSchema" folder: '+err.message);
     if(failErrors) throw new Error(err.message);
   }
   return validate;
@@ -406,7 +407,7 @@ var addUniqueToArray = function (array1, array2){
 
 
 // Path Scan function
-var commonSchemas = nconf.get("fiware:importSchemas");
+var commonSchemas = nconf.get("dmv:importSchemas");
 
 var dive = function (basePath,schemas) {
 
@@ -416,7 +417,7 @@ var dive = function (basePath,schemas) {
 
   var localCommonSchemas=Array.from(schemas);
 
-  if (nconf.get("fiware:loadModelCommonSchemas"))
+  if (nconf.get("dmv:loadModelCommonSchemas"))
   localCommonSchemas=addUniqueToArray(localCommonSchemas,loadLocalSchemas(basePath));
 
   files.forEach(function(fileName){
@@ -439,7 +440,7 @@ var dive = function (basePath,schemas) {
           if (warningChecks.includes("idMatching") && !ignoreWarnings) idMatching(fullPath);
 
           //dive in again if recursion is enabled
-          if (nconf.get("fiware:recursiveScan")) dive(fullPath,localCommonSchemas);
+          if (nconf.get("dmv:recursiveScan")) dive(fullPath,localCommonSchemas);
 
           if (relativePath != "" && docFolders.includes(path.basename(fullPath)) && !ignoreWarnings){
             if (warningChecks.includes("docExist")) docExist(fullPath);
@@ -449,7 +450,7 @@ var dive = function (basePath,schemas) {
           if (relativePath != "" && fileExists(fullPath,"schema.json")) {
             validate = compileSchema(fullPath,"schema.json",localCommonSchemas);
           }
-          if (relativePath != "" && fileExists(fullPath,"example*.json") && nconf.get('fiware:validateExamples')) {
+          if (relativePath != "" && fileExists(fullPath,"example*.json") && nconf.get('dmv:validateExamples')) {
             validateExamples(fullPath,validate);
           }
         }
@@ -462,7 +463,7 @@ var dive = function (basePath,schemas) {
 };
 
 console.log("*** Active Warnings ***:" +warningChecks);
-dive(nconf.get('fiware:path'),commonSchemas);
+dive(nconf.get('dmv:path'),commonSchemas);
 console.log("*** ValidSchemas ***: "+JSON.stringify(validSchemas,null, '\t'));
 console.log("*** ValidExamples ***: "+JSON.stringify(validExamples,null, '\t'));
 console.log("*** Warnings ***: "+JSON.stringify(warnings,null, '\t'));

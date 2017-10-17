@@ -29,12 +29,12 @@ validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]
 
 Command line available options are:
 
-*  ``-i, --fiware:importSchemas``.  Additional schemas that will be included during validation. Default imported schemas are: common-schema.json, geometry-schema.json   [array]
-* ``-w, --fiware:warnings``. How to handle FIWARE Data Models checks warnings.
+*  ``-i, --dmv:importSchemas``.  Additional schemas that will be included during validation. Default imported schemas are: common-schema.json, geometry-schema.json   [array]
+* ``-w, --dmv:warnings``. How to handle FIWARE Data Models checks warnings.
   * ``true (default)`` - print warnings, but does not fail.
   * `ignore` -  do nothing and do not print warnings.
   * `fail` - print warnings, and fails.         
-* ``-p, --fiware:path``. The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)
+* ``-p, --dmv:path``. The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)
 * ``-h, --help``. Print the help message
 
 If you want to execute `validate` outside the root directory and you want to import the common schemas, you have to import them using the correct path.
@@ -43,23 +43,23 @@ If you want to execute `validate` outside the root directory and you want to imp
 For a more fine grained configuration you can create a `config.json` file. An example is provided in the repository.
 
 Options available are:
-* `fiware:importSchemas`: the list of schemas to be imported as support to validation. Default value: ``['common-schema.json','geometry-schema.json']``
-* `fiware:warnings`: how to handle FIWARE Data Models checks warnings.
+* `dmv:importSchemas`: the list of schemas to be imported as support to validation. Default value: ``['common-schema.json','geometry-schema.json']``
+* `dmv:warnings`: how to handle FIWARE Data Models checks warnings.
   * ``true (default)`` - print warnings, but does not fail.
   * `ignore` -  do nothing and do not print warnings.
   * `fail` - print warnings, and fails.
-* `fiware:warningChecks`: The list of checks that should be executed:
+* `dmv:warningChecks`: The list of checks that should be executed:
   * `schemaExist`: existence of JSON Schema
   * `docExist`: existence of Documentation
   * `docFolderExist`: existence of Doc folder
   * `exampleExist`: existence of one or more JSON examples
   * `modelNameValid`: adherence of Data Model name to FIWARE Data Models guidelines
   * `readmeExist`: existence of README file
-* `fiware:recursiveScan`: enable or disable the recursive scanning of directory. Default value: `true`
-* `fiware:validateExamples`: enable or disable the validation of JSON Examples. Default value: `true`
-* `fiware:loadModelCommonSchemas`: automatically include any file named ``*-schema.json`` in data path.
-* `fiware:ignoreFolders`: The list of folder names that should be ignored. Default value: `['harvest','auxiliary']`
-* `fiware:docFolders`: The list of folder names that are expected to contain Documentation: Default value: `['doc']`
+* `dmv:recursiveScan`: enable or disable the recursive scanning of directory. Default value: `true`
+* `dmv:validateExamples`: enable or disable the validation of JSON Examples. Default value: `true`
+* `dmv:loadModelCommonSchemas`: automatically include any file named ``*-schema.json`` in data path.
+* `dmv:ignoreFolders`: The list of folder names that should be ignored. Default value: `['harvest','auxiliary']`
+* `dmv:docFolders`: The list of folder names that are expected to contain Documentation: Default value: `['doc']`
 * `ajv:missingRefs`: handling of missing referenced schemas. See [ajv](https://github.com/epoberezkin/ajv) for more details. Option values:
   * `true (default)` - if the reference cannot be resolved during compilation the exception is thrown. The thrown error has properties missingRef (with hash fragment) and missingSchema (without it). Both properties are resolved relative to the current base id (usually schema id, unless it was substituted).
   * `ignore` - to log error during compilation and always pass validation.

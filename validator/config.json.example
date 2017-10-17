@@ -1,5 +1,5 @@
 {
-  "fiware": {
+  "dmv": {
     "importSchemas": ["common-schema.json","geometry-schema.json"],
     "warnings": "true",
     "warningChecks": ["schemaExist","docExist","docFolderExist","exampleExist","modelNameValid","readmeExist"],

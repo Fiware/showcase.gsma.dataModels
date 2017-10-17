@@ -1,17 +1,20 @@
 {
 	"name": "fiware-model-validator",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "A simple validator for FIWARE Data Models",
 	"keywords": [
 		"node",
-		"fiware"
+		"fiware",
+		"datamodel",
+		"vadlidator",
+		"ngsi"
 	],
 	"license": "MIT",
 	"author": "Federico Facca <name.surname@martel-innovate.com> (https://martel-innovate.com)",
 	"contributors": [
 		"N/A"
 	],
-	"main": "test.js",
+	"main": "validate.js",
 	"bin": {
 		"validate": "./validate.js"
 	},
