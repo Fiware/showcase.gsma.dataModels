@@ -42,7 +42,16 @@
           "type": "array",
           "items": {
             "type": "string",
-            "format": "uri"
+            "oneOf": [ 
+              {
+                "format": "uri"
+              },
+              {
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$"
+              }
+            ]
         }
       }
     },

@@ -153,7 +153,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional    
 
-+ `owner` : Entity's owners: an array of entities that represents the owners of an Thing.
++ `owner` : Entity's owners: an array of entities that represents the owners of a Device.
     + Attribute type: List of [Person]( http://schema.org/Person) or [Organization](https://schema.org/Organization).
     + Optional
 
