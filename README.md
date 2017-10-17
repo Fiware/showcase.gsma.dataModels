@@ -44,7 +44,7 @@ Note: JSON Schemas only capture the NGSI simplified representation (`options=key
 
 Contributions should come in the form of pull requests. 
 
-New data models should be added under a folder structured as follow:
+New data models should be added under a folder structured as follows:
 - `NewModel/`
   - `doc/`
     - `spec.md`: A data model description based on the [data model template](datamodel_template.md), e.g. [spec.md of WeatherObserved](Weather/WeatherObserved/doc/spec.md).
@@ -52,7 +52,7 @@ New data models should be added under a folder structured as follow:
   - `schema.json`: The JSON Schema definition, e.g. [schema.json of WeatherObserved](Weather/WeatherObserved/schema.json)
   - `example.json`: One or more JSON example file, e.g. [example.json of WeatherObserved](Weather/WeatherObserved/example.json)
 
-The name of the folder should be match the entity type used in the JSON Schema (e.g. `NewModel`). For data models including more entities, a hierarchical folder should be used. The father folder can include common JSON schemas shared among the entities. e.g.:
+The name of the folder should match the entity type used in the JSON Schema (e.g. `NewModel`). For data models including more entities, a hierarchical folder should be used. The father folder can include common JSON schemas shared among the entities. e.g.:
 
 - `NewModel/`
   - `doc/`
