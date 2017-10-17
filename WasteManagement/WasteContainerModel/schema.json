@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/WasteManagement/WasteContainerModel/schema.json",
+  "title": "FIWARE - Waste Management / Waste Container Model",
+  "description": "A waste container model",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "WasteContainerModel"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "number",
+          "minimum": 0
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "cargoVolume": {
+          "type": "number",
+          "minimum": 0
+        },
+        "maximumLoad": {
+          "type": "number",
+          "minimum": 0
+        },
+        "recommendedLoad": {
+          "type": "number",
+          "minimum": 0
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "dumpster",
+              "trashCan",
+              "wheelieBin",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "insertHolesNumber": {
+          "type": "number",
+          "minimum": 0
+        },
+        "madeOf": {
+          "type": "string",
+          "enum": [
+            "plastic",
+            "wood",
+            "metal",
+            "other"
+          ]
+        },
+        "madeOfCode": {
+          "type": "string"
+        },
+        "brandName": {
+          "type": "string"
+        },
+        "modelName": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        },
+        "compliantWith": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "wheels",
+              "lid",
+              "roundedLid",
+              "insertHoles",
+              "lockable",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}
