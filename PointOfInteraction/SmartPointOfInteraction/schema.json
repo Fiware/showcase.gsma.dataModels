@@ -38,7 +38,7 @@
 			},
 			"applicationUrl": {
 				"type": "string",
-				"format": "url",
+				"format": "uri",
 				"description": "This field specifies the real URL containing the solution or application"
 			},
 			"availability": {

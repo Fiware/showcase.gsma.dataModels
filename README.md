@@ -72,6 +72,15 @@ The name of the folder should match the entity type used in the JSON Schema (e.g
     - `schema.json`
     - `example.json`
 
+To facilitate contributions and their validation, we developed a tool that is also used for the Continuous Integration of FIWARE Data Models. The FIWARE IWARE Data Model validator checks the adherence of each data model to the [FIWARE Data Models guidelines](guidelines.md).
+
+For using it just install it through npm: 
+
+```
+   npm install -g fiware-model-validator
+```
+
+More details are available in the [validator documentation](validator).
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: LICENSE

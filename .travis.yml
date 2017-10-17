@@ -1,10 +1,13 @@
 language: python
 cache: pip
+node_js:
+  - "7"
 python:
   - 2.7
   - 3.6
 install:
   - pip install flake8
+  - npm install -g fiware-model-validator
 before_script:
   # stop the build if there are Python syntax errors, PEP8 violations, undefined names
   - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
@@ -12,6 +15,8 @@ before_script:
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 script:
   - true  # add other tests here
+  - validate -p .
+
 notifications:
   on_success: change
   on_failure: always

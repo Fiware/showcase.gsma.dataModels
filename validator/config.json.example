@@ -1,0 +1,20 @@
+{
+  "dmv": {
+    "importSchemas": ["common-schema.json","geometry-schema.json"],
+    "warnings": "true",
+    "warningChecks": ["schemaExist","docExist","docFolderExist","exampleExist","modelNameValid","readmeExist"],
+    "recursiveScan": true,
+    "validateExamples": true,
+    "loadModelCommonSchemas": true,
+    "importExternalSchemaFolders": false,
+    "resolveRemoteSchemas": false,
+    "ignoreFolders": ["harvest","auxiliary","validator"],
+    "externalSchemaFolders" : ["externalSchema"],
+    "docFolders": ["doc"]
+  },
+  "ajv":{
+   "missingRefs": "true",
+   "extendRefs": "true",
+   "allErrors": true
+  }
+}
