@@ -17,7 +17,7 @@
 			},
 			"announcedUrl": {
 				"type": "string",
-				"format": "url",
+				"format": "uri",
 				"description": "URL broadcasted by the device"
 			},
 			"signalStrenght": {
