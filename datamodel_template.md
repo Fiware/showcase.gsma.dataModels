@@ -20,6 +20,10 @@ A JSON Schema corresponding to this data model can be found {{add link to JSON S
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional    
 
++ `owner` : Entity's owners: an array of entities that represents the owners of an Thing.
+    + Attribute type: List of [Person]( http://schema.org/Person) or [Organization](https://schema.org/Organization).
+    + Optional
+
 {{Location and address are two typical attributes that are added here for convenience}}
 
 + `location` : Location of {{entity type}} represented by a GeoJSON geometry. 
