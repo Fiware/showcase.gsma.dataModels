@@ -351,18 +351,6 @@ var compileSchema = function(fullPath,fileSchema,commonSchemas){
         if(failErrors) throw new Error(validate.errors);
       }
     } else {
-      /*
-      function validateAsync (err, result) {
-        if (err) {
-          addError(fullPath, 'Schema '+ file +' is invalid: '+err.message);
-          if(failErrors) throw new Error(err.message);
-        } else {
-          addValidSchema(fullPath, 'Schema '+ file +' is valid');
-        }
-          validate = result;
-        };
-        ajv.compileAsync(schema, validateAsync);
-      */
       throw new Error("asynch compile is not implemented, don't use yet fiware:resolveRemoteSchemas option");
       console.error("**** asynch compile is not implemented, don't use yet the fiware:resolveRemoteSchemas option ****");
     }
