@@ -102,7 +102,7 @@ try {
 /* Check if path is valid */
 try {
   // Query the entry
-  stats = fs.lstatSync(nconf.get('dmv:path'));
+  var stats = fs.lstatSync(nconf.get('dmv:path'));
 
   // Is it a directory?
   if (!stats.isDirectory()) {
@@ -123,7 +123,7 @@ var validExamples = {};
 
 var ignoreFolders = nconf.get('dmv:ignoreFolders');
 var docFolders = nconf.get('dmv:docFolders');
-ignoreFolders = ignoreFolders.concat(['.git','node_modules']);
+ignoreFolders = ignoreFolders.concat(['.git','node_modules','validator']);
 var warningChecks = nconf.get('dmv:warningChecks');
 var externalSchemaFolders = nconf.get('dmv:externalSchemaFolders');
 var ignoreWarnings = (nconf.get('dmv:warnings') == 'ignore');
@@ -234,7 +234,7 @@ var modelNameValid = function (fullPath) {
 //add message to map
 var addMessageToMap = function (modelPath, message, map) {
   var rootModel = getRootModelName(modelPath);
-  fullMessage = modelPath +": "+ message;
+  var fullMessage = modelPath +": "+ message;
   if (map[rootModel]!=null)
     map[rootModel].push(fullMessage);
   else
@@ -379,7 +379,7 @@ var validateExamples = function (fullPath,validate) {
 
   try{
     files.forEach(function(fileName){
-      data = openFile(fileName, 'example ' + fileName);
+      var data = openFile(fileName, 'example ' + fileName);
       if (typeof validate != 'function') {
         addError(fullPath, 'Example '+ fileName +' is invalid: '+JSON.stringify(validate.errors,null));
         if(failErrors) throw new Error("Fail on Error:" + JSON.stringify(errors,null, '\t'));
