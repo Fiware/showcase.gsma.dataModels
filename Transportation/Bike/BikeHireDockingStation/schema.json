@@ -40,19 +40,14 @@
 					"type": "string"
 				},
 				"status": {
-					"type": "array",
-					"items": {
-						"type": "string",
-						"enum": [
-							"working",
-							"outOfService",
-							"withIncidence",
-							"full",
-							"almostFull"
-						]
-					},
-					"minItems": 1,
-					"uniqueItems": true
+					"type": "string",
+					"enum": [
+						"working",
+						"outOfService",
+						"withIncidence",
+						"full",
+						"almostFull"
+					]
 				},
 				"owner": {
 					"type": "string"
