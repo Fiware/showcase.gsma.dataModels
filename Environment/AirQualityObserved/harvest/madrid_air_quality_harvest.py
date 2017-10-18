@@ -207,8 +207,9 @@ def get_air_quality_madrid():
                 # Last measurement is duplicated to have an entity with the
                 # latest measurement obtained
                 last_measurement = data_array[-1]
-                last_measurement['id'] = ('Madrid-AirQualityObserved-' +
-                    last_measurement['stationCode']['value'] + '-' + 'latest')
+                last_measurement['id'] = '-'.join('Madrid', 'AirQualityObserved',
+                                                  last_measurement['stationCode']['value'],
+                                                  'latest')
             else:
                 logger.warn('No data retrieved for: %s', station)
 
@@ -253,8 +254,8 @@ def build_station(station_num, station_code, hour, row):
     }
 
     valid_from = datetime.datetime(int(row[6]), int(row[7]), int(row[8]), hour)
-    station_data['id'] = ('Madrid-AirQualityObserved-' +
-        station_code + '-' + valid_from.isoformat())
+    station_data['id'] = '-'.join('Madrid', 'AirQualityObserved',
+                                  station_code, valid_from.isoformat())
     valid_to = (valid_from + datetime.timedelta(hours=1))
 
     # Adjust timezones
