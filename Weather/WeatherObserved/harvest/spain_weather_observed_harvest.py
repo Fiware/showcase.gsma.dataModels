@@ -202,8 +202,8 @@ def get_weather_observed_spain():
                 'type': 'PostalAddress'}
             observation['location'] = station_data[station_code]['location']
 
-            observation['id'] = ('Spain-WeatherObserved' + '-' +
-                station_code + '-' + date_observed.isoformat())
+            observation['id'] = '-'.join('Spain', 'WeatherObserved',
+                                         station_code, date_observed.isoformat())
 
             out.append(observation)
 
@@ -212,8 +212,8 @@ def get_weather_observed_spain():
         # Last observation is tagged as 'latest'
         if len(out) > 0:
             latest_observation = out[-1]
-            latest_observation['id'] = ('Spain-WeatherObserved' +
-                '-' + station_code + '-' + 'latest')
+            latest_observation['id'] = '-'.join('Spain', 'WeatherObserved',
+                                                station_code, 'latest')
 
         # A batch of station data is persisted
         post_station_data_batch(station_code, out)
