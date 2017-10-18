@@ -174,8 +174,9 @@ def get_air_quality_barcelona(target_stations):
 
                         # Entity id corresponds to the observed date starting
                         # period (in local time)
-                        station_data['id'] = ('Barcelona-AirQualityObserved' +
-                            '-' + station_code + '-' + observ_date.isoformat())
+                        station_data['id'] = '-'.join('Barcelona-AirQualityObserved',
+                                                      station_code,
+                                                      observ_date.isoformat())
 
                         # Convenience data for filtering by target hour
                         station_data['hour'] = {
@@ -209,8 +210,9 @@ def get_air_quality_barcelona(target_stations):
         print(len(data_for_station))
         if len(data_for_station):
             last_measurement = data_for_station[-1]
-            last_measurement['id'] = ('Barcelona-AirQualityObserved' +
-                '-' + last_measurement['stationCode']['value'] + '-' + 'latest')
+            last_measurement['id'] = '-'.join('Barcelona-AirQualityObserved',
+                                              last_measurement['stationCode']['value'],
+                                              'latest')
 
         post_station_data(a_station, data_for_station)
 
