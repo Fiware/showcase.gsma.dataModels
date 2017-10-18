@@ -1,16 +1,12 @@
 #!bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 import urllib2
 import xml.dom.minidom
 import datetime
 import json
 import copy
 from dateutil import parser
-import csv
-import StringIO
-import re
 from pytz import timezone
 import logging
 import logging.handlers
@@ -72,7 +68,7 @@ aemet_service = "http://www.aemet.es/xml/municipios/localidad_{}.xml"
 
 
 def decode_wind_direction(direction):
-    dictionary = {
+    return {
         'Norte': 180,
         'Sur': 0,
         'Este': -90,
@@ -89,12 +85,7 @@ def decode_wind_direction(direction):
         'NO': 45,
         'SE': -135,
         'SO': 135
-    }
-
-    if direction in dictionary:
-        return dictionary[direction]
-    else:
-        return None
+    }.get(direction, None)
 
 ######
 
@@ -138,7 +129,7 @@ def decode_weather_type(weather_type):
         trailing = ', night'
         param = param[0:param.index('noche')].strip()
 
-    dictionary = {
+    out = {
         'despejado': 'sunnyDay',
         'poco nuboso': 'slightlyCloudy',
         'intervalos nubosos': 'partlyCloudy',
@@ -170,16 +161,8 @@ def decode_weather_type(weather_type):
         'nuboso con tormenta y lluvia escasa': 'cloudy, thunder, lightRainShower',
         'muy nuboso con tormenta y lluvia escasa': 'veryCloudy, thunder, lightRainShower',
         'cubierto con tormenta y lluvia escasa': 'overcast, thunder, lightRainShower',
-        'despejado noche': 'clearNight'}
-
-    if param in dictionary:
-        out = dictionary[param] + trailing
-    else:
-        out = None
-
-    return out
-
-#########
+        'despejado noche': 'clearNight'}.get(param, None)
+    return out + trailing if out else None
 
 
 def get_weather_forecasted():
@@ -385,10 +368,7 @@ def get_parameter_data(node, periods, parameter, factor=1.0):
         hour_str = param.getAttribute('hora')
         hour = int(hour_str)
         interval_start = hour - 6
-        interval_start_str = str(interval_start)
-        if interval_start < 10:
-            interval_start_str = '0' + str(interval_start)
-
+        interval_start_str = '{:02}'.format(interval_start)
         period = interval_start_str + '-' + hour_str
         if param.firstChild and param.firstChild.nodeValue:
             param_val = float(param.firstChild.nodeValue)
@@ -443,10 +423,9 @@ def post_data(data):
             headers=headers)
 
         try:
-            with contextlib.closing(urllib2.urlopen(req)) as f:
+            with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
                 global persisted_entities
-                persisted_entities = persisted_entities + \
-                    len(data[a_postal_code])
+                persisted_entities += len(data[a_postal_code])
                 logger.debug(
                     'Entities successfully created for postal code: %s',
                     a_postal_code)
@@ -458,7 +437,7 @@ def post_data(data):
                 e.code,
                 e.read())
             logger.debug('Data which failed: %s', data_as_str)
-            in_error_entities = in_error_entities + 1
+            in_error_entities += 1
 
 
 def setup_logger():

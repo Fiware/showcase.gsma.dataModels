@@ -1,7 +1,6 @@
 #!../bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 from __future__ import print_function
 import csv
 import datetime
@@ -13,7 +12,6 @@ import logging.handlers
 import re
 from pytz import timezone
 import contextlib
-import copy
 
 
 try:
@@ -209,8 +207,8 @@ def get_air_quality_madrid():
                 # Last measurement is duplicated to have an entity with the
                 # latest measurement obtained
                 last_measurement = data_array[-1]
-                last_measurement['id'] = 'Madrid-AirQualityObserved-' + \
-                    last_measurement['stationCode']['value'] + '-' + 'latest'
+                last_measurement['id'] = ('Madrid-AirQualityObserved-' +
+                    last_measurement['stationCode']['value'] + '-' + 'latest')
             else:
                 logger.warn('No data retrieved for: %s', station)
 
@@ -255,8 +253,8 @@ def build_station(station_num, station_code, hour, row):
     }
 
     valid_from = datetime.datetime(int(row[6]), int(row[7]), int(row[8]), hour)
-    station_data['id'] = 'Madrid-AirQualityObserved-' + \
-        station_code + '-' + valid_from.isoformat()
+    station_data['id'] = ('Madrid-AirQualityObserved-' +
+        station_code + '-' + valid_from.isoformat())
     valid_to = (valid_from + datetime.timedelta(hours=1))
 
     # Adjust timezones
@@ -317,7 +315,7 @@ def post_station_data(station_code, data):
         len(data))
 
     try:
-        with contextlib.closing(urllib2.urlopen(req)) as f:
+        with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
             global persisted_entities
             logger.debug("Entity successfully created: %s", station_code)
             persisted_entities = persisted_entities + 1

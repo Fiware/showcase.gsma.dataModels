@@ -1,7 +1,6 @@
 #!../bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 from __future__ import print_function
 import sys
 import os
@@ -176,7 +175,8 @@ def get_description(DOMTree, index_poi_type):
 
             content_nodes = node.getElementsByTagName('content')
             for content_node in content_nodes:
-                if content_node.firstChild is not None and content_node.firstChild.nodeValue is not None:
+                if (content_node.firstChild is not None and
+                        content_node.firstChild.nodeValue is not None):
                     text = content_node.firstChild.nodeValue
                     text_filtered = text.strip()
 
@@ -190,8 +190,8 @@ def get_description(DOMTree, index_poi_type):
 
                     description = sanitize(text_filtered)
                     # There are more spureous tags in the description
-                    # TODO: Remove any markup in the description by using an appropriate
-                    # regular expression
+                    # TODO: Remove any markup in the description by using an
+                    # appropriate regular expression
                     description.replace(
                         '<strong>', '').replace(
                         '</strong>', '')
@@ -238,12 +238,12 @@ def post_data(data):
         headers=headers)
 
     try:
-        with contextlib.closing(urllib2.urlopen(req)) as f:
+        with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
             global persisted_entities
-            persisted_entities = persisted_entities + 1
+            persisted_entities += 1
     except urllib2.URLError as e:
         global in_error_entities
-        in_error_entities = in_error_entities + 1
+        in_error_entities += 1
 
 
 if __name__ == '__main__':

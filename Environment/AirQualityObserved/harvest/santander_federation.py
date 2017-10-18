@@ -3,10 +3,9 @@
 # The notification messages are listened and data is sent to FIWARE GSMA
 # instance
 
-from __future__ import with_statement
 from __future__ import print_function
 import json
-from flask import Flask, jsonify, request, Response
+from flask import Flask, request
 import urllib2
 import contextlib
 import logging
@@ -49,7 +48,7 @@ def post_data(data):
         headers=headers)
 
     try:
-        with contextlib.closing(urllib2.urlopen(req)) as f:
+        with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
             app.logger.debug("Entity batch successfully created!")
     except urllib2.URLError as e:
         app.logger.error(
