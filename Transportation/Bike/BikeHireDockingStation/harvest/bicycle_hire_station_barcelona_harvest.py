@@ -6,7 +6,6 @@ Harmonises data from the city of Barcelona corresponding to
 the bicycle hiring stations
 """
 
-from __future__ import with_statement
 from __future__ import print_function
 import contextlib
 import json

@@ -3,7 +3,6 @@
 # The notification messages are listened and data is sent to FIWARE GSMA
 # instance
 
-from __future__ import with_statement
 from __future__ import print_function
 import json
 from flask import Flask, jsonify, request, Response

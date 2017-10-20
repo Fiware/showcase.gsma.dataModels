@@ -3,7 +3,6 @@
 Gets weather forecast from the portuguese meteorological service, ipma.pt
 """
 
-from __future__ import with_statement
 import urllib2
 import json
 from dateutil import parser

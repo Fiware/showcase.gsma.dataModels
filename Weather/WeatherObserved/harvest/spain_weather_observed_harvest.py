@@ -1,7 +1,6 @@
 #!bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 import urllib2
 import StringIO
 import csv
@@ -109,7 +108,7 @@ def sanitize(str_in):
 
 def get_data(row, index, conversion=float, factor=1.0):
     value = row[index]
-    return None if value == '' else conversion(value) / factor 
+    return None if value == '' else conversion(value) / factor
 
 
 def get_weather_observed_spain():
