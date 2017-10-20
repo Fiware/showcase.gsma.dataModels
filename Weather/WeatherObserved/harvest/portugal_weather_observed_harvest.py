@@ -1,15 +1,10 @@
 #!bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 import urllib2
-import StringIO
-import csv
-import datetime
 import json
 import logging
 import logging.handlers
-from pytz import timezone
 import contextlib
 import re
 
@@ -127,8 +122,8 @@ def get_weather_observed_portugal():
     for station_code in observation_data:
         if len(observation_data[station_code]) > 0:
             latest_observation = observation_data[station_code][-1]
-            latest_observation['id'] = 'Portugal-WeatherObserved' + \
-                '-' + station_code + '-' + 'latest'
+            latest_observation['id'] = '-'.join('Portugal', 'WeatherObserved',
+                                                station_code, 'latest')
 
         post_station_data_batch(station_code, observation_data[station_code])
 
@@ -170,7 +165,7 @@ def post_station_data_batch(station_code, data):
         headers=headers)
 
     try:
-        with contextlib.closing(urllib2.urlopen(req)) as f:
+        with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
             global persisted_entities
             global persisted_stations
             persisted_entities = persisted_entities + len(data)

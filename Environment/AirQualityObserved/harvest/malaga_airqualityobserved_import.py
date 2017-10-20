@@ -1,16 +1,11 @@
 #!../bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 import csv
-import datetime
 import json
 import urllib2
-import StringIO
 import logging
 import logging.handlers
-import re
-from pytz import timezone
 import contextlib
 
 pollutant_descriptions = {
@@ -87,8 +82,8 @@ def process_csv_row(row, pollutant, unit_code):
     if zone not in area_data:
         return
 
-    geometry = area_data[zone]['geometry']
-    place_name = area_data[zone]['name']
+    # geometry = area_data[zone]['geometry']
+    # place_name = area_data[zone]['name']
 
     key = zone + '-' + zone_type + '-' + date
     if key not in airquality_data:
@@ -101,8 +96,8 @@ def process_csv_row(row, pollutant, unit_code):
         return
 
     # Now adding the pollutant data
-    pollutant_data = pollutant + ', ' + \
-        str(float(value)) + ', ' + unit_code + ', ' + pollutant_descriptions[pollutant]
+    pollutant_data = ','.join(pollutant, str(float(value)), unit_code,
+                              pollutant_descriptions[pollutant])
     entity['measurand']['value'].append(pollutant_data)
     entity[pollutant] = {
         'value': float(value)
@@ -220,7 +215,7 @@ def post_data(data):
         headers=headers)
 
     try:
-        with contextlib.closing(urllib2.urlopen(req)) as f:
+        with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
             global persisted_entities
             logger.debug(
                 "Entity batch successfully created: %s",

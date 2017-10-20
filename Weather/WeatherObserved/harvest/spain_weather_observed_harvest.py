@@ -1,7 +1,6 @@
 #!bin/python
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 import urllib2
 import StringIO
 import csv
@@ -109,7 +108,7 @@ def sanitize(str_in):
 
 def get_data(row, index, conversion=float, factor=1.0):
     value = row[index]
-    return None if value == '' else conversion(value) / factor 
+    return None if value == '' else conversion(value) / factor
 
 
 def get_weather_observed_spain():
@@ -203,8 +202,8 @@ def get_weather_observed_spain():
                 'type': 'PostalAddress'}
             observation['location'] = station_data[station_code]['location']
 
-            observation['id'] = 'Spain-WeatherObserved' + '-' + \
-                station_code + '-' + date_observed.isoformat()
+            observation['id'] = '-'.join('Spain', 'WeatherObserved',
+                                         station_code, date_observed.isoformat())
 
             out.append(observation)
 
@@ -213,8 +212,8 @@ def get_weather_observed_spain():
         # Last observation is tagged as 'latest'
         if len(out) > 0:
             latest_observation = out[-1]
-            latest_observation['id'] = 'Spain-WeatherObserved' + \
-                '-' + station_code + '-' + 'latest'
+            latest_observation['id'] = '-'.join('Spain', 'WeatherObserved',
+                                                station_code, 'latest')
 
         # A batch of station data is persisted
         post_station_data_batch(station_code, out)
@@ -249,7 +248,7 @@ def post_station_data_batch(station_code, data):
         headers=headers)
 
     try:
-        with contextlib.closing(urllib2.urlopen(req)) as f:
+        with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
             global persisted_entities
             global persisted_stations
             persisted_entities = persisted_entities + len(data)

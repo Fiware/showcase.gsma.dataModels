@@ -6,7 +6,6 @@ Harmonises data from the city of Barcelona corresponding to
 the bicycle hiring stations
 """
 
-from __future__ import with_statement
 from __future__ import print_function
 import contextlib
 import json
@@ -141,7 +140,7 @@ def persist_data(entity_list):
         headers=headers)
 
     try:
-        with contextlib.closing(urlopen(req)) as f:
+        with contextlib.closing(urlopen(req)) as f:  # noqa F841
             print('Entities successfully created')
     except URLError as e:
         print('Error while POSTing data to Orion: %d %s' % (e.code, e.read()))
@@ -155,17 +154,8 @@ def main():
         print("Source data could not be read")
         exit()
 
-    parsed_data = json.loads(data)
-
-    station_list = parsed_data['stations']
-
-    ngsi_data = []
-
-    for station in station_list:
-        h_station = harmonize_station(station)
-        ngsi_data.append(h_station)
-
-    persist_data(ngsi_data)
+    persist_data([harmonize_station(station) for station
+                  in json.loads(data)['stations']])
 
 
 if __name__ == '__main__':
