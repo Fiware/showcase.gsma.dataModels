@@ -41,15 +41,13 @@
         "owner": {
           "type": "array",
           "items": {
-            "type": "string",
             "oneOf": [ 
               {
+                "type": "string",
                 "format": "uri"
               },
               {
-                "minLength": 1,
-                "maxLength": 256,
-                "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$"
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
               }
             ]
         }
