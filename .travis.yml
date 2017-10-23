@@ -5,7 +5,7 @@ python:
   - 3.6
 install:
   - pip install flake8
-  - npm install jshint
+  - npm install -g jshint
 before_script:
   # stop the build if there are Python syntax errors, PEP8 violations, undefined names
   - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
