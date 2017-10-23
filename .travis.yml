@@ -12,6 +12,22 @@ before_script:
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 script:
   - true  # add other tests here
+
+matrix:
+  include:
+  ## linter for json files
+    - language: node_js
+      python:
+      node_js:
+        - 7
+      install:
+        - npm i -g eslint --save-dev
+        - npm install eslint-plugin-json --save-dev -g
+      before_script:
+        - eslint --ext .json .
+      script:
+        - true
+
 notifications:
   on_success: change
   on_failure: always
