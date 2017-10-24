@@ -162,7 +162,7 @@ def decode_weather_type(weather_type):
         'muy nuboso con tormenta y lluvia escasa': 'veryCloudy, thunder, lightRainShower',
         'cubierto con tormenta y lluvia escasa': 'overcast, thunder, lightRainShower',
         'despejado noche': 'clearNight'}.get(param, None)
-    return out + trailing if out else None
+    return (out + trailing) if out else None
 
 
 def get_weather_forecasted():
