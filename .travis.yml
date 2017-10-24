@@ -11,7 +11,7 @@ before_script:
   - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
   # exit-zero treats all errors as warnings.  GitHub editor is 127 chars wide
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-  - jshint . || true  # treats all errors as warnings
+  - jshint .
 script:
   - true  # add other tests here
 notifications:
