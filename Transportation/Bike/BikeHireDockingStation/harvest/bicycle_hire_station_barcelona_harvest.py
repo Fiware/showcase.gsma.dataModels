@@ -149,22 +149,11 @@ def persist_data(entity_list):
 # Main module
 def main():
     data = read_data(SOURCE)
-
-    if data is None:
+    if data:
+        persist_data([harmonize_station(station) for station
+                      in json.loads(data)['stations']])
+    else:
         print("Source data could not be read")
-        exit()
-
-    parsed_data = json.loads(data)
-
-    station_list = parsed_data['stations']
-
-    ngsi_data = []
-
-    for station in station_list:
-        h_station = harmonize_station(station)
-        ngsi_data.append(h_station)
-
-    persist_data(ngsi_data)
 
 
 if __name__ == '__main__':
