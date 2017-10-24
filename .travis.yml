@@ -15,14 +15,15 @@ script:
 
 matrix:
   include:
-  ## linter for json files
+  ## linters for json and JavaScript files
     - language: node_js
+      python:
       install:
         - npm i -g eslint --save-dev
         - npm install eslint-plugin-json --save-dev -g
         - npm install -g jshint
       before_script:
-        #- eslint --ext .json .
+        - eslint --ext .json .
         - jshint .
       script:
         - true
