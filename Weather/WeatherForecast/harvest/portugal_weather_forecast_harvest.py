@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Gets weather forecast from the portuguese meteorological service, ipma.pt
@@ -7,7 +8,6 @@ import urllib2
 import json
 from dateutil import parser
 import datetime
-import sys
 from pytz import timezone
 import logging
 import logging.handlers
@@ -70,14 +70,8 @@ ipma_url = 'https://api.ipma.pt/json/alldata/{}.json'
 
 
 def get_weather_forecasted():
-    data = {}
-
-    for locality in iptma_codes:
-        code = iptma_codes[locality]
-
-        data[code] = get_weather_forecasted_pt(locality)
-
-    return data
+    return {iptma_codes[locality]: get_weather_forecasted_pt(locality)
+            for locality in iptma_codes}
 
 
 def get_weather_forecasted_pt(locality):
@@ -201,8 +195,9 @@ def get_weather_forecasted_pt(locality):
                 'value': weather_type_dict[weather_type_id]
             }
 
-        obj['id'] = 'Portugal' + '-' + 'WeatherForecast' + '-' + locality + \
-            '_' + obj['validFrom']['value'] + '_' + obj['validTo']['value']
+        obj['id'] = '-'.join('Portugal', 'WeatherForecast', locality,
+                             obj['validFrom']['value'],
+                             obj['validTo']['value'])
         obj['source'] = {
             'type': 'URL',
             'value': 'https://www.ipma.pt'
@@ -215,10 +210,7 @@ def get_weather_forecasted_pt(locality):
 
 def get_data(forecast, item):
     value = float(forecast[item])
-    if value == -99.0:
-        value = None
-
-    return value
+    return None if value == -99.0 else value
 
 
 def post_data(data):
@@ -251,10 +243,9 @@ def post_data(data):
             headers=headers)
 
         try:
-            with contextlib.closing(urllib2.urlopen(req)) as f:
+            with contextlib.closing(urllib2.urlopen(req)) as f:  # noqa F841
                 global persisted_entities
-                persisted_entities = persisted_entities + \
-                    len(data[a_postal_code])
+                persisted_entities += len(data[a_postal_code])
                 logger.debug(
                     'Entities successfully created for postal code: %s',
                     a_postal_code)
@@ -266,7 +257,7 @@ def post_data(data):
                 e.code,
                 e.read())
             logger.debug('Data which failed: %s', data_as_str)
-            in_error_entities = in_error_entities + 1
+            in_error_entities += 1
 
 
 def setup_logger():
