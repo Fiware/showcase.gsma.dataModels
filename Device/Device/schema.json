@@ -3,6 +3,11 @@
   "id": "https://fiware.github.io/dataModels/Device/Device/schema.json",
   "title": "GSMA / FIWARE - Device schema",
   "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
+  "definitions": {
+    "MacAddressType": {
+      "type": "string",
+      "pattern": "^([[:xdigit:]]{2}[:.-]?){5}[[:xdigit:]]{2}$"
+    },
   "type": "object",
   "allOf": [
     {
@@ -96,10 +101,18 @@
           "type": "string"
         },
         "macAddress": {
-          "type": "string"
+          "$ref": "/definitions/MacAddressType"
         },
         "ipAddress": {
-          "type": "string"
+          "type": "string",
+          "oneOf": [
+            {
+              "format": "ipv4"
+            },
+            {
+              "format": "ipv6"
+            }
+          ]
         },
         "supportedProtocol": {
           "type": "array",
