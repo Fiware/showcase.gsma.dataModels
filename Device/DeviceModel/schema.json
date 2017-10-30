@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/Device/DeviceModel/schema.json",
+  "title": "GSMA / FIWARE - Device Model schema",
+  "description": "This entity captures the static properties of a Device. ",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons#location"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons#image"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "DeviceModel"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sensor",
+              "actuator",
+              "meter",
+              "HVAC",
+              "network",
+              "multimedia"
+            ]
+          }
+        },
+        "deviceClass": {
+          "type": "string",
+          "enum": [
+            "C0",
+            "C1",
+            "C2"
+          ]
+        },
+        "controlledProperty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "temperature",
+              "humidity",
+              "light",
+              "motion",
+              "fillingLevel",
+              "occupancy",
+              "power",
+              "pressure",
+              "smoke",
+              "energy",
+              "airPollution",
+              "noiseLevel",
+              "weatherConditions",
+              "precipitation",
+              "windSpeed",
+              "windDirection",
+              "barometricPressure",
+              "solarRadiation",
+              "depth",
+              "pH",
+              "pressure",
+              "conductivity",
+              "conductance",
+              "tss",
+              "tds",
+              "turbidity",
+              "salinity",
+              "orp",
+              "cdom",
+              "waterPollution",
+              "location",
+              "speed",
+              "heading",
+              "weight",
+              "waterConsumption",
+              "gasComsumption",
+              "electricityConsumption"
+            ]
+          }
+        },
+        "function": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "levelControl",
+              "sensing",
+              "onOff",
+              "openClose",
+              "metering",
+              "eventNotification"
+            ]
+          }
+        },
+        "supportedProtocol": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ul20",
+              "mqtt",
+              "lwm2m",
+              "http",
+              "websocket",
+              "onem2m",
+              "sigfox",
+              "lora",
+              "nb-iot",
+              "ec-gsm-iot",
+              "lte-m",
+              "cat-m",
+              "3g",
+              "grps"
+            ]
+          }
+        },
+        "supportedUnits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "energyLimitationClass": {
+          "type": "string",
+          "enum": [
+            "E0",
+            "E1",
+            "E2",
+            "E9"
+          ]
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri"
+        },
+        "brandName": {
+          "type": "string"
+        },
+        "modelName": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "category",
+    "controlledProperty",
+    "manufacturerName",
+    "brandName",
+    "modelName"
+  ]
+}
