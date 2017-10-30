@@ -8,10 +8,10 @@
   "mcc": "214",
   "mnc": "07",
   "batteryLevel": 0.75,
-  "serialNumer": "9845A",
+  "serialNumber": "9845A",
   "refDeviceModel": "myDevice-wastecontainer-sensor-345",
   "value": "l=0.22;t=21.2",
   "deviceState": "ok",
-  "dateFirstUsed": "2014-09-11",
+  "dateFirstUsed": "2014-09-11T11:00:00Z",
   "owner": ["http://person.org/leon"]
 }
