@@ -1,0 +1,17 @@
+{
+  "id": "device-9845A",
+  "type": "Device",
+  "category": ["sensor"],
+  "controlledProperty": ["fillingLevel","temperature"],
+  "controlledAsset": ["wastecontainer-Osuna-100"],
+  "ipAddress": "192.14.56.78",
+  "mcc": "214",
+  "mnc": "07",
+  "batteryLevel": 0.75,
+  "serialNumer": "9845A",
+  "refDeviceModel": "myDevice-wastecontainer-sensor-345",
+  "value": "l=0.22;t=21.2",
+  "deviceState": "ok",
+  "dateFirstUsed": "2014-09-11",
+  "owner": ["http://person.org/leon"]
+}
