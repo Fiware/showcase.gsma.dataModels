@@ -70,7 +70,6 @@
               "solarRadiation",
               "depth",
               "pH",
-              "pressure",
               "conductivity",
               "conductance",
               "tss",
