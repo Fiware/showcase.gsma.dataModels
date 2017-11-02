@@ -12,6 +12,9 @@
       "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
     },
     {
+      "$ref": "https://fiware.github.io/dataModels/Device/device-schema.json#/definitions/Device-Commons"
+    },
+    {
       "properties": {
         "type": {
           "type": "string",
@@ -20,20 +23,6 @@
           ],
           "description": "NGSI Entity type"
         },
-        "category": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "sensor",
-              "actuator",
-              "meter",
-              "HVAC",
-              "network",
-              "multimedia"
-            ]
-          }
-        },
         "deviceClass": {
           "type": "string",
           "enum": [
@@ -41,50 +30,6 @@
             "C1",
             "C2"
           ]
-        },
-        "controlledProperty": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "temperature",
-              "humidity",
-              "light",
-              "motion",
-              "fillingLevel",
-              "occupancy",
-              "power",
-              "pressure",
-              "smoke",
-              "energy",
-              "airPollution",
-              "noiseLevel",
-              "weatherConditions",
-              "precipitation",
-              "windSpeed",
-              "windDirection",
-              "barometricPressure",
-              "solarRadiation",
-              "depth",
-              "pH",
-              "conductivity",
-              "conductance",
-              "tss",
-              "tds",
-              "turbidity",
-              "salinity",
-              "orp",
-              "cdom",
-              "waterPollution",
-              "location",
-              "speed",
-              "heading",
-              "weight",
-              "waterConsumption",
-              "gasComsumption",
-              "electricityConsumption"
-            ]
-          }
         },
         "function": {
           "type": "array",

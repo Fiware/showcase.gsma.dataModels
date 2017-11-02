@@ -3,11 +3,6 @@
   "id": "https://fiware.github.io/dataModels/Device/Device/schema.json",
   "title": "GSMA / FIWARE - Device schema",
   "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
-  "definitions": {
-    "MacAddressType": {
-      "type": "string",
-      "pattern": "^([[:xdigit:]]{2}[:.-]?){5}[[:xdigit:]]{2}$"
-    },
   "type": "object",
   "allOf": [
     {
@@ -17,6 +12,9 @@
       "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
     },
     {
+      "$ref": "https://fiware.github.io/dataModels/Device/device-schema.json#/definitions/Device-Commons"
+    },
+    {
       "properties": {
         "type": {
           "type": "string",
@@ -24,64 +22,6 @@
             "Device"
           ],
           "description": "NGSI Entity type"
-        },
-        "category": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "sensor",
-              "actuator",
-              "meter",
-              "HVAC",
-              "network",
-              "multimedia"
-            ]
-          }
-        },
-        "controlledProperty": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "temperature",
-              "humidity",
-              "light",
-              "motion",
-              "fillingLevel",
-              "occupancy",
-              "power",
-              "pressure",
-              "smoke",
-              "energy",
-              "airPollution",
-              "noiseLevel",
-              "weatherConditions",
-              "precipitation",
-              "windSpeed",
-              "windDirection",
-              "barometricPressure",
-              "solarRadiation",
-              "depth",
-              "pH",
-              "conductivity",
-              "conductance",
-              "tss",
-              "tds",
-              "turbidity",
-              "salinity",
-              "orp",
-              "cdom",
-              "waterPollution",
-              "location",
-              "speed",
-              "heading",
-              "weight",
-              "waterConsumption",
-              "gasComsumption",
-              "electricityConsumption"
-            ]
-          }
         },
         "controlledAsset": {
           "type": "array",
@@ -101,7 +41,7 @@
           "type": "string"
         },
         "macAddress": {
-          "$ref": "/definitions/MacAddressType"
+          "$ref": "https://fiware.github.io/dataModels/Device/device-schema.json#/definitions/MacAddressType"
         },
         "ipAddress": {
           "type": "string",
