@@ -64,6 +64,28 @@
           "gasComsumption",
           "electricityConsumption"
         ]
+      },
+      "SupportedProtocolType": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "ul20",
+            "mqtt",
+            "lwm2m",
+            "http",
+            "websocket",
+            "onem2m",
+            "sigfox",
+            "lora",
+            "nb-iot",
+            "ec-gsm-iot",
+            "lte-m",
+            "cat-m",
+            "3g",
+            "grps"
+          ]
+        }
       }
     },
     "Device-Commons": {
@@ -73,6 +95,9 @@
       },
       "controlledProperty": {
         "$ref": "/definitions/ControlledPropertyType"
+      },
+      "supportedProtocol": {
+        "$ref": "/definitions/SupportedProtocolType"
       }
     }
   }

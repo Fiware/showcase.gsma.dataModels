@@ -54,28 +54,6 @@
             }
           ]
         },
-        "supportedProtocol": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "ul20",
-              "mqtt",
-              "lwm2m",
-              "http",
-              "websocket",
-              "onem2m",
-              "sigfox",
-              "lora",
-              "nb-iot",
-              "ec-gsm-iot",
-              "lte-m",
-              "cat-m",
-              "3g",
-              "grps"
-            ]
-          }
-        },
         "configuration": {
           "type": "object"
         },
