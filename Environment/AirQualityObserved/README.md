@@ -54,14 +54,6 @@ What was the air quality observed today at noon UTC at the "Plaza de España" (M
                 40.423852778
             ]
         },
-        "measurand":
-        [
-            "SO2,4.0,GQ,Sulfur Dioxide",
-            "CO,0.3,GP,Carbon Monoxide",
-            "NO,18.0,GQ,Nitrogen Monoxide",
-            "NO2,46.0,GQ,Nitrogen Dioxide",
-            "NOx,73.0,GQ,Nitrogen oxides"
-        ],
         "precipitation": 0,
         "relativeHumidity": 0.69,
         "source": "http://datos.madrid.es",
