@@ -14,14 +14,14 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ```json
 {
-  "id": "EU-AirQualityThreshold-O3-Background-VeryLow",
-  "type": "AirQualityThreshold",
-  "category": [ "Background" ],
-  "frequency": "Hourly",
-  "indexClass": "VeryLow",
-  "maxConcentration": 60,
-  "minConcentration": "0",
-  "pollutant": "O3",
-  "source": "http://www.airqualitynow.eu/"
+    "id": "EU-AirQualityThreshold-O3-Background-VeryLow",
+    "type": "AirQualityThreshold",
+    "category": ["Background"],
+    "frequency": "Hourly",
+    "indexClass": "VeryLow",
+    "maxConcentration": 60,
+    "minConcentration": "0",
+    "pollutant": "O3",
+    "source": "http://www.airqualitynow.eu/"
 }
 ```
