@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://github.com/Fiware/dataModels/tree/master/Transportation/Vehicle/VehicleModel/schema.json",
+  "title": "FIWARE - Vehicle / Vehicle Model",
+  "description": "This entity models a particular vehicle model, including all properties which are common to multiple vehicle instances belonging to such model.",
+  "type": "object",
+  "allOf": [{
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"},
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "VehicleModel"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "vehicleType": {
+          "type": "string",
+          "enum": [
+            "agriculturalVehicle",
+            "bicycle",
+            "bus",
+            "minibus",
+            "car",
+            "tram",
+            "tanker",
+            "carWithCaravan",
+            "carWithTrailer",
+            "lorry",
+            "moped",
+            "motorcycle",
+            "motorcycleWithSideCar",
+            "motorscooter",
+            "trailer",
+            "van",
+            "caravan",
+            "constructionOrMaintenanceVehicle",
+            "trolley",
+            "binTrolley",
+            "sweepingMachine",
+            "cleaningTrolley"
+          ]
+        },
+        "brandName": {
+          "type": "string"
+        },
+        "modelName": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        },
+        "vehicleModelDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cargoVolume": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fuelType": {
+          "type": "string",
+          "enum": [
+            "gasoline",
+            "petrol(unleaded)",
+            "petrol(leaded)",
+            "petrol",
+            "diesel",
+            "electric",
+            "hydrogen",
+            "lpg",
+            "autogas",
+            "cng",
+            "biodiesel ethanol",
+            "hybrid electric/petrol",
+            "hybrid electric/diesel",
+            "other"
+          ]
+        },
+        "fuelConsumption": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "number",
+          "minimum": 0
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "vehicleEngine": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "name",
+    "type",
+    "vehicleType",
+    "brandName",
+    "modelName",
+    "manufacturerName"
+  ]
+}

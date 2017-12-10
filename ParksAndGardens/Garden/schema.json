@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/Garden/schema.json",
+  "title": "FIWARE - Parks and Gardens / Garden",
+  "description": "A garden is a distinguishable planned space, usually outdoors, set aside for the display, cultivation, and enjoyment of plants and other forms of nature.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Garden"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "botanical",
+              "castle",
+              "community",
+              "monastary",
+              "residential",
+              "fencedOff"
+            ]
+          }
+        },
+        "style": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "english",
+              "french",
+              "chinese",
+              "japanese",
+              "zen",
+              "rosarium",
+              "herb_garden",
+              "kitchen"
+            ]
+          }
+        },
+        "openingHours": {
+          "type": "string"
+        },
+        "areaServed": {
+          "Type": "text"
+        },
+        "dateLastWatering": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nextWateringDeadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "refRecord": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "name"
+  ]
+}

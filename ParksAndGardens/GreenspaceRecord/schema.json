@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/GreenspaceRecord/schema.json",
+  "title": "FIWARE - Parks and Gardens / Greenspace Record",
+  "description": "This entity contains a harmonised description of the conditions recorded on a particular area or point inside a greenspace (flower bed, garden, etc.). This entity type has been inspired by the AgriParcelRecord entity type defined by the GSMA Harmonized Data Models.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "GreenspaceRecord"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "dateObserved": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "soilTemperature": {
+          "type": "number"
+        },
+        "soilMoistureVwc": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "soilMoistureEc": {
+          "type": "number"
+        },
+        "refGreenspace": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refDevice": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "dateObserved"
+  ]
+}

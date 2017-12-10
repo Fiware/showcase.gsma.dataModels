@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/FlowerBed/schema.json",
+  "title": "FIWARE - Parks and Gardens / Flower Bed",
+  "description": "A garden plot in which flowers (or other plants) are grown. Usually you will find flower beds in parks, gardens, pedestrian areas or at big highway interchanges.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "FlowerBed"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "taxon": {
+          "type": "array"
+        },
+        "depth": {
+          "type": "number",
+          "minimum": 0
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "string",
+          "minimum": 0
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "hedge",
+              "lawnArea",
+              "portable",
+              "urbanTreeSpot"
+            ]
+          }
+        },
+        "shape": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rectangular",
+              "square",
+              "elliptic",
+              "polygon",
+              "circular"
+            ]
+          }
+        },
+        "dateLastWatering": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nextWateringDeadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "refGarden": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "location",
+    "type"
+  ]
+}

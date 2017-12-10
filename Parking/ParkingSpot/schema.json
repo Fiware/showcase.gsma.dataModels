@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://github.com/Fiware/dataModels/tree/master/Parking/ParkingSpot/schema.json",
+  "title": "FIWARE - Parking / Parking Spot",
+  "description": "A parking spot is an area well delimited where one vehicle can be parked. The aim of this entity type is to monitor the status of parking spots individually. Thus, an entity of type ParkingSpot cannot exist without a containing entity of type (OnStreetParking, OffStreetParking). A parking spot might belong to one group.",
+  "type": "object",
+  "allOf": [{
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ParkingSpot"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "occupied",
+            "free",
+            "closed",
+            "unknown"
+          ]
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        },
+        "length": {
+          "type": "string",
+          "minimum": 0
+        },
+        "refParkingGroup": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refParkingSite": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "onstreet",
+              "offstreet"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "refDevice": {
+          "type": "array",
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "TimeInstant": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "location",
+    "type",
+    "status",
+    "category",
+    "refParkingSite"
+  ]
+}

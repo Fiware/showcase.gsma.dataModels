@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://github.com/Fiware/dataModels/tree/master/Transportation/Vehicle/VehicleModel/schema.json",
+  "title": "FIWARE - Vehicle / Vehicle Model",
+  "description": "This entity models a particular vehicle model, including all properties which are common to multiple vehicle instances belonging to such model.",
+  "type": "object",
+  "allOf": [{
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Vehicle"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "vehicleType": {
+          "type": "string",
+          "enum": [
+            "agriculturalVehicle",
+            "bicycle",
+            "bus",
+            "minibus",
+            "car",
+            "caravan",
+            "tram",
+            "tanker",
+            "carWithCaravan",
+            "carWithTrailer",
+            "lorry",
+            "moped",
+            "motorcycle",
+            "motorcycleWithSideCar",
+            "motorscooter",
+            "trailer",
+            "van",
+            "constructionOrMaintenanceVehicle",
+            "trolley",
+            "binTrolley",
+            "sweepingMachine",
+            "cleaningTrolley"
+          ]
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "municipalServices",
+              "specialUsage",
+              "tracked",
+              "nonTracked"
+            ]
+          }
+        },
+        "previousLocation": {
+          "$ref": "http://json-schema.org/geojson/geometry.json#",
+          "description": "The start point of this road segment encoded as a GeoJSON point"
+        },
+        "speed": {
+          "type": "number"
+        },
+        "heading": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        },
+        "cargoWeight": {
+          "type": "number"
+        },
+        "vehicleIdentificationNumber": {
+          "type": "string"
+        },
+        "vehiclePlateIdentifier": {
+          "type": "string"
+        },
+        "dateVehicleFirstRegistered": {
+          "type": "date"
+        },
+        "dateFirstUsed": {
+          "type": "date"
+        },
+        "purchaseDate": {
+          "type": "date-time"
+        },
+        "mileageFromOdometer": {
+          "type": "number"
+        },
+        "vehicleConfiguration": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "feature": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "gps",
+              "airbag",
+              "overspeed",
+              "abs",
+              "wifi",
+              "backCamera",
+              "proximitySensor",
+              "disabledRamp",
+              "alarm",
+              "internetConnection"
+            ]
+          }
+        },
+        "serviceProvided": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "garbageCollection",
+              "parksAndGardens",
+              "construction",
+              "streetLighting",
+              "roadSignalling",
+              "cargoTransport",
+              "urbanTransit",
+              "maintenance",
+              "streetCleaning",
+              "wasteContainerCleaning",
+              "auxiliaryServices",
+              "goodsSelling",
+              "fairground",
+              "specialTransport"
+            ]
+          }
+        },
+        "vehicleSpecialUsage": {
+          "type": "string",
+          "enum": [
+            "taxi",
+            "ambulance",
+            "police",
+            "fireBrigade",
+            "schoolTransportation",
+            "military"
+          ]
+        },
+        "refVehicleModel": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "areaServed": {
+          "type": "string"
+        },
+        "serviceStatus": {
+          "type": "string",
+          "enum": [
+            "parked",
+            "onRoute",
+            "broken",
+            "outOfService"
+          ]
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "vehicleType",
+    "category",
+    "location"
+  ]
+}
