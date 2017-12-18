@@ -5,7 +5,7 @@
 const ORION_SERVER = 'http://localhost:1026/v1';
 const ORION_SERVER_V2 = 'http://localhost:1026/v2';
 
-const SANTANDER_SERVER = 'http://mu.tlmat.unican.es:8099/v1'
+const SANTANDER_SERVER = 'http://mu.tlmat.unican.es:8099/v1';
 
 var csv = require('ya-csv');
 var Request = require('request');
@@ -37,7 +37,7 @@ function setupConfig() {
       
       data.forEach(function(aRecord) {
         var sensorId = aRecord.id;
-        var polygonId = aRecord['sensor_id'];
+        var polygonId = aRecord.sensor_id;
         sensor2Polygon[sensorId] = polygonId;
         if (!polygon2Sensor[polygonId]) {
           polygon2Sensor[polygonId] = [];
@@ -144,7 +144,7 @@ setupConfig().then(function(config) {
   
   data.features.forEach(function(aFeature) {
     var properties = aFeature.properties;
-    var polygonId = properties['sensor_id'];
+    var polygonId = properties.sensor_id;
     
     var obj = {
       id:   'santander' + ':' + polygonId,
@@ -175,7 +175,7 @@ setupConfig().then(function(config) {
     sensors.forEach(function(aSensor) {
       queryData.push({
         id: aSensor
-      })
+      });
     });
     
     console.log(JSON.stringify(queryData));
@@ -196,11 +196,13 @@ setupConfig().then(function(config) {
       }
       var freeSpots = aEntity.totalSpotNumber.value;
       var sensorData = results[index];
-      sensorData && sensorData.forEach(function(aSensor) {
-        if (aSensor['presenceStatus:parking'] === 'true') {
-          freeSpots--;
-        }
-      });
+      if (sensorData) {
+        sensorData.forEach(function (aSensor) {
+          if (aSensor['presenceStatus:parking'] === 'true') {
+              freeSpots--;
+          }
+        });
+      }
       aEntity.availableSpotNumber = {
         value: freeSpots
       };

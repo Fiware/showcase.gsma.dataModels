@@ -73,7 +73,7 @@ app.get('/v2/entities', function (req, resp) {
         geometry: 'Circle',
         radius: maxDistance,
         coords: coords
-      }
+      };
     }
   }
   

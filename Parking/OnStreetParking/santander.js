@@ -102,7 +102,7 @@ app.post('/on_context_change', function(req, resp) {
           console.log('Entity: ', entityId, ' updated');
       }).catch(function(err) {
           console.error('Error while updating: ', err);
-      })
+      });
   }).catch(function(err) {
       console.error('Error while updating parking info: ', err);
   });
@@ -193,5 +193,5 @@ readConfig().then(function() {
 }, function(err) {
     console.error('Error while reading configuration: ', err);
 }).catch(function(err) {
-    console.error('Start up error: ', error);
+    console.error('Start up error: ', err);
 });

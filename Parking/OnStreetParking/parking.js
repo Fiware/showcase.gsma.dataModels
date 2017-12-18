@@ -2,7 +2,7 @@
 
 /* Exports all parking sensors from Santander */
 
-const SANTANDER_SERVER = 'http://mu.tlmat.unican.es:8099/v1'
+const SANTANDER_SERVER = 'http://mu.tlmat.unican.es:8099/v1';
 
 var Orion = require('fiware-orion-client'),
     OrionTestBedClient = new Orion.Client({

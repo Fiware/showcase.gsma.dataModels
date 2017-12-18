@@ -93,7 +93,7 @@ function registerProvider(forceCreate) {
 }
 
 function zpad(number, numZeroes) {
-  var strNumber = number + ''
+  var strNumber = number + '';
   var outArray = [];
   for(var j = 0; j < strNumber.length; j++) {
     outArray.push(strNumber.charAt(j));
@@ -112,7 +112,7 @@ function loadAmbientData() {
       var entitiesToBeCreated = [];
       
       data.forEach(function(aStation) {
-        var location = aStation['Y'] + ', ' + aStation['X'];
+        var location = aStation.Y + ', ' + aStation.X;
          
         var ambientObserved = {
           type: 'AmbientObserved',

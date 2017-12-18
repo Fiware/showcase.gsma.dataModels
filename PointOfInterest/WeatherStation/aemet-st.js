@@ -17,7 +17,7 @@ function InsertTask(data) {
 InsertTask.prototype.run = function() {
   console.log('Running: ', this.data);
   return OrionClient.updateContext(this.data);
-}
+};
 
 console.log(typeof Promise.resolve);
 
@@ -46,19 +46,19 @@ function insertStations() {
 function adapt(data) {
   return data.map(function(item) {
     var out = Object.create(null);
-    out.id = 'WeatherStation' + '-' + 'ES' + '-' + item['ID'];
+    out.id = 'WeatherStation' + '-' + 'ES' + '-' + item.ID;
     out.category = 'WeatherStation';
     out.type = 'PointOfInterest';
     
-    out.location = new Orion.Attribute(item['Y'] + ',' + item['X'], 'geo:point');
+    out.location = new Orion.Attribute(item.Y + ',' + item.X, 'geo:point');
     // Avoid forbidden chars by Orion
-    out.name = item['NOMBRE'].replace(/'/g, '');
+    out.name = item.NOMBRE.replace(/'/g, '');
     
     out.postalAddress = {
       addressCountry: 'ES',
       // Avoid forbidden chars by Orion
-      addressLocality: item['MUNICIPIO'].replace(/'/g, ''),
-      addressRegion: item['PROVINCIA']
+      addressLocality: item.MUNICIPIO.replace(/'/g, ''),
+      addressRegion: item.PROVINCIA
     };
     
     out.source = 'http://aemet.es';
@@ -116,7 +116,7 @@ Promise.sequential = function(runnables) {
       });
     }, Promise.resolve());
   });
-}
+};
 
 
 insertStations().then(function(data) {

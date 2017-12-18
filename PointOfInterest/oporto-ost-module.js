@@ -5,7 +5,7 @@ var Orion = require('fiware-orion-client'),
 
 var Request = require('request');
 
-const OST = 'https://api.ost.pt/ngsi10'
+const OST = 'https://api.ost.pt/ngsi10';
 const TYPES = 'contextEntityTypes';
 const ENTITIES = 'contextEntities';
 const PORTO = '&municipality=806';
@@ -17,7 +17,7 @@ function getData(type, category, limit, offset, location) {
     var url = OST + '/' + TYPES + '/' + type + '?' + PARAMS + PORTO;
     
     if (category) {
-      url += '&category=' + category
+      url += '&category=' + category;
     }
     
     if (limit) {
@@ -57,7 +57,7 @@ function getData(type, category, limit, offset, location) {
         resolve({
           data: data,
           byId: byId,
-          headers: response.headers['link']
+          headers: response.headers.link
         });
       }
       else {
@@ -109,7 +109,7 @@ var typeTranslator = {
   'Praias': '113',
   'Serviços de Informação Turística': '439',
   'Hotéis e Motéis': '436'
-}
+};
 
 function translate(aElement) {
   var out = Object.create(null);
