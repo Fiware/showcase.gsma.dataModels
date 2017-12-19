@@ -103,7 +103,7 @@ and which are not currently covered by the standard attributes defined by this m
     
 + `serialNumber` : The serial number assigned by the manufacturer.
     + Normative References: [https://schema.org/serialNumber](https://schema.org/serialNumber)
-    + Mandatory
+    + Optional
     
 + `provider` : The provider of the device.
     + Normative References: [https://schema.org/provider](https://schema.org/provider)
