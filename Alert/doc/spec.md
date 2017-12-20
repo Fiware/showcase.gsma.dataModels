@@ -27,73 +27,73 @@ found [here](../schema.json).
 
 + `category` : Define the category of alert (Traffic jam, accidents, weather
   conditions, high level of pollutants)
-  + Attribute type: [Text](https://schema.org/Text)
-  + Allowed values:
-    + (`traffic`, `weather`, `environment`, `health`, `security` )
-  + Mandatory
+    + Attribute type: [Text](https://schema.org/Text)
+    + Allowed values:
+        + (`traffic`, `weather`, `environment`, `health`, `security` )
+    + Mandatory
 
 + `subCategory` : Describe the sub category of alert.
-  + Attribute type: [Text](https://schema.org/Text)
-  + Allowed values:
-    + (`trafficJam`, `carAccident`, `carWrongDirection`, `carStopped`,
-      `pothole`, `roadClosed`, `roadWorks`, `hazardOnRoad`, `injuredBiker`)
-      (for `traffic` category)
-    + (`rainfall`, `highTemperature`, `lowTemperature`, `heatWave`, `ice`,
-      `snow`, `wind`, `fog`, `flood`, `tsunami`, `tornado`, `tropicalCyclone`,
-      `hurricane` ) (for `weather` category)
-    + (`airPollution`, `waterPollution`, `pollenConcentration`)
-      (for `environment` category)
-    + (`asthmaAttack`, `bumpedPatient`, `fallenPatient`, `heartAttack` )
-      (for `health` category)
-    + (`suspiciousAction`, `robbery`, `assault` ) (for `security` category)
-  + Optional
+    + Attribute type: [Text](https://schema.org/Text)
+    + Allowed values:
+        + (`trafficJam`, `carAccident`, `carWrongDirection`, `carStopped`,
+          `pothole`, `roadClosed`, `roadWorks`, `hazardOnRoad`, `injuredBiker`)
+          (for `traffic` category)
+        + (`rainfall`, `highTemperature`, `lowTemperature`, `heatWave`, `ice`,
+          `snow`, `wind`, `fog`, `flood`, `tsunami`, `tornado`, `tropicalCyclone`,
+          `hurricane` ) (for `weather` category)
+        + (`airPollution`, `waterPollution`, `pollenConcentration`)
+          (for `environment` category)
+        + (`asthmaAttack`, `bumpedPatient`, `fallenPatient`, `heartAttack` )
+          (for `health` category)
+        + (`suspiciousAction`, `robbery`, `assault` ) (for `security` category)
+    + Optional
 
 + `location` : Location of alert represented by a GeoJSON geometry.
-  + Attribute type: `geo:json`.
-  + Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
-  + Mandatory if `address` is not present
+    + Attribute type: `geo:json`.
+    + Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
+    + Mandatory if `address` is not present
 
 + `address` : Civic address of `Alert`
-  + Attribute type: [Address](https://schema.org/address)
-  + Mandatory if `location` is not present.
+    + Attribute type: [Address](https://schema.org/address)
+    + Mandatory if `location` is not present.
 
 + `dateObserved` : The date and time the observation of the alert
   in ISO8601 UTC format.
-  + Attribute type: [DateTime](https://schema.org/DateTime).
-  + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
-  + Mandatory
+    + Attribute type: [DateTime](https://schema.org/DateTime).
+    + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+    + Mandatory
 
 + `validFrom` : The start date of validity of the alert in ISO8601
   UTC format.
-  + Attribute type: [DateTime](https://schema.org/DateTime).
-  + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
-  + Optional
+    + Attribute type: [DateTime](https://schema.org/DateTime).
+    + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+    + Optional
 
 + `validTo` : The end date of validity of the alert in ISO8601
   UTC format.                                                            
-  + Attribute type: [DateTime](https://schema.org/DateTime).
-  + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
-  + Optional
+    + Attribute type: [DateTime](https://schema.org/DateTime).
+    + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+    + Optional
 
 + `description` : A description of alert (e.g. Traffic jam in Paseo de la
    Reforma. Emergency services at place).
-  + Attribute type: [Description](https://schema.org/description)
-  + Optional
+    + Attribute type: [Description](https://schema.org/description)
+    + Optional
 
 + `alertSource` : reference to the source of the alert. For example, it could be a user of an application, a device, or a service.
-  + Attribute type: [Text](https://schema.org/Text)
-    or [URL](https://schema.org/URL)
-  + Mandatory.
+    + Attribute type: [Text](https://schema.org/Text)
+      or [URL](https://schema.org/URL)
+    + Mandatory.
 
 + `data` : used to carry additional data for the alert.
-  + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
-  + Optional.
+    + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
+    + Optional.
 
 + `severity` : define the level of gravity of a given alert.
-  + Attribute type: [Text](https://schema.org/Text)
-  + Allowed values:
-    + (`informational`, `low`, `medium`, `high`, `critical`)
-  + Optional.
+    + Attribute type: [Text](https://schema.org/Text)
+    + Allowed values:
+        + (`informational`, `low`, `medium`, `high`, `critical`)
+    + Optional.
 
 ## Examples of use (traffic)
 
