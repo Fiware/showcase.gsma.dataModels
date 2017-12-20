@@ -41,18 +41,24 @@
           "type": "string"
         },
         "macAddress": {
-          "$ref": "https://fiware.github.io/dataModels/Device/device-schema.json#/definitions/MacAddressType"
+          "type": "array",
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/Device/device-schema.json#/definitions/MacAddressType"
+          }
         },
         "ipAddress": {
-          "type": "string",
-          "oneOf": [
-            {
-              "format": "ipv4"
-            },
-            {
-              "format": "ipv6"
-            }
-          ]
+          "type": "array",
+          "items": {
+            "type": "string",
+            "oneOf": [
+              {
+                "format": "ipv4"
+              },
+              {
+                "format": "ipv6"
+              }
+            ]
+          }
         },
         "configuration": {
           "type": "object"

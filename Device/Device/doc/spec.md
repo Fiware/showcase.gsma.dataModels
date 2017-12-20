@@ -37,11 +37,11 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
     + Optional
     
 + `macAddress` : The MAC address of the device.
-    + Attribute type: [Text](https://schema.org/Text)
+    + Attribute type: List of [Text](https://schema.org/Text)
     + Optional
     
 + `ipAddress` : The IP address of the device. It can be a comma separated list of values if the device has more than one IP address. 
-    + Attribute type: [Text](https://schema.org/Text)
+    + Attribute type: List of [Text](https://schema.org/Text)
     + Optional
 
 + `supportedProtocol` : See attribute `supportedProtocol` from [DeviceModel](../../DeviceModel/doc/spec.md). Needed if due to a software update
@@ -165,7 +165,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
       "category": ["sensor"],
       "controlledProperty": ["fillingLevel","temperature"],
       "controlledAsset": ["wastecontainer-Osuna-100"],
-      "ipAddress": "192.14.56.78",
+      "ipAddress": ["192.14.56.78"],
       "mcc": "214",
       "mnc": "07",
       "batteryLevel": 0.75,
