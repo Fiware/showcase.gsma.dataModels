@@ -226,7 +226,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
        },
        "fillingLevel" : 0.4,
        "dateLastEmptying": "2016-06-21T15:05:59.408Z",
-       "nextActuationDeadline": "2016-06-28",
+       "nextActuationDeadline": "2016-06-28T15:05:59.408Z",
        "status": "ok",
        "category": ["underground"],
        "refDevice": ["device-Fleming:12a:1"]
