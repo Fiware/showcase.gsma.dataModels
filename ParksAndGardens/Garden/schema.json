@@ -19,6 +19,7 @@
         },
         "category": {
           "type": "array",
+          "minitems": 1,
           "items": {
             "type": "string",
             "enum": [
@@ -53,7 +54,7 @@
           "type": "string"
         },
         "areaServed": {
-          "Type": "text"
+          "type": "string"
         },
         "dateLastWatering": {
           "type": "string",

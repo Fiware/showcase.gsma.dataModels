@@ -36,7 +36,7 @@
           "minimum": 0
         },
         "length": {
-          "type": "string",
+          "type": "number",
           "minimum": 0
         },
         "refParkingGroup": {

@@ -29,10 +29,12 @@
           "description": "The end point of this road segment encoded as a GeoJSON point"
         },
         "startKilometer": {
-          "type": "number"
+          "type": "number",
+          "minimum": 0
         },
         "endKilometer": {
-          "type": "number"
+          "type": "number",
+          "minimum": 0
         },
         "allowedVehicleType": {
           "type": "string",
