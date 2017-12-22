@@ -177,6 +177,9 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
       "owner": ["http://person.org/leon"]
     }
 
+**N.B.:** This example to work in Orion Context Broker implementation of NGSI v2,
+requires that value attribute is URL Encoded. As documented [here](https://fiware-orion.readthedocs.io/en/master/user/forbidden_characters/index.html)
+`=` is a forbidden character.
 
 ## Test it with a real service
 

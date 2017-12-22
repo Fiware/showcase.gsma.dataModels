@@ -10,7 +10,7 @@
   "batteryLevel": 0.75,
   "serialNumber": "9845A",
   "refDeviceModel": "myDevice-wastecontainer-sensor-345",
-  "value": "l=0.22;t=21.2",
+  "value": "l%3D0.22%3Bt%3D21.2",
   "deviceState": "ok",
   "dateFirstUsed": "2014-09-11T11:00:00Z",
   "owner": ["http://person.org/leon"]
