@@ -85,22 +85,16 @@
           "type": "string"
         },
         "dateVehicleFirstRegistered": {
-          "type": "array",
-          "enum": [
-            "date"
-          ]
+          "type": "string",
+          "format": "date"
         },
         "dateFirstUsed": {
-          "type": "array",
-          "enum": [
-            "date"
-          ]
+          "type": "string",
+          "format": "date"
         },
         "purchaseDate": {
-          "type": "array",
-          "enum": [
-            "date-time"
-          ]
+          "type": "string",
+          "format": "date-time"
         },
         "mileageFromOdometer": {
           "type": "number"
