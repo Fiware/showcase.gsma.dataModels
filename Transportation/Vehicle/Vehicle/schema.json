@@ -129,6 +129,7 @@
         "serviceProvided": {
           "type": "array",
           "items": {
+            "type": "string",
             "enum": [
               "garbageCollection",
               "parksAndGardens",
