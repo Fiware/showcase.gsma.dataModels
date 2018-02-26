@@ -45,7 +45,9 @@
 						"outOfService",
 						"withIncidence",
 						"full",
-						"almostFull"
+						"almostFull",
+						"empty",
+						"almostEmpty"
 					]
 				},
 				"minItems": 1,
