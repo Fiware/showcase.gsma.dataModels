@@ -19,6 +19,7 @@ matrix:
       python:
       node_js:
         - 8
+        - 9
       install:
       ## linters for json and JavaScript files
         - npm i -g eslint --save-dev
