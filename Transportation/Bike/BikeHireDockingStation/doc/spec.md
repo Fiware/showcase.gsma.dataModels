@@ -32,7 +32,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     (Multi)Polygon or Point.
     +   Attribute type: `geo:json`.
     +   Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    +   Mandatory.
+    +   Mandatory if `address` is not defined.
 
 +   `address` : Registered docking station site civic address.
     +   Normative References: [https://schema.org/address](https://schema.org/address)
