@@ -52,7 +52,7 @@
               "precipitation",
               "windSpeed",
               "windDirection",
-              "barometricPressure",
+              "atmosphericPressure",
               "solarRadiation",
               "depth",
               "pH",
