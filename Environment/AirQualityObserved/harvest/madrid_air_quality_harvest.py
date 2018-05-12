@@ -79,7 +79,7 @@ other_dict = {
     '82': 'windDirection',
     '83': 'temperature',
     '86': 'relativeHumidity',
-    '87': 'barometricPressure',
+    '87': 'atmosphericPressure',
     '88': 'solarRadiation',
     '89': 'precipitation',
     '92': 'acidRainLevel'
@@ -91,7 +91,7 @@ other_descriptions = {
     '82': 'Wind Direction',
     '83': 'temperature',
     '86': 'Relative Humidity',
-    '87': 'Barometric Pressure',
+    '87': 'Atmospheric Pressure',
     '88': 'Solar Radiation',
     '89': 'Precipitation',
     '92': 'Acid Rain Level'
