@@ -6,7 +6,7 @@
                 "addressLocality": "Valladolid",
                 "addressCountry": "ES"
             },
-            "barometricPressure": 938.9,
+            "atmosphericPressure": 938.9,
             "dataProvider": "TEF",
             "dateObserved": "2016-11-30T07:00:00.00Z",
             "location":

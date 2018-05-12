@@ -108,15 +108,15 @@ mapping for Spanish terms can be found [here](https://github.com/Fiware/dataMode
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
     + Optional
-    
-+ `barometricPressure` : The barometric pressure observed measured in Hecto Pascals.
+
++ `atmosphericPressure` : The atmospheric pressure observed measured in Hecto Pascals.
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Hecto Pascals
     + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
     + Optional
-    
+
 + `pressureTendency` : Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms. 
     + Attribute type: [Text](https://schema.org/Text) or [Number](https://schema.org/Number)
     + Allowed values, if expressed in quantitative terms: one Of (`raising`, `falling`, `steady`)
@@ -153,7 +153,7 @@ mode (`options=keyValues`).
                 "addressLocality": "Valladolid",
                 "addressCountry": "ES"
             },
-            "barometricPressure": 938.9,
+            "atmosphericPressure": 938.9,
             "dataProvider": "TEF",
             "dateObserved": "2016-11-30T07:00:00.00Z",
             "location":
