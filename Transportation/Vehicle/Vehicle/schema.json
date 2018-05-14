@@ -84,6 +84,9 @@
         "vehiclePlateIdentifier": {
           "type": "string"
         },
+        "fleetVehicleId": {
+          "type": "string"
+        },
         "dateVehicleFirstRegistered": {
           "type": "string",
           "format": "date"

@@ -95,13 +95,17 @@ then the value of the heading attribute must be equal to `null`. `null` *MAY* be
 + `vehicleIdentificationNumber` : The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry
 to identify individual motor vehicles.
     + Normative References: [https://schema.org/vehicleIdentificationNumber](https://schema.org/vehicleIdentificationNumber)
-    + Mandatory if `vehiclePlateIdentifier` is not defined.
+    + Mandatory if neither `vehiclePlateIdentifier` nor `fleetVehicleId` is defined.
     
 + `vehiclePlateIdentifier` : An identifier or code displayed on a vehicle registration plate attached to the vehicle used for official identification purposes.
 The registration identifier is numeric or alphanumeric and is unique within the issuing authority's region.
     + Normative References: DATEX II `vehicleRegistrationPlateIdentifier`
     + Attribute Type: [Text](https://schema.org/Text)
-    + Mandatory if `vehicleIdentificationNumber` is not defined. 
+    + Mandatory if neither `vehicleIdentificationNumber` nor `fleetVehicleId` is defined.
+
++ `fleetVehicleId` : The identifier of the vehicle in the context of the fleet of vehicles to which it belongs.
+    + Attribute Type: [Text](https://schema.org/Text)
+    + Mandatory if neither `vehiclePlateIdentifier` nor `vehicleIdentificationNumber` is defined.
 
 + `dateVehicleFirstRegistered` : The date of the first registration of the vehicle with the respective public authorities.
     + Normative References: [https://schema.org/dateVehicleFirstRegistered](https://schema.org/dateVehicleFirstRegistered)
