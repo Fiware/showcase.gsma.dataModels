@@ -17,11 +17,11 @@ DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://
 
 + `dateCreated` : Entity's creation timestamp
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
     
 + `category` : Street parking category. 
     + Attribute type: List of [Text](http://schema.org/Text)

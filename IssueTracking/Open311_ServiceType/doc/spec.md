@@ -48,13 +48,13 @@ FIWARE / OASC recommends the following additional fields as an extension to the 
     + Normative references: [https://schema.org/provider](https://schema.org/provider) 
     + Optional
 
-+ `dateCreated` : The date on which the service type was created. This date might be different than the entity creation date.
++ `dateCreated` : The date on which the service type was created.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateModified` : Last update date of this service type.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`

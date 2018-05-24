@@ -17,11 +17,11 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
     
 + `source` : A sequence of characters giving the source of the entity data.
     + Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)

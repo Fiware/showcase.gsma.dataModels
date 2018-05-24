@@ -199,7 +199,7 @@ responsible, district, neighbourhood, etc.
 
 + `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
 saved by FIWARE's IoT Agent as per dynamic IoT data arrival. Note: This attribute has not been harmonized

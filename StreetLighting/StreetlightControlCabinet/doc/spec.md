@@ -66,7 +66,7 @@ responsible, district, neighbourhood, etc.
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateServiceStarted` : Date at which the cabinet controller started giving service.
     + Attribute Type: [Date](http://schema.org/Date)

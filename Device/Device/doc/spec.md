@@ -52,8 +52,9 @@ parameters which have to do with the configuration of a device (timeouts, report
 and which are not currently covered by the standard attributes defined by this model. 
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
     + Attribute metadata:
-        + `dateModified` :  It captures the last modification timestamp of this attribute.
-            + Type: [DateTime](https://schema.org/DateTime) 
+        + `dateModified` :  Last update timestamp of this attribute.
+            + Metadata type: [DateTime](https://schema.org/DateTime)
+			+ Read-Only. Automatically generated.
     + Optional
     
 + `location` : Location of this device represented by a GeoJSON geometry of type point. 
@@ -147,11 +148,11 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional    
+    + Read-Only. Automatically generated.
 
 + `owner` : The owners of a Device.
     + Attribute type: List of references to [Person](http://schema.org/Person) or [Organization](https://schema.org/Organization).

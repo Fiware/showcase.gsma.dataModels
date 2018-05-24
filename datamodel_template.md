@@ -14,11 +14,11 @@ A JSON Schema corresponding to this data model can be found {{add link to JSON S
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional    
+    + Read-Only. Automatically generated.
 
 + `owner` : Entity's owners.
     + Attribute type: List of references to [Person]( http://schema.org/Person) or [Organization](https://schema.org/Organization).

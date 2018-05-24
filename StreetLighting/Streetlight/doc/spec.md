@@ -88,7 +88,7 @@ Typically it will contain an identifier that will allow to obtain more informati
     
 + `dateModified` : Timestamp of the last update made to this entity
     + Attribute Type: [DateTime](http://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
     
 + `dateServiceStarted` : Date at which the streetlight started giving service.
     + Attribute Type: [Date](http://schema.org/Date)

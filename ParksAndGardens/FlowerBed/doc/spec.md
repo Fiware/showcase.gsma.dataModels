@@ -15,11 +15,11 @@ A JSON Schema corresponding to this data model can be found {{add link to JSON S
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional    
+    + Read-Only. Automatically generated.
 
 + `taxon` : Used to indicate the biological [taxon](http://en.wikipedia.org/wiki/en:taxon)
 to which the trees, or plants in the flower bed belong.

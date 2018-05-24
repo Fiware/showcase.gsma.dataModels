@@ -15,11 +15,11 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
 
 + `dateCreated` : Entity creation date.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `name` : Name of this parking spot. It can denote the number or label used to identify it within a parking site.
     + Normative References: [https://schema.org/name](https://schema.org/name)

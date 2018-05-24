@@ -19,11 +19,11 @@ DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://
    
 + `dateCreated` : Entity's creation timestamp
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
     
 + `location` : Geolocation of the parking site represented by a GeoJSON (Multi)Polygon or Point.
     + Attribute type: `geo:json`.

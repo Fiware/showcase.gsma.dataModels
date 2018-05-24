@@ -84,7 +84,7 @@ responsible, district, neighbourhood, etc.
     
 + `dateModified` : Timestamp of the last update made to this entity.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
         
 + `description` : Description about the streetlight group. 
     + Normative References: [https://schema.org/description](https://schema.org/description)

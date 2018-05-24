@@ -16,11 +16,11 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional    
+    + Read-Only. Automatically generated.
 
 + `refUser` : reference to the (anonymised) User to which this UserContext is associated.
     + Attribute type: [https://schema.org/URL](https://schema.org/URL)

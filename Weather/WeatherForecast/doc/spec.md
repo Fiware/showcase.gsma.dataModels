@@ -20,11 +20,11 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
     
 + `name` : Name given to the weather forecast location.
     + Normative References: [https://schema.org/name](https://schema.org/name)

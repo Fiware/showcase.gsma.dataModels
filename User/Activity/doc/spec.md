@@ -20,11 +20,11 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional  
+    + Read-Only. Automatically generated.
 
 + `dateActivityStarted` : Activity's start timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)

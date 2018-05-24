@@ -19,14 +19,14 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
     +   Normative References:
         [http://schema.org/DateTime](http://schema.org/DateTime)[
         ](http://schema.org/DateTime)
-    +   Optional
+    +   Read-Only. Automatically generated.
 
 +   `dateModified` : Last update timestamp of this entity.
     +   Attribute type: [DateTime](https://schema.org/DateTime)
     +   Normative References:
         [http://schema.org/DateTime](http://schema.org/DateTime)[
         ](http://schema.org/DateTime)
-    +   Optional
+    +   Read-Only. Automatically generated.
 
 +   `location` : Geolocation of the station represented by a GeoJSON
     (Multi)Polygon or Point.

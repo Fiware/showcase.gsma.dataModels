@@ -26,7 +26,7 @@ the Automotive and Smart City vertical segments and related IoT applications.
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Mandatory
+    + Read-Only. Automatically generated.
         
 + `laneId` : Lane identifier.
     + Attribute type: [Number](https://schema.org/Number)
@@ -51,7 +51,7 @@ the lack of support of Orion Context Broker for datetime intervals, it can be us
     
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `name` : Name given to this observation.
     + Normative References: [https://schema.org/name](https://schema.org/name)

@@ -26,11 +26,11 @@ This data model has been developed in cooperation with mobile operators and the 
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
     
 + `source` : The source of this data.
     + Attribute type: [URL](https://schema.org/URL)

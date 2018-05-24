@@ -100,11 +100,11 @@ If the device is not a constrained device this property can be left as `null` or
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional    
+    + Read-Only. Automatically generated.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`

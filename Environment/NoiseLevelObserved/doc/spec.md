@@ -13,11 +13,11 @@ This entity is primarily associated with the Smart City and environment vertical
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `location` : Location of this observation represented by a GeoJSON geometry. 
     + Attribute type: `geo:json`.

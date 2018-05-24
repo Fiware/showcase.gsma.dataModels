@@ -23,11 +23,13 @@ For a full description of the following attributes refer to GSMA
 
 + `type`` : Entity type. It must be equal to `BuildingOperation`.`
 
-+ `dateModified`
-    + Optional
++ `dateModified` : Last update timestamp of this entity.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
 
-+ `dateCreated`
-    + Optional    
++ `dateCreated` : Entity's creation timestamp.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
 
 + `description`
     + Optional

@@ -23,11 +23,11 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    + Read-Only. Automatically generated.
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional    
+    + Read-Only. Automatically generated.
 
 + `location` : Location of the aero allergens observation represented by a GeoJSON geometry. 
     + Attribute type: `geo:json`.

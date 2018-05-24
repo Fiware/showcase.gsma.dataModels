@@ -219,8 +219,9 @@ def get_air_quality_madrid(target_stations, target_hour=-1):
                         'streetAddress': station_dict[station_num]['address']
                     },
                     'location': station_dict[station_num]['location'] or None,
-                    'source': 'http://datos.madrid.es',
-                    'dateCreated': datetime.datetime.now().isoformat()
+                    'source': 'http://datos.madrid.es'
+                    # According to read-only nature of dateCreated, it must not be added
+                    #'dateCreated': datetime.datetime.now().isoformat()
                 }
                 valid_from = datetime.datetime(
                     int(row[6]), int(row[7]), int(row[8]), hour)
