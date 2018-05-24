@@ -54,7 +54,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Attribute metadata:
         + `dateModified` :  Last update timestamp of this attribute.
             + Metadata type: [DateTime](https://schema.org/DateTime)
-			+ Read-Only. Automatically generated.
+            + Read-Only. Automatically generated.
     + Optional
     
 + `location` : Location of this device represented by a GeoJSON geometry of type point. 
