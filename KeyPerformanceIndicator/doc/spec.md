@@ -108,7 +108,11 @@ Example `KPI-2016-2018-Incidences-Street`.
             + Type: [DateTime](http://schema.org/DateTime)
     + Mandatory
     
-+ `dateCreated` : The date on which the organization created this KPI.
++ `effectiveSince` : The date on which the organization created this KPI. This date might be different than the entity creation date.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional
+
++ `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
 
@@ -120,7 +124,11 @@ Example `KPI-2016-2018-Incidences-Street`.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
       
-+ `dateModified` : Last update date of the KPI data.
++ `updateAt` : Last update date of the KPI data. This can be different than the last update date of the KPI's value.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional
+
++ `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
     

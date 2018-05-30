@@ -48,11 +48,15 @@ FIWARE / OASC recommends the following additional fields as an extension to the 
     + Normative references: [https://schema.org/provider](https://schema.org/provider) 
     + Optional
 
-+ `dateCreated` : The date on which the service type was created.
++ `effectiveSince` : The date on which the service type was created. This date might be different than the entity creation date.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional
+
++ `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
 
-+ `dateModified` : Last update date of this service type.
++ `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
 
