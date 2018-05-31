@@ -124,7 +124,7 @@ Example `KPI-2016-2018-Incidences-Street`.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
       
-+ `updateAt` : Last update date of the KPI data. This can be different than the last update date of the KPI's value.
++ `updatedAt` : Last update date of the KPI data. This can be different than the last update date of the KPI's value.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
