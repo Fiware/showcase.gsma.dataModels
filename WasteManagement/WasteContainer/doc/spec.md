@@ -162,6 +162,7 @@ entities of type `WasteContainerIsle` are not being modelled specifically. Other
         + `lidOpen`. Container's lid has been opened and not closed after a certain amount of time.
         + `dropped`. Container has been dropped for some reason.
         + `moved`. Container has been moved from its regular position and has not come back.
+        + `vandalized`. Container has been damaged or destroyed due to vandalism.
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
