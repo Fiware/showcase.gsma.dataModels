@@ -37,7 +37,7 @@ matrix:
       before_script:
         - eslint --ext .json .
         - jshint .
-        - validate -i common-schema.json -i geometry-schema.json -i docs/Weather/weather-schema.json -i docs/Alert/alert-schema.json -p . -c true
+        - validate -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p . -c true
       script:
         - true
 
