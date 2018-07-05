@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Device/DeviceModel/schema.json",
+  "title": "GSMA / FIWARE - Device Model schema",
+  "description": "This entity captures the static properties of a Device. ",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/Device/device-schema.json#/definitions/Device-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "DeviceModel"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "deviceClass": {
+          "type": "string",
+          "enum": [
+            "C0",
+            "C1",
+            "C2"
+          ]
+        },
+        "controlledProperty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "temperature",
+              "humidity",
+              "light",
+              "motion",
+              "fillingLevel",
+              "occupancy",
+              "power",
+              "pressure",
+              "smoke",
+              "energy",
+              "airPollution",
+              "noiseLevel",
+              "weatherConditions",
+              "precipitation",
+              "windSpeed",
+              "windDirection",
+              "atmosphericPressure",
+              "solarRadiation",
+              "depth",
+              "pH",
+              "conductivity",
+              "conductance",
+              "tss",
+              "tds",
+              "turbidity",
+              "salinity",
+              "orp",
+              "cdom",
+              "waterPollution",
+              "location",
+              "speed",
+              "heading",
+              "weight",
+              "waterConsumption",
+              "gasComsumption",
+              "electricityConsumption",
+              "soilMoisture",
+              "trafficFlow"
+            ]
+          }
+        },
+        "function": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "levelControl",
+              "sensing",
+              "onOff",
+              "openClose",
+              "metering",
+              "eventNotification"
+            ]
+          }
+        },
+        "supportedUnits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "energyLimitationClass": {
+          "type": "string",
+          "enum": [
+            "E0",
+            "E1",
+            "E2",
+            "E9"
+          ]
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri"
+        },
+        "brandName": {
+          "type": "string"
+        },
+        "modelName": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "category",
+    "controlledProperty",
+    "manufacturerName",
+    "brandName",
+    "modelName"
+  ]
+}

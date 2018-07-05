@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Environment/AeroAllergenObserved/schema.json",
+  "title": "GSMA / FIWARE - Pollen levels observed schema",
+  "description": "An observation of pollen levels at a certain place and time.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "AeroAllergenObserved"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "dateObserved": {
+          "type": "string"
+        },
+        "allergenRisk": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "moderate",
+            "high",
+            "veryHigh"
+          ]
+        },
+        "refDevice": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "dateObserved",
+    "location"
+  ]
+}

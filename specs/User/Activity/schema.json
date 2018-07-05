@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/User/UserActivity/schema.json",
+  "title": "FIWARE - User Activity schema",
+  "description": "Information on the current activity performed by an anonymized user in a given point in time",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "properties": {
+        "dateActivityStarted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateActivityEnded": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "refObject": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "activityType": {
+          "type": "string"
+        },
+        "refTarget": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "refAgent": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "UserActivity"
+          ],
+          "description": "NGSI Entity type"
+        }
+      }
+    }
+  ],
+  "required": [
+    "activityType",
+    "refAgent",
+    "type",
+    "id"
+  ]
+}

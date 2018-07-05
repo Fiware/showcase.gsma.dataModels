@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/TransferRule/schema.json",
+  "title": "NGSI GTFS Schema - TransferRule",
+  "description": "GTFS Transfer Rule",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "gtfs:TransferRule"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "hasOrigin": {
+          "type": "string",
+          "format": "uri"
+        },
+        "hasDestination": {
+          "type": "string",
+          "format": "uri"
+        },
+        "transferType": {
+          "type": "string",
+          "enum": [
+            "0", "1", "2", "3"
+          ]
+        },
+        "minimumTransferTime": {
+          "type": "integer",
+          "minValue": 1
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "hasOrigin",
+    "hasDestination",
+    "transferType"
+  ]
+}

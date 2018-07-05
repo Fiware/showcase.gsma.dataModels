@@ -1,0 +1,69 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "https://fiware.github.io/dataModels/specs/Transportation/BikeHire/schema.json",
+	"title": "FIWARE - Transportation / Bike Hire Docking Station",
+	"description": "Bike Hire Docking Station",
+	"type": "object",
+	"allOf": [
+		{
+			"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+		},
+		{
+			"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+		},
+		{
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"BikeHireDockingStation"
+					],
+					"description": "NGSI Entity type"
+				},
+				"totalSlotNumber": {
+					"type": "integer",
+					"minimum": 1
+				},
+				"freeSlotNumber": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"availableBikeNumber": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"outOfServiceSlotNumber": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"openingHours": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string",
+					"enum": [
+						"working",
+						"outOfService",
+						"withIncidence",
+						"full",
+						"almostFull",
+						"empty",
+						"almostEmpty"
+					]
+				},
+				"owner": {
+					"type": "string"
+				},
+				"provider": {
+					"type": "object"
+				},
+				"contactPoint": {
+					"type": "object"
+				}
+			}
+	}],
+	"required": [
+		"id",
+		"type"
+	]
+}

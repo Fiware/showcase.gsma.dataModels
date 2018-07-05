@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/gtfs-schema.json",
+  "title": "NGSI - GTFS Schema",
+  "description": "Common definitions of GTFS data models",
+  "definitions": {
+    "GTFS-Stop-Commons": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        },
+        "zoneCode": {
+          "type": "string"
+        },
+        "wheelChairAccessible": {
+          "type": "string",
+          "enum": [
+            "0", "1", "2"
+          ]
+        },
+        "hasParentStation": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/Trip/schema.json",
+  "title": "NGSI GTFS Schema - Trip",
+  "description": "GTFS Trip",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "gtfs:Trip"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "headSign": {
+          "type": "string"
+        },
+        "hasRoute": {
+          "type": "string",
+          "format": "uri"
+        },
+        "location": {
+           "type": "object",
+           "oneOf": [{
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["LineString"]
+                },
+                "coordinates": { "$ref": "http://json-schema.org/geojson/geometry.json#/definitions/lineString" }
+              }
+            },
+            {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["MultiLineString"]
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "items": { "$ref": "http://json-schema.org/geojson/geometry.json#/definitions/lineString" }
+                  }
+                }
+            }]
+        },
+        "block": {
+          "type": "string"
+        },
+        "hasService": {
+          "type": "string",
+          "format": "uri"
+        },
+        "direction": {
+          "type": "number",
+          "enum": [0, 1]
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "hasRoute"
+  ]
+}

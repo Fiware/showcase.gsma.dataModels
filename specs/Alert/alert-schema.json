@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Alert/alert-schema.json",
+  "title": "Alert base schema",
+  "description": "Common definitions for Alert data model",
+  "definitions": {
+    "Common-Alert": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "dateIssued": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "informational",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "traffic",
+            "weather",
+            "environment",
+            "health",
+            "security"
+          ]
+        },
+        "alertSource": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            }
+          ]
+        },
+        "data": {
+          "type": "object"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Alert"
+          ],
+          "description": "NGSI Entity type"
+        }
+      }
+    }
+  }
+}

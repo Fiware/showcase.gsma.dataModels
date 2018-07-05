@@ -1,0 +1,258 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/PointOfInterest/Museum/schema.json",
+  "title": "FIWARE - Museum schema",
+  "description": "A museum",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Museum"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "museumType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "appliedArts",
+              "scienceAndTechnology",
+              "fineArts",
+              "music",
+              "history",
+              "sacredArt",
+              "archaeology",
+              "specials",
+              "decorativeArts",
+              "literature",
+              "medicineAndPharmacy",
+              "maritime",
+              "transports",
+              "military",
+              "wax",
+              "popularArtsAndTraditions",
+              "numismatic",
+              "unesco",
+              "ceramics",
+              "sumptuaryArts",
+              "naturalScience",
+              "prehistoric",
+              "ethnology",
+              "railway",
+              "mining",
+              "textile",
+              "sculpture",
+              "multiDisciplinar",
+              "painting",
+              "paleonthology",
+              "modernArt",
+              "thematic",
+              "architecture",
+              "museumHouse",
+              "cathedralMuseum",
+              "diocesanMuseum",
+              "universitary",
+              "contemporaryArt",
+              "bullfighting"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "owner": {
+          "anyOf": [
+              {
+                  "type": "string"
+              }, 
+              {
+                  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              }
+          ]
+        },
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "elevator",
+              "cafeteria",
+              "shop",
+              "auditory",
+              "conferenceRoom",
+              "audioguide",
+              "cloakRoom",
+              "forDisabled",
+              "forBabies",
+              "guidedTour",
+              "restaurant",
+              "ramp",
+              "reservation"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "historicalPeriod": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "artPeriod": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "buildingType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "prehistoricPlace",
+              "acropolis",
+              "alcazaba",
+              "aqueduct",
+              "alcazar",
+              "amphitheatre",
+              "arch",
+              "polularArchitecture",
+              "basilica",
+              "road",
+              "chapel",
+              "cartuja",
+              "nobleHouse",
+              "residence",
+              "castle",
+              "castro",
+              "catacombs",
+              "cathedral",
+              "cloister",
+              "convent",
+              "prehistoricCave",
+              "dolmen",
+              "officeBuilding",
+              "houseBuilding",
+              "industrialBuilding",
+              "militaryBuilding",
+              "hermitage",
+              "fortress",
+              "sculpturalGroups",
+              "church",
+              "garden",
+              "fishMarket",
+              "masia",
+              "masiaFortificada",
+              "minaret",
+              "monastery",
+              "monolith",
+              "walls",
+              "necropolis",
+              "menhir",
+              "mansion",
+              "palace",
+              "pantheon",
+              "pazo",
+              "pyramid",
+              "bridge",
+              "gate",
+              "arcade",
+              "walledArea",
+              "sanctuary",
+              "grave",
+              "synagogue",
+              "taulasTalayotsNavetas",
+              "theathre",
+              "temple",
+              "spring",
+              "tower",
+              "archeologicalSite",
+              "university",
+              "graveyard",
+              "fortifiedTemple",
+              "civilEngineering",
+              "square",
+              "seminar",
+              "bullfightingRing",
+              "publicBuilding",
+              "town",
+              "cavesAndTouristicMines",
+              "proCathedral",
+              "mosque",
+              "circus",
+              "burialMound"
+            ],
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "featuredArtist": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "contactPoint": {
+          "type": "object"
+        },
+        "touristArea": {
+          "type": "string"
+        },
+        "openingHoursSpecification": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "opens": {
+                "type": "string",
+                "pattern": "[0-9]{2}:[0-9]{2}"
+              },
+              "closes": {
+                "type": "string",
+                "pattern": "[0-9]{2}:[0-9]{2}"
+              },
+              "dayOfWeek": {
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "refSeeAlso": {
+          "type": "array",
+          "items": {
+            "anyOf": [{
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            }]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }  
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "name"
+  ]
+}

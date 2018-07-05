@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Device/Device/schema.json",
+  "title": "GSMA / FIWARE - Device schema",
+  "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/Device/device-schema.json#/definitions/Device-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Device"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "controlledAsset": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              }
+            ]
+          }
+        },
+        "mnc": {
+          "type": "string"
+        },
+        "macAddress": {
+          "type": "array",
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/specs/Device/device-schema.json#/definitions/MacAddressType"
+          }
+        },
+        "ipAddress": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "oneOf": [
+              {
+                "format": "ipv4"
+              },
+              {
+                "format": "ipv6"
+              }
+            ]
+          }
+        },
+        "configuration": {
+          "type": "object"
+        },
+        "dateInstalled": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateFirstUsed": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateManufactured": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "hardwareVersion": {
+          "type": "string"
+        },
+        "softwareVersion": {
+          "type": "string"
+        },
+        "firmwareVersion": {
+          "type": "string"
+        },
+        "osVersion": {
+          "type": "string"
+        },
+        "dateLastCalibration": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "serialNumber": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "refDeviceModel": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            }
+          ]
+        },
+        "batteryLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "deviceState": {
+          "type": "string"
+        },
+        "dateLastValueReported": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "category",
+    "controlledProperty"
+  ]
+}

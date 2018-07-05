@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Building/BuildingOperation/schema.json",
+  "title": "FIWARE - Building Operation schema",
+  "description": "Information on a given Building Operation",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "BuildingOperation"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "refBuilding": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "refOperator": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "operationType": {
+          "type": "string"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "aborted"
+          ]
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateStarted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateFinished": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "ongoing",
+            "finished",
+            "scheduled",
+            "cancelled"
+          ]
+        },
+        "operationSequence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refRelatedBuildingOperation": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          }
+        },
+        "refRelatedDeviceOperation": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "type",
+    "id",
+    "refBuilding",
+    "startDate",
+    "endDate"
+  ]
+}
