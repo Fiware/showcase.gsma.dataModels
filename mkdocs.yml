@@ -2,82 +2,82 @@ site_name: Fiware-DataModels
 site_url: https://fiware-datamodels.readthedocs.org
 repo_url: https://github.com/fiware/dataModels.git
 site_description: FIWARE Data Models Documentation
-docs_dir: .
+docs_dir: docs/
 site_dir: html
 markdown_extensions: [toc,fenced_code]
 use_directory_urls: false
 theme: readthedocs
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
 pages:
-  - 'Home': index.md
-  - 'Guidelines'  : guidelines.md
-  - 'Alerts':
-      - 'Alert'                        : 'Alert/doc/spec.md'
-  - 'Building':
-      - 'Introduction'                 : 'Building/doc/introduction.md'
-      - 'Building'                     : 'Building/Building/doc/spec.md' 
-      - 'BuildingOperation'            : 'Building/BuildingOperation/doc/spec.md'
-  - 'Civic Issue Tracking':
-      - 'Introduction'                 : 'IssueTracking/doc/introduction.md'
-      - 'Open311:ServiceType'          : 'IssueTracking/Open311_ServiceType/doc/spec.md' 
-      - 'Open311:ServiceRequest'       : 'IssueTracking/Open311_ServiceRequest/doc/spec.md'
-  - 'Device':                           
-      - 'Introduction'           : 'Device/doc/introduction.md'
-      - 'Device'                 : 'Device/Device/doc/spec.md'
-      - 'DeviceModel'            : 'Device/DeviceModel/doc/spec.md'
-  - 'Environment':
-      - 'Introduction'           : 'Environment/doc/introduction.md'
-      - 'AeroAllergenObserved'   : 'Environment/AeroAllergenObserved/doc/spec.md'
-      - 'AirQualityObserved'     : 'Environment/AirQualityObserved/doc/spec.md'
-      - 'WaterQualityObserved'   : 'Environment/WaterQualityObserved/doc/spec.md'
-      - 'NoiseLevelObserved'     : 'Environment/NoiseLevelObserved/doc/spec.md'
-  - 'Indicators':
-      - 'KeyPerformanceIndicator' : 'KeyPerformanceIndicator/doc/spec.md'
-  - 'Parking':
-      - 'Introduction'         : 'Parking/doc/introduction.md' 
-      - 'OffStreetParking'     : 'Parking/OffStreetParking/doc/spec.md'
-      - 'OnStreetParking'      : 'Parking/OnStreetParking/doc/spec.md'
-      - 'ParkingGroup'         : 'Parking/ParkingGroup/doc/spec.md'
-      - 'ParkingAccess'        : 'Parking/ParkingAccess/doc/spec.md' 
-      - 'ParkingSpot'          : 'Parking/ParkingSpot/doc/spec.md'
-  - 'Parks & Gardens':
-      - 'Introduction'         : 'ParksAndGardens/doc/introduction.md'
-      - 'Garden'               : 'ParksAndGardens/Garden/doc/spec.md'
-      - 'GreenspaceRecord'     : 'ParksAndGardens/GreenspaceRecord/doc/spec.md'
-      - 'FlowerBed'            : 'ParksAndGardens/FlowerBed/doc/spec.md'
-  - 'Points of Interest':
-      - 'Introduction'         : 'PointOfInterest/doc/introduction.md'
-      - 'PointOfInterest'      : 'PointOfInterest/PointOfInterest/doc/spec.md'
-      - 'Beach'                : 'PointOfInterest/Beach/doc/spec.md'
-      - 'Museum'               : 'PointOfInterest/Museum/doc/spec.md'
-      - 'WeatherStation'       : 'PointOfInterest/WeatherStation/doc/spec.md'
-      - 'AirQualityStation'    : 'PointOfInterest/AirQualityStation/doc/spec.md'
-  -  'Point Of Interacion':
-      - 'SmartPointOfInteraction' : 'PointOfInteraction/SmartPointOfInteraction/doc/spec.md'
-      - 'SmartSpot'               : 'PointOfInteraction/SmartSpot/doc/spec.md'
-  -  'Street Lighting':
-      - 'Introduction'              : 'StreetLighting/doc/introduction.md'
-      - 'Streetlight'               : 'StreetLighting/Streetlight/doc/spec.md'
-      - 'StreetlightModel'          : 'StreetLighting/StreetlightModel/doc/spec.md'
-      - 'StreetlightGroup'          : 'StreetLighting/StreetlightGroup/doc/spec.md'
-      - 'StreetlightControlCabinet' : 'StreetLighting/StreetlightControlCabinet/doc/spec.md'
-  - 'Transportation':
-      - 'Introduction'           : 'Transportation/doc/introduction.md'
-      - 'BikeHireDockingStation' : 'Transportation/Bike/BikeHireDockingStation/doc/spec.md'
-      - 'Road'                   : 'Transportation/Road/doc/spec.md'
-      - 'RoadSegment'            : 'Transportation/RoadSegment/doc/spec.md'
-      - 'TrafficFlowObserved'    : 'Transportation/TrafficFlowObserved/doc/spec.md'
-      - 'Vehicle'                : 'Transportation/Vehicle/Vehicle/doc/spec.md'
-      - 'VehicleModel'           : 'Transportation/Vehicle/VehicleModel/doc/spec.md'
-  -  'Weather':
-      - 'Introduction'         : 'Weather/doc/introduction.md'
-      - 'WeatherObserved'      : 'Weather/WeatherObserved/doc/spec.md'
-      - 'WeatherForecast'      : 'Weather/WeatherForecast/doc/spec.md'
-      - 'WeatherAlert'         : 'Weather/WeatherAlert/doc/spec.md'
-  -  'Waste Management':
-      - 'Introduction'         : 'WasteManagement/doc/introduction.md'
-      - 'WasteContainerIsle'   : 'WasteManagement/WasteContainerIsle/doc/spec.md'
-      - 'WasteContainerModel'  : 'WasteManagement/WasteContainerModel/doc/spec.md'
-      - 'WasteContainer'       : 'WasteManagement/WasteContainer/doc/spec.md'
+  - Home: index.md
+  - Guidelines  : guidelines.md
+  - Alerts:
+      - Alert                        : Alert/doc/spec.md
+  - Building:
+      - Introduction                 : Building/doc/introduction.md
+      - Building                     : Building/Building/doc/spec.md 
+      - BuildingOperation            : Building/BuildingOperation/doc/spec.md
+  - Civic Issue Tracking:
+      - Introduction                 : IssueTracking/doc/introduction.md
+      - Open311:ServiceType          : IssueTracking/Open311_ServiceType/doc/spec.md 
+      - Open311:ServiceRequest       : IssueTracking/Open311_ServiceRequest/doc/spec.md
+  - Device:                           
+      - Introduction           : Device/doc/introduction.md
+      - Device                 : Device/Device/doc/spec.md
+      - DeviceModel            : Device/DeviceModel/doc/spec.md
+  - Environment:
+      - Introduction           : Environment/doc/introduction.md
+      - AeroAllergenObserved   : Environment/AeroAllergenObserved/doc/spec.md
+      - AirQualityObserved     : Environment/AirQualityObserved/doc/spec.md
+      - WaterQualityObserved   : Environment/WaterQualityObserved/doc/spec.md
+      - NoiseLevelObserved     : Environment/NoiseLevelObserved/doc/spec.md
+  - Indicators:
+      - KeyPerformanceIndicator : KeyPerformanceIndicator/doc/spec.md
+  - Parking:
+      - Introduction         : Parking/doc/introduction.md 
+      - OffStreetParking     : Parking/OffStreetParking/doc/spec.md
+      - OnStreetParking      : Parking/OnStreetParking/doc/spec.md
+      - ParkingGroup         : Parking/ParkingGroup/doc/spec.md
+      - ParkingAccess        : Parking/ParkingAccess/doc/spec.md 
+      - ParkingSpot          : Parking/ParkingSpot/doc/spec.md
+  - Parks & Gardens:
+      - Introduction         : ParksAndGardens/doc/introduction.md
+      - Garden               : ParksAndGardens/Garden/doc/spec.md
+      - GreenspaceRecord     : ParksAndGardens/GreenspaceRecord/doc/spec.md
+      - FlowerBed            : ParksAndGardens/FlowerBed/doc/spec.md
+  - Points of Interest:
+      - Introduction         : PointOfInterest/doc/introduction.md
+      - PointOfInterest      : PointOfInterest/PointOfInterest/doc/spec.md
+      - Beach                : PointOfInterest/Beach/doc/spec.md
+      - Museum               : PointOfInterest/Museum/doc/spec.md
+      - WeatherStation       : PointOfInterest/WeatherStation/doc/spec.md
+      - AirQualityStation    : PointOfInterest/AirQualityStation/doc/spec.md
+  -  Point Of Interacion:
+      - SmartPointOfInteraction : PointOfInteraction/SmartPointOfInteraction/doc/spec.md
+      - SmartSpot               : PointOfInteraction/SmartSpot/doc/spec.md
+  -  Street Lighting:
+      - Introduction              : StreetLighting/doc/introduction.md
+      - Streetlight               : StreetLighting/Streetlight/doc/spec.md
+      - StreetlightModel          : StreetLighting/StreetlightModel/doc/spec.md
+      - StreetlightGroup          : StreetLighting/StreetlightGroup/doc/spec.md
+      - StreetlightControlCabinet : StreetLighting/StreetlightControlCabinet/doc/spec.md
+  - Transportation:
+      - Introduction           : Transportation/doc/introduction.md
+      - BikeHireDockingStation : Transportation/Bike/BikeHireDockingStation/doc/spec.md
+      - Road                   : Transportation/Road/doc/spec.md
+      - RoadSegment            : Transportation/RoadSegment/doc/spec.md
+      - TrafficFlowObserved    : Transportation/TrafficFlowObserved/doc/spec.md
+      - Vehicle                : Transportation/Vehicle/Vehicle/doc/spec.md
+      - VehicleModel           : Transportation/Vehicle/VehicleModel/doc/spec.md
+  -  Weather:
+      - Introduction         : Weather/doc/introduction.md
+      - WeatherObserved      : Weather/WeatherObserved/doc/spec.md
+      - WeatherForecast      : Weather/WeatherForecast/doc/spec.md
+      - WeatherAlert         : Weather/WeatherAlert/doc/spec.md
+  -  Waste Management:
+      - Introduction         : WasteManagement/doc/introduction.md
+      - WasteContainerIsle   : WasteManagement/WasteContainerIsle/doc/spec.md
+      - WasteContainerModel  : WasteManagement/WasteContainerModel/doc/spec.md
+      - WasteContainer       : WasteManagement/WasteContainer/doc/spec.md
 
-google_analytics: ['UA-83719923-1', 'fiware-datamodels.readthedocs.io']
+google_analytics: ["UA-83719923-1", "fiware-datamodels.readthedocs.io"]

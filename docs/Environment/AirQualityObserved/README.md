@@ -66,5 +66,4 @@ What was the air quality observed today at noon UTC at the "Plaza de España" (M
         "temperature": 14.3,
         "windDirection": 352
     }
-]
 ```
