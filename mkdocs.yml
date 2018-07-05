@@ -2,7 +2,7 @@ site_name: Fiware-DataModels
 site_url: https://fiware-datamodels.readthedocs.org
 repo_url: https://github.com/fiware/dataModels.git
 site_description: FIWARE Data Models Documentation
-docs_dir: docs/
+docs_dir: specs/
 site_dir: html
 markdown_extensions: [toc,fenced_code]
 use_directory_urls: false
