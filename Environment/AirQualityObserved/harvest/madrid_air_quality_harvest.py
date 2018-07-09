@@ -342,7 +342,7 @@ def post_station_data(station_code, data):
 
 # Reads station data from CSV file
 def read_station_csv():
-    with contextlib.closing(open('../madrid_airquality_stations.csv', 'rU')) as csvfile:
+    with contextlib.closing(open('madrid_airquality_stations.csv', 'rU')) as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
 
         index = 0
