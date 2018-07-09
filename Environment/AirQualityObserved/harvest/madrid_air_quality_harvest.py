@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+
+import argparse
 import csv
 import datetime
 import json
@@ -27,7 +29,11 @@ AMBIENT_TYPE_NAME = 'AirQualityObserved'
 station_dict = {}
 
 # Orion service that will store the data
-orion_service = 'http://localhost:1030'
+orion_service = 'http://localhost:1026'
+
+only_latest = False
+
+stations_to_retrieve_data = []
 
 logger = None
 
@@ -104,8 +110,8 @@ persisted_entities = 0
 in_error_entities = 0
 
 MIME_JSON = 'application/json'
-FIWARE_SERVICE = 'AirQuality'
-FIWARE_SPATH = '/Spain_Madrid'
+FIWARE_SERVICE = None
+FIWARE_SPATH = None
 
 # Sanitize string to avoid forbidden characters by Orion
 
@@ -121,7 +127,6 @@ def get_air_quality_madrid():
         csv_data = f.read()
         csv_file = StringIO.StringIO(csv_data)
         reader = csv.reader(csv_file, delimiter=',')
-
         # Dictionary with station data indexed by station code
         # An array per station code containing one element per hour
         stations = {}
@@ -193,10 +198,10 @@ def get_air_quality_madrid():
 
                 hour += 1
 
-            print(len(stations[station_code]))
-
         # Now persisting data to Orion Context Broker
         for station in stations:
+            if station not in stations_to_retrieve_data:
+                continue
             station_data = stations[station]
             data_array = []
             for data in station_data:
@@ -288,9 +293,14 @@ def post_station_data(station_code, data):
     if len(data) == 0:
         return
 
+    data_to_be_persisted = data
+
+    if only_latest:
+        data_to_be_persisted = [data[-1]]
+
     payload = {
         'actionType': 'APPEND',
-        'entities': data
+        'entities': data_to_be_persisted
     }
 
     data_as_str = json.dumps(payload)
@@ -332,7 +342,7 @@ def post_station_data(station_code, data):
 
 # Reads station data from CSV file
 def read_station_csv():
-    with contextlib.closing(open('madrid_airquality_stations.csv', 'rU')) as csvfile:
+    with contextlib.closing(open('../madrid_airquality_stations.csv', 'rU')) as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
 
         index = 0
@@ -382,6 +392,37 @@ def setup_logger():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Madrid qir quality harvester')
+    # Not sure if the stations code erefrence should be the same should be the same!
+    parser.add_argument('stations', metavar='stations', type=str, nargs='*',
+                        help='Station Codes separated by spaces. ')
+    parser.add_argument('--service', metavar='service', type=str, nargs=1, help='FIWARE Service')
+    parser.add_argument('--service-path', metavar='service_path', type=str, nargs=1, help='FIWARE Service Path')
+    parser.add_argument('--endpoint', metavar='endpoint', type=str, nargs=1,
+                        help='Context Broker end point. Example. http://orion:1030')
+    parser.add_argument('--latest', action='store_true', help='Flag to indicate to only harvest the latest observation')
+
+    args = parser.parse_args()
+
+    if args.service:
+        FIWARE_SERVICE = args.service[0]
+        print('Fiware-Service: ' + FIWARE_SERVICE)
+
+    if args.service_path:
+        FIWARE_SPATH = args.service_path[0]
+        print('Fiware-Servicepath: ' + FIWARE_SPATH)
+
+    if args.endpoint:
+        orion_service = args.endpoint[0]
+        print('Context Broker: ' + orion_service)
+
+    for s in args.stations:
+        stations_to_retrieve_data.append(s)
+
+    if args.latest:
+        print('Only retrieving latest observations')
+        only_latest = True
+
     setup_logger()
 
     read_station_csv()
@@ -397,3 +438,5 @@ if __name__ == '__main__':
     logger.debug('Number of entities persisted: %d', persisted_entities)
     logger.debug('Number of entities in error: %d', in_error_entities)
     logger.debug('#### Harvesting cycle finished ... ####')
+
+

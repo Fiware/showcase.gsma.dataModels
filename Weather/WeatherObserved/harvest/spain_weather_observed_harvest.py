@@ -381,6 +381,7 @@ if __name__ == '__main__':
     logger.debug(
         'Number of weather stations known: %d', len(
             station_data.keys()))
+
     total_stations = len(station_data.keys()) - len(station_code_exceptions)
 
     get_weather_observed_spain()
