@@ -13,52 +13,52 @@ See [https://developers.google.com/transit/gtfs/reference/#tripstxt](https://dev
     + It shall be equal to `gtfs:Trip`.
     
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified`: Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `headSign`: Same as GTFS `trip_headsign`.
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Optional 
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Optional 
   
 + `shortName`: Same as GTFS `trip_short_name`.
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Optional
     
 + `direction`: Same as GTFS `direction_id`.
-  + Attribute type: Property. [Number](https://schema.org/Number).
-  + Allowed Values: `0` and `1` as per GTFS `direction_id`. 
-  + Optional
+    + Attribute type: Property. [Number](https://schema.org/Number).
+    + Allowed Values: `0` and `1` as per GTFS `direction_id`. 
+    + Optional
     
 + `block`: Same as GTFS `block_id`.
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
   
 + `hasService`: Same as GTFS `service_id`.
-  + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Service](../../doc/Service/spec.md) 
-  + Optional
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Service](../../doc/Service/spec.md) 
+    + Optional
   
 + `location`: The geographical shape associated to the trip encoded as GeoJSON `LineString` or `MultiLineString`.
 The coordinates shall be obtained from the `shapes.txt` feed file as per the value of `shape_id`. 
-  + Attribute type: GeoProperty. `geo:json`
-  + Optional
+    + Attribute type: GeoProperty. `geo:json`
+    + Optional
      
 + `hasRoute`: Same as `route_id`.
-  + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Route](../../doc/Route/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Route](../../doc/Route/spec.md)
+    + Mandatory
 
 + `wheelChairAccessible`: Same as GTFS `wheelchair_accessible`. 
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
+    + Optional
 
 + `bikesAllowed`: Same as GTFS `bikes_allowed`. 
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
+    + Optional
 
 
 ### Example

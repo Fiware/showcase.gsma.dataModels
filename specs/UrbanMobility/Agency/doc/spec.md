@@ -13,17 +13,17 @@ See [https://developers.google.com/transit/gtfs/reference/#agencytxt](https://de
     + It shall be equal to `gtfs:Agency`.
     
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified` : Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `source` : A sequence of characters giving the original source of the Entity data as a URL.
 It shall point to the URL of the original GTFS feed used to generate this Entity. 
-  + Attribute type: [URL](https://schema.org/URL)
-  + Mandatory
+    + Attribute type: [URL](https://schema.org/URL)
+    + Mandatory
 
 + `name`: Same as GTFS `agency_name`.
     + Attribute type: Property. [Text](https://schema.org/Text).
@@ -39,17 +39,17 @@ It shall point to the URL of the original GTFS feed used to generate this Entity
     + Optional
     
 + `phone`: Same as GFTS `agency_phone`.
-   + Attribute type: Property. [Text](https://schema.org/Text)
-   + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
    
 + `language`: Same as GTFS `agency_language`. 
-   + Attribute type: Property. [Text](https://schema.org/Text)
-   + Allowed values: See [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
-   + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Allowed values: See [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
+    + Optional
    
 + `address`: Agency's civic address. 
-   + Attribute type: Property. [PostalAddress](https://schema.org/PostalAddress)
-   + Optional
+    + Attribute type: Property. [PostalAddress](https://schema.org/PostalAddress)
+    + Optional
 
 ### Example
 

@@ -7,44 +7,44 @@ See [https://developers.google.com/transit/gtfs/reference/#transferstxt](https:/
 ## Data Model
 
 + `id`: Entity id. 
-  + It shall be `urn:ngsi-ld:gtfs:TransferRule:<transfer_rule_identifier>`. 
+    + It shall be `urn:ngsi-ld:gtfs:TransferRule:<transfer_rule_identifier>`. 
 
 + `type`: Entity type. 
-  + It shall be equal to `gtfs:Transfer`.
+    + It shall be equal to `gtfs:Transfer`.
     
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified` : Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `name` : Name given to this transfer rule.
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
 
 + `description`: Description given to this transfer rule.
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
   
 + `hasOrigin`: Trip associated to this Entity.
-  + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/spec.md) or [gtfs:Station](../../Station/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/spec.md) or [gtfs:Station](../../Station/spec.md)
+    + Mandatory
   
 + `hasDestination`: Trip associated to this Entity.
-  + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/spec.md) or [gtfs:Station](../../Station/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/spec.md) or [gtfs:Station](../../Station/spec.md)
+    + Mandatory
   
 + `transferType`: Same as GTFS `transfer_type`.
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Allowed values: (`"0"`,`"1"`,`"2"`,`"3"`)
-  + Mandatory
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Allowed values: (`"0"`,`"1"`,`"2"`,`"3"`)
+    + Mandatory
     
 + `minimumTransferTime`: Same as GTFS `min_transfer_time`. 
-  + Attribute type: Property. [Integer](https://schema.org/Integer).
-  + Default unit: seconds
-  + Optional   
+    + Attribute type: Property. [Integer](https://schema.org/Integer).
+    + Default unit: seconds
+    + Optional   
         
 ### Example
 

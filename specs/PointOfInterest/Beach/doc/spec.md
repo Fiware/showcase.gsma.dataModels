@@ -49,12 +49,12 @@ any property specified by schema.org and which domain is `https://schema.org/Bea
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not present.
   
- + `width` : Width of this beach.
++ `width` : Width of this beach.
     + Normative References: [https://schema.org/width](https://schema.org/width)
     + Default unit: meter
     + Optional
  
- + `length` : Length of this beach.
++ `length` : Length of this beach.
     + Normative References: [https://schema.org/lenght](https://schema.org/lenght)
     + Default unit: meter
     + Optional

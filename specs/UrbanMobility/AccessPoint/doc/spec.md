@@ -9,18 +9,18 @@ It is a GTFS `stop` which `location_type` is equal to `2`.
 ## Data Model
 
 + `id`: Entity Id
-  + It shall be `urn:ngsi-ld:gtfs:AccessPoint:<access_point_identifier>` being `access_point_identifier` a value that can derived from the `stop_id` field. 
+    + It shall be `urn:ngsi-ld:gtfs:AccessPoint:<access_point_identifier>` being `access_point_identifier` a value that can derived from the `stop_id` field. 
 
 + `type`: Entity Type 
-  + It shall be equal to `gtfs:AccessPoint`
+    + It shall be equal to `gtfs:AccessPoint`
   
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified` : Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 
 The following Attributes shall be as mandated by [gtfs:Stop](../../Stop/doc/spec.md):

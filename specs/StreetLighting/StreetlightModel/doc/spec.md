@@ -95,7 +95,7 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + See also: [https://schema.org/model](https://schema.org/manufacturer)
     + Optional
     
- + `lampWeight` : Lamp's weight.
++ `lampWeight` : Lamp's weight.
     + Attribute type: [Number](https://schema.org/Number).
     + Default Unit: Kilograms (kg)
     + See also: [https://schema.org/weight](https://schema.org/weight)
@@ -106,7 +106,7 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + Default unit: hours
     + Optional
     
- + `lampTechnology` : Technology used by the lamp.
++ `lampTechnology` : Technology used by the lamp.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: one Of (`LED`, `LPS`, `HPS`)
         + Or any other value not covered by the above list and meaningful to the application. 

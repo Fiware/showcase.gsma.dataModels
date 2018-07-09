@@ -85,7 +85,7 @@ The syntax must be conformant with schema.org (opening hours specification)[http
            `motorcycleWithSideCar`, `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
     + Mandatory
 
- + `maximumParkingDuration` : Maximum allowed stay at site encoded as a ISO8601 duration.
++ `maximumParkingDuration` : Maximum allowed stay at site encoded as a ISO8601 duration.
 A `null` or empty value indicates an indefinite duration.  
     + Attribute type: [Text](http://schema.org/Text)
     + Optional

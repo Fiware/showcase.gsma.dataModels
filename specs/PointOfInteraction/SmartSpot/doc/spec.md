@@ -28,12 +28,12 @@ In addition to the presented data model, this entity type inherits from the [Dev
 
 + `coverageRadius` : Radius of the spot coverage area in meters.
     + Attribute Type: [Number](https://schema.org/Number)
-	+ Default unit: Meters.
+    + Default unit: Meters.
     + Optional      
 
 + `announcementPeriod` : Period between announcements.
     + Attribute Type: [Number](https://schema.org/Number)
-	+ Default unit: Milliseconds.
+    + Default unit: Milliseconds.
     + Mandatory     
 
 + `availability`: Specifies the functionality intervals in which the announcements will be sent. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 

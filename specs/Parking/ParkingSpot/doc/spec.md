@@ -43,14 +43,14 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
     + Allowed Values: one Of (`occupied`, `free`, `closed`, `unknown`)
     + Metadata:
         + `timestamp` : Timestamp which reflects the date when the attribute value was obtained.
-              + Type: [DateTime](https://schema.org/DateTime)
-              + Optional
+            + Type: [DateTime](https://schema.org/DateTime)
+            + Optional
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime]((https://schema.org/DateTime). here can be production environmments where the attribute type
+            + Type: [DateTime]((https://schema.org/DateTime). here can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-              + Optional
+            + Optional
     + Mandatory
 
 + `width` : Width of the parking spot.

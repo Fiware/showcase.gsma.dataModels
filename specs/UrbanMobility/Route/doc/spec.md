@@ -13,12 +13,12 @@ See [https://developers.google.com/transit/gtfs/reference/#routestxt](https://de
     + It shall be equal to `gtfs:Route`.
     
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified` : Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `shortName`: Same as GTFS `route_short_name`.
     + Attribute type: Property. [Text](https://schema.org/Text).
@@ -47,16 +47,16 @@ See [https://developers.google.com/transit/gtfs/reference/#routestxt](https://de
     + Optional
     
 + `routeTextColor`: Same as GFTS `route_text_color`.
-   + Attribute type: Property. [Text](https://schema.org/Text)
-   + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
    
 + `routeSortOrder`: Same as GTFS `route_sort_order`. 
-   + Attribute type: Property. [Number](https://schema.org/Number)
-   + Optional
+    + Attribute type: Property. [Number](https://schema.org/Number)
+    + Optional
 
 + `operatedBy` : Agency that operates this route.
-  + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Agency](../../Agency/doc/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Agency](../../Agency/doc/spec.md)
+    + Mandatory
    
 
 ### Example

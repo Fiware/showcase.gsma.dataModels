@@ -13,52 +13,52 @@ See [https://developers.google.com/transit/gtfs/reference/#stop_timestxt](https:
     + It shall be equal to `gtfs:StopTime`.
     
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified`: Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `hasTrip`: Same as GTFS `trip_id`.
-  + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Trip](../../../Trip/doc/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Trip](../../../Trip/doc/spec.md)
+    + Mandatory
 
 + `hasStop`: Same as GTFS `stop_id`
-  + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Stop](../../../Stop/doc/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Stop](../../../Stop/doc/spec.md)
+    + Mandatory
 
 + `arrivalTime`: Same as GTFS `arrival_time`
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Mandatory
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Mandatory
 
 + `departureTime`: Same as GTFS `departure_time`
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Mandatory
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Mandatory
 
 + `stopSequence`: Same as GTFS `stop_sequence`
-  + Attribute type: Property. [Integer](https://schema.org/Integer) starting with `1`.
-  + Mandatory
+    + Attribute type: Property. [Integer](https://schema.org/Integer) starting with `1`.
+    + Mandatory
 
 + `stopHeadsign`: Same as GTFS `stop_headsign`
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Optional
 
 + `pickupType`: Same as GTFS `pickup_type`.
-  + Attribute type: Property. [Text](https://schema.org/Text).
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text).
+    + Optional
 
 + `dropOffType`: Same as GTFS `drop_off_type`
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
 
 + `distanceTravelled`: Same as GTFS `shape_dist_traveled`.
-  + Attribute type: Property. [Number](https://schema.org/Number)
-  + Optional
+    + Attribute type: Property. [Number](https://schema.org/Number)
+    + Optional
 
 + `timepoint`: Same as GTFS `timepoint`.
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
   
 
 ### Example

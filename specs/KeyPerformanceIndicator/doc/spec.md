@@ -88,10 +88,10 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `calculationPeriod` : KPI's period of time.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
     + Subproperties:
-          + `from` : Period start
-              + Type: [DateTime](http://schema.org/DateTime)
-          + `to` : Period end
-              + Type: [DateTime](http://schema.org/DateTime)
+        + `from` : Period start
+            + Type: [DateTime](http://schema.org/DateTime)
+        + `to` : Period end
+            + Type: [DateTime](http://schema.org/DateTime)
 
 + `currentStanding` : The KPI's current standing as per its `kpiValue`.
     + Attribute type: [Text](http://schema.org/Text)

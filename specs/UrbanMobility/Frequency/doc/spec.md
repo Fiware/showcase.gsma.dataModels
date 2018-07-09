@@ -13,24 +13,24 @@ See [https://developers.google.com/transit/gtfs/reference/#frequenciestxt](https
     + It shall be equal to `gtfs:Frequency`.
     
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified` : Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `name` : Name given to this frequency.
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
 
 + `description`: Description given to this frequency.
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
   
 + `hasTrip`: Trip associated to this Entity.
-  + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Trip](../../Trip/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Trip](../../Trip/spec.md)
+    + Mandatory
 
 + `startTime`: Same as GTFS `start_time`. See [format](https://developers.google.com/transit/gtfs/reference/#frequenciestxt).
     + Attribute type: Property. [Text](https://schema.org/Text).

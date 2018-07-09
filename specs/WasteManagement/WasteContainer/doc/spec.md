@@ -31,7 +31,7 @@ possible to determine the current filling level it must be equal to `null`.
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
+            + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.    
     + Allowed values: Interval [0,1].
     + Optional
@@ -57,7 +57,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
+            + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.    
     + Default unit: Celsius Degrees.
     + Optional
@@ -70,7 +70,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
+            + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.    
     + Default unit: Micrograms per cubic meter.
     + Optional
@@ -170,7 +170,7 @@ entities of type `WasteContainerIsle` are not being modelled specifically. Other
         + `TimeInstant` : [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
-              + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
+            + Type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
     is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.    
     + Optional
 

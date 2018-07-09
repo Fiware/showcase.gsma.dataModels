@@ -295,7 +295,7 @@ all the zones.
     + Attribute type: List of references to [ParkingSpot](../../ParkingSpot/doc/spec.md)
     + Optional    
     
- + `areaServed` : Area served by this parking site. Precise semantics can depend on the application or target city.
++ `areaServed` : Area served by this parking site. Precise semantics can depend on the application or target city.
  For instance, it can be a neighbourhood, burough or district.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional

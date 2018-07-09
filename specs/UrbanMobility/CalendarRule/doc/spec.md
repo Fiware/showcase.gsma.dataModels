@@ -7,68 +7,68 @@ See [https://developers.google.com/transit/gtfs/reference/#calendartxt](https://
 ## Data Model
 
 + `id`: Entity Id
-  + It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`. 
+    + It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`. 
 
 + `type`: Entity Type 
-  + It shall be equal to `gtfs:CalendarRule`
+    + It shall be equal to `gtfs:CalendarRule`
   
 + `dateCreated` : Entity's creation timestamp.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated. 
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated. 
  
 + `dateModified` : Last update timestamp of this Entity.
-  + Attribute type: [DateTime](https://schema.org/DateTime)
-  + Read-Only. Automatically generated.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Read-Only. Automatically generated.
   
 + `hasService` : Service to which this rule applies to. Derived from `service_id`.
-  + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../doc/Service/spec.md)
-  + Mandatory
+    + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../Service/doc/spec.md)
+    + Mandatory
   
 + `name` : Name of this rule
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
 
 + `description`: Description of this rule
-  + Attribute type: Property. [Text](https://schema.org/Text)
-  + Optional
+    + Attribute type: Property. [Text](https://schema.org/Text)
+    + Optional
   
 + `monday`: Same as GTFS `monday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
 
 + `tuesday`: Same as GTFS `tuesday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
 
 + `wednesday`: Same as GTFS `wednesday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
 
 + `thursday`: Same as GTFS `thursday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
 
 + `friday`: Same as GTFS `friday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
 
 + `saturday`: Same as GTFS `saturday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
 
 + `sunday`: Same as GTFS `sunday`
-  + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
+    + Mandatory
   
 + `startDate`: Start date of this rule in `YYYY-MM-DD` format.
 It can be obtained from the field `start_date` of [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt).
-  + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date). 
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date). 
+    + Mandatory
   
 + `endDate`: End date of this rule in `YYYY-MM-DD` format.
 It can be obtained from the field `end_date` of [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt).
-  + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date). 
-  + Mandatory
+    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date). 
+    + Mandatory
   
 
 ### Examples

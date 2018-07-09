@@ -98,7 +98,7 @@ responsible, district, neighbourhood, etc.
     + Default unit: Kilowatts (kW)
     + Optional
     
- + `energyConsumed` :  Energy consumed by the circuits controlled since metering started (since `dateMeteringStarted`).
++ `energyConsumed` :  Energy consumed by the circuits controlled since metering started (since `dateMeteringStarted`).
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Kilowatts per hour (kWh).
     + Attribute metadata:

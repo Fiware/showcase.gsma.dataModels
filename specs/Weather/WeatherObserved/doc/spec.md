@@ -133,7 +133,7 @@ mapping for Spanish terms can be found [here](https://github.com/Fiware/dataMode
 + `illuminance` : The [illumninance](https://en.wikipedia.org/wiki/Illuminance) observed measured in lux (lx) or lumens per square metre (cd·sr·m−2). 
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Lux
-     + Attribute metadata:
+    + Attribute metadata:
         + `timestamp` : optional timestamp for the observed value. It can be ommitted if the observation time is the same as the one captured
         by the `dateObserved` attribute at entity level.
     + Optional    
