@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+
+import argparse
 import csv
 import datetime
 import json
@@ -14,9 +16,8 @@ from pytz import timezone
 import contextlib
 import copy
 
-
 try:
-    xrange          # Python 2
+    xrange  # Python 2
 except NameError:
     xrange = range  # Python 3
 
@@ -28,6 +29,10 @@ station_dict = {}
 
 # Orion service that will store the data
 orion_service = 'http://localhost:1030'
+
+only_latest = False
+
+stations_to_retrieve_data = []
 
 logger = None
 
@@ -97,15 +102,17 @@ other_descriptions = {
     '92': 'Acid Rain Level'
 }
 
-dataset_url = 'http://datos.madrid.es/egob/catalogo/212531-7916318-calidad-aire-tiempo-real.txt'
+dataset_url = 'http://datos.madrid.es/egob/catalogo/' \
+              '212531-7916318-calidad-aire-tiempo-real.txt'
 
 # Statistics for tracking purposes
 persisted_entities = 0
 in_error_entities = 0
 
 MIME_JSON = 'application/json'
-FIWARE_SERVICE = 'AirQuality'
-FIWARE_SPATH = '/Spain_Madrid'
+FIWARE_SERVICE = None
+FIWARE_SPATH = None
+
 
 # Sanitize string to avoid forbidden characters by Orion
 
@@ -176,9 +183,10 @@ def get_air_quality_madrid():
                             unit_code = 'GP'
 
                         measurand_data = [
-                            property_name, str(param_value), unit_code, property_desc]
-                        stations[station_code][hour]['measurand']['value'].append(
-                            ','.join(measurand_data))
+                            property_name, str(param_value),
+                            unit_code, property_desc]
+                        stations[station_code][hour]['measurand']['value'] \
+                            .append(','.join(measurand_data))
                     else:
                         if property_name == 'relativeHumidity':
                             param_value = param_value / 100
@@ -193,10 +201,10 @@ def get_air_quality_madrid():
 
                 hour += 1
 
-            print(len(stations[station_code]))
-
         # Now persisting data to Orion Context Broker
         for station in stations:
+            if station not in stations_to_retrieve_data:
+                continue
             station_data = stations[station]
             data_array = []
             for data in station_data:
@@ -208,12 +216,14 @@ def get_air_quality_madrid():
                 # Last measurement is duplicated to have an entity with the
                 # latest measurement obtained
                 last_measurement = data_array[-1]
-                last_measurement['id'] = 'Madrid-AirQualityObserved-' + \
+                last_measurement['id'] = \
+                    'Madrid-AirQualityObserved-' + \
                     last_measurement['stationCode']['value'] + '-' + 'latest'
             else:
                 logger.warn('No data retrieved for: %s', station)
 
             post_station_data(station, data_array)
+
 
 #############
 
@@ -255,7 +265,7 @@ def build_station(station_num, station_code, hour, row):
 
     valid_from = datetime.datetime(int(row[6]), int(row[7]), int(row[8]), hour)
     station_data['id'] = 'Madrid-AirQualityObserved-' + \
-        station_code + '-' + valid_from.isoformat()
+                         station_code + '-' + valid_from.isoformat()
     valid_to = (valid_from + datetime.timedelta(hours=1))
 
     # Adjust timezones
@@ -288,9 +298,14 @@ def post_station_data(station_code, data):
     if len(data) == 0:
         return
 
+    data_to_be_persisted = data
+
+    if only_latest:
+        data_to_be_persisted = [data[-1]]
+
     payload = {
         'actionType': 'APPEND',
-        'entities': data
+        'entities': data_to_be_persisted
     }
 
     data_as_str = json.dumps(payload)
@@ -303,9 +318,8 @@ def post_station_data(station_code, data):
     }
 
     req = urllib2.Request(
-        url=(
-            orion_service +
-            '/v2/op/update'),
+        url=(orion_service +
+             '/v2/op/update'),
         data=data_as_str,
         headers=headers)
 
@@ -332,7 +346,8 @@ def post_station_data(station_code, data):
 
 # Reads station data from CSV file
 def read_station_csv():
-    with contextlib.closing(open('madrid_airquality_stations.csv', 'rU')) as csvfile:
+    with contextlib.closing(
+            open('madrid_airquality_stations.csv', 'rU')) as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
 
         index = 0
@@ -382,15 +397,53 @@ def setup_logger():
 
 
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(
+        description='Madrid air quality harvester')
+    parser.add_argument('stations', metavar='stations', type=str, nargs='*',
+                        help='Station Codes separated by spaces. ' +
+                             ' the number can be derived from the map ' +
+                             'https://jmcanterafonseca.carto.com/'
+                             'viz/4a44801e-7bb2-41bc-b293-35ae2a7306f5/'
+                             'public_map')
+    parser.add_argument('--service', metavar='service', type=str, nargs=1,
+                        help='FIWARE Service')
+    parser.add_argument('--service-path', metavar='service_path',
+                        type=str, nargs=1, help='FIWARE Service Path')
+    parser.add_argument('--endpoint', metavar='endpoint', type=str, nargs=1,
+                        help='Context Broker end point. '
+                             'Example. http://orion:1030')
+    parser.add_argument('--latest', action='store_true',
+                        help='Flag to indicate to only '
+                             'harvest the latest observation')
+
+    args = parser.parse_args()
+
+    if args.service:
+        FIWARE_SERVICE = args.service[0]
+        print('Fiware-Service: ' + FIWARE_SERVICE)
+
+    if args.service_path:
+        FIWARE_SPATH = args.service_path[0]
+        print('Fiware-Servicepath: ' + FIWARE_SPATH)
+
+    if args.endpoint:
+        orion_service = args.endpoint[0]
+        print('Context Broker: ' + orion_service)
+
+    for s in args.stations:
+        stations_to_retrieve_data.append(s)
+
+    if args.latest:
+        print('Only retrieving latest observations')
+        only_latest = True
+
     setup_logger()
 
     read_station_csv()
 
     logger.debug(
         '#### Starting a new harvesting and harmonization cycle ... ####')
-    logger.debug(
-        'Number of air quality stations known: %d', len(
-            station_dict.keys()))
 
     get_air_quality_madrid()
 
