@@ -36,7 +36,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     + Optional
 
 + `description` : Description of this point of interest.
-    + Normative References: [https://schema.org/description](https://schema.org/description]
+    + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
 
 + `location` : Location of the point of interest represented by a GeoJSON geometry, usually a `Point`. 
@@ -49,7 +49,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     + Mandatory if `location` is not present.
     
 + `category` : Category of this point of interest. 
-    + Attribute type: List of text [Text](https://schema.org/Text)
+    + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: Those defined by the [Factual taxonomy](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json).
     For instance the value `113` corresponds to beaches, and the value `311` corresponds to museums. 
     + Mandatory
