@@ -13,6 +13,8 @@
 '''
 
 from __future__ import print_function
+
+import argparse
 import datetime
 import json
 import urllib2
@@ -32,7 +34,9 @@ FIWARE_SPATH = '/Spain_Barcelona'
 MIME_JSON = 'application/json'
 
 # Orion service that will store the data
-orion_service = 'http://localhost:1030'
+orion_service = 'http://localhost:1026'
+only_latest = False
+stations_to_retrieve_data = []
 
 barcelona_tz = timezone('CET')
 
@@ -207,6 +211,8 @@ def get_air_quality_barcelona(target_stations):
 
     # Now persisting data to Orion Context Broker
     for a_station in entity_data:
+        if a_station not in stations_to_retrieve_data:
+            continue
         data_for_station = entity_data[a_station]
         print(len(data_for_station))
         if len(data_for_station):
@@ -264,9 +270,14 @@ def post_station_data(station_code, data):
     if len(data) == 0:
         return
 
+    data_to_be_persisted = data
+
+    if only_latest:
+        data_to_be_persisted = [data[-1]]
+
     payload = {
         'actionType': 'APPEND',
-        'entities': data
+        'entities': data_to_be_persisted
     }
 
     data_as_str = json.dumps(payload)
@@ -325,6 +336,47 @@ def setup_logger():
 
 
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(
+        description='Madrid air quality harvester')
+    parser.add_argument('stations', metavar='stations', type=str, nargs='*',
+                        help='Station Codes separated by spaces. ' +
+                             ' the number can be derived from the map ' +
+                             'https://jmcanterafonseca.carto.com/'
+                             'viz/4a44801e-7bb2-41bc-b293-35ae2a7306f5/'
+                             'public_map')
+    parser.add_argument('--service', metavar='service', type=str, nargs=1,
+                        help='FIWARE Service')
+    parser.add_argument('--service-path', metavar='service_path',
+                        type=str, nargs=1, help='FIWARE Service Path')
+    parser.add_argument('--endpoint', metavar='endpoint', type=str, nargs=1,
+                        help='Context Broker end point. '
+                             'Example. http://orion:1030')
+    parser.add_argument('--latest', action='store_true',
+                        help='Flag to indicate to only '
+                             'harvest the latest observation')
+
+    args = parser.parse_args()
+
+    if args.service:
+        FIWARE_SERVICE = args.service[0]
+        print('Fiware-Service: ' + FIWARE_SERVICE)
+
+    if args.service_path:
+        FIWARE_SPATH = args.service_path[0]
+        print('Fiware-Servicepath: ' + FIWARE_SPATH)
+
+    if args.endpoint:
+        orion_service = args.endpoint[0]
+        print('Context Broker: ' + orion_service)
+
+    for s in args.stations:
+        stations_to_retrieve_data.append(s)
+
+    if args.latest:
+        print('Only retrieving latest observations')
+        only_latest = True
+
     setup_logger()
 
     logger.debug(
