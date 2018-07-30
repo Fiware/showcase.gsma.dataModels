@@ -110,8 +110,8 @@ persisted_entities = 0
 in_error_entities = 0
 
 MIME_JSON = 'application/json'
-FIWARE_SERVICE = None
-FIWARE_SPATH = None
+FIWARE_SERVICE = 'AirQuality'
+FIWARE_SPATH = '/Spain_Madrid'
 
 
 # Sanitize string to avoid forbidden characters by Orion
@@ -203,8 +203,9 @@ def get_air_quality_madrid():
 
         # Now persisting data to Orion Context Broker
         for station in stations:
-            if station not in stations_to_retrieve_data:
-                continue
+            if stations_to_retrieve_data:
+                if station not in stations_to_retrieve_data:
+                    continue
             station_data = stations[station]
             data_array = []
             for data in station_data:

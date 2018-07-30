@@ -211,8 +211,9 @@ def get_air_quality_barcelona(target_stations):
 
     # Now persisting data to Orion Context Broker
     for a_station in entity_data:
-        if a_station not in stations_to_retrieve_data:
-            continue
+        if stations_to_retrieve_data:
+            if a_station not in stations_to_retrieve_data:
+                continue
         data_for_station = entity_data[a_station]
         print(len(data_for_station))
         if len(data_for_station):
