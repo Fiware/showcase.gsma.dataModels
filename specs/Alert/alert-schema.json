@@ -36,6 +36,7 @@
           "type": "string",
           "enum": [
             "traffic",
+            "naturalDisaster"
             "weather",
             "environment",
             "health",

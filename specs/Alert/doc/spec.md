@@ -29,7 +29,7 @@ found [here](../schema.json).
   conditions, high level of pollutants)
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values:
-        + (`traffic`, `weather`, `environment`, `health`, `security` )
+        + (`traffic`, `naturalDisaster`, `weather`, `environment`, `health`, `security` )
     + Mandatory
 
 + `subCategory` : Describe the sub category of alert.
@@ -37,16 +37,19 @@ found [here](../schema.json).
     + Allowed values:
         + (`trafficJam`, `carAccident`, `carWrongDirection`, `carStopped`,
           `pothole`, `roadClosed`, `roadWorks`, `hazardOnRoad`, `injuredBiker`)
-          (for `traffic` category) 
+          (for `traffic` category)
+         + (`flood`, `tsunami`, `coastalEvent`, `earthquake`)
+          (for `naturalDisaster` category)
         + (`rainfall`, `highTemperature`, `lowTemperature`, `heatWave`, `coldWave`, `ice`,
-          `snow`, `wind`, `fog`, `flood`, `tsunami`, `tornado`, `tropicalCyclone`,
-          `hurricane`, `snow/ice`, `thunderstorms`, `coastalEvent`, `forestFire`,
-          `avalanches`, `rain/flood`) (for `weather` category)
+          `snow`, `wind`, `fog`,  `tornado`, `tropicalCyclone`, `hurricane`, `snow/ice`,
+          `thunderstorms`,  `fireRisk`, `avalancheRisk`, `floodRisk`)
+          (for `weather` category)
         + (`airPollution`, `waterPollution`, `pollenConcentration`)
           (for `environment` category)
         + (`asthmaAttack`, `bumpedPatient`, `fallenPatient`, `heartAttack` )
           (for `health` category)
-        + (`suspiciousAction`, `robbery`, `assault` ) (for `security` category)
+        + (`suspiciousAction`, `robbery`, `assault`, `civilDisorder`, `buildingFire`,
+          `forestFire`) (for `security` category)
     + Optional
 
 + `location` : Location of alert represented by a GeoJSON geometry.
@@ -71,7 +74,7 @@ found [here](../schema.json).
     + Optional
 
 + `validTo` : The end date of validity of the alert in ISO8601
-  UTC format.                                                            
+  UTC format.
     + Attribute type: [DateTime](https://schema.org/DateTime).
     + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
     + Optional
