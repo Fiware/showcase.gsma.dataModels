@@ -22,18 +22,18 @@ whilst the vehicle is servicing a particular route.
     + Read-Only. Automatically generated.
   
 + `hasStop` : Stop to which this estimation applies to.
-    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../doc/Stop/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/doc/spec.md)
     + Mandatory
   
 + `hasTrip` : The trip to which this estimation applies to. 
-    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Trip](../../doc/Trip/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Trip](../../Trip/doc/spec.md)
     + Mandatory
 
 + `remainingTime`: It shall contain the remaining time of arrival for the trip heading to the concerned stop. 
-    + Attribute type: Property. [Text](https://schema.org/Text). Remaining time shall be encoded as a ISO8601 duration. Ex. ."PT8M5S"`. 
+    + Attribute type: Property. [Text](https://schema.org/Text). Remaining time shall be encoded as a ISO8601 duration. Ex. `"PT8M5S"`. 
     + Attribute Metadata:
         + `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the last attribute update
-            + Type: `[DateTime](https://schema.org/DateTime)
+            + Type: [DateTime](https://schema.org/DateTime)
             + Mandatory
     + Mandatory
   
@@ -41,7 +41,7 @@ whilst the vehicle is servicing a particular route.
     + Attribute type: Property. Positive Number. [https://schema.org/Number](https://schema.org/Number)
     + Attribute metadata:
         + `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the last attribute update
-            + Type: `[DateTime](https://schema.org/DateTime)
+            + Type: [DateTime](https://schema.org/DateTime)
             + Mandatory
     + Default Unit: Meters
     + Optional

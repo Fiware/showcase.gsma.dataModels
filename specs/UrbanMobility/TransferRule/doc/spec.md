@@ -29,11 +29,11 @@ See [https://developers.google.com/transit/gtfs/reference/#transferstxt](https:/
     + Optional
   
 + `hasOrigin`: Trip associated to this Entity.
-    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/spec.md) or [gtfs:Station](../../Station/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/doc/spec.md) or [gtfs:Station](../../Station/doc/spec.md)
     + Mandatory
   
 + `hasDestination`: Trip associated to this Entity.
-    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/spec.md) or [gtfs:Station](../../Station/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Stop](../../Stop/doc/spec.md) or [gtfs:Station](../../Station/doc/spec.md)
     + Mandatory
   
 + `transferType`: Same as GTFS `transfer_type`.

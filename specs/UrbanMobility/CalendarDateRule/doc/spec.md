@@ -21,7 +21,7 @@ See [https://developers.google.com/transit/gtfs/reference/#calendar_datestxt](ht
     + Read-Only. Automatically generated.
   
 + `hasService` : Service to which this rule applies to. Derived from `service_id`.
-    + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../doc/Service/spec.md)
+    + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../Service/doc/spec.md)
     + Mandatory
   
 + `name` : Name given to this rule.

@@ -21,11 +21,11 @@ See [https://developers.google.com/transit/gtfs/reference/#stop_timestxt](https:
     + Read-Only. Automatically generated.
   
 + `hasTrip`: Same as GTFS `trip_id`.
-    + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Trip](../../../Trip/doc/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Trip](../../Trip/doc/spec.md)
     + Mandatory
 
 + `hasStop`: Same as GTFS `stop_id`
-    + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Stop](../../../Stop/doc/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Stop](../../Stop/doc/spec.md)
     + Mandatory
 
 + `arrivalTime`: Same as GTFS `arrival_time`

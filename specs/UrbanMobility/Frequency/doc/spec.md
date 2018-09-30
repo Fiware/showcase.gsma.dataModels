@@ -29,7 +29,7 @@ See [https://developers.google.com/transit/gtfs/reference/#frequenciestxt](https
     + Optional
   
 + `hasTrip`: Trip associated to this Entity.
-    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Trip](../../Trip/spec.md)
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Trip](../../Trip/doc/spec.md)
     + Mandatory
 
 + `startTime`: Same as GTFS `start_time`. See [format](https://developers.google.com/transit/gtfs/reference/#frequenciestxt).
