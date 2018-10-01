@@ -5,7 +5,7 @@ Those datasets follow the [proposed smart parking data models](https://docs.goog
 
 Two different entity types are exposed:
 
-* `StreetParking`.- It represents an area, in a street, which can contain one ore more parking spots.
+* `StreetParking`.- It represents an area, in a street, which can contain one or more parking spots.
 * `ParkingLot` .- It represents a public parking lot (underground or surface) with well defined entrance and exit points.
 
 Parking data offered come from two different sources:
