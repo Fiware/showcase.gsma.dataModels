@@ -38,7 +38,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not present. 
     
-+ `dateObserved` : The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval. 
++ `dateObserved` : The date and time of this observation in ISO8601 UTCformat. It can be represented by a specific time instant or by an ISO8601 interval. 
     + Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601 interval represented as [Text](https://schema.org/Text). 
     + Mandatory
     
@@ -99,7 +99,7 @@ The structure of such an attribute will be as follows:
 
 ### Representing qualitative levels of aero allergens
 
-T describe the aero allergens qualitative levels,
+To describe the aero allergens qualitative levels,
 *for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
 the associated plant) concatenated with the string `_Level`,
