@@ -2,18 +2,20 @@
 
 ## Description
 
-This entity captures the static properties of a Device. 
+This entity captures the static properties of a Device.
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type` : Entity type. It must be equal to `DeviceModel`.
 
 + `category` : Device's category(ies).
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values, one of the following or any other meaningful to the application:
-        + `sensor` : A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. 
+        + `sensor` : A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes.
            [https://w3id.org/saref#Sensor](https://w3id.org/saref#Sensor).
         + `actuator` : A device responsible for moving or controlling a mechanism or system.
            [https://w3id.org/saref#Actuator](https://w3id.org/saref#Actuator).
@@ -26,9 +28,9 @@ This entity captures the static properties of a Device.
         + `multimedia` : A device designed to display, store, record or play multimedia content such as audio, images, animation, video.
            [https://w3id.org/saref#Multimedia](https://w3id.org/saref#Multimedia)
     + Mandatory
-    
+
 + `deviceClass` : Class of constrained device as specified by RFC 7228.
-If the device is not a constrained device this property can be left as `null` or undefined. 
+If the device is not a constrained device this property can be left as `null` or undefined.
     + Attribute type: [Text](https://schema.org/Text)
     + Normative References: [RFC7228](https://tools.ietf.org/html/rfc7228#section-3)
     + Allowed values: (`C0`, `C1`, `C2`)
@@ -48,19 +50,19 @@ If the device is not a constrained device this property can be left as `null` or
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: (`levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`), from SAREF.
     + Optional
-    
+
 + `supportedProtocol` : Supported protocol(s) or networks.
     + Attribute type: List of [Text](https://schema.org/Text).
     + Allowed values: (`ul20`, `mqtt`, `lwm2m`, `http`, `websocket`, `onem2m`, `sigfox`, `lora`,
-    `nb-iot`, `ec-gsm-iot`, `lte-m`, `cat-m`, `3g`, `grps`)  or any other value meaningful for an application. 
+    `nb-iot`, `ec-gsm-iot`, `lte-m`, `cat-m`, `3g`, `grps`)  or any other value meaningful for an application.
     + Optional
-    
+
 + `supportedUnits` : Units of measurement supported by the device.
     + Attribute type: List of [Text](https://schema.org/Text).
     + Allowed values: The unit code (text) of measurement given using the
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
     + Optional
-    
+
 + `energyLimitationClass` : Device's class of energy limitation as per RFC 7228.
     + Attribute type: [Text](https://schema.org/Text)
     + Normative References: [RFC7228](https://tools.ietf.org/html/rfc7228#page-11)
@@ -85,7 +87,7 @@ If the device is not a constrained device this property can be left as `null` or
 + `name` : Name given to this device model.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
-    
+
 + `description` : Device's description
     + Normative References: [description](https://schema.org/description)
     + Optional

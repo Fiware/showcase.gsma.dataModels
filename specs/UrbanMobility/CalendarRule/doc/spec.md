@@ -6,24 +6,26 @@ See [https://developers.google.com/transit/gtfs/reference/#calendartxt](https://
 
 ## Data Model
 
-+ `id`: Entity Id
-    + It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`. 
+The data model is defined as shown below:
 
-+ `type`: Entity Type 
++ `id`: Entity Id
+    + It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`.
+
++ `type`: Entity Type
     + It shall be equal to `gtfs:CalendarRule`
-  
+
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated. 
- 
+    + Read-Only. Automatically generated.
+
 + `dateModified` : Last update timestamp of this Entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-  
+
 + `hasService` : Service to which this rule applies to. Derived from `service_id`.
     + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../Service/doc/spec.md)
     + Mandatory
-  
+
 + `name` : Name of this rule
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
@@ -31,7 +33,7 @@ See [https://developers.google.com/transit/gtfs/reference/#calendartxt](https://
 + `description`: Description of this rule
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
-  
+
 + `monday`: Same as GTFS `monday`
     + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
     + Mandatory
@@ -59,55 +61,55 @@ See [https://developers.google.com/transit/gtfs/reference/#calendartxt](https://
 + `sunday`: Same as GTFS `sunday`
     + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
     + Mandatory
-  
+
 + `startDate`: Start date of this rule in `YYYY-MM-DD` format.
 It can be obtained from the field `start_date` of [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt).
-    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date). 
+    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date).
     + Mandatory
-  
+
 + `endDate`: End date of this rule in `YYYY-MM-DD` format.
 It can be obtained from the field `end_date` of [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt).
-    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date). 
+    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date).
     + Mandatory
-  
+
 
 ### Examples of use 1 (Normalized Format)
 
 ```json
 {
     "id": "urn:ngsi-ld:CalendarRule:Madrid:Rule1267",
-    "type": "gtfs:CalendarRule", 
+    "type": "gtfs:CalendarRule",
     "startDate": {
         "value": "2018-01-01"
-    }, 
+    },
     "endDate": {
         "value": "2019-01-01"
-    }, 
+    },
     "name": {
         "value": "Rule Hospital Service 1"
-    }, 
+    },
     "monday": {
         "value": true
-    }, 
+    },
     "tuesday": {
         "value": true
-    }, 
+    },
     "friday": {
         "value": true
-    }, 
+    },
     "wednesday": {
         "value": true
-    }, 
+    },
     "thursday": {
         "value": true
-    },  
+    },
     "sunday": {
         "value": false
-    }, 
+    },
     "hasService": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "urn:ngsi-ld:Service:Madrid:Hospital_1"
-    }, 
+    },
     "saturday": {
         "value": false
     }
@@ -149,7 +151,7 @@ It can be obtained from the field `end_date` of [calendar.txt](https://developer
 | `sunday`                  | `sunday`                | `gtfs:sunday`               |                                                            |
 | `start_date`              | `startDate`             | `schema:startDate`          |                                                            |
 | `end_date`                | `endDate`               | `schema:endDate`            |                                                            |
-                              
+
 
 
 ### Relationships

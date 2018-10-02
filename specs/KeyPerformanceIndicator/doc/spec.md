@@ -3,14 +3,16 @@
 According to [Wikipedia](https://en.wikipedia.org/wiki/Performance_indicator) a Key Performance Indicator (KPI)
 is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages.
 
-The present data model defines a type of NGSI entity which captures the value and associated details of a key performance indicator. 
+The present data model defines a type of NGSI entity which captures the value and associated details of a key performance indicator.
 The data model is flexible enough to accomodate different usage scenarios: An entity  per KPI calculation
 or a unique entity per KPI which value evolves along time. Please note that in the latter case a historical module, such as the STH,
-would have to take care of the KPI evolution. 
+would have to take care of the KPI evolution.
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier.
 
 + `type` : It must be `KeyPerformanceIndicator`.
 
@@ -18,7 +20,7 @@ would have to take care of the KPI evolution.
 Example `KPI-2016-2018-Incidences-Street`.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
-    
+
 + `alternateName` : An alias for the KPI.
     + Normative References: [https://schema.org/alternateName](https://schema.org/alternateName)
     + Optional
@@ -26,31 +28,31 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `organization` : Subject organization evaluated by the KPI.
     + Attribute Type: [Organization](https://schema.org/Organization)
     + Mandatory
-    
+
 + `process` :  Subject process evaluated by the KPI.
     + Attribute Type: [Text](http://schema.org/Text)
-    + Either `process` or `product` must be defined. 
+    + Either `process` or `product` must be defined.
 
 + `product` :  Subject *product or service* evaluated by the KPI.
     + Attribute Type: [Product](https://schema.org/Product)
-    + Either `process` or `product` must be defined.       
-    
+    + Either `process` or `product` must be defined.
+
 + `provider` :  Provider of the product or service, if any, that this KPI evaluates.
-    + Normative references: [https://schema.org/provider](https://schema.org/provider) 
-    + Optional   
-      
+    + Normative references: [https://schema.org/provider](https://schema.org/provider)
+    + Optional
+
 + `businessTarget` : For informative purposes, the business target to which this KPI is related to.
     + Attribute Type: [Text](http://schema.org/Text)
     + Optional
 
 + `description` : Indicator's description.
     + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional 
+    + Optional
 
 + `calculationFrequency` : How often the KPI is calculated.
     + Attribute Type: [Text](http://schema.org/Text)
     + Allowed values: one Of (`hourly`, `daily`, `weekly`, `monthly`, `yearly`, `quarterly`, `bimonthly`, `biweekly`)
-        + Or any other value meaningful for the application and not covered by the above list. 
+        + Or any other value meaningful for the application and not covered by the above list.
     + Mandatory
 
 + `category` : Indicator's category.
@@ -59,9 +61,9 @@ Example `KPI-2016-2018-Incidences-Street`.
     `process`, `output`, `practical`, `directional`, `actionable`, `financial`).
     Check [Wikipedia](https://en.wikipedia.org/wiki/Performance_indicator#Categorization_of_indicators)
     for a description of each category listed above.
-        + Any other value meaningful to the application and not covered by the above list. 
+        + Any other value meaningful to the application and not covered by the above list.
     + Mandatory
-    
+
 + `calculatedBy` : The organization in charge of calculating the KPI.
     + Attribute Type: [Organization](https://schema.org/Organization)
     + Optional
@@ -69,9 +71,9 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `calculationMethod` : The calculation method used.
     + Attribute type: [Text](http://schema.org/Text)
     + Allowed values: oneOf ( `manual`, `automatic`, `semiautomatic`)
-        +  Any other value meaningful to the application and not covered by the above list. 
+        +  Any other value meaningful to the application and not covered by the above list.
     + Optional
-    
+
 + `calculationFormula` : For informative purposes, the formula used for calculating the indicator.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
@@ -102,12 +104,12 @@ Example `KPI-2016-2018-Incidences-Street`.
     + Optional
 
 + `kpiValue` :
-    + Attribute type: It can be of any type. 
+    + Attribute type: It can be of any type.
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Mandatory
-    
+
 + `effectiveSince` : The date on which the organization created this KPI. This date might be different than the entity creation date.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
@@ -123,7 +125,7 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `dateExpires` : The date on which the KPI will be no longer necessary or meaningful.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
-      
+
 + `updatedAt` : Last update date of the KPI data. This can be different than the last update date of the KPI's value.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
@@ -131,15 +133,15 @@ Example `KPI-2016-2018-Incidences-Street`.
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-    
-+ `location` :  Location of the area to which the KPI refers to. 
-    + Attribute type: GeoJSON geometry. 
-    + Optional 
 
-+ `address` :  Civic address of the area to which the KPI refers to. 
++ `location` :  Location of the area to which the KPI refers to.
+    + Attribute type: GeoJSON geometry.
+    + Optional
+
++ `address` :  Civic address of the area to which the KPI refers to.
     + Attribute type: [https://schema.org/PostalAddress](https://schema.org/PostalAddress)
     + Optional
-    
+
 + `area` : For organizational purposes, it allows to add extra textual geographical information such as district, burough, or any other
 hint which can help to identify the KPI coverage.
     + Attribute type: [Text](http://schema.org/Text)

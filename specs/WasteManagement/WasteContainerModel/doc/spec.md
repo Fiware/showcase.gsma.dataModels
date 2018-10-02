@@ -2,17 +2,19 @@
 
 ## Description
 
-A model of waste container which captures the static properties of a class of containers. 
+A model of waste container which captures the static properties of a class of containers.
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type`: Entity Type. It must be equal to `WasteContainerModel`.
 
 + `name`. Name given to this container model. It is a "well-known", mnemotechnic or codename.
 This attribute is different than `modelName` which conveys the formal model name given by the
-manufacturer. 
+manufacturer.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
 
@@ -20,13 +22,13 @@ manufacturer.
     + Attribute type: [Number](https://schema.org/Number).
     + Default Unit: Meters
     + See also: [https://schema.org/width](https://schema.org/width)
-    + Optional 
+    + Optional
 
-+ `height`. Height of the container. 
++ `height`. Height of the container.
     + Attribute type: [Number](https://schema.org/Number).
     + Default Unit: Meters
     + See also: [https://schema.org/height](https://schema.org/height)
-    + Optional 
+    + Optional
 
 + `depth`. Depth of the container.
     + Attribute type: [Number](https://schema.org/Number).
@@ -45,7 +47,7 @@ manufacturer.
     + Normative References: [https://schema.org/cargoVolume](https://schema.org/cargoVolume)
     + Default Unit: liters
     + Optional
-       
+
 + `maximumLoad`. Maximum load the container can hold safely.
     + Attribute type: [Number](https://schema.org/Number).
     + Default Unit: Kilograms
@@ -56,45 +58,45 @@ manufacturer.
     + Default Unit: Kilograms
     + Optional
 
-+ `category`. Container’s category. 
++ `category`. Container’s category.
     + Attribute type: List of [Text](https://schema.org/Text).
     + Allowed values (Informative):
         + `dumpster`. See [https://en.wikipedia.org/wiki/Dumpster](https://en.wikipedia.org/wiki/Dumpster)
         + `trashCan`.
         + `wheelieBin`.
-        + Any other category relevant for the application. 
+        + Any other category relevant for the application.
     + Optional
-  
+
 + `insertHolesNumber`. Number of insert holes the container has.
     + Attribute type: [Number](https://schema.org/Number).
     + Optional
 
-+ `madeOf`. Material the container is made of. 
++ `madeOf`. Material the container is made of.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: one Of (`plastic`, `wood` , `metal`, `other`)
     + Optional
-    
+
 + `madeOfCode`. Material Code as per standard tables. TBD.
     + Attribute type: [Text](https://schema.org/Text)
     + Optional
-       
+
 + `brandName`. Name of the brand.
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/brand](https://schema.org/brand)
     + Optional
-       
+
 + `modelName`. Name of the model as given by the manufacturer.
-This attribute is different than `name` which is just a codename usually given by municipalities. 
+This attribute is different than `name` which is just a codename usually given by municipalities.
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/model](https://schema.org/model)
     + Optional
-    
+
 + `manufacturerName`. Name of the manufacturer.
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/model](https://schema.org/manufacturer)
     + Optional
-    
-+ `description`. Description about the waste container model. 
+
++ `description`. Description about the waste container model.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
 
@@ -114,7 +116,7 @@ This attribute is different than `name` which is just a codename usually given b
     + AttributeType: List of [Text](https://schema.org/Text).
     + Optional
 
-+ `features`. A list of container features. 
++ `features`. A list of container features.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed Values:
         + `wheels`

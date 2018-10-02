@@ -13,10 +13,12 @@ DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type` : Entity type. It must be equal to `OffStreetParking`.
-   
+
 + `dateCreated` : Entity's creation timestamp
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
@@ -24,16 +26,16 @@ DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://
 + `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-    
+
 + `location` : Geolocation of the parking site represented by a GeoJSON (Multi)Polygon or Point.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory if `address` is not defined.
-    
+
 + `address` : Registered parking site civic address.
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not defined.
-    
+
 + `name` : Name given to the parking site.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
@@ -42,7 +44,7 @@ DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://
 Particularities and detailed descriptions should be found under the corresponding specific attributes.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values:
-        + (`public`, `private`, `publicPrivate`,  
+        + (`public`, `private`, `publicPrivate`,
            `urbanDeterrentParking`, `parkingGarage`, `parkingLot`,
            `shortTerm`, `mediumTerm`, `longTerm`,
            `free`, `feeCharged`,
@@ -50,14 +52,14 @@ Particularities and detailed descriptions should be found under the correspondin
            `onlyResidents`, `onlyWithPermit`,
            `forEmployees`, `forVisitors`, `forCustomers`, `forStudents`, `forMembers`, `forDisabled`, `forResidents`,
            `underground`, `ground`)
-        + The semantics of the `forxxx` values is that the parking offers specific spots subject to that particular condition. 
-        + The semantics of the `onlyxxx`values is that the parking only allows to park on that particular condition. 
+        + The semantics of the `forxxx` values is that the parking offers specific spots subject to that particular condition.
+        + The semantics of the `onlyxxx`values is that the parking only allows to park on that particular condition.
         + Other application-specific
     + Mandatory
-    
+
 + `allowedVehicleType` : Vehicle type(s) allowed. The first element of this array *MUST* be the principal
 vehicle type allowed. Free spot numbers of other allowed vehicle types might be reported under the attribute `extraSpotNumber`
-and through specific entities of type *ParkingGroup*. 
+and through specific entities of type *ParkingGroup*.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed Values: The following values defined by *VehicleTypeEnum*,
     [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip):
@@ -66,33 +68,33 @@ and through specific entities of type *ParkingGroup*.
            `motorcycle`, `motorcycleWithSideCar`,
            `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
     + Mandatory
-    
-+ `chargeType` : Type(s) of charge performed by the parking site. 
+
++ `chargeType` : Type(s) of charge performed by the parking site.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Some of those defined by the DATEX II version 2.3 *ChargeTypeEnum* enumeration:
         + (`flat`, `minimum`, `maximum`, `additionalIntervalPrice` `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
         `annualPayment`, `monthlyPayment`, `free`, `other`)
         + Any other application-specific
     + Mandatory
-    
+
 + `requiredPermit` : This attribute captures what permit(s) might be needed to park at this site. Semantics
 is that at least *one of* these permits is needed to park. When a permit is composed by more than one item (and)
 they can be combined with a ",". For instance "residentPermit,disabledPermit" stays that both, at the same time,
-a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed. 
+a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: The following, defined by the *PermitTypeEnum* enumeration of DATEX II version 2.3.
         + oneOf (`employeePermit`, `studentPermit`, `fairPermit`, `governmentPermit`,  `residentPermit`,
         `specificIdentifiedVehiclePermit`, `visitorPermit`, `noPermitNeeded`)
         + Any other application-specific
     + Mandatory
-    
+
 + `occupancyDetectionType` : Occupancy detection method(s).
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
         + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
         + Or any other application-specific
-    + Mandatory    
-    
+    + Mandatory
+
 + `acceptedPaymentMethod` : Accepted payment method(s).
     + Normative references: https://schema.org/acceptedPaymentMethod
     + Optional
@@ -100,30 +102,30 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
 + `priceRatePerMinute` : Price rate per minute.
     + Attribute type: [Number](https://schema.org/Number)
     + Optional
-    
+
 + `priceCurrency` : Price currency of price rate per minute.
     + Attribute type: [Text](http://schema.org/Text)
-    + Normative references: [https://schema.org/priceCurrency](https://schema.org/priceCurrency) 
-    + Optional    
-      
-+ `description` : Description about the parking site. 
+    + Normative references: [https://schema.org/priceCurrency](https://schema.org/priceCurrency)
+    + Optional
+
++ `description` : Description about the parking site.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
-    
+
 + `image` : A URL containing a photo of this parking site.
     + Normative References: [https://schema.org/image](https://schema.org/image)
     + Optional
- 
-+ `layout` : Parking layout. Gives more details to the `category` attribute. 
+
++ `layout` : Parking layout. Gives more details to the `category` attribute.
     + Attribute type: [Text](http://schema.org/Text)
     + Allowed values:  As per the *ParkingLayoutEnum* of DATEX II version 2.3:
         + one Of (`automatedParkingGarage`, `surface`, `multiStorey`, `singleLevel`, `multiLevel`,
         `openSpace`, `covered`, `nested`, `field`, `rooftop`,
-        `sheds`, `carports`, `garageBoxes`, `other`). See also [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking). 
+        `sheds`, `carports`, `garageBoxes`, `other`). See also [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking).
         + Or any other value useful for the application and not covered above.
     + Optional
-    
-+ `usageScenario` : Usage scenario(s). Gives more details to the `category` attribute. 
+
++ `usageScenario` : Usage scenario(s). Gives more details to the `category` attribute.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Those defined by the enumeration *ParkingUsageScenarioEnum* of DATEX II version 2.3:
         + (`truckParking`, `parkAndRide`, `parkAndCycle`,	`parkAndWalk`, `kissAndRide`, `	liftshare`, `carSharing`,
@@ -131,13 +133,13 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
             `staffGuidesToSpace`,  `vehicleLift`, `loadingBay`, `dropOff`, `overnightParking`, `other`)
         + Or any other value useful for the application and not covered above.
     + Optional
-    
+
 + `parkingMode` : Parking mode(s).
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Those defined by the DATEX II version 2.3 *ParkingModeEnum* enumeration:
         + (`perpendicularParking`, `parallelParking`, `echelonParking`)
     + Optional
-    
+
 + `facilities` : Facilities provided by this parking site.
     + Attributes: List of [Text](http://schema.org/Text)
     + Allowed values: The following defined by the *EquipmentTypeEnum* enumeration of DATEX II version 2.3:
@@ -147,34 +149,34 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
         `defibrillator`, `firstAidEquipment` `fireHose` `fireExtinguisher` `fireHydrant`)
         + Any other application-specific
     + Optional
-    
+
 + `security` : Security aspects provided by this parking site.
     + Attributes: List of [Text](http://schema.org/Text)
     + Allowed values: The following, some of them, defined by *ParkingSecurityEnum* of DATEX II version 2.3:
         + (`patrolled`, `securityStaff`, `externalSecurity`, `cctv`, `dog`, `guard24hours`, `lighting`, `floodLight`, `fences`
         `areaSeperatedFromSurroundings`)
         + Any other application-specific
-    + Optional    
-    
+    + Optional
+
 + `highestFloor` : For parking sites with multiple floor levels, highest floor.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: An integer number. 0 is ground level. Upper floors are positive numbers. Lower floors are negative ones. 
+    + Allowed values: An integer number. 0 is ground level. Upper floors are positive numbers. Lower floors are negative ones.
     + Optional
-    
+
 + `lowestFloor` : For parking sites with multiple floor levels, lowest floor.
     + Attribute type: [Number](http://schema.org/Number)
     + Allowed values: An integer number.
     + Optional
-    
+
 + `maximumParkingDuration` : Maximum allowed stay at site, on a general basis, encoded as a ISO8601 duration.
-A `null` or empty value indicates an indefinite duration.  
+A `null` or empty value indicates an indefinite duration.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
-    
-+ `totalSpotNumber` : The total number of spots offered by this parking site. 
+
++ `totalSpotNumber` : The total number of spots offered by this parking site.
 This number can be difficult to be obtained for those parking locations on which spots are not clearly marked by lines.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: Any positive integer number or 0. 
+    + Allowed values: Any positive integer number or 0.
     + Normative references: DATEX 2 version 2.3 attribute *parkingNumberOfSpaces* of the *ParkingRecord* class.
     + Optional
 
@@ -182,28 +184,28 @@ This number can be difficult to be obtained for those parking locations on which
 such as those for disabled people, long term parkers and so on).
 This might be harder to estimate at those parking locations on which spots borders are not clearly marked by lines.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: A positive integer number, including 0. It must lower or equal than `totalSpotNumber`. 
+    + Allowed values: A positive integer number, including 0. It must lower or equal than `totalSpotNumber`.
     + Metadata:
         + `timestamp` : Timestamp of the last attribute update
         + Type: [DateTime](https://schema.org/DateTime)
     + Optional
-        
+
 + `extraSpotNumber` : The number of extra spots *available*, i.e. free. This value must aggregate free spots from all groups mentioned below:
 A/ Those reserved for special purposes and usually require a permit. Permit details will be found at
 parking group level (entity of type `ParkingGroup`).
 B/ Those reserved for other vehicle types different than the principal allowed vehicle type.
 C/ Any other group of parking spots not subject to the general condition rules conveyed by this entity.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: A positive integer number, including 0. 
+    + Allowed values: A positive integer number, including 0.
     + Metadata:
         + `timestamp` : Timestamp of the last attribute update
         + Type: [DateTime](https://schema.org/DateTime)
     + Optional
-       
+
 + `openingHours` : Opening hours of the parking site.
     + Normative references:  [http://schema.org/openingHours](http://schema.org/openingHours)
     + Optional
-    
+
 + `firstAvailableFloor` : Number of the floor closest to the ground which currently has available parking spots.
     + Attribute type: [Number](http://schema.org/Number)
     + Metadata:
@@ -211,7 +213,7 @@ C/ Any other group of parking spots not subject to the general condition rules c
         + Type: [DateTime](https://schema.org/DateTime)
     + Allowed values: Stories are numbered between -n and n, being 0 ground floor.
     + Optional
-            
+
 + `specialLocation` : If the parking site is at a special location (airport, depatment store, etc.)
 it conveys what is such special location.
     + Attribute type: [Text](http://schema.org/Text)
@@ -221,8 +223,8 @@ it conveys what is such special location.
         `campground`, `themePark`, `ferryTerminal`, `vehicleOnRailTerminal`, `coachStation`, `cableCarStation`, `publicTransportStation`,
         `market`, `religiousCentre`, `conventionCentre`, `cinema`, `skilift`, `hotel`, `other`)
     + Optional
-    
-+ `status` : Status of the parking site. 
+
++ `status` : Status of the parking site.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Metadata:
         + `timestamp` : Timestamp of the last attribute update
@@ -244,19 +246,19 @@ it conveys what is such special location.
 + `owner` : Parking site's owner.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
-         
+
 + `provider` : Parking site service provider.
     + Normative references: [https://schema.org/provider](https://schema.org/provider)
     + Optional
-	
+
 + `measuresPeriod` : The measures period related to availableSpotNumber and priceRatePerMinute.
     + Attribute type: [Number](http://schema.org/Number)
     + Optional
-    
+
 + `measuresPeriodUnit` : The measures period unit related to availableSpotNumber and priceRatePerMinute.
     + Attribute type: [unitText](http://schema.org/unitText)
-    + Optional	
-    
+    + Optional
+
 + `contactPoint` : Parking site contact point.
     + Normative references: [https://schema.org/contactPoint](https://schema.org/contactPoint)
     + Optional
@@ -276,31 +278,31 @@ all the zones.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Meters
     + Optional
-    
+
 + `maximumAllowedWidth` : Maximum allowed width for vehicles. If there are multiple zones, it will be the minimum width of
-all the zones. 
+all the zones.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Meters
-    + Optional    
+    + Optional
 
 + `refParkingAccess` : Parking site's access point(s).
     + Attribute type: List of references to [ParkingAccess](../../ParkingAccess/doc/spec.md)
     + Optional
-       
-+ `refParkingGroup` : Parking site's identified group(s). A group can correspond to a zone, a complete storey, a group of spots, etc. 
+
++ `refParkingGroup` : Parking site's identified group(s). A group can correspond to a zone, a complete storey, a group of spots, etc.
     + Attribute type: List of references to [ParkingGroup](../../ParkingGroup/doc/spec.md)
     + Optional
-    
-+ `refParkingSpot` : Individual parking spots belonging to this offstreet parking site.  
+
++ `refParkingSpot` : Individual parking spots belonging to this offstreet parking site.
     + Attribute type: List of references to [ParkingSpot](../../ParkingSpot/doc/spec.md)
-    + Optional    
-    
+    + Optional
+
 + `areaServed` : Area served by this parking site. Precise semantics can depend on the application or target city.
  For instance, it can be a neighbourhood, burough or district.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
-    
-+ `aggregateRating` : Aggregated rating for this parking site. 
+
++ `aggregateRating` : Aggregated rating for this parking site.
     + Normative References: [https://schema.org/aggregateRating](https://schema.org/aggregateRating)
     + Optional
 
@@ -316,29 +318,29 @@ mode (`options=keyValues`).
     "type": "OffStreetParking",
     "category": {
         "value": [
-            "underground", 
-            "public", 
-            "feeCharged", 
-            "mediumTerm", 
+            "underground",
+            "public",
+            "feeCharged",
+            "mediumTerm",
             "barrierAccess"
         ]
-    }, 
+    },
     "layout": {
         "value": [
             "multiLevel"
         ]
-    }, 
+    },
     "name": {
         "value": "Parque de estacionamento Trindade"
-    }, 
+    },
     "requiredPermit": {
         "value": []
-    }, 
+    },
     "allowedVehicleType": {
         "value": [
             "car"
         ]
-    }, 
+    },
     "availableSpotNumber": {
         "value": 132,
         "metadata": {
@@ -347,40 +349,40 @@ mode (`options=keyValues`).
                 "value": "2018-09-21T12:00:00"
             }
         }
-    }, 
+    },
     "totalSpotNumber": {
         "value": 414
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
+            "type": "Point",
             "coordinates": [
-                -8.60961198807, 
+                -8.60961198807,
                 41.150691773
             ]
         }
-    }, 
+    },
     "chargeType": {
         "value": [
             "temporaryPrice"
         ]
-    }, 
+    },
     "address": {
-        "type": "PostalAddress", 
+        "type": "PostalAddress",
         "value": {
-            "addressLocality": "Porto", 
-            "addressCountry": "Portugal", 
+            "addressLocality": "Porto",
+            "addressCountry": "Portugal",
             "streetAddress": "Rua de Fernandes Tom\u00e1s"
         }
-    }, 
+    },
     "maximumParkingDuration": {
         "value": "PT8H"
-    }, 
+    },
     "dateModified": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-06-02T09:25:55.00Z"
-    }, 
+    },
     "description": {
         "value": "Municipal car park located near the Trindade metro station and the Town Hall"
     }
@@ -389,7 +391,7 @@ mode (`options=keyValues`).
 
 ## Examples of use 2
 
-A public off street parking underground controlled by a barrier. 
+A public off street parking underground controlled by a barrier.
 
     {
       "id": "porto-ParkingLot-23889",
@@ -415,8 +417,8 @@ A public off street parking underground controlled by a barrier.
       "description": "Municipal car park located near the Trindade metro station and the Town Hall",
       "dateModified": "2016-06-02T09:25:55.00Z"
     }
-    
-Urban Deterrent (xxxx and ride) parking. Free. 2 hours at a maximum. 
+
+Urban Deterrent (xxxx and ride) parking. Free. 2 hours at a maximum.
 
     {
        "id": "pdu-valladolid-1",
@@ -437,12 +439,12 @@ Urban Deterrent (xxxx and ride) parking. Free. 2 hours at a maximum.
       }
     }
 
-Long stay parking. Maximum 4 days. Charging depends on time spent. 
+Long stay parking. Maximum 4 days. Charging depends on time spent.
 
     {
       "id": "long-stay-valladolid-2",
       "type": "OffStreetParking",
-      "name": "El Corte Ingles", 
+      "name": "El Corte Ingles",
       "usageScenario": ["overnight"],
       "category": ["public", "longTerm", "underground", "parkingGarage"],
       "layout": ["singleLevel"],
@@ -457,7 +459,7 @@ Long stay parking. Maximum 4 days. Charging depends on time spent.
       }
     }
 
-Off street parking with an specific area devoted to residents (100 spots). 
+Off street parking with an specific area devoted to residents (100 spots).
 
     {
        "id": "parking-example-234",
@@ -475,14 +477,14 @@ Off street parking with an specific area devoted to residents (100 spots).
 
 Two different groups are needed:
 
-1/ Subrogated parking group to denote regular parking spots. 
+1/ Subrogated parking group to denote regular parking spots.
 
-    { 
+    {
       "id": "example-234-g-regular",
       "type": "ParkingGroup",
-      "name": "La Farola 1 - Público General", 
-      "chargeType": ["temporaryPrice"],       
-      "category": ["offstreet", "shortTerm"],  
+      "name": "La Farola 1 - Público General",
+      "chargeType": ["temporaryPrice"],
+      "category": ["offstreet", "shortTerm"],
       "totalSpotNumber": 150,
       "availableSpotNumber": 40,
       "requiredPermit": null,
@@ -492,12 +494,12 @@ Two different groups are needed:
       /* Other required fields (Check model) */
     }
 
-2/ Subrogated parking group to denote those parking spots devoted for residents. 
+2/ Subrogated parking group to denote those parking spots devoted for residents.
 
-    { 
+    {
       "id": "example-234-g-residents",
       "type": "ParkingGroup",
-      "name": "La Farola 1 - Residentes", 
+      "name": "La Farola 1 - Residentes",
       "chargeType": ["annualTax"],   /* Annual payment for residents */
       "category": ["offstreet", "longTerm", "onlyResidents"], /* Group Category. Overwrites parent's */
       "totalSpotNumber": 100,
@@ -509,8 +511,8 @@ Two different groups are needed:
       /* Other required fields (Check model) */
     }
 
-Private parking only for employees. A devoted visitor zone. 
-  
+Private parking only for employees. A devoted visitor zone.
+
     {
       "id": "district-telefonica-parking-1",
       "type": "OffStreetParking",
@@ -542,8 +544,8 @@ Two different groups are needed:
       "refParkingSite": "district-telefonica-parking-1",
       "allowedVehicleType": "car"
       /* Other required fields (Check model) */
-    }    
-    
+    }
+
 2/ Subrogated parking group modelling visitor's spots.
 
     {

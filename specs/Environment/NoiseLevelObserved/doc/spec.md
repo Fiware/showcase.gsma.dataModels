@@ -7,7 +7,9 @@ This entity is primarily associated with the Smart City and environment vertical
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type` : Entity type. It must be equal to `NoiseLevelObserved`.
 
@@ -19,7 +21,7 @@ This entity is primarily associated with the Smart City and environment vertical
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
 
-+ `location` : Location of this observation represented by a GeoJSON geometry. 
++ `location` : Location of this observation represented by a GeoJSON geometry.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory if `address` is not present.
@@ -27,7 +29,7 @@ This entity is primarily associated with the Smart City and environment vertical
 + `address` : Civic address of this observation.
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not present.
-    
+
 + `name` : Name given to this observation.
     + Normative References: [https://schema.org/name]
     + Optional
@@ -35,34 +37,34 @@ This entity is primarily associated with the Smart City and environment vertical
 + `description` : Description given to this observation.
     + Normative References: [https://schema.org/description]
     + Optional
-    
+
 + `dateObserved` : The date and time of this observation represented by an ISO8601 interval. As a workaround for
-the lack of support of Orion Context Broker for datetime intervals, it can be used two separate attributes: `dateObservedFrom`, `dateObservedTo`. 
-    + Attribute type: ISO8601 interval represented as [Text](https://schema.org/Text). 
+the lack of support of Orion Context Broker for datetime intervals, it can be used two separate attributes: `dateObservedFrom`, `dateObservedTo`.
+    + Attribute type: ISO8601 interval represented as [Text](https://schema.org/Text).
     + Optional
-        
-+ `dateObservedFrom` : Observation period start date and time. See `dateObserved`. 
-    + Attribute type: [DateTime](https://schema.org/DateTime). 
+
++ `dateObservedFrom` : Observation period start date and time. See `dateObserved`.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Mandatory
-    
-+ `dateObservedTo` : Observation period end date and time. See `dateObserved`. 
-    + Attribute type: [DateTime](https://schema.org/DateTime). 
+
++ `dateObservedTo` : Observation period end date and time. See `dateObserved`.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Mandatory
-    
+
 + `refDevice` : A reference to the device which captured this observation.
     + Attribute type: Reference to an entity of type `Device`
     + Optional
 
 + `sonometerClass` : Class of sonometer (0, 1, 2) according to [ANSI](http://soundmetersource.com/ansi-standards.html)
 used for taking this observation. This attribute is useful when no device entity is associated to observations.
-It allows to convey, roughly, information about the precision of the measurements. 
+It allows to convey, roughly, information about the precision of the measurements.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: one of (`"0"`, `"1"`, `"2"`)
     + Optional
-    
+
 + `refPointOfInterest` : A reference to a point of interest associated to this observation.
     + Attribute type: Reference to an entity of type `PointOfInterest`
-    + Optional    
+    + Optional
 
 ### Representing acoustic parameters
 
@@ -70,7 +72,7 @@ The number of acoustic parameters measured can vary. *For each* acoustic measura
 + Attribute name: Equal to the name of the measurand, for instance `LAeq`, `LAmax`.
 It must correspond to a term defined at [http://www.acoustic-glossary.co.uk/definitions-l.htm](http://www.acoustic-glossary.co.uk/definitions-l.htm), with the only exception that
 those measurands which name contains a `,` char, such char shall be substituded by the `_` char. For instance, the measurand "LAeq,d" shall be represented by an Attribute which
-name shall be `LAeq_d`. 
+name shall be `LAeq_d`.
 + Attribute type: [Number](https://schema.org/Number)
 + Attribute value: corresponds to the value for the measurand as a number expressed in decibels.
 + Attribute Metadata:

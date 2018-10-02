@@ -8,7 +8,9 @@ the same property names and structure, although we strongly believe the Open311 
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier.
 
 + `type` : It must be `Open311:ServiceType`.
 
@@ -17,7 +19,7 @@ are allowed to be attributes of this entity type:
 
 + `jurisdiction_id`
 
-+ `type`. To avoid collision with the NGSI entity type it has been renamed to `open311:type`. 
++ `type`. To avoid collision with the NGSI entity type it has been renamed to `open311:type`.
 
 + `service_code`
 
@@ -31,21 +33,21 @@ are allowed to be attributes of this entity type:
 
 + `metadata`. This field is not strictly needed as the proposed entity encompasses the attribute definition as well.
 If defined, its value must be `true` if the `attributes` property is defined and its array value is not empty. Otherwise
-it must be equal to `false`. 
+it must be equal to `false`.
 
 
 + `attributes`. As per the [Service Definition](http://wiki.open311.org/GeoReport_v2/#get-service-definition)
-structure defined by Open 311. 
+structure defined by Open 311.
 
 
 FIWARE / OASC recommends the following additional fields as an extension to the Open 311 model:
 
-+ `location` :  Location of the area on which this type of service is provided. 
-    + Attribute type: GeoJSON geometry. 
-    + Optional 
++ `location` :  Location of the area on which this type of service is provided.
+    + Attribute type: GeoJSON geometry.
+    + Optional
 
 + `provider` :  Provider of the service.
-    + Normative references: [https://schema.org/provider](https://schema.org/provider) 
+    + Normative references: [https://schema.org/provider](https://schema.org/provider)
     + Optional
 
 + `effectiveSince` : The date on which the service type was created. This date might be different than the entity creation date.

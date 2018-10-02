@@ -1,11 +1,13 @@
 # Streetlight Model
 
 It represents a model of streetlight composed by a specific supporting structure model,
-a lantern model and a lamp model. A streetlight instance will be based on a certain streetlight model. 
+a lantern model and a lamp model. A streetlight instance will be based on a certain streetlight model.
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier.
 
 + `type` : It must be equal to `StreetlightModel`.
 
@@ -13,7 +15,7 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
 
-+ `alternateName` : Alternate name given to the streetlight model. 
++ `alternateName` : Alternate name given to the streetlight model.
     + Normative References: [https://schema.org/alternateName](https://schema.org/alternateName)
     + Optional
 
@@ -25,11 +27,11 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + Attribute type: List of [Number](https://schema.org/Number).
     + Default unit: Watts (W)
     + Optional
-    
+
 + `minPowerConsumption` : Minimum power consumption supported by the lantern.
     + Attribute type: List of [Number](https://schema.org/Number).
     + Default unit: Watts (W)
-    + Optional    
+    + Optional
 
 + `columnBrandName` : Name of the column's brand.
     + Attribute type: [Text](https://schema.org/Text)
@@ -45,12 +47,12 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/model](https://schema.org/manufacturer)
     + Optional
-    
-+ `columnMadeOf` : Material column is made of. 
+
++ `columnMadeOf` : Material column is made of.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: one Of (`steel`, `aluminium` , `wood`, `other`)
     + Optional
-    
+
 + `columnColor` : Column's painting color.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed Values:
@@ -73,12 +75,12 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/model](https://schema.org/manufacturer)
     + Optional
-    
+
 + `lanternWeight` : Lantern's weight.
     + Attribute type: [Number](https://schema.org/Number).
     + Default Unit: Kilograms (kg)
     + See also: [https://schema.org/weight](https://schema.org/weight)
-    + Optional    
+    + Optional
 
 + `lampModelName` : Name of the lamp's model.
     + Attribute type: [Text](https://schema.org/Text)
@@ -94,44 +96,44 @@ a lantern model and a lamp model. A streetlight instance will be based on a cert
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/model](https://schema.org/manufacturer)
     + Optional
-    
+
 + `lampWeight` : Lamp's weight.
     + Attribute type: [Number](https://schema.org/Number).
     + Default Unit: Kilograms (kg)
     + See also: [https://schema.org/weight](https://schema.org/weight)
     + Optional
-    
+
 + `workingLife` : The estimated number of hours working (the lamp) without failure.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: hours
     + Optional
-    
+
 + `lampTechnology` : Technology used by the lamp.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: one Of (`LED`, `LPS`, `HPS`)
-        + Or any other value not covered by the above list and meaningful to the application. 
-    + Optional 
+        + Or any other value not covered by the above list and meaningful to the application.
+    + Optional
 
-+ `colorTemperature` : *Correlated* color temperature of the lamp. 
++ `colorTemperature` : *Correlated* color temperature of the lamp.
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Kelvin degrees (K)
     + Optional
 
 + `colorRenderingIndex` : Color rendering index of the lamp.
     + Attribute type: [Number](https://schema.org/Number)
-    + Optional 
+    + Optional
 
 + `luminousFlux` :  Maximum light output which can be provided by the lamp.
     + Attribute type: [Number](https://schema.org/Number)
     + Default unit: Lumens (lm)
-    + Optional  
+    + Optional
 
 + `powerConsumption` : (Nominal) power consumption made by the lamp.
     + Attribute type: List of [Number](https://schema.org/Number).
     + Default unit: Watts (W)
     + Optional
 
-+ `compliantWith` : A list of standards to which this streetlight model is compliant with. 
++ `compliantWith` : A list of standards to which this streetlight model is compliant with.
     + AttributeType: List of [Text](https://schema.org/Text).
     + Optional
 
@@ -157,7 +159,7 @@ mode (`options=keyValues`).
       "type": "StreetlightModel",
       "name": "Tubular Numana 6M - ASR42CG - Son-T 100",
       "columnModelName": "01 TUBULAR P/T 6M NUMANA",
-      "columnColor": "green", 
+      "columnColor": "green",
       "lanternModelName": "ASR42CG",
       "lanternManufacturerName": "Indal WRTL",
       "lampModelName": "SON-T",

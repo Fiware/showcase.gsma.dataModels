@@ -6,56 +6,58 @@ See [https://developers.google.com/transit/gtfs/reference/#tripstxt](https://dev
 
 ## Data Model
 
-+ `id`: Entity id. 
-    + It shall be `urn:ngsi-ld:gtfs:Trip:<trip_identifier>` being `trip_identifier` a value that can be derived from GTFS `trip_id`. 
+The data model is defined as shown below:
 
-+ `type`: Entity type. 
++ `id`: Entity id.
+    + It shall be `urn:ngsi-ld:gtfs:Trip:<trip_identifier>` being `trip_identifier` a value that can be derived from GTFS `trip_id`.
+
++ `type`: Entity type.
     + It shall be equal to `gtfs:Trip`.
-    
+
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated. 
- 
+    + Read-Only. Automatically generated.
+
 + `dateModified`: Last update timestamp of this Entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-  
+
 + `headSign`: Same as GTFS `trip_headsign`.
     + Attribute type: Property. [Text](https://schema.org/Text).
-    + Optional 
-  
+    + Optional
+
 + `shortName`: Same as GTFS `trip_short_name`.
     + Attribute type: Property. [Text](https://schema.org/Text).
     + Optional
-    
+
 + `direction`: Same as GTFS `direction_id`.
     + Attribute type: Property. [Number](https://schema.org/Number).
-    + Allowed Values: `0` and `1` as per GTFS `direction_id`. 
+    + Allowed Values: `0` and `1` as per GTFS `direction_id`.
     + Optional
-    
+
 + `block`: Same as GTFS `block_id`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
-  
+
 + `hasService`: Same as GTFS `service_id`.
-    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Service](../../Service/doc/spec.md) 
+    + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Service](../../Service/doc/spec.md)
     + Optional
-  
+
 + `location`: The geographical shape associated to the trip encoded as GeoJSON `LineString` or `MultiLineString`.
-The coordinates shall be obtained from the `shapes.txt` feed file as per the value of `shape_id`. 
+The coordinates shall be obtained from the `shapes.txt` feed file as per the value of `shape_id`.
     + Attribute type: GeoProperty. `geo:json`
     + Optional
-     
+
 + `hasRoute`: Same as `route_id`.
     + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Route](../../Route/doc/spec.md)
     + Mandatory
 
-+ `wheelChairAccessible`: Same as GTFS `wheelchair_accessible`. 
++ `wheelChairAccessible`: Same as GTFS `wheelchair_accessible`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
     + Optional
 
-+ `bikesAllowed`: Same as GTFS `bikes_allowed`. 
++ `bikesAllowed`: Same as GTFS `bikes_allowed`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
     + Optional
@@ -66,40 +68,40 @@ The coordinates shall be obtained from the `shapes.txt` feed file as per the val
 ```json
 {
     "id": "urn:ngsi-ld:gtfs:Trip:Spain:Malaga:1",
-    "type": "gtfs:Trip", 
+    "type": "gtfs:Trip",
     "direction": {
         "value": 0
-    }, 
+    },
     "headSign": {
         "value": "San Andr\u00e9s"
-    }, 
+    },
     "hasRoute": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "urn:ngsi-ld:gtfs:Route:Spain:Malaga:1"
-    }, 
+    },
     "hasService": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "urn:ngsi-ld:gtfs:Service:Malaga_LAB"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "LineString", 
+            "type": "LineString",
             "coordinates": [
                 [
-                    -4.421394, 
+                    -4.421394,
                     36.73826
-                ], 
+                ],
                 [
-                    -4.421428, 
+                    -4.421428,
                     36.73825
-                ], 
+                ],
                 [
-                    -4.421505, 
+                    -4.421505,
                     36.738186
-                ], 
+                ],
                 [
-                    -4.421525, 
+                    -4.421525,
                     36.738033
                 ]
             ]

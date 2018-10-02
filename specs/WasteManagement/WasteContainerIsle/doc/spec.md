@@ -2,46 +2,48 @@
 
 ## Description
 
-A geographical area which keeps one or more waste containers. 
+A geographical area which keeps one or more waste containers.
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
 
-+ `type` : Entity type. It must be equal to `WasteContainerIsle`. 
++ `id` : Unique identifier.
+
++ `type` : Entity type. It must be equal to `WasteContainerIsle`.
 
 + `location` : Location of the isle represented by a GeoJSON Polygon.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory
-  
-+ `address` : Civic address where the isle is located. 
+
++ `address` : Civic address where the isle is located.
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Optional
- 
+
 + `name` : Name given to the isle
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Optional
 
-+ `description` : Description about the isle. 
++ `description` : Description about the isle.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
-    
+
 + `insertHolesNumber` : Number of insert holes the isle has.
     + Attribute type: [Number](https://schema.org/Number).
     + Optional
-    
+
 + `features` : A list of features provided by the isle.
     + Attribute type: List of [Text](http://schema.org/Text).
     + Allowed values:
         + `containerFix`. Allows to fix containers to a permanent position.
         + `fenced`. The isle is properly fenced.
-        + `underground`. The isle allows to hold buried containers. 
+        + `underground`. The isle allows to hold buried containers.
         + Any other value meaningful to the application.
     + Optional
 
 + `refWasteContainer` : List of containers present in the isle.
-    + Attribute type: List of references to [WasteContainer](../../WasteContainer/doc/spec.md) entities. 
+    + Attribute type: List of references to [WasteContainer](../../WasteContainer/doc/spec.md) entities.
     + Allowed values. Container's id.
     + Optional
 
@@ -49,7 +51,7 @@ A geographical area which keeps one or more waste containers.
 responsible, district, neighbourhood, etc.
     + Attribute type: [Text](https://schema.org/Text)
     + Optional
-    
+
 + `dateModified` : Last update timestamp of this entity
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
@@ -80,7 +82,7 @@ mode (`options=keyValues`).
             [ -3.164394553567159, 40.627772099765778 ],
             [ -3.164424899616589, 40.62775018317452 ],
             [ -3.164485591715449, 40.62785133667262 ]
-          ]  
+          ]
          ]
       },
       "address": {
@@ -91,9 +93,9 @@ mode (`options=keyValues`).
       "features": ["underground"],
       "name": "Dr. Fleming 12, Esquina Manuel Paez Xaramillo",
       "description": "Container isle located downtown",
-      "containers": ["wastecontainer:Fleming:12a", "wastecontainer:Fleming:12b"] 
+      "containers": ["wastecontainer:Fleming:12a", "wastecontainer:Fleming:12b"]
     }
-    
+
 ## Test it with a real service
 
 T.B.D.

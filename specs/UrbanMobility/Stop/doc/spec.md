@@ -8,55 +8,57 @@ It represents a GTFS `stop` which `location_type` shall be equal to `0`.
 
 ## Data Model
 
-+ `id`: Entity Id
-    + It shall be `urn:ngsi-ld:gtfs:Stop:<stop_identifier>` being `stop_identifier` a value that can derived from the GTFS `stop_id` field. 
+The data model is defined as shown below:
 
-+ `type`: Entity Type 
++ `id`: Entity Id
+    + It shall be `urn:ngsi-ld:gtfs:Stop:<stop_identifier>` being `stop_identifier` a value that can derived from the GTFS `stop_id` field.
+
++ `type`: Entity Type
     + It shall be equal to `gtfs:Stop`
- 
+
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated. 
-  
+    + Read-Only. Automatically generated.
+
 + `dateModified` : Last update timestamp of this Entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-  
-+ `name`: Same as GTFS `stop_name`. 
+
++ `name`: Same as GTFS `stop_name`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Mandatory
-  
-+ `code`: Same as GTFS `stop_code`. 
+
++ `code`: Same as GTFS `stop_code`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
-  
-+ `page`: Same as GTFS `stop_url`. 
+
++ `page`: Same as GTFS `stop_url`.
     + Attribute type: Property. [URL](https://schema.org/URL)
     + Optional
-  
-+ `description`: Same as GTFS `stop_desc`. 
+
++ `description`: Same as GTFS `stop_desc`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
- 
+
 + `location`: Stop's location encoded as GeoJSON Point which coordinates shall be in the form [`stop_long`,`stop_lat`].
     + Attribute type: GeoProperty. `geo:json`.
     + Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory
 
-+ `wheelChairAccessible`: Same as GTFS `wheelchair_boarding`. 
++ `wheelChairAccessible`: Same as GTFS `wheelchair_boarding`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Allowed values: (`0`, `1`, `2`) as per the [GTFS](https://developers.google.com/transit/gtfs/reference/#stopstxt)
     + Optional
-  
-+ `zoneCode` : Transport zone to which this stop belongs to. Same as GTFS `zone_id`. 
+
++ `zoneCode` : Transport zone to which this stop belongs to. Same as GTFS `zone_id`.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
 
-+ `address`: Stop's civic address. 
++ `address`: Stop's civic address.
     + Attribute type: Property. [PostalAddress](https://schema.org/PostalAddress)
     + Optional
-  
-+ `hasParentStation` : Same as GTFS `parent_station`.  
+
++ `hasParentStation` : Same as GTFS `parent_station`.
     + Attribute type: Relationship. It shall point to an Entity of Type [gtfs:Station](../../Station/doc/spec.md)
     + Optional
 
@@ -69,24 +71,24 @@ It represents a GTFS `stop` which `location_type` shall be equal to `0`.
 ```json
 {
     "id": "urn:ngsi-ld:gtfs:Stop:Malaga_101",
-    "type": "gtfs:Stop", 
+    "type": "gtfs:Stop",
     "code": {
         "value": "101"
-    }, 
+    },
     "operatedBy": {
         "type": "Relationship",
         "value": "urn:ngsi-ld:gtfs:Agency:Malaga_EMT"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
+            "type": "Point",
             "coordinates": [
-                -4.424393, 
+                -4.424393,
                 36.716872
             ]
         }
-    }, 
+    },
     "name": {
         "value": "Alameda Principal Sur"
     }
@@ -109,14 +111,14 @@ It represents a GTFS `stop` which `location_type` shall be equal to `0`.
 }
 ```
 
-  
-## Summary of mappings to GTFS  
+
+## Summary of mappings to GTFS
 
 ### Properties
 
 | GTFS Field              | NGSI Attribute         | LinkedGTFS                    | Comment                                                   |
 |:----------------------- |:-----------------------|:------------------------------|:----------------------------------------------------------|
-| `stop_name`             | `name`                 | `foaf:name`                   |                                                           |     
+| `stop_name`             | `name`                 | `foaf:name`                   |                                                           |
 | `stop_code`             | `code`                 | `gtfs:code`                   |                                                           |
 | `stop_url`              | `page`                 | `foaf:page`                   |                                                           |
 | `stop_desc`             | `description`          | `dct:description`             |                                                           |

@@ -8,35 +8,37 @@ In addition to the presented data model, this entity type inherits from the [Dev
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type` : Entity type. It must be equal to `SmartSpot`.
 
 + `announcedUrl` : URL broadcasted by the device.
     + Attribute type: [URL](https://schema.org/URL)
-    + Mandatory    
+    + Mandatory
 
 + `signalStrenght` : Signal strength to adjust the announcement range.
     + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: "lowest", "medium" or "highest". 
-    + Mandatory    
+    + Allowed values: "lowest", "medium" or "highest".
+    + Mandatory
 
 + `bluetoothChannel` : Bluetooth channels where to transmit the announcement.
     + Attribute type: [Text](https://schema.org/Text)
     + Allowed values: "37", "38", "39", "37,38", "38,39", "37,39" or "37,38,39".
-    + Mandatory  
+    + Mandatory
 
 + `coverageRadius` : Radius of the spot coverage area in meters.
     + Attribute Type: [Number](https://schema.org/Number)
     + Default unit: Meters.
-    + Optional      
+    + Optional
 
 + `announcementPeriod` : Period between announcements.
     + Attribute Type: [Number](https://schema.org/Number)
     + Default unit: Milliseconds.
-    + Mandatory     
+    + Mandatory
 
-+ `availability`: Specifies the functionality intervals in which the announcements will be sent. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". 
++ `availability`: Specifies the functionality intervals in which the announcements will be sent. The syntax must be conformant with schema.org [openingHours specification](https://schema.org/openingHours). For instance, a service which is only active on dayweeks will be encoded as "availability": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
     + Attribute type: [Text](https://schema.org/Text)
     + Mandatory. It can be `null`.
 
@@ -63,7 +65,7 @@ mode (`options=keyValues`).
   "refSmartPointOfInteraction": "SPOI-ES-4326"
 }
 ```
-    
+
 ## Use it with a real service
 
 T.B.D.

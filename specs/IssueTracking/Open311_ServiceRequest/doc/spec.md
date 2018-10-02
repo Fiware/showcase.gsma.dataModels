@@ -5,11 +5,13 @@ the properties defined by Open 311 at [POST Service Request](http://wiki.open311
 and [GET Service Request](http://wiki.open311.org/GeoReport_v2/#get-service-request).
 
 Using this data model and a FIWARE NGSI version 2 implementation it is straightforward to implement
-a service compliant with the Open 311 specifications. 
+a service compliant with the Open 311 specifications.
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. It might be equal to a string representation of `service_request_id`. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier. It might be equal to a string representation of `service_request_id`.
 
 + `type` : It must be `Open311:ServiceRequest`.
 
@@ -26,7 +28,7 @@ The following fields defined by Open 311 are allowed to be attributes of this en
 + `description`
 
 + `agency_responsible`. Please note that this is semantically equivalent to the [provider](http://schema.org/provider)
-property (name subproperty) of schema.org. 
+property (name subproperty) of schema.org.
 
 + `service_notice`
 
@@ -64,18 +66,18 @@ property (name subproperty) of schema.org.
 
 + `account_id`
 
-+ `address`. If used it must be renamed to `open311:address`. 
++ `address`. If used it must be renamed to `open311:address`.
 
 *All attribute types must be coherent with the Open 311 definitions. Applications must use the types
-`Text`, `Number` and `DateTime` accordingly.* 
+`Text`, `Number` and `DateTime` accordingly.*
 
 To support FIWARE NGSI v2 geoqueries concerning Open311 Service Requests the following property must be added:
 
-+ `location` : Location of the area on which this service request is concerned. 
-    + Attribute type: GeoJSON geometry. 
++ `location` : Location of the area on which this service request is concerned.
+    + Attribute type: GeoJSON geometry.
     + Mandatory if the service request is geolocated.
-    
-    
+
+
 Additionally, applications might use the following standard schema.org structured properties:
 
 + [address](http://schema.org/address).
@@ -127,7 +129,7 @@ mode (`options=keyValues`).
       },
       "media_url":"http://exaple.org/media/638344.jpg"
     }
-    
+
 ## Test it with real services
 
-## Open issues   
+## Open issues

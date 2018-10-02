@@ -6,18 +6,20 @@ A vehicle.
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier.
 
 + `type` : Entity type. It must be equal to `Vehicle`.
 
-+ `name` : Name given to this vehicle. 
++ `name` : Name given to this vehicle.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Optional
 
-+ `description` : Vehicle description. 
++ `description` : Vehicle description.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
-    
+
 + `vehicleType` : Type of vehicle from the point of view of its structural characteristics.
 This is different than the vehicle category (see below).
     + Attribute type: [Text](https://schema.org/Text)
@@ -28,7 +30,7 @@ This is different than the vehicle category (see below).
            `motorcycle`, `motorcycleWithSideCar`, `motorscooter`, `trailer`, `van`, `caravan`, `constructionOrMaintenanceVehicle`)
         + (`trolley`, `binTrolley`, `sweepingMachine`, `cleaningTrolley`)
     + Mandatory
-    
+
 + `category` : Vehicle category(ies) from an external point of view.
 This is different than the vehicle type (car, lorry, etc.) represented by the `vehicleType` property.
     + Attribute type: List of [Text](https:/schema.org/Text)
@@ -40,7 +42,7 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
     + Mandatory
 
 + `location` : Vehicle's last known location represented by a GeoJSON Point. Such point may contain the vehicle's
-*altitude* as the third component of the `coordinates` array. 
+*altitude* as the third component of the `coordinates` array.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Attribute metadata:
@@ -48,8 +50,8 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
         This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
             + Mandatory
-    + Mandatory only if `category` contains `tracked`. 
-    
+    + Mandatory only if `category` contains `tracked`.
+
 + `previousLocation` : Vehicle's previous location represented by a GeoJSON Point. Such point may contain the previous vehicle's
 *altitude* as the third component of the`coordinates` array.
     + Attribute type: `geo:json`.
@@ -59,9 +61,9 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
             + Type: [DateTime](http://schema.org/DateTime)
             + Mandatory
     + Optional
-    
+
 + `speed` : Denotes the magnitude of the horizontal component of the vehicle's current velocity and is specified in Kilometers per Hour.
-If provided, the value of the speed attribute must be a non-negative real number. `null` *MAY* be used if `speed` is transiently unknown for some reason.    
+If provided, the value of the speed attribute must be a non-negative real number. `null` *MAY* be used if `speed` is transiently unknown for some reason.
     + Attribute type: [Number](https:/schema.org/Number)
     + Default unit: Kilometers per hour
     + Attribute metadata:
@@ -70,10 +72,10 @@ If provided, the value of the speed attribute must be a non-negative real number
             + Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy).
             + Mandatory
     + Mandatory only if `category` contains `tracked`.
-    
+
 + `heading` : Denotes the direction of travel of the vehicle and is specified in decimal degrees,
 where 0° ≤ `heading` < 360°, counting clockwise relative to the true north.  If the vehicle is stationary (i.e. the value of the `speed` attribute is `0`),
-then the value of the heading attribute must be equal to `null`. `null` *MAY* be used if `heading` is transiently unknown for some reason.   
+then the value of the heading attribute must be equal to `null`. `null` *MAY* be used if `heading` is transiently unknown for some reason.
     + Attribute type: [Number](https://schema.org)
     + Attribute metadata:
         + `timestamp` :  Timestamp which captures when the vehicle was heading towards such direction.
@@ -96,7 +98,7 @@ then the value of the heading attribute must be equal to `null`. `null` *MAY* be
 to identify individual motor vehicles.
     + Normative References: [https://schema.org/vehicleIdentificationNumber](https://schema.org/vehicleIdentificationNumber)
     + Mandatory if neither `vehiclePlateIdentifier` nor `fleetVehicleId` is defined.
-    
+
 + `vehiclePlateIdentifier` : An identifier or code displayed on a vehicle registration plate attached to the vehicle used for official identification purposes.
 The registration identifier is numeric or alphanumeric and is unique within the issuing authority's region.
     + Normative References: DATEX II `vehicleRegistrationPlateIdentifier`
@@ -110,7 +112,7 @@ The registration identifier is numeric or alphanumeric and is unique within the 
 + `dateVehicleFirstRegistered` : The date of the first registration of the vehicle with the respective public authorities.
     + Normative References: [https://schema.org/dateVehicleFirstRegistered](https://schema.org/dateVehicleFirstRegistered)
     + Optional
-    
+
 + `dateFirstUsed` : Timestamp which denotes when the vehicle was first used.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
@@ -140,7 +142,7 @@ The registration identifier is numeric or alphanumeric and is unique within the 
     + Attribute Type: [https://schema.org/Person](https://schema.org/Person) or
     [https://schema.org/Organization](https://schema.org/Organization)
     + Optional
-    
+
 + `feature` : Feature(s) incorporated by the vehicle.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: (`gps`, `airbag`, `overspeed`, `abs`, `wifi`, `backCamera`, `proximitySensor`,
@@ -170,14 +172,14 @@ driving school, or as a taxi. The legislation in many countries requires this in
 responsible, district, neighbourhood, etc.
     + Attribute type: [Text](https://schema.org/Text)
     + Optional
-    
+
 + `serviceStatus` : Vehicle status (from the point of view of the service provided, so it could not apply to private vehicles).
     + Allowed values:
         + `parked`  : Vehicle is parked and not providing any service at the moment.
         + `onRoute` : Vehicle is performing a mission. A comma-separated modifier(s) can be added to indicate what mission is currently delivering the vehicle.
         For instance `"onRoute,garbageCollection"` can be used to denote that the vehicle is on route and in a garbage collection mission.
         + `broken` : Vehicle is suffering a temporary breakdown.
-        + `outOfService` : Vehicle is on the road but not performing any mission, probably going to its parking area. 
+        + `outOfService` : Vehicle is on the road but not performing any mission, probably going to its parking area.
     + Attribute type: [Text](https://schema.org/Text)
     + Attribute metadata:
         + `timestamp` : Timestamp which reflects when the referred service status was captured.
@@ -192,7 +194,7 @@ responsible, district, neighbourhood, etc.
 + `dateCreated` : Creation timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-    
+
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
 mode (`options=keyValues`).
@@ -202,31 +204,31 @@ mode (`options=keyValues`).
 ```json
 {
     "id": "vehicle:WasteManagement:1",
-    "type": "Vehicle", 
+    "type": "Vehicle",
     "category": {
         "value": [
             "municipalServices"
         ]
-    }, 
+    },
     "vehicleType": {
         "value": "lorry"
-    }, 
+    },
     "name": {
         "value": "C Recogida 1"
-    }, 
+    },
     "vehiclePlateIdentifier": {
         "value": "3456ABC"
-    }, 
+    },
     "refVehicleModel": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "vehiclemodel:econic"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
+            "type": "Point",
             "coordinates": [
-                -3.164485591715449, 
+                -3.164485591715449,
                 40.62785133667262
             ]
         },
@@ -236,16 +238,16 @@ mode (`options=keyValues`).
                 "value": "2018-09-27T12:00:00"
             }
         }
-    }, 
+    },
     "areaServed": {
         "value": "Centro"
-    }, 
+    },
     "serviceStatus": {
         "value": "onRoute"
-    }, 
+    },
     "cargoWeight": {
         "value": 314
-    }, 
+    },
     "speed": {
         "value": 50,
         "metadata": {
@@ -254,10 +256,10 @@ mode (`options=keyValues`).
                 "value": "2018-09-27T12:00:00"
             }
         }
-    },  
+    },
     "serviceProvided": {
         "value": [
-            "garbageCollection", 
+            "garbageCollection",
             "wasteContainerCleaning"
         ]
     }
@@ -284,7 +286,7 @@ mode (`options=keyValues`).
       "refVehicleModel": "vehiclemodel:econic",
       "vehiclePlateIdentifier": "3456ABC"
 }
-    
+
 ## Test it with a real service
 
 T.B.D.

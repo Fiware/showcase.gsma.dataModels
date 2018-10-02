@@ -9,6 +9,8 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
 
 ## Data Model
 
+The data model is defined as shown below:
+
 + `id` : Entity's unique identifier.
 
 + `type` : Entity type. It must be equal to `ParkingSpot`.
@@ -32,7 +34,7 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
 + `location` : Geolocation of the parking spot, represented by a GeoJSON Point.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory. Not nullable (if `address` is not defined).  
+    + Mandatory. Not nullable (if `address` is not defined).
 
 + `address` : Registered parking spot civic address.
     + Normative References: [https://schema.org/address](https://schema.org/address)
@@ -49,7 +51,7 @@ Thus, an entity of type `ParkingSpot` cannot exist without a containing entity o
         saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
             + Type: [DateTime]((https://schema.org/DateTime). here can be production environmments where the attribute type
-    is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
+    is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
             + Optional
     + Mandatory
 
@@ -63,7 +65,7 @@ to keep backwards compatibility with current FIWARE reference implementations.
 
 + `refParkingGroup` : Group to which the parking spot belongs to. For model simplification purposes
 only one group is allowed per parking spot.
-    + Attribute type: Reference to an entity of type `ParkingGroup`.  
+    + Attribute type: Reference to an entity of type `ParkingGroup`.
     + Optional
 
 + `refParkingSite` : Parking site to which the the parking spot belongs to.
@@ -83,7 +85,7 @@ only one group is allowed per parking spot.
 saved by FIWARE's IoT Agent. Note: This attribute has not been harmonized
 to keep backwards compatibility with current FIWARE reference implementations.
     + Attribute type: [DateTime](https://schema.org/DateTime). There can be production environmments where the attribute type
-    is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
+    is equal to the `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
     + Optional
 
 + `refDevice` : The device representing the physical sensor used to monitor this parking spot.
@@ -108,29 +110,29 @@ mode (`options=keyValues`).
                 "value": "2018-09-21T12:00:00"
             }
         }
-    }, 
+    },
     "category": {
         "value": [
             "onstreet"
         ]
-    }, 
+    },
     "refParkingSite": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "santander:daoiz_velarde_1_5"
-    }, 
+    },
     "name": {
         "value": "A-13"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
+            "type": "Point",
             "coordinates": [
-                -3.80356167695194, 
+                -3.80356167695194,
                 43.46296641666926
             ]
         }
-    } 
+    }
 }
 ```
 

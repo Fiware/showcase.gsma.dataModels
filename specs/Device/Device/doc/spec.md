@@ -13,12 +13,14 @@ part of [ETSI](http://www.etsi.org) standards.
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type` : Entity type. It must be equal to `Device`.
 
 + `category` : See attribute `category` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
-        
+
 + `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
 
 + `controlledAsset` : The asset(s) (building, object, etc.) controlled by the device.
@@ -35,33 +37,33 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
 + `mcc` : Mobile Country Code - This property identifies univoquely the country of the mobile network the device is attached to.
     + Attribute type: [Text](https://schema.org/Text)
     + Optional
-    
+
 + `macAddress` : The MAC address of the device.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Optional
-    
-+ `ipAddress` : The IP address of the device. It can be a comma separated list of values if the device has more than one IP address. 
+
++ `ipAddress` : The IP address of the device. It can be a comma separated list of values if the device has more than one IP address.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Optional
 
 + `supportedProtocol` : See attribute `supportedProtocol` from [DeviceModel](../../DeviceModel/doc/spec.md). Needed if due to a software update
-new protocols are supported. Otherwise it is better to convey it at `DeviceModel` level. 
+new protocols are supported. Otherwise it is better to convey it at `DeviceModel` level.
 
 + `configuration` : Device's technical configuration. This attribute is intended to be a dictionary of properties which capture
 parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.)
-and which are not currently covered by the standard attributes defined by this model. 
+and which are not currently covered by the standard attributes defined by this model.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue)
     + Attribute metadata:
         + `dateModified` :  Last update timestamp of this attribute.
             + Metadata type: [DateTime](https://schema.org/DateTime)
             + Read-Only. Automatically generated.
     + Optional
-    
-+ `location` : Location of this device represented by a GeoJSON geometry of type point. 
+
++ `location` : Location of this device represented by a GeoJSON geometry of type point.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Optional.
-    
+
 + `name` : A mnemonic name given to the device.
     + Normative References: [name](https://schema.org/name)
     + Optional
@@ -101,11 +103,11 @@ and which are not currently covered by the standard attributes defined by this m
 + `dateLastCalibration` : A timestamp which denotes when the last calibration of the device happened.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
-    
+
 + `serialNumber` : The serial number assigned by the manufacturer.
     + Normative References: [https://schema.org/serialNumber](https://schema.org/serialNumber)
     + Optional
-    
+
 + `provider` : The provider of the device.
     + Normative References: [https://schema.org/provider](https://schema.org/provider)
     + Optional
@@ -115,7 +117,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Optional
 
 + `batteryLevel` : Device's battery level. It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty.
-`null` when cannot be determined. 
+`null` when cannot be determined.
     + Type: [Number](https://schema.org/Number)
     + Allowed values: Interval [0,1]
     + Attribute metadata:
@@ -123,8 +125,8 @@ and which are not currently covered by the standard attributes defined by this m
         This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
-    
-+ `deviceState` : State of this device from an operational point of view. Its value can be vendor dependent.  
+
++ `deviceState` : State of this device from an operational point of view. Its value can be vendor dependent.
     + Type: [Text](https://schema.org/Text)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
@@ -145,7 +147,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
         This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
-    
+
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
@@ -194,4 +196,4 @@ T.B.D.
 
 + Is `function` really needed?
 + Do we need a `state` attribute as it happens in SAREF?
-+ Check consistency with oneM2M and SAREF ontologies. 
++ Check consistency with oneM2M and SAREF ontologies.

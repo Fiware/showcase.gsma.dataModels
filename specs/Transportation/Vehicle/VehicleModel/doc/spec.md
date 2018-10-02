@@ -2,22 +2,24 @@
 
 ## Description
 
-This entity models a particular vehicle model, including all properties which are common to multiple vehicle instances belonging to such model. 
+This entity models a particular vehicle model, including all properties which are common to multiple vehicle instances belonging to such model.
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier.
 
 + `type` : Entity type. It must be equal to `VehicleModel`.
 
-+ `name` : Name given to this vehicle model. 
++ `name` : Name given to this vehicle model.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
 
-+ `description` : Vehicle model description. 
++ `description` : Vehicle model description.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
-    
+
 + `vehicleType` : Type of vehicle from the point of view of its structural characteristics.
     + See definition at [Vehicle](../../Vehicle/doc/spec.md).
     + Mandatory
@@ -46,7 +48,7 @@ This entity models a particular vehicle model, including all properties which ar
     + Default Unit: Liters
     + Optional
     + Note: If only a single value is provided (type Number) it will refer to the maximum volume.
-    
+
 + `fuelType` : The type of fuel suitable for the engine or engines of the vehicle.
     + Normative References: [https://schema.org/fuelType](https://schema.org/fuelType)
     + Allowed values: one Of (`gasoline`, `petrol(unleaded)`, `petrol(leaded)`, `petrol`, `diesel`, `electric`,
@@ -56,7 +58,7 @@ This entity models a particular vehicle model, including all properties which ar
 + `fuelConsumption` : The amount of fuel consumed for traveling a particular distance or temporal
 duration with the given vehicle (e.g. liters per 100 km).
     + Normative References: [https://schema.org/fuelConsumption](https://schema.org/fuelConsumption)
-    + Default unit: liters per 100 kilometer. 
+    + Default unit: liters per 100 kilometer.
     + Optional
 
 + `height` : Vehicle's height.
@@ -79,11 +81,11 @@ duration with the given vehicle (e.g. liters per 100 km).
     + Normative References: [https://schema.org/vehicleEngine](https://schema.org/vehicleEngine)
     + Optional
     + Note: This property could be at vehicle level as well.
-    
+
 + `url` : URL which provides a description of this vehicle model.
     + Normative References: [https://schema.org/url](https://schema.org/url)
     + Optional
-    
+
 + `image`: Image which depicts this vehicle model.
     + Normative References: [https://schema.org/image](https://schema.org/image)
     + Optional
@@ -111,19 +113,19 @@ mode (`options=keyValues`).
     },
     "cargoVolume": {
         "value": 1000
-    }, 
+    },
     "modelName": {
         "value": "Econic"
-    }, 
+    },
     "brandName": {
         "value": "Mercedes Benz"
     },
     "manufacturerName": {
         "value": "Daimler"
-    }, 
+    },
     "fuelType": {
         "value": "diesel"
-    }, 
+    },
     "vehicleType": {
         "value": "lorry"
     }

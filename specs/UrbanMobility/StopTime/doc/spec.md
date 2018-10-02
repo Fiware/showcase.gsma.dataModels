@@ -6,20 +6,22 @@ See [https://developers.google.com/transit/gtfs/reference/#stop_timestxt](https:
 
 ## Data Model
 
-+ `id`: Entity id. 
-    + It shall be `urn:ngsi-ld:gtfs:StopTime:<stop_time_identifier>` being `stop_time_identifier` a value that can be derived from GTFS `trip_id` and `stop_id`. 
+The data model is defined as shown below:
 
-+ `type`: Entity type. 
++ `id`: Entity id.
+    + It shall be `urn:ngsi-ld:gtfs:StopTime:<stop_time_identifier>` being `stop_time_identifier` a value that can be derived from GTFS `trip_id` and `stop_id`.
+
++ `type`: Entity type.
     + It shall be equal to `gtfs:StopTime`.
-    
+
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated. 
- 
+    + Read-Only. Automatically generated.
+
 + `dateModified`: Last update timestamp of this Entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-  
+
 + `hasTrip`: Same as GTFS `trip_id`.
     + Attribute type: Relationship. It shall point to an Entity of type [gtfs:Trip](../../Trip/doc/spec.md)
     + Mandatory
@@ -65,25 +67,25 @@ See [https://developers.google.com/transit/gtfs/reference/#stop_timestxt](https:
 ```json
 {
     "id": "urn:ngsi-ld:gtfs:StopTime:Spain:Madrid:EMT:FE0010011_737",
-    "type": "gtfs:StopTime", 
+    "type": "gtfs:StopTime",
     "departureTime": {
         "value": "07:04:24"
-    }, 
+    },
     "hasTrip": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "urn:ngsi-ld:gtfs:Trip:Madrid:EMT:FE0010011"
-    }, 
+    },
     "stopSequence": {
         "value": 4
-    }, 
+    },
     "distanceTravelled": {
         "value": 759
-    }, 
+    },
     "arrivalTime": {
         "value": "07:04:24"
-    }, 
+    },
     "hasStop": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "urn:ngsi-ld:gtfs:Stop:Madrid:EMT:737"
     }
 }

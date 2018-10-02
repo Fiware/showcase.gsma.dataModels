@@ -1,24 +1,26 @@
 # Streetlight group
 
 An entity of type `StreetlightGroup` represents a group of streetlights. They might be controlled
-together by the same automated system (cabinet controller). 
+together by the same automated system (cabinet controller).
 
 ## Data Model
 
-+ `id` : Entity's unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Entity's unique identifier.
 
 + `type` : It must be equal to `StreetlightGroup`.
 
-+ `location` : Streetlight's group location represented by a GeoJSON (multi)geometry. 
++ `location` : Streetlight's group location represented by a GeoJSON (multi)geometry.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/draft-ietf-geojson-03](https://tools.ietf.org/html/draft-ietf-geojson-03)
     + Mandatory
-        
+
 + `areaServed` : Higher level area to which the streetlight group belongs to. It can be used to group per
 responsible, district, neighbourhood, etc.
     + Normative References: [https://schema.org/areaServed](https://schema.org/areaServed)
-    + Optional 
-    
+    + Optional
+
 + `powerState` : Streetlight group's power state.
     + Attribute type: [Text](http://schema.org/Text)
     + Attribute metadata:
@@ -26,11 +28,11 @@ responsible, district, neighbourhood, etc.
             + Type: [DateTime](http://schema.org/DateTime)
     + Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     + Optional
-    
+
 + `refStreetlightCabinetController` : Streetlight group's cabinet controller
     + Attribute type : Reference to a [StreetlightCabinetController](../../StreetlightCabinetController/doc/spec.md) entity.
     + Optional
-    
+
 + `dateLastSwitchingOn` : Timestamp of the last switching on.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Attribute metadata:
@@ -45,28 +47,28 @@ responsible, district, neighbourhood, etc.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
 
-+ `switchingOnHours` : Switching on hours. It is used normally to set special schedules for certain dates. 
++ `switchingOnHours` : Switching on hours. It is used normally to set special schedules for certain dates.
     + Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
     + Subproperties:
-        + `from` : Starting date (it can be yearless). 
+        + `from` : Starting date (it can be yearless).
             + Type: [Date](https://schema.org/Date)
         + `to` : Ending date (it can be yearless)
             + Type: [Date](https://schema.org/Date)
-        + `hours` : Hours. 
+        + `hours` : Hours.
             + Normative References: Value must be compliant with [https://schema.org/openingHours](https://schema.org/openingHours)
     + Attribute metadata:
         + `timestamp` : Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
-        
-+ `switchingMode` : Switching mode. 
+
++ `switchingMode` : Switching mode.
     + Attribute Type: List of [Text](http://schema.org/Text)
     + Allowed values: (`night-ON`, `night-OFF`, `night-LOW`, `always-ON`, `day-ON`, `day-OFF`, `day-LOW`)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
-    
+
 + `illuminanceLevel` : Relative illuminance level setting for the group.
     + Attribute Type: [Number](http://schema.org/Number)
     + Allowed values: A number between 0 and 1.
@@ -74,19 +76,19 @@ responsible, district, neighbourhood, etc.
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
     + Optional
-        
+
 + `activeProgramId` : Identifier of the active program for this streetlight group.
     + Attribute type: [Text](https://schema.org/Text)
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
             + Type: [DateTime](http://schema.org/DateTime)
-    + Optional 
-    
+    + Optional
+
 + `dateModified` : Timestamp of the last update made to this entity.
     + Attribute Type: [DateTime](http://schema.org/DateTime)
     + Read-Only. Automatically generated.
-        
-+ `description` : Description about the streetlight group. 
+
++ `description` : Description about the streetlight group.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
 
@@ -94,9 +96,9 @@ responsible, district, neighbourhood, etc.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Optional
 
-+ `refStreetlight` : List of streetlight entities belonging to this group. 
++ `refStreetlight` : List of streetlight entities belonging to this group.
     + Attribute type: List of references to entities fo type [Streetlight](../../Streetlight/doc/spec.md)
-    + Allowed values: There must topographical integrity between the location of the group and of the individual streetlights.  
+    + Allowed values: There must topographical integrity between the location of the group and of the individual streetlights.
     + Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
@@ -115,7 +117,7 @@ mode (`options=keyValues`).
           [ [102.0, 2.0], [103.0, 3.0] ]
         ]
       },
-      "powerStatus": "on", 
+      "powerStatus": "on",
       "areaServed": "Calle Comercial Centro",
       "circuitId": "C-456-A467",
       "dateLastSwitchingOn":  "2016-07-07T19:59:06.618Z",
@@ -136,4 +138,4 @@ mode (`options=keyValues`).
 
 ## Open Issues
 
-+ Do we really need metering attributes on this entity? Is metering only going to be done at Cabinet level? 
++ Do we really need metering attributes on this entity? Is metering only going to be done at Cabinet level?

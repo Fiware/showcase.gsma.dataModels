@@ -6,18 +6,20 @@ A group of parking spots. Granularity level can vary.
 It can be an storey on a parking garage, an specific zone belonging to a big parking lot,  or just a group of spots intended
 for parking a certain vehicle type or subject to certain restrictions (disabled, residents, ...).
 For the sake of simplicity only one vehicle type per parking group is allowed. Similarly, one required permit is only allowed
-per group type. 
+per group type.
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+The data model is defined as shown below:
+
++ `id` : Unique identifier.
 
 + `type` : Entity type. It must be equal to `ParkingGroup`.
 
-+ `category` : Parking Group's category. 
++ `category` : Parking Group's category.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values:
-        + `onstreet` if the parking group belongs to an `OnStreetParking`. 
+        + `onstreet` if the parking group belongs to an `OnStreetParking`.
         + `offstreet` if the parking group belongs to an `OffStreetParking`.
         + (`adjacentSpaces`, `nonAdjacentSpaces`, `completeFloor`, `statisticsOnly`,
            `vehicleTypeSpaces`, `particularConditionsSpaces`)
@@ -30,10 +32,10 @@ per group type.
 
 + `refParkingSite` : Parking site to which this zone belongs to. A group cannot be orphan. A group cannot have subgroups.
     + Attribute type: Reference to an [OffStreetParking](../../OffStreetParking/doc/spec.md) or to an
-    [OnStreetParking](../../OnStreetParking/doc/spec.md) entity. 
+    [OnStreetParking](../../OnStreetParking/doc/spec.md) entity.
     + Mandatory
-    
-+ `allowedVehicleType` : Vehicle type allowed (a parking group only allows one vehicle type). 
+
++ `allowedVehicleType` : Vehicle type allowed (a parking group only allows one vehicle type).
     + Attribute type: [Text](http://schema.org/Text)
     + Allowed Values: The following values defined by *VehicleTypeEnum*
     [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip) :
@@ -41,13 +43,13 @@ per group type.
            `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`, `lorry`, `moped`, `motorcycle`,
            `motorcycleWithSideCar`, `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
     + Mandatory
-       
+
 + `location` : Geolocation of the parking group represented by a GeoJSON (Multi)Polygon or Point.
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Optional
 
-+ `address` : Registered parking group civic address. 
++ `address` : Registered parking group civic address.
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Optional
 
@@ -55,12 +57,12 @@ per group type.
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Optional
 
-+ `description` : Description about the parking group. 
++ `description` : Description about the parking group.
     + Normative References: [https://schema.org/description](https://schema.org/description)
     + Optional
 
 + `maximumParkingDuration` : Maximum allowed stay encoded as a ISO8601 duration (`null` if indefinite).
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional
 
@@ -71,11 +73,11 @@ Applications *SHOULD* inspect the value of this property at parent's level if it
         `annualPayment`, `monthlyPayment`, `free`, `other`)
         + Any other application-specific
     + Mandatory
-    
+
 + `requiredPermit` : This attribute captures what permit is needed to park in any of the spots of this group. For the
 sake of simplicity only one permit can be associated to a parking group. When a permit is composed by more than one item
 they can be combined by separating them with a ",". For instance "residentPermit,disabledPermit" stays that both
-a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed. 
+a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed.
     + Attribute type: [Text](http://schema.org/Text)
     + Allowed values: The following, defined by the *PermitTypeEnum* enumeration of DATEX II version 2.3.
         + oneOf (`employeePermit`, `studentPermit`, `fairPermit`, `governmentPermit`,  `residentPermit`, `specificIdentifiedVehiclePermit`,
@@ -84,80 +86,80 @@ a resident and a disabled permit are needed to park. If empty or `null`, no perm
         `maintenanceVehiclePermit`, `roadWorksPermit`, `taxiPermit`, `transportationPermit`, `noPermitNeeded`)
         + Any other application-specific
     + Mandatory
-    
+
 + `permitActiveHours` : This attribute allows to capture situations when a permit is only needed at specific hours or days of week.
 It is an structured value which must contain a subproperty per each required permit, indicating when the permit is active.
-If nothing specified (or `null`) for a permit it will mean that a permit is always required. `null`or empty object means always active. 
+If nothing specified (or `null`) for a permit it will mean that a permit is always required. `null`or empty object means always active.
 The syntax must be conformant with schema.org [opening hours specification](https://schema.org/openingHours). For instance,
         a blue zone which is only active on dayweeks will be encoded as "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [StructuredValue](http://schema.org/StructuredValue)
-    + Mandatory. It can be `null`. 
+    + Mandatory. It can be `null`.
 
 + `reservationType` : Conditions for reservation.
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Text](http://schema.org/Text)
     + Allowed values: The following specified by *ReservationTypeEnum* of DATEX II version 2.3:
         + one Of (`optional`, `mandatory`, `notAvailable`, `partly`).
     + Optional
-   
+
 + `areBordersMarked` : Denotes whether parking spots are delimited (with blank lines or similar) or not.
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Boolean](https://schema.org/Boolean)
     + Optional
 
-+ `totalSpotNumber` : The total number of spots pertaining to this group. 
++ `totalSpotNumber` : The total number of spots pertaining to this group.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: Any positive integer number or 0. 
+    + Allowed values: Any positive integer number or 0.
     + Normative references: DATEX 2 version 2.3 attribute *parkingNumberOfSpaces* of the *ParkingRecord* class.
     + Optional
 
 + `availableSpotNumber` : The number of spots available in this group.
     + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: A positive integer number, including 0. It must lower or equal than `totalSpotNumber`. 
+    + Allowed values: A positive integer number, including 0. It must lower or equal than `totalSpotNumber`.
     + Metadata:
         + `timestamp` : Timestamp of the last attribute update
         + Type: [DateTime](https://schema.org/DateTime)
     + Optional
-            
+
 + `occupancyDetectionType` : Occupancy detection method.
     + Attribute type: [Text](http://schema.org/Text)
     + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
         + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
         + Or any other application-specific
     + Mandatory
-    
+
 + `parkingMode` : Parking mode(s).
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: List of [Text](http://schema.org/Text)
     + Allowed values: Those defined by the DATEX II version 2.3 *ParkingModeEnum* enumeration:
         + (`perpendicularParking`, `parallelParking`, `echelonParking`)
     + Optional
 
 + `averageSpotWidth` : The average width of parking spots.
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Meters
     + Optional
 
 + `averageSpotLength` : The average length of parking spots.
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Meters
     + Optional
 
 + `maximumAllowedHeight` : Maximum allowed height for vehicles.
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Meters
     + Optional
 
 + `maximumAllowedWidth` : Maximum allowed width for vehicles.
-Applications *SHOULD* inspect the value of this property at parent's level if it is not defined. 
+Applications *SHOULD* inspect the value of this property at parent's level if it is not defined.
     + Attribute type: [Number](http://schema.org/Number)
     + Default unit: Meters
     + Optional
-    
+
 + `image` : A URL containing a photo of this parking group.
     + Normative References: [https://schema.org/image](https://schema.org/image)
     + Optional
@@ -175,27 +177,27 @@ mode (`options=keyValues`).
 ```json
 {
     "id": "daoiz-velarde-1-5-disabled",
-    "type": "ParkingGroup",  
+    "type": "ParkingGroup",
     "category": {
         "value": [
-            "onstreet", 
-            "adjacentSpaces", 
+            "onstreet",
+            "adjacentSpaces",
             "onlyDisabled"
         ]
-    }, 
+    },
     "refParkingSite": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "daoiz-velarde-1-5"
-    }, 
+    },
     "permitActiveHours": {
         "value": "null"
-    }, 
+    },
     "requiredPermit": {
         "value": "disabledPermit"
-    }, 
+    },
     "allowedVehicleType": {
         "value": "car"
-    }, 
+    },
     "availableSpotNumber": {
         "value": 1,
         "metadata": {
@@ -204,45 +206,45 @@ mode (`options=keyValues`).
                 "value": "2018-09-12T12:00:00"
             }
         }
-    }, 
+    },
     "totalSpotNumber": {
         "value": 2
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Polygon", 
+            "type": "Polygon",
             "coordinates": [
                 [
                     [
-                        -3.80356167695194, 
+                        -3.80356167695194,
                         43.46296641666926
-                    ], 
+                    ],
                     [
-                        -3.803161973253841, 
+                        -3.803161973253841,
                         43.46301091092682
-                    ], 
+                    ],
                     [
-                        -3.803147082548618, 
+                        -3.803147082548618,
                         43.462879859445884
-                    ], 
+                    ],
                     [
-                        -3.803536474744068, 
+                        -3.803536474744068,
                         43.462838666196674
-                    ], 
+                    ],
                     [
-                        -3.80356167695194, 
+                        -3.80356167695194,
                         43.46296641666926
                     ]
                 ]
             ]
         }
-    }, 
+    },
     "chargeType": {
         "value": [
             "free"
         ]
-    }, 
+    },
     "description": {
         "value": "Two parking spots reserved for disabled people"
     }
@@ -251,7 +253,7 @@ mode (`options=keyValues`).
 
 ## Examples of use 2 (?options=keyValues simplified representation for data consumers)
 
-A group of parking spots especially for disabled people. 
+A group of parking spots especially for disabled people.
 
     {
       "id": "daoiz-velarde-1-5-disabled",
@@ -278,8 +280,8 @@ A group of parking spots especially for disabled people.
       "requiredPermit": "disabledPermit",
       "permitActiveHours": null          /* Always permit is needed */
     }
-    
-A group of parking spots especially for loading and unloading goods. From 10:00 to 14:00, Monday-Saturday. 
+
+A group of parking spots especially for loading and unloading goods. From 10:00 to 14:00, Monday-Saturday.
 
     {
       "id": "daoiz-velarde-23-load",

@@ -6,24 +6,26 @@ See [https://developers.google.com/transit/gtfs/reference/#calendar_datestxt](ht
 
 ## Data Model
 
-+ `id`: Entity Id
-    + It shall be `urn:ngsi-ld:gtfs:CalendarDateRule:<calendar_date_rule_identifier>`. 
+The data model is defined as shown below:
 
-+ `type`: Entity Type 
++ `id`: Entity Id
+    + It shall be `urn:ngsi-ld:gtfs:CalendarDateRule:<calendar_date_rule_identifier>`.
+
++ `type`: Entity Type
     + It shall be equal to `gtfs:CalendarDateRule`
-  
+
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated. 
- 
+    + Read-Only. Automatically generated.
+
 + `dateModified` : Last update timestamp of this Entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Read-Only. Automatically generated.
-  
+
 + `hasService` : Service to which this rule applies to. Derived from `service_id`.
     + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../Service/doc/spec.md)
     + Mandatory
-  
+
 + `name` : Name given to this rule.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
@@ -31,9 +33,9 @@ See [https://developers.google.com/transit/gtfs/reference/#calendar_datestxt](ht
 + `description`: Description given to this rule.
     + Attribute type: Property. [Text](https://schema.org/Text)
     + Optional
-  
-+ `appliesOn`: Date (in YYYY-MM-DD format) this rule applies to. It shall be obtained from the GTFS `date` field. 
-    + Attribute type: Property. [Date](https://schema.org/Date). 
+
++ `appliesOn`: Date (in YYYY-MM-DD format) this rule applies to. It shall be obtained from the GTFS `date` field.
+    + Attribute type: Property. [Date](https://schema.org/Date).
     + Mandatory
 
 + `exceptionType`: Same as GTFS `exception_type` field. Allowed values: (`"1"`, `"2"`)
@@ -45,17 +47,17 @@ See [https://developers.google.com/transit/gtfs/reference/#calendar_datestxt](ht
 ```json
 {
     "id": "urn:ngsi-ld:CalendarDateRule:Malaga:Rule67",
-    "type": "gtfs:CalendarDateRule", 
+    "type": "gtfs:CalendarDateRule",
     "name": {
         "value": "Rule Fair Area"
-    }, 
+    },
     "exceptionType": {
         "value": "1"
-    }, 
+    },
     "hasService": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "urn:ngsi-ld:Service:Malaga:FairArea_1"
-    }, 
+    },
     "appliesOn": {
         "value": "2018-03-19"
     }
@@ -84,7 +86,7 @@ See [https://developers.google.com/transit/gtfs/reference/#calendar_datestxt](ht
 | `date`                    | `appliesOn`             | `dct:date`                  |                                                            |
 | `exception_type`          | `exceptionType`         |                             |                                                            |
 
-                              
+
 
 
 ### Relationships
