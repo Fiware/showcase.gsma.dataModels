@@ -1,0 +1,18 @@
+{
+  "id": "streetlight:guadalajara:4567",
+  "type": "Streetlight",
+  "location": {
+    "type": "Point",
+    "coordinates": [  -3.164485591715449, 40.62785133667262 ]
+  },
+  "areaServed": "Roundabouts city entrance",
+  "status": "ok",
+  "refStreetlightGroup": "streetlightgroup:G345",
+  "refStreetlightModel": "streetlightmodel:STEEL_Tubular_10m",
+  "circuit": "C-456-A467",
+  "lanternHeight": 10,
+  "locationCategory" : "centralIsland",
+  "powerState": "off",
+  "controllingMethod": "individual",
+  "dateLastLampChange": "2016-07-08T08:02:21.753Z"
+}
