@@ -87,6 +87,11 @@ The data model is defined as shown below:
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Optional
 
+-   `refDevice` : Reference to the device(s) used to monitor this streetligth.
+
+    -   Attribute type: List of Reference to entity(ies) of type [Device](../Device/Device/doc/spec.md)
+    -   Optional
+
 -   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
