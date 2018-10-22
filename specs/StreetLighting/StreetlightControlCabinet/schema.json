@@ -1,0 +1,285 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/StreetlightControlCabinet/schema.json",
+  "title": "FIWARE - Street Lighting / Streetlight Control Cabinet",
+  "description": "A Streetlight control cabinet",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "StreetlightControlCabinet"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Higher level area to which this streetlight belongs to. It can be used to group streetlights per responsible, district, neighbourhood, etc."
+        },
+        "serialNumber": {
+          "type": "string",
+          "description": "Serial number of the control cabinet."
+        },
+        "refStreetlightGroup": {
+          "type": "array",
+          "items": {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+          "description": "Streetlight group(s) controlled."
+        },
+        "brandName": {
+          "type": "string",
+          "description": "Name of the cabinet's brand."
+        },
+        "modelName": {
+          "type": "string",
+          "description": "Name of the cabinet's model."
+        },
+        "manufacturerName": {
+          "type": "string",
+          "description": "Name of the cabinet's manufacturer."
+        },
+        "cupboardMadeOf": {
+          "type": "string",
+          "enum": [
+            "plastic",
+            "metal",
+            "concrete",
+            "other"
+          ],
+          "description": "Material the cabinet's cupboard is made of."
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "astronomicalClock",
+              "individualControl"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true,
+          "description": "A list of cabinet controller features."
+        },
+        "compliantWith": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A list of standards to which the cabinet controller is compliant with (ex. `IP54`)"
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A field reserved for annotations (incidences, remarks, etc.)"
+        },
+        "refDevice": {
+          "type": "array",
+          "items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Reference to the device(s) used to monitor this streetligth"
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last update made to this entity."
+        },
+        "dateServiceStarted": {
+          "type": "string",
+          "format": "date",
+          "description": "Date at which the streetlight started giving service."
+        },
+        "dateLastProgramming": {
+          "type": "string",
+          "format": "date",
+          "description": "Date at which there was a programming operation over the cabinet."
+        },
+        "nextActuationDeadline": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Deadline for next actuation to be performed (programming, testing, etc.)."
+        },
+        "responsible": {
+          "type": "string",
+          "description": "Responsible for the cabinet controller, i.e. entity in charge of actuating (programming, etc.)."
+        },
+        "workingMode": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "manual",
+            "semiautomatic"
+          ],
+          "description": "The method used to control this streetlight."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description about the streetlight."
+        },
+        "maximumPowerAvailable": {
+          "type": "number",
+          "items": {
+            "type": "string"
+          },
+          "description": "The maximum power available (by contract) for the circuits controlled by this cabinet."
+        },
+        "energyConsumed": {
+          "type": "number",
+          "description": "Energy consumed by the circuits controlled since metering started (since `dateMeteringStarted`)",
+          "minimum": 0
+        },
+        "energyCost": {
+          "type": "number",
+          "description": "Cost of the energy consumed by the circuits controlled since the metering start date (`dateMeteringStarted`)"
+        },
+        "reactiveEnergyConsumed": {
+          "type": "number",
+          "description": "Energy consumed (with regards to reactive power) by circuits since the metering start date (`dateMeteringStarted`).",
+          "minimum": 0
+        },
+        "dateMeteringStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The starting date for metering energy consumed."
+        },
+        "lastMeterReading": {
+          "type": "number",
+          "description": "Value of the last reading obtained from the energy consumed metering system."
+        },
+        "meterReadingPeriod": {
+          "type": "number",
+          "description": "The periodicity of energy consumed meter readings in days."
+        },
+        "frequency": {
+          "type": "number",
+          "description": "The working frequency of the circuit."
+        },
+        "totalActivePower": {
+          "type": "number",
+          "description": "Active power currently consumed (counting all phases)."
+        },
+        "totalReactivePower": {
+          "type": "number",
+          "description": "Reactive power currently consumed (counting all phases)."
+        },
+        "activePower": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number"
+            },
+            "S": {
+              "type": "number"
+            },
+            "T": {
+              "type": "number"
+            }
+          },
+          "description": "Active power consumed  per phase. The actual values will be conveyed by subproperties which name will be equal to the name of each of the alternating current phases, typically R, S, T."
+        },
+        "reactivePower": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number"
+            },
+            "S": {
+              "type": "number"
+            },
+            "T": {
+              "type": "number"
+            }
+          },
+          "description": "Reactive power. The actual values will be conveyed by subproperties which name will be equal to the name of each of the alternating current phases, typically R, S, T."
+        },
+        "powerFactor": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Power factor."
+        },
+        "cosPhi": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "\"Cosin of phi\" parameter."
+        },
+        "intensity": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number"
+            },
+            "S": {
+              "type": "number"
+            },
+            "T": {
+              "type": "number"
+            }
+          },
+          "description": "Electric intensity. The actual values will be conveyed by one subproperty per alternating current phase.  The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
+        },
+        "voltage": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number"
+            },
+            "S": {
+              "type": "number"
+            },
+            "T": {
+              "type": "number"
+            }
+          },
+          "description": "Electric tension. The actual values will be conveyed by one subproperty alternating current phase.  The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
+        },
+        "thdrVoltage": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number"
+            },
+            "S": {
+              "type": "number"
+            },
+            "T": {
+              "type": "number"
+            }
+          },
+          "description": "Total harmonic distortion (R) of The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
+        },
+        "thdrIntensity": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number"
+            },
+            "S": {
+              "type": "number"
+            },
+            "T": {
+              "type": "number"
+            }
+          },
+          "description": "Total harmonic distortion (R) of intensity. The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "refStreetlightGroup",
+    "workingMode"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "streetlightcontrolcabinet:A45HGJK",
+  "type": "StreetlightControlCabinet",
+  "location": {
+    "type": "Point",
+    "coordinates": [  -3.164485591715449, 40.62785133667262 ]
+  },
+  "cupboardMadeOf": "plastic",
+  "brandName": "Siemens",
+  "modelName": "Simatic S7 1200",
+  "refStreetlightGroup": ["streetlightgroup:BG678", "streetlightgroup:789"],
+  "compliantWith": ["IP54"],
+  "dateLastProgramming": "2016-07-08",
+  "maximumPowerAvailable": 10,
+  "energyConsumed": 162456,
+  "dateMeteringStarted": "2013-07-07T15:05:59.408Z",
+  "lastMeterReading": 161237,
+  "meterReadingPeriod": 60,
+  "intensity": {
+     "R": 20.1,
+     "S": 14.4,
+     "T": 22
+  },
+  "reactivePower": {
+    "R": 45,
+    "S": 43.5,
+    "T": 42
+  },
+  "workingMode": "automatic"
+}

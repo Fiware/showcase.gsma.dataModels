@@ -311,7 +311,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       "dateLastProgramming": "2016-07-08",
       "maximumPowerAvailable": 10,
       "energyConsumed": 162456,
-      "dateMeteringStarted": "2013-07-07",
+      "dateMeteringStarted": "2013-07-07T15:05:59.408Z",
       "lastMeterReading": 161237,
       "meterReadingPeriod": 60,
       "intensity": {
@@ -323,7 +323,8 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
         "R": 45,
         "S": 43.5,
         "T": 42
-      }
+      },
+      "workingMode": "automatic"
     }
 
 ## Test it with a real service
