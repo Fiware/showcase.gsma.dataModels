@@ -134,7 +134,8 @@ Below is the description of the attribute to be used for option A/.
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
 mode (`options=keyValues`).
 
-## Normalized  Example
+## Examples
+### Normalized  Example
 
 Normalized NGSI response
 
@@ -240,7 +241,7 @@ Normalized NGSI response
 }
 ```
 
-## key-value pairs Example
+### key-value pairs Example
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
