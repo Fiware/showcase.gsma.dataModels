@@ -119,7 +119,7 @@ To clarify the difference among the two representation here is a complete
 example from the `AirQualityObserved` Data Model:
 
 * Normalised format:
-  ```json
+```json
   {
       "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
       "type": "AirQualityObserved",
@@ -219,10 +219,10 @@ example from the `AirQualityObserved` Data Model:
           "value": "moderate"
       }
   }
-  ```
+```
 
 * keyValue format:
-  ```json
+```json
   {
     "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
     "type": "AirQualityObserved",
@@ -253,7 +253,7 @@ example from the `AirQualityObserved` Data Model:
     "NO_Level": "moderate",
     "refPointOfInterest": "28079004-Pza. de España"
   }
-  ```
+```
 
 For each Data Model we provide a set of examples (in some cases also using
 the Normalised representation of  NGSI v2), such examples have been validated
@@ -316,7 +316,7 @@ Examples of GeoJSON geometries are available
   [UN/CEFACT](https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20_rev3_Annex3e.pdf). 
   E.g.:
 
-  ```json
+```json
   "length": {
       "value": 11,
       "metadata": {
@@ -325,7 +325,7 @@ Examples of GeoJSON geometries are available
           }
       }
   }
-  ```
+```
     
 
 ### How to attach specific time of update to a single attribute
