@@ -2,67 +2,84 @@
 
 ## Description
 
-This entity contains a harmonised geographic and contextual description of a road.
-Roads are made up of one or more [RoadSegment](../../RoadSegment/doc/spec.md) entities.
-Road segments are usually used to model the different carriageways of highways, for instance.
-The presence of dedicated bicycle lanes should be modelled using road segments as well.
-Road segments also play an important role when modelling roads with heterogeneous segments, for instance
-segments on which speed limits are different.
+This entity contains a harmonised geographic and contextual description of a
+road. Roads are made up of one or more
+[RoadSegment](../../RoadSegment/doc/spec.md) entities. Road segments are usually
+used to model the different carriageways of highways, for instance. The presence
+of dedicated bicycle lanes should be modelled using road segments as well. Road
+segments also play an important role when modelling roads with heterogeneous
+segments, for instance segments on which speed limits are different.
 
-This entity is primarily associated with the Automotive and Smart City vertical segments and related IoT applications.
+This entity is primarily associated with the Automotive and Smart City vertical
+segments and related IoT applications.
 
-This data model has been developed in cooperation with mobile operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+This data model has been developed in cooperation with mobile operators and the
+[GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-+ `type` : Entity type. It must be equal to `Road`.
+-   `type` : Entity type. It must be equal to `Road`.
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `dateCreated` : Entity's creation timestamp.
 
-+ `dateModified` : Last update timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `name` : Name given to this road, for instance `M-30`.
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Mandatory
+-   `dateModified` : Last update timestamp of this entity.
 
-+ `alternateName` : An alias for this road.
-    + Normative References: [https://schema.org/alternateName](https://schema.org/alternateName)
-    + Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `description` : Description or long name given to this road.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+-   `name` : Name given to this road, for instance `M-30`.
 
-+ `roadClass` : The classification of this road.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: Those described by [http://wiki.openstreetmap.org/wiki/Key:highway](OpenStreetMap).
-    + Mandatory
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-+ `refRoadSegment` : Road segments which define this road.
-    + Attribute type: List of references to entities of type [RoadSegment](../../RoadSegment/doc/spec.md).
-    + MAndatory
+-   `alternateName` : An alias for this road.
 
-+ `length` : Total length of this road in kilometers.
-    + Attribute type: [Number](https://schema.org/Number)
-    + See also [https://schema.org/length](https://schema.org/length)
-    + Default unit: Kilometer (Km)
-    + Optional
+    -   Normative References:
+        [https://schema.org/alternateName](https://schema.org/alternateName)
+    -   Optional
 
-+ `responsible` : Responsible for the raod i.e. the organism or company in charge of its maintenance.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
+-   `description` : Description or long name given to this road.
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
+
+-   `roadClass` : The classification of this road.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: Those described by
+        [http://wiki.openstreetmap.org/wiki/Key:highway](OpenStreetMap).
+    -   Mandatory
+
+-   `refRoadSegment` : Road segments which define this road.
+
+    -   Attribute type: List of references to entities of type
+        [RoadSegment](../../RoadSegment/doc/spec.md).
+    -   MAndatory
+
+-   `length` : Total length of this road in kilometers.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   See also [https://schema.org/length](https://schema.org/length)
+    -   Default unit: Kilometer (Km)
+    -   Optional
+
+-   `responsible` : Responsible for the raod i.e. the organism or company in
+    charge of its maintenance.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Optional
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of Use
 
@@ -86,4 +103,3 @@ mode (`options=keyValues`).
 T.B.D.
 
 ## Open issues
-

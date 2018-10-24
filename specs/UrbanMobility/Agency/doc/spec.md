@@ -2,56 +2,70 @@
 
 ## Description
 
-See [https://developers.google.com/transit/gtfs/reference/#agencytxt](https://developers.google.com/transit/gtfs/reference/#agencytxt)
+See
+[https://developers.google.com/transit/gtfs/reference/#agencytxt](https://developers.google.com/transit/gtfs/reference/#agencytxt)
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id`: Entity id.
-    + It shall be `urn:ngsi-ld:gtfs:Agency:<agency_identifier>` being `agency_identifier` a value that can be derived from GTFS `agency_id`.
+-   `id`: Entity id.
 
-+ `type`: Entity type.
-    + It shall be equal to `gtfs:Agency`.
+    -   It shall be `urn:ngsi-ld:gtfs:Agency:<agency_identifier>` being
+        `agency_identifier` a value that can be derived from GTFS `agency_id`.
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `type`: Entity type.
 
-+ `dateModified` : Last update timestamp of this Entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   It shall be equal to `gtfs:Agency`.
 
-+ `source` : A sequence of characters giving the original source of the Entity data as a URL.
-It shall point to the URL of the original GTFS feed used to generate this Entity.
-    + Attribute type: [URL](https://schema.org/URL)
-    + Mandatory
+-   `dateCreated` : Entity's creation timestamp.
 
-+ `name`: Same as GTFS `agency_name`.
-    + Attribute type: Property. [Text](https://schema.org/Text).
-    + Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `page`: Same as GTFS `agency_url`.
-    + Attribute type: Property. [URL](https://schema.org/URL).
-    + Optional
+-   `dateModified` : Last update timestamp of this Entity.
 
-+ `timezone`: Same as GTFS `agency_timezone`.
-    + Attribute type: Property. [Text](https://schema.org/Text).
-    + Allowed values: See [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
-    + Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `phone`: Same as GFTS `agency_phone`.
-    + Attribute type: Property. [Text](https://schema.org/Text)
-    + Optional
+-   `source` : A sequence of characters giving the original source of the Entity
+    data as a URL. It shall point to the URL of the original GTFS feed used to
+    generate this Entity. + Attribute type: [URL](https://schema.org/URL) +
+    Mandatory
 
-+ `language`: Same as GTFS `agency_language`.
-    + Attribute type: Property. [Text](https://schema.org/Text)
-    + Allowed values: See [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
-    + Optional
+-   `name`: Same as GTFS `agency_name`.
 
-+ `address`: Agency's civic address.
-    + Attribute type: Property. [PostalAddress](https://schema.org/PostalAddress)
-    + Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Mandatory
+
+-   `page`: Same as GTFS `agency_url`.
+
+    -   Attribute type: Property. [URL](https://schema.org/URL).
+    -   Optional
+
+-   `timezone`: Same as GTFS `agency_timezone`.
+
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Allowed values: See
+        [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
+    -   Optional
+
+-   `phone`: Same as GFTS `agency_phone`.
+
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
+
+-   `language`: Same as GTFS `agency_language`.
+
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Allowed values: See
+        [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
+    -   Optional
+
+-   `address`: Agency's civic address.
+    -   Attribute type: Property.
+        [PostalAddress](https://schema.org/PostalAddress)
+    -   Optional
 
 ### Example of use 1 (Normalized Format)
 
@@ -81,13 +95,13 @@ It shall point to the URL of the original GTFS feed used to generate this Entity
 
 ```json
 {
-  "id": "urn:ngsi-ld:gtfs:Agency:Malaga_EMT",
-  "type": "gtfs:Agency",
-  "name": "Empresa Malagueña de Transportes",
-  "page": "http://www.emtmalaga.es/",
-  "timezone": "Europe/Madrid",
-  "language": "ES",
-  "source": "http://datosabiertos.malaga.eu/dataset/lineas-y-horarios-bus-google-transit/resource/24e86888-b91e-45bf-a48c-09855832fd52"
+    "id": "urn:ngsi-ld:gtfs:Agency:Malaga_EMT",
+    "type": "gtfs:Agency",
+    "name": "Empresa Malagueña de Transportes",
+    "page": "http://www.emtmalaga.es/",
+    "timezone": "Europe/Madrid",
+    "language": "ES",
+    "source": "http://datosabiertos.malaga.eu/dataset/lineas-y-horarios-bus-google-transit/resource/24e86888-b91e-45bf-a48c-09855832fd52"
 }
 ```
 
@@ -95,19 +109,17 @@ It shall point to the URL of the original GTFS feed used to generate this Entity
 
 ### Properties
 
-| GTFS Field              | NGSI Attribute      | LinkedGTFS          | Comment                                                      |
-|:----------------------- |:--------------------|:------------------- |:-------------------------------------------------------------|
-| `agency_name`           | `name`              | `foaf:name`         |                                                            |
-| `agency_url`            | `page`              | `foaf:page`         |                                                            |
-| `agency_timezone`       | `timezone`          | `gtfs:timezone`     |                                                            |
-| `agency_phone`          | `phone`             | `foaf:phone`        |                                                            |
-| `agency_lang`           | `language`          | `dct:language`      |                                                            |
-|                         | `address`           |                     | Agency's [address](https://schema.org/address). Schema.org |
-
+| GTFS Field        | NGSI Attribute | LinkedGTFS      | Comment                                                    |
+| :---------------- | :------------- | :-------------- | :--------------------------------------------------------- |
+| `agency_name`     | `name`         | `foaf:name`     |                                                            |
+| `agency_url`      | `page`         | `foaf:page`     |                                                            |
+| `agency_timezone` | `timezone`     | `gtfs:timezone` |                                                            |
+| `agency_phone`    | `phone`        | `foaf:phone`    |                                                            |
+| `agency_lang`     | `language`     | `dct:language`  |                                                            |
+|                   | `address`      |                 | Agency's [address](https://schema.org/address). Schema.org |
 
 ### Relationships
 
 None
 
 ### Open issues
-

@@ -1,137 +1,176 @@
 # Streetlight
 
-An entity of type `Streetlight` represents a urban streetlight. Actually, there will be an entity of type `Streetlight` per lamp. Thus,
-if a particular pole holds more than one lantern there will be as many streetlight entites as installed lamps. As a result there might be more than
-one streetlight entity per location.
-A `Steeetlight` entity does not contain any attribute corresponding to structural characteristics.
-Such data is captured by entities of type `StreetlightModel`.
+An entity of type `Streetlight` represents a urban streetlight. Actually, there
+will be an entity of type `Streetlight` per lamp. Thus, if a particular pole
+holds more than one lantern there will be as many streetlight entites as
+installed lamps. As a result there might be more than one streetlight entity per
+location. A `Steeetlight` entity does not contain any attribute corresponding to
+structural characteristics. Such data is captured by entities of type
+`StreetlightModel`.
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id` : Entity's unique identifier.
+-   `id` : Entity's unique identifier.
 
-+ `type` : It must be equal to `Streetlight`.
+-   `type` : It must be equal to `Streetlight`.
 
-+ `location` : Streetlight's location represented by a GeoJSON Point.
-    + Attribute type: `geo:json`.
-    + Normative References: [https://tools.ietf.org/html/draft-ietf-geojson-03](https://tools.ietf.org/html/draft-ietf-geojson-03)
-    + Mandatory if `address` is not present.
+-   `location` : Streetlight's location represented by a GeoJSON Point.
 
-+ `address` : Civic address where the streetlight is located.
-    + Normative References: [https://schema.org/address](https://schema.org/address)
-    + Mandatory if `location` is not present.
+    -   Attribute type: `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/draft-ietf-geojson-03](https://tools.ietf.org/html/draft-ietf-geojson-03)
+    -   Mandatory if `address` is not present.
 
-+ `areaServed` : Higher level area to which this streetlight belongs to. It can be used to group streetlights per
-responsible, district, neighbourhood, etc.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
+-   `address` : Civic address where the streetlight is located.
 
-+ `circuit` : The circuit to which this streetlight connects to and gets power from.
-Typically it will contain an identifier that will allow to obtain more information about such circuit.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Optional
+    -   Normative References:
+        [https://schema.org/address](https://schema.org/address)
+    -   Mandatory if `location` is not present.
 
-+ `refStreetlightModel` : Streetlight's model.
-    + Attribute type : Reference to a [StreetlightModel](../../StreetlightModel/doc/spec.md) entity.
-    + Optional
+-   `areaServed` : Higher level area to which this streetlight belongs to. It
+    can be used to group streetlights per responsible, district, neighbourhood,
+    etc. + Attribute type: [Text](https://schema.org/Text) + Optional
 
-+ `refStreetlightControlCabinet` : If this streetlight is individually controlled, reference to the control cabinet in charge of.
-    + Attribute type : Reference to a [StreetlightControlCabinet](../../StreetlightControlCabinet/doc/spec.md) entity.
-    + Optional
+-   `circuit` : The circuit to which this streetlight connects to and gets power
+    from. Typically it will contain an identifier that will allow to obtain more
+    information about such circuit. + Attribute type:
+    [Text](http://schema.org/Text) + Optional
 
-+ `status` : The overall status of this street light.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Allowed values: one Of (`ok`, `defectiveLamp`, `columnIssue`, `brokenLantern`)
-        + Or any other value meaningful to the application and not covered by the values above.
-    + Attribute metadata:
-        + `timestamp`: Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Mandatory
+-   `refStreetlightModel` : Streetlight's model.
 
-+ `powerState` : Streetlight's power state.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Attribute metadata:
-        + `timestamp` : Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
-    + Optional
+    -   Attribute type : Reference to a
+        [StreetlightModel](../../StreetlightModel/doc/spec.md) entity.
+    -   Optional
 
-+ `refStreetlightGroup` : Streetlight's group, if this streetlight belongs to any group.
-    + Attribute type : Reference to a [StreetlightGroup](../../StreetlightGroup/doc/spec.md) entity.
-    + Optional
+-   `refStreetlightControlCabinet` : If this streetlight is individually
+    controlled, reference to the control cabinet in charge of.
 
-+ `dateLastLampChange` : Timestamp of the last change of lamp made. If `null` it will mean that the lamp has never been changed.
-    + Attribute Type: [DateTime](http://schema.org/DateTime)
-    + Attribute metadata:
-        + `timestamp` : Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Optional
+    -   Attribute type : Reference to a
+        [StreetlightControlCabinet](../../StreetlightControlCabinet/doc/spec.md)
+        entity.
+    -   Optional
 
-+ `dateLastSwitchingOn` : Timestamp of the last switching on.
-    + Attribute Type: [DateTime](http://schema.org/DateTime)
-    + Attribute metadata:
-        + `timestamp` : Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Optional
+-   `status` : The overall status of this street light.
 
-+ `dateLastSwitchingOff` : Timestamp of the last switching off.
-    + Attribute Type: [DateTime](http://schema.org/DateTime)
-    + Attribute metadata:
-        + `timestamp` : Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed values: one Of (`ok`, `defectiveLamp`, `columnIssue`,
+        `brokenLantern`)
+        -   Or any other value meaningful to the application and not covered by
+            the values above.
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Mandatory
 
-+ `controllingMethod` : The method used to control this streetlight.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Allowed values: one Of (`group`, `individual`)
-    + Optional
+-   `powerState` : Streetlight's power state.
 
-+ `dateModified` : Timestamp of the last update made to this entity
-    + Attribute Type: [DateTime](http://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Attribute metadata:
+        -   `timestamp` : Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
+    -   Optional
 
-+ `dateServiceStarted` : Date at which the streetlight started giving service.
-    + Attribute Type: [Date](http://schema.org/Date)
-    + Optional
+-   `refStreetlightGroup` : Streetlight's group, if this streetlight belongs to
+    any group.
 
-+ `image` : A URL containing a photo of the streetlight.
-    + Normative References: [https://schema.org/image](https://schema.org/image)
-    + Optional
+    -   Attribute type : Reference to a
+        [StreetlightGroup](../../StreetlightGroup/doc/spec.md) entity.
+    -   Optional
 
-+ `description` : Description about the streetlight.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+-   `dateLastLampChange` : Timestamp of the last change of lamp made. If `null`
+    it will mean that the lamp has never been changed.
 
-+ `annotations` : A field reserved for annotations (incidences, remarks, etc.).
-    + Attribute type: List of [Text](https://schema.org/Text)
-    + Optional
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp` : Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
-+ `locationCategory` : Category of the location where the streetlight is placed.
-    + Attribute type:
-    + Allowed values: oneOf (`façade`, `sidewalk`, `pedestrianPath`, `road`, `playground`,
-    `park`, `garden`, `bridge`, `tunnel`, `parking`, `centralIsland`)
-        + Or any other value with semantics not covered by the above list.
+-   `dateLastSwitchingOn` : Timestamp of the last switching on.
 
-+ `lanternHeight` : Lantern's height. In columns with many arms this can vary between streetlights. Another variation source
-of this property are wall-mounted streetlights.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Meters.
-    + Optional
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp` : Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
-+ `illuminanceLevel` : Relative illuminance level setting.
-    + Attribute Type: [Number](http://schema.org/Number)
-    + Allowed values: A number between 0 and 1.
-    + Attribute metadata:
-        + `timestamp`: Timestamp when the last update of the attribute happened.
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Optional
+-   `dateLastSwitchingOff` : Timestamp of the last switching off.
 
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp` : Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+-   `controllingMethod` : The method used to control this streetlight.
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed values: one Of (`group`, `individual`)
+    -   Optional
+
+-   `dateModified` : Timestamp of the last update made to this entity
+
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `dateServiceStarted` : Date at which the streetlight started giving service.
+
+    -   Attribute Type: [Date](http://schema.org/Date)
+    -   Optional
+
+-   `image` : A URL containing a photo of the streetlight.
+
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
+
+-   `description` : Description about the streetlight.
+
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
+
+-   `annotations` : A field reserved for annotations (incidences, remarks,
+    etc.).
+
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Optional
+
+-   `locationCategory` : Category of the location where the streetlight is
+    placed.
+
+    -   Attribute type:
+    -   Allowed values: oneOf (`façade`, `sidewalk`, `pedestrianPath`, `road`,
+        `playground`, `park`, `garden`, `bridge`, `tunnel`, `parking`,
+        `centralIsland`) + Or any other value with semantics not covered by the
+        above list.
+
+-   `lanternHeight` : Lantern's height. In columns with many arms this can vary
+    between streetlights. Another variation source of this property are
+    wall-mounted streetlights. + Attribute type:
+    [Number](https://schema.org/Number) + Default unit: Meters. + Optional
+
+-   `illuminanceLevel` : Relative illuminance level setting.
+    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Allowed values: A number between 0 and 1.
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of Use
 
@@ -156,7 +195,7 @@ mode (`options=keyValues`).
 
 ## Test it with a real service
 
-
 ## Open Issues
 
-+ Initially is not considered practical to monitor individual power consumptions
+-   Initially is not considered practical to monitor individual power
+    consumptions

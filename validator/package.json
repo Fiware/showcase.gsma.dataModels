@@ -53,8 +53,8 @@
 		"lint": "eslint . --cache --fix",
 		"precommit": "lint-staged",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
-		"prettier:text": "prettier '../*.md' '../specs/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",
-		"lint:text": "textlint 'README.md' '../specs/*.md'"
+		"prettier:text": "prettier '../*.md' '../specs/*.md' '../specs/**/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",
+		"lint:text": "textlint 'README.md' '../specs/*.md' '../specs/**/*.md'"
 	},
 	"husky": {
 		"hooks": {

@@ -1,14 +1,13 @@
 # Building
 
-This entity contains a harmonised description of a Building. This entity is 
+This entity contains a harmonised description of a Building. This entity is
 associated with the vertical segments of smart homes, smart cities, industry and
 related IoT applications.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
-means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
-API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 

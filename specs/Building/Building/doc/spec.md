@@ -2,7 +2,7 @@
 
 ## Description
 
-This entity contains a harmonised description of a Building. This entity is 
+This entity contains a harmonised description of a Building. This entity is
 associated with the vertical segments of smart homes, smart cities, industry and
 related IoT applications.
 
@@ -10,76 +10,86 @@ This data model has been partially developed in cooperation with mobile
 operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/),
 compared to GSMA data model following changes are introduced:
 
-* the reference to `BuildingType` is removed, since `BuildingType` compared
-  to `category` attribute does not introduce significant information.
+-   the reference to `BuildingType` is removed, since `BuildingType` compared to
+    `category` attribute does not introduce significant information.
 
-* `category` attribute is required.
+-   `category` attribute is required.
 
-* `openingHours` is introduced following schema.org data model to allow
-  fine-grained on building opening times. GSMA supported this as free text
-  in the `notes` attribute (removed as well).
+-   `openingHours` is introduced following schema.org data model to allow
+    fine-grained on building opening times. GSMA supported this as free text in
+    the `notes` attribute (removed as well).
 
-* `refSubscriptionService` is not supported, since `SubscriptionService` model
-  is not supported currently.
+-   `refSubscriptionService` is not supported, since `SubscriptionService` model
+    is not supported currently.
 
 ## Data Model
 
 For a full description of the following attributes refer to GSMA
 [IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf)
 
-+ `id`
+-   `id`
 
-+ `type`
+-   `type`
 
-+ `dateModified` : Last update timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `dateModified` : Last update timestamp of this entity.
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `owner`
-    + Optional
+-   `dateCreated` : Entity's creation timestamp.
 
-+ `category`
-    + Required
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `location`
-    + Optional.
+-   `owner`
 
-+ `containedInPlace`
-    + Optional.
+    -   Optional
 
-+ `address`
-    + Required
- 
-+ `description`
-    + Optional
+-   `category`
 
-+ `occupier`
-    + Optional
+    -   Required
 
-+ `floorsAboveGround`
-    + Optional
+-   `location`
 
-+ `floorsBelowGround`
-    + Optional
+    -   Optional.
 
-+ `refMap`
-    + Optional
+-   `containedInPlace`
+
+    -   Optional.
+
+-   `address`
+
+    -   Required
+
+-   `description`
+
+    -   Optional
+
+-   `occupier`
+
+    -   Optional
+
+-   `floorsAboveGround`
+
+    -   Optional
+
+-   `floorsBelowGround`
+
+    -   Optional
+
+-   `refMap`
+    -   Optional
 
 The following attribute has been introduced:
 
-+ `openingHours` : The number of floors above ground level in this building.
-    + Attribute type: List of [Opening Hours](http://schema.org/openingHours)
-    + Optional
+-   `openingHours` : The number of floors above ground level in this building.
+    -   Attribute type: List of [Opening Hours](http://schema.org/openingHours)
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
-means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
-API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 

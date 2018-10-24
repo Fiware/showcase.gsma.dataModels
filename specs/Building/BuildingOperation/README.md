@@ -1,16 +1,15 @@
 # Building Operation
 
-This entity contains a harmonised description of a generic operation (related
-to smart buildings) applied to the referenced building. The building operation
+This entity contains a harmonised description of a generic operation (related to
+smart buildings) applied to the referenced building. The building operation
 contains dynamic data reported by, or associated with a building or operations
 applicable to the building. This entity is associated with the vertical segments
 of smart homes, smart cities, industry and related IoT applications.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
-means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
-API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 

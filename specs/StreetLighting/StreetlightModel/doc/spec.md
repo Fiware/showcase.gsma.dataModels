@@ -1,156 +1,192 @@
 # Streetlight Model
 
-It represents a model of streetlight composed by a specific supporting structure model,
-a lantern model and a lamp model. A streetlight instance will be based on a certain streetlight model.
+It represents a model of streetlight composed by a specific supporting structure
+model, a lantern model and a lamp model. A streetlight instance will be based on
+a certain streetlight model.
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id` : Entity's unique identifier.
+-   `id` : Entity's unique identifier.
 
-+ `type` : It must be equal to `StreetlightModel`.
+-   `type` : It must be equal to `StreetlightModel`.
 
-+ `name` : Name given to the streetlight model.
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Mandatory
+-   `name` : Name given to the streetlight model.
 
-+ `alternateName` : Alternate name given to the streetlight model.
-    + Normative References: [https://schema.org/alternateName](https://schema.org/alternateName)
-    + Optional
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-+ `description` : Description of the streetlight model.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+-   `alternateName` : Alternate name given to the streetlight model.
 
-+ `maxPowerConsumption` : Maximum power consumption supported by the lantern.
-    + Attribute type: List of [Number](https://schema.org/Number).
-    + Default unit: Watts (W)
-    + Optional
+    -   Normative References:
+        [https://schema.org/alternateName](https://schema.org/alternateName)
+    -   Optional
 
-+ `minPowerConsumption` : Minimum power consumption supported by the lantern.
-    + Attribute type: List of [Number](https://schema.org/Number).
-    + Default unit: Watts (W)
-    + Optional
+-   `description` : Description of the streetlight model.
 
-+ `columnBrandName` : Name of the column's brand.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/brand](https://schema.org/brand)
-    + Optional
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
 
-+ `columnModelName` : Name of the column's model.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/model)
-    + Optional
+-   `maxPowerConsumption` : Maximum power consumption supported by the lantern.
 
-+ `columnManufacturerName` : Name of the column's manufacturer.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/manufacturer)
-    + Optional
+    -   Attribute type: List of [Number](https://schema.org/Number).
+    -   Default unit: Watts (W)
+    -   Optional
 
-+ `columnMadeOf` : Material column is made of.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: one Of (`steel`, `aluminium` , `wood`, `other`)
-    + Optional
+-   `minPowerConsumption` : Minimum power consumption supported by the lantern.
 
-+ `columnColor` : Column's painting color.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed Values:
-        + A color keyword as specified by [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords)
-        + A color value as specified by [W3C Color Data Type](https://www.w3.org/TR/SVG/types.html#BasicDataTypes)
-    + See also: [https://schema.org/color](https://schema.org/color)
-    + Optional
+    -   Attribute type: List of [Number](https://schema.org/Number).
+    -   Default unit: Watts (W)
+    -   Optional
 
-+ `lanternModelName` : Name of the lantern's model.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/model)
-    + Optional
+-   `columnBrandName` : Name of the column's brand.
 
-+ `lanternBrandName` : Name of the lantern's brand.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/brand](https://schema.org/brand)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/brand](https://schema.org/brand)
+    -   Optional
 
-+ `lanternManufacturerName` : Name of the lantern's manufacturer.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/manufacturer)
-    + Optional
+-   `columnModelName` : Name of the column's model.
 
-+ `lanternWeight` : Lantern's weight.
-    + Attribute type: [Number](https://schema.org/Number).
-    + Default Unit: Kilograms (kg)
-    + See also: [https://schema.org/weight](https://schema.org/weight)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/model)
+    -   Optional
 
-+ `lampModelName` : Name of the lamp's model.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/model)
-    + Optional
+-   `columnManufacturerName` : Name of the column's manufacturer.
 
-+ `lampBrandName` : Name of the lamp's brand.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/brand)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/manufacturer)
+    -   Optional
 
-+ `lampManufacturerName` : Name of the lamp's manufacturer.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/manufacturer)
-    + Optional
+-   `columnMadeOf` : Material column is made of.
 
-+ `lampWeight` : Lamp's weight.
-    + Attribute type: [Number](https://schema.org/Number).
-    + Default Unit: Kilograms (kg)
-    + See also: [https://schema.org/weight](https://schema.org/weight)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: one Of (`steel`, `aluminium` , `wood`, `other`)
+    -   Optional
 
-+ `workingLife` : The estimated number of hours working (the lamp) without failure.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: hours
-    + Optional
+-   `columnColor` : Column's painting color.
 
-+ `lampTechnology` : Technology used by the lamp.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: one Of (`LED`, `LPS`, `HPS`)
-        + Or any other value not covered by the above list and meaningful to the application.
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed Values:
+        -   A color keyword as specified by
+            [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords)
+        -   A color value as specified by
+            [W3C Color Data Type](https://www.w3.org/TR/SVG/types.html#BasicDataTypes)
+    -   See also: [https://schema.org/color](https://schema.org/color)
+    -   Optional
 
-+ `colorTemperature` : *Correlated* color temperature of the lamp.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kelvin degrees (K)
-    + Optional
+-   `lanternModelName` : Name of the lantern's model.
 
-+ `colorRenderingIndex` : Color rendering index of the lamp.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/model)
+    -   Optional
 
-+ `luminousFlux` :  Maximum light output which can be provided by the lamp.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Lumens (lm)
-    + Optional
+-   `lanternBrandName` : Name of the lantern's brand.
 
-+ `powerConsumption` : (Nominal) power consumption made by the lamp.
-    + Attribute type: List of [Number](https://schema.org/Number).
-    + Default unit: Watts (W)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/brand](https://schema.org/brand)
+    -   Optional
 
-+ `compliantWith` : A list of standards to which this streetlight model is compliant with.
-    + AttributeType: List of [Text](https://schema.org/Text).
-    + Optional
+-   `lanternManufacturerName` : Name of the lantern's manufacturer.
 
-+ `image` :  A URL containing a photo of the streetlight model.
-    + Normative References: [https://schema.org/image](https://schema.org/image)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/manufacturer)
+    -   Optional
 
-+ `category` : Type of asset which implements the street light.
-    + AttributeType: List of [Text](https://schema.org/Text).
-    + Allowed Values: (`postTop`, `bollard`, `lamppost`, `lightTower`,
-    `flashingBeacon`, `sideEntry`, `signLight`, `ornamentalLantern`)
-        + Or any other value not defined above and meaningful for the application
-    + Optional
+-   `lanternWeight` : Lantern's weight.
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Kilograms (kg)
+    -   See also: [https://schema.org/weight](https://schema.org/weight)
+    -   Optional
+
+-   `lampModelName` : Name of the lamp's model.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/model)
+    -   Optional
+
+-   `lampBrandName` : Name of the lamp's brand.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/brand)
+    -   Optional
+
+-   `lampManufacturerName` : Name of the lamp's manufacturer.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/manufacturer)
+    -   Optional
+
+-   `lampWeight` : Lamp's weight.
+
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Kilograms (kg)
+    -   See also: [https://schema.org/weight](https://schema.org/weight)
+    -   Optional
+
+-   `workingLife` : The estimated number of hours working (the lamp) without
+    failure.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: hours
+    -   Optional
+
+-   `lampTechnology` : Technology used by the lamp.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: one Of (`LED`, `LPS`, `HPS`)
+        -   Or any other value not covered by the above list and meaningful to
+            the application.
+    -   Optional
+
+-   `colorTemperature` : _Correlated_ color temperature of the lamp.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Kelvin degrees (K)
+    -   Optional
+
+-   `colorRenderingIndex` : Color rendering index of the lamp.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Optional
+
+-   `luminousFlux` : Maximum light output which can be provided by the lamp.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Lumens (lm)
+    -   Optional
+
+-   `powerConsumption` : (Nominal) power consumption made by the lamp.
+
+    -   Attribute type: List of [Number](https://schema.org/Number).
+    -   Default unit: Watts (W)
+    -   Optional
+
+-   `compliantWith` : A list of standards to which this streetlight model is
+    compliant with.
+
+    -   AttributeType: List of [Text](https://schema.org/Text).
+    -   Optional
+
+-   `image` : A URL containing a photo of the streetlight model.
+
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
+
+-   `category` : Type of asset which implements the street light.
+    -   AttributeType: List of [Text](https://schema.org/Text).
+    -   Allowed Values: (`postTop`, `bollard`, `lamppost`, `lightTower`,
+        `flashingBeacon`, `sideEntry`, `signLight`, `ornamentalLantern`) + Or
+        any other value not defined above and meaningful for the application
+    -   Optional
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of Use
 
@@ -172,9 +208,6 @@ mode (`options=keyValues`).
       "category": ["postTop"]
     }
 
-
 ## Test it with a real service
 
-
 ## Open issues
-

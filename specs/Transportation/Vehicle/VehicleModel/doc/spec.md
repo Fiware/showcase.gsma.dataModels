@@ -2,105 +2,141 @@
 
 ## Description
 
-This entity models a particular vehicle model, including all properties which are common to multiple vehicle instances belonging to such model.
+This entity models a particular vehicle model, including all properties which
+are common to multiple vehicle instances belonging to such model.
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id` : Entity's unique identifier.
+-   `id` : Entity's unique identifier.
 
-+ `type` : Entity type. It must be equal to `VehicleModel`.
+-   `type` : Entity type. It must be equal to `VehicleModel`.
 
-+ `name` : Name given to this vehicle model.
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Mandatory
+-   `name` : Name given to this vehicle model.
 
-+ `description` : Vehicle model description.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-+ `vehicleType` : Type of vehicle from the point of view of its structural characteristics.
-    + See definition at [Vehicle](../../Vehicle/doc/spec.md).
-    + Mandatory
+-   `description` : Vehicle model description.
 
-+ `brandName` : Vehicle's brand name.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/brand](https://schema.org/brand)
-    + Mandatory
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
 
-+ `modelName` : Vehicle's model name.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/model)
-    + Mandatory
+-   `vehicleType` : Type of vehicle from the point of view of its structural
+    characteristics.
 
-+ `manufacturerName` : Vehicle's manufacturer name.
-    + Attribute type: [Text](https://schema.org/Text)
-    + See also: [https://schema.org/model](https://schema.org/model)
-    + Mandatory
+    -   See definition at [Vehicle](../../Vehicle/doc/spec.md).
+    -   Mandatory
 
-+ `vehicleModelDate` : The release date of a vehicle model (often used to differentiate versions of the same make and model).
-    + Normative References: [https://schema.org/vehicleModelDate](https://schema.org/vehicleModelDate)
-    + Optional
+-   `brandName` : Vehicle's brand name.
 
-+ `cargoVolume` : The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.
-    + Normative References: [https://schema.org/cargoVolume](https://schema.org/cargoVolume)
-    + Default Unit: Liters
-    + Optional
-    + Note: If only a single value is provided (type Number) it will refer to the maximum volume.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/brand](https://schema.org/brand)
+    -   Mandatory
 
-+ `fuelType` : The type of fuel suitable for the engine or engines of the vehicle.
-    + Normative References: [https://schema.org/fuelType](https://schema.org/fuelType)
-    + Allowed values: one Of (`gasoline`, `petrol(unleaded)`, `petrol(leaded)`, `petrol`, `diesel`, `electric`,
-    `hydrogen`, `lpg`, `autogas`, `cng`, `biodiesel` `ethanol`, `hybrid electric/petrol`, `hybrid electric/diesel`, `other`)
-    + Optional
+-   `modelName` : Vehicle's model name.
 
-+ `fuelConsumption` : The amount of fuel consumed for traveling a particular distance or temporal
-duration with the given vehicle (e.g. liters per 100 km).
-    + Normative References: [https://schema.org/fuelConsumption](https://schema.org/fuelConsumption)
-    + Default unit: liters per 100 kilometer.
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/model)
+    -   Mandatory
 
-+ `height` : Vehicle's height.
-    + Normative References: [https://schema.org/height](https://schema.org/height)
-    + Optional
+-   `manufacturerName` : Vehicle's manufacturer name.
 
-+ `width` : Vehicle's width.
-    + Normative References: [https://schema.org/width](https://schema.org/width)
-    + Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/model)
+    -   Mandatory
 
-+ `depth` : Vehicle's depth.
-    + Normative References: [https://schema.org/width](https://schema.org/depth)
-    + Optional
+-   `vehicleModelDate` : The release date of a vehicle model (often used to
+    differentiate versions of the same make and model).
 
-+ `weight` : Vehicle's weight.
-    + Normative References: [https://schema.org/weight](https://schema.org/weight)
-    + Optional
+    -   Normative References:
+        [https://schema.org/vehicleModelDate](https://schema.org/vehicleModelDate)
+    -   Optional
 
-+ `vehicleEngine` : Information about the engine or engines of the vehicle.
-    + Normative References: [https://schema.org/vehicleEngine](https://schema.org/vehicleEngine)
-    + Optional
-    + Note: This property could be at vehicle level as well.
+-   `cargoVolume` : The available volume for cargo or luggage. For automobiles,
+    this is usually the trunk volume.
 
-+ `url` : URL which provides a description of this vehicle model.
-    + Normative References: [https://schema.org/url](https://schema.org/url)
-    + Optional
+    -   Normative References:
+        [https://schema.org/cargoVolume](https://schema.org/cargoVolume)
+    -   Default Unit: Liters
+    -   Optional
+    -   Note: If only a single value is provided (type Number) it will refer to
+        the maximum volume.
 
-+ `image`: Image which depicts this vehicle model.
-    + Normative References: [https://schema.org/image](https://schema.org/image)
-    + Optional
+-   `fuelType` : The type of fuel suitable for the engine or engines of the
+    vehicle.
 
-+ `dateModified` : Last update timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Normative References:
+        [https://schema.org/fuelType](https://schema.org/fuelType)
+    -   Allowed values: one Of (`gasoline`, `petrol(unleaded)`,
+        `petrol(leaded)`, `petrol`, `diesel`, `electric`, `hydrogen`, `lpg`,
+        `autogas`, `cng`, `biodiesel` `ethanol`, `hybrid electric/petrol`,
+        `hybrid electric/diesel`, `other`)
+    -   Optional
 
-+ `dateCreated` : Creation timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `fuelConsumption` : The amount of fuel consumed for traveling a particular
+    distance or temporal duration with the given vehicle (e.g. liters per 100
+    km). + Normative References:
+    [https://schema.org/fuelConsumption](https://schema.org/fuelConsumption) +
+    Default unit: liters per 100 kilometer. + Optional
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+-   `height` : Vehicle's height.
+
+    -   Normative References:
+        [https://schema.org/height](https://schema.org/height)
+    -   Optional
+
+-   `width` : Vehicle's width.
+
+    -   Normative References:
+        [https://schema.org/width](https://schema.org/width)
+    -   Optional
+
+-   `depth` : Vehicle's depth.
+
+    -   Normative References:
+        [https://schema.org/width](https://schema.org/depth)
+    -   Optional
+
+-   `weight` : Vehicle's weight.
+
+    -   Normative References:
+        [https://schema.org/weight](https://schema.org/weight)
+    -   Optional
+
+-   `vehicleEngine` : Information about the engine or engines of the vehicle.
+
+    -   Normative References:
+        [https://schema.org/vehicleEngine](https://schema.org/vehicleEngine)
+    -   Optional
+    -   Note: This property could be at vehicle level as well.
+
+-   `url` : URL which provides a description of this vehicle model.
+
+    -   Normative References: [https://schema.org/url](https://schema.org/url)
+    -   Optional
+
+-   `image`: Image which depicts this vehicle model.
+
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
+
+-   `dateModified` : Last update timestamp of this entity.
+
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `dateCreated` : Creation timestamp of this entity.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of Use 1 (Normalized Format)
 
@@ -148,7 +184,6 @@ mode (`options=keyValues`).
 
 ## Test it with a real service
 
-
 ## Open issues
 
-* Model fuelConsumption depending on the situation (urban or road)
+-   Model fuelConsumption depending on the situation (urban or road)

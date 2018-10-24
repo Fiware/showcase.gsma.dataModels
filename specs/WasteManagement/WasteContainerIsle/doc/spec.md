@@ -8,65 +8,79 @@ A geographical area which keeps one or more waste containers.
 
 The data model is defined as shown below:
 
-+ `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-+ `type` : Entity type. It must be equal to `WasteContainerIsle`.
+-   `type` : Entity type. It must be equal to `WasteContainerIsle`.
 
-+ `location` : Location of the isle represented by a GeoJSON Polygon.
-    + Attribute type: `geo:json`.
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory
+-   `location` : Location of the isle represented by a GeoJSON Polygon.
 
-+ `address` : Civic address where the isle is located.
-    + Normative References: [https://schema.org/address](https://schema.org/address)
-    + Optional
+    -   Attribute type: `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory
 
-+ `name` : Name given to the isle
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Optional
+-   `address` : Civic address where the isle is located.
 
-+ `description` : Description about the isle.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+    -   Normative References:
+        [https://schema.org/address](https://schema.org/address)
+    -   Optional
 
-+ `insertHolesNumber` : Number of insert holes the isle has.
-    + Attribute type: [Number](https://schema.org/Number).
-    + Optional
+-   `name` : Name given to the isle
 
-+ `features` : A list of features provided by the isle.
-    + Attribute type: List of [Text](http://schema.org/Text).
-    + Allowed values:
-        + `containerFix`. Allows to fix containers to a permanent position.
-        + `fenced`. The isle is properly fenced.
-        + `underground`. The isle allows to hold buried containers.
-        + Any other value meaningful to the application.
-    + Optional
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Optional
 
-+ `refWasteContainer` : List of containers present in the isle.
-    + Attribute type: List of references to [WasteContainer](../../WasteContainer/doc/spec.md) entities.
-    + Allowed values. Container's id.
-    + Optional
+-   `description` : Description about the isle.
 
-+ `areaServed` : Higher level area to which the isle belongs to. It can be used to group isles per
-responsible, district, neighbourhood, etc.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
 
-+ `dateModified` : Last update timestamp of this entity
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `insertHolesNumber` : Number of insert holes the isle has.
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Optional
 
-+ `availableSince` : Creation timestamp of the isle (This might different than the entity creation time)
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
+-   `features` : A list of features provided by the isle.
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+    -   Attribute type: List of [Text](http://schema.org/Text).
+    -   Allowed values:
+        -   `containerFix`. Allows to fix containers to a permanent position.
+        -   `fenced`. The isle is properly fenced.
+        -   `underground`. The isle allows to hold buried containers.
+        -   Any other value meaningful to the application.
+    -   Optional
+
+-   `refWasteContainer` : List of containers present in the isle.
+
+    -   Attribute type: List of references to
+        [WasteContainer](../../WasteContainer/doc/spec.md) entities.
+    -   Allowed values. Container's id.
+    -   Optional
+
+-   `areaServed` : Higher level area to which the isle belongs to. It can be
+    used to group isles per responsible, district, neighbourhood, etc. +
+    Attribute type: [Text](https://schema.org/Text) + Optional
+
+-   `dateModified` : Last update timestamp of this entity
+
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `dateCreated` : Entity's creation timestamp.
+
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `availableSince` : Creation timestamp of the isle (This might different than
+    the entity creation time)
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Example
 
