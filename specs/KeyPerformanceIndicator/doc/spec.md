@@ -7,7 +7,7 @@ engages.
 
 The present data model defines a type of NGSI entity which captures the value
 and associated details of a key performance indicator. The data model is
-flexible enough to accomodate different usage scenarios: An entity per KPI
+flexible enough to accommodate different usage scenarios: An entity per KPI
 calculation or a unique entity per KPI which value evolves along time. Please
 note that in the latter case a historical module, such as the STH, would have to
 take care of the KPI evolution.

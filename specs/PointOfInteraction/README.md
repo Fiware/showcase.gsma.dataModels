@@ -2,7 +2,7 @@
 
 As an alternative or extension to traditional interactive points (shopping
 malls, museums, airports, etc.), a Smart Point of Interaction use technologies
-such as Bluetooth Low Energy or WiFi to bring new interactions to user's devices
+such as Bluetooth Low Energy or Wi-Fi to bring new interactions to user's devices
 (smartphones, wearables, etc.).
 
 A smart point of interaction is composed mainly by two entities:

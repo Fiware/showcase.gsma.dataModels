@@ -89,7 +89,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Degrees centigrades.
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -100,7 +100,7 @@ A JSON Schema corresponding to this data model can be found
     -   Allowed values: A number between `0` and `1`.
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -110,7 +110,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Liters per square meter.
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -121,7 +121,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Decimal degrees
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -131,7 +131,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: meters per second
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -142,7 +142,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Hecto Pascals
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -162,7 +162,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Watts per square meter
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -173,7 +173,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Lux
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 

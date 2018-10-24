@@ -92,7 +92,7 @@ acoustic measurand name, as follows:
     `LAmax`. It must correspond to a term defined at
     [http://www.acoustic-glossary.co.uk/definitions-l.htm](http://www.acoustic-glossary.co.uk/definitions-l.htm),
     with the only exception that those measurands which name contains a `,`
-    char, such char shall be substituded by the `_` char. For instance, the
+    char, such char shall be substituted by the `_` char. For instance, the
     measurand "LAeq,d" shall be represented by an Attribute which name shall be
     `LAeq_d`.
 -   Attribute type: [Number](https://schema.org/Number)

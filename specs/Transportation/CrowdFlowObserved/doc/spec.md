@@ -8,7 +8,7 @@ An observation related to the movement of people at a certain place and time.
 
 The data model is defined as shown below:
 
--   `id`: Entity id.
+-   `id`: Entity ID.
 
     -   It shall be `urn:ngsi-ld:CrowdFlowObserved:<identifier>` being
         `identifier` a unique identifier.

@@ -115,7 +115,7 @@ The data model is defined as shown below:
 
 -   `url` : URL which provides a description of this vehicle model.
 
-    -   Normative References: [https://schema.org/url](https://schema.org/url)
+    -   Normative References: [https://schema.org/URL](https://schema.org/url)
     -   Optional
 
 -   `image`: Image which depicts this vehicle model.

@@ -9,7 +9,7 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity id.
+-   `id`: Entity ID.
 
     -   It shall be `urn:ngsi-ld:gtfs:StopTime:<stop_time_identifier>` being
         `stop_time_identifier` a value that can be derived from GTFS `trip_id`

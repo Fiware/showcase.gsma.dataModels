@@ -111,7 +111,7 @@ model adds the following property (please note it has been pluralized, to keep
 consistency with `ServiceType`):
 
 -   `attributes` : It is a dictionary with a key per attribute defined by the
-    corresponding `ServiceType`. The key value is always an array of strings. If
+    corresponding `ServiceType`. The key-value is always an array of strings. If
     an attribute is singled valued then such array will only contain one
     element. + Attribute type:
     [StructuredValue](https://schema.org/StructuredValue). + Optional

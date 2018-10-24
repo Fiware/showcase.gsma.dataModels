@@ -9,7 +9,7 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity id.
+-   `id`: Entity ID.
 
     -   It shall be `urn:ngsi-ld:gtfs:Agency:<agency_identifier>` being
         `agency_identifier` a value that can be derived from GTFS `agency_id`.

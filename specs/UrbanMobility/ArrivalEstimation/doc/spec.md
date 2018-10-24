@@ -10,7 +10,7 @@ route.
 
 The data model is defined as shown below:
 
--   `id`: Entity Id
+-   `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:ArrivalEstimation:<identifier>`.
 

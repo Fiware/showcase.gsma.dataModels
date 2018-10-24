@@ -11,7 +11,7 @@ It is a GTFS `stop` which `location_type` is equal to `1`.
 
 The data model is defined as shown below:
 
--   `id`: Entity Id
+-   `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:Station:<station_identifier>` being
         `station_identifier` a value that can derived from the `stop_id` field.

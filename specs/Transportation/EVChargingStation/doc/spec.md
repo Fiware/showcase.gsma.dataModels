@@ -13,7 +13,7 @@ A JSON Schema corresponding to this data model can be found
 
 -   `id` : Unique identifier. It shall be a URN in the form
     `urn:ngsi-ld:EVChargingStation:<identifier>` where `<identifier>` shall be a
-    unique id string.
+    unique ID string.
 
 -   `type` : Entity type. It must be equal to `EVChargingStation`.
 

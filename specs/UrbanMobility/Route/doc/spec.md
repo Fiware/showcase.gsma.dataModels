@@ -9,7 +9,7 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity id.
+-   `id`: Entity ID.
 
     -   It shall be `urn:ngsi-ld:gtfs:Route:<route_identifier>` being
         `route_identifier` a value that can be derived from GTFS `route_id`.

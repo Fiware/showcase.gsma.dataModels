@@ -18,7 +18,7 @@ The following scripts are present:
 -   `barcelona_air_quality_harvest.py`.- A data harvest and harmonization
     program for official Barcelona's Air Quality Data provided by Catalonia's
     Government.
--   `madrid_air_quality.py` .- Offers both an NGSIv2 end point and NGSI10 to
+-   `madrid_air_quality.py` .- Offers both an NGSIv2 endpoint and NGSI10 to
     provide ambient observed data (outdated)
 -   `ngsi_helper.py` .- Contains helper functions to support the NGSI protocol
     (outdated)

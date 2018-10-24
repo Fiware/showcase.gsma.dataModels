@@ -55,7 +55,7 @@ The data model is defined as shown below:
 
     -   Attribute type: List of references to
         [WasteContainer](../../WasteContainer/doc/spec.md) entities.
-    -   Allowed values. Container's id.
+    -   Allowed values. Container's ID.
     -   Optional
 
 -   `areaServed` : Higher level area to which the isle belongs to. It can be

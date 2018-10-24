@@ -9,7 +9,7 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity Id
+-   `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`.
 

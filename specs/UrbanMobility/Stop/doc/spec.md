@@ -11,7 +11,7 @@ It represents a GTFS `stop` which `location_type` shall be equal to `0`.
 
 The data model is defined as shown below:
 
--   `id`: Entity Id
+-   `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:Stop:<stop_identifier>` being
         `stop_identifier` a value that can derived from the GTFS `stop_id`

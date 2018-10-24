@@ -54,7 +54,7 @@ The general principle guiding your adoption should be: keep it simple.
     the original source. For example, for the location, we use GeoJSON. You can
     find the exact semantics of GeoJSON schema in the related standard.
 -   Be aware that **[JSON Schemas](http://json-schema.org/) provided cover only
-    the the so called _keyValue_ representation of NGSI v2 context data**.
+    the the so called _key-value_ representation of NGSI v2 context data**.
 -   Be aware that at the time being **none of the official FIWARE Core Enablers
     enforce schema validation**. Thus, in case you want to be sure your
     application data validates correctly against a given Data Model, this is up
@@ -64,7 +64,7 @@ The general principle guiding your adoption should be: keep it simple.
 
 Each Data Model is programmatically defined using a
 [JSON Schema](http://json-schema.org/), as previously mentioned, the JSON schema
-covers only the so called _keyValue_ representation of NGSI v2 context data.
+covers only the so called _key-value_ representation of NGSI v2 context data.
 Thus the JSON Schema does not cover the _normalised_ representation of context
 data.
 
@@ -102,7 +102,7 @@ JSON object with the following syntax:
 }
 ```
 
-In the case of the keyValue format (also known as _Simplified Entity
+In the case of the key-value format (also known as _Simplified Entity
 Representation_ in the
 [NGSI v2](http://fiware.github.io/specifications/ngsiv2/stable/) specification),
 values are directly mapped to the keys, and metadata are not covered:
@@ -222,7 +222,7 @@ example from the `AirQualityObserved` Data Model:
     }
     ```
 
--   keyValue format:
+-   key-value format:
     ```json
     {
         "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",

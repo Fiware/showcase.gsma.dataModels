@@ -9,7 +9,7 @@ at certain dates.
 
 The data model is defined as shown below:
 
--   `id`: Entity Id + It shall be
+-   `id`: Entity ID + It shall be
     `urn:ngsi-ld:gtfs:Service:<service_identifier>`. It can be derived from the
     `service_id` field of
     [trips.txt](https://developers.google.com/transit/gtfs/reference/#tripstxt)

@@ -11,7 +11,7 @@ It is a GTFS `stop` which `location_type` is equal to `2`.
 
 The data model is defined as shown below:
 
--   `id`: Entity Id
+-   `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:AccessPoint:<access_point_identifier>`
         being `access_point_identifier` a value that can derived from the

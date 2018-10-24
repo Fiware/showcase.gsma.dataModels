@@ -46,7 +46,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Celsius degrees.
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 -   `soilMoistureVwc` : The observed soil moisture measured as Volumetric Water
@@ -55,7 +55,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute type: [Number](https://schema.org/Number) between 0 and 1.
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 
@@ -66,7 +66,7 @@ A JSON Schema corresponding to this data model can be found
     -   Default unit: Siemens per meter (S/m).
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
-            ommitted if the observation time is the same as the one captured by
+            omitted if the observation time is the same as the one captured by
             the `dateObserved` attribute at entity level.
     -   Optional
 

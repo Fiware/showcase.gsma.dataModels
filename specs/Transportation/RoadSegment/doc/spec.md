@@ -13,7 +13,7 @@ height, etc.).
 Lanes are identified by using integer numbers between `1` and `n`, being number
 `1` the lane to the right when going forwards. The `forward` direction is the
 direction denoted by the vector which goes from the segment's start point to the
-segment's end point. This is the same convention as the one used by
+segment's endpoint. This is the same convention as the one used by
 [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Forward_%26_backward,_left_%26_right).
 
 This entity is primarily associated with the Automotive and Smart City vertical
@@ -77,7 +77,7 @@ The data model is defined as shown below:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Mandatory
 
--   `endPoint` : The end point of this road segment encoded as a GeoJSON point.
+-   `endPoint` : The endpoint of this road segment encoded as a GeoJSON point.
 
     -   Attribute type: `geo:json`
     -   Normative References:

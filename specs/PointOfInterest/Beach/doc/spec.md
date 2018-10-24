@@ -69,7 +69,7 @@ used by applications.
 
 -   `length` : Length of this beach.
     -   Normative References:
-        [https://schema.org/lenght](https://schema.org/lenght)
+        [https://schema.org/length](https://schema.org/lenght)
     -   Default unit: meter
     -   Optional
 -   `beachType` : Type of beach according to different criteria.
