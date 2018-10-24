@@ -123,7 +123,7 @@ example from the `AirQualityObserved` Data Model:
 
 -   Normalised format:
 
-    ```json
+```json
     {
         "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
         "type": "AirQualityObserved",
@@ -220,10 +220,10 @@ example from the `AirQualityObserved` Data Model:
             "value": "moderate"
         }
     }
-    ```
+```
 
 -   key-value format:
-    ```json
+```json
     {
         "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
         "type": "AirQualityObserved",
@@ -254,7 +254,7 @@ example from the `AirQualityObserved` Data Model:
         "NO_Level": "moderate",
         "refPointOfInterest": "28079004-Pza. de España"
     }
-    ```
+```
 
 For each Data Model we provide a set of examples (in some cases also using the
 Normalised representation of NGSI v2), such examples have been validated against
