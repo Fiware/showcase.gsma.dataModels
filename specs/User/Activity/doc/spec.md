@@ -3,9 +3,9 @@
 ## Description
 
 This entity represents the current activity performed by a User. It can be used
-in different scenarios, from modeling social activities on a site (e.g.
-Federico shares a picture of his dog) to real life activities (e.g. Federico
-drives his car to work). The model is largely inspired by
+in different scenarios, from modeling social activities on a site (e.g. Federico
+shares a picture of his dog) to real life activities (e.g. Federico drives his
+car to work). The model is largely inspired by
 [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core).
 
 The model represents user activities using the following predicate structure:

@@ -36,8 +36,9 @@ A JSON Schema corresponding to this data model can be found
     -   Mandatory if `location` is not present.
 -   `refPointOfInterest` : A reference to a point of interest associated to this
     observation.
+
     -   Attribute type: Reference to an entity of type `PointOfInterest`
-    -   Optional  
+    -   Optional
 
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.

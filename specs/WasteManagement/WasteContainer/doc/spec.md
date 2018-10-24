@@ -38,8 +38,9 @@ A JSON Schema corresponding to this data model can be found
     to keep backwards compatibility with current FIWARE reference
     implementations. + Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-     + Allowed values: Interval [0,1]. + Optional
+    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+
+    -   Allowed values: Interval [0,1]. + Optional
 
 -   `fullnessThreshold` : The level at which the container will generate a
     warning (percentage, expressed in parts per one). If the filling level
@@ -52,8 +53,9 @@ A JSON Schema corresponding to this data model can be found
     to keep backwards compatibility with current FIWARE reference
     implementations. + Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-     + Allowed values: Interval [0,1]. + Optional
+    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+
+    -   Allowed values: Interval [0,1]. + Optional
 
 -   `cargoWeight` : Weight of the container load. + Attribute type:
     [Number](http://schema.org/Number) + Attribute metadata: + `timestamp`:
@@ -64,9 +66,10 @@ A JSON Schema corresponding to this data model can be found
     to keep backwards compatibility with current FIWARE reference
     implementations. + Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-     + Default Unit: Kilograms. + See also:
-    [https://schema.org/weight](https://schema.org/weight) + Optional
+    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+
+    -   Default Unit: Kilograms. + See also:
+        [https://schema.org/weight](https://schema.org/weight) + Optional
 
 -   `temperature` : Temperature inside the container. + Attribute type:
     [Number](http://schema.org/Number) + Attribute metadata: + `timestamp`:
@@ -77,8 +80,9 @@ A JSON Schema corresponding to this data model can be found
     to keep backwards compatibility with current FIWARE reference
     implementations. + Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-     + Default unit: Celsius Degrees. + Optional
+    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+
+    -   Default unit: Celsius Degrees. + Optional
 
 -   `methaneConcentration` : Methane (CH4) concentration inside the container. +
     Attribute type: [Number](http://schema.org/Number) + Attribute metadata: +
@@ -89,8 +93,9 @@ A JSON Schema corresponding to this data model can be found
     to keep backwards compatibility with current FIWARE reference
     implementations. + Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-     + Default unit: Micrograms per cubic meter. + Optional
+    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+
+    -   Default unit: Micrograms per cubic meter. + Optional
 
 -   `storedWasteOrigin` : Origin of the waste stored.
 
@@ -217,8 +222,9 @@ A JSON Schema corresponding to this data model can be found
     to keep backwards compatibility with current FIWARE reference
     implementations. + Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.  
-     + Optional
+    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+
+    -   Optional
 
 -   `color` : Container's color
 
@@ -267,8 +273,9 @@ A JSON Schema corresponding to this data model can be found
     current FIWARE reference implementations. + Attribute type:
     [DateTime](https://schema.org/DateTime). There can be production
     environmments where the attribute type is equal to the `ISO8601` string. If
-    so, it must be considered as a synonym of `DateTime`.  
-     + Optional
+    so, it must be considered as a synonym of `DateTime`.
+
+    -   Optional
 
 -   `refDevice` : Reference to the device(s) used to monitor this container.
     -   Attribute type: List of Reference to entity(ies) of type

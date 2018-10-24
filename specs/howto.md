@@ -124,136 +124,137 @@ example from the `AirQualityObserved` Data Model:
 -   Normalised format:
 
 ```json
-    {
-        "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
-        "type": "AirQualityObserved",
-        "dateObserved": {
-            "value": "2016-03-15T11:00:00/2016-03-15T12:00:00"
-        },
-        "airQualityLevel": {
-            "value": "moderate"
-        },
-        "CO": {
-            "value": 500,
-            "metadata": {
-                "unitCode": {
-                    "value": "GP"
-                }
+{
+    "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
+    "type": "AirQualityObserved",
+    "dateObserved": {
+        "value": "2016-03-15T11:00:00/2016-03-15T12:00:00"
+    },
+    "airQualityLevel": {
+        "value": "moderate"
+    },
+    "CO": {
+        "value": 500,
+        "metadata": {
+            "unitCode": {
+                "value": "GP"
             }
-        },
-        "temperature": {
-            "value": 12.2
-        },
-        "NO": {
-            "value": 45,
-            "metadata": {
-                "unitCode": {
-                    "value": "GQ"
-                }
-            }
-        },
-        "refPointOfInterest": {
-            "type": "Relationship",
-            "value": "28079004-Pza.deEspanya"
-        },
-        "windDirection": {
-            "value": 186
-        },
-        "source": {
-            "value": "http://datos.madrid.es"
-        },
-        "windSpeed": {
-            "value": 0.64
-        },
-        "SO2": {
-            "value": 11,
-            "metadata": {
-                "unitCode": {
-                    "value": "GQ"
-                }
-            }
-        },
-        "NOx": {
-            "value": 139,
-            "metadata": {
-                "unitCode": {
-                    "value": "GQ"
-                }
-            }
-        },
-        "location": {
-            "type": "geo:json",
-            "value": {
-                "type": "Point",
-                "coordinates": [-3.712247222222222, 40.423852777777775]
-            }
-        },
-        "airQualityIndex": {
-            "value": 65
-        },
-        "address": {
-            "type": "PostalAddress",
-            "value": {
-                "addressCountry": "ES",
-                "addressLocality": "Madrid",
-                "streetAddress": "Plaza de Espa\u00f1a"
-            }
-        },
-        "reliability": {
-            "value": 0.7
-        },
-        "relativeHumidity": {
-            "value": 0.54
-        },
-        "precipitation": {
-            "value": 0
-        },
-        "NO2": {
-            "value": 69,
-            "metadata": {
-                "unitCode": {
-                    "value": "GQ"
-                }
-            }
-        },
-        "CO_Level": {
-            "value": "moderate"
         }
+    },
+    "temperature": {
+        "value": 12.2
+    },
+    "NO": {
+        "value": 45,
+        "metadata": {
+            "unitCode": {
+                "value": "GQ"
+            }
+        }
+    },
+    "refPointOfInterest": {
+        "type": "Relationship",
+        "value": "28079004-Pza.deEspanya"
+    },
+    "windDirection": {
+        "value": 186
+    },
+    "source": {
+        "value": "http://datos.madrid.es"
+    },
+    "windSpeed": {
+        "value": 0.64
+    },
+    "SO2": {
+        "value": 11,
+        "metadata": {
+            "unitCode": {
+                "value": "GQ"
+            }
+        }
+    },
+    "NOx": {
+        "value": 139,
+        "metadata": {
+            "unitCode": {
+                "value": "GQ"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+            "type": "Point",
+            "coordinates": [-3.712247222222222, 40.423852777777775]
+        }
+    },
+    "airQualityIndex": {
+        "value": 65
+    },
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "addressCountry": "ES",
+            "addressLocality": "Madrid",
+            "streetAddress": "Plaza de Espa\u00f1a"
+        }
+    },
+    "reliability": {
+        "value": 0.7
+    },
+    "relativeHumidity": {
+        "value": 0.54
+    },
+    "precipitation": {
+        "value": 0
+    },
+    "NO2": {
+        "value": 69,
+        "metadata": {
+            "unitCode": {
+                "value": "GQ"
+            }
+        }
+    },
+    "CO_Level": {
+        "value": "moderate"
     }
+}
 ```
 
 -   key-value format:
+
 ```json
-    {
-        "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
-        "type": "AirQualityObserved",
-        "address": {
-            "addressCountry": "ES",
-            "addressLocality": "Madrid",
-            "streetAddress": "Plaza de España"
-        },
-        "dateObserved": "2016-03-15T11:00:00/2016-03-15T12:00:00",
-        "location": {
-            "type": "Point",
-            "coordinates": [-3.712247222222222, 40.423852777777775]
-        },
-        "source": "http://datos.madrid.es",
-        "precipitation": 0,
-        "relativeHumidity": 0.54,
-        "temperature": 12.2,
-        "windDirection": 186,
-        "windSpeed": 0.64,
-        "airQualityLevel": "moderate",
-        "reliability": 0.9,
-        "CO": 500,
-        "NO": 45,
-        "NO2": 69,
-        "NOx": 139,
-        "SO2": 11,
-        "CO_Level": "good",
-        "NO_Level": "moderate",
-        "refPointOfInterest": "28079004-Pza. de España"
-    }
+{
+    "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
+    "type": "AirQualityObserved",
+    "address": {
+        "addressCountry": "ES",
+        "addressLocality": "Madrid",
+        "streetAddress": "Plaza de España"
+    },
+    "dateObserved": "2016-03-15T11:00:00/2016-03-15T12:00:00",
+    "location": {
+        "type": "Point",
+        "coordinates": [-3.712247222222222, 40.423852777777775]
+    },
+    "source": "http://datos.madrid.es",
+    "precipitation": 0,
+    "relativeHumidity": 0.54,
+    "temperature": 12.2,
+    "windDirection": 186,
+    "windSpeed": 0.64,
+    "airQualityLevel": "moderate",
+    "reliability": 0.9,
+    "CO": 500,
+    "NO": 45,
+    "NO2": 69,
+    "NOx": 139,
+    "SO2": 11,
+    "CO_Level": "good",
+    "NO_Level": "moderate",
+    "refPointOfInterest": "28079004-Pza. de España"
+}
 ```
 
 For each Data Model we provide a set of examples (in some cases also using the

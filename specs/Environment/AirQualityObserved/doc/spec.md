@@ -110,8 +110,8 @@ of the measurand, ex. CO. The structure of such an attribute will be as follows:
 
 -   Attribute metadata:
     -   `timestamp` : optional timestamp for the observed value in ISO8601
-        format. It can be omitted if the observation time is the same as the
-        one captured by the `dateObserved` attribute at entity level.
+        format. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
         -   Type: [DateTime](https://schema.org/DateTime)
     -   `unitCode` : The unit code (text) of measurement given using the
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes)
