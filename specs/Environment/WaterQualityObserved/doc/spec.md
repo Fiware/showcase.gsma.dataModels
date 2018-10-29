@@ -207,25 +207,28 @@ MUST be used to declare them, so that applications can discover what extra measu
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
 mode (`options=keyValues`).
 
-## Examples of use
+## Examples
 
-    {
-       "id": "waterqualityobserved:Sevilla:D1",
-       "type": "WaterQualityObserved",
-       "dateObserved": "2017-01-31T06:45:00Z",
-       "measurand": [
-         "NO3, 0.01, M1, Concentration of Nitrates"
-       ],
-       "location": {
-         "type": "Point",
-         "coordinates": [  -5.993307, 37.362882 ]
-       },
-       "temperature" : 24.4,
-       "conductivity": 0.005,
-       "pH": 7.4,
-       "NO3": 0.01,
-    }
+### key-value pairs Example
 
+```json
+{
+    "id": "waterqualityobserved:Sevilla:D1",
+    "type": "WaterQualityObserved",
+    "dateObserved": "2017-01-31T06:45:00Z",
+    "measurand": [
+        "NO3, 0.01, M1, Concentration of Nitrates"
+    ],
+    "location": {
+        "type": "Point",
+        "coordinates": [  -5.993307, 37.362882 ]
+    },
+    "temperature" : 24.4,
+    "conductivity": 0.005,
+    "pH": 7.4,
+    "NO3": 0.01,
+}
+```
 
 ## Test it with real services
 
