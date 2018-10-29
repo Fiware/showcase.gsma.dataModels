@@ -1,6 +1,6 @@
 {
 	"name": "fiware-model-validator",
-	"version": "0.4.0",
+	"version": "0.5.1",
 	"description": "A simple validator for FIWARE Data Models",
 	"keywords": [
 		"node",
@@ -28,7 +28,7 @@
 		"glob": "^7.0.3",
 		"ajv": "^4.0.0",
 		"debug": "^4.0.1",
-		"ngsi_v2": "0.1.0",
+		"ngsi_v2": "0.2.1",
 		"deasync": "0.1.13"
 	},
 	"devDependencies": {
@@ -39,7 +39,12 @@
 		"jest": "^23.6.0",
 		"lint-staged": "^7.3.0",
 		"memfs": "2.10.1",
-		"prettier": "^1.14.2"
+		"prettier": "^1.14.2",
+		"textlint": "^11.0.1",
+		"textlint-rule-common-misspellings": "^1.0.1",
+		"textlint-rule-no-dead-link": "^4.4.1",
+		"textlint-rule-terminology": "^1.1.29",
+		"textlint-rule-write-good": "^1.6.2"
 	},
 	"engines": {
 		"node": ">=8.6"
@@ -47,7 +52,9 @@
 	"scripts": {
 		"lint": "eslint . --cache --fix",
 		"precommit": "lint-staged",
-		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js"
+		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
+		"prettier:text": "prettier '../*.md' '../specs/*.md' '../specs/**/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",
+		"lint:text": "textlint 'README.md' '../specs/*.md' '../specs/**/*.md'"
 	},
 	"husky": {
 		"hooks": {
@@ -58,6 +65,10 @@
 		"*.js": [
 			"eslint --fix",
 			"prettier --parser flow --write",
+			"git add"
+		],
+		"*.md": [
+			"prettier --tab-width 4 --print-width 80 --write --prose-wrap always",
 			"git add"
 		]
 	}

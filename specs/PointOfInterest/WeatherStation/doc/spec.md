@@ -1,6 +1,7 @@
 Weather station
 
-The formal documentation is not available yet. In the meantime please check some of the examples of use.
+The formal documentation is not available yet. In the meantime please check some
+of the examples of use.
 
 ## Examples of use
 

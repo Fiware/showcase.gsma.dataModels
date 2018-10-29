@@ -31,6 +31,12 @@ module.exports = {
               ' common-schema.json, geometry-schema.json',
             type: 'array',
           },
+          iF: {
+            alias: 'dmv:ignoreFolders',
+            describe:
+              'The list of folder names that should be ignored. Default value: [\'harvest\',\'auxiliary\',\'img\']',
+            type: 'array',
+          },
           w: {
             alias: 'dmv:warnings',
             describe:
@@ -72,7 +78,8 @@ module.exports = {
           },
         },
         'Usage: validate -p DataModel -w ignore ' +
-          '-i [common-schema.json,geometry-schema.json]'
+          '-i [common-schema.json,geometry-schema.json]'+
+          '-iF [harvest,auxiliary,img]'
       )
       .file('config.json');
   },
@@ -115,7 +122,7 @@ module.exports = {
       nconf.set('dmv:resolveRemoteSchemas', false);
     }
     if (nconf.get('dmv:ignoreFolders') == null) {
-      nconf.set('dmv:ignoreFolders', ['harvest', 'auxiliary']);
+      nconf.set('dmv:ignoreFolders', ['harvest', 'auxiliary', 'img']);
     }
     if (nconf.get('dmv:docFolders') == null) {
       nconf.set('dmv:docFolders', ['doc']);

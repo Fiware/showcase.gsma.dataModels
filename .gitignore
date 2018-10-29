@@ -1,4 +1,6 @@
 .DS_Store
+.python_env
+**/*.pyc
 node_modules
 **/*.log*
 **bak

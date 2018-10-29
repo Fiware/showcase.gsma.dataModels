@@ -2,160 +2,204 @@
 
 ## Description
 
-This entity contains a harmonised geographic and contextual description of a road segment.
-A collection of road segments are used to describe a [Road](../../Road/doc/spec.md).
+This entity contains a harmonised geographic and contextual description of a
+road segment. A collection of road segments are used to describe a
+[Road](../../Road/doc/spec.md).
 
-Road segments can include several lanes. This data model allows to convey road segments made up of
-heterogeneous lanes (different in their usage, speed, height, etc.).
+Road segments can include several lanes. This data model allows to convey road
+segments made up of heterogeneous lanes (different in their usage, speed,
+height, etc.).
 
-Lanes are identified by using integer numbers between `1` and `n`, being number `1` the lane to the right
-when going forwards. The `forward` direction is the direction denoted by the vector which goes from the
-segment's start point to the segment's end point. This is the same convention as the one used
-by [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Forward_%26_backward,_left_%26_right).
+Lanes are identified by using integer numbers between `1` and `n`, being number
+`1` the lane to the right when going forwards. The `forward` direction is the
+direction denoted by the vector which goes from the segment's start point to the
+segment's endpoint. This is the same convention as the one used by
+[OpenStreetMap](http://wiki.openstreetmap.org/wiki/Forward_%26_backward,_left_%26_right).
 
-This entity is primarily associated with the Automotive and Smart City vertical segments and related IoT
-applications.
+This entity is primarily associated with the Automotive and Smart City vertical
+segments and related IoT applications.
 
-This data model has been developed in cooperation with mobile operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+This data model has been developed in cooperation with mobile operators and the
+[GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-+ `type` : Entity type. It must be equal to `RoadSegment`.
+-   `type` : Entity type. It must be equal to `RoadSegment`.
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `dateCreated` : Entity's creation timestamp.
 
-+ `dateModified` : Last update timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `source` : The source of this data.
-    + Attribute type: [URL](https://schema.org/URL)
-    + Optional
+-   `dateModified` : Last update timestamp of this entity.
 
-+ `name` : Name given to this road segment.
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `alternateName` : An alias for this road segment.
-    + Normative References: [https://schema.org/alternateName](https://schema.org/alternateName)
-    + Optional
+-   `source` : The source of this data.
 
-+ `refRoad` : Road to which this road segment belongs to.
-    + Attribute type: A reference to an entity of type [Road](../../Road/doc/spec.md).
-    + Mandatory
+    -   Attribute type: [URL](https://schema.org/URL)
+    -   Optional
 
-+ `location` : A GeoJSON (multi)line string which defines this road segment.
-    + Attribute type: `geo:json`.
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory
+-   `name` : Name given to this road segment.
 
-+ `startPoint` : The start point of this road segment encoded as a GeoJSON point.
-    + Attribute type: `geo:json`
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-+ `endPoint` : The end point of this road segment encoded as a GeoJSON point.
-    + Attribute type: `geo:json`
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory
+-   `alternateName` : An alias for this road segment.
 
-+ `startKilometer` : The kilometer number (measured from the road's start point) where this road segmnent starts.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Optional
+    -   Normative References:
+        [https://schema.org/alternateName](https://schema.org/alternateName)
+    -   Optional
 
-+ `endKilometer` : The kilometer number (measured from the road's start point) where this road segment ends.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Optional
+-   `refRoad` : Road to which this road segment belongs to.
 
-+ `allowedVehicleType` : Vehicle type(s) allowed to transit through this road segment.
-    + Attribute type: List of [Text](https://schema.org/Text)
-    + Allowed values: The following values defined by *VehicleTypeEnum*,
-    [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip):
-        + (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
-           `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`, `lorry`, `moped`,
-           `motorcycle`, `motorcycleWithSideCar`,
-           `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
-    + Mandatory
+    -   Attribute type: A reference to an entity of type
+        [Road](../../Road/doc/spec.md).
+    -   Mandatory
 
-+ `totalLaneNumber` : Total number of lanes offered by this road segment.
-    + Attribute type: [Number](https://schema.org/Number). Integer greater than 0.
-    + Mandatory
+-   `location` : A GeoJSON (multi)line string which defines this road segment.
 
-+ `length` : Total length of this road segment in kilometers.
-    + Attribute type: [Number](https://schema.org/Number)
-    + See also [https://schema.org/length](https://schema.org/length)
-    + Default unit: Kilometer (Km)
-    + Optional
+    -   Attribute type: `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory
 
-+ `maximumAllowedSpeed` : Maximum allowed speed while transiting this road segment. More restrictive limits
-might be applied to specific vehicle types (trucks, caravans, etc.).
-    + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kilometer per hour (Km/h).
-    + Optional
+-   `startPoint` : The start point of this road segment encoded as a GeoJSON
+    point.
 
-+ `minimumAllowedSpeed` : Minimum allowed speed while transiting this road segment.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Default unit: Kilometer per hour (Km/h).
-    + Optional
+    -   Attribute type: `geo:json`
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory
 
-+ `maximumAllowedHeight` : Maximum allowed height for vehicles transiting this road segment.
-    + Attribute type: [Number](https://schema.org/Number)
-    + See also: [https://schema.org/height](https://schema.org/height)
-    + Default unit: Meter (m)
-    + Optional
+-   `endPoint` : The endpoint of this road segment encoded as a GeoJSON point.
 
-+ `maximumAllowedWeight` : Maximum allowed weight for vehicles transiting this road segment.
-    + Attribute type: [Number](https://schema.org/Number)
-    + See also: [https://schema.org/weight](https://schema.org/weight)
-    + Default unit: Kilogram (Kg)
-    + Optional
+    -   Attribute type: `geo:json`
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory
 
-+ `width` : Road's segmwent width.
-    + Normative References: [https://schema.org/width](https://schema.org/width)
-    + Default unit: Meter (m)
-    + Optional
+-   `startKilometer` : The kilometer number (measured from the road's start
+    point) where this road segmnent starts.
 
-+ `laneUsage` : This attribute can be used to convey specific parameters describing each lane.
-    + Attribute type: List of [Text](https://schema.org/Text)
-    + Allowed values: It must contain a string per road segment lane. The element 0 of the array must
-    contain the information of lane 1, and so on. Format of the referred string must be:
-    `"<lane_direction>, <lane_minimumAllowedSpeed>, <lane_maximumAllowedSpeed>, <lane_maximumAllowedHeight>, <lane_maximumAllowedWeight>"` .
-    `<lane_direction>` is a text string with the following allowed values:
-        + `forward`. The lane is currently used in the `forwards` direction.
-        + `backward`. The lane is currently used in the `backwards` direction.
-    The only mandatory parameter is `lane_direction`. If not specified, the rest of parameters
-    can be assumed to be equal to those specified at entity level.
-    + Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Optional
 
-+ `category` : Allows to convey extra characteristics of a road segment.
-    + Attribute type: List of [Text](https://schema.org/Text)
-    + Allowed values:
-        + `oneway` : Flags whether the road segment can only be used in one direction. If not present it means road
-                     segment can be used in both directions (forwards and backwards).
-                     See also [http://wiki.openstreetmap.org/wiki/Key:oneway](http://wiki.openstreetmap.org/wiki/Key:oneway)
-        + `toll` : Flags whether the road segment is under toll fees.
-        + `link` : Flags whether this road segment is an auxiliary link segment for exiting or entering a road. See
-        [https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link)
-        + Any other value meaningful to an application.
-    + Optional
+-   `endKilometer` : The kilometer number (measured from the road's start point)
+    where this road segment ends.
 
-The properties `laneUsage` and those which convey the maximum allowed parameters can be dynamic, for instance,
-a lane direction can be temporarily changed to improve traffic conditions.
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Optional
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+-   `allowedVehicleType` : Vehicle type(s) allowed to transit through this road
+    segment.
+
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed values: The following values defined by _VehicleTypeEnum_,
+        [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip): +
+        (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
+        `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`,
+        `lorry`, `moped`, `motorcycle`, `motorcycleWithSideCar`, `motorscooter`,
+        `tanker`, `trailer`, `van`, `anyVehicle`)
+    -   Mandatory
+
+-   `totalLaneNumber` : Total number of lanes offered by this road segment.
+
+    -   Attribute type: [Number](https://schema.org/Number). Integer greater
+        than 0.
+    -   Mandatory
+
+-   `length` : Total length of this road segment in kilometers.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   See also [https://schema.org/length](https://schema.org/length)
+    -   Default unit: Kilometer (Km)
+    -   Optional
+
+-   `maximumAllowedSpeed` : Maximum allowed speed while transiting this road
+    segment. More restrictive limits might be applied to specific vehicle types
+    (trucks, caravans, etc.). + Attribute type:
+    [Number](https://schema.org/Number) + Default unit: Kilometer per hour
+    (Km/h). + Optional
+
+-   `minimumAllowedSpeed` : Minimum allowed speed while transiting this road
+    segment.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Kilometer per hour (Km/h).
+    -   Optional
+
+-   `maximumAllowedHeight` : Maximum allowed height for vehicles transiting this
+    road segment.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   See also: [https://schema.org/height](https://schema.org/height)
+    -   Default unit: Meter (m)
+    -   Optional
+
+-   `maximumAllowedWeight` : Maximum allowed weight for vehicles transiting this
+    road segment.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   See also: [https://schema.org/weight](https://schema.org/weight)
+    -   Default unit: Kilogram (Kg)
+    -   Optional
+
+-   `width` : Road's segmwent width.
+
+    -   Normative References:
+        [https://schema.org/width](https://schema.org/width)
+    -   Default unit: Meter (m)
+    -   Optional
+
+-   `laneUsage` : This attribute can be used to convey specific parameters
+    describing each lane.
+
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed values: It must contain a string per road segment lane. The
+        element 0 of the array must contain the information of lane 1, and so
+        on. Format of the referred string must be:
+        `"<lane_direction>, <lane_minimumAllowedSpeed>, <lane_maximumAllowedSpeed>, <lane_maximumAllowedHeight>, <lane_maximumAllowedWeight>"`
+        . `<lane_direction>` is a text string with the following allowed
+        values: + `forward`. The lane is currently used in the `forwards`
+        direction. + `backward`. The lane is currently used in the `backwards`
+        direction. The only mandatory parameter is `lane_direction`. If not
+        specified, the rest of parameters can be assumed to be equal to those
+        specified at entity level.
+    -   Optional
+
+-   `category` : Allows to convey extra characteristics of a road segment.
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed values:
+        -   `oneway` : Flags whether the road segment can only be used in one
+            direction. If not present it means road segment can be used in both
+            directions (forwards and backwards). See also
+            [http://wiki.openstreetmap.org/wiki/Key:oneway](http://wiki.openstreetmap.org/wiki/Key:oneway)
+        -   `toll` : Flags whether the road segment is under toll fees.
+        -   `link` : Flags whether this road segment is an auxiliary link
+            segment for exiting or entering a road. See
+            [https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link)
+        -   Any other value meaningful to an application.
+    -   Optional
+
+The properties `laneUsage` and those which convey the maximum allowed parameters
+can be dynamic, for instance, a lane direction can be temporarily changed to
+improve traffic conditions.
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-
-Please note that this road segment's line string has been simplified only four points just to make the example shorter.
+Please note that this road segment's line string has been simplified only four
+points just to make the example shorter.
 
 ```
 {

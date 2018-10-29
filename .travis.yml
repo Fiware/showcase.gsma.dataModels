@@ -32,7 +32,7 @@ matrix:
         - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
       before_script:
         - npm run lint -C ./validator
-        - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p . -c true
+        - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
       script:
         - true
 

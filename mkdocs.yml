@@ -11,6 +11,7 @@ theme: readthedocs
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.org/style/fiware_readthedocs_core.css"]
 pages:
   - Home: index.md
+  - How to: howto.md
   - Guidelines  : guidelines.md
   - Alerts:
       - Alert                        : Alert/doc/spec.md

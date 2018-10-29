@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "terminology": true,
+    "common-misspellings": true,
+    "write-good": {
+      "adverb": false,
+      "passive": false,
+      "tooWordy": false,
+      "weasel": false
+    },
+    "no-dead-link": {
+       "ignoreRedirects": true
+    }
+  }
+}

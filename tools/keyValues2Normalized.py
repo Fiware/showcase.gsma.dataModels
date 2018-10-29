@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-Converts a NGSIv2 Simplified Representation (a.k.a. keyValues)
+Converts an NGSI v2 Simplified Representation (a.k.a. keyValues)
 into a Normalized Representation
 
 Copyright (c) 2018 FIWARE Foundation e.V.
@@ -14,6 +14,8 @@ Author: José Manuel Cantera
 import sys
 import json
 import ntpath
+
+from entity_print import print_json_string
 
 
 def keyValues_2_normalized(entity):
@@ -55,7 +57,7 @@ def read_json(infile):
 
 def write_json(data, outfile):
     with open(outfile, 'w') as data_file:
-        json.dump(data, data_file, indent=4)
+        data_file.write(print_json_string(data))
         data_file.write("\n")
 
 

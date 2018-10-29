@@ -8,63 +8,85 @@ Represents an access point to a parking site, normally an offstreet parking.
 
 The data model is defined as shown below:
 
-+ `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-+ `type` : Entity type. It must be equal to `ParkingAccess`.
+-   `type` : Entity type. It must be equal to `ParkingAccess`.
 
-+ `location` : Geolocation of the access point represented by a GeoJSON Point.
-    + Attribute type: `geo:json`.
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory
+-   `location` : Geolocation of the access point represented by a GeoJSON Point.
 
-+ `address` : Registered civic address of the access point.
-    + Normative References: [https://schema.org/address](https://schema.org/address)
-    + Optional
+    -   Attribute type: `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory
 
-+ `name` : Name given to the access point.
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Optional
+-   `address` : Registered civic address of the access point.
 
-+ `description` : Description of the access point.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+    -   Normative References:
+        [https://schema.org/address](https://schema.org/address)
+    -   Optional
 
-+ `category` : Category of the access point (entrance, exit, etc.)
-    + Attribute type: List of [https://schema.org/Text](https://schema.org/Text)
-    + Allowed values: Those specificed by the DATEX II *AccessCategoryEnum*.
-        + Other values meaningful to the application.
-    + Mandatory
+-   `name` : Name given to the access point.
 
-+ `refOffStreetParking` : The offstreet parking site this access point gives access to.
-    + Attribute type: Reference to an entity of type [OffStreetParking](../../OffStreetParking/doc/spec.md)
-    + Mandatory
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Optional
 
-+ `features` : Equipment or facilities provided by the access point.
-    + Attribute type: List of [https://schema.org/Text](https://schema.org/Text)
-    + Allowed values: Those specified by the DATEX II *AccessEquipmentEnum* and by *AccessibilityEnum*.
-        + Other values meaningful to the application.
-    + Optional
+-   `description` : Description of the access point.
 
-+ `image` : A URL containing a photo of this access point.
-    + Normative References: [https://schema.org/image](https://schema.org/image)
-    + Optional
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
 
-+ `width` : Width of the access point.
-    + Normative References: [https://schema.org/width](https://schema.org/width)
-    + Optional
+-   `category` : Category of the access point (entrance, exit, etc.)
 
-+ `height` : Height of the access point.
-    + Normative References: [https://schema.org/height](https://schema.org/height)
-    + Optional
+    -   Attribute type: List of
+        [https://schema.org/Text](https://schema.org/Text)
+    -   Allowed values: Those specificed by the DATEX II _AccessCategoryEnum_.
+        -   Other values meaningful to the application.
+    -   Mandatory
 
-+ `slope` : Slope of the access point (in relative terms).
-    + Attribute Type: [Number](https://schema.org/Number)
-    + Attribute Value: A number between 0 and 1.
-    + Optional
+-   `refOffStreetParking` : The offstreet parking site this access point gives
+    access to.
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+    -   Attribute type: Reference to an entity of type
+        [OffStreetParking](../../OffStreetParking/doc/spec.md)
+    -   Mandatory
+
+-   `features` : Equipment or facilities provided by the access point.
+
+    -   Attribute type: List of
+        [https://schema.org/Text](https://schema.org/Text)
+    -   Allowed values: Those specified by the DATEX II _AccessEquipmentEnum_
+        and by _AccessibilityEnum_.
+        -   Other values meaningful to the application.
+    -   Optional
+
+-   `image` : A URL containing a photo of this access point.
+
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
+
+-   `width` : Width of the access point.
+
+    -   Normative References:
+        [https://schema.org/width](https://schema.org/width)
+    -   Optional
+
+-   `height` : Height of the access point.
+
+    -   Normative References:
+        [https://schema.org/height](https://schema.org/height)
+    -   Optional
+
+-   `slope` : Slope of the access point (in relative terms).
+    -   Attribute Type: [Number](https://schema.org/Number)
+    -   Attribute Value: A number between 0 and 1.
+    -   Optional
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use 1 (Normalized Format)
 
@@ -73,9 +95,7 @@ mode (`options=keyValues`).
     "id": "accesspoint-trinidade-1",
     "type": "ParkingAccess",
     "category": {
-        "value": [
-            "vehicleEntrance"
-        ]
+        "value": ["vehicleEntrance"]
     },
     "name": {
         "value": "Trinidade main entrance"
@@ -84,10 +104,7 @@ mode (`options=keyValues`).
         "type": "geo:json",
         "value": {
             "type": "Point",
-            "coordinates": [
-                -8.60961198807,
-                41.150691773
-            ]
+            "coordinates": [-8.60961198807, 41.150691773]
         }
     },
     "refOffStreetParking": {
@@ -95,9 +112,7 @@ mode (`options=keyValues`).
         "value": "porto-OffStreetParking-23889"
     },
     "features": {
-        "value": [
-            "barrier"
-        ]
+        "value": ["barrier"]
     }
 }
 ```
@@ -117,7 +132,6 @@ mode (`options=keyValues`).
       "features": ["barrier"]
     }
 
-  ## Test it with a real service
+## Test it with a real service
 
-
-  ## Open issues
+## Open issues

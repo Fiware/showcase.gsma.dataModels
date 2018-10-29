@@ -2,313 +2,386 @@
 
 ## Description
 
-A site, off street, intended to park vehicles, managed independently and with suitable
-and clearly marked access points (entrances and exits).
-If necessary, and for management purposes or to deal with multi-location parking sites,
-it can be divided into different zones modelled by the entity type [ParkingGroup](../../ParkingGroup/doc/spec.md) .
-In DATEX 2 version 2.3 terminology it corresponds to a *UrbanParkingSite* of type *offStreetParking*.
+A site, off street, intended to park vehicles, managed independently and with
+suitable and clearly marked access points (entrances and exits). If necessary,
+and for management purposes or to deal with multi-location parking sites, it can
+be divided into different zones modelled by the entity type
+[ParkingGroup](../../ParkingGroup/doc/spec.md) . In DATEX 2 version 2.3
+terminology it corresponds to a _UrbanParkingSite_ of type _offStreetParking_.
 
-A data dictionary for
-DATEX II terms can be found at [http://datexbrowser.tamtamresearch.com/](http://datexbrowser.tamtamresearch.com/).
+A data dictionary for DATEX II terms can be found at
+[http://datexbrowser.tamtamresearch.com/](http://datexbrowser.tamtamresearch.com/).
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-+ `type` : Entity type. It must be equal to `OffStreetParking`.
+-   `type` : Entity type. It must be equal to `OffStreetParking`.
 
-+ `dateCreated` : Entity's creation timestamp
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `dateCreated` : Entity's creation timestamp
 
-+ `dateModified` : Last update timestamp of this entity
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `location` : Geolocation of the parking site represented by a GeoJSON (Multi)Polygon or Point.
-    + Attribute type: `geo:json`.
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    + Mandatory if `address` is not defined.
+-   `dateModified` : Last update timestamp of this entity
 
-+ `address` : Registered parking site civic address.
-    + Normative References: [https://schema.org/address](https://schema.org/address)
-    + Mandatory if `location` is not defined.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `name` : Name given to the parking site.
-    + Normative References: [https://schema.org/name](https://schema.org/name)
-    + Mandatory
+-   `location` : Geolocation of the parking site represented by a GeoJSON
+    (Multi)Polygon or Point.
 
-+ `category` : Parking site's category(ies). The purpose of this field is to allow to tag, generally speaking, off street parking entities.
-Particularities and detailed descriptions should be found under the corresponding specific attributes.
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values:
-        + (`public`, `private`, `publicPrivate`,
-           `urbanDeterrentParking`, `parkingGarage`, `parkingLot`,
-           `shortTerm`, `mediumTerm`, `longTerm`,
-           `free`, `feeCharged`,
-           `staffed`, `guarded`, `barrierAccess`, `gateAccess`, `freeAccess`, `forElectricalCharging`,
-           `onlyResidents`, `onlyWithPermit`,
-           `forEmployees`, `forVisitors`, `forCustomers`, `forStudents`, `forMembers`, `forDisabled`, `forResidents`,
-           `underground`, `ground`)
-        + The semantics of the `forxxx` values is that the parking offers specific spots subject to that particular condition.
-        + The semantics of the `onlyxxx`values is that the parking only allows to park on that particular condition.
-        + Other application-specific
-    + Mandatory
+    -   Attribute type: `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory if `address` is not defined.
 
-+ `allowedVehicleType` : Vehicle type(s) allowed. The first element of this array *MUST* be the principal
-vehicle type allowed. Free spot numbers of other allowed vehicle types might be reported under the attribute `extraSpotNumber`
-and through specific entities of type *ParkingGroup*.
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed Values: The following values defined by *VehicleTypeEnum*,
-    [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip):
-        + (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
-           `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`, `lorry`, `moped`,
-           `motorcycle`, `motorcycleWithSideCar`,
-           `motorscooter`, `tanker`, `trailer`, `van`, `anyVehicle`)
-    + Mandatory
+-   `address` : Registered parking site civic address.
 
-+ `chargeType` : Type(s) of charge performed by the parking site.
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values: Some of those defined by the DATEX II version 2.3 *ChargeTypeEnum* enumeration:
-        + (`flat`, `minimum`, `maximum`, `additionalIntervalPrice` `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
-        `annualPayment`, `monthlyPayment`, `free`, `other`)
-        + Any other application-specific
-    + Mandatory
+    -   Normative References:
+        [https://schema.org/address](https://schema.org/address)
+    -   Mandatory if `location` is not defined.
 
-+ `requiredPermit` : This attribute captures what permit(s) might be needed to park at this site. Semantics
-is that at least *one of* these permits is needed to park. When a permit is composed by more than one item (and)
-they can be combined with a ",". For instance "residentPermit,disabledPermit" stays that both, at the same time,
-a resident and a disabled permit are needed to park. If empty or `null`, no permit is needed.
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values: The following, defined by the *PermitTypeEnum* enumeration of DATEX II version 2.3.
-        + oneOf (`employeePermit`, `studentPermit`, `fairPermit`, `governmentPermit`,  `residentPermit`,
-        `specificIdentifiedVehiclePermit`, `visitorPermit`, `noPermitNeeded`)
-        + Any other application-specific
-    + Mandatory
+-   `name` : Name given to the parking site.
 
-+ `occupancyDetectionType` : Occupancy detection method(s).
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values: The following from DATEX II version 2.3 *OccupancyDetectionTypeEnum*:
-        + (`none`, `balancing`, `singleSpaceDetection`, `modelBased`, `manual`)
-        + Or any other application-specific
-    + Mandatory
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-+ `acceptedPaymentMethod` : Accepted payment method(s).
-    + Normative references: https://schema.org/acceptedPaymentMethod
-    + Optional
+-   `category` : Parking site's category(ies). The purpose of this field is to
+    allow to tag, generally speaking, off street parking entities.
+    Particularities and detailed descriptions should be found under the
+    corresponding specific attributes. + Attribute type: List of
+    [Text](http://schema.org/Text) + Allowed values: + (`public`, `private`,
+    `publicPrivate`, `urbanDeterrentParking`, `parkingGarage`, `parkingLot`,
+    `shortTerm`, `mediumTerm`, `longTerm`, `free`, `feeCharged`, `staffed`,
+    `guarded`, `barrierAccess`, `gateAccess`, `freeAccess`,
+    `forElectricalCharging`, `onlyResidents`, `onlyWithPermit`, `forEmployees`,
+    `forVisitors`, `forCustomers`, `forStudents`, `forMembers`, `forDisabled`,
+    `forResidents`, `underground`, `ground`) + The semantics of the `forxxx`
+    values is that the parking offers specific spots subject to that particular
+    condition. + The semantics of the `onlyxxx`values is that the parking only
+    allows to park on that particular condition. + Other application-specific +
+    Mandatory
 
-+ `priceRatePerMinute` : Price rate per minute.
-    + Attribute type: [Number](https://schema.org/Number)
-    + Optional
+-   `allowedVehicleType` : Vehicle type(s) allowed. The first element of this
+    array _MUST_ be the principal vehicle type allowed. Free spot numbers of
+    other allowed vehicle types might be reported under the attribute
+    `extraSpotNumber` and through specific entities of type _ParkingGroup_. +
+    Attribute type: List of [Text](http://schema.org/Text) + Allowed Values: The
+    following values defined by _VehicleTypeEnum_,
+    [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip): +
+    (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
+    `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`,
+    `lorry`, `moped`, `motorcycle`, `motorcycleWithSideCar`, `motorscooter`,
+    `tanker`, `trailer`, `van`, `anyVehicle`) + Mandatory
 
-+ `priceCurrency` : Price currency of price rate per minute.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Normative references: [https://schema.org/priceCurrency](https://schema.org/priceCurrency)
-    + Optional
+-   `chargeType` : Type(s) of charge performed by the parking site.
 
-+ `description` : Description about the parking site.
-    + Normative References: [https://schema.org/description](https://schema.org/description)
-    + Optional
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Some of those defined by the DATEX II version 2.3
+        _ChargeTypeEnum_ enumeration:
+        -   (`flat`, `minimum`, `maximum`, `additionalIntervalPrice`
+            `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
+            `annualPayment`, `monthlyPayment`, `free`, `other`)
+        -   Any other application-specific
+    -   Mandatory
 
-+ `image` : A URL containing a photo of this parking site.
-    + Normative References: [https://schema.org/image](https://schema.org/image)
-    + Optional
+-   `requiredPermit` : This attribute captures what permit(s) might be needed to
+    park at this site. Semantics is that at least _one of_ these permits is
+    needed to park. When a permit is composed by more than one item (and) they
+    can be combined with a ",". For instance "residentPermit,disabledPermit"
+    stays that both, at the same time, a resident and a disabled permit are
+    needed to park. If empty or `null`, no permit is needed. + Attribute type:
+    List of [Text](http://schema.org/Text) + Allowed values: The following,
+    defined by the _PermitTypeEnum_ enumeration of DATEX II version 2.3. + oneOf
+    (`employeePermit`, `studentPermit`, `fairPermit`, `governmentPermit`,
+    `residentPermit`, `specificIdentifiedVehiclePermit`, `visitorPermit`,
+    `noPermitNeeded`) + Any other application-specific + Mandatory
 
-+ `layout` : Parking layout. Gives more details to the `category` attribute.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Allowed values:  As per the *ParkingLayoutEnum* of DATEX II version 2.3:
-        + one Of (`automatedParkingGarage`, `surface`, `multiStorey`, `singleLevel`, `multiLevel`,
-        `openSpace`, `covered`, `nested`, `field`, `rooftop`,
-        `sheds`, `carports`, `garageBoxes`, `other`). See also [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking).
-        + Or any other value useful for the application and not covered above.
-    + Optional
+-   `occupancyDetectionType` : Occupancy detection method(s).
 
-+ `usageScenario` : Usage scenario(s). Gives more details to the `category` attribute.
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values: Those defined by the enumeration *ParkingUsageScenarioEnum* of DATEX II version 2.3:
-        + (`truckParking`, `parkAndRide`, `parkAndCycle`,	`parkAndWalk`, `kissAndRide`, `	liftshare`, `carSharing`,
-            `restArea`, `serviceArea`, `dropOffWithValet`, `dropOffMechanical`, `eventParking`, `automaticParkingGuidance`,
-            `staffGuidesToSpace`,  `vehicleLift`, `loadingBay`, `dropOff`, `overnightParking`, `other`)
-        + Or any other value useful for the application and not covered above.
-    + Optional
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: The following from DATEX II version 2.3
+        _OccupancyDetectionTypeEnum_:
+        -   (`none`, `balancing`, `singleSpaceDetection`, `modelBased`,
+            `manual`)
+        -   Or any other application-specific
+    -   Mandatory
 
-+ `parkingMode` : Parking mode(s).
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Allowed values: Those defined by the DATEX II version 2.3 *ParkingModeEnum* enumeration:
-        + (`perpendicularParking`, `parallelParking`, `echelonParking`)
-    + Optional
+-   `acceptedPaymentMethod` : Accepted payment method(s).
 
-+ `facilities` : Facilities provided by this parking site.
-    + Attributes: List of [Text](http://schema.org/Text)
-    + Allowed values: The following defined by the *EquipmentTypeEnum* enumeration of DATEX II version 2.3:
-        + (`toilet`, `shower`, `informationPoint`, `internetWireless`, `payDesk`, `paymentMachine`, `cashMachine`, `vendingMachine`,
-        `faxMachineOrService`, `copyMachineOrService`, `safeDeposit`, `luggageLocker`, `publicPhone`, `elevator`, `dumpingStation`
-        `freshWater`, `wasteDisposal`, `refuseBin`, `iceFreeScaffold`, `playground`, `electricChargingStation`, `bikeParking`, `tollTerminal`,
-        `defibrillator`, `firstAidEquipment` `fireHose` `fireExtinguisher` `fireHydrant`)
-        + Any other application-specific
-    + Optional
+    -   Normative references: https://schema.org/acceptedPaymentMethod
+    -   Optional
 
-+ `security` : Security aspects provided by this parking site.
-    + Attributes: List of [Text](http://schema.org/Text)
-    + Allowed values: The following, some of them, defined by *ParkingSecurityEnum* of DATEX II version 2.3:
-        + (`patrolled`, `securityStaff`, `externalSecurity`, `cctv`, `dog`, `guard24hours`, `lighting`, `floodLight`, `fences`
-        `areaSeperatedFromSurroundings`)
-        + Any other application-specific
-    + Optional
+-   `priceRatePerMinute` : Price rate per minute.
 
-+ `highestFloor` : For parking sites with multiple floor levels, highest floor.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: An integer number. 0 is ground level. Upper floors are positive numbers. Lower floors are negative ones.
-    + Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Optional
 
-+ `lowestFloor` : For parking sites with multiple floor levels, lowest floor.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: An integer number.
-    + Optional
+-   `priceCurrency` : Price currency of price rate per minute.
 
-+ `maximumParkingDuration` : Maximum allowed stay at site, on a general basis, encoded as a ISO8601 duration.
-A `null` or empty value indicates an indefinite duration.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Normative references:
+        [https://schema.org/priceCurrency](https://schema.org/priceCurrency)
+    -   Optional
 
-+ `totalSpotNumber` : The total number of spots offered by this parking site.
-This number can be difficult to be obtained for those parking locations on which spots are not clearly marked by lines.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: Any positive integer number or 0.
-    + Normative references: DATEX 2 version 2.3 attribute *parkingNumberOfSpaces* of the *ParkingRecord* class.
-    + Optional
+-   `description` : Description about the parking site.
 
-+ `availableSpotNumber` : The number of spots available (*including* all vehicle types or reserved spaces,
-such as those for disabled people, long term parkers and so on).
-This might be harder to estimate at those parking locations on which spots borders are not clearly marked by lines.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: A positive integer number, including 0. It must lower or equal than `totalSpotNumber`.
-    + Metadata:
-        + `timestamp` : Timestamp of the last attribute update
-        + Type: [DateTime](https://schema.org/DateTime)
-    + Optional
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
 
-+ `extraSpotNumber` : The number of extra spots *available*, i.e. free. This value must aggregate free spots from all groups mentioned below:
-A/ Those reserved for special purposes and usually require a permit. Permit details will be found at
-parking group level (entity of type `ParkingGroup`).
-B/ Those reserved for other vehicle types different than the principal allowed vehicle type.
-C/ Any other group of parking spots not subject to the general condition rules conveyed by this entity.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Allowed values: A positive integer number, including 0.
-    + Metadata:
-        + `timestamp` : Timestamp of the last attribute update
-        + Type: [DateTime](https://schema.org/DateTime)
-    + Optional
+-   `image` : A URL containing a photo of this parking site.
 
-+ `openingHours` : Opening hours of the parking site.
-    + Normative references:  [http://schema.org/openingHours](http://schema.org/openingHours)
-    + Optional
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
 
-+ `firstAvailableFloor` : Number of the floor closest to the ground which currently has available parking spots.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Metadata:
-        + `timestamp` : Timestamp of the last attribute update
-        + Type: [DateTime](https://schema.org/DateTime)
-    + Allowed values: Stories are numbered between -n and n, being 0 ground floor.
-    + Optional
+-   `layout` : Parking layout. Gives more details to the `category` attribute.
 
-+ `specialLocation` : If the parking site is at a special location (airport, depatment store, etc.)
-it conveys what is such special location.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Allowed values: Those defined by *ParkingSpecialLocationEnum* of
-    [DATEX II version 2.3](http://www.datex2.eu/content/parking-publications-extension-v10a):
-        + (`airportTerminal`, `exhibitonCentre`, `shoppingCentre`, `specificFacility`, `trainStation`,
-        `campground`, `themePark`, `ferryTerminal`, `vehicleOnRailTerminal`, `coachStation`, `cableCarStation`, `publicTransportStation`,
-        `market`, `religiousCentre`, `conventionCentre`, `cinema`, `skilift`, `hotel`, `other`)
-    + Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed values: As per the _ParkingLayoutEnum_ of DATEX II version 2.3:
+        -   one Of (`automatedParkingGarage`, `surface`, `multiStorey`,
+            `singleLevel`, `multiLevel`, `openSpace`, `covered`, `nested`,
+            `field`, `rooftop`, `sheds`, `carports`, `garageBoxes`, `other`).
+            See also
+            [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking).
+        -   Or any other value useful for the application and not covered above.
+    -   Optional
 
-+ `status` : Status of the parking site.
-    + Attribute type: List of [Text](http://schema.org/Text)
-    + Metadata:
-        + `timestamp` : Timestamp of the last attribute update
-        + Type: [DateTime](https://schema.org/DateTime)
-    + Allowed values: The following defined by the following enumerations defined by DATEX II version 2.3 :
-        + *ParkingSiteStatusEnum*
-        + *OpeningStatusEnum*
-        + (`open`, `closed`, `closedAbnormal`,`openingTimesInForce`, `full`,
-           `fullAtEntrance`, `spacesAvailable`, `almostFull`)
-        + Or any other application-specific
-    + Optional
+-   `usageScenario` : Usage scenario(s). Gives more details to the `category`
+    attribute.
 
-+ `reservationType` : Conditions for reservation.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Allowed values: The following specified by *ReservationTypeEnum* of DATEX II version 2.3:
-        + one Of (`optional`, `mandatory`, `notAvailable`, `partly`).
-    + Optional
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Those defined by the enumeration
+        _ParkingUsageScenarioEnum_ of DATEX II version 2.3:
+        -   (`truckParking`, `parkAndRide`, `parkAndCycle`, `parkAndWalk`,
+            `kissAndRide`, `liftshare`, `carSharing`, `restArea`, `serviceArea`,
+            `dropOffWithValet`, `dropOffMechanical`, `eventParking`,
+            `automaticParkingGuidance`, `staffGuidesToSpace`, `vehicleLift`,
+            `loadingBay`, `dropOff`, `overnightParking`, `other`)
+        -   Or any other value useful for the application and not covered above.
+    -   Optional
 
-+ `owner` : Parking site's owner.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Optional
+-   `parkingMode` : Parking mode(s).
 
-+ `provider` : Parking site service provider.
-    + Normative references: [https://schema.org/provider](https://schema.org/provider)
-    + Optional
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Those defined by the DATEX II version 2.3
+        _ParkingModeEnum_ enumeration:
+        -   (`perpendicularParking`, `parallelParking`, `echelonParking`)
+    -   Optional
 
-+ `measuresPeriod` : The measures period related to availableSpotNumber and priceRatePerMinute.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Optional
+-   `facilities` : Facilities provided by this parking site.
 
-+ `measuresPeriodUnit` : The measures period unit related to availableSpotNumber and priceRatePerMinute.
-    + Attribute type: [unitText](http://schema.org/unitText)
-    + Optional
+    -   Attributes: List of [Text](http://schema.org/Text)
+    -   Allowed values: The following defined by the _EquipmentTypeEnum_
+        enumeration of DATEX II version 2.3:
+        -   (`toilet`, `shower`, `informationPoint`, `internetWireless`,
+            `payDesk`, `paymentMachine`, `cashMachine`, `vendingMachine`,
+            `faxMachineOrService`, `copyMachineOrService`, `safeDeposit`,
+            `luggageLocker`, `publicPhone`, `elevator`, `dumpingStation`
+            `freshWater`, `wasteDisposal`, `refuseBin`, `iceFreeScaffold`,
+            `playground`, `electricChargingStation`, `bikeParking`,
+            `tollTerminal`, `defibrillator`, `firstAidEquipment` `fireHose`
+            `fireExtinguisher` `fireHydrant`)
+        -   Any other application-specific
+    -   Optional
 
-+ `contactPoint` : Parking site contact point.
-    + Normative references: [https://schema.org/contactPoint](https://schema.org/contactPoint)
-    + Optional
+-   `security` : Security aspects provided by this parking site.
 
-+ `averageSpotWidth` : The average width of parking spots.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: Meters
-    + Optional
+    -   Attributes: List of [Text](http://schema.org/Text)
+    -   Allowed values: The following, some of them, defined by
+        _ParkingSecurityEnum_ of DATEX II version 2.3:
+        -   (`patrolled`, `securityStaff`, `externalSecurity`, `cctv`, `dog`,
+            `guard24hours`, `lighting`, `floodLight`, `fences`
+            `areaSeperatedFromSurroundings`)
+        -   Any other application-specific
+    -   Optional
 
-+ `averageSpotLength` : The average length of parking spots.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: Meters
-    + Optional
+-   `highestFloor` : For parking sites with multiple floor levels, highest
+    floor.
 
-+ `maximumAllowedHeight` : Maximum allowed height for vehicles. If there are multiple zones, it will be the minimum height of
-all the zones.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: Meters
-    + Optional
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: An integer number. 0 is ground level. Upper floors are
+        positive numbers. Lower floors are negative ones.
+    -   Optional
 
-+ `maximumAllowedWidth` : Maximum allowed width for vehicles. If there are multiple zones, it will be the minimum width of
-all the zones.
-    + Attribute type: [Number](http://schema.org/Number)
-    + Default unit: Meters
-    + Optional
+-   `lowestFloor` : For parking sites with multiple floor levels, lowest floor.
 
-+ `refParkingAccess` : Parking site's access point(s).
-    + Attribute type: List of references to [ParkingAccess](../../ParkingAccess/doc/spec.md)
-    + Optional
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: An integer number.
+    -   Optional
 
-+ `refParkingGroup` : Parking site's identified group(s). A group can correspond to a zone, a complete storey, a group of spots, etc.
-    + Attribute type: List of references to [ParkingGroup](../../ParkingGroup/doc/spec.md)
-    + Optional
+-   `maximumParkingDuration` : Maximum allowed stay at site, on a general basis,
+    encoded as a ISO8601 duration. A `null` or empty value indicates an
+    indefinite duration. + Attribute type: [Text](http://schema.org/Text) +
+    Optional
 
-+ `refParkingSpot` : Individual parking spots belonging to this offstreet parking site.
-    + Attribute type: List of references to [ParkingSpot](../../ParkingSpot/doc/spec.md)
-    + Optional
+-   `totalSpotNumber` : The total number of spots offered by this parking site.
+    This number can be difficult to be obtained for those parking locations on
+    which spots are not clearly marked by lines. + Attribute type:
+    [Number](http://schema.org/Number) + Allowed values: Any positive integer
+    number or 0. + Normative references: DATEX 2 version 2.3 attribute
+    _parkingNumberOfSpaces_ of the _ParkingRecord_ class. + Optional
 
-+ `areaServed` : Area served by this parking site. Precise semantics can depend on the application or target city.
- For instance, it can be a neighbourhood, burough or district.
-    + Attribute type: [Text](http://schema.org/Text)
-    + Optional
+-   `availableSpotNumber` : The number of spots available (_including_ all
+    vehicle types or reserved spaces, such as those for disabled people, long
+    term parkers and so on). This might be harder to estimate at those parking
+    locations on which spots borders are not clearly marked by lines. +
+    Attribute type: [Number](http://schema.org/Number) + Allowed values: A
+    positive integer number, including 0. It must lower or equal than
+    `totalSpotNumber`. + Metadata: + `timestamp` : Timestamp of the last
+    attribute update + Type: [DateTime](https://schema.org/DateTime) + Optional
 
-+ `aggregateRating` : Aggregated rating for this parking site.
-    + Normative References: [https://schema.org/aggregateRating](https://schema.org/aggregateRating)
-    + Optional
+-   `extraSpotNumber` : The number of extra spots _available_, i.e. free. This
+    value must aggregate free spots from all groups mentioned below: A/ Those
+    reserved for special purposes and usually require a permit. Permit details
+    will be found at parking group level (entity of type `ParkingGroup`). B/
+    Those reserved for other vehicle types different than the principal allowed
+    vehicle type. C/ Any other group of parking spots not subject to the general
+    condition rules conveyed by this entity. + Attribute type:
+    [Number](http://schema.org/Number) + Allowed values: A positive integer
+    number, including 0. + Metadata: + `timestamp` : Timestamp of the last
+    attribute update + Type: [DateTime](https://schema.org/DateTime) + Optional
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+-   `openingHours` : Opening hours of the parking site.
+
+    -   Normative references:
+        [http://schema.org/openingHours](http://schema.org/openingHours)
+    -   Optional
+
+-   `firstAvailableFloor` : Number of the floor closest to the ground which
+    currently has available parking spots.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
+    -   Allowed values: Stories are numbered between -n and n, being 0 ground
+        floor.
+    -   Optional
+
+-   `specialLocation` : If the parking site is at a special location (airport,
+    depatment store, etc.) it conveys what is such special location. + Attribute
+    type: [Text](http://schema.org/Text) + Allowed values: Those defined by
+    _ParkingSpecialLocationEnum_ of
+    [DATEX II version 2.3](http://www.datex2.eu/content/parking-publications-extension-v10a): +
+    (`airportTerminal`, `exhibitonCentre`, `shoppingCentre`, `specificFacility`,
+    `trainStation`, `campground`, `themePark`, `ferryTerminal`,
+    `vehicleOnRailTerminal`, `coachStation`, `cableCarStation`,
+    `publicTransportStation`, `market`, `religiousCentre`, `conventionCentre`,
+    `cinema`, `skilift`, `hotel`, `other`) + Optional
+
+-   `status` : Status of the parking site.
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
+    -   Allowed values: The following defined by the following enumerations
+        defined by DATEX II version 2.3 :
+        -   _ParkingSiteStatusEnum_
+        -   _OpeningStatusEnum_
+        -   (`open`, `closed`, `closedAbnormal`,`openingTimesInForce`, `full`,
+            `fullAtEntrance`, `spacesAvailable`, `almostFull`)
+        -   Or any other application-specific
+    -   Optional
+
+-   `reservationType` : Conditions for reservation.
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed values: The following specified by _ReservationTypeEnum_ of
+        DATEX II version 2.3:
+        -   one Of (`optional`, `mandatory`, `notAvailable`, `partly`).
+    -   Optional
+
+-   `owner` : Parking site's owner.
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
+
+-   `provider` : Parking site service provider.
+
+    -   Normative references:
+        [https://schema.org/provider](https://schema.org/provider)
+    -   Optional
+
+-   `measuresPeriod` : The measures period related to availableSpotNumber and
+    priceRatePerMinute.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Optional
+
+-   `measuresPeriodUnit` : The measures period unit related to
+    availableSpotNumber and priceRatePerMinute.
+
+    -   Attribute type: [unitText](http://schema.org/unitText)
+    -   Optional
+
+-   `contactPoint` : Parking site contact point.
+
+    -   Normative references:
+        [https://schema.org/contactPoint](https://schema.org/contactPoint)
+    -   Optional
+
+-   `averageSpotWidth` : The average width of parking spots.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
+
+-   `averageSpotLength` : The average length of parking spots.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
+
+-   `maximumAllowedHeight` : Maximum allowed height for vehicles. If there are
+    multiple zones, it will be the minimum height of all the zones. + Attribute
+    type: [Number](http://schema.org/Number) + Default unit: Meters + Optional
+
+-   `maximumAllowedWidth` : Maximum allowed width for vehicles. If there are
+    multiple zones, it will be the minimum width of all the zones. + Attribute
+    type: [Number](http://schema.org/Number) + Default unit: Meters + Optional
+
+-   `refParkingAccess` : Parking site's access point(s).
+
+    -   Attribute type: List of references to
+        [ParkingAccess](../../ParkingAccess/doc/spec.md)
+    -   Optional
+
+-   `refParkingGroup` : Parking site's identified group(s). A group can
+    correspond to a zone, a complete storey, a group of spots, etc.
+
+    -   Attribute type: List of references to
+        [ParkingGroup](../../ParkingGroup/doc/spec.md)
+    -   Optional
+
+-   `refParkingSpot` : Individual parking spots belonging to this offstreet
+    parking site.
+
+    -   Attribute type: List of references to
+        [ParkingSpot](../../ParkingSpot/doc/spec.md)
+    -   Optional
+
+-   `areaServed` : Area served by this parking site. Precise semantics can
+    depend on the application or target city. For instance, it can be a
+    neighbourhood, burough or district.
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
+
+-   `aggregateRating` : Aggregated rating for this parking site.
+    -   Normative References:
+        [https://schema.org/aggregateRating](https://schema.org/aggregateRating)
+    -   Optional
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use 1 (Normalized Format)
 
@@ -326,9 +399,7 @@ mode (`options=keyValues`).
         ]
     },
     "layout": {
-        "value": [
-            "multiLevel"
-        ]
+        "value": ["multiLevel"]
     },
     "name": {
         "value": "Parque de estacionamento Trindade"
@@ -337,9 +408,7 @@ mode (`options=keyValues`).
         "value": []
     },
     "allowedVehicleType": {
-        "value": [
-            "car"
-        ]
+        "value": ["car"]
     },
     "availableSpotNumber": {
         "value": 132,
@@ -357,16 +426,11 @@ mode (`options=keyValues`).
         "type": "geo:json",
         "value": {
             "type": "Point",
-            "coordinates": [
-                -8.60961198807,
-                41.150691773
-            ]
+            "coordinates": [-8.60961198807, 41.150691773]
         }
     },
     "chargeType": {
-        "value": [
-            "temporaryPrice"
-        ]
+        "value": ["temporaryPrice"]
     },
     "address": {
         "type": "PostalAddress",
@@ -565,4 +629,4 @@ Two different groups are needed:
 
 ## Open issues
 
-+ How to model tariffs (use DATEX II version 2.3 as possible input)
+-   How to model tariffs (use DATEX II version 2.3 as possible input)

@@ -2,76 +2,101 @@
 
 ## Description
 
-See [https://developers.google.com/transit/gtfs/reference/#calendartxt](https://developers.google.com/transit/gtfs/reference/#calendartxt)
+See
+[https://developers.google.com/transit/gtfs/reference/#calendartxt](https://developers.google.com/transit/gtfs/reference/#calendartxt)
 
 ## Data Model
 
 The data model is defined as shown below:
 
-+ `id`: Entity Id
-    + It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`.
+-   `id`: Entity ID
 
-+ `type`: Entity Type
-    + It shall be equal to `gtfs:CalendarRule`
+    -   It shall be `urn:ngsi-ld:gtfs:CalendarRule:<calendar_rule_identifier>`.
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+-   `type`: Entity Type
 
-+ `dateModified` : Last update timestamp of this Entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Read-Only. Automatically generated.
+    -   It shall be equal to `gtfs:CalendarRule`
 
-+ `hasService` : Service to which this rule applies to. Derived from `service_id`.
-    + Attribute type: Relationship. It shall point to an entity of Type [gtfs:Service](../../Service/doc/spec.md)
-    + Mandatory
+-   `dateCreated` : Entity's creation timestamp.
 
-+ `name` : Name of this rule
-    + Attribute type: Property. [Text](https://schema.org/Text)
-    + Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `description`: Description of this rule
-    + Attribute type: Property. [Text](https://schema.org/Text)
-    + Optional
+-   `dateModified` : Last update timestamp of this Entity.
 
-+ `monday`: Same as GTFS `monday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-+ `tuesday`: Same as GTFS `tuesday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+-   `hasService` : Service to which this rule applies to. Derived from
+    `service_id`.
 
-+ `wednesday`: Same as GTFS `wednesday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+    -   Attribute type: Relationship. It shall point to an entity of Type
+        [gtfs:Service](../../Service/doc/spec.md)
+    -   Mandatory
 
-+ `thursday`: Same as GTFS `thursday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+-   `name` : Name of this rule
 
-+ `friday`: Same as GTFS `friday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
 
-+ `saturday`: Same as GTFS `saturday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+-   `description`: Description of this rule
 
-+ `sunday`: Same as GTFS `sunday`
-    + Attribute type: Property. [https://schema.org/Boolean](https://schema.org/Boolean)
-    + Mandatory
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
 
-+ `startDate`: Start date of this rule in `YYYY-MM-DD` format.
-It can be obtained from the field `start_date` of [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt).
-    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date).
-    + Mandatory
+-   `monday`: Same as GTFS `monday`
 
-+ `endDate`: End date of this rule in `YYYY-MM-DD` format.
-It can be obtained from the field `end_date` of [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt).
-    + Attribute type: Property. [https://schema.org/Date](https://schema.org/Date).
-    + Mandatory
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
 
+-   `tuesday`: Same as GTFS `tuesday`
+
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
+
+-   `wednesday`: Same as GTFS `wednesday`
+
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
+
+-   `thursday`: Same as GTFS `thursday`
+
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
+
+-   `friday`: Same as GTFS `friday`
+
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
+
+-   `saturday`: Same as GTFS `saturday`
+
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
+
+-   `sunday`: Same as GTFS `sunday`
+
+    -   Attribute type: Property.
+        [https://schema.org/Boolean](https://schema.org/Boolean)
+    -   Mandatory
+
+-   `startDate`: Start date of this rule in `YYYY-MM-DD` format. It can be
+    obtained from the field `start_date` of
+    [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt). +
+    Attribute type: Property.
+    [https://schema.org/Date](https://schema.org/Date). + Mandatory
+
+-   `endDate`: End date of this rule in `YYYY-MM-DD` format. It can be obtained
+    from the field `end_date` of
+    [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt). +
+    Attribute type: Property.
+    [https://schema.org/Date](https://schema.org/Date). + Mandatory
 
 ### Examples of use 1 (Normalized Format)
 
@@ -120,44 +145,42 @@ It can be obtained from the field `end_date` of [calendar.txt](https://developer
 
 ```json
 {
-  "id": "urn:ngsi-ld:CalendarRule:Madrid:Rule1267",
-  "type": "gtfs:CalendarRule",
-  "name": "Rule Hospital Service 1",
-  "hasService": "urn:ngsi-ld:Service:Madrid:Hospital_1",
-  "monday": true,
-  "tuesday": true,
-  "wednesday": true,
-  "thursday": true,
-  "friday": true,
-  "saturday": false,
-  "sunday": false,
-  "startDate": "2018-01-01",
-  "endDate": "2019-01-01"
+    "id": "urn:ngsi-ld:CalendarRule:Madrid:Rule1267",
+    "type": "gtfs:CalendarRule",
+    "name": "Rule Hospital Service 1",
+    "hasService": "urn:ngsi-ld:Service:Madrid:Hospital_1",
+    "monday": true,
+    "tuesday": true,
+    "wednesday": true,
+    "thursday": true,
+    "friday": true,
+    "saturday": false,
+    "sunday": false,
+    "startDate": "2018-01-01",
+    "endDate": "2019-01-01"
 }
 ```
 
 ## Summary of mappings to GTFS
 
-| GTFS Field                | NGSI Attribute          | LinkedGTFS                  | Comment                                                    |
-|:--------------------------|:------------------------|:--------------------------- |:-----------------------------------------------------------|
-|                           | `name`                  | `schema:name`               |                                                            |
-|                           | `description`           | `schema:description`        |                                                            |
-| `monday`                  | `monday`                | `gtfs:monday`               |                                                            |
-| `tuesday`                 | `tuesday`               | `gtfs:tuesday`              |                                                            |
-| `wednesday`               | `wednesday`             | `gtfs:wednesday`            |                                                            |
-| `thursday`                | `thursday`              | `gtfs:thursday`             |                                                            |
-| `friday`                  | `friday`                | `gtfs:friday`               |                                                            |
-| `saturday`                | `saturday`              | `gtfs:saturday`             |                                                            |
-| `sunday`                  | `sunday`                | `gtfs:sunday`               |                                                            |
-| `start_date`              | `startDate`             | `schema:startDate`          |                                                            |
-| `end_date`                | `endDate`               | `schema:endDate`            |                                                            |
-
-
+| GTFS Field   | NGSI Attribute | LinkedGTFS           | Comment |
+| :----------- | :------------- | :------------------- | :------ |
+|              | `name`         | `schema:name`        |         |
+|              | `description`  | `schema:description` |         |
+| `monday`     | `monday`       | `gtfs:monday`        |         |
+| `tuesday`    | `tuesday`      | `gtfs:tuesday`       |         |
+| `wednesday`  | `wednesday`    | `gtfs:wednesday`     |         |
+| `thursday`   | `thursday`     | `gtfs:thursday`      |         |
+| `friday`     | `friday`       | `gtfs:friday`        |         |
+| `saturday`   | `saturday`     | `gtfs:saturday`      |         |
+| `sunday`     | `sunday`       | `gtfs:sunday`        |         |
+| `start_date` | `startDate`    | `schema:startDate`   |         |
+| `end_date`   | `endDate`      | `schema:endDate`     |         |
 
 ### Relationships
 
-| GTFS Field              | NGSI Attribute        | LinkedGTFS           | Comment                                                |
-|:----------------------- |:----------------------|:-------------------- |:-------------------------------------------------------|
-|                         | `hasService`          | `gtfs:service`        | Shall point to another Entity of Type `gtfs:Service`  |
+| GTFS Field | NGSI Attribute | LinkedGTFS     | Comment                                              |
+| :--------- | :------------- | :------------- | :--------------------------------------------------- |
+|            | `hasService`   | `gtfs:service` | Shall point to another Entity of Type `gtfs:Service` |
 
 ## Open issues
