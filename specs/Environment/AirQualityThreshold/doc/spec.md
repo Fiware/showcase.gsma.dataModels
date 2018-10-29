@@ -6,16 +6,20 @@ The formal documentation of this model is currently under development. In the me
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
 mode (`options=keyValues`).
 
-## Examples of use
+## Examples
 
-    {
-      "id": "EU-AirQualityThreshold-O3-Background-VeryLow",
-      "type": "AirQualityThreshold",
-      "category": [ "Background" ],
-      "frequency": "Hourly",
-      "indexClass": "VeryLow",
-      "maxConcentration": 60,
-      "minConcentration": "0",
-      "pollutant": "O3",
-      "source": "http://www.airqualitynow.eu/"
-    }
+### key-value pairs Example
+
+```json
+{
+  "id": "EU-AirQualityThreshold-O3-Background-VeryLow",
+  "type": "AirQualityThreshold",
+  "category": [ "Background" ],
+  "frequency": "Hourly",
+  "indexClass": "VeryLow",
+  "maxConcentration": 60,
+  "minConcentration": "0",
+  "pollutant": "O3",
+  "source": "http://www.airqualitynow.eu/"
+}
+```
