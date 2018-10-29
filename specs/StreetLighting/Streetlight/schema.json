@@ -14,16 +14,13 @@
           "type": "string",
           "enum": [
             "Streetlight"
-          ],
-          "description": "NGSI Entity type"
+          ]
         },
         "areaServed": {
-          "type": "string",
-          "description": "Higher level area to which this streetlight belongs to. It can be used to group streetlights per responsible, district, neighbourhood, etc."
+          "type": "string"
         },
         "circuit": {
-          "type": "string",
-          "description": "The circuit to which this streetlight connects to and gets power from. Typically it will contain an identifier that will allow to obtain more information about such circuit."
+          "type": "string"
         },
         "refStreetlightModel": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
@@ -38,8 +35,7 @@
             "defectiveLamp",
             "columnIssue",
             "brokenLantern"
-          ],
-          "description": "The overall status of this street light"
+          ]
         },
         "powerState": {
             "type": "string",
@@ -48,67 +44,56 @@
                 "off",
                 "low",
                 "bootingUp"
-            ],
-            "description": "Streetlight's power state."
+            ]
         },
         "refDevice": {
           "type": "array",
           "items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
           "minItems": 1,
-          "uniqueItems": true,
-          "description": "Reference to the device(s) used to monitor this streetligth"
+          "uniqueItems": true
         },
         "refStreetlightGroup": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "dateLastLampChange": {
           "type": "string",
-          "format": "date-time",
-          "description": "Timestamp of the last change of lamp made. If `null` it will mean that the lamp has never been changed."
+          "format": "date-time"
         },
         "dateLastSwitchingOn": {
           "type": "string",
-          "format": "date-time",
-          "description": "Timestamp of the last switching on."
+          "format": "date-time"
         },
         "dateLastSwitchingOff": {
           "type": "string",
-          "format": "date-time",
-          "description": "Timestamp of the last switching off."
+          "format": "date-time"
         },
         "controllingMethod": {
           "type": "string",
           "enum": [
             "group",
             "individual"
-          ],
-          "description": "The method used to control this streetlight."
+          ]
         },
         "dateModified": {
           "type": "string",
-          "format": "date-time",
-          "description": "Timestamp of the last update made to this entity."
+          "format": "date-time"
         },
         "dateServiceStarted": {
           "type": "string",
-          "format": "date-time",
-          "description": "Date at which the streetlight started giving service."
+          "format": "date-time"
         },
         "image": {
           "type": "string",
-          "format": "uri",
-          "description": "A URL containing a photo of the streetlight."
+          "format": "uri"
         },
         "description": {
-          "type": "string",
-          "description": "Description about the streetlight."
+          "type": "string"
         },
         "annotations": {
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "description": "A field reserved for annotations (incidences, remarks, etc.)"
+          }
         },
         "locationCategory": {
           "type": "string",
@@ -124,19 +109,16 @@
             "tunnel",
             "parking",
             "centralIsland"
-          ],
-          "description": "Category of the location where the streetlight is placed."
+          ]
         },
         "laternHeight": {
           "type": "number",
-          "description": "Lantern's height. In columns with many arms this can vary between streetlights. Another variation source of this property are wall-mounted streetlights.",
           "minimum": 0
         },
         "illuminanceLevel": {
           "type": "number",
           "minimum": 0,
-          "maximum": 1,
-          "description": "Relative illuminance level setting."
+          "maximum": 1
         }
       }
     }
