@@ -113,7 +113,7 @@
         "locationCategory": {
           "type": "string",
           "enum": [
-            "facade",
+            "façade",
             "sidewalk",
             "pedestrianPath",
             "road",

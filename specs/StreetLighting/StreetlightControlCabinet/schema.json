@@ -28,7 +28,10 @@
         "refStreetlightGroup": {
           "type": "array",
           "items": {
-              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
           "description": "Streetlight group(s) controlled."
         },
         "brandName": {
@@ -62,7 +65,7 @@
               "individualControl"
             ]
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true,
           "description": "A list of cabinet controller features."
         },
@@ -71,6 +74,8 @@
           "items": {
             "type": "string"
           },
+          "minItems": 1,
+          "uniqueItems": true,
           "description": "A list of standards to which the cabinet controller is compliant with (ex. `IP54`)"
         },
         "annotations": {
@@ -126,9 +131,7 @@
         },
         "maximumPowerAvailable": {
           "type": "number",
-          "items": {
-            "type": "string"
-          },
+          "minimum": 0,
           "description": "The maximum power available (by contract) for the circuits controlled by this cabinet."
         },
         "energyConsumed": {
@@ -138,7 +141,8 @@
         },
         "energyCost": {
           "type": "number",
-          "description": "Cost of the energy consumed by the circuits controlled since the metering start date (`dateMeteringStarted`)"
+          "description": "Cost of the energy consumed by the circuits controlled since the metering start date (`dateMeteringStarted`)",
+          "minimum": 0
         },
         "reactiveEnergyConsumed": {
           "type": "number",
@@ -152,50 +156,61 @@
         },
         "lastMeterReading": {
           "type": "number",
-          "description": "Value of the last reading obtained from the energy consumed metering system."
+          "description": "Value of the last reading obtained from the energy consumed metering system.",
+          "minimum": 0
         },
         "meterReadingPeriod": {
           "type": "number",
-          "description": "The periodicity of energy consumed meter readings in days."
+          "description": "The periodicity of energy consumed meter readings in days.",
+          "minimum": 0
         },
         "frequency": {
           "type": "number",
-          "description": "The working frequency of the circuit."
+          "description": "The working frequency of the circuit.",
+          "minimum": 0
         },
         "totalActivePower": {
           "type": "number",
-          "description": "Active power currently consumed (counting all phases)."
+          "description": "Active power currently consumed (counting all phases).",
+          "minimum": 0
         },
         "totalReactivePower": {
           "type": "number",
-          "description": "Reactive power currently consumed (counting all phases)."
+          "description": "Reactive power currently consumed (counting all phases).",
+          "minimum": 0
         },
         "activePower": {
           "type": "object",
           "properties": {
             "R": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "S": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "T": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             }
           },
-          "description": "Active power consumed  per phase. The actual values will be conveyed by subproperties which name will be equal to the name of each of the alternating current phases, typically R, S, T."
+          "description": "Active power consumed per phase. The actual values will be conveyed by subproperties which name will be equal to the name of each of the alternating current phases, typically R, S, T."
         },
         "reactivePower": {
           "type": "object",
           "properties": {
             "R": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "S": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "T": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             }
           },
           "description": "Reactive power. The actual values will be conveyed by subproperties which name will be equal to the name of each of the alternating current phases, typically R, S, T."
@@ -216,13 +231,16 @@
           "type": "object",
           "properties": {
             "R": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "S": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "T": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             }
           },
           "description": "Electric intensity. The actual values will be conveyed by one subproperty per alternating current phase.  The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
@@ -231,13 +249,16 @@
           "type": "object",
           "properties": {
             "R": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "S": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "T": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             }
           },
           "description": "Electric tension. The actual values will be conveyed by one subproperty alternating current phase.  The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
@@ -246,13 +267,16 @@
           "type": "object",
           "properties": {
             "R": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "S": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "T": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             }
           },
           "description": "Total harmonic distortion (R) of The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
@@ -261,13 +285,16 @@
           "type": "object",
           "properties": {
             "R": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "S": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             },
             "T": {
-              "type": "number"
+              "type": "number",
+              "minimum": 0
             }
           },
           "description": "Total harmonic distortion (R) of intensity. The name of each subproperty will be equal to a phase mnemonic. The mnemonic used for denoting phases can vary depending on world regions. In Europe they are typically named as `R`, `S`, `T`."
