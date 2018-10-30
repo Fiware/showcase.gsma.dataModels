@@ -87,7 +87,7 @@ The data model is defined as shown below:
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Optional
 
--   `refDevice` : Reference to the device(s) used to monitor this streetligth.
+-   `refDevice` : Reference to the device(s) used to monitor this control cabinet.
 
     -   Attribute type: List of Reference to entity(ies) of type [Device](../Device/Device/doc/spec.md)
     -   Optional
