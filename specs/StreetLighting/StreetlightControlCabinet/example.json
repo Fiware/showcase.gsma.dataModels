@@ -10,7 +10,7 @@
   "modelName": "Simatic S7 1200",
   "refStreetlightGroup": ["streetlightgroup:BG678", "streetlightgroup:789"],
   "compliantWith": ["IP54"],
-  "dateLastProgramming": "2016-07-08",
+  "dateLastProgramming": "2016-07-08T16:04:30.201Z",
   "maximumPowerAvailable": 10,
   "energyConsumed": 162456,
   "dateMeteringStarted": "2013-07-07T15:05:59.408Z",

@@ -100,13 +100,13 @@ The data model is defined as shown below:
 -   `dateServiceStarted` : Date at which the cabinet controller started giving
     service.
 
-    -   Attribute Type: [Date](http://schema.org/Date)
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastProgramming` : Date at which there was a programming operation over
     the cabinet.
 
-    -   Attribute Type: [Date](http://schema.org/DateTime)
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `nextActuationDeadline` : Deadline for next actuation to be performed
@@ -308,7 +308,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       "modelName": "Simatic S7 1200",
       "refStreetlightGroup": ["streetlightgroup:BG678", "streetlightgroup:789"],
       "compliantWith": ["IP54"],
-      "dateLastProgramming": "2016-07-08",
+      "dateLastProgramming": "2016-07-08T16:04:30.201Z",
       "maximumPowerAvailable": 10,
       "energyConsumed": 162456,
       "dateMeteringStarted": "2013-07-07T15:05:59.408Z",

@@ -86,11 +86,11 @@
         },
         "dateServiceStarted": {
           "type": "string",
-          "format": "date"
+          "format": "date-time"
         },
         "dateLastProgramming": {
           "type": "string",
-          "format": "date"
+          "format": "date-time"
         },
         "nextActuationDeadline": {
           "type": "string",
