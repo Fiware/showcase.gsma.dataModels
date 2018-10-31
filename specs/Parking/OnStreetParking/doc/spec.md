@@ -230,7 +230,10 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use 1 (Normalized Format)
+## Examples
+### Normalized  Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -300,7 +303,9 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 }
 ```
 
-## Examples of use 2
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 An on street parking which contains a group of parking spots reserved for
 disabled people. At root entity level is announced that special parking spots
@@ -308,75 +313,75 @@ for disabled are present and two of them free.
 
 Main `OnstreetParking` entity.
 
-```
-    {
-      "id": "santander:daoiz_velarde_1_5",
-      "type": "OnStreetParking",
-      "category": ["blueZone", "shortTerm", "forDisabled"],
-      "allowedVehicleType": "car",
-      "chargeType": ["temporaryFee"],
-      "requiredPermit": ["blueZonePermit", "disabledPermit"],
-      "permitActiveHours": {
-        "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
-      },
-      "maximumAllowedStay": "PT2H",
-      "availableSpotNumber": 3,
-      "totalSpotNumber": 6,
-      "extraSpotNumber": 2,
-      "dateModified": "2016-06-02T09:25:55.00Z",
-      "location": {
+```json
+{
+    "id": "santander:daoiz_velarde_1_5",
+    "type": "OnStreetParking",
+    "category": ["blueZone", "shortTerm", "forDisabled"],
+    "allowedVehicleType": "car",
+    "chargeType": ["temporaryFee"],
+    "requiredPermit": ["blueZonePermit", "disabledPermit"],
+    "permitActiveHours": {
+      "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
+    },
+    "maximumAllowedStay": "PT2H",
+    "availableSpotNumber": 3,
+    "totalSpotNumber": 6,
+    "extraSpotNumber": 2,
+    "dateModified": "2016-06-02T09:25:55.00Z",
+    "location": {
         "type": "Polygon",
         "coordinates": [
-          [
-            [-3.80356167695194, 43.46296641666926 ],
-            [-3.803161973253841,43.46301091092682 ],
-            [-3.803147082548618,43.462879859445884],
-            [-3.803536474744068,43.462838666196674],
-            [-3.80356167695194, 43.46296641666926]
-          ]
+            [
+                [-3.80356167695194, 43.46296641666926 ],
+                [-3.803161973253841,43.46301091092682 ],
+                [-3.803147082548618,43.462879859445884],
+                [-3.803536474744068,43.462838666196674],
+                [-3.80356167695194, 43.46296641666926]
+            ]
         ]
-      },
-      "areaServed": "Zona Centro",
-      "refParkingGroup": ["daoiz-velarde-1-5-main", "daoiz-velarde-1-5-disabled"]
-    }
+    },
+    "areaServed": "Zona Centro",
+    "refParkingGroup": ["daoiz-velarde-1-5-main",   "daoiz-velarde-1-5-disabled"]
+}
 ```
 
 Two different parking groups are needed in this case:
 
 A/ Subrogated `ParkingGroup` which gives details about the regular parking spots
 
-```
-    {
-      "id": "daoiz-velarde-1-5-main",
-      "type": "ParkingGroup",
-      "category": ["onstreet", "blueZone", "shortTerm"],
-      "allowedVehicleType": "car",
-      "chargeType": ["temporaryFee"],
-      "refParkingSite": "daoiz-velarde-1-5",
-      "totalSpotNumber": 4,
-      "availableSpotNumber": 1,
-      "requiredPermit": "blueZonePermit"
-      /* Other required attributes */
-    }
+```json
+{
+    "id": "daoiz-velarde-1-5-main",
+    "type": "ParkingGroup",
+    "category": ["onstreet", "blueZone", "shortTerm"],
+    "allowedVehicleType": "car",
+    "chargeType": ["temporaryFee"],
+    "refParkingSite": "daoiz-velarde-1-5",
+    "totalSpotNumber": 4,
+    "availableSpotNumber": 1,
+    "requiredPermit": "blueZonePermit"
+    /* Other required attributes */
+}
 ```
 
 B/ Subrogated `ParkingGroup`. `refPArkingSite` is a pointer to the root entity.
 All the parking spots are free.
 
-```
-    {
-      "id": "daoiz-velarde-1-5-disabled",
-      "type": "ParkingGroup",
-      "category": ["onstreet", "blueZone", "shortTerm", "onlyDisabled"],
-      "allowedVehicleType": "car",
-      "chargeType": ["temporaryFee"],
-      "refParkingSite": "daoiz-velarde-1-5",
-      "description": "Two parking spots reserved for disabled people",
-      "totalSpotNumber": 2,
-      "availableSpotNumber": 2,
-      "requiredPermit": "disabledPermit,blueZonePermit"
-      /* Other required attributes */
-    }
+```json
+{
+    "id": "daoiz-velarde-1-5-disabled",
+    "type": "ParkingGroup",
+    "category": ["onstreet", "blueZone", "shortTerm", "onlyDisabled"],
+    "allowedVehicleType": "car",
+    "chargeType": ["temporaryFee"],
+    "refParkingSite": "daoiz-velarde-1-5",
+    "description": "Two parking spots reserved for disabled people",
+    "totalSpotNumber": 2,
+    "availableSpotNumber": 2,
+    "requiredPermit": "disabledPermit,blueZonePermit"
+    /* Other required attributes */
+}
 ```
 
 ## Test it with a real service
