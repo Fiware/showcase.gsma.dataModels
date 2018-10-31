@@ -1,0 +1,275 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/StreetlightControlCabinet/schema.json",
+  "title": "FIWARE - Street Lighting / Streetlight Control Cabinet",
+  "description": "A Streetlight control cabinet",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "StreetlightControlCabinet"
+          ]
+        },
+        "areaServed": {
+          "type": "string"
+        },
+        "serialNumber": {
+          "type": "string"
+        },
+        "refStreetlightGroup": {
+          "type": "array",
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "brandName": {
+          "type": "string"
+        },
+        "modelName": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        },
+        "cupboardMadeOf": {
+          "type": "string",
+          "enum": [
+            "plastic",
+            "metal",
+            "concrete",
+            "other"
+          ]
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "astronomicalClock",
+              "individualControl"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "compliantWith": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refDevice": {
+          "type": "array",
+          "items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateServiceStarted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateLastProgramming": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nextActuationDeadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "responsible": {
+          "type": "string"
+        },
+        "workingMode": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "manual",
+            "semiautomatic"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "maximumPowerAvailable": {
+          "type": "number",
+          "minimum": 0
+        },
+        "energyConsumed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "energyCost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reactiveEnergyConsumed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "dateMeteringStarted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastMeterReading": {
+          "type": "number",
+          "minimum": 0
+        },
+        "meterReadingPeriod": {
+          "type": "number",
+          "minimum": 0
+        },
+        "frequency": {
+          "type": "number",
+          "minimum": 0
+        },
+        "totalActivePower": {
+          "type": "number",
+          "minimum": 0
+        },
+        "totalReactivePower": {
+          "type": "number",
+          "minimum": 0
+        },
+        "activePower": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number",
+              "minimum": 0
+            },
+            "S": {
+              "type": "number",
+              "minimum": 0
+            },
+            "T": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "reactivePower": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number",
+              "minimum": 0
+            },
+            "S": {
+              "type": "number",
+              "minimum": 0
+            },
+            "T": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "powerFactor": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "cosPhi": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "intensity": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number",
+              "minimum": 0
+            },
+            "S": {
+              "type": "number",
+              "minimum": 0
+            },
+            "T": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "voltage": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number",
+              "minimum": 0
+            },
+            "S": {
+              "type": "number",
+              "minimum": 0
+            },
+            "T": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "thdrVoltage": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number",
+              "minimum": 0
+            },
+            "S": {
+              "type": "number",
+              "minimum": 0
+            },
+            "T": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "thdrIntensity": {
+          "type": "object",
+          "properties": {
+            "R": {
+              "type": "number",
+              "minimum": 0
+            },
+            "S": {
+              "type": "number",
+              "minimum": 0
+            },
+            "T": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "refStreetlightGroup",
+    "workingMode"
+  ]
+}

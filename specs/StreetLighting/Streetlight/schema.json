@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/Streetlight/schema.json",
+  "title": "FIWARE - Street Lighting / Streetlight",
+  "description": "A Street light",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Streetlight"
+          ]
+        },
+        "areaServed": {
+          "type": "string"
+        },
+        "circuit": {
+          "type": "string"
+        },
+        "refStreetlightModel": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refStreetlightControlCabinet": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "defectiveLamp",
+            "columnIssue",
+            "brokenLantern"
+          ]
+        },
+        "powerState": {
+            "type": "string",
+            "enum": [
+                "on",
+                "off",
+                "low",
+                "bootingUp"
+            ]
+        },
+        "refDevice": {
+          "type": "array",
+          "items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "refStreetlightGroup": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "dateLastLampChange": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateLastSwitchingOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateLastSwitchingOff": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "controllingMethod": {
+          "type": "string",
+          "enum": [
+            "group",
+            "individual"
+          ]
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateServiceStarted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locationCategory": {
+          "type": "string",
+          "enum": [
+            "façade",
+            "sidewalk",
+            "pedestrianPath",
+            "road",
+            "playground",
+            "park",
+            "garden",
+            "bridge",
+            "tunnel",
+            "parking",
+            "centralIsland"
+          ]
+        },
+        "laternHeight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "illuminanceLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "status"
+  ]
+}

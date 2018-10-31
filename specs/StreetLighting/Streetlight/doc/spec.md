@@ -75,6 +75,11 @@ The data model is defined as shown below:
     -   Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     -   Optional
 
+-   `refDevice` : Reference to the device(s) used to monitor this streetligth.
+
+    -   Attribute type: List of Reference to entity(ies) of type [Device](../Device/Device/doc/spec.md)
+    -   Optional
+
 -   `refStreetlightGroup` : Streetlight's group, if this streetlight belongs to
     any group.
 

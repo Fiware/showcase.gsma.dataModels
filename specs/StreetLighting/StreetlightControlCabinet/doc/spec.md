@@ -87,6 +87,11 @@ The data model is defined as shown below:
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Optional
 
+-   `refDevice` : Reference to the device(s) used to monitor this control cabinet.
+
+    -   Attribute type: List of Reference to entity(ies) of type [Device](../Device/Device/doc/spec.md)
+    -   Optional
+
 -   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
@@ -95,13 +100,13 @@ The data model is defined as shown below:
 -   `dateServiceStarted` : Date at which the cabinet controller started giving
     service.
 
-    -   Attribute Type: [Date](http://schema.org/Date)
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastProgramming` : Date at which there was a programming operation over
     the cabinet.
 
-    -   Attribute Type: [Date](http://schema.org/DateTime)
+    -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `nextActuationDeadline` : Deadline for next actuation to be performed
@@ -303,10 +308,10 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       "modelName": "Simatic S7 1200",
       "refStreetlightGroup": ["streetlightgroup:BG678", "streetlightgroup:789"],
       "compliantWith": ["IP54"],
-      "dateLastProgramming": "2016-07-08",
+      "dateLastProgramming": "2016-07-08T16:04:30.201Z",
       "maximumPowerAvailable": 10,
       "energyConsumed": 162456,
-      "dateMeteringStarted": "2013-07-07",
+      "dateMeteringStarted": "2013-07-07T15:05:59.408Z",
       "lastMeterReading": 161237,
       "meterReadingPeriod": 60,
       "intensity": {
@@ -318,7 +323,8 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
         "R": 45,
         "S": 43.5,
         "T": 42
-      }
+      },
+      "workingMode": "automatic"
     }
 
 ## Test it with a real service
