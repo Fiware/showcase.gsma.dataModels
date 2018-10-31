@@ -384,6 +384,7 @@ means that to test the JSON schema examples with a
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
+
 ### Normalized Example
 
 Normalized NGSI response
