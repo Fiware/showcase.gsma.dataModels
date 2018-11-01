@@ -54,7 +54,7 @@ The general principle guiding your adoption should be: keep it simple.
     the original source. For example, for the location, we use GeoJSON. You can
     find the exact semantics of GeoJSON schema in the related standard.
 -   Be aware that **[JSON Schemas](http://json-schema.org/) provided cover only
-    the the so called _key-value_ representation of NGSI v2 context data**.
+    the so called _key-value_ representation of NGSI v2 context data**.
 -   Be aware that at the time being **none of the official FIWARE Core Enablers
     enforce schema validation**. Thus, in case you want to be sure your
     application data validates correctly against a given Data Model, this is up

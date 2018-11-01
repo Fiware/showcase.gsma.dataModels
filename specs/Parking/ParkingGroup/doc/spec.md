@@ -47,7 +47,7 @@ The data model is defined as shown below:
 
     -   Attribute type: [Text](http://schema.org/Text)
     -   Allowed Values: The following values defined by _VehicleTypeEnum_
-        [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip)
+        [DATEX 2 version 2.3](http://d2docs.ndwcloud.nu/)
         : + (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
         `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`,
         `lorry`, `moped`, `motorcycle`, `motorcycleWithSideCar`, `motorscooter`,

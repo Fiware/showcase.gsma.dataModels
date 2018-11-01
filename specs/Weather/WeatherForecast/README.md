@@ -35,10 +35,12 @@ You can use a FIWARE instance described
 
 What is the weather forecast today in Valencia (Spain) from 17:00 UTC on?
 
-````curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>'
+```bash
+curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>'
 http://130.206.118.244:1027/v2/entities?type=WeatherForecast&options=keyValues&q=address.addressLocality:Valencia;validFrom:2016-12-01T17```
-````
+```
 
+```json
 { "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
 "type": "WeatherForecast", "address": { "addressCountry": "Spain", "postalCode":
 "46005", "addressLocality": "Valencia" }, "dataProvider": "TEF", "dateIssued":
@@ -51,7 +53,4 @@ http://130.206.118.244:1027/v2/entities?type=WeatherForecast&options=keyValues&q
 "validFrom": "2016-12-01T17:00:00.00Z", "validTo": "2016-12-01T23:00:00.00Z",
 "validity": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00",
 "weatherType": "overcast", "windDirection": null, "windSpeed": 0 }
-
-```
-
 ```

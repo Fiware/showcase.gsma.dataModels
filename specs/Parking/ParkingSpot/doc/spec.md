@@ -79,7 +79,7 @@ The data model is defined as shown below:
     simplification purposes only one group is allowed per parking spot. +
     Attribute type: Reference to an entity of type `ParkingGroup`. + Optional
 
--   `refParkingSite` : Parking site to which the the parking spot belongs to.
+-   `refParkingSite` : Parking site to which the parking spot belongs to.
 
     -   Attribute type: Reference to an entity of type `OnStreetParking` or type
         `OffStreetParking`, depending on the value of the `category` attribute.

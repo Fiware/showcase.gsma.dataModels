@@ -6,10 +6,20 @@
       "adverb": false,
       "passive": false,
       "tooWordy": false,
-      "weasel": false
+      "weasel": false,
+      "so": true
     },
     "no-dead-link": {
-       "ignoreRedirects": true
+       "checkRelative": false,
+       "ignoreRedirects": true,
+       "ignore": [
+          "mailto:*",
+          "https://schema.org/*",
+          "http://schema.org/*"
+      ]
     }
+  },
+  "filters": {
+    "comments": true
   }
 }

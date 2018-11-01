@@ -18,7 +18,7 @@ is identified by `refTarget`.
 ## Data Model
 
 A JSON Schema corresponding to this data model can be found
-[here](https://fiware.github.io/dataModels/specs/User/UserActivity/schema.json).
+[here](https://fiware.github.io/dataModels/specs/User/Activity/schema.json).
 
 -   `id` : Unique identifier.
 

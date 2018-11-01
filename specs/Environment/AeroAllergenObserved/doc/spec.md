@@ -148,7 +148,7 @@ To describe the allergenicity category of aero allergens,
 *for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
 the associated plant) concatenated with the string `_Allergenicity`,
-e.g. `alnus_Allergenicity` to describe the allergenicity level of 
+e.g. `alnus_Allergenicity` to describe the allergenicity level of
 [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
 + Attribute name: Equal to the name of the allergen plus the suffix `_Allergenicity`, for instance `alnus_Allergenicity`.
@@ -161,17 +161,17 @@ e.g. `alnus_Allergenicity` to describe the allergenicity level of
     + `description` : short description of the measurand and its related qualitative level
         + Type: [Text](https://schema.org/Text)
         + Optional
-    + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value. 
+    + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value.
         + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-        + Mandatory       
+        + Mandatory
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
 mode (`options=keyValues`).
-    
+
 ## Examples
 
-### key-value pairs Example 
+### key-value pairs Example
 
 ``` json
 {

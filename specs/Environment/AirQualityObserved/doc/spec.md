@@ -97,7 +97,7 @@ A JSON Schema corresponding to this data model can be found
 
 ### Representing air pollutants
 
-In order to enable a proper management of the the concentrations of the
+In order to enable a proper management of the concentrations of the
 different pollutants, _for each_ pollutant (measurand) there must be an
 attribute which name _MUST_ be exactly equal the chemical formula (or mnemonic)
 of the measurand, ex. CO. The structure of such an attribute will be as follows:
