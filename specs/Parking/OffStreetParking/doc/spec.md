@@ -383,7 +383,11 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use 1 (Normalized Format)
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -453,177 +457,197 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 }
 ```
 
-## Examples of use 2
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 A public off street parking underground controlled by a barrier.
 
-    {
-      "id": "porto-ParkingLot-23889",
-      "type": "OffStreetParking",
-      "name": "Parque de estacionamento Trindade",
-      "category": ["underground", "public", "feeCharged", "mediumTerm", "barrierAccess"],
-      "chargeType": ["temporaryPrice"],
-      "requiredPermit": [],
-      "layout": ["multiLevel"],
-      "maximumParkingDuration": "PT8H",
-      "location": {
+```json
+{
+    "id": "porto-ParkingLot-23889",
+    "type": "OffStreetParking",
+    "name": "Parque de estacionamento Trindade",
+    "category": ["underground", "public", "feeCharged", "mediumTerm", "barrierAccess"],
+    "chargeType": ["temporaryPrice"],
+    "requiredPermit": [],
+    "layout": ["multiLevel"],
+    "maximumParkingDuration": "PT8H",
+    "location": {
         "coordinates": [-8.60961198807, 41.150691773],
         "type": "Point"
-      },
-      "allowedVehicleType": ["car"],
-      "totalSpotNumber": 414,
-      "availableSpotNumber": 132,
-      "address": {
+    },
+    "allowedVehicleType": ["car"],
+    "totalSpotNumber": 414,
+    "availableSpotNumber": 132,
+    "address": {
         "streetAddress": "Rua de Fernandes Tomás",
         "addressLocality": "Porto",
         "addressCountry": "Portugal"
-      },
-      "description": "Municipal car park located near the Trindade metro station and the Town Hall",
-      "dateModified": "2016-06-02T09:25:55.00Z"
-    }
+    },
+    "description": "Municipal car park located near the Trindade metro station and the Town Hall",
+    "dateModified": "2016-06-02T09:25:55.00Z"
+}
+```
 
 Urban Deterrent (xxxx and ride) parking. Free. 2 hours at a maximum.
 
-    {
-       "id": "pdu-valladolid-1",
-       "type": "OffStreetParking",
-       "name": "Parking Disuasorio 1",
-       "category": ["public", "urbanDeterrentParking", "shortTerm", "ground", "parkingLot"],
-       "usageScenario": ["parkAndRide", "parkAndCycle"],
-       "layout": ["openSpace"],
-       "chargeType": ["freeParking"],
-       "allowedVehicleType": ["car"],
-       "maximumParkingDuration": "PT2H",
-       "requiredPermit": null,
-       "areaServed": "Centro",
-       "address": {
-          "streetAddress": "Calle La India",
-          "addressLocality": "Valladolid",
-          "addressCountry": "ES"
-      }
-    }
+```json
+{
+    "id": "pdu-valladolid-1",
+    "type": "OffStreetParking",
+    "name": "Parking Disuasorio 1",
+    "category": ["public", "urbanDeterrentParking", "shortTerm",    "ground", "parkingLot"],
+    "usageScenario": ["parkAndRide", "parkAndCycle"],
+    "layout": ["openSpace"],
+    "chargeType": ["freeParking"],
+    "allowedVehicleType": ["car"],
+    "maximumParkingDuration": "PT2H",
+    "requiredPermit": null,
+    "areaServed": "Centro",
+    "address": {
+        "streetAddress": "Calle La India",
+        "addressLocality": "Valladolid",
+        "addressCountry": "ES"
+        }
+}
+```
 
 Long stay parking. Maximum 4 days. Charging depends on time spent.
 
-    {
-      "id": "long-stay-valladolid-2",
-      "type": "OffStreetParking",
-      "name": "El Corte Ingles",
-      "usageScenario": ["overnight"],
-      "category": ["public", "longTerm", "underground", "parkingGarage"],
-      "layout": ["singleLevel"],
-      "chargeType": ["temporaryPrice"],
-      "allowedVehicleType": ["car"],
-      "maximumParkingDuration": "P4D",
-      "requiredPermit": null,
-      "address": {
-          "streetAddress": "Paseo de Zorrilla, 96",
-          "addressLocality": "Valladolid",
-          "addressCountry": "ES"
-      }
+```json
+{
+    "id": "long-stay-valladolid-2",
+    "type": "OffStreetParking",
+    "name": "El Corte Ingles",
+    "usageScenario": ["overnight"],
+    "category": ["public", "longTerm", "underground", "parkingGarage"],
+    "layout": ["singleLevel"],
+    "chargeType": ["temporaryPrice"],
+    "allowedVehicleType": ["car"],
+    "maximumParkingDuration": "P4D",
+    "requiredPermit": null,
+    "address": {
+        "streetAddress": "Paseo de Zorrilla, 96",
+        "addressLocality": "Valladolid",
+        "addressCountry": "ES"
     }
+}
+```
 
 Off street parking with an specific area devoted to residents (100 spots).
 
-    {
-       "id": "parking-example-234",
-       "type": "OffStreetParking",
-       "name": "La Farola 1",
-       "category": ["public", "shortTerm", "longTerm", "forResidents"],
-       "chargeType": ["temporaryPrice", "annualTax"],
-       "totalSpotNumber": 250,
-       "availableSpotNumber": 100,
-       "extraSpotNumber": 60,
-       "refParkingGroup": ["example-234-g-regular", "example-234-g-residents"],
-       "requiredPermit": ["noPermit", "residentPermit"] /* Generally speaking no permit */
-       /* Other required fields (Check model) */
-    }
+```json
+{
+    "id": "parking-example-234",
+    "type": "OffStreetParking",
+    "name": "La Farola 1",
+    "category": ["public", "shortTerm", "longTerm", "forResidents"],
+    "chargeType": ["temporaryPrice", "annualTax"],
+    "totalSpotNumber": 250,
+    "availableSpotNumber": 100,
+    "extraSpotNumber": 60,
+    "refParkingGroup": ["example-234-g-regular",    "example-234-g-residents"],
+    "requiredPermit": ["noPermit", "residentPermit"] /* Generally   speaking no permit */
+    /* Other required fields (Check model) */
+}
+```
 
 Two different groups are needed:
 
 1/ Subrogated parking group to denote regular parking spots.
 
-    {
-      "id": "example-234-g-regular",
-      "type": "ParkingGroup",
-      "name": "La Farola 1 - Público General",
-      "chargeType": ["temporaryPrice"],
-      "category": ["offstreet", "shortTerm"],
-      "totalSpotNumber": 150,
-      "availableSpotNumber": 40,
-      "requiredPermit": null,
-      "refParkingSite": "parking-example-234",
-      "allowedVehicleType": "car",
-      "maximumParkingDuration": "PT2H"
-      /* Other required fields (Check model) */
-    }
+```json
+{
+    "id": "example-234-g-regular",
+    "type": "ParkingGroup",
+    "name": "La Farola 1 - Público General",
+    "chargeType": ["temporaryPrice"],
+    "category": ["offstreet", "shortTerm"],
+    "totalSpotNumber": 150,
+    "availableSpotNumber": 40,
+    "requiredPermit": null,
+    "refParkingSite": "parking-example-234",
+    "allowedVehicleType": "car",
+    "maximumParkingDuration": "PT2H"
+    /* Other required fields (Check model) */
+}
+```
 
 2/ Subrogated parking group to denote those parking spots devoted for residents.
 
-    {
-      "id": "example-234-g-residents",
-      "type": "ParkingGroup",
-      "name": "La Farola 1 - Residentes",
-      "chargeType": ["annualTax"],   /* Annual payment for residents */
-      "category": ["offstreet", "longTerm", "onlyResidents"], /* Group Category. Overwrites parent's */
-      "totalSpotNumber": 100,
-      "availableSpotNumber": 60,
-      "requiredPermit": "residentPermit",
-      "refParkingSite": "parking-example-234",
-      "allowedVehicleType": "car",
-      "maximumParkingDuration": null
-      /* Other required fields (Check model) */
-    }
+```json
+{
+    "id": "example-234-g-residents",
+    "type": "ParkingGroup",
+    "name": "La Farola 1 - Residentes",
+    "chargeType": ["annualTax"],   /* Annual payment for residents */
+    "category": ["offstreet", "longTerm", "onlyResidents"], /* Group    Category. Overwrites parent's */
+    "totalSpotNumber": 100,
+    "availableSpotNumber": 60,
+    "requiredPermit": "residentPermit",
+    "refParkingSite": "parking-example-234",
+    "allowedVehicleType": "car",
+    "maximumParkingDuration": null
+    /* Other required fields (Check model) */
+}
+```
 
 Private parking only for employees. A devoted visitor zone.
 
-    {
-      "id": "district-telefonica-parking-1",
-      "type": "OffStreetParking",
-      "name": "Distrito T - Parking Oeste",
-      "category": ["private", "underground", "mediumTerm", "forEmployees", "onlyWithPermit", "forVisitors"],
-      "requiredPermit": ["employeePermit", "visitorPermit"],
-      "chargeType": ["free"],
-      "allowedVehicleType": ["car"],
-      "maximumParkingDuration": "PT12H",
-      "totalSpotNumber": 250,
-      "availableSpotNumber": 100,
-      "extraSpotNumber": 10,
-      "refParkingGroup": ["dt-p1-employee-group", "dt-p1-visitor-group"]
-       /* Other required fields (Check model) */
-    }
+```json
+{
+    "id": "district-telefonica-parking-1",
+    "type": "OffStreetParking",
+    "name": "Distrito T - Parking Oeste",
+    "category": ["private", "underground", "mediumTerm", "forEmployees",    "onlyWithPermit", "forVisitors"],
+    "requiredPermit": ["employeePermit", "visitorPermit"],
+    "chargeType": ["free"],
+    "allowedVehicleType": ["car"],
+    "maximumParkingDuration": "PT12H",
+    "totalSpotNumber": 250,
+    "availableSpotNumber": 100,
+    "extraSpotNumber": 10,
+    "refParkingGroup": ["dt-p1-employee-group", "dt-p1-visitor-group"]
+    /* Other required fields (Check model) */
+}
+```
 
 Two different groups are needed:
 
 1/ Subrogated parking group modelling regular employee's spots.
 
-    {
-      "id": "dt-p1-employee-group",
-      "type": "ParkingGroup",
-      "category": ["offstreet", "onlyWithPermit", "shortTerm"],
-      "totalSpotNumber": 230,
-      "availableSpotNumber": 50,
-      "requiredPermit": "employeePermit",
-      "chargeType": ["free"],
-      "refParkingSite": "district-telefonica-parking-1",
-      "allowedVehicleType": "car"
-      /* Other required fields (Check model) */
-    }
+```json
+{
+    "id": "dt-p1-employee-group",
+    "type": "ParkingGroup",
+    "category": ["offstreet", "onlyWithPermit", "shortTerm"],
+    "totalSpotNumber": 230,
+    "availableSpotNumber": 50,
+    "requiredPermit": "employeePermit",
+    "chargeType": ["free"],
+    "refParkingSite": "district-telefonica-parking-1",
+    "allowedVehicleType": "car"
+    /* Other required fields (Check model) */
+}
+```
 
 2/ Subrogated parking group modelling visitor's spots.
 
-    {
-      "id": "dt-p1-visitor-group",
-      "type": "ParkingGroup",
-      "category": ["offstreet", "onlyWithPermit", "shortTerm"],
-      "totalSpotNumber": 20,
-      "availableSpotNumber": 10,
-      "requiredPermit": "visitorPermit",
-      "chargeType": ["free"],
-      "refParkingSite": "district-telefonica-parking-1",
-      "allowedVehicleType": "car"
-      /* Other required fields (Check model) */
-    }
+```json
+{
+    "id": "dt-p1-visitor-group",
+    "type": "ParkingGroup",
+    "category": ["offstreet", "onlyWithPermit", "shortTerm"],
+    "totalSpotNumber": 20,
+    "availableSpotNumber": 10,
+    "requiredPermit": "visitorPermit",
+    "chargeType": ["free"],
+    "refParkingSite": "district-telefonica-parking-1",
+    "allowedVehicleType": "car"
+    /* Other required fields (Check model) */
+}
+```
 
 ## Test it with a real service
 

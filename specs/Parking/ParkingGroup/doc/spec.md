@@ -206,7 +206,11 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use 1 (Normalized Format)
+## Examples
+
+### Normalized  Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -264,66 +268,72 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 }
 ```
 
-## Examples of use 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 A group of parking spots especially for disabled people.
 
-    {
-      "id": "daoiz-velarde-1-5-disabled",
-      "type": "ParkingGroup",
-      "category": ["onstreet", "adjacentSpaces", "onlyDisabled"],
-      "allowedVehicleType": "car",
-      "chargeType": ["free"],
-      "refParkingSite": "daoiz-velarde-1-5",
-      "description": "Two parking spots reserved for disabled people",
-      "totalSpotNumber": 2,
-      "availableSpotNumber": 1,
-      "location": {
+```json
+{
+    "id": "daoiz-velarde-1-5-disabled",
+    "type": "ParkingGroup",
+    "category": ["onstreet", "adjacentSpaces", "onlyDisabled"],
+    "allowedVehicleType": "car",
+    "chargeType": ["free"],
+    "refParkingSite": "daoiz-velarde-1-5",
+    "description": "Two parking spots reserved for disabled people",
+    "totalSpotNumber": 2,
+    "availableSpotNumber": 1,
+    "location": {
         "type": "Polygon",
         "coordinates": [
-          [
-            [-3.80356167695194, 43.46296641666926 ],
-            [-3.803161973253841,43.46301091092682 ],
-            [-3.803147082548618,43.462879859445884],
-            [-3.803536474744068,43.462838666196674],
-            [-3.80356167695194, 43.46296641666926]
-          ]
+            [
+                [-3.80356167695194, 43.46296641666926 ],
+                [-3.803161973253841,43.46301091092682 ],
+                [-3.803147082548618,43.462879859445884],
+                [-3.803536474744068,43.462838666196674],
+                [-3.80356167695194, 43.46296641666926]
+            ]
         ]
-      },
-      "requiredPermit": "disabledPermit",
-      "permitActiveHours": null          /* Always permit is needed */
-    }
+    },
+    "requiredPermit": "disabledPermit",
+    "permitActiveHours": null          /* Always permit is needed */
+}
+```
 
 A group of parking spots especially for loading and unloading goods. From 10:00
 to 14:00, Monday-Saturday.
 
-    {
-      "id": "daoiz-velarde-23-load",
-      "type": "ParkingGroup",
-      "category": ["onstreet", "adjacentSpaces", "loadUnloadZone"],
-      "allowedVehicleType": "car,van,lorry",
-      "chargeType": ["free"],
-      "refParkingSite": ""daoiz-velarde-23",
-      "description": "Three parking spots reserved for load and unload",
-      "totalSpotNumber": 3,
-      "availableSpotNumber": 2,
-      "location": {
+```json
+{
+    "id": "daoiz-velarde-23-load",
+    "type": "ParkingGroup",
+    "category": ["onstreet", "adjacentSpaces", "loadUnloadZone"],
+    "allowedVehicleType": "car,van,lorry",
+    "chargeType": ["free"],
+    "refParkingSite": "daoiz-velarde-23",
+    "description": "Three parking spots reserved for load and unload",
+    "totalSpotNumber": 3,
+    "availableSpotNumber": 2,
+    "location": {
         "type": "Polygon",
         "coordinates": [
-          [
-            [-3.80356167695194, 43.46296641666926 ],
-            [-3.803161973253841,43.46301091092682 ],
-            [-3.803147082548618,43.462879859445884],
-            [-3.803536474744068,43.462838666196674],
-            [-3.80356167695194, 43.46296641666926]
-          ]
+            [
+                [-3.80356167695194, 43.46296641666926 ],
+                [-3.803161973253841,43.46301091092682 ],
+                [-3.803147082548618,43.462879859445884],
+                [-3.803536474744068,43.462838666196674],
+                [-3.80356167695194, 43.46296641666926]
+            ]
         ]
-      },
-      "requiredPermit": "transportPermit",
-      "permitActiveHours": {
-         "transportPermit": “Mo, Tu, We, Th, Fr, Sa 10:00-14:00"
-      }
+    },
+    "requiredPermit": "transportPermit",
+    "permitActiveHours": {
+        "transportPermit": “Mo, Tu, We, Th, Fr, Sa 10:00-14:00"
     }
+}
+```
 
 ## Test it with a real service
 
