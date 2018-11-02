@@ -151,7 +151,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
           [ [102.0, 2.0], [103.0, 3.0] ]
         ]
       },
-      "powerStatus": "on",
+      "powerState": "on",
       "areaServed": "Calle Comercial Centro",
       "circuitId": "C-456-A467",
       "dateLastSwitchingOn":  "2016-07-07T19:59:06.618Z",
