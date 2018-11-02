@@ -20,9 +20,11 @@ The data model is defined as shown below:
     -   Mandatory
 
 -   `areaServed` : Higher level area to which the streetlight group belongs to.
-    It can be used to group per responsible, district, neighbourhood, etc. +
-    Normative References:
-    [https://schema.org/areaServed](https://schema.org/areaServed) + Optional
+    It can be used to group per responsible, district, neighbourhood, etc.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Normative References: [https://schema.org/areaServed](https://schema.org/areaServed)
+    -   Optional
 
 -   `powerState` : Streetlight group's power state.
 

@@ -31,7 +31,11 @@ The data model is defined as shown below:
 
 -   `areaServed` : Higher level area to which this streetlight belongs to. It
     can be used to group streetlights per responsible, district, neighbourhood,
-    etc. + Attribute type: [Text](https://schema.org/Text) + Optional
+    etc.
+
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Normative References: [https://schema.org/areaServed](https://schema.org/areaServed)
+    -   Optional
 
 -   `circuit` : The circuit to which this streetlight connects to and gets power
     from. Typically it will contain an identifier that will allow to obtain more
@@ -160,8 +164,11 @@ The data model is defined as shown below:
 
 -   `lanternHeight` : Lantern's height. In columns with many arms this can vary
     between streetlights. Another variation source of this property are
-    wall-mounted streetlights. + Attribute type:
-    [Number](https://schema.org/Number) + Default unit: Meters. + Optional
+    wall-mounted streetlights.
+
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Meters.
+    -   Optional
 
 -   `illuminanceLevel` : Relative illuminance level setting.
     -   Attribute Type: [Number](http://schema.org/Number)
