@@ -36,10 +36,10 @@ The data model is defined as shown below:
     -   Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     -   Optional
 
--   `refStreetlightCabinetController` : Streetlight group's cabinet controller
+-   `refStreetlightControlCabinet` : Streetlight group's control cabinet
 
     -   Attribute type : Reference to a
-        [StreetlightCabinetController](../../StreetlightCabinetController/doc/spec.md)
+        [StreetlightControlCabinet](../../StreetlightControlCabinet/doc/spec.md)
         entity.
     -   Optional
 
