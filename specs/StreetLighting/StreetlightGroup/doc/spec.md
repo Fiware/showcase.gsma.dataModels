@@ -64,7 +64,7 @@ The data model is defined as shown below:
 -   `switchingOnHours` : Switching on hours. It is used normally to set special
     schedules for certain dates.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute Type: List of [StructuredValue](http://schema.org/StructuredValue)
     -   Subproperties:
         -   `from` : Starting date (it can be yearless).
             -   Type: [Date](https://schema.org/Date)

@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/Streetlight/schema.json",
+  "title": "FIWARE - Street Lighting / Streetlight Group",
+  "description": "A Street light group",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "StreetlightGroup"
+          ]
+        },
+        "areaServed": {
+          "type": "string"
+        },
+        "powerState": {
+            "type": "string",
+            "enum": [
+                "on",
+                "off",
+                "low",
+                "bootingUp"
+            ]
+        },
+        "refStreetlightControlCabinet": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "dateLastSwitchingOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateLastSwitchingOff": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "switchingOnHours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "format": "date-optionally-yearless"
+              },
+              "to": {
+                "type": "string",
+                "format": "date-optionally-yearless"
+              },
+              "hours": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "hours"
+            ]
+          }
+        },
+        "switchingMode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "night-ON",
+              "night-OFF",
+              "night-LOW",
+              "always-ON",
+              "day-ON",
+              "day-OFF",
+              "day-LOW"
+            ]
+          }
+        },
+        "illuminanceLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "activeProgramId": {
+          "type": "string"
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refStreetlight": {
+          "type": "array",
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location"
+  ]
+}
