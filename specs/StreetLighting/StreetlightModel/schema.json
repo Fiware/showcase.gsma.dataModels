@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/Streetlight/schema.json",
+  "title": "FIWARE - Street Lighting / Streetlight model",
+  "description": "A Street light model",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "StreetlightModel"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "alternateName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "maxPowerConsumption": {
+          "type": "number",
+          "minimum": 0
+        },
+        "minPowerConsumption": {
+          "type": "number",
+          "minimum": 0
+        },
+        "columnBrandName": {
+          "type": "string"
+        },
+        "columnModelName": {
+          "type": "string"
+        },
+        "columnManufacturerName": {
+          "type": "string"
+        },
+        "columnMadeOf": {
+          "type": "string",
+          "enum": [
+            "steel",
+            "aluminium",
+            "wood",
+            "other"
+          ]
+        },
+        "columnColor": {
+          "type": "string"
+        },
+        "lanternModelName": {
+          "type": "string"
+        },
+        "lanternBrandName": {
+          "type": "string"
+        },
+        "lanternManufacturerName": {
+          "type": "string"
+        },
+        "lanternWeight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lampModelName": {
+          "type": "string"
+        },
+        "lampBrandName": {
+          "type": "string"
+        },
+        "lampManufacturerName": {
+          "type": "string"
+        },
+        "lampWeight": {
+          "type": "string"
+        },
+        "workingLife": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lampTechnology": {
+          "type": "string",
+          "enum": [
+            "LED",
+            "LPS",
+            "HPS"
+          ]
+        },
+        "colorTemperature": {
+          "type": "number",
+          "minimum": 0
+        },
+        "colorRenderingIndex": {
+          "type": "number"
+        },
+        "luminousFlux": {
+          "type": "number",
+          "minimum": 0
+        },
+        "powerConsumption": {
+          "type": "number",
+          "minimum": 0
+        },
+        "compliantWith": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "image": {
+          "type": "string",
+          "format": "uri"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "postTop",
+              "bollard",
+              "lamppost",
+              "lightTower",
+              "flashingBeacon",
+              "sideEntry",
+              "signLight",
+              "ornamentalLantern"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}
