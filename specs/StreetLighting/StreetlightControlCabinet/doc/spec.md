@@ -25,9 +25,11 @@ The data model is defined as shown below:
     -   Mandatory if `location` is not present.
 
 -   `areaServed` : Higher level area to which the cabinet belongs to. It can be
-    used to group per responsible, district, neighbourhood, etc. + Normative
-    References: [https://schema.org/areaServed](https://schema.org/areaServed) +
-    Optional
+    used to group per responsible, district, neighbourhood, etc.
+
+    -   Normative References:
+        [https://schema.org/areaServed](https://schema.org/areaServed)
+    -   Optional
 
 -   `serialNumber` : Serial number of the control cabinet.
 
@@ -221,19 +223,27 @@ The data model is defined as shown below:
 
 -   `activePower` : Active power consumed per phase. The actual values will be
     conveyed by subproperties which name will be equal to the name of each of
-    the alternating current phases, typically R, S, T. + Attribute Type:
-    [StructuredValue](http://schema.org/StructuredValue) + Default unit:
-    Kilowatts (kW) + Attribute metadata: + `timestamp`: Timestamp when the last
-    update of the attribute happened. + Type:
-    [DateTime](http://schema.org/DateTime) + Optional
+    the alternating current phases, typically R, S, T.
+
+    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Default unit: Kilowatts (kW)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
 -   `reactivePower` : Reactive power. The actual values will be conveyed by
     subproperties which name will be equal to the name of each of the
-    alternating current phases, typically R, S, T. + Attribute Type:
-    [StructuredValue](http://schema.org/StructuredValue) + Default unit:
-    KiloVolts-Ampere-Reactive (kVArh) + Attribute metadata: + `timestamp`:
-    Timestamp when the last update of the attribute happened. + Type:
-    [DateTime](http://schema.org/DateTime) + Optional
+    alternating current phases, typically R, S, T.
+
+    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Default unit: KiloVolts-Ampere-Reactive (kVArh)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
 -   `powerFactor` : Power factor.
 
@@ -259,35 +269,47 @@ The data model is defined as shown below:
     subproperty per alternating current phase. The name of each subproperty will
     be equal to a phase mnemonic. The mnemonic used for denoting phases can vary
     depending on world regions. In Europe they are typically named as `R`, `S`,
-    `T`. + Attribute Type:
-    [StructuredValue](http://schema.org/StructuredValue) + Default unit: Ampers
-    (A) + Attribute metadata: + `timestamp`: Timestamp when the last update of
-    the attribute happened. + Type: [DateTime](http://schema.org/DateTime) +
-    Optional
+    `T`.
+
+    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Default unit: Ampers (A)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
 -   `voltage` : Electric tension. The actual values will be conveyed by one
     subproperty alternating current phase. The name of each subproperty will be
     equal to a phase mnemonic. The mnemonic used for denoting phases can vary
     depending on world regions. In Europe they are typically named as `R`, `S`,
-    `T`. + Attribute Type:
-    [StructuredValue](http://schema.org/StructuredValue) + Default unit: Volts
-    (V) + Attribute metadata: + `timestamp`: Timestamp when the last update of
-    the attribute happened. + Type: [DateTime](http://schema.org/DateTime) +
-    Optional
+    `T`.
+
+    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Default unit: Volts (V)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Optional
 
 -   `thdrVoltage` : Total harmonic distortion (R) of The name of each
     subproperty will be equal to a phase mnemonic. The mnemonic used for
     denoting phases can vary depending on world regions. In Europe they are
-    typically named as `R`, `S`, `T`. + Attribute Type:
-    [StructuredValue](http://schema.org/StructuredValue) + Allowed values: A
-    number between 0 and 1 + Optional
+    typically named as `R`, `S`, `T`.
+
+    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Allowed values: A number between 0 and 1.
+    -   Optional
 
 -   `thdrIntensity` : Total harmonic distortion (R) of intensity. The name of
     each subproperty will be equal to a phase mnemonic. The mnemonic used for
     denoting phases can vary depending on world regions. In Europe they are
-    typically named as `R`, `S`, `T`. + Attribute Type:
-    [StructuredValue](http://schema.org/StructuredValue) + Allowed values: A
-    value between 0 and 1 + Optional
+    typically named as `R`, `S`, `T`.
+
+    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Allowed values: A number between 0 and 1.
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
