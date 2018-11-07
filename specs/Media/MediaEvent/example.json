@@ -1,0 +1,16 @@
+{
+  "id": "mediaEvent_1509702324600",
+  "type": "MediaEvent",
+  "eventType": "plate-detected",
+  "mediasource": {
+    "name": "03ea110c-0ab2-4b19-8618-57f474721c86_kurento.MediaPipeline/28e4ae84-4e96-43bb-a812-538f7950b75f_platedetector.PlateDetectorFilter",
+    "creationTime": "2017-11-03T10:45:19Z",
+    "sendTagsInEvents": false,
+    "parent": {
+      "name": "03ea110c-0ab2-4b19-8618-57f474721c86_kurento.MediaPipeline",
+      "creationTime": "2017-11-03T10:45:19Z",
+      "sendTagsInEvents": false
+    }
+  },
+  "dateCreated": "2017-11-03T10:45:23Z"
+}

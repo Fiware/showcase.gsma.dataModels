@@ -97,10 +97,10 @@ A JSON Schema corresponding to this data model can be found
 
 ### Representing air pollutants
 
-In order to enable a proper management of the concentrations of the
-different pollutants, _for each_ pollutant (measurand) there must be an
-attribute which name _MUST_ be exactly equal the chemical formula (or mnemonic)
-of the measurand, ex. CO. The structure of such an attribute will be as follows:
+In order to enable a proper management of the concentrations of the different
+pollutants, _for each_ pollutant (measurand) there must be an attribute which
+name _MUST_ be exactly equal the chemical formula (or mnemonic) of the
+measurand, ex. CO. The structure of such an attribute will be as follows:
 
 -   Attribute name: Equal to the name of the measurand, for instance `CO`.
 
@@ -177,7 +177,8 @@ means that to test the JSON schema examples with a
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
-### Normalized  Example
+
+### Normalized Example
 
 Normalized NGSI response
 

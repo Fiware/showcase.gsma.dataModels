@@ -71,11 +71,11 @@ The data model is defined as shown below:
     `extraSpotNumber` and through specific entities of type _ParkingGroup_. +
     Attribute type: List of [Text](http://schema.org/Text) + Allowed Values: The
     following values defined by _VehicleTypeEnum_,
-    [DATEX 2 version 2.3](http://d2docs.ndwcloud.nu/): +
-    (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
-    `carWithCaravan`, `carWithTrailer`, `constructionOrMaintenanceVehicle`,
-    `lorry`, `moped`, `motorcycle`, `motorcycleWithSideCar`, `motorscooter`,
-    `tanker`, `trailer`, `van`, `anyVehicle`) + Mandatory
+    [DATEX 2 version 2.3](http://d2docs.ndwcloud.nu/): + (`agriculturalVehicle`,
+    `bicycle`, `bus`, `car`, `caravan`, `carWithCaravan`, `carWithTrailer`,
+    `constructionOrMaintenanceVehicle`, `lorry`, `moped`, `motorcycle`,
+    `motorcycleWithSideCar`, `motorscooter`, `tanker`, `trailer`, `van`,
+    `anyVehicle`) + Mandatory
 
 -   `chargeType` : Type(s) of charge performed by the parking site.
 

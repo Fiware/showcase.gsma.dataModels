@@ -144,36 +144,44 @@ concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
 ### Representing allergenicity category of aero allergens
 
-To describe the allergenicity category of aero allergens,
-*for each* aero allergens we use an attribute that *MUST* refers exactly
-to the conventional name of the allergen (usually the latin name of
-the associated plant) concatenated with the string `_Allergenicity`,
-e.g. `alnus_Allergenicity` to describe the allergenicity level of
-[alnus](https://en.wikipedia.org/wiki/Alder) pollen.
+To describe the allergenicity category of aero allergens, _for each_ aero
+allergens we use an attribute that _MUST_ refers exactly to the conventional
+name of the allergen (usually the latin name of the associated plant)
+concatenated with the string `_Allergenicity`, e.g. `alnus_Allergenicity` to
+describe the allergenicity level of [alnus](https://en.wikipedia.org/wiki/Alder)
+pollen.
 
-+ Attribute name: Equal to the name of the allergen plus the suffix `_Allergenicity`, for instance `alnus_Allergenicity`.
-+ Attribute type: [Text](https://schema.org/Text)
-+ Attribute value: Example values defined by the [Spanish Network for Aerobiology](https://www.uco.es/rea/infor_rea/interpretacion.html):
-(`1`, `2`, `3`, `4`).
-  As this can be different between countries, regulations or implementations, the set of allowed values will depend on the reference specification used.
-  It is recommended that implementations use the same naming conventions as exemplified above (lower case starting words, camel case when compound terms are used)
-+ Attribute metadata:
-    + `description` : short description of the measurand and its related qualitative level
-        + Type: [Text](https://schema.org/Text)
-        + Optional
-    + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value.
-        + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-        + Mandatory
+-   Attribute name: Equal to the name of the allergen plus the suffix
+    `_Allergenicity`, for instance `alnus_Allergenicity`.
+-   Attribute type: [Text](https://schema.org/Text)
+-   Attribute value: Example values defined by the
+    [Spanish Network for Aerobiology](https://www.uco.es/rea/infor_rea/interpretacion.html):
+    (`1`, `2`, `3`, `4`). As this can be different between countries,
+    regulations or implementations, the set of allowed values will depend on the
+    reference specification used. It is recommended that implementations use the
+    same naming conventions as exemplified above (lower case starting words,
+    camel case when compound terms are used)
+-   Attribute metadata:
+    -   `description` : short description of the measurand and its related
+        qualitative level
+        -   Type: [Text](https://schema.org/Text)
+        -   Optional
+    -   `referenceSpecification` : Specification that must be taken as reference
+        when interpreting the supplied qualitative value.
+        -   Type: [Text](https://schema.org/Text) or
+            [URL](https://schema.org/URL)
+        -   Mandatory
 
-**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
-a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
-mode (`options=keyValues`).
+**Note**: JSON Schemas only capture the NGSI simplified representation, this
+means that to test the JSON schema examples with a
+[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
+API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 
 ### key-value pairs Example
 
-``` json
+```json
 {
     "id": "AeroAllergenObserved-CDMX-Pollen-Cuajimalpa",
     "type": "AeroAllergenObserved",
@@ -193,10 +201,7 @@ mode (`options=keyValues`).
     "dateObserved": "2018-02-11T00:00:00.00Z",
     "location": {
         "type": "Point",
-        "coordinates": [
-            -99.276977,
-            19.381877
-        ]
+        "coordinates": [-99.276977, 19.381877]
     },
     "source": "http://rema.atmosfera.unam.mx/rema/"
 }

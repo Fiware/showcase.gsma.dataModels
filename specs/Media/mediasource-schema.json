@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Media/mediasource-schema.json",
+  "title": "FIWARE - Media / MediaSource",
+  "description": "Source for media events",
+  "definitions":{
+    "MediaSource": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "creationTime": {
+          "type": "string"
+        },
+        "sendTagsInEvents": {
+          "type": "boolean"
+        },
+        "parent":{ 
+          "$ref": "#/definitions/MediaSource" 
+        }
+      }
+    }
+  }
+}

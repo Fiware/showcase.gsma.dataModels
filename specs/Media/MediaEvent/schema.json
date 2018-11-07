@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Media/MediaEvent/schema.json",
+  "title": "FIWARE - Media / Media Event",
+  "description": "Base for all events raised by elements in the media server",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MediaEvent"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "mediasource": {
+           "$ref": "https://fiware.github.io/dataModels/specs/Media/mediasource-schema.json#/definitions/MediaSource"
+        },
+        "data":{
+          "type": "object"
+        },
+        "deviceSource":{
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "observedEntities":{
+          "type":"array",
+          "items":{
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "eventType",
+    "dateCreated"
+  ]
+} 
