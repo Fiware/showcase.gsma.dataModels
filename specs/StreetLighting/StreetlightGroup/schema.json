@@ -89,10 +89,6 @@
         "activeProgramId": {
           "type": "string"
         },
-        "dateModified": {
-          "type": "string",
-          "format": "date-time"
-        },
         "description": {
           "type": "string"
         },

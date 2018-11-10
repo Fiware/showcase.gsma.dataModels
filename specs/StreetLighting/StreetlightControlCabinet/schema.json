@@ -80,10 +80,6 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "dateModified": {
-          "type": "string",
-          "format": "date-time"
-        },
         "dateServiceStarted": {
           "type": "string",
           "format": "date-time"
