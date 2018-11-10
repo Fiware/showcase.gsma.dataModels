@@ -229,15 +229,18 @@
           "properties": {
             "R": {
               "type": "number",
-              "minimum": 0
+              "minimum": 0,
+              "maximum": 1
             },
             "S": {
               "type": "number",
-              "minimum": 0
+              "minimum": 0,
+              "maximum": 1
             },
             "T": {
               "type": "number",
-              "minimum": 0
+              "minimum": 0,
+              "maximum": 1
             }
           }
         },
@@ -246,15 +249,18 @@
           "properties": {
             "R": {
               "type": "number",
-              "minimum": 0
+              "minimum": 0,
+              "maximum": 1
             },
             "S": {
               "type": "number",
-              "minimum": 0
+              "minimum": 0,
+              "maximum": 1
             },
             "T": {
               "type": "number",
-              "minimum": 0
+              "minimum": 0,
+              "maximum": 1
             }
           }
         }
