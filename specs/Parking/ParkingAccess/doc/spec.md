@@ -8,80 +8,80 @@ Represents an access point to a parking site, normally an offstreet parking.
 
 The data model is defined as shown below:
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `ParkingAccess`.
+- `type` : Entity type. It must be equal to `ParkingAccess`.
 
--   `location` : Geolocation of the access point represented by a GeoJSON Point.
+- `location` : Geolocation of the access point represented by a GeoJSON Point.
 
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Mandatory
+  - Mandatory
 
--   `address` : Registered civic address of the access point.
+- `address` : Registered civic address of the access point.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/address](https://schema.org/address)
-    -   Optional
+  - Optional
 
--   `name` : Name given to the access point.
+- `name` : Name given to the access point.
 
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
-    -   Optional
+  - Normative References: [https://schema.org/name](https://schema.org/name)
+  - Optional
 
--   `description` : Description of the access point.
+- `description` : Description of the access point.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/description](https://schema.org/description)
-    -   Optional
+  - Optional
 
--   `category` : Category of the access point (entrance, exit, etc.)
+- `category` : Category of the access point (entrance, exit, etc.)
 
-    -   Attribute type: List of
+  - Attribute type: List of
         [https://schema.org/Text](https://schema.org/Text)
-    -   Allowed values: Those specificed by the DATEX II _AccessCategoryEnum_.
+  - Allowed values: Those specificed by the DATEX II _AccessCategoryEnum_.
         -   Other values meaningful to the application.
-    -   Mandatory
+  - Mandatory
 
--   `refOffStreetParking` : The offstreet parking site this access point gives
+- `refOffStreetParking` : The offstreet parking site this access point gives
     access to.
 
-    -   Attribute type: Reference to an entity of type
+  - Attribute type: Reference to an entity of type
         [OffStreetParking](../../OffStreetParking/doc/spec.md)
-    -   Mandatory
+  - Mandatory
 
--   `features` : Equipment or facilities provided by the access point.
+- `features` : Equipment or facilities provided by the access point.
 
-    -   Attribute type: List of
+  - Attribute type: List of
         [https://schema.org/Text](https://schema.org/Text)
-    -   Allowed values: Those specified by the DATEX II _AccessEquipmentEnum_
+  - Allowed values: Those specified by the DATEX II  _essEquipmentEnum_
         and by _AccessibilityEnum_.
-        -   Other values meaningful to the application.
-    -   Optional
+    - Other values meaningful to the application.
+  - Optional
 
--   `image` : A URL containing a photo of this access point.
+- `image` : A URL containing a photo of this access point.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/image](https://schema.org/image)
-    -   Optional
+  - Optional
 
--   `width` : Width of the access point.
+- `width` : Width of the access point.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/width](https://schema.org/width)
-    -   Optional
+  - Optional
 
--   `height` : Height of the access point.
+- `height` : Height of the access point.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/height](https://schema.org/height)
-    -   Optional
+  - Optional
 
--   `slope` : Slope of the access point (in relative terms).
-    -   Attribute Type: [Number](https://schema.org/Number)
-    -   Attribute Value: A number between 0 and 1.
-    -   Optional
+- `slope` : Slope of the access point (in relative terms).
+  - Attribute Type: [Number](https://schema.org/Number)
+  - Attribute Value: A number between 0 and 1.
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
