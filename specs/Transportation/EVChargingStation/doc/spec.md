@@ -9,7 +9,7 @@ currently charging and the current battery level.
 ## Data Model
 
 A JSON Schema corresponding to this data model can be found
-[here](https://fiware.github.io/dataModels/specs/Transportation/ChargingStation/schema.json).
+[here](https://fiware.github.io/dataModels/specs/Transportation/EVChargingStation/schema.json).
 
 -   `id` : Unique identifier. It shall be a URN in the form
     `urn:ngsi-ld:EVChargingStation:<identifier>` where `<identifier>` shall be a

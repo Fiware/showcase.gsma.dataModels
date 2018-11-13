@@ -7,7 +7,7 @@ Here you can find the following files:
 
 -   `madrid_airquality_stations.csv`. This is a list of air quality stations
     owned by the council and available from
-    [Madrid's open data portal](http://datos.madrid.gob)
+    [Madrid's open data portal](https://datos.madrid.es/portal/site/egob/)
 -   `madrid-ngsi10.js`. This script allows to upload all the data to Orion
     Context Broker.
 

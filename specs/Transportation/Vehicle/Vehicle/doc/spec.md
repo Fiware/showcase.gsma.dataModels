@@ -51,7 +51,7 @@ The data model is defined as shown below:
     [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946) +
     Attribute metadata: + `timestamp`: Timestamp which captures when the vehicle
     was at that location. This value can also appear as a FIWARE
-    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) +
+    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/master/README.md#the-timeinstant-element) +
     Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy). +
     Mandatory + Mandatory only if `category` contains `tracked`.
 
@@ -71,7 +71,7 @@ The data model is defined as shown below:
     type: [Number](https:/schema.org/Number) + Default unit: Kilometers per
     hour + Attribute metadata: + `timestamp` : Timestamp which captures when the
     vehicle was moving at that speed. This value can also appear as a FIWARE
-    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) +
+    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/master/README.md#the-timeinstant-element) +
     Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy). +
     Mandatory + Mandatory only if `category` contains `tracked`.
 
@@ -83,7 +83,7 @@ The data model is defined as shown below:
     for some reason. + Attribute type: [Number](https://schema.org) + Attribute
     metadata: + `timestamp` : Timestamp which captures when the vehicle was
     heading towards such direction. This value can also appear as a FIWARE
-    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) +
+    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/master/README.md#the-timeinstant-element) +
     Type: [DateTime](http://schema.org/DateTime) or `ISO8601` (legacy). +
     Mandatory + Mandatory only if `category` contains `tracked`.
 
@@ -93,7 +93,7 @@ The data model is defined as shown below:
     -   Attribute metadata:
         -   `timestamp`: Timestamp associated to this measurement. This value
             can also appear as a FIWARE
-            [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) +
+            [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/master/README.md#the-timeinstant-element) +
             Type: [DateTime](http://schema.org/DateTime) or `ISO8601`
             (legacy). + Mandatory
     -   Default unit: Kilograms
@@ -148,7 +148,7 @@ The data model is defined as shown below:
     -   Attribute metadata:
         -   `timestamp`: Timestamp associated to this measurement. This value
             can also appear as a FIWARE
-            [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/develop/README.md#TimeInstant) +
+            [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib/blob/master/README.md#the-timeinstant-element) +
             Type: [DateTime](http://schema.org/DateTime) or `ISO8601`
             (legacy). + Mandatory
     -   Optional

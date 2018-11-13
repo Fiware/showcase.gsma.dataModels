@@ -41,6 +41,7 @@
 		"memfs": "2.10.1",
 		"prettier": "^1.14.2",
 		"textlint": "^11.0.1",
+		"textlint-filter-rule-comments": "^1.2.2",
 		"textlint-rule-common-misspellings": "^1.0.1",
 		"textlint-rule-no-dead-link": "^4.4.1",
 		"textlint-rule-terminology": "^1.1.29",
@@ -54,7 +55,7 @@
 		"precommit": "lint-staged",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
 		"prettier:text": "prettier '../*.md' '../specs/*.md' '../specs/**/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",
-		"lint:text": "textlint 'README.md' '../specs/*.md' '../specs/**/*.md'"
+		"test": "textlint 'README.md' '../specs/*.md' '../specs/**/*.md'"
 	},
 	"husky": {
 		"hooks": {
