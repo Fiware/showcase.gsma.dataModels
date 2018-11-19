@@ -121,7 +121,7 @@ Normalized NGSI response
 }
 ```
 
-## ### key-value pairs Example
+### key-value pairs Example
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
