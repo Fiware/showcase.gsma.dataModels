@@ -58,8 +58,8 @@ The data model is defined as shown below:
     (`occupied`, `free`, `closed`, `unknown`)
   - Metadata:
     - `timestamp` : Timestamp which reflects the date when the attribute value was obtained.
-    - Type: [DateTime](https://schema.org/DateTime)
-    - Optional
+      - Type: [DateTime](https://schema.org/DateTime)
+      - Optional
   - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
