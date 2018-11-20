@@ -69,7 +69,10 @@ module.exports = {
     const file = path.join(fullPath, fileSchema);
     const schema = openFile(file, "schema");
     const ajv = new Ajv(conf.ajvOptions);
-    ajv.addFormat("date-optionally-yearless", /^(\d\d\d\d|-)-[0-1]\d-[0-3]\d$/);
+    ajv.addFormat(
+      "ext-date-yearless",
+      /^--((0[13578]|1[02])-31|(0[1,3-9]|1[0-2])-30|(0\d|1[0-2])-([0-2]\d))$/
+    );
     addSchemas(commonSchemas, ajv.addSchema, "schema");
     let validate;
     try {
