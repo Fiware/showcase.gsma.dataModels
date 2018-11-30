@@ -4,7 +4,7 @@ An entity of type `Streetlight` represents a urban streetlight. Actually, there
 will be an entity of type `Streetlight` per lamp. Thus, if a particular pole
 holds more than one lantern there will be as many streetlight entites as
 installed lamps. As a result there might be more than one streetlight entity per
-location. A `Steeetlight` entity does not contain any attribute corresponding to
+location. A `Streetlight` entity does not contain any attribute corresponding to
 structural characteristics. Such data is captured by entities of type
 `StreetlightModel`.
 
