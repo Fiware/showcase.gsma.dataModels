@@ -25,6 +25,14 @@ The data model is defined as shown below:
 
 -   `type` : Entity type. It must be equal to `SmartSpot`.
 
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
+
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `announcedUrl` : URL broadcasted by the device.
 
     -   Attribute type: [URL](https://schema.org/URL)
