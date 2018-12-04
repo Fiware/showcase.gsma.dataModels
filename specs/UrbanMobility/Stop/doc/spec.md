@@ -21,6 +21,14 @@ The data model is defined as shown below:
 
     -   It shall be equal to `gtfs:Stop`
 
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
+
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `dateCreated` : Entity's creation timestamp.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
