@@ -17,6 +17,14 @@ The data model is defined as shown below:
 
 -   `type` : Entity type. It must be equal to `ParkingGroup`.
 
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
+
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `category` : Parking Group's category.
 
     -   Attribute type: List of [Text](http://schema.org/Text)
