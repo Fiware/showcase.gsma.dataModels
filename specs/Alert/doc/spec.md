@@ -25,6 +25,14 @@ A JSON Schema corresponding to this data model can be found
 
 - `type` : Entity type. It must be equal to `Alert`.
 
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
+
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 - `category` : Define the category of alert (Traffic jam, accidents, weather
     conditions, high level of pollutants)
 
@@ -108,16 +116,6 @@ A JSON Schema corresponding to this data model can be found
   - Allowed values:
     - (`informational`, `low`, `medium`, `high`, `critical`)
   - Optional.
-
-- `source` : A sequence of characters giving the source of the entity data.
-
-  - Attribute type: Text or URL
-  - Optional
-
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
-
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
