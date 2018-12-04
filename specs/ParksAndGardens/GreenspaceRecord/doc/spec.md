@@ -16,6 +16,10 @@ A JSON Schema corresponding to this data model can be found
 
 -   `type` : Entity type. It must be equal to `GreenspaceRecord`.
 
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
