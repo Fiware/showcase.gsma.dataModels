@@ -16,6 +16,14 @@ The data model is defined as shown below:
 
 -   `type` : It must be equal to `Streetlight`.
 
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
+
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `location` : Streetlight's location represented by a GeoJSON Point.
 
     -   Attribute type: `geo:json`.
