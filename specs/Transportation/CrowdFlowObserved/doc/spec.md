@@ -17,6 +17,10 @@ The data model is defined as shown below:
 
     -   It shall be equal to `CrowdFlowObserved`.
 
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `dateCreated` : Entity's creation timestamp. (`createdAt` in NGSI-LD)
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)

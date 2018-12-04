@@ -17,6 +17,10 @@ A JSON Schema corresponding to this data model can be found
 
 -   `type` : Entity type. It must be equal to `EVChargingStation`.
 
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `dateCreated` : Entity's creation timestamp.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
