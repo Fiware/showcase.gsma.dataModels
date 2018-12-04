@@ -36,36 +36,33 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 What was the weather observed today at 07:00 UTC in Valladolid (Spain)?
 
-`curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>' "http://iotbd-v2.lab.fiware.org/v2/entities?type=WeatherObserved&q=dateObserved:2018-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"`
+`curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>' "http://130.206.118.244:1027/v2/entities?type=WeatherObserved&q=dateObserved:2016-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"`
 
 ```json
 [
     {
-        "id": "Spain-WeatherObserved-2422-2018-11-30T08:00:00",
+        "id": "Spain-WeatherObserved-2422-2016-11-30T08:00:00",
         "type": "WeatherObserved",
         "address": {
             "addressLocality": "Valladolid",
             "addressCountry": "ES"
         },
-        "atmosphericPressure": 934.8,
-        "dataProvider": "FIWARE",
-        "dateObserved": "2018-11-30T07:00:00.00Z",
+        "atmosfericPressure": 938.9,
+        "dataProvider": "TEF",
+        "dateObserved": "2016-11-30T07:00:00.00Z",
         "location": {
             "type": "Point",
-            "coordinates": [
-                -4.754444444,
-                41.640833333
-            ]
+            "coordinates": [-4.754444444, 41.640833333]
         },
         "precipitation": 0,
-        "pressureTendency": 1.2,
-        "relativeHumidity": 0.9,
+        "pressureTendency": 0.5,
+        "relativeHumidity": 1,
         "source": "http://www.aemet.es",
         "stationCode": "2422",
         "stationName": "Valladolid",
-        "temperature": 5.5,
-        "windDirection": 90,
-        "windSpeed": 2.8
+        "temperature": 3.3,
+        "windDirection": -45,
+        "windSpeed": 2
     }
 ]
 ```
