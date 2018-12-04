@@ -12,82 +12,90 @@ This data model has been partially developed in cooperation with mobile
 operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/),
 compared to GSMA data model the following changes are introduced:
 
--   `refRelatedDeviceOperation` replaces `refRelatedOperation`
+- `refRelatedDeviceOperation` replaces `refRelatedOperation`
 
 ## Data Model
 
 For a full description of the following attributes refer to GSMA
 [IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf)
 
--   `id`
+- `id`
 
--   ` type`` : Entity type. It must be equal to `BuildingOperation`.`
+- `type`: Entity type. It must be equal to `BuildingOperation`.`
 
--   `dateModified` : Last update timestamp of this entity.
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateModified` : Last update timestamp of this entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `description`
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `refBuilding`
+- `description`
 
-    -   Required
+  - Optional
 
--   `refOperator`
+- `refBuilding`
 
-    -   Required
+  - Required
 
--   `operationType`
+- `refOperator`
 
-    -   Optional
+  - Required
 
--   `result`
+- `operationType`
 
-    -   Optional
+  - Optional
 
--   `result`
+- `result`
 
-    -   Optional
+  - Optional
 
--   `operationSequence`
+- `result`
 
-    -   Optional
+  - Optional
 
--   `refRelatedBuildingOperation`
-    -   Optional
+- `operationSequence`
+
+  - Optional
+
+- `refRelatedBuildingOperation`
+  - Optional
 
 These are the modified attributes compared to GSMA model:
 
--   `startDate` : The planned start date for the operation.
+- `startDate` : The planned start date for the operation.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Required
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Required
 
--   `endDate` : The planned end date for the operation.
+- `endDate` : The planned end date for the operation.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Required
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Required
 
--   `dateStarted` : The actual start date for the operation.
+- `dateStarted` : The actual start date for the operation.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `dateFinished` : The actual end date for the operation.
+- `dateFinished` : The actual end date for the operation.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `refRelatedDeviceOperation` : Devices related to the current operation.
-    -   Attribute type: A list of references to an entity of type Device.
+- `refRelatedDeviceOperation` : Devices related to the current operation.
+  - Attribute type: A list of references to an entity of type Device.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
