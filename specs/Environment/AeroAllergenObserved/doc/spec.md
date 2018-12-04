@@ -20,62 +20,66 @@ available at [http://www.allergen.org](http://www.allergen.org).
 A JSON Schema corresponding to this data model can be found
 [here](http://fiware.github.io/dataModels/specs/Environment/AeroAllergenObserved/schema.json).
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `AeroAllergenObserved`.
+- `type` : Entity type. It must be equal to `AeroAllergenObserved`.
 
--   `dateModified` : Last update timestamp of this entity.
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+- `dateModified` : Last update timestamp of this entity.
 
--   `dateCreated` : Entity's creation timestamp.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+- `dateCreated` : Entity's creation timestamp.
 
--   `location` : Location of the aero allergens observation represented by a
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
+
+- `location` : Location of the aero allergens observation represented by a
     GeoJSON geometry.
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Mandatory if `address` is not defined.
--   `address` : Civic address of the aero allergens observation. Sometimes it
+  - Mandatory if `address` is not defined.
+- `address` : Civic address of the aero allergens observation. Sometimes it
     corresponds to the aero allergens station address.
-    -   Normative References:
+  - Normative References:
         [https://schema.org/address](https://schema.org/address)
-    -   Mandatory if `location` is not present.
--   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
+  - Mandatory if `location` is not present.
+- `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by a specific time instant or by an ISO8601 interval.
-    -   Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
+  - Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
         interval represented as [Text](https://schema.org/Text).
-    -   Mandatory
--   `source` : A sequence of characters giving the source of the entity data.
-    -   Attribute type: [Text](https://schema.org/Text) or
+  - Mandatory
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
-    -   Optional
--   `allergenRisk` : Overall allergen risk corresponding to the aero allergens
+  - Optional
+- `allergenRisk` : Overall allergen risk corresponding to the aero allergens
     observed.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Example values defined by the
+  - Attribute type: [Text](https://schema.org/Text)
+  - Example values defined by the
         [European Aeroallergen Network](https://www.ean-net.org/en/): (`none`,
         `low`, `moderate`, `high`, `veryHigh`). As this can be different between
         countries, regulations or implementations, the set of allowed values
         will depend on the reference specification used. It is recommended that
         implementations use the same naming conventions as exemplified above
         (lower case starting words, camel case when compound terms are used)
-    -   Attribute metadata:
+  - Attribute metadata:
         -   `referenceSpecification` : Specification that must be taken as
             reference when interpreting the supplied qualitative value.
             -   Type: [Text](https://schema.org/Text) or
                 [URL](https://schema.org/URL)
             -   Mandatory
-    -   Optional
+  - Optional
 
--   `refDevice` : A reference to the device(s) which captured this observation.
-    -   Attribute type: Reference to an entity of type `Device`
-    -   Optional
+- `refDevice` : A reference to the device(s) which captured this observation.
+  - Attribute type: Reference to an entity of type `Device`
+  - Optional
 
 ### Representing aero allergens concentration
 
@@ -88,28 +92,28 @@ measure the concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen
 
 The structure of such an attribute will be as follows:
 
--   Attribute name: Equal to the name of the allergen, for instance `alnus`. A
+- Attribute name: Equal to the name of the allergen, for instance `alnus`. A
     list of commonly used aero allergens in Europe can be found on
     [polleninfo.org](https://www.polleninfo.org/en/allergy/profiles/) a web site
     maintained by the European Aeroallergen Network. A World Health Organization
     (WHO) Allergen Nomenclature (covering not only aero transported allergens)
     is available at [http://www.allergen.org](http://www.allergen.org).
 
--   Attribute type: [Number](https://schema.org/Number)
+- Attribute type: [Number](https://schema.org/Number)
 
--   Attribute value: corresponds to the concentration of the allergen as a
+- Attribute value: corresponds to the concentration of the allergen as a
     number.
 
--   Attribute metadata:
-    -   `timestamp` : optional timestamp for the observed value in ISO8601
+- Attribute metadata:
+  - `timestamp` : optional timestamp for the observed value in ISO8601
         format. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
         -   Type: [DateTime](https://schema.org/DateTime)
-    -   `unitCode` : The unit code (text) of measured concentration (usually the
+  - `unitCode` : The unit code (text) of measured concentration (usually the
         unit adopted is grains per cubic meter: `gr/m3`).
         -   Type: [Text](https://schema.org/Text)
         -   Optional
-    -   `description` : short description of the allergen
+  - `description` : short description of the allergen
         -   Type: [Text](https://schema.org/Text)
         -   Optional
 
@@ -121,22 +125,22 @@ allergen (usually the latin name of the associated plant) concatenated with the
 string `_Level`, e.g. `alnus_Level` to measure the qualitative level for a given
 concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
--   Attribute name: Equal to the name of the allergen plus the suffix `Level`,
+- Attribute name: Equal to the name of the allergen plus the suffix `Level`,
     for instance `alnus_Level`.
--   Attribute type: [Text](https://schema.org/Text)
--   Attribute value: Example values defined by the
+- Attribute type: [Text](https://schema.org/Text)
+- Attribute value: Example values defined by the
     [European Aeroallergen Network](https://www.ean-net.org/en/): (`none`,
     `low`, `moderate`, `high`, `veryHigh`). As this can be different between
     countries, regulations or implementations, the set of allowed values will
     depend on the reference specification used. It is recommended that
     implementations use the same naming conventions as exemplified above (lower
     case starting words, camel case when compound terms are used)
--   Attribute metadata:
-    -   `description` : short description of the measurand and its related
+- Attribute metadata:
+  - `description` : short description of the measurand and its related
         qualitative level
         -   Type: [Text](https://schema.org/Text)
         -   Optional
-    -   `referenceSpecification` : Specification that must be taken as reference
+  - `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value.
         -   Type: [Text](https://schema.org/Text) or
             [URL](https://schema.org/URL)
@@ -151,19 +155,19 @@ the associated plant) concatenated with the string `_Allergenicity`,
 e.g. `alnus_Allergenicity` to describe the allergenicity level of
 [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
-+ Attribute name: Equal to the name of the allergen plus the suffix `_Allergenicity`, for instance `alnus_Allergenicity`.
-+ Attribute type: [Text](https://schema.org/Text)
-+ Attribute value: Example values defined by the [Spanish Network for Aerobiology](https://www.uco.es/rea/infor_rea/interpretacion.html):
+- Attribute name: Equal to the name of the allergen plus the suffix `_Allergenicity`, for instance `alnus_Allergenicity`.
+- Attribute type: [Text](https://schema.org/Text)
+- Attribute value: Example values defined by the [Spanish Network for Aerobiology](https://www.uco.es/rea/infor_rea/interpretacion.html):
 (`1`, `2`, `3`, `4`).
   As this can be different between countries, regulations or implementations, the set of allowed values will depend on the reference specification used.
   It is recommended that implementations use the same naming conventions as exemplified above (lower case starting words, camel case when compound terms are used)
-+ Attribute metadata:
-    + `description` : short description of the measurand and its related qualitative level
-        + Type: [Text](https://schema.org/Text)
-        + Optional
-    + `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value.
-        + Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-        + Mandatory
+- Attribute metadata:
+  - `description` : short description of the measurand and its related qualitative level
+        - Type: [Text](https://schema.org/Text)
+        - Optional
+  - `referenceSpecification` : Specification that must be taken as reference when interpreting the supplied qualitative value.
+        - Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+        - Mandatory
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
 a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`

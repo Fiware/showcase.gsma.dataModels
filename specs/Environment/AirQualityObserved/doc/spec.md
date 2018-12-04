@@ -11,45 +11,49 @@ model has been developed in cooperation with mobile operators and the
 A JSON Schema corresponding to this data model can be found
 [here](http://fiware.github.io/dataModels/specs/Environment/AirQualityObserved/schema.json).
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `AirQualityObserved`.
+- `type` : Entity type. It must be equal to `AirQualityObserved`.
 
--   `dateModified` : Last update timestamp of this entity.
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+- `dateModified` : Last update timestamp of this entity.
 
--   `dateCreated` : Entity's creation timestamp.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+- `dateCreated` : Entity's creation timestamp.
 
--   `location` : Location of the air quality observation represented by a
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
+
+- `location` : Location of the air quality observation represented by a
     GeoJSON geometry.
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Mandatory if `address` is not defined.
--   `address` : Civic address of the air quality observation. Sometimes it
+  - Mandatory if `address` is not defined.
+- `address` : Civic address of the air quality observation. Sometimes it
     corresponds to the air quality station address.
-    -   Normative References:
+  - Normative References:
         [https://schema.org/address](https://schema.org/address)
-    -   Mandatory if `location` is not present.
--   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
+  - Mandatory if `location` is not present.
+- `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
-    -   Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
+  - Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
         interval represented as [Text](https://schema.org/Text).
-    -   Mandatory
--   `source` : A sequence of characters giving the source of the entity data.
-    -   Attribute type: [Text](https://schema.org/Text) or
+  - Mandatory
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
-    -   Optional
--   `airQualityLevel` : Overall qualitative level of health concern
+  - Optional
+- `airQualityLevel` : Overall qualitative level of health concern
     corresponding to the air quality observed.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Example values defined by the
+  - Attribute type: [Text](https://schema.org/Text)
+  - Example values defined by the
         [USA EPA Agency](https://airnow.gov/index.cfm?action=aqibasics.aqi):
         (`good`, `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`,
         `veryUnhealthy`, `hazardous`). As this can be different between
@@ -57,43 +61,43 @@ A JSON Schema corresponding to this data model can be found
         will depend on the reference specification used. It is recommended that
         implementations use the same naming conventions as exemplified above
         (lower case starting words, camel case when compound terms are used)
-    -   Attribute metadata:
+  - Attribute metadata:
         -   `referenceSpecification` : Specification that must be taken as
             reference when interpreting the supplied qualitative value.
             -   Type: [Text](https://schema.org/Text) or
                 [URL](https://schema.org/URL)
             -   Mandatory
-    -   Optional
+  - Optional
 
--   `airQualityIndex` : Air quality index corresponding to the air quality
+- `airQualityIndex` : Air quality index corresponding to the air quality
     observed.
 
-    -   Attribute type: [Number](https://schema.org/Number)
-    -   Attribute metadata:
+  - Attribute type: [Number](https://schema.org/Number)
+  - Attribute metadata:
         -   `referenceSpecification` : Specification that must be taken as
             reference when interpreting or calculating the supplied air quality
             index.
             -   Type: [Text](https://schema.org/Text) or
                 [URL](https://schema.org/URL)
             -   Optional
-    -   Optional
+  - Optional
 
--   `reliability` : Reliability (percentage, expressed in parts per one)
+- `reliability` : Reliability (percentage, expressed in parts per one)
     corresponding to the air quality observed.
 
-    -   Attribute type: [Number](https://schema.org/Number)
-    -   Allowed values: Interval [0,1]
-    -   Optional
+  - Attribute type: [Number](https://schema.org/Number)
+  - Allowed values: Interval [0,1]
+  - Optional
 
--   `refDevice` : A reference to the device(s) which captured this observation.
+- `refDevice` : A reference to the device(s) which captured this observation.
 
-    -   Attribute type: Reference to an entity of type `Device`
-    -   Optional
+  - Attribute type: Reference to an entity of type `Device`
+  - Optional
 
--   `refPointOfInterest` : A reference to a point of interest (usually an air
+- `refPointOfInterest` : A reference to a point of interest (usually an air
     quality station) associated to this observation.
-    -   Attribute type: Reference to an entity of type `PointOfInterest`
-    -   Optional
+  - Attribute type: Reference to an entity of type `PointOfInterest`
+  - Optional
 
 ### Representing air pollutants
 
@@ -102,24 +106,24 @@ different pollutants, _for each_ pollutant (measurand) there must be an
 attribute which name _MUST_ be exactly equal the chemical formula (or mnemonic)
 of the measurand, ex. CO. The structure of such an attribute will be as follows:
 
--   Attribute name: Equal to the name of the measurand, for instance `CO`.
+- Attribute name: Equal to the name of the measurand, for instance `CO`.
 
--   Attribute type: [Number](https://schema.org/Number)
+- Attribute type: [Number](https://schema.org/Number)
 
--   Attribute value: corresponds to the value for the measurand as a number.
+- Attribute value: corresponds to the value for the measurand as a number.
 
--   Attribute metadata:
-    -   `timestamp` : optional timestamp for the observed value in ISO8601
+- Attribute metadata:
+  - `timestamp` : optional timestamp for the observed value in ISO8601
         format. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
         -   Type: [DateTime](https://schema.org/DateTime)
-    -   `unitCode` : The unit code (text) of measurement given using the
+  - `unitCode` : The unit code (text) of measurement given using the
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes)
         (max. 3 characters). For instance, `GP` represents milligrams per cubic
         meter and `GQ` represents micrograms per cubic meter.
         -   Type: [Text](https://schema.org/Text)
         -   Mandatory
-    -   `description` : short description of the measurand
+  - `description` : short description of the measurand
         -   Type: [Text](https://schema.org/Text)
         -   Optional
 
@@ -132,22 +136,22 @@ chemical formula (or mnemonic) of the measurand with the string `_Level`, ex.
 `CO_Level`. To be more precise, the structure of such an attribute will be as
 follows:
 
--   Attribute name: Equal to the name of the measurand plus the suffix `_Level`,
+- Attribute name: Equal to the name of the measurand plus the suffix `_Level`,
     for instance `CO_Level`.
--   Attribute type: [Text](https://schema.org/Text)
--   Attribute value: Example values defined by the USA EPA Agency:(`good`,
+- Attribute type: [Text](https://schema.org/Text)
+- Attribute value: Example values defined by the USA EPA Agency:(`good`,
     `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`,
     `hazardous`). As this can be different between countries, regulations or
     implementations, the set of allowed values will depend on the reference
     specification used. It is recommended that implementations use the same
     naming conventions as exemplified above (lower case starting words, camel
     case when compound terms are used)
--   Attribute metadata:
-    -   `description` : short description of the measurand and its related
+- Attribute metadata:
+  - `description` : short description of the measurand and its related
         qualitative level
         -   Type: [Text](https://schema.org/Text)
         -   Optional
-    -   `referenceSpecification` : Specification that must be taken as reference
+  - `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value.
         -   Type: [Text](https://schema.org/Text) or
             [URL](https://schema.org/URL)
@@ -158,18 +162,18 @@ follows:
 Certain weather conditions have an influence over the observed air quality.
 There are two options for representing them:
 
--   A/ Through a linked entity of type `WeatherObserved` (attribute named
+- A/ Through a linked entity of type `WeatherObserved` (attribute named
     `refWeatherObserved`).
--   B/ Through a group of weather-related properties already defined by
+- B/ Through a group of weather-related properties already defined by
     [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md).
 
 Below is the description of the attribute to be used for option A/.
 
--   `refWeatherObserved` : Weather observed associated to the air quality
+- `refWeatherObserved` : Weather observed associated to the air quality
     conditions described by this entity.
-    -   Attribute type: Reference to a
+  - Attribute type: Reference to a
         [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md) entity.
-    -   Optional
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
@@ -177,6 +181,7 @@ means that to test the JSON schema examples with a
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
+
 ### Normalized  Example
 
 Normalized NGSI response
