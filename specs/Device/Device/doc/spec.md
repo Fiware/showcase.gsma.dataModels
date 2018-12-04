@@ -19,55 +19,63 @@ part of [ETSI](http://www.etsi.org) standards.
 
 The data model is defined as shown below:
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `Device`.
+- `type` : Entity type. It must be equal to `Device`.
 
--   `category` : See attribute `category` from
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: Text or URL
+  - Optional
+
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
+- `category` : See attribute `category` from
     [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to
     optimize queries.
 
--   `controlledProperty` : See attribute `controlledProperty` from
+- `controlledProperty` : See attribute `controlledProperty` from
     [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to
     optimize queries.
 
--   `controlledAsset` : The asset(s) (building, object, etc.) controlled by the
+- `controlledAsset` : The asset(s) (building, object, etc.) controlled by the
     device.
 
-    -   Attribute type: List of [Text](https://schema.org) or Reference(s) to
+  - Attribute type: List of [Text](https://schema.org) or Reference(s) to
         another entity.
-    -   Optional
+  - Optional
 
--   `mnc` : This property identifies the Mobile Network Code (MNC) of the
+- `mnc` : This property identifies the Mobile Network Code (MNC) of the
     network the device is attached to. The MNC is used in combination with a
     Mobile Country Code (MCC) (also known as a "MCC / MNC tuple") to uniquely
     identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA
     and 3G / 4G public land mobile networks and some satellite mobile
     networks. + Attribute type: [Text](https://schema.org/Text) + Optional
 
--   `mcc` : Mobile Country Code - This property identifies univoquely the
+- `mcc` : Mobile Country Code - This property identifies univoquely the
     country of the mobile network the device is attached to.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Optional
 
--   `macAddress` : The MAC address of the device.
+- `macAddress` : The MAC address of the device.
 
-    -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: List of [Text](https://schema.org/Text)
+  - Optional
 
--   `ipAddress` : The IP address of the device. It can be a comma separated list
+- `ipAddress` : The IP address of the device. It can be a comma separated list
     of values if the device has more than one IP address.
 
-    -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: List of [Text](https://schema.org/Text)
+  - Optional
 
--   `supportedProtocol` : See attribute `supportedProtocol` from
+- `supportedProtocol` : See attribute `supportedProtocol` from
     [DeviceModel](../../DeviceModel/doc/spec.md). Needed if due to a software
     update new protocols are supported. Otherwise it is better to convey it at
     `DeviceModel` level.
 
--   `configuration` : Device's technical configuration. This attribute is
+- `configuration` : Device's technical configuration. This attribute is
     intended to be a dictionary of properties which capture parameters which
     have to do with the configuration of a device (timeouts, reporting periods,
     etc.) and which are not currently covered by the standard attributes defined
@@ -77,86 +85,86 @@ The data model is defined as shown below:
     Metadata type: [DateTime](https://schema.org/DateTime) + Read-Only.
     Automatically generated. + Optional
 
--   `location` : Location of this device represented by a GeoJSON geometry of
+- `location` : Location of this device represented by a GeoJSON geometry of
     type point.
 
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Optional.
+  - Optional.
 
--   `name` : A mnemonic name given to the device.
+- `name` : A mnemonic name given to the device.
 
-    -   Normative References: [name](https://schema.org/name)
-    -   Optional
+  - Normative References: [name](https://schema.org/name)
+  - Optional
 
--   `description` : Device's description.
+- `description` : Device's description.
 
-    -   Normative References: [description](https://schema.org/description)
-    -   Optional
+  - Normative References: [description](https://schema.org/description)
+  - Optional
 
--   `dateInstalled` : A timestamp which denotes when the device was installed
+- `dateInstalled` : A timestamp which denotes when the device was installed
     (if it requires installation).
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `dateFirstUsed` : A timestamp which denotes when the device was first used.
+- `dateFirstUsed` : A timestamp which denotes when the device was first used.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `dateManufactured` : A timestamp which denotes when the device was
+- `dateManufactured` : A timestamp which denotes when the device was
     manufactured.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `hardwareVersion` : The hardware version of this device.
+- `hardwareVersion` : The hardware version of this device.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Optional
 
--   `softwareVersion` : The software version of this device.
+- `softwareVersion` : The software version of this device.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Optional
 
--   `firmwareVersion` : The firmware version of this device.
+- `firmwareVersion` : The firmware version of this device.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Optional
 
--   `osVersion` : The version of the host operating system device.
+- `osVersion` : The version of the host operating system device.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Optional
 
--   `dateLastCalibration` : A timestamp which denotes when the last calibration
+- `dateLastCalibration` : A timestamp which denotes when the last calibration
     of the device happened.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `serialNumber` : The serial number assigned by the manufacturer.
+- `serialNumber` : The serial number assigned by the manufacturer.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/serialNumber](https://schema.org/serialNumber)
-    -   Optional
+  - Optional
 
--   `provider` : The provider of the device.
+- `provider` : The provider of the device.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/provider](https://schema.org/provider)
-    -   Optional
+  - Optional
 
--   `refDeviceModel` : The device's model.
+- `refDeviceModel` : The device's model.
 
-    -   Attribute type: Reference to an entity of type
+  - Attribute type: Reference to an entity of type
         [DeviceModel](../../DeviceModel/doc/spec.md).
-    -   Optional
+  - Optional
 
--   `batteryLevel` : Device's battery level. It must be equal to `1.0` when
+- `batteryLevel` : Device's battery level. It must be equal to `1.0` when
     battery is full. `0.0` when battery ìs empty. `null` when cannot be
     determined. + Type: [Number](https://schema.org/Number) + Allowed values:
     Interval [0,1] + Attribute metadata: + `timestamp`: Timestamp when the last
@@ -164,24 +172,24 @@ The data model is defined as shown below:
     [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) +
     Type: [DateTime](http://schema.org/DateTime) + Optional
 
--   `deviceState` : State of this device from an operational point of view. Its
+- `deviceState` : State of this device from an operational point of view. Its
     value can be vendor dependent.
 
-    -   Type: [Text](https://schema.org/Text)
-    -   Attribute metadata:
+  - Type: [Text](https://schema.org/Text)
+  - Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened. This value can also appear as a FIWARE
             [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) +
             Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `dateLastValueReported` : A timestamp which denotes the last time when the
+- `dateLastValueReported` : A timestamp which denotes the last time when the
     device successfully reported data to the cloud.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Optional
 
--   `value` : A observed or reported value. For actuator devices, it is an
+- `value` : A observed or reported value. For actuator devices, it is an
     attribute that allows a controlling application to change the actuation
     setting. For instance, a switch device which is currently _on_ can report a
     value `"on"`of type `Text`. Obviously, in order to toggle the referred
@@ -194,20 +202,20 @@ The data model is defined as shown below:
     [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) +
     Type: [DateTime](http://schema.org/DateTime) + Optional
 
--   `dateModified` : Last update timestamp of this entity.
+- `dateModified` : Last update timestamp of this entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `owner` : The owners of a Device.
-    -   Attribute type: List of references to [Person](http://schema.org/Person)
+- `owner` : The owners of a Device.
+  - Attribute type: List of references to [Person](http://schema.org/Person)
         or [Organization](https://schema.org/Organization).
-    -   Optional
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
@@ -245,6 +253,6 @@ T.B.D.
 
 ## Issues
 
--   Is `function` really needed?
--   Do we need a `state` attribute as it happens in SAREF?
--   Check consistency with oneM2M and SAREF ontologies.
+- Is `function` really needed?
+- Do we need a `state` attribute as it happens in SAREF?
+- Check consistency with oneM2M and SAREF ontologies.
