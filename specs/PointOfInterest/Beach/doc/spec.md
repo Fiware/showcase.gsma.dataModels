@@ -23,6 +23,10 @@ used by applications.
 
 -   `type` : Entity type. It must be equal to `Beach`.
 
+- `dataProvider` : Specifies the URL to information about the provider of this information
+  - Attribute type: URL
+  - Optional
+
 -   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
