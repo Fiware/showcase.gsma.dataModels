@@ -41,8 +41,8 @@ A JSON Schema corresponding to this data model can be found
 - `refPointOfInterest` : A reference to a point of interest associated to this
     observation.
 
-    -   Attribute type: Reference to an entity of type `PointOfInterest`
-    -   Optional
+  - Attribute type: Reference to an entity of type `PointOfInterest`
+  - Optional
 
 - `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
@@ -50,7 +50,7 @@ A JSON Schema corresponding to this data model can be found
         interval represented as [Text](https://schema.org/Text).
   - Mandatory
 - `source` : A sequence of characters giving the source of the entity data.
-    -   Attribute type: [Text](https://schema.org/Text) or
+  - Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
   - Optional
 
@@ -146,18 +146,21 @@ of chemical agents which concentration is being measured. The `measurand`
 attribute must be used for such purpose.
 
 - `measurand` : An array of strings containing details (see format below)
-    about extra measurands provided by this observation. + Attribute type: List
-    of [Text](https://schema.org/Text). + Allowed values: Each element of the
+    about extra measurands provided by this observation. 
+  - Attribute type: List of [Text](https://schema.org/Text). 
+  - Allowed values: Each element of the
     array must be a string with the following format (comma separated list of
-    values): `<measurand>, <observedValue>, <unitcode>, <description>`, where: +
-    `measurand` : corresponds to the chemical formula (or mnemonic) of the
-    measurand, ex. CO. + `observedValue` : corresponds to the value for the
-    measurand as a number. + `unitCode` : The unit code (text) of measurement
-    given using the
+    values): `<measurand>, <observedValue>, <unitcode>, <description>`, where:
+    - `measurand` : corresponds to the chemical formula (or mnemonic) of the
+    measurand, ex. CO. 
+    - `observedValue` : corresponds to the value for the
+    measurand as a number. 
+    - `unitCode` : The unit code (text) of measurement given using the
     [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes)
-    (max. 3 characters). For instance, `M1` represents milligrams per liter. +
-    `description` : short description of the measurand. + Examples:
-    `"NO3,0.01, M1, Nitrates"` + Optional
+    (max. 3 characters). For instance, `M1` represents milligrams per liter.
+    - `description` : short description of the measurand.
+    - Examples: `"NO3,0.01, M1, Nitrates"`
+  - Optional
 
 Below there is a list of typical chemical agents measured when analysing water
 quality. If such chemical agents are measured data providers MUST use the

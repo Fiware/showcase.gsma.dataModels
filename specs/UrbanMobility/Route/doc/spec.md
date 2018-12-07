@@ -9,14 +9,14 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity ID.
+- `id`: Entity ID.
 
-    -   It shall be `urn:ngsi-ld:gtfs:Route:<route_identifier>` being
+  - It shall be `urn:ngsi-ld:gtfs:Route:<route_identifier>` being
         `route_identifier` a value that can be derived from GTFS `route_id`.
 
--   `type`: Entity type.
+- `type`: Entity type.
 
-    -   It shall be equal to `gtfs:Route`.
+  - It shall be equal to `gtfs:Route`.
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -26,64 +26,64 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this Entity.
+- `dateModified` : Last update timestamp of this Entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `shortName`: Same as GTFS `route_short_name`.
+- `shortName`: Same as GTFS `route_short_name`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Mandatory
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Mandatory
 
--   `name`: Same as GTFS `route_long_name`.
+- `name`: Same as GTFS `route_long_name`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Mandatory
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Mandatory
 
--   `description`: Same as GTFS `route_desc`.
+- `description`: Same as GTFS `route_desc`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Optional
 
--   `routeType`: Same as GTFS `route_type`.
+- `routeType`: Same as GTFS `route_type`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Allowed values: Those allowed for `route_type` as prescribed by
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Allowed values: Those allowed for `route_type` as prescribed by
         [GTFS](https://developers.google.com/transit/gtfs/reference/#routestxt)
-    -   Mandatory
+  - Mandatory
 
--   `page`: Same as GTFS `route_url`.
+- `page`: Same as GTFS `route_url`.
 
-    -   Attribute type: Property. [URL](https://schema.org/URL).
-    -   Optional
+  - Attribute type: Property. [URL](https://schema.org/URL).
+  - Optional
 
--   `routeColor`: Same as GTFS `route_color`.
+- `routeColor`: Same as GTFS `route_color`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Allowed values: See
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Allowed values: See
         [GTFS](https://developers.google.com/transit/gtfs/reference/#routestxt)
-    -   Optional
+  - Optional
 
--   `routeTextColor`: Same as GFTS `route_text_color`.
+- `routeTextColor`: Same as GFTS `route_text_color`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Optional
 
--   `routeSortOrder`: Same as GTFS `route_sort_order`.
+- `routeSortOrder`: Same as GTFS `route_sort_order`.
 
-    -   Attribute type: Property. [Number](https://schema.org/Number)
-    -   Optional
+  - Attribute type: Property. [Number](https://schema.org/Number)
+  - Optional
 
--   `operatedBy` : Agency that operates this route.
-    -   Attribute type: Relationship. It shall point to an Entity of Type
+- `operatedBy` : Agency that operates this route.
+  - Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Agency](../../Agency/doc/spec.md)
-    -   Mandatory
+  - Mandatory
 
 ### Example of use 1 (Normalized Format)
 

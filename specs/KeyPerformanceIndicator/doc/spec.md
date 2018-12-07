@@ -29,9 +29,9 @@ The data model is defined as shown below:
   - Optional
 
 - `name` : Indicator's name which should be meaningful in the context of a
-    project or organization. Example `KPI-2016-2018-Incidences-Street`. +
-    Normative References: [https://schema.org/name](https://schema.org/name) +
-    Mandatory
+    project or organization. Example `KPI-2016-2018-Incidences-Street`. 
+  - Normative References: [https://schema.org/name](https://schema.org/name)
+  - Mandatory
 
 - `alternateName` : An alias for the KPI.
 
@@ -89,8 +89,8 @@ The data model is defined as shown below:
         `input`, `process`, `output`, `practical`, `directional`, `actionable`,
         `financial`). Check
         [Wikipedia](https://en.wikipedia.org/wiki/Performance_indicator#Categorization_of_indicators)
-        for a description of each category listed above. + Any other value
-        meaningful to the application and not covered by the above list.
+        for a description of each category listed above. 
+        - Any other value meaningful to the application and not covered by the above list.
   - Mandatory
 
 - `calculatedBy` : The organization in charge of calculating the KPI.
@@ -198,8 +198,9 @@ The data model is defined as shown below:
 
 - `area` : For organizational purposes, it allows to add extra textual
     geographical information such as district, burough, or any other hint which
-    can help to identify the KPI coverage. + Attribute type:
-    [Text](http://schema.org/Text) + Optional
+    can help to identify the KPI coverage. 
+  - Attribute type: [Text](http://schema.org/Text)
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

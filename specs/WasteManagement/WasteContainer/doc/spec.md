@@ -9,9 +9,9 @@ A waste container.
 A JSON Schema corresponding to this data model can be found
 [here](http://fiware.github.io/dataModels/specs/WasteManagement/WasteContainer/schema.json).
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `WasteContainer`.
+- `type` : Entity type. It must be equal to `WasteContainer`.
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -21,191 +21,215 @@ A JSON Schema corresponding to this data model can be found
   - Attribute type: URL
   - Optional
 
--   `location` : Container's location represented by a GeoJSON Point.
+- `location` : Container's location represented by a GeoJSON Point.
 
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Mandatory if `address` is not present.
+  - Mandatory if `address` is not present.
 
--   `address`: Civic address where the container is located.
+- `address`: Civic address where the container is located.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/address](https://schema.org/address)
-    -   Mandatory if `location` is not present.
+  - Mandatory if `location` is not present.
 
--   `fillingLevel` : Filling level of the container (percentage, expressed in
+- `fillingLevel` : Filling level of the container (percentage, expressed in
     parts per one). When the container is full it must be equal to `1.0`. When
     the container is empty it must be equal to `0.0`. If it is not possible to
-    determine the current filling level it must be equal to `null`. + Attribute
-    type: [Number](http://schema.org/Number) + Attribute metadata: +
-    `timestamp`: Timestamp when the last update of the attribute happened. +
-    Type: [DateTime](http://schema.org/DateTime) + `TimeInstant` :
+    determine the current filling level it must be equal to `null`. 
+  - Attribute type: [Number](http://schema.org/Number) 
+  - Attribute metadata: 
+    - `timestamp`: Timestamp when the last update of the attribute happened. 
+      - Type: [DateTime](http://schema.org/DateTime) 
+    - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
     to keep backwards compatibility with current FIWARE reference
-    implementations. + Type: [DateTime](https://schema.org/DateTime). There can
+    implementations. 
+      - Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
     `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+  - Allowed values: Interval [0,1].
+  - Optional
 
-    -   Allowed values: Interval [0,1]. + Optional
-
--   `fullnessThreshold` : The level at which the container will generate a
+- `fullnessThreshold` : The level at which the container will generate a
     warning (percentage, expressed in parts per one). If the filling level
-    passes this threshold, action should be taken to clean the container. +
-    Attribute type: [Number](http://schema.org/Number) + Attribute metadata: +
-    `timestamp`: Timestamp when the last update of the attribute happened. +
-    Type: [DateTime](http://schema.org/DateTime) + `TimeInstant` :
+    passes this threshold, action should be taken to clean the container. 
+  - Attribute type: [Number](http://schema.org/Number) 
+  - Attribute metadata: 
+    - `timestamp`: Timestamp when the last update of the attribute happened.
+      - Type: [DateTime](http://schema.org/DateTime) 
+    - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
     to keep backwards compatibility with current FIWARE reference
-    implementations. + Type: [DateTime](https://schema.org/DateTime). There can
+    implementations. 
+      - Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
     `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
+  - Allowed values: Interval [0,1]. 
+  - Optional
 
-    -   Allowed values: Interval [0,1]. + Optional
-
--   `cargoWeight` : Weight of the container load. + Attribute type:
-    [Number](http://schema.org/Number) + Attribute metadata: + `timestamp`:
-    Timestamp when the last update of the attribute happened. + Type:
-    [DateTime](http://schema.org/DateTime) + `TimeInstant` :
+- `cargoWeight` : Weight of the container load. 
+  - Attribute type:
+    [Number](http://schema.org/Number) 
+  - Attribute metadata: 
+    - `timestamp`: Timestamp when the last update of the attribute happened. 
+      - Type:[DateTime](http://schema.org/DateTime) 
+    - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
     to keep backwards compatibility with current FIWARE reference
-    implementations. + Type: [DateTime](https://schema.org/DateTime). There can
+    implementations. 
+      - Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
     `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
 
-    -   Default Unit: Kilograms. + See also:
-        [https://schema.org/weight](https://schema.org/weight) + Optional
+  - Default Unit: Kilograms. 
+  - See also:
+        [https://schema.org/weight](https://schema.org/weight) 
+  - Optional
 
--   `temperature` : Temperature inside the container. + Attribute type:
-    [Number](http://schema.org/Number) + Attribute metadata: + `timestamp`:
-    Timestamp when the last update of the attribute happened. + Type:
-    [DateTime](http://schema.org/DateTime) + `TimeInstant` :
+- `temperature` : Temperature inside the container.
+  - Attribute type: [Number](http://schema.org/Number) 
+  - Attribute metadata: 
+    - `timestamp`:
+    Timestamp when the last update of the attribute happened. 
+      - Type:
+    [DateTime](http://schema.org/DateTime) 
+    - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
     to keep backwards compatibility with current FIWARE reference
-    implementations. + Type: [DateTime](https://schema.org/DateTime). There can
+    implementations. 
+      - Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
     `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
 
-    -   Default unit: Celsius Degrees. + Optional
+  - Default unit: Celsius Degrees. 
+  - Optional
 
--   `methaneConcentration` : Methane (CH4) concentration inside the container. +
-    Attribute type: [Number](http://schema.org/Number) + Attribute metadata: +
-    `timestamp`: Timestamp when the last update of the attribute happened. +
-    Type: [DateTime](http://schema.org/DateTime) + `TimeInstant` :
+- `methaneConcentration` : Methane (CH4) concentration inside the container.
+  - Attribute type: [Number](http://schema.org/Number) 
+  - Attribute metadata: 
+    -`timestamp`: Timestamp when the last update of the attribute happened.
+        - Type: [DateTime](http://schema.org/DateTime)
+    - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
     to keep backwards compatibility with current FIWARE reference
-    implementations. + Type: [DateTime](https://schema.org/DateTime). There can
+    implementations. 
+        - Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
     `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
 
-    -   Default unit: Micrograms per cubic meter. + Optional
+  - Default unit: Micrograms per cubic meter. 
+  - Optional
 
--   `storedWasteOrigin` : Origin of the waste stored.
+- `storedWasteOrigin` : Origin of the waste stored.
 
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Allowed values: one Of (`household`, `municipal`, `industrial`,
+  - Attribute type: [Text](http://schema.org/Text)
+  - Allowed values: one Of (`household`, `municipal`, `industrial`,
         `construction`, `hostelry`, `agriculture`, `other`)
         -   Or any other value which does not fit within the former.
-    -   Optional
+  - Optional
 
--   `storedWasteKind` : Kind/s of waste stored by the container.
+- `storedWasteKind` : Kind/s of waste stored by the container.
 
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Allowed values: (`organic`, `inorganic`, `glass`, `oil`, `plastic`,
+  - Attribute type: List of [Text](http://schema.org/Text)
+  - Allowed values: (`organic`, `inorganic`, `glass`, `oil`, `plastic`,
         `metal`, `paper`, `batteries`, `electronics`, `hazardous`, `other`)
         -   Or any other value which does not fit within the former.
-    -   Optional
+  - Optional
 
--   `storedWasteCode` : As per the regulation, waste codes which precisely
+- `storedWasteCode` : As per the regulation, waste codes which precisely
     identifies waste origin and kind.
 
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Allowed values: Depend on the target regulation. For Europe, check
+  - Attribute type: List of [Text](http://schema.org/Text)
+  - Allowed values: Depend on the target regulation. For Europe, check
         [Europe's List of Waste](http://ec.europa.eu/environment/waste/framework/list.htm).
-    -   Optional
+  - Optional
 
--   `refWasteContainerModel` : Container's model.
+- `refWasteContainerModel` : Container's model.
 
-    -   Attribute type: Reference to a
+  - Attribute type: Reference to a
         [WasteContainerModel](../../WasteContainerModel/doc/spec.md) entity.
-    -   Optional
+  - Optional
 
--   `serialNumber` : Serial number of the container.
+- `serialNumber` : Serial number of the container.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/serialNumber](https://schema.org/serialNumber)
-    -   Optional
+  - Optional
 
--   `regulation` : Regulation under which the container is operating.
+- `regulation` : Regulation under which the container is operating.
 
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Optional
+  - Attribute type: List of [Text](http://schema.org/Text)
+  - Optional
 
--   `responsible` : Responsible for the container, i.e. entity in charge of
+- `responsible` : Responsible for the container, i.e. entity in charge of
     actuating (emptying, collecting etc.).
 
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](http://schema.org/Text)
+  - Optional
 
--   `owner` : Container's owner.
+- `owner` : Container's owner.
 
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](http://schema.org/Text)
+  - Optional
 
--   `dateServiceStarted` : Date at which the container started giving service.
+- `dateServiceStarted` : Date at which the container started giving service.
 
-    -   Attribute Type: [Date](http://schema.org/Date)
-    -   Optional
+  - Attribute Type: [Date](http://schema.org/Date)
+  - Optional
 
--   `dateLastEmptying` : Timestamp which represents when the container was
+- `dateLastEmptying` : Timestamp which represents when the container was
     emptied last time.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Attribute Type: [DateTime](http://schema.org/DateTime)
+  - Optional
 
--   `nextActuationDeadline` : Deadline for next actuation to be performed
+- `nextActuationDeadline` : Deadline for next actuation to be performed
     (emptying, picking up, etc.).
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Attribute Type: [DateTime](http://schema.org/DateTime)
+  - Optional
 
--   `actuationHours` : Hours suitable for performing actuations over the
+- `actuationHours` : Hours suitable for performing actuations over the
     container.
 
-    -   Attribute Type: [Text](http://schema.org/Text)
-    -   Normative References: Value must be compliant with
+  - Attribute Type: [Text](http://schema.org/Text)
+  - Normative References: Value must be compliant with
         [https://schema.org/openingHours](https://schema.org/openingHours)
 
--   `dateLastCleaning` : When the container was cleaned last time.
+- `dateLastCleaning` : When the container was cleaned last time.
 
-    -   Attribute Type: [DateTime](http://schema.org/Date)
-    -   Optional
+  - Attribute Type: [DateTime](http://schema.org/Date)
+  - Optional
 
--   `nextCleaningDeadline` : Deadline for next cleaning.
+- `nextCleaningDeadline` : Deadline for next cleaning.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Attribute Type: [DateTime](http://schema.org/DateTime)
+  - Optional
 
--   `refWasteContainerIsle` : Isle where the container is placed.
+- `refWasteContainerIsle` : Isle where the container is placed.
 
-    -   Attribute Type: Reference to a
+  - Attribute Type: Reference to a
         [WasteContainerIsle](../../WasteContainerIsle/doc/spec.md) entity.
-    -   Optional
+  - Optional
 
--   `isleId` : Identifier (or name) of the isle where the container is placed.
+- `isleId` : Identifier (or name) of the isle where the container is placed.
     This attribute should be used when entities of type `WasteContainerIsle` are
     not being modelled specifically. Otherwise, `refWasteContainerIsle` should
-    be used. + Attribute Type: [Text](http://schema.org/Text) + Optional
+    be used. 
+  - Attribute Type: [Text](http://schema.org/Text) 
+  - Optional
 
--   `category` : Container's category.
+- `category` : Container's category.
 
-    -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed Values:
+  - Attribute type: List of [Text](https://schema.org/Text)
+  - Allowed Values:
         -   All values allowed for the `category` property of
             [WasteContainerModel](../../WasteContainerModel/doc/spec.md).
         -   `fixed`. Container is fixed to a wall, support or handle.
@@ -215,80 +239,91 @@ A JSON Schema corresponding to this data model can be found
         -   Any other value which captures an aspect not covered by those
             referred above.
 
--   `status` : Container's status from the point of view of safety. + Attribute
-    type: [Text](https://schema.org/Text) + Allowed Values: + `ok`. Container is
-    where it must be and stands properly. + `lidOpen`. Container's lid has been
-    opened and not closed after a certain amount of time. + `dropped`. Container
-    has been dropped for some reason. + `moved`. Container has been moved from
-    its regular position and has not come back. + `vandalized`. Container has
-    been damaged or destroyed due to vandalism. + `burning`. Container is
-    burning and an immediate action has to be taken. + Attribute metadata: +
-    `timestamp`: Timestamp when the last update of the attribute happened. +
-    Type: [DateTime](http://schema.org/DateTime) + `TimeInstant` :
+- `status` : Container's status from the point of view of safety. 
+  - Attribute type: [Text](https://schema.org/Text) 
+  - Allowed Values: 
+    - `ok`. Container is
+    where it must be and stands properly. 
+    - `lidOpen`. Container's lid has been
+    opened and not closed after a certain amount of time. 
+    - `dropped`. Container
+    has been dropped for some reason. 
+    - `moved`. Container has been moved from
+    its regular position and has not come back. 
+    - `vandalized`. Container has
+    been damaged or destroyed due to vandalism. 
+    - `burning`. Container is
+    burning and an immediate action has to be taken. 
+  - Attribute metadata: 
+    - `timestamp`: Timestamp when the last update of the attribute happened. 
+      - Type: [DateTime](http://schema.org/DateTime) 
+    - `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
     to keep backwards compatibility with current FIWARE reference
-    implementations. + Type: [DateTime](https://schema.org/DateTime). There can
+    implementations. 
+      - Type: [DateTime](https://schema.org/DateTime). There can
     be production environmments where the attribute type is equal to the
     `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
 
-    -   Optional
+  - Optional
 
--   `color` : Container's color
+- `color` : Container's color
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Allowed Values:
+  - Attribute type: [Text](https://schema.org/Text)
+  - Allowed Values:
         -   A color keyword as specified by
             [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords)
         -   A color value as specified by
             [W3C Color Data Type](https://www.w3.org/TR/SVG/types.html#BasicDataTypes)
-    -   See also: [https://schema.org/color](https://schema.org/color)
-    -   Optional
+  - See also: [https://schema.org/color](https://schema.org/color)
+  - Optional
 
--   `image` : A URL containing a photo of the container.
+- `image` : A URL containing a photo of the container.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/image](https://schema.org/image)
-    -   Optional
+  - Optional
 
--   `description` : Description about the container.
+- `description` : Description about the container.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/description](https://schema.org/description)
-    -   Optional
+  - Optional
 
--   `annotations` : A field reserved for annotations (incidences, remarks,
+- `annotations` : A field reserved for annotations (incidences, remarks,
     etc.).
 
-    -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: List of [Text](https://schema.org/Text)
+  - Optional
 
--   `areaServed` : Higher level area to which the container belongs to. It can
-    be used to group containers per responsible, district, neighbourhood, etc. +
-    Normative References:
-    [https://pending.schema.org/areaServed](https://pending.schema.org/areaServed) +
-    Optional
+- `areaServed` : Higher level area to which the container belongs to. It can
+    be used to group containers per responsible, district, neighbourhood, etc.
+  - Normative References:
+    [https://pending.schema.org/areaServed](https://pending.schema.org/areaServed)
+  - Optional
 
--   `dateModified` : Last update timestamp of this entity
+- `dateModified` : Last update timestamp of this entity
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `TimeInstant` :
+- `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agent as per dynamic IoT data arrival. Note: This
     attribute has not been harmonized to keep backwards compatibility with
-    current FIWARE reference implementations. + Attribute type:
+    current FIWARE reference implementations. 
+  - Attribute type:
     [DateTime](https://schema.org/DateTime). There can be production
     environmments where the attribute type is equal to the `ISO8601` string. If
     so, it must be considered as a synonym of `DateTime`.
 
-    -   Optional
+  - Optional
 
--   `refDevice` : Reference to the device(s) used to monitor this container.
-    -   Attribute type: List of Reference to entity(ies) of type
+- `refDevice` : Reference to the device(s) used to monitor this container.
+  - Attribute type: List of Reference to entity(ies) of type
         [Device](../../../Device/Device/doc/spec.md)
-    -   Optional
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

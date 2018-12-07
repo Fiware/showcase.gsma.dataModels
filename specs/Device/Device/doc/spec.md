@@ -51,7 +51,9 @@ The data model is defined as shown below:
     Mobile Country Code (MCC) (also known as a "MCC / MNC tuple") to uniquely
     identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA
     and 3G / 4G public land mobile networks and some satellite mobile
-    networks. + Attribute type: [Text](https://schema.org/Text) + Optional
+    networks. 
+  - Attribute type: [Text](https://schema.org/Text) 
+  - Optional
 
 - `mcc` : Mobile Country Code - This property identifies univoquely the
     country of the mobile network the device is attached to.
@@ -79,11 +81,13 @@ The data model is defined as shown below:
     intended to be a dictionary of properties which capture parameters which
     have to do with the configuration of a device (timeouts, reporting periods,
     etc.) and which are not currently covered by the standard attributes defined
-    by this model. + Attribute type:
-    [StructuredValue](https://schema.org/StructuredValue) + Attribute
-    metadata: + `dateModified` : Last update timestamp of this attribute. +
-    Metadata type: [DateTime](https://schema.org/DateTime) + Read-Only.
-    Automatically generated. + Optional
+    by this model.
+  - Attribute type: [StructuredValue](https://schema.org/StructuredValue) 
+  - Attribute metadata:
+    - `dateModified` : Last update timestamp of this attribute. 
+      - Metadata type: [DateTime](https://schema.org/DateTime) 
+      - Read-Only. Automatically generated.
+  - Optional
 
 - `location` : Location of this device represented by a GeoJSON geometry of
     type point.
@@ -166,11 +170,15 @@ The data model is defined as shown below:
 
 - `batteryLevel` : Device's battery level. It must be equal to `1.0` when
     battery is full. `0.0` when battery ìs empty. `null` when cannot be
-    determined. + Type: [Number](https://schema.org/Number) + Allowed values:
-    Interval [0,1] + Attribute metadata: + `timestamp`: Timestamp when the last
+    determined. 
+  - Type: [Number](https://schema.org/Number)
+  - Allowed values: Interval [0,1]
+  - Attribute metadata: 
+    - `timestamp`: Timestamp when the last
     update of the attribute happened. This value can also appear as a FIWARE
-    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) +
-    Type: [DateTime](http://schema.org/DateTime) + Optional
+    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) 
+      - Type: [DateTime](http://schema.org/DateTime) 
+  - Optional
 
 - `deviceState` : State of this device from an operational point of view. Its
     value can be vendor dependent.
@@ -179,7 +187,7 @@ The data model is defined as shown below:
   - Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened. This value can also appear as a FIWARE
-            [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) +
+            [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             Type: [DateTime](http://schema.org/DateTime)
   - Optional
 
@@ -193,14 +201,16 @@ The data model is defined as shown below:
     attribute that allows a controlling application to change the actuation
     setting. For instance, a switch device which is currently _on_ can report a
     value `"on"`of type `Text`. Obviously, in order to toggle the referred
-    switch, this attribute value will have to be changed to `"off"`. + Attribute
-    type: Any type, depending on the device. Usually
+    switch, this attribute value will have to be changed to `"off"`. 
+  - Attribute type: Any type, depending on the device. Usually
     [Text](https://schema.org/Text) or
-    [QuantitativeValue](https://schema.org/QuantitativeValue). + Attribute
-    metadata: + `timestamp`: Timestamp when the last update of the attribute
+    [QuantitativeValue](https://schema.org/QuantitativeValue). 
+  - Attribute metadata: 
+    - `timestamp`: Timestamp when the last update of the attribute
     happened. This value can also appear as a FIWARE
-    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) +
-    Type: [DateTime](http://schema.org/DateTime) + Optional
+    [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant) 
+      - Type: [DateTime](http://schema.org/DateTime) 
+  - Optional
 
 - `dateModified` : Last update timestamp of this entity.
 

@@ -7,9 +7,9 @@ might be controlled together by the same automated system (cabinet controller).
 
 The data model is defined as shown below:
 
--   `id` : Entity's unique identifier.
+- `id` : Entity's unique identifier.
 
--   `type` : It must be equal to `StreetlightGroup`.
+- `type` : It must be equal to `StreetlightGroup`.
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -19,61 +19,61 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `location` : Streetlight's group location represented by a GeoJSON
+- `location` : Streetlight's group location represented by a GeoJSON
     (multi)geometry.
 
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/draft-ietf-geojson-03](https://tools.ietf.org/html/draft-ietf-geojson-03)
-    -   Mandatory
+  - Mandatory
 
--   `areaServed` : Higher level area to which the streetlight group belongs to.
+- `areaServed` : Higher level area to which the streetlight group belongs to.
     It can be used to group per responsible, district, neighbourhood, etc.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Normative References: [https://schema.org/areaServed](https://schema.org/areaServed)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Normative References: [https://schema.org/areaServed](https://schema.org/areaServed)
+  - Optional
 
--   `powerState` : Streetlight group's power state.
+- `powerState` : Streetlight group's power state.
 
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Attribute metadata:
+  - Attribute type: [Text](http://schema.org/Text)
+  - Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
-    -   Optional
+  - Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
+  - Optional
 
--   `refStreetlightControlCabinet` : Streetlight group's control cabinet
+- `refStreetlightControlCabinet` : Streetlight group's control cabinet
 
-    -   Attribute type : Reference to a
+  - Attribute type : Reference to a
         [StreetlightControlCabinet](../../StreetlightControlCabinet/doc/spec.md)
         entity.
-    -   Optional
+  - Optional
 
--   `dateLastSwitchingOn` : Timestamp of the last switching on.
+- `dateLastSwitchingOn` : Timestamp of the last switching on.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
-    -   Attribute metadata:
+  - Attribute Type: [DateTime](http://schema.org/DateTime)
+  - Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `dateLastSwitchingOff` : Timestamp of the last switching off.
+- `dateLastSwitchingOff` : Timestamp of the last switching off.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
-    -   Attribute metadata:
+  - Attribute Type: [DateTime](http://schema.org/DateTime)
+  - Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `switchingOnHours` : Switching on hours. It is used normally to set special
+- `switchingOnHours` : Switching on hours. It is used normally to set special
     schedules for certain dates.
 
-    -   Attribute Type: List of [StructuredValue](http://schema.org/StructuredValue)
-    -   Subproperties:
+  - Attribute Type: List of [StructuredValue](http://schema.org/StructuredValue)
+  - Subproperties:
         -   `from` : Starting date (it can be yearless).
             -   Type: [Date](https://schema.org/Date)
         -   `to` : Ending date (it can be yearless)
@@ -81,66 +81,66 @@ The data model is defined as shown below:
         -   `hours` : Hours.
             -   Normative References: Value must be compliant with
                 [https://schema.org/openingHours](https://schema.org/openingHours)
-    -   Attribute metadata:
+  - Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `switchingMode` : Switching mode.
+- `switchingMode` : Switching mode.
 
-    -   Attribute Type: List of [Text](http://schema.org/Text)
-    -   Allowed values: (`night-ON`, `night-OFF`, `night-LOW`, `always-ON`,
+  - Attribute Type: List of [Text](http://schema.org/Text)
+  - Allowed values: (`night-ON`, `night-OFF`, `night-LOW`, `always-ON`,
         `day-ON`, `day-OFF`, `day-LOW`)
-    -   Attribute metadata:
+  - Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `illuminanceLevel` : Relative illuminance level setting for the group.
+- `illuminanceLevel` : Relative illuminance level setting for the group.
 
-    -   Attribute Type: [Number](http://schema.org/Number)
-    -   Allowed values: A number between 0 and 1.
-    -   Attribute metadata:
+  - Attribute Type: [Number](http://schema.org/Number)
+  - Allowed values: A number between 0 and 1.
+  - Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `activeProgramId` : Identifier of the active program for this streetlight
+- `activeProgramId` : Identifier of the active program for this streetlight
     group.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Attribute metadata:
+  - Attribute type: [Text](https://schema.org/Text)
+  - Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
             -   Type: [DateTime](http://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `dateModified` : Timestamp of the last update made to this entity.
+- `dateModified` : Timestamp of the last update made to this entity.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute Type: [DateTime](http://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `description` : Description about the streetlight group.
+- `description` : Description about the streetlight group.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/description](https://schema.org/description)
-    -   Optional
+  - Optional
 
--   `annotations` : A field reserved for annotations (incidences, remarks,
+- `annotations` : A field reserved for annotations (incidences, remarks,
     etc.).
 
-    -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: List of [Text](https://schema.org/Text)
+  - Optional
 
--   `refStreetlight` : List of streetlight entities belonging to this group.
-    -   Attribute type: List of references to entities fo type
+- `refStreetlight` : List of streetlight entities belonging to this group.
+  - Attribute type: List of references to entities fo type
         [Streetlight](../../Streetlight/doc/spec.md)
-    -   Allowed values: There must topographical integrity between the location
+  - Allowed values: There must topographical integrity between the location
         of the group and of the individual streetlights.
-    -   Optional
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

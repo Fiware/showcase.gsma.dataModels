@@ -20,9 +20,9 @@ This data model has been developed in cooperation with mobile operators and the
 
 The data model is defined as shown below:
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `Road`.
+- `type` : Entity type. It must be equal to `Road`.
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -32,57 +32,57 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this entity.
+- `dateModified` : Last update timestamp of this entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `name` : Name given to this road, for instance `M-30`.
+- `name` : Name given to this road, for instance `M-30`.
 
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
-    -   Mandatory
+  - Normative References: [https://schema.org/name](https://schema.org/name)
+  - Mandatory
 
--   `alternateName` : An alias for this road.
+- `alternateName` : An alias for this road.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
-    -   Optional
+  - Optional
 
--   `description` : Description or long name given to this road.
+- `description` : Description or long name given to this road.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/description](https://schema.org/description)
-    -   Optional
+  - Optional
 
--   `roadClass` : The classification of this road.
+- `roadClass` : The classification of this road.
 
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Allowed values: Those described by
+  - Attribute type: [Text](https://schema.org/Text)
+  - Allowed values: Those described by
         [http://wiki.openstreetmap.org/wiki/Key:highway](OpenStreetMap).
-    -   Mandatory
+  - Mandatory
 
--   `refRoadSegment` : Road segments which define this road.
+- `refRoadSegment` : Road segments which define this road.
 
-    -   Attribute type: List of references to entities of type
+  - Attribute type: List of references to entities of type
         [RoadSegment](../../RoadSegment/doc/spec.md).
-    -   MAndatory
+  - MAndatory
 
--   `length` : Total length of this road in kilometers.
+- `length` : Total length of this road in kilometers.
 
-    -   Attribute type: [Number](https://schema.org/Number)
-    -   See also [https://schema.org/length](https://schema.org/length)
-    -   Default unit: Kilometer (Km)
-    -   Optional
+  - Attribute type: [Number](https://schema.org/Number)
+  - See also [https://schema.org/length](https://schema.org/length)
+  - Default unit: Kilometer (Km)
+  - Optional
 
--   `responsible` : Responsible for the raod i.e. the organism or company in
+- `responsible` : Responsible for the raod i.e. the organism or company in
     charge of its maintenance.
-    -   Attribute type: [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](https://schema.org/Text)
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

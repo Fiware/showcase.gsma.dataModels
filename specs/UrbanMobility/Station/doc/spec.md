@@ -11,14 +11,14 @@ It is a GTFS `stop` which `location_type` is equal to `1`.
 
 The data model is defined as shown below:
 
--   `id`: Entity ID
+- `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:Station:<station_identifier>` being
         `station_identifier` a value that can derived from the `stop_id` field.
 
--   `type`: Entity Type
+- `type`: Entity Type
 
-    -   It shall be equal to `gtfs:Station`
+  - It shall be equal to `gtfs:Station`
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -28,39 +28,39 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this Entity.
+- `dateModified` : Last update timestamp of this Entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `hasStop` : It shall point to another Entity(ies) of type `gtfs:Stop`
+- `hasStop` : It shall point to another Entity(ies) of type `gtfs:Stop`
 
-    -   Type: Relationship. List of [gtfs:Stop](../../Stop/doc/spec.md).
-    -   Mandatory
+  - Type: Relationship. List of [gtfs:Stop](../../Stop/doc/spec.md).
+  - Mandatory
 
--   `hasAccessPoint` : It shall point to another Entity(ies) of type
+- `hasAccessPoint` : It shall point to another Entity(ies) of type
     `gtfs:AccessPoint`
-    -   Type: Relationship. List of
+  - Type: Relationship. List of
         [gtfs:AccessPoint](../../AccessPoint/doc/spec.md).
-    -   Optional
+  - Optional
 
 The specification for the following attributes is the one mandanted by
 [gtfs:Stop](../../Stop/doc/spec.md):
 
--   `name`
--   `code`
--   `page`
--   `description`
--   `location`
--   `wheelChairAccessible`
--   `zoneCode`
--   `address`
--   `hasParentStation`
+- `name`
+- `code`
+- `page`
+- `description`
+- `location`
+- `wheelChairAccessible`
+- `zoneCode`
+- `address`
+- `hasParentStation`
 
 ### Example 1 (Normalized Format)
 

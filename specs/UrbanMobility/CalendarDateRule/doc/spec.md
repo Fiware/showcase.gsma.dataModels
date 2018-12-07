@@ -9,14 +9,14 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity ID
+- `id`: Entity ID
 
-    -   It shall be
+  - It shall be
         `urn:ngsi-ld:gtfs:CalendarDateRule:<calendar_date_rule_identifier>`.
 
--   `type`: Entity Type
+- `type`: Entity Type
 
-    -   It shall be equal to `gtfs:CalendarDateRule`
+  - It shall be equal to `gtfs:CalendarDateRule`
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -26,43 +26,43 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this Entity.
+- `dateModified` : Last update timestamp of this Entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `hasService` : Service to which this rule applies to. Derived from
+- `hasService` : Service to which this rule applies to. Derived from
     `service_id`.
 
-    -   Attribute type: Relationship. It shall point to an entity of Type
+  - Attribute type: Relationship. It shall point to an entity of Type
         [gtfs:Service](../../Service/doc/spec.md)
-    -   Mandatory
+  - Mandatory
 
--   `name` : Name given to this rule.
+- `name` : Name given to this rule.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Optional
 
--   `description`: Description given to this rule.
+- `description`: Description given to this rule.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Optional
 
--   `appliesOn`: Date (in YYYY-MM-DD format) this rule applies to. It shall be
+- `appliesOn`: Date (in YYYY-MM-DD format) this rule applies to. It shall be
     obtained from the GTFS `date` field.
 
-    -   Attribute type: Property. [Date](https://schema.org/Date).
-    -   Mandatory
+  - Attribute type: Property. [Date](https://schema.org/Date).
+  - Mandatory
 
--   `exceptionType`: Same as GTFS `exception_type` field. Allowed values:
+- `exceptionType`: Same as GTFS `exception_type` field. Allowed values:
     (`"1"`, `"2"`)
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Mandatory
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Mandatory
 
 ### Example of use 1 (Normalized Format)
 

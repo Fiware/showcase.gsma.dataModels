@@ -65,7 +65,7 @@ The data model is defined as shown below:
     the `coordinates` array. 
   - Attribute type: `geo:json`. 
   - Normative References:
-    [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946) +
+    [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
   - Attribute metadata: 
     - `timestamp`: Timestamp which captures when the vehicle
     was at that location. This value can also appear as a FIWARE

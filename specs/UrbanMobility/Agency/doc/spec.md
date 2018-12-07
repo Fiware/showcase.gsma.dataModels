@@ -9,67 +9,67 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity ID.
+- `id`: Entity ID.
 
-    -   It shall be `urn:ngsi-ld:gtfs:Agency:<agency_identifier>` being
+  - It shall be `urn:ngsi-ld:gtfs:Agency:<agency_identifier>` being
         `agency_identifier` a value that can be derived from GTFS `agency_id`.
 
--   `type`: Entity type.
+- `type`: Entity type.
 
-    -   It shall be equal to `gtfs:Agency`.
+  - It shall be equal to `gtfs:Agency`.
 
 - `dataProvider` : Specifies the URL to information about the provider of this information
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this Entity.
+- `dateModified` : Last update timestamp of this Entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `source` : A sequence of characters giving the original source of the Entity
+- `source` : A sequence of characters giving the original source of the Entity
     data as a URL. It shall point to the URL of the original GTFS feed used to
     generate this Entity. + Attribute type: [URL](https://schema.org/URL) +
     Mandatory
 
--   `name`: Same as GTFS `agency_name`.
+- `name`: Same as GTFS `agency_name`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Mandatory
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Mandatory
 
--   `page`: Same as GTFS `agency_url`.
+- `page`: Same as GTFS `agency_url`.
 
-    -   Attribute type: Property. [URL](https://schema.org/URL).
-    -   Optional
+  - Attribute type: Property. [URL](https://schema.org/URL).
+  - Optional
 
--   `timezone`: Same as GTFS `agency_timezone`.
+- `timezone`: Same as GTFS `agency_timezone`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Allowed values: See
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Allowed values: See
         [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
-    -   Optional
+  - Optional
 
--   `phone`: Same as GFTS `agency_phone`.
+- `phone`: Same as GFTS `agency_phone`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Optional
 
--   `language`: Same as GTFS `agency_language`.
+- `language`: Same as GTFS `agency_language`.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Allowed values: See
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Allowed values: See
         [GTFS](https://developers.google.com/transit/gtfs/reference/#agencytxt)
-    -   Optional
+  - Optional
 
--   `address`: Agency's civic address.
-    -   Attribute type: Property.
+- `address`: Agency's civic address.
+  - Attribute type: Property.
         [PostalAddress](https://schema.org/PostalAddress)
-    -   Optional
+  - Optional
 
 ### Example of use 1 (Normalized Format)
 

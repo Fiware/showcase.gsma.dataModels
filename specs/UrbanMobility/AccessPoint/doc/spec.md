@@ -11,15 +11,15 @@ It is a GTFS `stop` which `location_type` is equal to `2`.
 
 The data model is defined as shown below:
 
--   `id`: Entity ID
+- `id`: Entity ID
 
-    -   It shall be `urn:ngsi-ld:gtfs:AccessPoint:<access_point_identifier>`
+  - It shall be `urn:ngsi-ld:gtfs:AccessPoint:<access_point_identifier>`
         being `access_point_identifier` a value that can derived from the
         `stop_id` field.
 
--   `type`: Entity Type
+- `type`: Entity Type
 
-    -   It shall be equal to `gtfs:AccessPoint`
+  - It shall be equal to `gtfs:AccessPoint`
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -29,26 +29,26 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this Entity.
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+- `dateModified` : Last update timestamp of this Entity.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
 The following Attributes shall be as mandated by
 [gtfs:Stop](../../Stop/doc/spec.md):
 
--   `name`
--   `code`
--   `page`
--   `description`
--   `location`
--   `wheelChairAccessible`
--   `address`
--   `hasParentStation`
+- `name`
+- `code`
+- `page`
+- `description`
+- `location`
+- `wheelChairAccessible`
+- `address`
+- `hasParentStation`
 
 ### Examples of use 1 (Normalized Format)
 

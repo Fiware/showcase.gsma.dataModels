@@ -9,13 +9,13 @@ See
 
 The data model is defined as shown below:
 
--   `id`: Entity ID.
+- `id`: Entity ID.
 
-    -   It shall be `urn:ngsi-ld:gtfs:Frequency:<frequency_identifier>`.
+  - It shall be `urn:ngsi-ld:gtfs:Frequency:<frequency_identifier>`.
 
--   `type`: Entity type.
+- `type`: Entity type.
 
-    -   It shall be equal to `gtfs:Frequency`.
+  - It shall be equal to `gtfs:Frequency`.
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -25,53 +25,55 @@ The data model is defined as shown below:
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this Entity.
+- `dateModified` : Last update timestamp of this Entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
 
--   `name` : Name given to this frequency.
+- `name` : Name given to this frequency.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Optional
 
--   `description`: Description given to this frequency.
+- `description`: Description given to this frequency.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Optional
+  - Attribute type: Property. [Text](https://schema.org/Text)
+  - Optional
 
--   `hasTrip`: Trip associated to this Entity.
+- `hasTrip`: Trip associated to this Entity.
 
-    -   Attribute type: Relationship. It shall point to an Entity of Type
+  - Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Trip](../../Trip/doc/spec.md)
-    -   Mandatory
+  - Mandatory
 
--   `startTime`: Same as GTFS `start_time`. See
+- `startTime`: Same as GTFS `start_time`. See
     [format](https://developers.google.com/transit/gtfs/reference/#frequenciestxt).
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Mandatory
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Mandatory
 
--   `endTime`: Same as GTFS `end_time`. See
+- `endTime`: Same as GTFS `end_time`. See
     [format](https://developers.google.com/transit/gtfs/reference/#frequenciestxt).
 
-    -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Mandatory
+  - Attribute type: Property. [Text](https://schema.org/Text).
+  - Mandatory
 
--   `headwaySeconds`: Same as GTFS `headway_secs`.
+- `headwaySeconds`: Same as GTFS `headway_secs`.
 
-    -   Attribute type: Property. [Integer](https://schema.org/Integer).
-    -   Mandatory
+  - Attribute type: Property. [Integer](https://schema.org/Integer).
+  - Mandatory
 
--   `exactTimes`: Same as GTFS `exact_times` but encoded as a Boolean: `false`:
+- `exactTimes`: Same as GTFS `exact_times` but encoded as a Boolean: `false`:
     Frequency-based trips are not exactly scheduled. `true`: Frequency-based
-    trips are exactly scheduled. + Attribute type: Property.
-    [Boolean](https://schema.org/Boolean). + Optional
+    trips are exactly scheduled. 
+  - Attribute type: Property.
+    [Boolean](https://schema.org/Boolean). 
+  - Optional
 
 ### Example of use 1 (Normalized Format)
 

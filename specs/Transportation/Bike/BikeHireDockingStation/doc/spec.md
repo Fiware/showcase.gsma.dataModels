@@ -12,9 +12,9 @@ features and availability of bikes and free slots.
 A JSON Schema corresponding to this data model can be found
 [here](https://fiware.github.io/dataModels/specs/Transportation/Bike/BikeHireDockingStation/schema.json).
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `BikeHireDockingStation`.
+- `type` : Entity type. It must be equal to `BikeHireDockingStation`.
 
 - `source` : A sequence of characters giving the source of the entity data.
   - Attribute type: Text or URL
@@ -24,133 +24,133 @@ A JSON Schema corresponding to this data model can be found
   - Attribute type: URL
   - Optional
 
--   `dateCreated` : Entity's creation timestamp.
+- `dateCreated` : Entity's creation timestamp.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Normative References:
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Normative References:
         [http://schema.org/DateTime](http://schema.org/DateTime)[ ](http://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Read-Only. Automatically generated.
 
--   `dateModified` : Last update timestamp of this entity.
+- `dateModified` : Last update timestamp of this entity.
 
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Normative References:
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Normative References:
         [http://schema.org/DateTime](http://schema.org/DateTime)[ ](http://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
+  - Read-Only. Automatically generated.
 
--   `location` : Geolocation of the station represented by a GeoJSON
+- `location` : Geolocation of the station represented by a GeoJSON
     (Multi)Polygon or Point.
 
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Mandatory if `address` is not defined.
+  - Mandatory if `address` is not defined.
 
--   `address` : Registered docking station site civic address.
+- `address` : Registered docking station site civic address.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/address](https://schema.org/address)
-    -   Mandatory if `location` is not defined.
+  - Mandatory if `location` is not defined.
 
--   `name` : Name given to the docking station.
+- `name` : Name given to the docking station.
 
-    -   Attribute type: [Text](http://schema.org/Number)
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
-    -   Mandatory
+  - Attribute type: [Text](http://schema.org/Number)
+  - Normative References: [https://schema.org/name](https://schema.org/name)
+  - Mandatory
 
--   `description` : Description about the bike hire docking station.
+- `description` : Description about the bike hire docking station.
 
-    -   Attribute type: [Text](http://schema.org/Number)
-    -   Normative References:
+  - Attribute type: [Text](http://schema.org/Number)
+  - Normative References:
         [https://schema.org/description](https://schema.org/description)
-    -   Optional
+  - Optional
 
--   `image` : A URL containing a photo of this docking station.
+- `image` : A URL containing a photo of this docking station.
 
-    -   Attribute type: [image (URL)](http://schema.org/Number)
-    -   Normative References:
+  - Attribute type: [image (URL)](http://schema.org/Number)
+  - Normative References:
         [https://schema.org/image](https://schema.org/image)
-    -   Optional
+  - Optional
 
--   `totalSlotNumber` : The total number of slots offered by this bike docking
+- `totalSlotNumber` : The total number of slots offered by this bike docking
     station.
 
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: Any positive integer number or 0.
-    -   Optional
+  - Attribute type: [Number](http://schema.org/Number)
+  - Allowed values: Any positive integer number or 0.
+  - Optional
 
--   `freeSlotNumber` : The number of slots available for returning and parking
+- `freeSlotNumber` : The number of slots available for returning and parking
     bikes. It must lower or equal than `totalSlotNumber`.
 
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: A positive integer number, including 0. It must lower or
+  - Attribute type: [Number](http://schema.org/Number)
+  - Allowed values: A positive integer number, including 0. It must lower or
         equal than `totalSlotNumber`.
-    -   Metadata:
+  - Metadata:
         -   `timestamp` : Timestamp of the last attribute update.
         -   Type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `outOfServiceSlotNumber` : The number of slots that are out of order and
+- `outOfServiceSlotNumber` : The number of slots that are out of order and
     cannot be used to hire or park a bike. It must lower or equal than
     `totalSlotNumber`.
 
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: A positive integer number, including 0.
-    -   Metadata:
+  - Attribute type: [Number](http://schema.org/Number)
+  - Allowed values: A positive integer number, including 0.
+  - Metadata:
         -   `timestamp` : Timestamp of the last attribute update
         -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
--   `availableBikeNumber` : The number of bikes available in the bike hire
+- `availableBikeNumber` : The number of bikes available in the bike hire
     docking station to be hired by users.
 
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: A positive integer number, including 0.
-    -   Metadata:
+  - Attribute type: [Number](http://schema.org/Number)
+  - Allowed values: A positive integer number, including 0.
+  - Metadata:
         -   `timestamp` : Timestamp of the last attribute update.
         -   Type: [DateTime](https://schema.org/DateTime)
-    -   Optional
+  - Optional
 
--   `openingHours` : Opening hours of the docking station.
+- `openingHours` : Opening hours of the docking station.
 
-    -   Normative references:
+  - Normative references:
         [http://schema.org/openingHours](http://schema.org/openingHours)
-    -   Optional
+  - Optional
 
--   `status` : Status of the bike hire docking station.
+- `status` : Status of the bike hire docking station.
 
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Metadata:
+  - Attribute type: List of [Text](http://schema.org/Text)
+  - Metadata:
         -   `timestamp` : Timestamp of the last attribute update.
         -   Type: [DateTime](https://schema.org/DateTime)
-    -   Allowed values:
+  - Allowed values:
         -   (`working`, `outOfService`, `withIncidence`, `full`, `almostFull`,
             `empty`, `almostEmpty`)
         -   Or any other application+specific.
-    -   Optional
+  - Optional
 
--   `areaServed` : Area served by this docking station. Precise semantics can
+- `areaServed` : Area served by this docking station. Precise semantics can
     depend on the application or target city. For instance, it can be a
     neighbourhood, burough or district.
 
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](http://schema.org/Text)
+  - Optional
 
--   `owner` : Bike hire docking station's owner.
+- `owner` : Bike hire docking station's owner.
 
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Optional
+  - Attribute type: [Text](http://schema.org/Text)
+  - Optional
 
--   `provider` : Bike hire service provider.
+- `provider` : Bike hire service provider.
 
-    -   Normative references:
+  - Normative references:
         [https://schema.org/provider](https://schema.org/provider)
-    -   Optional
+  - Optional
 
--   `contactPoint` : Bike hire service contact point.
-    -   Normative references:
+- `contactPoint` : Bike hire service contact point.
+  - Normative references:
         [https://schema.org/contactPoint](https://schema.org/contactPoint)
-    -   Optional
+  - Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

@@ -59,8 +59,9 @@ The data model is defined as shown below:
 - `dateObserved` : The date and time of this observation represented by an
     ISO8601 interval. As a workaround for the lack of support of Orion Context
     Broker for datetime intervals, it can be used two separate attributes:
-    `dateObservedFrom`, `dateObservedTo`. + Attribute type: ISO8601 interval
-    represented as [Text](https://schema.org/Text). + Optional
+    `dateObservedFrom`, `dateObservedTo`. 
+  - Attribute type: ISO8601 interval represented as [Text](https://schema.org/Text).
+  - Optional
 
 - `dateObservedFrom` : Observation period start date and time. See
     `dateObserved`.
@@ -82,8 +83,10 @@ The data model is defined as shown below:
     [ANSI](http://soundmetersource.com/ansi-standards.html) used for taking this
     observation. This attribute is useful when no device entity is associated to
     observations. It allows to convey, roughly, information about the precision
-    of the measurements. + Attribute type: [Text](https://schema.org/Text) +
-    Allowed values: one of (`"0"`, `"1"`, `"2"`) + Optional
+    of the measurements. 
+  - Attribute type: [Text](https://schema.org/Text)
+  - Allowed values: one of (`"0"`, `"1"`, `"2"`)
+  - Optional
 
 - `refPointOfInterest` : A reference to a point of interest associated to this
     observation.

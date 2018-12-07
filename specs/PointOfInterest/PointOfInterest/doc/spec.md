@@ -14,65 +14,66 @@ and the members of the
 A JSON Schema corresponding to this data model can be found
 [here](http://fiware.github.io/dataModels/specs/PointOfInterest/PointOfInterest/schema.json)
 
--   `id` : Unique identifier.
+- `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `PointOfInterest`.
+- `type` : Entity type. It must be equal to `PointOfInterest`.
 
 - `dataProvider` : Specifies the URL to information about the provider of this information
   - Attribute type: URL
   - Optional
 
--   `dateModified` : Last update timestamp of this entity.
+- `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
--   `dateCreated` : Entity's creation timestamp.
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
--   `source` : A sequence of characters giving the source of the entity data.
-    -   Attribute type: [Text](https://schema.org/Text) or
+- `dateCreated` : Entity's creation timestamp.
+  - Attribute type: [DateTime](https://schema.org/DateTime)
+  - Read-Only. Automatically generated.
+- `source` : A sequence of characters giving the source of the entity data.
+  - Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
-    -   Optional
--   `name` : Name of this point of interest.
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
-    -   Mandatory
--   `alternateName` : Alternative name for this point of interest.
+  - Optional
+- `name` : Name of this point of interest.
+  - Normative References: [https://schema.org/name](https://schema.org/name)
+  - Mandatory
+- `alternateName` : Alternative name for this point of interest.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
-    -   Optional
+  - Optional
 
--   `description` : Description of this point of interest.
+- `description` : Description of this point of interest.
 
-    -   Normative References:
+  - Normative References:
         [https://schema.org/description](https://schema.org/description)
-    -   Optional
+  - Optional
 
--   `location` : Location of the point of interest represented by a GeoJSON
+- `location` : Location of the point of interest represented by a GeoJSON
     geometry, usually a `Point`.
-    -   Attribute type: `geo:json`.
-    -   Normative References:
+  - Attribute type: `geo:json`.
+  - Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-    -   Mandatory if `address` is not defined.
--   `address` : Civic address of this point of interest.
-    -   Normative References:
+  - Mandatory if `address` is not defined.
+- `address` : Civic address of this point of interest.
+  - Normative References:
         [https://schema.org/address](https://schema.org/address)
-    -   Mandatory if `location` is not present.
--   `category` : Category of this point of interest.
-    -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed values: Those defined by the
+  - Mandatory if `location` is not present.
+- `category` : Category of this point of interest.
+  - Attribute type: List of [Text](https://schema.org/Text)
+  - Allowed values: Those defined by the
         [Factual taxonomy](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json).
         For instance the value `113` corresponds to beaches, and the value `311`
         corresponds to museums.
-    -   Mandatory
--   `contactPoint` : Contact point of this point of interest.
-    -   Normative references:
+  - Mandatory
+- `contactPoint` : Contact point of this point of interest.
+  - Normative references:
         [https://schema.org/contactPoint](https://schema.org/contactPoint)
-    -   Optional
--   `refSeeAlso` : Reference to one or more related entities that may provide
-    extra, specific information about this point of interest. + Attribute type:
-    List of References + Optional
+  - Optional
+- `refSeeAlso` : Reference to one or more related entities that may provide
+    extra, specific information about this point of interest. 
+  - Attribute type: List of References
+  - Optional
 
 ## Examples of use 1 (Normalized Format)
 
