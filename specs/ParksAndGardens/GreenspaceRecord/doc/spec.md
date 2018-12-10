@@ -16,9 +16,7 @@ A JSON Schema corresponding to this data model can be found
 
 -   `type` : Entity type. It must be equal to `GreenspaceRecord`.
 
--   `dataProvider` : Specifies the URL to information about the provider of this
-    information
-
+-   `dataProvider` : Specifies the URL to information about the provider of this information
     -   Attribute type: URL
     -   Optional
 
