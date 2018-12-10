@@ -18,8 +18,8 @@ and mappings between a FIWARE / Schema.org data model and Open 311.
 The FIWARE NGSI civic issue tracking data model defines the following entity
 types:
 
-- [Open311:ServiceType](../Open311_ServiceType/doc/spec.md). A type of service
+-   [Open311:ServiceType](../Open311_ServiceType/doc/spec.md). A type of service
     a citizen can request. It encompasses data from the Open 311 GET Service
     List and GET Service Definition.
-- [Open311:ServiceRequest](../Open311_ServiceRequest/doc/spec.md). A specific
+-   [Open311:ServiceRequest](../Open311_ServiceRequest/doc/spec.md). A specific
     service request (of a service type) made by a citizen.

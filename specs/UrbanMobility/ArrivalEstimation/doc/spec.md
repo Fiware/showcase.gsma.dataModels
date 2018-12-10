@@ -10,73 +10,72 @@ route.
 
 The data model is defined as shown below:
 
-- `id`: Entity ID
+-   `id`: Entity ID
 
-  - It shall be `urn:ngsi-ld:gtfs:ArrivalEstimation:<identifier>`.
+    -   It shall be `urn:ngsi-ld:gtfs:ArrivalEstimation:<identifier>`.
 
-- `type`: Entity Type
+-   `type`: Entity Type
 
-  - It shall be equal to `ArrivalEstimation`
+    -   It shall be equal to `ArrivalEstimation`
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this Entity.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `hasStop` : Stop to which this estimation applies to.
+-   `dateModified` : Last update timestamp of this Entity.
 
-  - Attribute type: Relationship. It shall point to an Entity of Type
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `hasStop` : Stop to which this estimation applies to.
+
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Stop](../../Stop/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
-- `hasTrip` : The trip to which this estimation applies to.
+-   `hasTrip` : The trip to which this estimation applies to.
 
-  - Attribute type: Relationship. It shall point to an Entity of Type
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Trip](../../Trip/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
-- `remainingTime`: It shall contain the remaining time of arrival for the trip
+-   `remainingTime`: It shall contain the remaining time of arrival for the trip
     heading to the concerned stop.
 
-  - Attribute type: Property. [Text](https://schema.org/Text). Remaining
+    -   Attribute type: Property. [Text](https://schema.org/Text). Remaining
         time shall be encoded as a ISO8601 duration. Ex. `"PT8M5S"`.
-  - Attribute Metadata:
-        -   `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the
-            last attribute update
-            -   Type: [DateTime](https://schema.org/DateTime)
-            -   Mandatory
-  - Mandatory
+    -   Attribute Metadata: - `timestamp` (mapped to `observedAt` in NGSI-LD).
+        Timestamp of the last attribute update - Type:
+        [DateTime](https://schema.org/DateTime) - Mandatory
+    -   Mandatory
 
-- `remainingDistance`: It shall contain the remaining distance (in meters) of
+-   `remainingDistance`: It shall contain the remaining distance (in meters) of
     arrival for the trip heading to the concerned stop.
 
-  - Attribute type: Property. Positive Number.
+    -   Attribute type: Property. Positive Number.
         [https://schema.org/Number](https://schema.org/Number)
-  - Attribute metadata:
-        -   `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the
-            last attribute update
-            -   Type: [DateTime](https://schema.org/DateTime)
-            -   Mandatory
-  - Default Unit: Meters
-  - Optional
+    -   Attribute metadata: - `timestamp` (mapped to `observedAt` in NGSI-LD).
+        Timestamp of the last attribute update - Type:
+        [DateTime](https://schema.org/DateTime) - Mandatory
+    -   Default Unit: Meters
+    -   Optional
 
-- `headSign`: It shall contain the text that appears on a sign that identifies
+-   `headSign`: It shall contain the text that appears on a sign that identifies
     the trip's destination to passengers.
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Mandatory
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Mandatory
 
 ### Examples of use 1 (Normalized Format)
 

@@ -11,59 +11,61 @@ model has been developed in cooperation with mobile operators and the
 A JSON Schema corresponding to this data model can be found
 [here](https://fiware.github.io/dataModels/specs/Weather/WeatherObserved/schema.json).
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type` : Entity type. It must be equal to `WeatherObserved`.
+-   `type` : Entity type. It must be equal to `WeatherObserved`.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-- `dateModified` : Last update timestamp of this entity.
+    -   Attribute type: URL
+    -   Optional
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+-   `dateModified` : Last update timestamp of this entity.
 
-- `dateCreated` : Entity's creation timestamp.
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
-- `name` : Name given to the weather observed location.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-  - Normative References: [https://schema.org/name](https://schema.org/name)
-  - Optional
+-   `dateCreated` : Entity's creation timestamp.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+-   `name` : Name given to the weather observed location.
 
-- `location` : Location of the weather observation represented by a GeoJSON
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Optional
+
+-   `location` : Location of the weather observation represented by a GeoJSON
     geometry.
-  - Attribute type: `geo:json`.
-  - Normative References:
+    -   Attribute type: `geo:json`.
+    -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory if `address` is not defined.
-- `address` : Civic address of the weather observation. Sometimes it
+    -   Mandatory if `address` is not defined.
+-   `address` : Civic address of the weather observation. Sometimes it
     corresponds to a weather station address.
-  - Normative References:
+    -   Normative References:
         [https://schema.org/address](https://schema.org/address)
-  - Mandatory if `location` is not present.
-- `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
+    -   Mandatory if `location` is not present.
+-   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
-  - Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
+    -   Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
         interval represented as [Text](https://schema.org/Text).
-  - Mandatory
-- `source` : A sequence of characters giving the source of the entity data.
+    -   Mandatory
+-   `source` : A sequence of characters giving the source of the entity data.
 
-  - Attribute type: [Text](https://schema.org/Text) or
+    -   Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
-  - Optional
+    -   Optional
 
-- `refDevice` : A reference to the device(s) which captured this observation.
+-   `refDevice` : A reference to the device(s) which captured this observation.
 
-  - Attribute type: Reference to an entity of type `Device`
-  - Optional
+    -   Attribute type: Reference to an entity of type `Device`
+    -   Optional
 
-- `refPointOfInterest` : A reference to a point of interest (usually a weather
+-   `refPointOfInterest` : A reference to a point of interest (usually a weather
     station) associated to this observation.
-  - Attribute type: Reference to an entity of type `PointOfInterest`
-  - Optional
-- `weatherType` : The observed weather type. It is represented by a comma
+    -   Attribute type: Reference to an entity of type `PointOfInterest`
+    -   Optional
+-   `weatherType` : The observed weather type. It is represented by a comma
     separated list of weather statuses, for instance `overcast, lightRain`. A
     proposed mapping for Spanish terms can be found
     [here](https://github.com/Fiware/dataModels/blob/master/specs/Weather/WeatherForecast/harvest/spain_weather_forecast_harvest.py#L135). +
@@ -74,112 +76,104 @@ A JSON Schema corresponding to this data model can be found
     `sleetShower`, `sleet`, `hailShower`, `hail`, `shower`, `lightSnow`, `snow`,
     `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`) or any other
     extended value. + Optional
-- `dewPoint` : The dew point encoded as a number.
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Celsius degrees.
-  - See also:
+-   `dewPoint` : The dew point encoded as a number.
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Celsius degrees.
+    -   See also:
         [https://en.wikipedia.org/wiki/Dew_point](https://en.wikipedia.org/wiki/Dew_point)
-  - Optional
-- `visibility` : Visibility reported.
+    -   Optional
+-   `visibility` : Visibility reported.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values: One of (`veryPoor`, `poor`, `moderate`, `good`,
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: One of (`veryPoor`, `poor`, `moderate`, `good`,
         `veryGood`, `excellent`)
-  - Optional
+    -   Optional
 
-- `temperature` : Air's temperature observed.
+-   `temperature` : Air's temperature observed.
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Degrees centigrades.
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Degrees centigrades.
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `relativeHumidity` : Air's relative humidity observed (percentage, expressed
+-   `relativeHumidity` : Air's relative humidity observed (percentage, expressed
     in parts per one).
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Allowed values: A number between `0` and `1`.
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Allowed values: A number between `0` and `1`.
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `precipitation` : Precipitation level observed.
+-   `precipitation` : Precipitation level observed.
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Liters per square meter.
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Liters per square meter.
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `windDirection` : The wind direction expressed in decimal degrees compared
+-   `windDirection` : The wind direction expressed in decimal degrees compared
     to geographic North (measured clockwise), encoded as a Number.
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Decimal degrees
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Decimal degrees
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `windSpeed` : The observed wind speed in m/s, encoded as a Number.
+-   `windSpeed` : The observed wind speed in m/s, encoded as a Number.
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: meters per second
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: meters per second
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `atmosphericPressure` : The atmospheric pressure observed measured in Hecto
+-   `atmosphericPressure` : The atmospheric pressure observed measured in Hecto
     Pascals.
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Hecto Pascals
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Hecto Pascals
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `pressureTendency` : Is the pressure rising or falling? It can be expressed
+-   `pressureTendency` : Is the pressure rising or falling? It can be expressed
     in quantitative terms or qualitative terms.
 
-  - Attribute type: [Text](https://schema.org/Text) or
+    -   Attribute type: [Text](https://schema.org/Text) or
         [Number](https://schema.org/Number)
-  - Allowed values, if expressed in quantitative terms: one Of (`raising`,
+    -   Allowed values, if expressed in quantitative terms: one Of (`raising`,
         `falling`, `steady`)
-  - Optional
+    -   Optional
 
-- `solarRadiation` : The solar radiation observed measured in Watts per square
+-   `solarRadiation` : The solar radiation observed measured in Watts per square
     meter.
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Watts per square meter
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Watts per square meter
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
-- `illuminance` : The
+-   `illuminance` : The
     [illumninance](https://en.wikipedia.org/wiki/Illuminance) observed measured
     in lux (lx) or lumens per square metre (cd·sr·m−2).
-  - Attribute type: [Number](https://schema.org/Number)
-  - Default unit: Lux
-  - Attribute metadata:
-        -   `timestamp` : optional timestamp for the observed value. It can be
-            omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level.
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Lux
+    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+        value. It can be omitted if the observation time is the same as the one
+        captured by the `dateObserved` attribute at entity level.
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

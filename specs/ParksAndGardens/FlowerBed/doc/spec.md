@@ -11,97 +11,98 @@ interchanges.
 A JSON Schema corresponding to this data model can be found
 {{add link to JSON Schema}}
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type` : Entity type. It must be equal to `FlowerBed`.
+-   `type` : Entity type. It must be equal to `FlowerBed`.
 
-- `dateModified` : Last update timestamp of this entity.
+-   `dateModified` : Last update timestamp of this entity.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `taxon` : Used to indicate the biological
+-   `taxon` : Used to indicate the biological
     [taxon](http://en.wikipedia.org/wiki/en:taxon) to which the trees, or plants
-    in the flower bed belong. 
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Optional
-- `category` : Category of this flower bed.
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Allowed values: (`hedge`, `lawnArea`, `portable`, `urbanTreeSpot`) or
+    in the flower bed belong.
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Optional
+-   `category` : Category of this flower bed.
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed values: (`hedge`, `lawnArea`, `portable`, `urbanTreeSpot`) or
         any extended value needed by the application.
-  - Optional
-- `width`. Width of this flower bed.
+    -   Optional
+-   `width`. Width of this flower bed.
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Meters
-  - See also: [https://schema.org/width](https://schema.org/width)
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Meters
+    -   See also: [https://schema.org/width](https://schema.org/width)
+    -   Optional
 
-- `height`. Height of this flower bed.
+-   `height`. Height of this flower bed.
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Meters
-  - See also: [https://schema.org/height](https://schema.org/height)
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Meters
+    -   See also: [https://schema.org/height](https://schema.org/height)
+    -   Optional
 
-- `depth`. Depth of this flower bed.
+-   `depth`. Depth of this flower bed.
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Meters
-  - See also: [https://schema.org/depth](https://schema.org/depth)
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Meters
+    -   See also: [https://schema.org/depth](https://schema.org/depth)
+    -   Optional
 
-- `shape`. Shape of this flower bed.
+-   `shape`. Shape of this flower bed.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values: One Of (`rectangular`, `square`, `elliptic`,
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: One Of (`rectangular`, `square`, `elliptic`,
         `polygonal`, `circular`) or any other required by an application.
-  - Optional
+    -   Optional
 
-- `location` : Location of the flower bed represented by a GeoJSON geometry.
-  - Attribute type: `geo:json`.
-  - Normative References:
+-   `location` : Location of the flower bed represented by a GeoJSON geometry.
+    -   Attribute type: `geo:json`.
+    -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory if `address` is not defined
-- `address` : Civic address of this flower bed.
+    -   Mandatory if `address` is not defined
+-   `address` : Civic address of this flower bed.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/address](https://schema.org/address)
-  - Mandatory if `location` is not present.
+    -   Mandatory if `location` is not present.
 
-- `dateLastWatering` : Timestamp which corresponds to the last watering of the
+-   `dateLastWatering` : Timestamp which corresponds to the last watering of the
     flower bed.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
 
-- `nextWateringDeadline` : Deadline for next watering operation.
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
-- `refGarden` : Flower bed's garden (if it belongs to any).
-  - Attribute type: Reference to an entity of type `Garden`
-  - Optional
+-   `nextWateringDeadline` : Deadline for next watering operation.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
+-   `refGarden` : Flower bed's garden (if it belongs to any).
+    -   Attribute type: Reference to an entity of type `Garden`
+    -   Optional
 
 ### Representing measurements related to a flower bed
 
 There are two options for representing measurements observed:
 
-- A/ Through a linked entity of type `GreenspaceRecord` (attribute named
+-   A/ Through a linked entity of type `GreenspaceRecord` (attribute named
     `refRecord`).
-- B/ Through a group of measurement properties already defined by
+-   B/ Through a group of measurement properties already defined by
     [GreenspaceRecord](../../GreenspaceRecord/doc/spec.md).
 
 Below is the description of the attribute to be used for option A/.
 
-- `refRecord` : List of records which contain measurements related to this
+-   `refRecord` : List of records which contain measurements related to this
     flower bed.
-  - Attribute type: List of references to entities of type `GreenspaceRecord`
-  - Optional
+    -   Attribute type: List of references to entities of type
+        `GreenspaceRecord`
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

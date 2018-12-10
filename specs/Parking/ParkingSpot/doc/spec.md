@@ -12,118 +12,124 @@ _one_ group.
 
 The data model is defined as shown below:
 
-- `id` : Entity's unique identifier.
+-   `id` : Entity's unique identifier.
 
-- `type` : Entity type. It must be equal to `ParkingSpot`.
+-   `type` : Entity type. It must be equal to `ParkingSpot`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity creation date.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this entity.
+-   `dateCreated` : Entity creation date.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `name` : Name of this parking spot. It can denote the number or label used
+-   `dateModified` : Last update timestamp of this entity.
+
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `name` : Name of this parking spot. It can denote the number or label used
     to identify it within a parking site.
 
-  - Normative References: [https://schema.org/name](https://schema.org/name)
-  - Optional
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Optional
 
-- `description` : Description about the parking spot.
+-   `description` : Description about the parking spot.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/description](https://schema.org/description)
-  - Optional
+    -   Optional
 
-- `location` : Geolocation of the parking spot, represented by a GeoJSON
+-   `location` : Geolocation of the parking spot, represented by a GeoJSON
     Point.
 
-  - Attribute type: `geo:json`.
-  - Normative References:
+    -   Attribute type: `geo:json`.
+    -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory. Not nullable (if `address` is not defined).
+    -   Mandatory. Not nullable (if `address` is not defined).
 
-- `address` : Registered parking spot civic address.
+-   `address` : Registered parking spot civic address.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/address](https://schema.org/address)
-  - Mandatory. Not nullable (if `location` is not defined).
+    -   Mandatory. Not nullable (if `location` is not defined).
 
-- `status` : Status of the parking spot from the point of view of occupancy.
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed Values: one Of
-    (`occupied`, `free`, `closed`, `unknown`)
-  - Metadata:
-    - `timestamp` : Timestamp which reflects the date when the attribute value was obtained.
-      - Type: [DateTime](https://schema.org/DateTime)
-      - Optional
-  - `TimeInstant` :
-    [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
-    saved by FIWARE's IoT Agents. Note: This attribute has not been harmonized
-    to keep backwards compatibility with current FIWARE reference implementations.
-    - Type: [DateTime]((https://schema.org/DateTime). here can
-    be production environmments where the attribute type is equal to the
-    `ISO8601` string. If so, it must be considered as a synonym of `DateTime`.
-    - Optional
-  - Mandatory
+-   `status` : Status of the parking spot from the point of view of occupancy.
 
-- `width` : Width of the parking spot.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed Values: one Of (`occupied`, `free`, `closed`, `unknown`)
+    -   Metadata:
+        -   `timestamp` : Timestamp which reflects the date when the attribute
+            value was obtained.
+            -   Type: [DateTime](https://schema.org/DateTime)
+            -   Optional
+    -   `TimeInstant` :
+        [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
+        saved by FIWARE's IoT Agents. Note: This attribute has not been
+        harmonized to keep backwards compatibility with current FIWARE reference
+        implementations.
+        -   Type: [DateTime]((https://schema.org/DateTime). here can be
+            production environmments where the attribute type is equal to the
+            `ISO8601` string. If so, it must be considered as a synonym of
+            `DateTime`.
+        -   Optional
+    -   Mandatory
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Optional
+-   `width` : Width of the parking spot.
 
-- `length` : Length of the parking spot.
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Optional
 
-  - Attribute type: [Number](https://schema.org/Number)
-  - Optional
+-   `length` : Length of the parking spot.
 
-- `refParkingGroup` : Group to which the parking spot belongs to. For model
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Optional
+
+-   `refParkingGroup` : Group to which the parking spot belongs to. For model
     simplification purposes only one group is allowed per parking spot.
-  - Attribute type: Reference to an entity of type `ParkingGroup`.
-  - Optional
 
-- `refParkingSite` : Parking site to which the the parking spot belongs to.
+    -   Attribute type: Reference to an entity of type `ParkingGroup`.
+    -   Optional
 
-  - Attribute type: Reference to an entity of type `OnStreetParking` or type
+-   `refParkingSite` : Parking site to which the the parking spot belongs to.
+
+    -   Attribute type: Reference to an entity of type `OnStreetParking` or type
         `OffStreetParking`, depending on the value of the `category` attribute.
-  - Mandatory
+    -   Mandatory
 
-- `category` : Category(ies) of the parking spot.
+-   `category` : Category(ies) of the parking spot.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values:
-        -   `onstreet` : The parking spot belongs to an onstreet parking site.
-        -   `offstreet` : The parking spot belongs to an onstreet parking site.
-        -   Other values as per application needs
-  - Mandatory
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: - `onstreet` : The parking spot belongs to an onstreet
+        parking site. - `offstreet` : The parking spot belongs to an onstreet
+        parking site. - Other values as per application needs
+    -   Mandatory
 
-- `TimeInstant` :
+-   `TimeInstant` :
     [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
     saved by FIWARE's IoT Agent. Note: This attribute has not been harmonized to
-    keep backwards compatibility with current FIWARE reference
-    implementations.
-  - Attribute type: [DateTime](https://schema.org/DateTime).
-    There can be production environmments where the attribute type is equal to
-    the `ISO8601` string. If so, it must be considered as a synonym of
-    `DateTime`.
-  - Optional
+    keep backwards compatibility with current FIWARE reference implementations.
 
-- `refDevice` : The device representing the physical sensor used to monitor
+    -   Attribute type: [DateTime](https://schema.org/DateTime). There can be
+        production environmments where the attribute type is equal to the
+        `ISO8601` string. If so, it must be considered as a synonym of
+        `DateTime`.
+    -   Optional
+
+-   `refDevice` : The device representing the physical sensor used to monitor
     this parking spot.
-  - Attribute type: Reference to entity of type
+    -   Attribute type: Reference to entity of type
         [Device](../../../Device/Device/doc/spec.md)
-  - Optional
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
@@ -132,7 +138,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 
-### Normalized  Example
+### Normalized Example
 
 Normalized NGSI response
 

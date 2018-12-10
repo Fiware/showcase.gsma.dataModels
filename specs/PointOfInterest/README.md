@@ -49,9 +49,7 @@ http://iotbd-v2.lab.fiware.org/v2/entities?type=PointOfInterest&q=category=='311
         },
         "category": {
             "type": "List",
-            "value": [
-                "311"
-            ],
+            "value": ["311"],
             "metadata": {}
         },
         "dataProvider": {
@@ -68,10 +66,7 @@ http://iotbd-v2.lab.fiware.org/v2/entities?type=PointOfInterest&q=category=='311
             "type": "geo:json",
             "value": {
                 "type": "Point",
-                "coordinates": [
-                    2.174492788,
-                    41.402942517
-                ]
+                "coordinates": [2.174492788, 41.402942517]
             },
             "metadata": {}
         },

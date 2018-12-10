@@ -21,101 +21,104 @@ and pollution, etc.), severity, location and so on.
 A JSON Schema corresponding to this data model can be found
 [here](../schema.json).
 
-- `id` : Entity's unique identifier.
+-   `id` : Entity's unique identifier.
 
-- `type` : Entity type. It must be equal to `Alert`.
+-   `type` : Entity type. It must be equal to `Alert`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `category` : Define the category of alert (Traffic jam, accidents, weather
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+
+    -   Attribute type: URL
+    -   Optional
+
+-   `category` : Define the category of alert (Traffic jam, accidents, weather
     conditions, high level of pollutants)
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values:
-    - (`traffic`, `naturalDisaster`, `weather`, `environment`, `health`,
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values:
+        -   (`traffic`, `naturalDisaster`, `weather`, `environment`, `health`,
             `security` )
-  - Mandatory
+    -   Mandatory
 
-- `subCategory` : Describe the sub category of alert.
+-   `subCategory` : Describe the sub category of alert.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values:
-    - (`trafficJam`, `carAccident`, `carWrongDirection`, `carStopped`,
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values:
+        -   (`trafficJam`, `carAccident`, `carWrongDirection`, `carStopped`,
             `pothole`, `roadClosed`, `roadWorks`, `hazardOnRoad`,
             `injuredBiker`) (for `traffic` category)
-    - (`flood`, `tsunami`, `coastalEvent`, `earthquake`) (for
+        -   (`flood`, `tsunami`, `coastalEvent`, `earthquake`) (for
             `naturalDisaster` category)
-    - (`rainfall`, `highTemperature`, `lowTemperature`, `heatWave`,
+        -   (`rainfall`, `highTemperature`, `lowTemperature`, `heatWave`,
             `coldWave`, `ice`, `snow`, `wind`, `fog`, `tornado`,
             `tropicalCyclone`, `hurricane`, `snow/ice`, `thunderstorms`,
             `fireRisk`, `avalancheRisk`, `floodRisk`) (for `weather` category)
-    - (`airPollution`, `waterPollution`, `pollenConcentration`) (for
+        -   (`airPollution`, `waterPollution`, `pollenConcentration`) (for
             `environment` category)
-    - (`asthmaAttack`, `bumpedPatient`, `fallenPatient`, `heartAttack` )
+        -   (`asthmaAttack`, `bumpedPatient`, `fallenPatient`, `heartAttack` )
             (for `health` category)
-    - (`suspiciousAction`, `robbery`, `assault`, `civilDisorder`,
+        -   (`suspiciousAction`, `robbery`, `assault`, `civilDisorder`,
             `buildingFire`, `forestFire`) (for `security` category)
-  - Optional
+    -   Optional
 
-- `location` : Location of alert represented by a GeoJSON geometry.
+-   `location` : Location of alert represented by a GeoJSON geometry.
 
-  - Attribute type: `geo:json`.
-  - Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory if `address` is not present
+    -   Attribute type: `geo:json`.
+    -   Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory if `address` is not present
 
-- `address` : Civic address of `Alert`
+-   `address` : Civic address of `Alert`
 
-  - Attribute type: [Address](https://schema.org/address)
-  - Mandatory if `location` is not present.
+    -   Attribute type: [Address](https://schema.org/address)
+    -   Mandatory if `location` is not present.
 
-- `dateIssued` : The date and time the alert was issued by the alert generator
+-   `dateIssued` : The date and time the alert was issued by the alert generator
     in ISO8601 UTC format.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime).
-  - Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
-  - Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime).
+    -   Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+    -   Mandatory
 
-- `validFrom` : The start date of validity of the alert in ISO8601 UTC format.
+-   `validFrom` : The start date of validity of the alert in ISO8601 UTC format.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime).
-  - Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime).
+    -   Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+    -   Optional
 
-- `validTo` : The end date of validity of the alert in ISO8601 UTC format.
+-   `validTo` : The end date of validity of the alert in ISO8601 UTC format.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime).
-  - Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime).
+    -   Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+    -   Optional
 
-- `description` : A description of alert (e.g. Traffic jam in Paseo de la
+-   `description` : A description of alert (e.g. Traffic jam in Paseo de la
     Reforma. Emergency services at place).
 
-  - Attribute type: [Description](https://schema.org/description)
-  - Optional
+    -   Attribute type: [Description](https://schema.org/description)
+    -   Optional
 
-- `alertSource` : reference to the source of the alert. For example, it could
+-   `alertSource` : reference to the source of the alert. For example, it could
     be a user of an application, a device, or a service.
 
-  - Attribute type: [Text](https://schema.org/Text) or
+    -   Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
-  - Mandatory.
+    -   Mandatory.
 
-- `data` : used to carry additional data for the alert.
+-   `data` : used to carry additional data for the alert.
 
-  - Attribute type: [StructuredValue](https://schema.org/StructuredValue)
-  - Optional.
+    -   Attribute type: [StructuredValue](https://schema.org/StructuredValue)
+    -   Optional.
 
-- `severity` : define the level of gravity of a given alert.
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values:
-    - (`informational`, `low`, `medium`, `high`, `critical`)
-  - Optional.
+-   `severity` : define the level of gravity of a given alert.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values:
+        -   (`informational`, `low`, `medium`, `high`, `critical`)
+    -   Optional.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

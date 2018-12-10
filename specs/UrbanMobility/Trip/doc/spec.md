@@ -9,85 +9,88 @@ See
 
 The data model is defined as shown below:
 
-- `id`: Entity ID.
+-   `id`: Entity ID.
 
-  - It shall be `urn:ngsi-ld:gtfs:Trip:<trip_identifier>` being
+    -   It shall be `urn:ngsi-ld:gtfs:Trip:<trip_identifier>` being
         `trip_identifier` a value that can be derived from GTFS `trip_id`.
 
-- `type`: Entity type.
+-   `type`: Entity type.
 
-  - It shall be equal to `gtfs:Trip`.
+    -   It shall be equal to `gtfs:Trip`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified`: Last update timestamp of this Entity.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `headSign`: Same as GTFS `trip_headsign`.
+-   `dateModified`: Last update timestamp of this Entity.
 
-  - Attribute type: Property. [Text](https://schema.org/Text).
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `shortName`: Same as GTFS `trip_short_name`.
+-   `headSign`: Same as GTFS `trip_headsign`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text).
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Optional
 
-- `direction`: Same as GTFS `direction_id`.
+-   `shortName`: Same as GTFS `trip_short_name`.
 
-  - Attribute type: Property. [Number](https://schema.org/Number).
-  - Allowed Values: `0` and `1` as per GTFS `direction_id`.
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Optional
 
-- `block`: Same as GTFS `block_id`.
+-   `direction`: Same as GTFS `direction_id`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+    -   Attribute type: Property. [Number](https://schema.org/Number).
+    -   Allowed Values: `0` and `1` as per GTFS `direction_id`.
+    -   Optional
 
-- `hasService`: Same as GTFS `service_id`.
+-   `block`: Same as GTFS `block_id`.
 
-  - Attribute type: Relationship. It shall point to an Entity of Type
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
+
+-   `hasService`: Same as GTFS `service_id`.
+
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Service](../../Service/doc/spec.md)
-  - Optional
+    -   Optional
 
-- `location`: The geographical shape associated to the trip encoded as GeoJSON
+-   `location`: The geographical shape associated to the trip encoded as GeoJSON
     `LineString` or `MultiLineString`. The coordinates shall be obtained from
-    the `shapes.txt` feed file as per the value of `shape_id`. 
-  - Attribute type:
-    GeoProperty. `geo:json` 
-  - Optional
+    the `shapes.txt` feed file as per the value of `shape_id`.
 
-- `hasRoute`: Same as `route_id`.
+    -   Attribute type: GeoProperty. `geo:json`
+    -   Optional
 
-  - Attribute type: Relationship. It shall point to an Entity of Type
+-   `hasRoute`: Same as `route_id`.
+
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Route](../../Route/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
-- `wheelChairAccessible`: Same as GTFS `wheelchair_accessible`.
+-   `wheelChairAccessible`: Same as GTFS `wheelchair_accessible`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Allowed values: (`0`, `1`, `2`) as per the
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Allowed values: (`0`, `1`, `2`) as per the
         [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
-  - Optional
+    -   Optional
 
-- `bikesAllowed`: Same as GTFS `bikes_allowed`.
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Allowed values: (`0`, `1`, `2`) as per the
+-   `bikesAllowed`: Same as GTFS `bikes_allowed`.
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Allowed values: (`0`, `1`, `2`) as per the
         [GTFS](https://developers.google.com/transit/gtfs/reference/#tripstxt)
-  - Optional
+    -   Optional
 
 ### Example 1 (Normalized Format)
 

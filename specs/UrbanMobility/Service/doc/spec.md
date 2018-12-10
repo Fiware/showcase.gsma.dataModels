@@ -9,50 +9,53 @@ at certain dates.
 
 The data model is defined as shown below:
 
-- `id`: Entity ID 
-  - It shall be
-    `urn:ngsi-ld:gtfs:Service:<service_identifier>`. It can be derived from the
-    `service_id` field of
-    [trips.txt](https://developers.google.com/transit/gtfs/reference/#tripstxt)
-    and/or
-    [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt)
+-   `id`: Entity ID
 
-- `type`: Entity Type
+    -   It shall be `urn:ngsi-ld:gtfs:Service:<service_identifier>`. It can be
+        derived from the `service_id` field of
+        [trips.txt](https://developers.google.com/transit/gtfs/reference/#tripstxt)
+        and/or
+        [calendar.txt](https://developers.google.com/transit/gtfs/reference/#calendartxt)
 
-  - It shall be equal to `gtfs:Service`
+-   `type`: Entity Type
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+    -   It shall be equal to `gtfs:Service`
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dateCreated`: Entity's creation timestamp.
+    -   Attribute type: Text or URL
+    -   Optional
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-- `dateModified`: Last update timestamp of this Entity.
+    -   Attribute type: URL
+    -   Optional
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+-   `dateCreated`: Entity's creation timestamp.
 
-- `name`: Service name.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Mandatory
+-   `dateModified`: Last update timestamp of this Entity.
 
-- `description`: Service description.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+-   `name`: Service name.
 
-- `operatedBy`: Agency that operates this service.
-  - Attribute type: Relationship. It shall point to an Entity of Type
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Mandatory
+
+-   `description`: Service description.
+
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
+
+-   `operatedBy`: Agency that operates this service.
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Agency](../../Agency/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
 ### Examples of use 1 (Normalized Format)
 

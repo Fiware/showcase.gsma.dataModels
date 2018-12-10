@@ -9,85 +9,88 @@ See
 
 The data model is defined as shown below:
 
-- `id`: Entity ID.
+-   `id`: Entity ID.
 
-  - It shall be `urn:ngsi-ld:gtfs:StopTime:<stop_time_identifier>` being
+    -   It shall be `urn:ngsi-ld:gtfs:StopTime:<stop_time_identifier>` being
         `stop_time_identifier` a value that can be derived from GTFS `trip_id`
         and `stop_id`.
 
-- `type`: Entity type.
+-   `type`: Entity type.
 
-  - It shall be equal to `gtfs:StopTime`.
+    -   It shall be equal to `gtfs:StopTime`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified`: Last update timestamp of this Entity.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `hasTrip`: Same as GTFS `trip_id`.
+-   `dateModified`: Last update timestamp of this Entity.
 
-  - Attribute type: Relationship. It shall point to an Entity of type
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `hasTrip`: Same as GTFS `trip_id`.
+
+    -   Attribute type: Relationship. It shall point to an Entity of type
         [gtfs:Trip](../../Trip/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
-- `hasStop`: Same as GTFS `stop_id`
+-   `hasStop`: Same as GTFS `stop_id`
 
-  - Attribute type: Relationship. It shall point to an Entity of type
+    -   Attribute type: Relationship. It shall point to an Entity of type
         [gtfs:Stop](../../Stop/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
-- `arrivalTime`: Same as GTFS `arrival_time`
+-   `arrivalTime`: Same as GTFS `arrival_time`
 
-  - Attribute type: Property. [Text](https://schema.org/Text).
-  - Mandatory
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Mandatory
 
-- `departureTime`: Same as GTFS `departure_time`
+-   `departureTime`: Same as GTFS `departure_time`
 
-  - Attribute type: Property. [Text](https://schema.org/Text).
-  - Mandatory
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Mandatory
 
-- `stopSequence`: Same as GTFS `stop_sequence`
+-   `stopSequence`: Same as GTFS `stop_sequence`
 
-  - Attribute type: Property. [Integer](https://schema.org/Integer) starting
+    -   Attribute type: Property. [Integer](https://schema.org/Integer) starting
         with `1`.
-  - Mandatory
+    -   Mandatory
 
-- `stopHeadsign`: Same as GTFS `stop_headsign`
+-   `stopHeadsign`: Same as GTFS `stop_headsign`
 
-  - Attribute type: Property. [Text](https://schema.org/Text).
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Optional
 
-- `pickupType`: Same as GTFS `pickup_type`.
+-   `pickupType`: Same as GTFS `pickup_type`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text).
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Optional
 
-- `dropOffType`: Same as GTFS `drop_off_type`
+-   `dropOffType`: Same as GTFS `drop_off_type`
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
 
-- `distanceTravelled`: Same as GTFS `shape_dist_traveled`.
+-   `distanceTravelled`: Same as GTFS `shape_dist_traveled`.
 
-  - Attribute type: Property. [Number](https://schema.org/Number)
-  - Optional
+    -   Attribute type: Property. [Number](https://schema.org/Number)
+    -   Optional
 
-- `timepoint`: Same as GTFS `timepoint`.
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+-   `timepoint`: Same as GTFS `timepoint`.
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
 
 ### Example of Use 1 (Normalized Format)
 

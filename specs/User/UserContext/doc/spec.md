@@ -11,61 +11,64 @@ identified by the `refUser` property.
 A JSON Schema corresponding to this data model can be found
 [here](../schema.json).
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type` : Entity type. It must be equal to `UserContext`.
+-   `type` : Entity type. It must be equal to `UserContext`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this entity.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dateModified` : Last update timestamp of this entity.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `refUser` : reference to the (anonymised) User to which this UserContext is
+-   `dateCreated` : Entity's creation timestamp.
+
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `refUser` : reference to the (anonymised) User to which this UserContext is
     associated.
 
-  - Attribute type: [https://schema.org/URL](https://schema.org/URL)
-  - Normative References:
+    -   Attribute type: [https://schema.org/URL](https://schema.org/URL)
+    -   Normative References:
         [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)
-  - Mandatory
+    -   Mandatory
 
-- `location` : Current location of the User represented by a GeoJSON geometry.
+-   `location` : Current location of the User represented by a GeoJSON geometry.
 
-  - Attribute type: `geo:json`.
-  - Normative References:
+    -   Attribute type: `geo:json`.
+    -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory if `address` is not defined.
+    -   Mandatory if `address` is not defined.
 
-- `address` : Current civic address of the User
+-   `address` : Current civic address of the User
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/address](https://schema.org/address)
-  - Mandatory if `location` is not present.
+    -   Mandatory if `location` is not present.
 
-- `refUserDevice` : An object representing the current device used by the
+-   `refUserDevice` : An object representing the current device used by the
     User. See [Device](../../Device/Device/doc/spec.md) definition.
 
-  - Attribute type: A references to a
+    -   Attribute type: A references to a
         [Device](../../Device/Device/doc/spec.md) entity.
-  - Optional
+    -   Optional
 
-- `refActivity` : An object representing the current activity performed by the
+-   `refActivity` : An object representing the current activity performed by the
     User. See [UserActivity](../UserActivity/doc/spec.md) definition.
-  - Attribute type: A references to a
+    -   Attribute type: A references to a
         [UserActivity](../UserActivity/doc/spec.md) entity.
-  - Optional
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

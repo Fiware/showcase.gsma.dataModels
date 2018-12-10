@@ -14,73 +14,75 @@ specifications.
 
 The data model is defined as shown below:
 
-- `id` : Entity's unique identifier. It might be equal to a string
+-   `id` : Entity's unique identifier. It might be equal to a string
     representation of `service_request_id`.
 
-- `type` : It must be `Open311:ServiceRequest`.
+-   `type` : It must be `Open311:ServiceRequest`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
+
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+    -   Attribute type: URL
+    -   Optional
 
 The following fields defined by Open 311 are allowed to be attributes of this
 entity type:
 
-- `service_request_id`
+-   `service_request_id`
 
-- `jurisdiction_id`
+-   `jurisdiction_id`
 
-- `service_code`
+-   `service_code`
 
-- `service_name`
+-   `service_name`
 
-- `description`
+-   `description`
 
-- `agency_responsible`. Please note that this is semantically equivalent to
+-   `agency_responsible`. Please note that this is semantically equivalent to
     the [provider](http://schema.org/provider) property (name subproperty) of
     schema.org.
 
-- `service_notice`
+-   `service_notice`
 
-- `address_string`
+-   `address_string`
 
-- `address_id`
+-   `address_id`
 
-- `zipcode`
+-   `zipcode`
 
-- `status`
+-   `status`
 
-- `status_notes`
+-   `status_notes`
 
-- `requested_datetime`
+-   `requested_datetime`
 
-- `updated_datetime`
+-   `updated_datetime`
 
-- `expected_datetime`
+-   `expected_datetime`
 
-- `lat`
+-   `lat`
 
-- `long`
+-   `long`
 
-- `media_url`
+-   `media_url`
 
-- `email`
+-   `email`
 
-- `first_name`
+-   `first_name`
 
-- `last_name`
+-   `last_name`
 
-- `phone`
+-   `phone`
 
-- `device_id`
+-   `device_id`
 
-- `account_id`
+-   `account_id`
 
-- `address`. If used it must be renamed to `open311:address`.
+-   `address`. If used it must be renamed to `open311:address`.
 
 _All attribute types must be coherent with the Open 311 definitions.
 Applications must use the types `Text`, `Number` and `DateTime` accordingly._
@@ -88,24 +90,24 @@ Applications must use the types `Text`, `Number` and `DateTime` accordingly._
 To support FIWARE NGSI v2 geoqueries concerning Open311 Service Requests the
 following property must be added:
 
-- `location` : Location of the area on which this service request is
+-   `location` : Location of the area on which this service request is
     concerned.
-  - Attribute type: GeoJSON geometry.
-  - Mandatory if the service request is geolocated.
+    -   Attribute type: GeoJSON geometry.
+    -   Mandatory if the service request is geolocated.
 
 Additionally, applications might use the following standard schema.org
 structured properties:
 
-- [address](http://schema.org/address).
-- [contactPoint](http://schema.org/contactPoint)
+-   [address](http://schema.org/address).
+-   [contactPoint](http://schema.org/contactPoint)
 
 _Note 1: Applications are responsible of keeping consistency between the
 `location` field and the Open 311 `lat` and `long` fields_. _The same can be
 said about_:
 
-- `address` property and the Open 311 fields related to it (`zipcode`,
+-   `address` property and the Open 311 fields related to it (`zipcode`,
     `address_string`, etc.).
-- `contactPoint` property and fields like (first_name, last_name, etc.)\*
+-   `contactPoint` property and fields like (first_name, last_name, etc.)\*
 
 _Note 2: This NGSI data model does not allow the use of `address` property
 defined by Open 311. This has been done on purpose as we want to keep the
@@ -118,12 +120,12 @@ To support the `attribute` parameter of Open 311 service requests this NGSI data
 model adds the following property (please note it has been pluralized, to keep
 consistency with `ServiceType`):
 
-- `attributes` : It is a dictionary with a key per attribute defined by the
+-   `attributes` : It is a dictionary with a key per attribute defined by the
     corresponding `ServiceType`. The key-value is always an array of strings. If
     an attribute is singled valued then such array will only contain one
     element.
-  - Attribute type: [StructuredValue](https://schema.org/StructuredValue).
-  - Optional
+    -   Attribute type: [StructuredValue](https://schema.org/StructuredValue).
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

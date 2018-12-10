@@ -9,156 +9,158 @@ containers.
 
 The data model is defined as shown below:
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type`: Entity Type. It must be equal to `WasteContainerModel`.
+-   `type`: Entity Type. It must be equal to `WasteContainerModel`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `name`. Name given to this container model. It is a "well-known",
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+
+    -   Attribute type: URL
+    -   Optional
+
+-   `name`. Name given to this container model. It is a "well-known",
     mnemotechnic or codename. This attribute is different than `modelName` which
-    conveys the formal model name given by the manufacturer. 
-  - Normative References: [https://schema.org/name](https://schema.org/name) 
-  - Mandatory
+    conveys the formal model name given by the manufacturer.
 
-- `width`. Width of the container.
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Meters
-  - See also: [https://schema.org/width](https://schema.org/width)
-  - Optional
+-   `width`. Width of the container.
 
-- `height`. Height of the container.
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Meters
+    -   See also: [https://schema.org/width](https://schema.org/width)
+    -   Optional
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Meters
-  - See also: [https://schema.org/height](https://schema.org/height)
-  - Optional
+-   `height`. Height of the container.
 
-- `depth`. Depth of the container.
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Meters
+    -   See also: [https://schema.org/height](https://schema.org/height)
+    -   Optional
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Meters
-  - See also: [https://schema.org/depth](https://schema.org/depth)
-  - Optional
+-   `depth`. Depth of the container.
 
-- `weight`. Weight of the container.
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Meters
+    -   See also: [https://schema.org/depth](https://schema.org/depth)
+    -   Optional
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Kilograms
-  - See also: [https://schema.org/weight](https://schema.org/weight)
-  - Optional
+-   `weight`. Weight of the container.
 
-- `cargoVolume`. Total volume the container can hold.
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Kilograms
+    -   See also: [https://schema.org/weight](https://schema.org/weight)
+    -   Optional
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Normative References:
+-   `cargoVolume`. Total volume the container can hold.
+
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Normative References:
         [https://schema.org/cargoVolume](https://schema.org/cargoVolume)
-  - Default Unit: liters
-  - Optional
+    -   Default Unit: liters
+    -   Optional
 
-- `maximumLoad`. Maximum load the container can hold safely.
+-   `maximumLoad`. Maximum load the container can hold safely.
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Kilograms
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Kilograms
+    -   Optional
 
-- `recommendedLoad`. Manufacturer recommended load for the container.
+-   `recommendedLoad`. Manufacturer recommended load for the container.
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Default Unit: Kilograms
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Default Unit: Kilograms
+    -   Optional
 
-- `category`. Container’s category.
+-   `category`. Container’s category.
 
-  - Attribute type: List of [Text](https://schema.org/Text).
-  - Allowed values (Informative):
-        -   `dumpster`. See
-            [https://en.wikipedia.org/wiki/Dumpster](https://en.wikipedia.org/wiki/Dumpster)
-        -   `trashCan`.
-        -   `wheelieBin`.
-        -   Any other category relevant for the application.
-  - Optional
+    -   Attribute type: List of [Text](https://schema.org/Text).
+    -   Allowed values (Informative): - `dumpster`. See
+        [https://en.wikipedia.org/wiki/Dumpster](https://en.wikipedia.org/wiki/Dumpster) -
+        `trashCan`. - `wheelieBin`. - Any other category relevant for the
+        application.
+    -   Optional
 
-- `insertHolesNumber`. Number of insert holes the container has.
+-   `insertHolesNumber`. Number of insert holes the container has.
 
-  - Attribute type: [Number](https://schema.org/Number).
-  - Optional
+    -   Attribute type: [Number](https://schema.org/Number).
+    -   Optional
 
-- `madeOf`. Material the container is made of.
+-   `madeOf`. Material the container is made of.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed values: one Of (`plastic`, `wood` , `metal`, `other`)
-  - Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed values: one Of (`plastic`, `wood` , `metal`, `other`)
+    -   Optional
 
-- `madeOfCode`. Material Code as per standard tables. TBD.
+-   `madeOfCode`. Material Code as per standard tables. TBD.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Optional
 
-- `brandName`. Name of the brand.
+-   `brandName`. Name of the brand.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - See also: [https://schema.org/brand](https://schema.org/brand)
-  - Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/brand](https://schema.org/brand)
+    -   Optional
 
-- `modelName`. Name of the model as given by the manufacturer. This attribute
+-   `modelName`. Name of the model as given by the manufacturer. This attribute
     is different than `name` which is just a codename usually given by
-    municipalities. 
-  - Attribute type: [Text](https://schema.org/Text) 
-  - See also: [https://schema.org/model](https://schema.org/model)
-  - Optional
+    municipalities.
 
-- `manufacturerName`. Name of the manufacturer.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/model)
+    -   Optional
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - See also: [https://schema.org/model](https://schema.org/manufacturer)
-  - Optional
+-   `manufacturerName`. Name of the manufacturer.
 
-- `description`. Description about the waste container model.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   See also: [https://schema.org/model](https://schema.org/manufacturer)
+    -   Optional
 
-  - Normative References:
+-   `description`. Description about the waste container model.
+
+    -   Normative References:
         [https://schema.org/description](https://schema.org/description)
-  - Optional
+    -   Optional
 
-- `colors`. Available colors.
+-   `colors`. Available colors.
 
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Allowed Values:
-        -   A color keyword as specified by
-            [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords)
-        -   A color value as specified by
-            [W3C Color Data Type](https://www.w3.org/TR/SVG/types.html#BasicDataTypes)
-  - See also: [https://schema.org/color](https://schema.org/color)
-  - Optional
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed Values: - A color keyword as specified by
+        [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords) -
+        A color value as specified by
+        [W3C Color Data Type](https://www.w3.org/TR/SVG/types.html#BasicDataTypes)
+    -   See also: [https://schema.org/color](https://schema.org/color)
+    -   Optional
 
-- `image`. A URL containing a photo of the container model.
+-   `image`. A URL containing a photo of the container model.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/image](https://schema.org/image)
-  - Optional
+    -   Optional
 
-- `compliantWith`. A list of standards to which the container is compliant
+-   `compliantWith`. A list of standards to which the container is compliant
     with (ex. `UNE-EN 840-2:2013`)
 
-  - AttributeType: List of [Text](https://schema.org/Text).
-  - Optional
+    -   AttributeType: List of [Text](https://schema.org/Text).
+    -   Optional
 
-- `features`. A list of container features.
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Allowed Values:
-  - `wheels`
-  - `lid`
-  - `roundedLid`
-  - `insertHoles`
-  - `lockable`
-  - Any other value meaningful for the application.
+-   `features`. A list of container features.
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed Values:
+    -   `wheels`
+    -   `lid`
+    -   `roundedLid`
+    -   `insertHoles`
+    -   `lockable`
+    -   Any other value meaningful for the application.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

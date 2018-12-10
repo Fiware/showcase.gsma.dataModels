@@ -11,90 +11,93 @@ It represents a GTFS `stop` which `location_type` shall be equal to `0`.
 
 The data model is defined as shown below:
 
-- `id`: Entity ID
+-   `id`: Entity ID
 
-  - It shall be `urn:ngsi-ld:gtfs:Stop:<stop_identifier>` being
+    -   It shall be `urn:ngsi-ld:gtfs:Stop:<stop_identifier>` being
         `stop_identifier` a value that can derived from the GTFS `stop_id`
         field.
 
-- `type`: Entity Type
+-   `type`: Entity Type
 
-  - It shall be equal to `gtfs:Stop`
+    -   It shall be equal to `gtfs:Stop`
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this Entity.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `name`: Same as GTFS `stop_name`.
+-   `dateModified` : Last update timestamp of this Entity.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `code`: Same as GTFS `stop_code`.
+-   `name`: Same as GTFS `stop_name`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Mandatory
 
-- `page`: Same as GTFS `stop_url`.
+-   `code`: Same as GTFS `stop_code`.
 
-  - Attribute type: Property. [URL](https://schema.org/URL)
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
 
-- `description`: Same as GTFS `stop_desc`.
+-   `page`: Same as GTFS `stop_url`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+    -   Attribute type: Property. [URL](https://schema.org/URL)
+    -   Optional
 
-- `location`: Stop's location encoded as GeoJSON Point which coordinates shall
+-   `description`: Same as GTFS `stop_desc`.
+
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
+
+-   `location`: Stop's location encoded as GeoJSON Point which coordinates shall
     be in the form [`stop_long`,`stop_lat`].
 
-  - Attribute type: GeoProperty. `geo:json`.
-  - Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory
+    -   Attribute type: GeoProperty. `geo:json`.
+    -   Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Mandatory
 
-- `wheelChairAccessible`: Same as GTFS `wheelchair_boarding`.
+-   `wheelChairAccessible`: Same as GTFS `wheelchair_boarding`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Allowed values: (`0`, `1`, `2`) as per the
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Allowed values: (`0`, `1`, `2`) as per the
         [GTFS](https://developers.google.com/transit/gtfs/reference/#stopstxt)
-  - Optional
+    -   Optional
 
-- `zoneCode` : Transport zone to which this stop belongs to. Same as GTFS
+-   `zoneCode` : Transport zone to which this stop belongs to. Same as GTFS
     `zone_id`.
 
-  - Attribute type: Property. [Text](https://schema.org/Text)
-  - Optional
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Optional
 
-- `address`: Stop's civic address.
+-   `address`: Stop's civic address.
 
-  - Attribute type: Property.
+    -   Attribute type: Property.
         [PostalAddress](https://schema.org/PostalAddress)
-  - Optional
+    -   Optional
 
-- `hasParentStation` : Same as GTFS `parent_station`.
+-   `hasParentStation` : Same as GTFS `parent_station`.
 
-  - Attribute type: Relationship. It shall point to an Entity of Type
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Station](../../Station/doc/spec.md)
-  - Optional
+    -   Optional
 
-- `operatedBy` : Agency that operates this stop.
-  - Attribute type: Relationship. It shall point to an Entity of Type
+-   `operatedBy` : Agency that operates this stop.
+    -   Attribute type: Relationship. It shall point to an Entity of Type
         [gtfs:Agency](../../Agency/doc/spec.md)
-  - Mandatory
+    -   Mandatory
 
 ### Example 1 (Normalized Format)
 

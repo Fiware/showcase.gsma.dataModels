@@ -20,65 +20,68 @@ is identified by `refTarget`.
 A JSON Schema corresponding to this data model can be found
 [here](https://fiware.github.io/dataModels/specs/User/Activity/schema.json).
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type` : Entity type. It must be equal to `UserActivity`.
+-   `type` : Entity type. It must be equal to `UserActivity`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this entity.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dateModified` : Last update timestamp of this entity.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `dateActivityStarted` : Activity's start timestamp.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `dateActivityEnded` : Activity's end timestamp.
+-   `dateActivityStarted` : Activity's start timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Mandatory
 
-- `refAgent` : Reference to the agent (i.e. a person) performing the activity.
+-   `dateActivityEnded` : Activity's end timestamp.
+
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
+
+-   `refAgent` : Reference to the agent (i.e. a person) performing the activity.
     It may be another NGSI Entity or any `Agent` identified by an URI.
 
-  - Attribute type: Reference to an Entity or
+    -   Attribute type: Reference to an Entity or
         [https://schema.org/URL](https://schema.org/URL).
-  - Mandatory
+    -   Mandatory
 
-- `activityType` : The action performed (e.g. Drive).
+-   `activityType` : The action performed (e.g. Drive).
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Normative References:
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Normative References:
         [https://schema.org/Action](https://schema.org/Action),
         [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types),
         [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)
-  - Mandatory
+    -   Mandatory
 
-- `refObject` : Reference to the object of the action (e.g. Car1). It may be
+-   `refObject` : Reference to the object of the action (e.g. Car1). It may be
     another NGSI Entity or any `Object` identified by an URI.
 
-  - Attribute type: Reference to an Entity or
+    -   Attribute type: Reference to an Entity or
         [https://schema.org/URL](https://schema.org/URL).
-  - Optional
+    -   Optional
 
-- `refTarget` : Reference to the target of the action (e.g. Office1).
-  - Attribute type: Reference to an Entity or
+-   `refTarget` : Reference to the target of the action (e.g. Office1).
+    -   Attribute type: Reference to an Entity or
         [https://schema.org/URL](https://schema.org/URL).
-  - Optional
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
@@ -88,16 +91,15 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 ## Examples of use
 
 ```json
-
 {
-  "id": "UserActivity1",
-  "type": "UserActivity",
-  "activityType": "Drive",
-  "description": "User1 drive Car1 to Office1",
-  "dateActivityStarted": "2016-11-30T07:00:00.00Z",
-  "refObject": "Car1",
-  "refTarget": "Office1",
-  "refAgent": "User1"
+    "id": "UserActivity1",
+    "type": "UserActivity",
+    "activityType": "Drive",
+    "description": "User1 drive Car1 to Office1",
+    "dateActivityStarted": "2016-11-30T07:00:00.00Z",
+    "refObject": "Car1",
+    "refTarget": "Office1",
+    "refAgent": "User1"
 }
 ```
 
@@ -107,6 +109,6 @@ T.B.D.
 
 ## Open Issues
 
-- [ ] Discuss if location should be included as part of the model. Consider
+-   [ ] Discuss if location should be included as part of the model. Consider
         that the model is referenced in UserContext, where user location is
         already modelled.

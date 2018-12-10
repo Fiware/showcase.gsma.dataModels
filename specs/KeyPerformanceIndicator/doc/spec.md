@@ -16,191 +16,186 @@ take care of the KPI evolution.
 
 The data model is defined as shown below:
 
-- `id` : Entity's unique identifier.
+-   `id` : Entity's unique identifier.
 
-- `type` : It must be `KeyPerformanceIndicator`.
+-   `type` : It must be `KeyPerformanceIndicator`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `name` : Indicator's name which should be meaningful in the context of a
-    project or organization. Example `KPI-2016-2018-Incidences-Street`. 
-  - Normative References: [https://schema.org/name](https://schema.org/name)
-  - Mandatory
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-- `alternateName` : An alias for the KPI.
+    -   Attribute type: URL
+    -   Optional
 
-  - Normative References:
+-   `name` : Indicator's name which should be meaningful in the context of a
+    project or organization. Example `KPI-2016-2018-Incidences-Street`.
+
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
+
+-   `alternateName` : An alias for the KPI.
+
+    -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
-  - Optional
+    -   Optional
 
-- `organization` : Subject organization evaluated by the KPI.
+-   `organization` : Subject organization evaluated by the KPI.
 
-  - Attribute Type: [Organization](https://schema.org/Organization)
-  - Mandatory
+    -   Attribute Type: [Organization](https://schema.org/Organization)
+    -   Mandatory
 
-- `process` : Subject process evaluated by the KPI.
+-   `process` : Subject process evaluated by the KPI.
 
-  - Attribute Type: [Text](http://schema.org/Text)
-  - Either `process` or `product` must be defined.
+    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Either `process` or `product` must be defined.
 
-- `product` : Subject _product or service_ evaluated by the KPI.
+-   `product` : Subject _product or service_ evaluated by the KPI.
 
-  - Attribute Type: [Product](https://schema.org/Product)
-  - Either `process` or `product` must be defined.
+    -   Attribute Type: [Product](https://schema.org/Product)
+    -   Either `process` or `product` must be defined.
 
-- `provider` : Provider of the product or service, if any, that this KPI
+-   `provider` : Provider of the product or service, if any, that this KPI
     evaluates.
 
-  - Normative references:
+    -   Normative references:
         [https://schema.org/provider](https://schema.org/provider)
-  - Optional
+    -   Optional
 
-- `businessTarget` : For informative purposes, the business target to which
+-   `businessTarget` : For informative purposes, the business target to which
     this KPI is related to.
 
-  - Attribute Type: [Text](http://schema.org/Text)
-  - Optional
+    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Optional
 
-- `description` : Indicator's description.
+-   `description` : Indicator's description.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/description](https://schema.org/description)
-  - Optional
+    -   Optional
 
-- `calculationFrequency` : How often the KPI is calculated.
+-   `calculationFrequency` : How often the KPI is calculated.
 
-  - Attribute Type: [Text](http://schema.org/Text)
-  - Allowed values: one Of (`hourly`, `daily`, `weekly`, `monthly`,
-        `yearly`, `quarterly`, `bimonthly`, `biweekly`)
-        -   Or any other value meaningful for the application and not covered by
-            the above list.
-  - Mandatory
+    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Allowed values: one Of (`hourly`, `daily`, `weekly`, `monthly`,
+        `yearly`, `quarterly`, `bimonthly`, `biweekly`) - Or any other value
+        meaningful for the application and not covered by the above list.
+    -   Mandatory
 
-- `category` : Indicator's category.
+-   `category` : Indicator's category.
 
-  - Attribute Type: List of [Text](http://schema.org/Text)
-  - Allowed values: (`quantitative`, `qualitative`, `leading`, `lagging`,
+    -   Attribute Type: List of [Text](http://schema.org/Text)
+    -   Allowed values: (`quantitative`, `qualitative`, `leading`, `lagging`,
         `input`, `process`, `output`, `practical`, `directional`, `actionable`,
         `financial`). Check
         [Wikipedia](https://en.wikipedia.org/wiki/Performance_indicator#Categorization_of_indicators)
-        for a description of each category listed above. 
-        - Any other value meaningful to the application and not covered by the above list.
-  - Mandatory
+        for a description of each category listed above. - Any other value
+        meaningful to the application and not covered by the above list.
+    -   Mandatory
 
-- `calculatedBy` : The organization in charge of calculating the KPI.
+-   `calculatedBy` : The organization in charge of calculating the KPI.
 
-  - Attribute Type: [Organization](https://schema.org/Organization)
-  - Optional
+    -   Attribute Type: [Organization](https://schema.org/Organization)
+    -   Optional
 
-- `calculationMethod` : The calculation method used.
+-   `calculationMethod` : The calculation method used.
 
-  - Attribute type: [Text](http://schema.org/Text)
-  - Allowed values: oneOf ( `manual`, `automatic`, `semiautomatic`)
-        -   Any other value meaningful to the application and not covered by the
-            above list.
-  - Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed values: oneOf ( `manual`, `automatic`, `semiautomatic`) - Any
+        other value meaningful to the application and not covered by the above
+        list.
+    -   Optional
 
-- `calculationFormula` : For informative purposes, the formula used for
+-   `calculationFormula` : For informative purposes, the formula used for
     calculating the indicator.
 
-  - Attribute type: [Text](http://schema.org/Text)
-  - Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
 
-- `aggregatedData` : Entity(ies) and attribute(s) aggregated by the KPI.
+-   `aggregatedData` : Entity(ies) and attribute(s) aggregated by the KPI.
 
-  - Attribute type: List of
-        [StructuredValue](https://schema.org/StructuredValue).
-        -   Subproperties:
-            -   `entityType` : Entity type which data is aggregated.
-                -   Type: [Text](http://schema.org/Text)
-            -   `attrs` : Attributes which value is aggregated.
-                -   Type: List of [Text](http://schema.org/Text)
-  - Optional
+    -   Attribute type: List of
+        [StructuredValue](https://schema.org/StructuredValue). -
+        Subproperties: - `entityType` : Entity type which data is aggregated. -
+        Type: [Text](http://schema.org/Text) - `attrs` : Attributes which value
+        is aggregated. - Type: List of [Text](http://schema.org/Text)
+    -   Optional
 
-- `calculationPeriod` : KPI's period of time.
+-   `calculationPeriod` : KPI's period of time.
 
-  - Attribute type: [StructuredValue](https://schema.org/StructuredValue)
-  - Subproperties:
-        -   `from` : Period start
-            -   Type: [DateTime](http://schema.org/DateTime)
-        -   `to` : Period end
-            -   Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: [StructuredValue](https://schema.org/StructuredValue)
+    -   Subproperties: - `from` : Period start - Type:
+        [DateTime](http://schema.org/DateTime) - `to` : Period end - Type:
+        [DateTime](http://schema.org/DateTime)
 
-- `currentStanding` : The KPI's current standing as per its `kpiValue`.
+-   `currentStanding` : The KPI's current standing as per its `kpiValue`.
 
-  - Attribute type: [Text](http://schema.org/Text)
-  - Attribute metadata:
-        -   `timestamp`: Timestamp when the last update of the attribute
-            happened.
-            -   Type: [DateTime](http://schema.org/DateTime)
-  - Allowed values: one Of (`very good`, `good`, `fair`, `bad`, `very bad`)
-  - Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
+        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Allowed values: one Of (`very good`, `good`, `fair`, `bad`, `very bad`)
+    -   Optional
 
-- `kpiValue` :
+-   `kpiValue` :
 
-  - Attribute type: It can be of any type.
-  - Attribute metadata:
-        -   `timestamp`: Timestamp when the last update of the attribute
-            happened.
-            -   Type: [DateTime](http://schema.org/DateTime)
-  - Mandatory
+    -   Attribute type: It can be of any type.
+    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
+        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Mandatory
 
-- `effectiveSince` : The date on which the organization created this KPI. This
+-   `effectiveSince` : The date on which the organization created this KPI. This
     date might be different than the entity creation date.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `dateNextCalculation` : Date on which a new calculation of the KPI should be
+-   `dateNextCalculation` : Date on which a new calculation of the KPI should be
     available.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
 
-- `dateExpires` : The date on which the KPI will be no longer necessary or
+-   `dateExpires` : The date on which the KPI will be no longer necessary or
     meaningful.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
 
-- `updatedAt` : Last update date of the KPI data. This can be different than
+-   `updatedAt` : Last update date of the KPI data. This can be different than
     the last update date of the KPI's value.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Optional
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Optional
 
-- `dateModified` : Last update timestamp of this entity.
+-   `dateModified` : Last update timestamp of this entity.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `location` : Location of the area to which the KPI refers to.
+-   `location` : Location of the area to which the KPI refers to.
 
-  - Attribute type: GeoJSON geometry.
-  - Optional
+    -   Attribute type: GeoJSON geometry.
+    -   Optional
 
-- `address` : Civic address of the area to which the KPI refers to.
+-   `address` : Civic address of the area to which the KPI refers to.
 
-  - Attribute type:
+    -   Attribute type:
         [https://schema.org/PostalAddress](https://schema.org/PostalAddress)
-  - Optional
+    -   Optional
 
-- `area` : For organizational purposes, it allows to add extra textual
+-   `area` : For organizational purposes, it allows to add extra textual
     geographical information such as district, burough, or any other hint which
-    can help to identify the KPI coverage. 
-  - Attribute type: [Text](http://schema.org/Text)
-  - Optional
+    can help to identify the KPI coverage.
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

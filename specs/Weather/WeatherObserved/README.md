@@ -52,10 +52,7 @@ What was the weather observed today at 07:00 UTC in Valladolid (Spain)?
         "dateObserved": "2018-11-30T07:00:00.00Z",
         "location": {
             "type": "Point",
-            "coordinates": [
-                -4.754444444,
-                41.640833333
-            ]
+            "coordinates": [-4.754444444, 41.640833333]
         },
         "precipitation": 0,
         "pressureTendency": 1.2,

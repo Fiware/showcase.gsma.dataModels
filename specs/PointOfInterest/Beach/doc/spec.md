@@ -3,11 +3,13 @@
 ## Description
 
 <!-- textlint-disable no-dead-link -->
+
 This entity contains a harmonised geographic description of a beach. It is used
 in applications that use spatial data and is applicable to Tourism, Environment,
 and Smart City vertical segments and related IoT applications. Special thanks to
-[TURESPAÑA](https://www.tourspain.es/en-us) who provided some
-examples which inspired the development of this data model.
+[TURESPAÑA](https://www.tourspain.es/en-us) who provided some examples which
+inspired the development of this data model.
+
 <!-- textlint-enable no-dead-link -->
 
 ## Data Model
@@ -19,98 +21,100 @@ This entity type has been designed as an extension of
 specified by schema.org and which domain is `https://schema.org/Beach` can be
 used by applications.
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type` : Entity type. It must be equal to `Beach`.
+-   `type` : Entity type. It must be equal to `Beach`.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-- `dateModified` : Last update timestamp of this entity.
+    -   Attribute type: URL
+    -   Optional
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+-   `dateModified` : Last update timestamp of this entity.
 
-- `dateCreated` : Entity's creation timestamp.
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: [Text](https://schema.org/Text) or
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+
+-   `dateCreated` : Entity's creation timestamp.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
+-   `source` : A sequence of characters giving the source of the entity data.
+    -   Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
-  - Optional
-- `name` : Name of this beach.
-  - Normative References: [https://schema.org/name](https://schema.org/name)
-  - Mandatory
-- `alternateName` : Alternative name for this beach.
+    -   Optional
+-   `name` : Name of this beach.
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
+-   `alternateName` : Alternative name for this beach.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
-  - Optional
+    -   Optional
 
-- `description` : Description of this beach.
+-   `description` : Description of this beach.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/description](https://schema.org/description)
-  - Optional
+    -   Optional
 
-- `location` : Location of this beach represented by a GeoJSON geometry,
+-   `location` : Location of this beach represented by a GeoJSON geometry,
     usually a `Point` or a Polygon.
-  - Attribute type: `geo:json`.
-  - Normative References:
+    -   Attribute type: `geo:json`.
+    -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory if `address` is not defined.
-- `address` : Address of this beach.
+    -   Mandatory if `address` is not defined.
+-   `address` : Address of this beach.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/address](https://schema.org/address)
-  - Mandatory if `location` is not present.
+    -   Mandatory if `location` is not present.
 
-- `width` : Width of this beach.
+-   `width` : Width of this beach.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/width](https://schema.org/width)
-  - Default unit: meter
-  - Optional
+    -   Default unit: meter
+    -   Optional
 
-- `length` : Length of this beach.
-  - Normative References:
+-   `length` : Length of this beach.
+    -   Normative References:
         [https://schema.org/length](https://schema.org/lenght)
-  - Default unit: meter
-  - Optional
-- `beachType` : Type of beach according to different criteria.
+    -   Default unit: meter
+    -   Optional
+-   `beachType` : Type of beach according to different criteria.
 
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Allowed Values: (`whiteSand`, `urban`, `isolated`, `calmWaters`,
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed Values: (`whiteSand`, `urban`, `isolated`, `calmWaters`,
         `blueFlag`, `Q-Quality`, `strongWaves`, `windy`, `blackSand`) or any
         other value needed by an application.
-  - Optional
+    -   Optional
 
-- `occupationRate` : Typical occupation rate of this beach.
+-   `occupationRate` : Typical occupation rate of this beach.
 
-  - Attribute type: [Text](https://schema.org/Text)
-  - Allowed Values: (`low`, `medium`, `high`)
-  - Optional
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Allowed Values: (`low`, `medium`, `high`)
+    -   Optional
 
-- `facilities` : Describes different facilities offered by this beach.
+-   `facilities` : Describes different facilities offered by this beach.
 
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Allowed values: (`promenade`, `showers`, `cleaningServices`,
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed values: (`promenade`, `showers`, `cleaningServices`,
         `lifeGuard`, `sunshadeRental`, `sunLoungerRental`, `waterCraftRental`,
         `toilets`, `touristOffice`, `litterBins`, `telephone`,
         `surfPracticeArea`, `accessforDisabled`) or any other value needed by an
         application.
-  - Optional
+    -   Optional
 
-- `accessType` : Describes how to get to this beach.
+-   `accessType` : Describes how to get to this beach.
 
-  - Attribute type: List of [Text](https://schema.org/Text)
-  - Allowed values: (`privateVehicle`, `boat`, `onFoot`, `publicTransport`)
-  - Optional
+    -   Attribute type: List of [Text](https://schema.org/Text)
+    -   Allowed values: (`privateVehicle`, `boat`, `onFoot`, `publicTransport`)
+    -   Optional
 
-- `refSeeAlso` : Reference to one or more related entities.
-  - Attribute type: List of References
-  - Optional
+-   `refSeeAlso` : Reference to one or more related entities.
+    -   Attribute type: List of References
+    -   Optional
 
 ## Examples of use
 

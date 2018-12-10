@@ -11,56 +11,59 @@ It is a GTFS `stop` which `location_type` is equal to `1`.
 
 The data model is defined as shown below:
 
-- `id`: Entity ID
+-   `id`: Entity ID
 
     -   It shall be `urn:ngsi-ld:gtfs:Station:<station_identifier>` being
         `station_identifier` a value that can derived from the `stop_id` field.
 
-- `type`: Entity Type
+-   `type`: Entity Type
 
-  - It shall be equal to `gtfs:Station`
+    -   It shall be equal to `gtfs:Station`
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this Entity.
+-   `dateCreated` : Entity's creation timestamp.
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `hasStop` : It shall point to another Entity(ies) of type `gtfs:Stop`
+-   `dateModified` : Last update timestamp of this Entity.
 
-  - Type: Relationship. List of [gtfs:Stop](../../Stop/doc/spec.md).
-  - Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `hasAccessPoint` : It shall point to another Entity(ies) of type
+-   `hasStop` : It shall point to another Entity(ies) of type `gtfs:Stop`
+
+    -   Type: Relationship. List of [gtfs:Stop](../../Stop/doc/spec.md).
+    -   Mandatory
+
+-   `hasAccessPoint` : It shall point to another Entity(ies) of type
     `gtfs:AccessPoint`
-  - Type: Relationship. List of
+    -   Type: Relationship. List of
         [gtfs:AccessPoint](../../AccessPoint/doc/spec.md).
-  - Optional
+    -   Optional
 
 The specification for the following attributes is the one mandanted by
 [gtfs:Stop](../../Stop/doc/spec.md):
 
-- `name`
-- `code`
-- `page`
-- `description`
-- `location`
-- `wheelChairAccessible`
-- `zoneCode`
-- `address`
-- `hasParentStation`
+-   `name`
+-   `code`
+-   `page`
+-   `description`
+-   `location`
+-   `wheelChairAccessible`
+-   `zoneCode`
+-   `address`
+-   `hasParentStation`
 
 ### Example 1 (Normalized Format)
 

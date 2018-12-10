@@ -13,90 +13,89 @@ A data dictionary for DATEX II terms can be found at
 
 The data model is defined as shown below:
 
-- `id` : Unique identifier.
+-   `id` : Unique identifier.
 
-- `type` : Entity type. It must be equal to `OnStreetParking`.
+-   `type` : Entity type. It must be equal to `OnStreetParking`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity's creation timestamp
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: URL
+    -   Optional
 
-- `dateModified` : Last update timestamp of this entity
+-   `dateCreated` : Entity's creation timestamp
 
-  - Attribute type: [DateTime](https://schema.org/DateTime)
-  - Read-Only. Automatically generated.
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `category` : Street parking category.
+-   `dateModified` : Last update timestamp of this entity
 
-  - Attribute type: List of [Text](http://schema.org/Text)
-  - Allowed values:
-        -   (`forDisabled`, `forResidents`, `forLoadUnload`, `onlyWithPermit`,
-            `forELectricalCharging`)
-        -   (`free`, `feeCharged`)
-        -   (`blueZone`, `greenZone`)
-        -   (`taxiStop`)
-        -   (`shortTerm`, `mediumTerm`)
-        -   Any value not covered by the above enumeration and meaningful for
-            the application.
-  - Mandatory
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
+    -   Read-Only. Automatically generated.
 
-- `location` : Geolocation of the parking site represented by a GeoJSON
+-   `category` : Street parking category.
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: - (`forDisabled`, `forResidents`, `forLoadUnload`,
+        `onlyWithPermit`, `forELectricalCharging`) - (`free`, `feeCharged`) -
+        (`blueZone`, `greenZone`) - (`taxiStop`) - (`shortTerm`, `mediumTerm`) -
+        Any value not covered by the above enumeration and meaningful for the
+        application.
+    -   Mandatory
+
+-   `location` : Geolocation of the parking site represented by a GeoJSON
     (Multi)Polygon.
 
-  - Attribute type: `geo:json`.
-  - Normative References:
+    -   Attribute type: `geo:json`.
+    -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-  - Mandatory if `address`is not defined.
+    -   Mandatory if `address`is not defined.
 
-- `address` : Registered onstreet parking civic address.
+-   `address` : Registered onstreet parking civic address.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/address](https://schema.org/address)
-  - Mandatory if location not defined
+    -   Mandatory if location not defined
 
-- `name` : Name given to the onstreet parking zone.
+-   `name` : Name given to the onstreet parking zone.
 
-  - Normative References: [https://schema.org/name](https://schema.org/name)
-  - Mandatory
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Mandatory
 
-- `chargeType` : Type of charge(s) performed by the parking site.
+-   `chargeType` : Type of charge(s) performed by the parking site.
 
-  - Attribute type: List of [Text](http://schema.org/Text)
-  - Allowed values: Some of those defined by the DATEX II version 2.3
-        _ChargeTypeEnum_ enumeration:
-        -   (`flat`, `minimum`, `maximum`, `additionalIntervalPrice`
-            `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
-            `annualPayment`, `monthlyPayment`, `free`, `unknown`, `other`)
-        -   Any other application-specific
-  - Mandatory
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Some of those defined by the DATEX II version 2.3
+        _ChargeTypeEnum_ enumeration: - (`flat`, `minimum`, `maximum`,
+        `additionalIntervalPrice` `seasonTicket` `temporaryPrice`
+        `firstIntervalPrice`, `annualPayment`, `monthlyPayment`, `free`,
+        `unknown`, `other`) - Any other application-specific
+    -   Mandatory
 
-- `requiredPermit` : This attribute captures what permit(s) might be needed to
+-   `requiredPermit` : This attribute captures what permit(s) might be needed to
     park at this site. Semantics is that at least _one of_ these permits is
     needed to park. When a permit is composed by more than one item (and) they
     can be combined with a ",". For instance "residentPermit,disabledPermit"
     stays that both, at the same time, a resident and a disabled permit are
     needed to park. If empty or `null`, no permit is needed.
-  - Attribute type:
-    List of [Text](http://schema.org/Text)
-  - Allowed values: The following,
-    defined by the _PermitTypeEnum_ enumeration of DATEX II version 2.3.
-    - one of (`fairPermit`, `governmentPermit`, `residentPermit`, `disabledPermit`,
-    `blueZonePermit`, `careTakingPermit`, `carpoolingPermit`,
-    `carSharingPermit`, `emergencyVehiclePermit`, `maintenanceVehiclePermit`,
-    `roadWorksPermit`, `taxiPermit`, `transportationPermit`, `noPermitNeeded`)
-    - Any other application-specific
-  - Mandatory. It can be `null`.
 
-- `permitActiveHours` : This attribute allows to capture situations when a
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: The following, defined by the _PermitTypeEnum_
+        enumeration of DATEX II version 2.3.
+        -   one of (`fairPermit`, `governmentPermit`, `residentPermit`,
+            `disabledPermit`, `blueZonePermit`, `careTakingPermit`,
+            `carpoolingPermit`, `carSharingPermit`, `emergencyVehiclePermit`,
+            `maintenanceVehiclePermit`, `roadWorksPermit`, `taxiPermit`,
+            `transportationPermit`, `noPermitNeeded`)
+        -   Any other application-specific
+    -   Mandatory. It can be `null`.
+
+-   `permitActiveHours` : This attribute allows to capture situations when a
     permit is only needed at specific hours or days of week. It is an structured
     value which must contain a subproperty per each required permit, indicating
     when the permit is active. If nothing specified (or `null`) for a permit it
@@ -105,152 +104,149 @@ The data model is defined as shown below:
     specification)[https://schema.org/openingHours]. For instance, a blue zone
     which is only active on dayweeks will be encoded as "blueZonePermit":
     "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
-  - Attribute type:
-    [StructuredValue](http://schema.org/StructuredValue)
-  - Mandatory. It can be
-    `null`.
 
-- `allowedVehicleType` : Vehicle type allowed (only one per on street
+    -   Attribute type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Mandatory. It can be `null`.
+
+-   `allowedVehicleType` : Vehicle type allowed (only one per on street
     parking).
 
-  - Attribute type: [Text](http://schema.org/Text)
-  - Allowed Values: The following values defined by _VehicleTypeEnum_
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed Values: The following values defined by _VehicleTypeEnum_
         [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip)
-        :
-        - (`bicycle`, `bus`, `car`, `caravan`, `carWithCaravan`,
+        : - (`bicycle`, `bus`, `car`, `caravan`, `carWithCaravan`,
         `carWithTrailer`, `constructionOrMaintenanceVehicle`, `lorry`, `moped`,
         `motorcycle`, `motorcycleWithSideCar`, `motorscooter`, `tanker`,
         `trailer`, `van`, `anyVehicle`)
-  - Mandatory
+    -   Mandatory
 
-- `maximumParkingDuration` : Maximum allowed stay at site encoded as a ISO8601
-    duration. A `null` or empty value indicates an indefinite duration. 
-  - Attribute type: [Text](http://schema.org/Text)
-  - Optional
+-   `maximumParkingDuration` : Maximum allowed stay at site encoded as a ISO8601
+    duration. A `null` or empty value indicates an indefinite duration.
 
-- `usageScenario` : Usage scenario. Gives more details about the `category`
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
+
+-   `usageScenario` : Usage scenario. Gives more details about the `category`
     attribute.
 
-  - Attribute type: List of [Text](http://schema.org/Text)
-  - Allowed values: Those defined by the enumeration
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Those defined by the enumeration
         _ParkingUsageScenarioEnum_ of DATEX II version 2.3:
-    - (`parkAndRide`, `parkAndCycle`, `parkAndWalk`, `kissAndRide`,
+        -   (`parkAndRide`, `parkAndCycle`, `parkAndWalk`, `kissAndRide`,
             `liftshare`, `carSharing`, `vehicleLift`, `loadingBay`, `dropOff`,
             `overnightParking`, `other`)
-    - Or any other value useful for the application and not covered above.
-  - Optional
+        -   Or any other value useful for the application and not covered above.
+    -   Optional
 
-- `description` : Description about the onstreet parking zone.
+-   `description` : Description about the onstreet parking zone.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/description](https://schema.org/description)
-  - Optional
+    -   Optional
 
-- `areBordersMarked` : Denotes whether parking spots are delimited (with blank
+-   `areBordersMarked` : Denotes whether parking spots are delimited (with blank
     lines or similar) or not.
 
-  - Attribute type: [Boolean](https://schema.org/Boolean)
-  - Optional
+    -   Attribute type: [Boolean](https://schema.org/Boolean)
+    -   Optional
 
-- `totalSpotNumber` : The total number of spots offered by this parking site.
+-   `totalSpotNumber` : The total number of spots offered by this parking site.
     This number can be difficult to be obtained for those parking locations on
     which spots are not clearly marked by lines.
-  - Attribute type:
-    [Number](http://schema.org/Number)
-  - Allowed values: Any positive integer
-    number or 0.
-    - Normative references: DATEX 2 version 2.3 attribute
-    _parkingNumberOfSpaces_ of the _ParkingRecord_ class.
-  - Optional
 
-- `availableSpotNumber` : The number of spots available globally, including
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: Any positive integer number or 0.
+        -   Normative references: DATEX 2 version 2.3 attribute
+            _parkingNumberOfSpaces_ of the _ParkingRecord_ class.
+    -   Optional
+
+-   `availableSpotNumber` : The number of spots available globally, including
     reserved spaces, such as those for disabled people, long term parkers and so
     on. This might be harder to estimate at those parking locations on which
     spots borders are not clearly marked by lines.
-  - Attribute type:
-    [Number](http://schema.org/Number) 
-  - Allowed values: A positive integer
-    number, including 0. It must lower or equal than `totalSpotNumber`.
-  - Metadata:
-    - `timestamp` : Timestamp of the last attribute update 
-    - Type: [DateTime](https://schema.org/DateTime)
-  - Optional
 
-- `extraSpotNumber` : The number of extra spots _available_, i.e. free. Extra
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: A positive integer number, including 0. It must lower or
+        equal than `totalSpotNumber`.
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
+    -   Optional
+
+-   `extraSpotNumber` : The number of extra spots _available_, i.e. free. Extra
     spots are those reserved for special purposes and usually require a permit.
     Permit details will be found at parking group level (entity of type
     `ParkingGroup`). This value must aggregate free spots from all groups
     devoted to special parking conditions.
-  - Attribute type:
-    [Number](http://schema.org/Number)
-  - Allowed values: A positive integer
-    number, including 0. `extraSpotNumber` plus `availableSpotNumber` must be
-    lower than or equal to `totalSpotNumber`.
-  - Metadata:
-    - `timestamp` :
-    Timestamp of the last attribute update
-    - Type: [DateTime](https://schema.org/DateTime)
 
-- `occupancyDetectionType` : Occupancy detection method(s).
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: A positive integer number, including 0.
+        `extraSpotNumber` plus `availableSpotNumber` must be lower than or equal
+        to `totalSpotNumber`.
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
 
-  - Attribute type: List of [Text](http://schema.org/Text)
-  - Allowed values: The following from DATEX II version 2.3
+-   `occupancyDetectionType` : Occupancy detection method(s).
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: The following from DATEX II version 2.3
         _OccupancyDetectionTypeEnum_:
-    - (`none`, `balancing`, `singleSpaceDetection`, `modelBased`,
+        -   (`none`, `balancing`, `singleSpaceDetection`, `modelBased`,
             `manual`)
-    - Or any other application-specific
-  - Mandatory
+        -   Or any other application-specific
+    -   Mandatory
 
-- `parkingMode` : Parking mode(s).
+-   `parkingMode` : Parking mode(s).
 
-  - Attribute type: List of [Text](http://schema.org/Text)
-  - Allowed values: Those defined by the DATEX II version 2.3
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Those defined by the DATEX II version 2.3
         _ParkingModeEnum_ enumeration:
-    - (`perpendicularParking`, `parallelParking`, `echelonParking`)
-  - Optional
+        -   (`perpendicularParking`, `parallelParking`, `echelonParking`)
+    -   Optional
 
-- `averageSpotWidth` : The average width of parking spots.
+-   `averageSpotWidth` : The average width of parking spots.
 
-  - Attribute type: [Number](http://schema.org/Number)
-  - Default unit: Meters
-  - Optional
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
 
-- `averageSpotLength` : The average length of parking spots.
+-   `averageSpotLength` : The average length of parking spots.
 
-  - Attribute type: [Number](http://schema.org/Number)
-  - Default unit: Meters
-  - Optional
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
 
-- `acceptedPaymentMethod` : Accepted payment method(s)
+-   `acceptedPaymentMethod` : Accepted payment method(s)
 
-  - Normative references: https://schema.org/acceptedPaymentMethod
-  - Optional
+    -   Normative references: https://schema.org/acceptedPaymentMethod
+    -   Optional
 
-- `image` : A URL containing a photo of this parking site.
+-   `image` : A URL containing a photo of this parking site.
 
-  - Normative References:
+    -   Normative References:
         [https://schema.org/image](https://schema.org/image)
-  - Optional
+    -   Optional
 
-- `refParkingSpot` : Individual parking spots belonging to this on street
+-   `refParkingSpot` : Individual parking spots belonging to this on street
     parking site.
 
-  - Attribute type: List of references to
+    -   Attribute type: List of references to
         [ParkingSpot](../../ParkingSpot/doc/spec.md)
-  - Optional
+    -   Optional
 
-- `refParkingGroup` : Reference to the parking group(s) (if any) belonging to
+-   `refParkingGroup` : Reference to the parking group(s) (if any) belonging to
     this onstreet parking zone.
 
-  - Attribute type: List of references to
+    -   Attribute type: List of references to
         [ParkingGroup](../../ParkingGroup/doc/spec.md)
-  - Optional
+    -   Optional
 
-- `areaServed` : Area served by this onstreet parking. Precise semantics can
+-   `areaServed` : Area served by this onstreet parking. Precise semantics can
     depend on the application or target city. For instance, it can be a
     neighbourhood, burough or district.
-  - Attribute type: [Text](http://schema.org/Text)
-  - Optional
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
@@ -259,7 +255,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 
-### Normalized  Example
+### Normalized Example
 
 Normalized NGSI response
 
@@ -350,7 +346,7 @@ Main `OnstreetParking` entity.
     "chargeType": ["temporaryFee"],
     "requiredPermit": ["blueZonePermit", "disabledPermit"],
     "permitActiveHours": {
-      "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
+        "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
     },
     "maximumAllowedStay": "PT2H",
     "availableSpotNumber": 3,
@@ -361,16 +357,16 @@ Main `OnstreetParking` entity.
         "type": "Polygon",
         "coordinates": [
             [
-                [-3.80356167695194, 43.46296641666926 ],
-                [-3.803161973253841,43.46301091092682 ],
-                [-3.803147082548618,43.462879859445884],
-                [-3.803536474744068,43.462838666196674],
+                [-3.80356167695194, 43.46296641666926],
+                [-3.803161973253841, 43.46301091092682],
+                [-3.803147082548618, 43.462879859445884],
+                [-3.803536474744068, 43.462838666196674],
                 [-3.80356167695194, 43.46296641666926]
             ]
         ]
     },
     "areaServed": "Zona Centro",
-    "refParkingGroup": ["daoiz-velarde-1-5-main",   "daoiz-velarde-1-5-disabled"]
+    "refParkingGroup": ["daoiz-velarde-1-5-main", "daoiz-velarde-1-5-disabled"]
 }
 ```
 
@@ -416,4 +412,4 @@ All the parking spots are free.
 
 ## Open issues
 
-- How to model tariffs
+-   How to model tariffs
