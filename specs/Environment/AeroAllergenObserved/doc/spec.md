@@ -114,11 +114,11 @@ The structure of such an attribute will be as follows:
         - Type:
         [DateTime](https://schema.org/DateTime)
     -   `unitCode` : The unit code (text) of measured concentration (usually the
-        unit adopted is grains per cubic meter: `gr/m3`). - Type:
-        [Text](https://schema.org/Text) 
+        unit adopted is grains per cubic meter: `gr/m3`). 
+        - Type: [Text](https://schema.org/Text) 
         - Optional
-    -   `description` : short description of the allergen     - Type:
-        [Text](https://schema.org/Text)
+    -   `description` : short description of the allergen
+        - Type: [Text](https://schema.org/Text)
         - Optional
 
 ### Representing qualitative levels of aero allergens
@@ -145,8 +145,8 @@ concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
         - Type: [Text](https://schema.org/Text) 
         - Optional
     -   `referenceSpecification` : Specification that must be taken as reference
-        when interpreting the supplied qualitative value. - Type:
-        [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+        when interpreting the supplied qualitative value. 
+        - Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
         - Mandatory
 
 ### Representing allergenicity category of aero allergens
@@ -174,8 +174,8 @@ pollen.
         - Type: [Text](https://schema.org/Text) 
         - Optional
     -   `referenceSpecification` : Specification that must be taken as reference
-        when interpreting the supplied qualitative value. - Type:
-        [Text](https://schema.org/Text) or [URL](https://schema.org/URL) 
+        when interpreting the supplied qualitative value. 
+        - Type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL) 
         - Mandatory
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
