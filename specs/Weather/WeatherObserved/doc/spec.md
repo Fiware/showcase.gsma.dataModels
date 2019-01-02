@@ -40,24 +40,25 @@ A JSON Schema corresponding to this data model can be found
     -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Mandatory if `address` is not defined.
+    
 -   `address` : Civic address of the weather observation. Sometimes it
     corresponds to a weather station address.
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
     -   Mandatory if `location` is not present.
+    
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
     -   Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
         interval represented as [Text](https://schema.org/Text).
     -   Mandatory
+    
 -   `source` : A sequence of characters giving the source of the entity data.
-
     -   Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
     -   Optional
 
 -   `refDevice` : A reference to the device(s) which captured this observation.
-
     -   Attribute type: Reference to an entity of type `Device`
     -   Optional
 
@@ -65,32 +66,35 @@ A JSON Schema corresponding to this data model can be found
     station) associated to this observation.
     -   Attribute type: Reference to an entity of type `PointOfInterest`
     -   Optional
+    
 -   `weatherType` : The observed weather type. It is represented by a comma
     separated list of weather statuses, for instance `overcast, lightRain`. A
     proposed mapping for Spanish terms can be found
     [here](https://github.com/Fiware/dataModels/blob/master/specs/Weather/WeatherForecast/harvest/spain_weather_forecast_harvest.py#L135). +
-    Attribute type: [Text](https://schema.org/Text) + Allowed values: A
+    Attribute type: [Text](https://schema.org/Text)
+    - Allowed values: A
     combination of (`clearNight`,`sunnyDay`, `slightlyCloudy`, `partlyCloudy`,
     `mist`, `fog`, `highClouds`, `cloudy`, `veryCloudy`, `overcast`,
     `lightRainShower`, `drizzle`, `lightRain`, `heavyRainShower`, `heavyRain`,
     `sleetShower`, `sleet`, `hailShower`, `hail`, `shower`, `lightSnow`, `snow`,
     `heavySnowShower`, `heavySnow`, `thunderShower`, `thunder`) or any other
-    extended value. + Optional
+    extended value.
+    - Optional
+    
 -   `dewPoint` : The dew point encoded as a number.
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Celsius degrees.
     -   See also:
         [https://en.wikipedia.org/wiki/Dew_point](https://en.wikipedia.org/wiki/Dew_point)
     -   Optional
+    
 -   `visibility` : Visibility reported.
-
     -   Attribute type: [Text](https://schema.org/Text)
     -   Allowed values: One of (`veryPoor`, `poor`, `moderate`, `good`,
         `veryGood`, `excellent`)
     -   Optional
 
 -   `temperature` : Air's temperature observed.
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Degrees centigrades.
     -   Attribute metadata: 
@@ -101,7 +105,6 @@ A JSON Schema corresponding to this data model can be found
 
 -   `relativeHumidity` : Air's relative humidity observed (percentage, expressed
     in parts per one).
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Allowed values: A number between `0` and `1`.
     -   Attribute metadata: 
@@ -112,7 +115,6 @@ A JSON Schema corresponding to this data model can be found
     -   Optional
 
 -   `precipitation` : Precipitation level observed.
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Liters per square meter.
     -   Attribute metadata: 
@@ -124,7 +126,6 @@ A JSON Schema corresponding to this data model can be found
 
 -   `windDirection` : The wind direction expressed in decimal degrees compared
     to geographic North (measured clockwise), encoded as a Number.
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Decimal degrees
     -   Attribute metadata: 
@@ -135,7 +136,6 @@ A JSON Schema corresponding to this data model can be found
     -   Optional
 
 -   `windSpeed` : The observed wind speed in m/s, encoded as a Number.
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: meters per second
     -   Attribute metadata: 
@@ -147,7 +147,6 @@ A JSON Schema corresponding to this data model can be found
 
 -   `atmosphericPressure` : The atmospheric pressure observed measured in Hecto
     Pascals.
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Hecto Pascals
     -   Attribute metadata: 
@@ -159,7 +158,6 @@ A JSON Schema corresponding to this data model can be found
 
 -   `pressureTendency` : Is the pressure rising or falling? It can be expressed
     in quantitative terms or qualitative terms.
-
     -   Attribute type: [Text](https://schema.org/Text) or
         [Number](https://schema.org/Number)
     -   Allowed values, if expressed in quantitative terms: one Of (`raising`,
@@ -168,7 +166,6 @@ A JSON Schema corresponding to this data model can be found
 
 -   `solarRadiation` : The solar radiation observed measured in Watts per square
     meter.
-
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Watts per square meter
     -   Attribute metadata: 
@@ -188,6 +185,28 @@ A JSON Schema corresponding to this data model can be found
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
         - Type: [DateTime](https://schema.org/DateTime) 
+    -   Optional
+
+-   `streamGauge`: The water level surface elevation observed by Hydrometric
+    measurement sensors, namely a
+    [Stream Gauge](https://en.wikipedia.org/wiki/Stream_gauge), expressed in
+    centimeters.
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Centimeters (cm)
+    -   Attribute metadata:
+        -   `timestamp` : optional timestamp for the observed value. It can be
+            ommitted if the observation time is the same as the one captured by
+            the `dateObserved` attribute at entity level.
+    -   Optional
+
+-   `snowHeight`: The snow height observed by generic snow depth measurement
+    sensors, expressed in centimeters.
+    -   Attribute type: [Number](https://schema.org/Number)
+    -   Default unit: Centimeters (cm)
+    -   Attribute metadata:
+        -   `timestamp` : optional timestamp for the observed value. It can be
+            ommitted if the observation time is the same as the one captured by
+            the `dateObserved` attribute at entity level.
     -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
@@ -258,6 +277,12 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
     },
     "relativeHumidity": {
         "value": 1
+    },
+    "streamGauge": {
+        "value": 50
+    },
+    "snowHeight": {
+        "value": 20
     }
 }
 ```

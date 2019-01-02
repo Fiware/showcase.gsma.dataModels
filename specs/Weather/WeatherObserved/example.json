@@ -28,5 +28,7 @@
             "windDirection": -45,
             "windSpeed": 2,
             "illuminance": 1000,
-            "refDevice": "device-0A3478"
+            "refDevice": "device-0A3478",
+            "streamGauge": 50,
+            "snowHeight": 20
 }

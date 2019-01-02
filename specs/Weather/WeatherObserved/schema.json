@@ -57,6 +57,12 @@
         },
         "refDevice": {
            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "streamGauge": {
+          "type": "number"
+        },
+        "snowHeight": {
+          "type": "number"
         }
       }
     }

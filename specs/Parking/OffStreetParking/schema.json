@@ -32,12 +32,21 @@
 						"forEmployees", "forVisitors", "forCustomers",
 						"forStudents", "forMembers", "forDisabled",
 						"forResidents", "forElectricalCharging",
-						"underground", "ground"
+						"underground", "ground",
+						"other"
 					]
 				},
 				"minItems": 1,
 				"uniqueItems": true
 			},
+			"extCategory": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				},
+				"minItems": 1,
+				"uniqueItems": true
+			}, 
 			"allowedVehicleType": {
 				"type": "array",
 				"items": {

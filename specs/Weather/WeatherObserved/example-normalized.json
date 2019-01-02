@@ -61,5 +61,11 @@
     },  
     "relativeHumidity": {
         "value": 1
+    },
+    "streamGauge": {
+        "value": 50
+    },
+     "snowHeight": {
+        "value": 20
     }
 }
