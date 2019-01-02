@@ -116,7 +116,7 @@ acoustic measurand name, as follows:
 -   Attribute value: corresponds to the value for the measurand as a number
     expressed in decibels.
 -   Attribute Metadata:
-    -   `description_: short description of the measurand. (optional)
+    -   `description`: short description of the measurand. (optional)
     -   Normative References:
         [https://schema.org/description](https://schema.org/description)
 

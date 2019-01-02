@@ -35,7 +35,7 @@ You can use a FIWARE instance described
 
 What is the weather forecast today in Valencia (Spain) from 17:00 UTC on?
 
-````bash
+```bash
 curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>'
 http://130.206.118.244:1027/v2/entities?type=WeatherForecast&options=keyValues&q=address.addressLocality:Valencia;validFrom:2016-12-01T17```
 ```

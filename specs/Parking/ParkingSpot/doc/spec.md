@@ -26,7 +26,7 @@ The data model is defined as shown below:
 
 - `dateCreated` : Entity creation date.
 
-    -   Attribute type: Text or URL
+    -   Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this

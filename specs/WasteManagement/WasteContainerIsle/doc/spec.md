@@ -56,11 +56,10 @@ The data model is defined as shown below:
 
     -   Attribute type: List of [Text](http://schema.org/Text).
     -   Allowed values: 
-    - `containerFix`. Allows to fix containers to a
-        permanent position. 
-        - `fenced`. The isle is properly fenced. 
-        - `underground`. The isle allows to hold buried containers.
-        - Any other value meaningful to the application.
+            - `containerFix`. Allows to fix containers to a permanent position.
+            - `fenced`. The isle is properly fenced. 
+            - `underground`. The isle allows to hold buried containers.
+            - Any other value meaningful to the application.
     -   Optional
 
 -   `refWasteContainer` : List of containers present in the isle.

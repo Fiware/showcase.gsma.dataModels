@@ -83,10 +83,8 @@ The data model is defined as shown below:
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Allowed Values: Those technical values considered meaningful by
         applications. 
-        - `astronomicalClock` .
-        - The control cabinet includes an
-        astronomical clock to deal with switching hours. - `individualControl`.
-        - The control cabinet allows to control street lights individually.
+        - `astronomicalClock` . The control cabinet includes an astronomical clock to deal with switching hours. 
+        - `individualControl`. The control cabinet allows to control street lights individually.
 
 -   `compliantWith`. A list of standards to which the cabinet controller is
     compliant with (ex. `IP54`)
@@ -184,7 +182,7 @@ The data model is defined as shown below:
     -   Attribute type: [Number](https://schema.org/Number) 
         - Default unit: KiloVolts-Ampere-Reactive per hour (kVArh). 
     -   Attribute metadata: 
-        -`timestamp`: Timestamp when the last update of the attribute happened. 
+        - `timestamp`: Timestamp when the last update of the attribute happened.
             - Type: [DateTime](http://schema.org/DateTime
     -   Optional
 

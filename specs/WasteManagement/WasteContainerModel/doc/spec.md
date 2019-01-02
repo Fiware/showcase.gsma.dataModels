@@ -159,12 +159,12 @@ The data model is defined as shown below:
 -   `features`. A list of container features.
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Allowed Values:
-    -   `wheels`
-    -   `lid`
-    -   `roundedLid`
-    -   `insertHoles`
-    -   `lockable`
-    -   Any other value meaningful for the application.
+        -   `wheels`
+        -   `lid`
+        -   `roundedLid`
+        -   `insertHoles`
+        -   `lockable`
+        -   Any other value meaningful for the application.
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a

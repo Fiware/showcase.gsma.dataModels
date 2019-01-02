@@ -89,10 +89,6 @@ A JSON Schema corresponding to this data model can be found
     
 -   `refSeeAlso` : Reference to one or more related entities that may provide
     extra, specific information about this point of interest.
-<<<<<<< HEAD
-    -   Attribute type: List of References
-    -   Optional
-=======
     
     -   Attribute type:  List of References
     -   Optional
@@ -106,7 +102,6 @@ A JSON Schema corresponding to this data model can be found
 | `1479`                  | `Public toilet`                                       |
 | `1480`                  | `Registry office`                                     |
 
->>>>>>> master
 
 ## Examples of use 1 (Normalized Format)
 

@@ -101,6 +101,7 @@ A JSON Schema corresponding to this data model can be found
         - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+            - Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `relativeHumidity` : Air's relative humidity observed (percentage, expressed
@@ -153,7 +154,7 @@ A JSON Schema corresponding to this data model can be found
         - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
-         - Type: [DateTime](https://schema.org/DateTime) 
+            - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 -   `pressureTendency` : Is the pressure rising or falling? It can be expressed

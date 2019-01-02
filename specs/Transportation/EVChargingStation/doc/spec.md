@@ -109,9 +109,9 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute type: [Number](http://schema.org/Number)
     -   Allowed values: A positive integer number, including 0. It must lower or
         equal than `capacity`.
-    -   Metadata: 
+    -   Metadata:
         - `timestamp`: Timestamp corresponding to the last attribute
-        value. (`observeAt` in NGSI-LD) 
+        value. (`observeAt` in NGSI-LD)
             - Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
