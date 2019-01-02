@@ -189,10 +189,11 @@ The data model is defined as shown below:
     value can be vendor dependent.
 
     -   Type: [Text](https://schema.org/Text)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
+    -   Attribute metadata: 
+        - `timestamp`: Timestamp when the last update of the
         attribute happened. This value can also appear as a FIWARE
         [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
-        Type: [DateTime](http://schema.org/DateTime)
+            - Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastValueReported` : A timestamp which denotes the last time when the

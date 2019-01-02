@@ -48,7 +48,8 @@ A JSON Schema corresponding to this data model can be found
 -   `soilTemperature` : The observed soil temperature in Celsius degrees.
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Celsius degrees.
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
     -   Optional
@@ -56,7 +57,8 @@ A JSON Schema corresponding to this data model can be found
     Content, VWC (percentage, expressed in parts per one).
 
     -   Attribute type: [Number](https://schema.org/Number) between 0 and 1.
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
     -   Optional
@@ -66,7 +68,8 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Siemens per meter (S/m).
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
     -   Optional

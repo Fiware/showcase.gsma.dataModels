@@ -27,22 +27,24 @@ The data model is defined as shown below:
 
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Allowed values, one of the following or any other meaningful to the
-        application: - `sensor` : A device that detects and responds to events
+        application: 
+    - `sensor` : A device that detects and responds to events
         or changes in the physical environment such as light, motion, or
         temperature changes.
-        [https://w3id.org/saref#Sensor](https://w3id.org/saref#Sensor). -
-        `actuator` : A device responsible for moving or controlling a mechanism
+        [https://w3id.org/saref#Sensor](https://w3id.org/saref#Sensor). 
+    -  `actuator` : A device responsible for moving or controlling a mechanism
         or system.
-        [https://w3id.org/saref#Actuator](https://w3id.org/saref#Actuator). -
-        `meter` : A device built to accurately detect and display a quantity in
+        [https://w3id.org/saref#Actuator](https://w3id.org/saref#Actuator). 
+    -  `meter` : A device built to accurately detect and display a quantity in
         a form readable by a human being. Partially defined by
-        [SAREF](https://w3id.org/saref#Meter). - `HVAC` : Heating, Ventilation
+        [SAREF](https://w3id.org/saref#Meter).
+    - `HVAC` : Heating, Ventilation
         and Air Conditioning (HVAC) device that provides indoor environmental
-        comfort. [https://w3id.org/saref#HVAC](https://w3id.org/saref#HVAC). -
-        `network` : A device used to connect other devices in a network, such as
+        comfort. [https://w3id.org/saref#HVAC](https://w3id.org/saref#HVAC). 
+    -  `network` : A device used to connect other devices in a network, such as
         hub, switch or router in a LAN or Sensor network.
-        [(https://w3id.org/saref#Network](https://w3id.org/saref#Network). -
-        `multimedia` : A device designed to display, store, record or play
+        [(https://w3id.org/saref#Network](https://w3id.org/saref#Network). 
+    -  `multimedia` : A device designed to display, store, record or play
         multimedia content such as audio, images, animation, video.
         [https://w3id.org/saref#Multimedia](https://w3id.org/saref#Multimedia)
     -   Mandatory
@@ -62,7 +64,8 @@ The data model is defined as shown below:
 
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Allowed values: (some of this values are defined as instances of the
-        class `Property` in SAREF) - (`temperature`, `humidity`, `light`,
+        class `Property` in SAREF) 
+    -   (`temperature`, `humidity`, `light`,
         `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`,
         `energy`, `airPollution`, `noiseLevel`, `weatherConditions`,
         `precipitation`, `windSpeed`, `windDirection`, `atmosphericPressure`,

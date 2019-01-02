@@ -63,11 +63,14 @@ A JSON Schema corresponding to this data model can be found
         will depend on the reference specification used. It is recommended that
         implementations use the same naming conventions as exemplified above
         (lower case starting words, camel case when compound terms are used)
-    -   Attribute metadata: - `referenceSpecification` : Specification that must
+    -   Attribute metadata: 
+        - `referenceSpecification` : Specification that must
         be taken as reference when interpreting the supplied qualitative
-        value. - Type: [Text](https://schema.org/Text) or
-        [URL](https://schema.org/URL) - Mandatory
-    -   Optional
+        value. 
+            - Type: [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL) 
+            - Mandatory
+        -   Optional
 
 -   `airQualityIndex` : Air quality index corresponding to the air quality
     observed.
@@ -76,7 +79,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata: - `referenceSpecification` : Specification that must
         be taken as reference when interpreting or calculating the supplied air
         quality index. - Type: [Text](https://schema.org/Text) or
-        [URL](https://schema.org/URL) - Optional
+        [URL](https://schema.org/URL) 
+        - Optional
     -   Optional
 
 -   `reliability` : Reliability (percentage, expressed in parts per one)
@@ -112,15 +116,20 @@ measurand, ex. CO. The structure of such an attribute will be as follows:
 -   Attribute metadata:
     -   `timestamp` : optional timestamp for the observed value in ISO8601
         format. It can be omitted if the observation time is the same as the one
-        captured by the `dateObserved` attribute at entity level. - Type:
+        captured by the `dateObserved` attribute at entity level. 
+        - Type:
         [DateTime](https://schema.org/DateTime)
     -   `unitCode` : The unit code (text) of measurement given using the
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes)
         (max. 3 characters). For instance, `GP` represents milligrams per cubic
-        meter and `GQ` represents micrograms per cubic meter. - Type:
-        [Text](https://schema.org/Text) - Mandatory
-    -   `description` : short description of the measurand - Type:
-        [Text](https://schema.org/Text) - Optional
+        meter and `GQ` represents micrograms per cubic meter. 
+        - Type:
+        [Text](https://schema.org/Text) 
+        - Mandatory
+    -   `description` : short description of the measurand 
+        - Type:
+        [Text](https://schema.org/Text) 
+        - Optional
 
 ### Representing qualitative levels of the different air pollutants
 
@@ -143,11 +152,13 @@ follows:
     case when compound terms are used)
 -   Attribute metadata:
     -   `description` : short description of the measurand and its related
-        qualitative level - Type: [Text](https://schema.org/Text) - Optional
+        qualitative level 
+        - Type: [Text](https://schema.org/Text) 
+        - Optional
     -   `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value. - Type:
-        [Text](https://schema.org/Text) or [URL](https://schema.org/URL) -
-        Mandatory
+        [Text](https://schema.org/Text) or [URL](https://schema.org/URL) 
+        - Mandatory
 
 ### Representing airquality-related weather conditions
 

@@ -82,9 +82,12 @@ The data model is defined as shown below:
 -   `category`. Container’s category.
 
     -   Attribute type: List of [Text](https://schema.org/Text).
-    -   Allowed values (Informative): - `dumpster`. See
-        [https://en.wikipedia.org/wiki/Dumpster](https://en.wikipedia.org/wiki/Dumpster) -
-        `trashCan`. - `wheelieBin`. - Any other category relevant for the
+    -   Allowed values (Informative): 
+        - `dumpster`. See
+        [https://en.wikipedia.org/wiki/Dumpster](https://en.wikipedia.org/wiki/Dumpster) 
+        - `trashCan`. 
+        - `wheelieBin`. 
+        - Any other category relevant for the
         application.
     -   Optional
 
@@ -133,9 +136,10 @@ The data model is defined as shown below:
 -   `colors`. Available colors.
 
     -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed Values: - A color keyword as specified by
-        [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords) -
-        A color value as specified by
+    -   Allowed Values: 
+        - A color keyword as specified by
+        [W3C Color Keywords](https://www.w3.org/TR/SVG/types.html#ColorKeywords) 
+        - A color value as specified by
         [W3C Color Data Type](https://www.w3.org/TR/SVG/types.html#BasicDataTypes)
     -   See also: [https://schema.org/color](https://schema.org/color)
     -   Optional

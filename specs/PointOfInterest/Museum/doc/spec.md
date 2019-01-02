@@ -98,10 +98,11 @@ used by applications.
 -   `historicalPeriod` : Corresponds to the historical period(s) of the
     exhibitions made by this museum.
     -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed values: - A ISO8601 time interval. For example `1920/1940`. The
-        second element of the interval can be left empty to denote "till now". -
-        A comma separated list of years, for instance `1620,1625,1718`. - A
-        century, represented by a year pattern, for instance `19xx` would
+    -   Allowed values: 
+        - An ISO8601 time interval. For example `1920/1940`. The
+        second element of the interval can be left empty to denote "till now". 
+        - A comma separated list of years, for instance `1620,1625,1718`. 
+        - A century, represented by a year pattern, for instance `19xx` would
         correspond to the twentieth century. And `196x` would correspond to the
         sixties decade.
     -   Optional
@@ -109,8 +110,10 @@ used by applications.
     this museum.
 
     -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed values: - Those defined by
-        [Wikipedia](https://en.wikipedia.org/wiki/Art_periods). - Any other
+    -   Allowed values: 
+        - Those defined by
+        [Wikipedia](https://en.wikipedia.org/wiki/Art_periods). 
+        - Any other
         extended value needed by an application and not described by the above
         resource.
     -   Optional

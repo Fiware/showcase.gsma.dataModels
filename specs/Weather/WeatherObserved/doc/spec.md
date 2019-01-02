@@ -93,7 +93,8 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Degrees centigrades.
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
     -   Optional
@@ -103,18 +104,22 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Allowed values: A number between `0` and `1`.
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+            - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 -   `precipitation` : Precipitation level observed.
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Liters per square meter.
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+            - Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `windDirection` : The wind direction expressed in decimal degrees compared
@@ -122,18 +127,22 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Decimal degrees
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+            - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 -   `windSpeed` : The observed wind speed in m/s, encoded as a Number.
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: meters per second
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+            - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 -   `atmosphericPressure` : The atmospheric pressure observed measured in Hecto
@@ -141,9 +150,11 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Hecto Pascals
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+         - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 -   `pressureTendency` : Is the pressure rising or falling? It can be expressed
@@ -160,9 +171,11 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Watts per square meter
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+        - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+            - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 -   `illuminance` : The
@@ -170,9 +183,11 @@ A JSON Schema corresponding to this data model can be found
     in lux (lx) or lumens per square metre (cd·sr·m−2).
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Lux
-    -   Attribute metadata: - `timestamp` : optional timestamp for the observed
+    -   Attribute metadata: 
+    - `timestamp` : optional timestamp for the observed
         value. It can be omitted if the observation time is the same as the one
         captured by the `dateObserved` attribute at entity level.
+        - Type: [DateTime](https://schema.org/DateTime) 
     -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this

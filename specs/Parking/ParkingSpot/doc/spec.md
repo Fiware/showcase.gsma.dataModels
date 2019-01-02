@@ -117,9 +117,12 @@ The data model is defined as shown below:
 -   `category` : Category(ies) of the parking spot.
 
     -   Attribute type: [Text](https://schema.org/Text)
-    -   Allowed values: - `onstreet` : The parking spot belongs to an onstreet
-        parking site. - `offstreet` : The parking spot belongs to an onstreet
-        parking site. - Other values as per application needs
+    -   Allowed values: 
+        - `onstreet` : The parking spot belongs to an onstreet
+        parking site. 
+        - `offstreet` : The parking spot belongs to an onstreet
+        parking site. 
+        - Other values as per application needs
     -   Mandatory
 
 -   `TimeInstant` :

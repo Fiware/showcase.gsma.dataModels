@@ -129,9 +129,12 @@ The data model is defined as shown below:
 
 -   `maximumAllowedSpeed` : Maximum allowed speed while transiting this road
     segment. More restrictive limits might be applied to specific vehicle types
-    (trucks, caravans, etc.). - Attribute type:
-    [Number](https://schema.org/Number) - Default unit: Kilometer per hour
-    (Km/h). - Optional
+    (trucks, caravans, etc.). 
+    - Attribute type:
+    [Number](https://schema.org/Number) 
+    - Default unit: Kilometer per hour
+    (Km/h). 
+    - Optional
 
 -   `minimumAllowedSpeed` : Minimum allowed speed while transiting this road
     segment.
@@ -172,8 +175,10 @@ The data model is defined as shown below:
         on. Format of the referred string must be:
         `"<lane_direction>, <lane_minimumAllowedSpeed>, <lane_maximumAllowedSpeed>, <lane_maximumAllowedHeight>, <lane_maximumAllowedWeight>"`
         . `<lane_direction>` is a text string with the following allowed
-        values: - `forward`. The lane is currently used in the `forwards`
-        direction. - `backward`. The lane is currently used in the `backwards`
+        values: 
+        - `forward`. The lane is currently used in the `forwards`
+        direction. 
+        - `backward`. The lane is currently used in the `backwards`
         direction. The only mandatory parameter is `lane_direction`. If not
         specified, the rest of parameters can be assumed to be equal to those
         specified at entity level.
@@ -181,15 +186,17 @@ The data model is defined as shown below:
 
 -   `category` : Allows to convey extra characteristics of a road segment.
     -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed values: - `oneway` : Flags whether the road segment can only be
+    -   Allowed values: 
+        - `oneway` : Flags whether the road segment can only be
         used in one direction. If not present it means road segment can be used
         in both directions (forwards and backwards). See also
-        [http://wiki.openstreetmap.org/wiki/Key:oneway](http://wiki.openstreetmap.org/wiki/Key:oneway) -
-        `toll` : Flags whether the road segment is under toll fees. - `link` :
+        [http://wiki.openstreetmap.org/wiki/Key:oneway](http://wiki.openstreetmap.org/wiki/Key:oneway) 
+        - `toll` : Flags whether the road segment is under toll fees. 
+        - `link` :
         Flags whether this road segment is an auxiliary link segment for exiting
         or entering a road. See
-        [https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link) -
-        Any other value meaningful to an application.
+        [https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway_link) 
+        - Any other value meaningful to an application.
     -   Optional
 
 The properties `laneUsage` and those which convey the maximum allowed parameters

@@ -71,10 +71,13 @@ A JSON Schema corresponding to this data model can be found
         will depend on the reference specification used. It is recommended that
         implementations use the same naming conventions as exemplified above
         (lower case starting words, camel case when compound terms are used)
-    -   Attribute metadata: - `referenceSpecification` : Specification that must
+    -   Attribute metadata: 
+        - `referenceSpecification` : Specification that must
         be taken as reference when interpreting the supplied qualitative
-        value. - Type: [Text](https://schema.org/Text) or
-        [URL](https://schema.org/URL) - Mandatory
+        value. 
+        - Type: [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
+        -   Mandatory
     -   Optional
 
 -   `refDevice` : A reference to the device(s) which captured this observation.
@@ -107,13 +110,16 @@ The structure of such an attribute will be as follows:
 -   Attribute metadata:
     -   `timestamp` : optional timestamp for the observed value in ISO8601
         format. It can be omitted if the observation time is the same as the one
-        captured by the `dateObserved` attribute at entity level. - Type:
+        captured by the `dateObserved` attribute at entity level. 
+        - Type:
         [DateTime](https://schema.org/DateTime)
     -   `unitCode` : The unit code (text) of measured concentration (usually the
         unit adopted is grains per cubic meter: `gr/m3`). - Type:
-        [Text](https://schema.org/Text) - Optional
-    -   `description` : short description of the allergen - Type:
-        [Text](https://schema.org/Text) - Optional
+        [Text](https://schema.org/Text) 
+        - Optional
+    -   `description` : short description of the allergen     - Type:
+        [Text](https://schema.org/Text)
+        - Optional
 
 ### Representing qualitative levels of aero allergens
 
@@ -135,11 +141,13 @@ concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
     case starting words, camel case when compound terms are used)
 -   Attribute metadata:
     -   `description` : short description of the measurand and its related
-        qualitative level - Type: [Text](https://schema.org/Text) - Optional
+        qualitative level 
+        - Type: [Text](https://schema.org/Text) 
+        - Optional
     -   `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value. - Type:
-        [Text](https://schema.org/Text) or [URL](https://schema.org/URL) -
-        Mandatory
+        [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+        - Mandatory
 
 ### Representing allergenicity category of aero allergens
 
@@ -162,11 +170,13 @@ pollen.
     camel case when compound terms are used)
 -   Attribute metadata:
     -   `description` : short description of the measurand and its related
-        qualitative level - Type: [Text](https://schema.org/Text) - Optional
+        qualitative level 
+        - Type: [Text](https://schema.org/Text) 
+        - Optional
     -   `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value. - Type:
-        [Text](https://schema.org/Text) or [URL](https://schema.org/URL) -
-        Mandatory
+        [Text](https://schema.org/Text) or [URL](https://schema.org/URL) 
+        - Mandatory
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
 means that to test the JSON schema examples with a
