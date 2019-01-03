@@ -1,10 +1,7 @@
 # FIWARE Data Models
 
 [![FIWARE Core Context Management](https://nexus.lab.fiware.org/repository/raw/public/badges/chapters/core.svg)](https://www.fiware.org/developers/catalogue/)
-Code:
 [![License: MIT](https://img.shields.io/github/license/fiware/dataModels.svg)](https://opensource.org/licenses/MIT)
-Models:
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Support badge](https://img.shields.io/badge/support-askbot-yellowgreen.svg)](http://ask.fiware.org)
 <br/>
 [![Documentation](https://img.shields.io/readthedocs/fiware-datamodels.svg)](https://fiware-datamodels.rtfd.io)
@@ -28,13 +25,8 @@ IoT and Big Data Ecosystems. In fact the FIWARE data models are a superset of
 the
 [GSMA Data Models](http://www.gsma.com/connectedliving/wp-content/uploads/2016/11/CLP.26-v1.0.pdf).
 
-All the code in this repository is licensed under the MIT License. However each
-original data source may have a different license. So before using harmonized
-data please check carefully each data license.
 
-All the data models documented here are offered under a
-[Creative Commons by Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
-License.
+
 
 | :books: [Documentation](https://fiware-datamodels.rtfd.io) |
 | ---|
@@ -168,3 +160,26 @@ See:
 -   [https://github.com/GSMADeveloper/HarmonisedEntityReferences](https://github.com/GSMADeveloper/HarmonisedEntityReferences)
 -   [schema.org](https://schema.org)
 -   [https://github.com/GSMADeveloper/NGSI-LD-Entities](https://github.com/GSMADeveloper/NGSI-LD-Entities)
+
+
+---
+
+## License
+
+### Code
+
+[MIT](LICENSE) © 2019 FIWARE Foundation e.V.
+
+[![License: MIT](https://img.shields.io/github/license/fiware/dataModels.svg)](https://opensource.org/licenses/MIT)
+
+All the code in this repository is licensed under the MIT License. However each
+original data source may have a different license. So before using harmonized
+data please check carefully each data license.
+
+### Models
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+All the data models documented here are offered under a
+[Creative Commons by Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
+License.
