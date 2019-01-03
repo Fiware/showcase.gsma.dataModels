@@ -136,6 +136,9 @@ npm run prettier
 
 # To format Markdown files:
 npm run prettier:text
+
+# To Auto-correct Markdown files:
+npm run lint:text
 ```
 
 To check for spelling mistakes and dead links in the text within the Data 
@@ -143,10 +146,6 @@ Model, run the text linter as shown:
 
 ```console
 npm test
-```
-
-```console
-npm run lint:text
 ```
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
