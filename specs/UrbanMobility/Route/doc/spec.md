@@ -88,7 +88,11 @@ The data model is defined as shown below:
         [gtfs:Agency](../../Agency/doc/spec.md)
     -   Mandatory
 
-### Example of use 1 (Normalized Format)
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -113,7 +117,10 @@ The data model is defined as shown below:
 }
 ```
 
-### Examples of use 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
 
 ```json
 {

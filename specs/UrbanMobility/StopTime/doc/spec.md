@@ -92,7 +92,11 @@ The data model is defined as shown below:
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Optional
 
-### Example of Use 1 (Normalized Format)
+### Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -121,7 +125,10 @@ The data model is defined as shown below:
 }
 ```
 
-### Example of Use 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
 
 ```json
 {

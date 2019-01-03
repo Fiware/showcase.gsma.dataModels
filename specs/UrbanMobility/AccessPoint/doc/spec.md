@@ -53,7 +53,11 @@ The following Attributes shall be as mandated by
 -   `address`
 -   `hasParentStation`
 
-### Examples of use 1 (Normalized Format)
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -85,7 +89,10 @@ The following Attributes shall be as mandated by
 }
 ```
 
-### Examples of use 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
 
 ```json
 {

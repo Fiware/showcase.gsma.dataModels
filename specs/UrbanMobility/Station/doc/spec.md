@@ -65,7 +65,11 @@ The specification for the following attributes is the one mandanted by
 -   `address`
 -   `hasParentStation`
 
-### Example 1 (Normalized Format)
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -99,7 +103,9 @@ The specification for the following attributes is the one mandanted by
 }
 ```
 
-### Example 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
