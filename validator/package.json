@@ -52,9 +52,11 @@
 	},
 	"scripts": {
 		"lint": "eslint . --cache --fix",
+		"lint:text": "textlint  --fix '../README.md' 'README.md' 'docs/*.md'  'docs/**/*.md'",
 		"precommit": "lint-staged",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
 		"prettier:text": "prettier '../*.md' '../specs/*.md' '../specs/**/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",
+		"start": "mkdocs serve",
 		"test": "textlint 'README.md' '../specs/*.md' '../specs/**/*.md'"
 	},
 	"husky": {

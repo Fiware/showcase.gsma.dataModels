@@ -25,7 +25,7 @@ on how to install Node.js are available
 Once Node.js installed in your system, you can install the validator with the
 following command:
 
-```
+```console
 npm install -g fiware-model-validator
 ```
 
@@ -33,7 +33,7 @@ npm install -g fiware-model-validator
 
 To use the validator, execute it from the root of the DataModel repository:
 
-```
+```console
 validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]
 ```
 
@@ -59,7 +59,7 @@ import the common schemas, you have to import them using the correct path.
 If you experience un expected behaviours, you can check the process using the
 debug functionality, e.g.:
 
-```
+```console
 DEBUG=* validate -p .
 ```
 
@@ -130,4 +130,6 @@ Options available are:
 Should you want to change the code of the validator, to install your modified
 version, you simply need to compile it with the following command:
 
-`npm install -g`
+```console
+npm install -g
+```
