@@ -16,7 +16,9 @@ A JSON Schema corresponding to this data model can be found
 
 -   `type` : Entity type. It must be equal to `GreenspaceRecord`.
 
--   `dataProvider` : Specifies the URL to information about the provider of this information
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+
     -   Attribute type: URL
     -   Optional
 
@@ -48,19 +50,19 @@ A JSON Schema corresponding to this data model can be found
 -   `soilTemperature` : The observed soil temperature in Celsius degrees.
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Celsius degrees.
-    -   Attribute metadata: 
-        - `timestamp` : optional timestamp for the observed
-        value. It can be omitted if the observation time is the same as the one
-        captured by the `dateObserved` attribute at entity level.
+    -   Attribute metadata:
+        -   `timestamp` : optional timestamp for the observed value. It can be
+            omitted if the observation time is the same as the one captured by
+            the `dateObserved` attribute at entity level.
     -   Optional
 -   `soilMoistureVwc` : The observed soil moisture measured as Volumetric Water
     Content, VWC (percentage, expressed in parts per one).
 
     -   Attribute type: [Number](https://schema.org/Number) between 0 and 1.
-    -   Attribute metadata: 
-        - `timestamp` : optional timestamp for the observed
-        value. It can be omitted if the observation time is the same as the one
-        captured by the `dateObserved` attribute at entity level.
+    -   Attribute metadata:
+        -   `timestamp` : optional timestamp for the observed value. It can be
+            omitted if the observation time is the same as the one captured by
+            the `dateObserved` attribute at entity level.
     -   Optional
 
 -   `soilMoistureEc` : The observed soild moisture measured as Electrical
@@ -68,10 +70,10 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Number](https://schema.org/Number)
     -   Default unit: Siemens per meter (S/m).
-    -   Attribute metadata: 
-        - `timestamp` : optional timestamp for the observed
-        value. It can be omitted if the observation time is the same as the one
-        captured by the `dateObserved` attribute at entity level.
+    -   Attribute metadata:
+        -   `timestamp` : optional timestamp for the observed value. It can be
+            omitted if the observation time is the same as the one captured by
+            the `dateObserved` attribute at entity level.
     -   Optional
 
 -   `refGreenspace` : The garden or flower bed to which this record refers to.

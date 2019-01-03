@@ -16,17 +16,21 @@ The data model is defined as shown below:
 
 -   `type` : Entity type. It must be equal to `ParkingSpot`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `dateCreated` : Entity creation date.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
-    -   Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: URL
+    -   Optional
+
+-   `dateCreated` : Entity creation date.
+
+    -   Attribute type: [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -108,7 +112,7 @@ The data model is defined as shown below:
     -   Attribute type: Reference to an entity of type `ParkingGroup`.
     -   Optional
 
--   `refParkingSite` : Parking site to which the the parking spot belongs to.
+-   `refParkingSite` : Parking site to which the parking spot belongs to.
 
     -   Attribute type: Reference to an entity of type `OnStreetParking` or type
         `OffStreetParking`, depending on the value of the `category` attribute.
@@ -117,12 +121,10 @@ The data model is defined as shown below:
 -   `category` : Category(ies) of the parking spot.
 
     -   Attribute type: [Text](https://schema.org/Text)
-    -   Allowed values: 
-        - `onstreet` : The parking spot belongs to an onstreet
-        parking site. 
-        - `offstreet` : The parking spot belongs to an onstreet
-        parking site. 
-        - Other values as per application needs
+    -   Allowed values:
+        -   `onstreet` : The parking spot belongs to an onstreet parking site.
+        -   `offstreet` : The parking spot belongs to an onstreet parking site.
+        -   Other values as per application needs
     -   Mandatory
 
 -   `TimeInstant` :

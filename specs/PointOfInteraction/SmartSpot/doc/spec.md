@@ -41,7 +41,7 @@ The data model is defined as shown below:
     -   Attribute type: [URL](https://schema.org/URL)
     -   Mandatory
 
--   `signalStrenght` : Signal strength to adjust the announcement range.
+-   `signalStrength` : Signal strength to adjust the announcement range.
 
     -   Attribute type: [Text](https://schema.org/Text)
     -   Allowed values: "lowest", "medium" or "highest".
@@ -93,7 +93,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
     "id": "SSPOT-F94C51A295D9",
     "type": "SmartSpot",
     "announcedUrl": "http://goo.gl/EJ81JP",
-    "signalStrenght": "high",
+    "signalStrength": "high",
     "bluetoothChannel": "37-38-39",
     "coverageRadius": 30,
     "announcementPeriod": 500,

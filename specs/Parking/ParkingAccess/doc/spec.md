@@ -12,15 +12,18 @@ The data model is defined as shown below:
 
 -   `type` : Entity type. It must be equal to `ParkingAccess`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `location` : Geolocation of the access point represented by a GeoJSON Point.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+
+    -   Attribute type: URL
+    -   Optional
+
+-   `location` : Geolocation of the access point represented by a GeoJSON Point.
 
     -   Attribute type: Text or URL
     -   Optional

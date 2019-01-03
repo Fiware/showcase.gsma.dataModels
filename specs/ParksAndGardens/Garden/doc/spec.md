@@ -14,9 +14,11 @@ A JSON Schema corresponding to this data model can be found
 
 -   `type` : Entity type. It must be equal to `Garden`.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+
+    -   Attribute type: URL
+    -   Optional
 
 -   `dateModified` : Last update timestamp of this entity.
 

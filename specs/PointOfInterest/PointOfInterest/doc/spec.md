@@ -33,18 +33,18 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
-    
+
 -   `source` : A sequence of characters giving the source of the entity data.
 
     -   Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)
     -   Optional
-    
+
 -   `name` : Name of this point of interest.
 
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Mandatory
-    
+
 -   `alternateName` : Alternative name for this point of interest.
 
     -   Normative References:
@@ -59,49 +59,47 @@ A JSON Schema corresponding to this data model can be found
 
 -   `location` : Location of the point of interest represented by a GeoJSON
     geometry, usually a `Point`.
-    
+
     -   Attribute type: `geo:json`.
     -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Mandatory if `address` is not defined.
-    
+
 -   `address` : Civic address of this point of interest.
 
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
     -   Mandatory if `location` is not present.
-    
+
 -   `category` : Category of this point of interest.
 
     -   Attribute type: List of [Text](https://schema.org/Text)
     -   Allowed values: Those defined by the
-        [Factual taxonomy](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json) together with
-        the extended categories described by the present specification (see below).
-        For instance the value `113` corresponds to beaches, and the value `311`
-        corresponds to museums.       
+        [Factual taxonomy](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json)
+        together with the extended categories described by the present
+        specification (see below). For instance the value `113` corresponds to
+        beaches, and the value `311` corresponds to museums.
     -   Mandatory
-    
+
 -   `contactPoint` : Contact point of this point of interest.
 
     -   Normative references:
         [https://schema.org/contactPoint](https://schema.org/contactPoint)
     -   Optional
-    
+
 -   `refSeeAlso` : Reference to one or more related entities that may provide
     extra, specific information about this point of interest.
-    
-    -   Attribute type:  List of References
+
+    -   Attribute type: List of References
     -   Optional
-    
 
 ## Extended POI Categories
 
-| Category                | Description                                           |     
-| :---------------------- | :---------------------------------------------------- | 
-| `1478`                  | `Public drinking fountain`                            |
-| `1479`                  | `Public toilet`                                       |
-| `1480`                  | `Registry office`                                     |
-
+| Category | Description                |
+| :------- | :------------------------- |
+| `1478`   | `Public drinking fountain` |
+| `1479`   | `Public toilet`            |
+| `1480`   | `Registry office`          |
 
 ## Examples of use 1 (Normalized Format)
 

@@ -110,9 +110,9 @@ A JSON Schema corresponding to this data model can be found
     -   Allowed values: A positive integer number, including 0. It must lower or
         equal than `capacity`.
     -   Metadata:
-        - `timestamp`: Timestamp corresponding to the last attribute
-        value. (`observeAt` in NGSI-LD)
-            - Type: [DateTime](https://schema.org/DateTime)
+        -   `timestamp`: Timestamp corresponding to the last attribute value.
+            (`observeAt` in NGSI-LD) - Type:
+            [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `amperage` : The total amperage offered by the charging station.
@@ -138,15 +138,14 @@ A JSON Schema corresponding to this data model can be found
 -   `status` : Status of the charging station.
 
     -   Attribute type: Property. List of [Text](http://schema.org/Text)
-    -   Allowed values: 
-        - (`working`, `outOfService`, `withIncidence`, `full`,
-        `almostFull`, `empty`, `almostEmpty`) 
-        - Or any other
-        application-specific.
-    -   Metadata: 
-        - `timestamp` : Timestamp corresponding to the last attribute
-        value. (`observedAt` in NGSI-LD) 
-            - Type: [DateTime](https://schema.org/DateTime)
+    -   Allowed values:
+        -   (`working`, `outOfService`, `withIncidence`, `full`, `almostFull`,
+            `empty`, `almostEmpty`)
+        -   Or any other application-specific.
+    -   Metadata:
+        -   `timestamp` : Timestamp corresponding to the last attribute value.
+            (`observedAt` in NGSI-LD) - Type:
+            [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `areaServed` : Area served by this charging station. Precise semantics can
@@ -184,8 +183,8 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: Property. List of [Text](http://schema.org/Text)
     -   Allowed values: (`flat`, `annualPayment`, `monthlyPayment`, `free`,
-        `other`) 
-        - Any other application-specific
+        `other`)
+        -   Any other application-specific
     -   Optional
 
 -   `acceptedPaymentMethod` : Accepted payment method(s).

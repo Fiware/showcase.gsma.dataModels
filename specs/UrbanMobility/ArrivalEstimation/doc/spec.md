@@ -56,11 +56,10 @@ The data model is defined as shown below:
 
     -   Attribute type: Property. [Text](https://schema.org/Text). Remaining
         time shall be encoded as a ISO8601 duration. Ex. `"PT8M5S"`.
-    -   Attribute Metadata: 
-        - `timestamp` (mapped to `observedAt` in NGSI-LD).
-        Timestamp of the last attribute update 
-            - Type: [DateTime](https://schema.org/DateTime) 
-            - Mandatory
+    -   Attribute Metadata:
+        -   `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the
+            last attribute update - Type:
+            [DateTime](https://schema.org/DateTime) - Mandatory
     -   Mandatory
 
 -   `remainingDistance`: It shall contain the remaining distance (in meters) of
@@ -68,11 +67,10 @@ The data model is defined as shown below:
 
     -   Attribute type: Property. Positive Number.
         [https://schema.org/Number](https://schema.org/Number)
-    -   Attribute metadata: 
-        - `timestamp` (mapped to `observedAt` in NGSI-LD).
-        Timestamp of the last attribute update 
-            - Type: [DateTime](https://schema.org/DateTime) 
-            - Mandatory
+    -   Attribute metadata:
+        -   `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the
+            last attribute update - Type:
+            [DateTime](https://schema.org/DateTime) - Mandatory
     -   Default Unit: Meters
     -   Optional
 

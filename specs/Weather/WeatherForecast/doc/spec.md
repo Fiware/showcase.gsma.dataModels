@@ -129,27 +129,25 @@ A JSON Schema corresponding to this data model can be found
 -   `dayMinimum` : Minimum values forecasted for the reported period.
 
     -   Attribute type: [StructuredValue](https://schema.org/StructuredValue)
-    -   Subattributes: 
-        - `temperature` : Minimum temperature. Same semantics and
-        units as `WeatherForecast.temperature`. 
-        - `feelLikesTemperature`.
-        Minimum feels like temperature. Same semantics and units as
-        `WeatherForecast.feelsLikeTemperature`. 
-        - `relativeHumidity`. Minimum
-        relative humidity. Same semantics and units as
-        `WeatherForecast.relativeHumidity`.
+    -   Subattributes:
+        -   `temperature` : Minimum temperature. Same semantics and units as
+            `WeatherForecast.temperature`.
+        -   `feelLikesTemperature`. Minimum feels like temperature. Same
+            semantics and units as `WeatherForecast.feelsLikeTemperature`.
+        -   `relativeHumidity`. Minimum relative humidity. Same semantics and
+            units as `WeatherForecast.relativeHumidity`.
     -   Optional
 
 -   `dayMaximum` : Maximum values for the reported period.
 
     -   Attribute type: [StructuredValue](https://schema.org/StructuredValue)
-    -   Subattributes: 
-        - `temperature` : Maximum temperature. See
-        `WeatherForecast.temperature` for description and units. 
-        - `feelLikesTemperature`. Maximum feels like temperature. Same semantics
-        and units as `WeatherForecast.feelsLikeTemperature`. 
-        - `relativeHumidity`. Maximum relative humidity. Same semantics and units
-        as `WeatherForecast.relativeHumidity`.
+    -   Subattributes:
+        -   `temperature` : Maximum temperature. See
+            `WeatherForecast.temperature` for description and units.
+        -   `feelLikesTemperature`. Maximum feels like temperature. Same
+            semantics and units as `WeatherForecast.feelsLikeTemperature`.
+        -   `relativeHumidity`. Maximum relative humidity. Same semantics and
+            units as `WeatherForecast.relativeHumidity`.
 
 -   `uVIndexMax` : The maximum UV index for the period, based on the World
     Health Organization's UV Index measure.

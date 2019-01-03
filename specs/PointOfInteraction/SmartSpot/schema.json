@@ -20,7 +20,7 @@
 				"format": "uri",
 				"description": "URL broadcasted by the device"
 			},
-			"signalStrenght": {
+			"signalStrength": {
 				"type": "string",
 				"enum": [
 					"lowest", 
@@ -67,7 +67,7 @@
 		"id",
 		"type",
 		"announcedUrl",
-		"signalStrenght",
+		"signalStrength",
 		"bluetoothChannel",
 		"announcementPeriod",
 		"availability"

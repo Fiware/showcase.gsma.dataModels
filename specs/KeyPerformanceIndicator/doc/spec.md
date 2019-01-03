@@ -81,9 +81,9 @@ The data model is defined as shown below:
 
     -   Attribute Type: [Text](http://schema.org/Text)
     -   Allowed values: one Of (`hourly`, `daily`, `weekly`, `monthly`,
-        `yearly`, `quarterly`, `bimonthly`, `biweekly`) 
-        - Or any other value
-        meaningful for the application and not covered by the above list.
+        `yearly`, `quarterly`, `bimonthly`, `biweekly`)
+        -   Or any other value meaningful for the application and not covered by
+            the above list.
     -   Mandatory
 
 -   `category` : Indicator's category.
@@ -105,9 +105,9 @@ The data model is defined as shown below:
 -   `calculationMethod` : The calculation method used.
 
     -   Attribute type: [Text](http://schema.org/Text)
-    -   Allowed values: oneOf ( `manual`, `automatic`, `semiautomatic`) 
-        - Any other value meaningful to the application and not covered by the above
-        list.
+    -   Allowed values: oneOf ( `manual`, `automatic`, `semiautomatic`)
+        -   Any other value meaningful to the application and not covered by the
+            above list.
     -   Optional
 
 -   `calculationFormula` : For informative purposes, the formula used for
@@ -119,43 +119,38 @@ The data model is defined as shown below:
 -   `aggregatedData` : Entity(ies) and attribute(s) aggregated by the KPI.
 
     -   Attribute type: List of
-        [StructuredValue](https://schema.org/StructuredValue). 
-        - Subproperties: 
-        - `entityType` : Entity type which data is aggregated. 
-        - Type: [Text](http://schema.org/Text) 
-        - `attrs` : Attributes which value
-        is aggregated. 
-        - Type: List of [Text](http://schema.org/Text)
+        [StructuredValue](https://schema.org/StructuredValue).
+        -   Subproperties:
+        -   `entityType` : Entity type which data is aggregated.
+        -   Type: [Text](http://schema.org/Text)
+        -   `attrs` : Attributes which value is aggregated.
+        -   Type: List of [Text](http://schema.org/Text)
     -   Optional
 
 -   `calculationPeriod` : KPI's period of time.
 
     -   Attribute type: [StructuredValue](https://schema.org/StructuredValue)
-    -   Subproperties: 
-        - `from` : Period start 
-            - Type:
-            [DateTime](http://schema.org/DateTime) 
-        - `to` : Period end 
-            - Type:
-            [DateTime](http://schema.org/DateTime)
+    -   Subproperties:
+        -   `from` : Period start
+            -   Type: [DateTime](http://schema.org/DateTime)
+        -   `to` : Period end
+            -   Type: [DateTime](http://schema.org/DateTime)
 
 -   `currentStanding` : The KPI's current standing as per its `kpiValue`.
 
     -   Attribute type: [Text](http://schema.org/Text)
-    -   Attribute metadata: 
-        - `timestamp`: Timestamp when the last update of the
-        attribute happened. 
-            - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened. - Type: [DateTime](http://schema.org/DateTime)
     -   Allowed values: one Of (`very good`, `good`, `fair`, `bad`, `very bad`)
     -   Optional
 
 -   `kpiValue` :
 
     -   Attribute type: It can be of any type.
-    -   Attribute metadata: 
-        - `timestamp`: Timestamp when the last update of the
-        attribute happened. 
-            - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened. - Type: [DateTime](http://schema.org/DateTime)
     -   Mandatory
 
 -   `effectiveSince` : The date on which the organization created this KPI. This

@@ -2,7 +2,7 @@
   "id": "SSPOT-F94C51A295D9",
   "type": "SmartSpot",
   "announcedUrl" : "http://goo.gl/EJ81JP",
-  "signalStrenght": "highest",
+  "signalStrength": "highest",
   "bluetoothChannel": "37,38,39",
   "coverageRadius": 30,
   "announcementPeriod": 500,

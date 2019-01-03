@@ -17,15 +17,18 @@ The data model is defined as shown below:
 
 -   `type` : Entity type. It must be equal to `ParkingGroup`.
 
-- `source` : A sequence of characters giving the source of the entity data.
-  - Attribute type: Text or URL
-  - Optional
+-   `source` : A sequence of characters giving the source of the entity data.
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
-  - Attribute type: URL
-  - Optional
+    -   Attribute type: Text or URL
+    -   Optional
 
-- `category` : Parking Group's category.
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
+
+    -   Attribute type: URL
+    -   Optional
+
+-   `category` : Parking Group's category.
 
     -   Attribute type: Text or URL
     -   Optional
@@ -66,7 +69,7 @@ The data model is defined as shown below:
 
     -   Attribute type: [Text](http://schema.org/Text)
     -   Allowed Values: The following values defined by _VehicleTypeEnum_
-        [DATEX 2 version 2.3](http://www.datex2.eu/sites/www.datex2.eu/files/DATEXIISchema_2_2_2_1.zip)
+        [DATEX 2 version 2.3](http://d2docs.ndwcloud.nu/downloads/modelv23.html)
         :
         -   (`agriculturalVehicle`, `bicycle`, `bus`, `car`, `caravan`,
             `carWithCaravan`, `carWithTrailer`,
