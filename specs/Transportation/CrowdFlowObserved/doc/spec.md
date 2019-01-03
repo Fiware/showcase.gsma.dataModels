@@ -135,7 +135,11 @@ The data model is defined as shown below:
     -   Allowed values: (`inbound`, `outbound`).
     -   Optional
 
-### Example 1 (Normalized Format)
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -178,7 +182,9 @@ The data model is defined as shown below:
 }
 ```
 
-### Example 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {

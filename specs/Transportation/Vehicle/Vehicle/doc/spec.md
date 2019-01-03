@@ -308,6 +308,8 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ### Normalized Example
 
+Normalized NGSI response
+
 ```json
 {
     "id": "vehicle:WasteManagement:1",
@@ -365,7 +367,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 }
 ```
 
-### key-value pairs Examples
+### key-value pairs Example
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
