@@ -34,7 +34,7 @@ module.exports = {
           iF: {
             alias: 'dmv:ignoreFolders',
             describe:
-              'The list of folder names that should be ignored. Default value: [\'harvest\',\'auxiliary\',\'img\']',
+              "The list of folder names that should be ignored. Default value: ['harvest','auxiliary','img']",
             type: 'array',
           },
           w: {
@@ -78,7 +78,7 @@ module.exports = {
           },
         },
         'Usage: validate -p DataModel -w ignore ' +
-          '-i [common-schema.json,geometry-schema.json]'+
+          '-i [common-schema.json,geometry-schema.json]' +
           '-iF [harvest,auxiliary,img]'
       )
       .file('config.json');

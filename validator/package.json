@@ -52,12 +52,12 @@
 	},
 	"scripts": {
 		"lint": "eslint . --cache --fix",
-		"lint:text": "textlint  --fix '../README.md' 'README.md' 'docs/*.md'  'docs/**/*.md'",
+		"lint:text": "textlint  --fix '../README.md' 'README.md' '../specs/*.md' '../specs/**/*.md'",
 		"precommit": "lint-staged",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
 		"prettier:text": "prettier '../*.md' '../specs/*.md' '../specs/**/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",
 		"start": "mkdocs serve",
-		"test": "textlint 'README.md' '../specs/*.md' '../specs/**/*.md'"
+		"test": "textlint '../README.md' 'README.md' '../specs/*.md' '../specs/**/*.md'"
 	},
 	"husky": {
 		"hooks": {
@@ -67,7 +67,7 @@
 	"lint-staged": {
 		"*.js": [
 			"eslint --fix",
-			"prettier --parser flow --write",
+			"prettier --parser flow --single-quote --trailing-comma es5 --write",
 			"git add"
 		],
 		"*.md": [

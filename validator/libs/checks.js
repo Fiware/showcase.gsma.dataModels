@@ -2,14 +2,14 @@
 
 /* eslint no-console: "off" */
 
-const fs = require("fs");
-const path = require("path");
-const deasync = require("deasync");
-const msg = require("./message.js");
-const conf = require("./conf.js");
-const schema = require("./schema.js");
-const NgsiV2 = require("ngsi_v2");
-const debug = require("debug")("checks");
+const fs = require('fs');
+const path = require('path');
+const deasync = require('deasync');
+const msg = require('./message.js');
+const conf = require('./conf.js');
+const schema = require('./schema.js');
+const NgsiV2 = require('ngsi_v2');
+const debug = require('debug')('checks');
 let apiEntityClient = null;
 
 //if a path contains folders beyond the doc and ignore ones,
@@ -20,24 +20,24 @@ const containsModelFolders = function(basePath) {
   files.forEach(function(fileName) {
     try {
       const fullPath = path.join(basePath, fileName);
-      debug("*containsModelFolders* - fullPath: " + fullPath);
+      debug('*containsModelFolders* - fullPath: ' + fullPath);
       const stat = fs.lstatSync(fullPath);
       if (
         stat &&
         stat.isDirectory() &&
         !conf.nconf
-          .get("dmv:ignoreFolders")
+          .get('dmv:ignoreFolders')
           .includes(path.basename(fullPath)) &&
-        !conf.nconf.get("dmv:docFolders").includes(path.basename(fullPath)) &&
+        !conf.nconf.get('dmv:docFolders').includes(path.basename(fullPath)) &&
         !conf.nconf
-          .get("dmv:externalSchemaFolders")
+          .get('dmv:externalSchemaFolders')
           .includes(path.basename(fullPath))
       ) {
         folderCounter++;
       }
-      debug("*containsModelFolders* - folders found: " + folderCounter);
+      debug('*containsModelFolders* - folders found: ' + folderCounter);
     } catch (err) {
-      console.log("***ERROR*** " + err);
+      console.log('***ERROR*** ' + err);
       if (conf.failErrors) {
         throw new Error(err);
       }
@@ -54,12 +54,12 @@ const containsModelFolders = function(basePath) {
 const fileExists = function(basePath, regex) {
   const files = fs.readdirSync(basePath);
   let counter = 0;
-  debug("*fileExists* - regex: " + regex);
+  debug('*fileExists* - regex: ' + regex);
   const regexp = new RegExp(regex);
   files.forEach(function(item) {
-    debug("*fileExists* - checked: " + item);
+    debug('*fileExists* - checked: ' + item);
     if (regexp.test(item)) {
-      debug("*fileExists* - regex: match");
+      debug('*fileExists* - regex: match');
       counter++;
     }
   });
@@ -73,7 +73,7 @@ const fileExists = function(basePath, regex) {
 const getApiEntityClient = function() {
   if (apiEntityClient == null) {
     const api = NgsiV2.ApiClient.instance;
-    api.basePath = conf.nconf.get("dmv:contextBrokerUrl");
+    api.basePath = conf.nconf.get('dmv:contextBrokerUrl');
     apiEntityClient = new NgsiV2.EntitiesApi();
   }
   return apiEntityClient;
@@ -83,12 +83,12 @@ module.exports = {
   //check if a documentation file exists in a given path
   docExist(fullPath) {
     let check = false;
-    conf.nconf.get("dmv:docFolders").forEach(function(value) {
+    conf.nconf.get('dmv:docFolders').forEach(function(value) {
       try {
         fs.lstatSync(path.join(fullPath, value)).isDirectory();
         if (
-          fileExists(path.join(fullPath, value), "spec.md") ||
-          fileExists(path.join(fullPath, value), "introduction.md")
+          fileExists(path.join(fullPath, value), 'spec.md') ||
+          fileExists(path.join(fullPath, value), 'introduction.md')
         ) {
           check = true;
         }
@@ -101,23 +101,23 @@ module.exports = {
       !check &&
       msg.addWarning(
         fullPath,
-        "does not include a documentation " +
-          "file named spec.md or introduction.md"
+        'does not include a documentation ' +
+          'file named spec.md or introduction.md'
       ) &&
       conf.failWarnings
     ) {
       throw new Error(
-        "Fail on Warnings: " + JSON.stringify(msg.warnings, null, "\t")
+        'Fail on Warnings: ' + JSON.stringify(msg.warnings, null, '\t')
       );
     }
-    debug("*docExist* - " + fullPath + ": " + check);
+    debug('*docExist* - ' + fullPath + ': ' + check);
     return check;
   },
 
   //check if a documentation folder exists in a given path
   docFolderExist(fullPath) {
     let counter = 0;
-    conf.nconf.get("dmv:docFolders").forEach(function(value) {
+    conf.nconf.get('dmv:docFolders').forEach(function(value) {
       try {
         fs.lstatSync(path.join(fullPath, value)).isDirectory();
         counter++;
@@ -126,26 +126,26 @@ module.exports = {
       }
     });
     if (counter === 0) {
-      msg.addWarning(fullPath, "does not include a documentation folder");
+      msg.addWarning(fullPath, 'does not include a documentation folder');
     }
     if (
-      conf.nconf.get("dmv:warningChecks").includes("docExist") &&
+      conf.nconf.get('dmv:warningChecks').includes('docExist') &&
       counter === 0
     ) {
       if (
         msg.addWarning(
           fullPath,
-          "does not include a documentation " +
-            "file named spec.md or introduction.md"
+          'does not include a documentation ' +
+            'file named spec.md or introduction.md'
         ) &&
         conf.failWarnings
       ) {
         throw new Error(
-          "Fail on Warnings: " + JSON.stringify(msg.warnings, null, "\t")
+          'Fail on Warnings: ' + JSON.stringify(msg.warnings, null, '\t')
         );
       }
     }
-    debug("*docFolderExist* - " + fullPath + ": " + counter);
+    debug('*docFolderExist* - ' + fullPath + ': ' + counter);
     if (counter > 0) {
       return true;
     }
@@ -162,41 +162,41 @@ module.exports = {
       !check &&
       msg.addWarning(
         fullPath,
-        "Model folder names should start in capital letter"
+        'Model folder names should start in capital letter'
       ) &&
       conf.failWarnings
     ) {
       throw new Error(
-        "Fail on Warnings: " + JSON.stringify(msg.warnings, null, "\t")
+        'Fail on Warnings: ' + JSON.stringify(msg.warnings, null, '\t')
       );
     }
-    debug("*modelNameValid* - " + fullPath + ": " + check);
+    debug('*modelNameValid* - ' + fullPath + ': ' + check);
     return check;
   },
 
   //check if a folder includes a README.md file
   readmeExist(fullPath) {
     let check = true;
-    if (!fileExists(fullPath, "README.md")) {
+    if (!fileExists(fullPath, 'README.md')) {
       check = false;
     }
     if (
       !check &&
-      msg.addWarning(fullPath, "does not include a Readme file README.md") &&
+      msg.addWarning(fullPath, 'does not include a Readme file README.md') &&
       conf.failWarnings
     ) {
       throw new Error(
-        "Fail on Warnings: " + JSON.stringify(msg.warnings, null, "\t")
+        'Fail on Warnings: ' + JSON.stringify(msg.warnings, null, '\t')
       );
     }
-    debug("*readmeExist* - " + fullPath + ": " + check);
+    debug('*readmeExist* - ' + fullPath + ': ' + check);
     return check;
   },
 
   //check if a folder includes a schema file
   schemaExist(fullPath) {
     let check = true;
-    if (!fileExists(fullPath, "^schema\\.json")) {
+    if (!fileExists(fullPath, '^schema\\.json')) {
       check = false;
     }
     if (
@@ -204,22 +204,22 @@ module.exports = {
       !containsModelFolders(fullPath) &&
       msg.addWarning(
         fullPath,
-        "does not include a JSON Schema file schema.json"
+        'does not include a JSON Schema file schema.json'
       ) &&
       conf.failWarnings
     ) {
       throw new Error(
-        "Fail on Warnings: " + JSON.stringify(msg.warnings, null, "\t")
+        'Fail on Warnings: ' + JSON.stringify(msg.warnings, null, '\t')
       );
     }
-    debug("*schemaExist* - " + fullPath + ": " + check);
+    debug('*schemaExist* - ' + fullPath + ': ' + check);
     return check;
   },
 
   //check if a folder includes one or more example files
   exampleExist(fullPath) {
     let check = true;
-    if (!fileExists(fullPath, "^example(-\\d+)?\\.json")) {
+    if (!fileExists(fullPath, '^example(-\\d+)?\\.json')) {
       check = false;
     }
     if (
@@ -227,15 +227,15 @@ module.exports = {
       !containsModelFolders(fullPath) &&
       msg.addWarning(
         fullPath,
-        "does not include a JSON Example file example(-\\d+)?\\.json"
+        'does not include a JSON Example file example(-\\d+)?\\.json'
       ) &&
       conf.failWarnings
     ) {
       throw new Error(
-        "Fail on Warnings: " + JSON.stringify(msg.warnings, null, "\t")
+        'Fail on Warnings: ' + JSON.stringify(msg.warnings, null, '\t')
       );
     }
-    debug("*exampleExist* - " + fullPath + ": " + check);
+    debug('*exampleExist* - ' + fullPath + ': ' + check);
     return check;
   },
 
@@ -245,10 +245,10 @@ module.exports = {
     const apiInstance = getApiEntityClient();
 
     let opts = {
-      options: "keyValues"
+      options: 'keyValues',
     };
 
-    const files = schema.getFiles(fullPath + path.sep + "example*.json");
+    const files = schema.getFiles(fullPath + path.sep + 'example*.json');
 
     const fileName = null;
 
@@ -258,11 +258,11 @@ module.exports = {
           opts = {};
         } else {
           opts = {
-            options: "keyValues"
+            options: 'keyValues',
           };
         }
 
-        const body = schema.openFile(fileName, "example " + fileName);
+        const body = schema.openFile(fileName, 'example ' + fileName);
 
         const createEntity = deasync(function(body, cb) {
           // eslint-disable-next-line no-unused-vars
@@ -271,9 +271,9 @@ module.exports = {
               check = false;
               cb(error, null);
             } else {
-              msg.addSupportedExample(fullPath, fileName + " is supported");
+              msg.addSupportedExample(fullPath, fileName + ' is supported');
               debug(
-                "*exampleSupported* - API called successfully. Returned data: " +
+                '*exampleSupported* - API called successfully. Returned data: ' +
                   JSON.stringify(data, null, 2)
               );
               cb(null, data);
@@ -293,13 +293,13 @@ module.exports = {
           ) {
             if (error) {
               debug(
-                "*exampleSupported* - remove entity API error: " +
+                '*exampleSupported* - remove entity API error: ' +
                   JSON.stringify(error)
               );
               cb(error, null);
             } else {
               debug(
-                "*exampleSupported* - remove entity API called successfully."
+                '*exampleSupported* - remove entity API called successfully.'
               );
               cb(null, data);
             }
@@ -311,42 +311,42 @@ module.exports = {
     } catch (err) {
       msg.addError(
         fullPath,
-        "JSON Example " +
+        'JSON Example ' +
           fileName +
-          " is not supported by " +
-          "contextBroker: " +
+          ' is not supported by ' +
+          'contextBroker: ' +
           JSON.stringify(err)
       );
       if (conf.failErrors) {
         throw new Error(
-          "Fail on Error: JSON Example " +
+          'Fail on Error: JSON Example ' +
             fileName +
-            " is not supported by " +
-            "contextBroker: " +
+            ' is not supported by ' +
+            'contextBroker: ' +
             JSON.stringify(err)
         );
       }
     }
-    debug("*exampleSupported* - " + fullPath + ": " + check);
+    debug('*exampleSupported* - ' + fullPath + ': ' + check);
     return check;
   },
 
   // eslint-disable-next-line no-unused-vars
   docValid(fullpath) {
-    console.log("*** docValid: not implemented ***");
+    console.log('*** docValid: not implemented ***');
   },
 
   // eslint-disable-next-line no-unused-vars
   docValidLinks(fullpath) {
-    console.log("*** docValidLinks: not implemented ***");
+    console.log('*** docValidLinks: not implemented ***');
   },
 
   // eslint-disable-next-line no-unused-vars
   idMatching(fullpath) {
-    console.log("*** idMatching: not implemented ***");
+    console.log('*** idMatching: not implemented ***');
   },
 
   //if a file matching a given regular expression exists in a given path
   // returns true, otherwise false
-  fileExists
+  fileExists,
 };

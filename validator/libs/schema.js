@@ -1,13 +1,13 @@
 /* utilities to manage schemas and json */
 
-const glob = require("glob");
-const Ajv = require("ajv");
-const path = require("path");
-const fs = require("fs");
-const request = require("request");
-const msg = require("./message.js");
-const conf = require("./conf.js");
-const debug = require("debug")("schema");
+const glob = require('glob');
+const Ajv = require('ajv');
+const path = require('path');
+const fs = require('fs');
+const request = require('request');
+const msg = require('./message.js');
+const conf = require('./conf.js');
+const debug = require('debug')('schema');
 
 const addSchemas = function(fileList, method, fileType) {
   if (!fileList) {
@@ -28,13 +28,13 @@ const getFiles = function(args) {
   } else {
     _getFiles(args);
   }
-  debug("*getFiles* - " + args + " :" + files);
+  debug('*getFiles* - ' + args + ' :' + files);
   return files;
 
   function _getFiles(fileOrPattern) {
     if (glob.hasMagic(fileOrPattern)) {
       const dataFiles = glob.sync(fileOrPattern, {
-        cwd: process.cwd()
+        cwd: process.cwd(),
       });
       files = files.concat(dataFiles);
     } else {
@@ -50,14 +50,14 @@ const openFile = function(filename, suffix) {
   try {
     try {
       json = JSON.parse(fs.readFileSync(file).toString());
-      debug("*openFile* - JSON" + file + " :" + json);
+      debug('*openFile* - JSON' + file + ' :' + json);
     } catch (JSONerr) {
       json = require(file);
-      debug("*openFile* - JSONerr " + file + " :" + json);
+      debug('*openFile* - JSONerr ' + file + ' :' + json);
     }
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.error("error:  " + err.message.replace(" module", " " + suffix));
+    console.error('error:  ' + err.message.replace(' module', ' ' + suffix));
     process.exit(2);
   }
   return json;
@@ -67,25 +67,25 @@ module.exports = {
   //compile schema without remote resolve
   compileSchema(fullPath, fileSchema, commonSchemas) {
     const file = path.join(fullPath, fileSchema);
-    const schema = openFile(file, "schema");
+    const schema = openFile(file, 'schema');
     const ajv = new Ajv(conf.ajvOptions);
     ajv.addFormat(
-      "ext-date-yearless",
+      'ext-date-yearless',
       /^--((0[13578]|1[02])-31|(0[1,3-9]|1[0-2])-30|(0\d|1[0-2])-([0-2]\d))$/
     );
-    addSchemas(commonSchemas, ajv.addSchema, "schema");
+    addSchemas(commonSchemas, ajv.addSchema, 'schema');
     let validate;
     try {
       validate = ajv.compile(schema);
       /* istanbul ignore else */
-      if (typeof validate === "function") {
-        debug("*compileSchema* - valid schema " + file + " :" + validate);
-        msg.addValidSchema(fullPath, "Schema " + file + " is valid");
+      if (typeof validate === 'function') {
+        debug('*compileSchema* - valid schema ' + file + ' :' + validate);
+        msg.addValidSchema(fullPath, 'Schema ' + file + ' is valid');
       } else {
-        debug("*compileSchema* - invalid schema " + file + " :" + validate);
+        debug('*compileSchema* - invalid schema ' + file + ' :' + validate);
         msg.addError(
           fullPath,
-          "Schema " + file + " failed to compile to a function"
+          'Schema ' + file + ' failed to compile to a function'
         );
         if (conf.failErrors) {
           throw new Error(validate.errors);
@@ -94,13 +94,13 @@ module.exports = {
     } catch (err) {
       msg.addError(
         fullPath,
-        "Schema " +
+        'Schema ' +
           file +
-          " is invalid, " +
-          "if one or more schemas cannot be retrieved, " +
-          "try using remote validation (dmv:resolveRemoteSchemas=true), " +
+          ' is invalid, ' +
+          'if one or more schemas cannot be retrieved, ' +
+          'try using remote validation (dmv:resolveRemoteSchemas=true), ' +
           'check if "dmv:loadModelCommonSchemas" is enabled ' +
-          " (if missing schemas are FIWARE common schemas) " +
+          ' (if missing schemas are FIWARE common schemas) ' +
           'or store third party schemas in the "externalSchema" folder: ' +
           err.message
       );
@@ -113,19 +113,19 @@ module.exports = {
 
   //validate examples agains a compiled schema
   validateExamples(fullPath, validate) {
-    const files = getFiles(fullPath + path.sep + "example*.json");
-    if (typeof validate !== "function") {
+    const files = getFiles(fullPath + path.sep + 'example*.json');
+    if (typeof validate !== 'function') {
       if (
         msg.addError(
           fullPath,
-          "Examples cannot be validated since " +
-            "validation function cannot be computed. Probably not all schemas " +
-            "can be resolved correctly (check schema errors)"
+          'Examples cannot be validated since ' +
+            'validation function cannot be computed. Probably not all schemas ' +
+            'can be resolved correctly (check schema errors)'
         ) &&
         conf.failErrors
       ) {
         throw new Error(
-          "Fail on Error:" + JSON.stringify(msg.errors, null, "\t")
+          'Fail on Error:' + JSON.stringify(msg.errors, null, '\t')
         );
       }
     }
@@ -137,39 +137,39 @@ module.exports = {
         if (fileName.match(/normalized(-\d+)?\.json$/)) {
           return;
         }
-        const data = openFile(fileName, "example " + fileName);
-        if (typeof validate !== "function") {
-          debug("*validateExamples* - " + fileName + " cannot be validated");
+        const data = openFile(fileName, 'example ' + fileName);
+        if (typeof validate !== 'function') {
+          debug('*validateExamples* - ' + fileName + ' cannot be validated');
           msg.addError(
             fullPath,
-            "Example " +
+            'Example ' +
               fileName +
-              " cannot be validated: " +
+              ' cannot be validated: ' +
               JSON.stringify(validate.errors, null)
           );
           if (conf.failErrors) {
             throw new Error(
-              "Fail on Error:" + JSON.stringify(msg.errors, null, "\t")
+              'Fail on Error:' + JSON.stringify(msg.errors, null, '\t')
             );
           }
         }
         const validExample = validate(data);
         debug(
-          "*validateExamples* - " + fileName + " validity : " + validExample
+          '*validateExamples* - ' + fileName + ' validity : ' + validExample
         );
         if (validExample) {
-          msg.addValidExample(fullPath, fileName + " is valid");
+          msg.addValidExample(fullPath, fileName + ' is valid');
         } else {
           msg.addError(
             fullPath,
-            "Example " +
+            'Example ' +
               fileName +
-              " is invalid: " +
+              ' is invalid: ' +
               JSON.stringify(validate.errors, null)
           );
           if (conf.failErrors) {
             throw new Error(
-              "Fail on Error:" + JSON.stringify(msg.errors, null, "\t")
+              'Fail on Error:' + JSON.stringify(msg.errors, null, '\t')
             );
           }
         }
@@ -177,7 +177,7 @@ module.exports = {
     } catch (err) {
       if (conf.failErrors) {
         throw new Error(
-          "Fail on Error:" + JSON.stringify(msg.errors, null, "\t")
+          'Fail on Error:' + JSON.stringify(msg.errors, null, '\t')
         );
       }
     }
@@ -196,12 +196,12 @@ module.exports = {
   //load a remote schema
   loadSchema: function loadSchema(uri, callback) {
     request(uri, call);
-    debug("*loadSchema* - uri: " + uri);
+    debug('*loadSchema* - uri: ' + uri);
     const call = function(err, res, body) {
       if (err || res.statusCode >= 400) {
-        callback(err || new Error("Loading error: " + res.statusCode));
+        callback(err || new Error('Loading error: ' + res.statusCode));
       } else {
-        debug("*loadSchema* - body: " + body);
+        debug('*loadSchema* - body: ' + body);
         callback(null, JSON.parse(body));
       }
     };
@@ -215,12 +215,12 @@ module.exports = {
   // (that should be named using *-schema.json pattern)
   loadLocalSchemas(fullPath) {
     let files;
-    if (fullPath !== ".") {
-      files = getFiles(fullPath + path.sep + "*-schema.json");
+    if (fullPath !== '.') {
+      files = getFiles(fullPath + path.sep + '*-schema.json');
     } else {
-      files = getFiles("*-schema.json");
+      files = getFiles('*-schema.json');
     }
-    debug("*loadLocalSchemas* - files: " + files);
+    debug('*loadLocalSchemas* - files: ' + files);
     return files;
-  }
+  },
 };
