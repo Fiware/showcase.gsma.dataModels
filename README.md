@@ -1,13 +1,15 @@
 # FIWARE Data Models
 
-[![Documentation](https://img.shields.io/readthedocs/fiware-datamodels.svg)](https://fiware-datamodels.rtfd.io)
+[![FIWARE Core Context Management](https://nexus.lab.fiware.org/repository/raw/public/badges/chapters/core.svg)](https://www.fiware.org/developers/catalogue/)
 Code:
 [![License: MIT](https://img.shields.io/github/license/fiware/dataModels.svg)](https://opensource.org/licenses/MIT)
 Models:
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-<br/>
-[![Build badge](https://img.shields.io/travis/Fiware/dataModels.svg "Travis build status")](https://travis-ci.org/Fiware/dataModels/)
 [![Support badge](https://img.shields.io/badge/support-askbot-yellowgreen.svg)](http://ask.fiware.org)
+<br/>
+[![Documentation](https://img.shields.io/readthedocs/fiware-datamodels.svg)](https://fiware-datamodels.rtfd.io)
+[![Build badge](https://img.shields.io/travis/Fiware/dataModels.svg "Travis build status")](https://travis-ci.org/Fiware/dataModels/)
+
 
 This repository contains:
 
@@ -33,6 +35,10 @@ data please check carefully each data license.
 All the data models documented here are offered under a
 [Creative Commons by Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
 License.
+
+| :books: [Documentation](https://fiware-datamodels.rtfd.io) |
+| ---|
+
 
 ## Data Models adoption
 
@@ -133,15 +139,15 @@ the [Husky](https://github.com/typicode/husky) should do this automatically on
 cd validator
 npm i
 
-#To format JavaScript files:
+# To format JavaScript files:
 npm run prettier
 
 # To format Markdown files:
 npm run prettier:text
 ```
 
-To check for spelling mistakes the text within the Data Model, run the text
-linter as shown:
+To check for spelling mistakes and dead links in the text within the Data 
+Model, run the text linter as shown:
 
 ```console
 npm test
