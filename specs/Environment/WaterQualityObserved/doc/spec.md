@@ -63,7 +63,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Celsius Degrees.
     -   Optional
 -   `conductivity` : Electrical Conductivity.
@@ -71,7 +71,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Siemens per meter (S/m).
     -   Optional
 -   `conductance` : Specific Conductance.
@@ -80,7 +80,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Siemens per meter at 25 ºC (S/m).
     -   Optional
 
@@ -89,7 +89,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 -   `tds` : Total dissolved solids.
@@ -98,7 +98,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
@@ -108,7 +108,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Formazin Turbidity Unit (FTU).
     -   Optional
 
@@ -117,7 +117,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Parts per thousand (ppt).
     -   Optional
 -   `pH` : Acidity or basicity of an aqueous solution.
@@ -126,7 +126,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Negative of the logarithm to base 10 of the activity of
         the hydrogen ion.
     -   Optional
@@ -136,7 +136,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: millivolts (mV).
     -   Optional
 

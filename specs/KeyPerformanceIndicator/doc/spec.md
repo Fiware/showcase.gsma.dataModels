@@ -121,10 +121,10 @@ The data model is defined as shown below:
     -   Attribute type: List of
         [StructuredValue](https://schema.org/StructuredValue).
         -   Subproperties:
-        -   `entityType` : Entity type which data is aggregated.
-        -   Type: [Text](http://schema.org/Text)
-        -   `attrs` : Attributes which value is aggregated.
-        -   Type: List of [Text](http://schema.org/Text)
+            -   `entityType` : Entity type which data is aggregated.
+                -   Type: [Text](http://schema.org/Text)
+            -   `attrs` : Attributes which value is aggregated.
+                -   Type: List of [Text](http://schema.org/Text)
     -   Optional
 
 -   `calculationPeriod` : KPI's period of time.
