@@ -111,8 +111,8 @@ A JSON Schema corresponding to this data model can be found
         equal than `capacity`.
     -   Metadata:
         -   `timestamp`: Timestamp corresponding to the last attribute value.
-            (`observeAt` in NGSI-LD) - Type:
-            [DateTime](https://schema.org/DateTime)
+            (`observeAt` in NGSI-LD)
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `amperage` : The total amperage offered by the charging station.
@@ -144,8 +144,8 @@ A JSON Schema corresponding to this data model can be found
         -   Or any other application-specific.
     -   Metadata:
         -   `timestamp` : Timestamp corresponding to the last attribute value.
-            (`observedAt` in NGSI-LD) - Type:
-            [DateTime](https://schema.org/DateTime)
+            (`observedAt` in NGSI-LD)
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `areaServed` : Area served by this charging station. Precise semantics can

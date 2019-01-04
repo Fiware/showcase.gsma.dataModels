@@ -129,7 +129,9 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
 
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+
+            -   Type: [DateTime](http://schema.org/DateTime)
 
         -   `TimeInstant` :
             [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
@@ -148,7 +150,7 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [Text](http://schema.org/Text)
     -   Allowed values: one Of (`household`, `municipal`, `industrial`,
-        `construction`, `hostelry`, `agriculture`, `other`) - Or any other value
+        `construction`, `hostelry`, `agriculture`, `other`) - or any other value
         which does not fit within the former.
     -   Optional
 
@@ -247,13 +249,14 @@ A JSON Schema corresponding to this data model can be found
 -   `category` : Container's category.
 
     -   Attribute type: List of [Text](https://schema.org/Text)
-    -   Allowed Values: - All values allowed for the `category` property of
-        [WasteContainerModel](../../WasteContainerModel/doc/spec.md). - `fixed`.
-        Container is fixed to a wall, support or handle. - `underground`.
-        Container is placed underground. - `ground`. Container is placed at
-        ground level. - `portable`. Container can be moved around a certain
-        extent. - Any other value which captures an aspect not covered by those
-        referred above.
+    -   Allowed Values: All values allowed for the `category` property of
+        [WasteContainerModel](../../WasteContainerModel/doc/spec.md).
+        -   `fixed`. Container is fixed to a wall, support or handle.
+        -   `underground`. Container is placed underground.
+        -   `ground`. Container is placed at ground level.
+        -   `portable`. Container can be moved around a certain extent.
+        -   Any other value which captures an aspect not covered by those
+            referred above.
 
 -   `status` : Container's status from the point of view of safety.
 

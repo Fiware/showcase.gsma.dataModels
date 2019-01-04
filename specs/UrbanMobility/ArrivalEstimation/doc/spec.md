@@ -58,8 +58,8 @@ The data model is defined as shown below:
         time shall be encoded as a ISO8601 duration. Ex. `"PT8M5S"`.
     -   Attribute Metadata:
         -   `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the
-            last attribute update - Type:
-            [DateTime](https://schema.org/DateTime) - Mandatory
+            last attribute update
+            -   Type: [DateTime](https://schema.org/DateTime) - Mandatory
     -   Mandatory
 
 -   `remainingDistance`: It shall contain the remaining distance (in meters) of
@@ -69,8 +69,9 @@ The data model is defined as shown below:
         [https://schema.org/Number](https://schema.org/Number)
     -   Attribute metadata:
         -   `timestamp` (mapped to `observedAt` in NGSI-LD). Timestamp of the
-            last attribute update - Type:
-            [DateTime](https://schema.org/DateTime) - Mandatory
+            last attribute update
+            -   Type: [DateTime](https://schema.org/DateTime)
+            -   Mandatory
     -   Default Unit: Meters
     -   Optional
 

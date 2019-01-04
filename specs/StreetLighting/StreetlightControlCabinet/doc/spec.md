@@ -175,7 +175,7 @@ The data model is defined as shown below:
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `reactiveEnergyConsumed` : Energy consumed (with regards to reactive power)

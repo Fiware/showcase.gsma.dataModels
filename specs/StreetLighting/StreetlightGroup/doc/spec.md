@@ -80,12 +80,12 @@ The data model is defined as shown below:
         [StructuredValue](http://schema.org/StructuredValue)
     -   Subproperties:
         -   `from` : Starting date (it can be yearless).
-        -   Type: [Date](https://schema.org/Date)
-        -   `to` : Ending date (it can be yearless) - Type:
-            [Date](https://schema.org/Date)
+            -   Type: [Date](https://schema.org/Date)
+        -   `to` : Ending date (it can be yearless)
+            -   Type: [Date](https://schema.org/Date)
         -   `hours` : Hours.
-        -   Normative References: Value must be compliant with
-            [https://schema.org/openingHours](https://schema.org/openingHours)
+            -   Normative References: Value must be compliant with
+                [https://schema.org/openingHours](https://schema.org/openingHours)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
@@ -110,7 +110,7 @@ The data model is defined as shown below:
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-        -   Type: [DateTime](http://schema.org/DateTime)
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `activeProgramId` : Identifier of the active program for this streetlight

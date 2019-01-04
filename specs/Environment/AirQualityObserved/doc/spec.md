@@ -75,12 +75,13 @@ A JSON Schema corresponding to this data model can be found
     observed.
 
     -   Attribute type: [Number](https://schema.org/Number)
-    -   Attribute metadata: - `referenceSpecification` : Specification that must
-        be taken as reference when interpreting or calculating the supplied air
-        quality index.
-        -   Type: [Text](https://schema.org/Text) or
-            [URL](https://schema.org/URL)
-        -   Optional
+    -   Attribute metadata:
+        -   `referenceSpecification` : Specification that must be taken as
+            reference when interpreting or calculating the supplied air quality
+            index.
+            -   Type: [Text](https://schema.org/Text) or
+                [URL](https://schema.org/URL)
+            -   Optional
     -   Optional
 
 -   `reliability` : Reliability (percentage, expressed in parts per one)

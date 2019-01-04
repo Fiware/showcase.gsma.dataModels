@@ -141,7 +141,8 @@ The data model is defined as shown below:
     -   Attribute type: [Text](http://schema.org/Text)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Allowed values: one Of (`very good`, `good`, `fair`, `bad`, `very bad`)
     -   Optional
 
@@ -150,7 +151,8 @@ The data model is defined as shown below:
     -   Attribute type: It can be of any type.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Mandatory
 
 -   `effectiveSince` : The date on which the organization created this KPI. This

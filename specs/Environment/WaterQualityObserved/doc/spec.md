@@ -60,65 +60,83 @@ A JSON Schema corresponding to this data model can be found
 
 -   `temperature` : Temperature.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Celsius Degrees.
     -   Optional
 -   `conductivity` : Electrical Conductivity.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Siemens per meter (S/m).
     -   Optional
 -   `conductance` : Specific Conductance.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Siemens per meter at 25 ºC (S/m).
     -   Optional
 
 -   `tss` : Total suspended solids.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 -   `tds` : Total dissolved solids.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
 -   `turbidity` : Amount of light scattered by particles in the water column.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Formazin Turbidity Unit (FTU).
     -   Optional
 
 -   `salinity` : Amount of salts dissolved in water.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Parts per thousand (ppt).
     -   Optional
 -   `pH` : Acidity or basicity of an aqueous solution.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: Negative of the logarithm to base 10 of the activity of
         the hydrogen ion.
     -   Optional
 
 -   `orp` : Oxidation-Reduction potential.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+        -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: millivolts (mV).
     -   Optional
 
@@ -156,61 +174,77 @@ extra measurands are available as part of an observation.
 -   `O2` : Level of free, non-compound oxygen present.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
 -   `Chla` : Concentration of chlorophyll A.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: micrograms per liter.
     -   Optional
 -   `PE` : Concentration of pigment phycoerythrin which can be measured to
     estimate cyanobacteria concentrations specifically.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: micrograms per liter.
     -   Optional
 -   `PC` : Concentration of pigment phycocyanin which can be measured to
     estimate cyanobacteria concentrations specifically.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: micrograms per liter.
     -   Optional
 
 -   `NH4` : Concentration of ammonium.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
 -   `NH3` : Concentration of ammonia.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
 -   `Cl-` : Concentration of chlorides.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
 -   `NO3` : Concentration of nitrates.
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: - `timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Default unit: milligrams per liter (mg/L).
     -   Optional
 
