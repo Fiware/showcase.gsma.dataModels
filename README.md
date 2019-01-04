@@ -7,7 +7,6 @@
 [![Documentation](https://img.shields.io/readthedocs/fiware-datamodels.svg)](https://fiware-datamodels.rtfd.io)
 [![Build badge](https://img.shields.io/travis/Fiware/dataModels.svg "Travis build status")](https://travis-ci.org/Fiware/dataModels/)
 
-
 This repository contains:
 
 -   [JSON Schemas and documentation](./specs/README.md) on harmonized datamodels
@@ -25,11 +24,8 @@ IoT and Big Data Ecosystems. In fact the FIWARE data models are a superset of
 the
 [GSMA Data Models](http://www.gsma.com/connectedliving/wp-content/uploads/2016/11/CLP.26-v1.0.pdf).
 
-
-
-
 | :books: [Documentation](https://fiware-datamodels.rtfd.io) |
-| ---|
+| ---------------------------------------------------------- |
 
 
 ## Data Models adoption
@@ -141,8 +137,8 @@ npm run prettier:text
 npm run lint:text
 ```
 
-To check for spelling mistakes and dead links in the text within the Data 
-Model, run the text linter as shown:
+To check for spelling mistakes and dead links in the text within the Data Model,
+run the text linter as shown:
 
 ```console
 npm test
@@ -159,7 +155,6 @@ See:
 -   [https://github.com/GSMADeveloper/HarmonisedEntityReferences](https://github.com/GSMADeveloper/HarmonisedEntityReferences)
 -   [schema.org](https://schema.org)
 -   [https://github.com/GSMADeveloper/NGSI-LD-Entities](https://github.com/GSMADeveloper/NGSI-LD-Entities)
-
 
 ---
 

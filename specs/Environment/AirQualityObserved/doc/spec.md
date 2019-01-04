@@ -77,8 +77,9 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute type: [Number](https://schema.org/Number)
     -   Attribute metadata: - `referenceSpecification` : Specification that must
         be taken as reference when interpreting or calculating the supplied air
-        quality index. - Type: [Text](https://schema.org/Text) or
-        [URL](https://schema.org/URL)
+        quality index.
+        -   Type: [Text](https://schema.org/Text) or
+            [URL](https://schema.org/URL)
         -   Optional
     -   Optional
 
@@ -152,8 +153,9 @@ follows:
         -   Type: [Text](https://schema.org/Text)
         -   Optional
     -   `referenceSpecification` : Specification that must be taken as reference
-        when interpreting the supplied qualitative value. - Type:
-        [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+        when interpreting the supplied qualitative value.
+        -   Type: [Text](https://schema.org/Text) or
+            [URL](https://schema.org/URL)
         -   Mandatory
 
 ### Representing airquality-related weather conditions

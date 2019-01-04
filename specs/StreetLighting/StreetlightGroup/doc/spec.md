@@ -43,7 +43,8 @@ The data model is defined as shown below:
     -   Attribute type: [Text](http://schema.org/Text)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     -   Optional
 
@@ -59,7 +60,8 @@ The data model is defined as shown below:
     -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastSwitchingOff` : Timestamp of the last switching off.
@@ -67,7 +69,8 @@ The data model is defined as shown below:
     -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `switchingOnHours` : Switching on hours. It is used normally to set special
@@ -76,8 +79,8 @@ The data model is defined as shown below:
     -   Attribute Type: List of
         [StructuredValue](http://schema.org/StructuredValue)
     -   Subproperties:
-        -   `from` : Starting date (it can be yearless). - Type:
-            [Date](https://schema.org/Date)
+        -   `from` : Starting date (it can be yearless).
+        -   Type: [Date](https://schema.org/Date)
         -   `to` : Ending date (it can be yearless) - Type:
             [Date](https://schema.org/Date)
         -   `hours` : Hours.
@@ -85,7 +88,8 @@ The data model is defined as shown below:
             [https://schema.org/openingHours](https://schema.org/openingHours)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `switchingMode` : Switching mode.
@@ -95,7 +99,8 @@ The data model is defined as shown below:
         `day-ON`, `day-OFF`, `day-LOW`)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `illuminanceLevel` : Relative illuminance level setting for the group.
@@ -114,7 +119,8 @@ The data model is defined as shown below:
     -   Attribute type: [Text](https://schema.org/Text)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateModified` : Timestamp of the last update made to this entity.

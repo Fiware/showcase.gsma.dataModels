@@ -79,7 +79,8 @@ The data model is defined as shown below:
             the values above.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Mandatory
 
 -   `powerState` : Streetlight's power state.
@@ -87,7 +88,8 @@ The data model is defined as shown below:
     -   Attribute type: [Text](http://schema.org/Text)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Allowed values: one Of (`on`, `off`, `low`, `bootingUp`)
     -   Optional
 
@@ -110,7 +112,8 @@ The data model is defined as shown below:
     -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastSwitchingOn` : Timestamp of the last switching on.
@@ -118,7 +121,8 @@ The data model is defined as shown below:
     -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastSwitchingOff` : Timestamp of the last switching off.
@@ -126,7 +130,8 @@ The data model is defined as shown below:
     -   Attribute Type: [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `controllingMethod` : The method used to control this streetlight.
@@ -185,7 +190,8 @@ The data model is defined as shown below:
     -   Allowed values: A number between 0 and 1.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this

@@ -109,8 +109,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `relativeHumidity` : Air's relative humidity observed (percentage, expressed
@@ -121,8 +121,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `precipitation` : Precipitation level observed.
@@ -132,8 +132,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `windDirection` : The wind direction expressed in decimal degrees compared
@@ -144,8 +144,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `windSpeed` : The observed wind speed in m/s, encoded as a Number.
@@ -155,8 +155,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `atmosphericPressure` : The atmospheric pressure observed measured in Hecto
@@ -167,8 +167,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `pressureTendency` : Is the pressure rising or falling? It can be expressed
@@ -188,8 +188,8 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
-            the `dateObserved` attribute at entity level. - Type:
-            [DateTime](https://schema.org/DateTime)
+            the `dateObserved` attribute at entity level.
+            -   Type: [DateTime](https://schema.org/DateTime)
     -   Optional
 
 -   `illuminance` : The

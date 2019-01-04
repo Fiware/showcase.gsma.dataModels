@@ -126,17 +126,20 @@ A JSON Schema corresponding to this data model can be found
 -   `methaneConcentration` : Methane (CH4) concentration inside the container.
 
     -   Attribute type: [Number](http://schema.org/Number)
-    -   Attribute metadata: -`timestamp`: Timestamp when the last update of the
-        attribute happened. - Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute metadata:
+
+        -   `timestamp`: Timestamp when the last update of the attribute
+            happened. - Type: [DateTime](http://schema.org/DateTime)
 
         -   `TimeInstant` :
             [Timestamp](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
             saved by FIWARE's IoT Agents. Note: This attribute has not been
             harmonized to keep backwards compatibility with current FIWARE
-            reference implementations. - Type:
-            [DateTime](https://schema.org/DateTime). There can be production
-            environmments where the attribute type is equal to the `ISO8601`
-            string. If so, it must be considered as a synonym of `DateTime`.
+            reference implementations.
+            -   Type: [DateTime](https://schema.org/DateTime). There can be
+                production environmments where the attribute type is equal to
+                the `ISO8601` string. If so, it must be considered as a synonym
+                of `DateTime`.
 
     -   Default unit: Micrograms per cubic meter.
     -   Optional

@@ -162,7 +162,8 @@ The data model is defined as shown below:
     -   Default unit: Kilowatts per hour (kWh).
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `energyCost` : Cost of the energy consumed by the circuits controlled since
@@ -200,8 +201,8 @@ The data model is defined as shown below:
     -   Default unit: Kilowatts per hour (kWh).
     -   Attribute metadata:
         -   `timestamp`: Timestamp which reflects the date and time at which the
-            referred reading was obtained. - Type:
-            [DateTime](http://schema.org/DateTime)
+            referred reading was obtained.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `meterReadingPeriod` : The periodicity of energy consumed meter readings in
@@ -222,7 +223,8 @@ The data model is defined as shown below:
     -   Default unit: KiloWatts (kW).
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `totalReactivePower` : Reactive power currently consumed (counting all
@@ -232,7 +234,8 @@ The data model is defined as shown below:
     -   Default unit: KiloVolts-Ampere-Reactive (kVArh).
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `activePower` : Active power consumed per phase. The actual values will be
@@ -243,7 +246,8 @@ The data model is defined as shown below:
     -   Default unit: Kilowatts (kW)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `reactivePower` : Reactive power. The actual values will be conveyed by
@@ -254,7 +258,8 @@ The data model is defined as shown below:
     -   Default unit: KiloVolts-Ampere-Reactive (kVArh)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `powerFactor` : Power factor.
@@ -263,7 +268,8 @@ The data model is defined as shown below:
     -   Allowed values: A number between -1 and 1.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `cosPhi` : "Cosin of phi" parameter.
@@ -272,7 +278,8 @@ The data model is defined as shown below:
     -   Allowed values: A number between -1 and 1.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `intensity` : Electric intensity. The actual values will be conveyed by one
@@ -285,7 +292,8 @@ The data model is defined as shown below:
     -   Default unit: Ampers (A)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `voltage` : Electric tension. The actual values will be conveyed by one
@@ -298,7 +306,8 @@ The data model is defined as shown below:
     -   Default unit: Volts (V)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
-            happened. - Type: [DateTime](http://schema.org/DateTime)
+            happened.
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `thdrVoltage` : Total harmonic distortion (R) of The name of each
