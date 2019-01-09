@@ -14,6 +14,7 @@
         "value": "2014-09-11T11:00:00Z"
     }, 
     "controlledAsset": {
+        "type": "Relationship",
         "value": [
             "wastecontainer-Osuna-100"
         ]
