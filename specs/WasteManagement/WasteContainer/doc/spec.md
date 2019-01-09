@@ -352,8 +352,69 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "wastecontainer:Fleming:12a",
+    "type": "WasteContainer",
+    "status": {
+        "value": "ok"
+    }, 
+    "category": {
+        "value": [
+            "underground"
+        ]
+    }, 
+    "dateLastEmptying": {
+        "type": "DateTime", 
+        "value": "2016-06-21T15:05:59.408Z"
+    }, 
+    "serialNumber": {
+        "value": "ab56kjl"
+    }, 
+    "nextActuationDeadline": {
+        "value": "2016-06-28T15:05:59.408Z"
+    }, 
+    "refWasteContainerIsle": {
+        "type": "Relationship", 
+        "value": "wastecontainerisle:Fleming:12"
+    }, 
+    "refDevice": {
+        "type": "Relationship", 
+        "value": [
+            "device-Fleming:12a:1"
+        ]
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -3.164485591715449, 
+                40.62785133667262
+            ]
+        }
+    }, 
+    "fillingLevel": {
+        "value": 0.4
+    }, 
+    "refWasteContainerModel": {
+        "type": "Relationship", 
+        "value": "wastecontainermodel:c1"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
        "id": "wastecontainer:Fleming:12a",
        "type": "WasteContainer",
@@ -371,6 +432,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
        "category": ["underground"],
        "refDevice": ["device-Fleming:12a:1"]
     }
+```
 
 ## Test it with real services
 
