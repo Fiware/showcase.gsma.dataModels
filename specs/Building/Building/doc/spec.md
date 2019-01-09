@@ -127,6 +127,7 @@ Normalized NGSI response
         "value": 7
     }, 
     "occupier": {
+        "type": "Relationship",
         "value": [
             "9830f692-7677-11e6-838b-4f9fb3dc5a4f"
         ]
