@@ -132,6 +132,7 @@ Normalized NGSI response
         ]
     }, 
     "mapUrl": {
+        "type": "URL",
         "value": "http://www.example.com"
     }, 
     "dateCreated": {
@@ -180,6 +181,7 @@ Normalized NGSI response
         }
     }, 
     "owner": {
+        "type": "Relationship",
         "value": [
             "cdfd9cb8-ae2b-47cb-a43a-b9767ffd5c84", 
             "1be9cd61-ef59-421f-a326-4b6c84411ad4"
