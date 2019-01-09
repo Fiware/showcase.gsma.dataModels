@@ -166,8 +166,93 @@ used by applications.
     -   Attribute type: List of References
     -   Optional
 
-## Examples of use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "Museum-Barcelona-MACBA-1234",
+    "type": "Museum",
+    "alternateName": {
+        "value": "MACBA"
+    }, 
+    "openingHoursSpecification": {
+        "value": [
+            {
+                "dayOfWeek": "Mo, Wed, Thu, Fr", 
+                "closes": "19:30", 
+                "opens": "11:00"
+            }, 
+            {
+                "dayOfWeek": "Sat", 
+                "closes": "21:00", 
+                "opens": "10:00"
+            }, 
+            {
+                "dayOfWeek": "Sun", 
+                "closes": "15:00", 
+                "opens": "10:00"
+            }
+        ]
+    }, 
+    "description": {
+        "value": "The MACBA was designed by the American architect Richard Meier and inaugurated in 1995."
+    }, 
+    "source": {
+        "value": "http://www.tourspain.es"
+    }, 
+    "artPeriod": {
+        "value": [
+            "contemporary"
+        ]
+    }, 
+    "museumType": {
+        "value": [
+            "fineArts"
+        ]
+    }, 
+    "facilities": {
+        "value": [
+            "shop", 
+            "cloakRoom", 
+            "guidedTour"
+        ]
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                2.1668771521199393, 
+                41.38302235796602
+            ]
+        }
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressCountry": "ES", 
+            "addressLocality": "Barcelona", 
+            "streetAddress": "Plaza Dels \u00c0ngels, 1"
+        }
+    }, 
+    "touristArea": {
+        "value": "Barcelona-Capital"
+    }, 
+    "name": {
+        "value": "Museo de Arte Contemporaneo de Barcelona"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
          "id": "Museum-Barcelona-MACBA-1234",
          "type": "Museum",
@@ -206,6 +291,7 @@ used by applications.
         "touristArea": "Barcelona-Capital",
         "source": "http://www.tourspain.es"
     }
+```
 
 ## Use it with a real service
 

@@ -101,7 +101,11 @@ A JSON Schema corresponding to this data model can be found
 | `1479`   | `Public toilet`            |
 | `1480`   | `Registry office`          |
 
-## Examples of use 1 (Normalized Format)
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
 
 ```json
 {
@@ -140,8 +144,11 @@ A JSON Schema corresponding to this data model can be found
 }
 ```
 
-## Examples of use 2 (?options=keyValues simplified representation for data consumers)
+### key-value pairs Example
 
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
         "id": "PointOfInterest-A-Concha-123456",
         "type": "PointOfInterest",
@@ -162,6 +169,7 @@ A JSON Schema corresponding to this data model can be found
         "source": "http://www.tourspain.es",
         "refSeeAlso": ["Beach-A-Concha-123456"]
     }
+```
 
 ## Use it with a real service
 

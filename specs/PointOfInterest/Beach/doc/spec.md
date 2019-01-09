@@ -116,8 +116,81 @@ used by applications.
     -   Attribute type: List of References
     -   Optional
 
-## Examples of use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "Beach-A-Concha-123456",
+    "type": "Beach",
+    "description": {
+        "value": "La Playa de A Concha se presenta ....."
+    }, 
+    "width": {
+        "value": 51
+    }, 
+    "accessType": {
+        "value": [
+            "privateVehicle", 
+            "onFoot", 
+            "publicTransport"
+        ]
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -8.768460000000001, 
+                42.60214472222222
+            ]
+        }
+    }, 
+    "facilities": {
+        "value": [
+            "promenade", 
+            "showers", 
+            "cleaningServices", 
+            "lifeGuard"
+        ]
+    }, 
+    "length": {
+        "value": 450
+    }, 
+    "source": {
+        "value": "http://www.tourspain.es"
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressCountry": "ES", 
+            "addressLocality": "Vilagarc\u00eda de Arousa"
+        }
+    }, 
+    "beachType": {
+        "value": [
+            "whiteSand", 
+            "urban", 
+            "calmWaters"
+        ]
+    }, 
+    "occupationRate": {
+        "value": "high"
+    }, 
+    "name": {
+        "value": "Playa de a Concha"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
          "id": " Beach-A-Concha-123456 ",
          "type": ”Beach",
@@ -139,6 +212,7 @@ used by applications.
          “length”: 450,
          "source": "http://www.tourspain.es"
     }
+```
 
 ## Use it with a real service
 
