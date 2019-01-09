@@ -1,0 +1,58 @@
+{
+    "id": "kpi-2016-Ciudad-containers-faults",
+    "type": "KeyPerformanceIndicator",
+    "category": {
+        "value": [
+            "quantitative"
+        ]
+    }, 
+    "dateModified": {
+        "type": "DateTime", 
+        "value": "2016-06-29T15:59:09.224Z"
+    }, 
+    "calculationFrequency": {
+        "value": "monthly"
+    }, 
+    "description": {
+        "value": "Number of incidences raised on containers per month"
+    }, 
+    "currentStanding": {
+        "value": "good"
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressLocality": "Ciudad", 
+            "addressCountry": "ESP"
+        }
+    }, 
+    "calculationPeriod": {
+        "value": {
+            "to": "2016-06-30", 
+            "from": "2016-06-01"
+        }
+    }, 
+    "dateNextCalculation": {
+        "type": "DateTime", 
+        "value": "2016-07-31"
+    }, 
+    "calculationMethod": {
+        "value": "automatic"
+    }, 
+    "provider": {
+        "value": {
+            "name": "Cleaning Service Provider S.A."
+        }
+    }, 
+    "organization": {
+        "value": {
+            "name": "Ayuntamiento de Ciudad"
+        }
+    }, 
+    "kpiValue": {
+        "value": 20
+    }, 
+    "name": {
+        "value": "Incidencias-Contenedores-Mensual"
+    }
+}

@@ -211,8 +211,78 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of Use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "kpi-2016-Ciudad-containers-faults",
+    "type": "KeyPerformanceIndicator",
+    "category": {
+        "value": [
+            "quantitative"
+        ]
+    }, 
+    "dateModified": {
+        "type": "DateTime", 
+        "value": "2016-06-29T15:59:09.224Z"
+    }, 
+    "calculationFrequency": {
+        "value": "monthly"
+    }, 
+    "description": {
+        "value": "Number of incidences raised on containers per month"
+    }, 
+    "currentStanding": {
+        "value": "good"
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressLocality": "Ciudad", 
+            "addressCountry": "ESP"
+        }
+    }, 
+    "calculationPeriod": {
+        "value": {
+            "to": "2016-06-30", 
+            "from": "2016-06-01"
+        }
+    }, 
+    "dateNextCalculation": {
+        "type": "DateTime", 
+        "value": "2016-07-31"
+    }, 
+    "calculationMethod": {
+        "value": "automatic"
+    }, 
+    "provider": {
+        "value": {
+            "name": "Cleaning Service Provider S.A."
+        }
+    }, 
+    "organization": {
+        "value": {
+            "name": "Ayuntamiento de Ciudad"
+        }
+    }, 
+    "kpiValue": {
+        "value": 20
+    }, 
+    "name": {
+        "value": "Incidencias-Contenedores-Mensual"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
       "id": "kpi-2016-Ciudad-containers-faults",
       "type": "KeyPerformanceIndicator",
@@ -229,7 +299,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       "currentStanding": "good",
       "calculationPeriod": {
         "from": "2016-06-01",
-        "to":   "2016-06-30",
+        "to":   "2016-06-30"
       },
       "calculationMethod": "automatic",
       "calculationFrequency": "monthly",
@@ -240,6 +310,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
         "addressCountry": "ESP"
       }
     }
+```
 
 ## Test it with a real service
 
