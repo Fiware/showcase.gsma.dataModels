@@ -132,8 +132,77 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "service-request:638344",
+    "type": "Open311:ServiceRequest",
+    "status": {
+        "value": "closed"
+    }, 
+    "description": {
+        "value": "Acera en mal estado con bordillo partido en dos"
+    }, 
+    "service_code": {
+        "value": 234
+    }, 
+    "status_notes": {
+        "value": "Duplicate request."
+    }, 
+    "service_name": {
+        "value": "Aceras"
+    }, 
+    "service_request_id": {
+        "value": 638344
+    }, 
+    "updated_datetime": {
+        "value": "2010-04-14T06:37:38-08:00"
+    }, 
+    "address_string": {
+        "value": "Calle San Juan Bautista, 2"
+    }, 
+    "requested_datetime": {
+        "value": "2010-04-14T06:37:38-08:00"
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -3.164485591715449, 
+                40.62785133667262
+            ]
+        }
+    }, 
+    "attributes": {
+        "value": {
+            "ISSUE_TYPE": [
+                "Bordillo"
+            ]
+        }
+    }, 
+    "expected_datetime": {
+        "value": "2010-04-15T06:37:38-08:00"
+    }, 
+    "agency_responsible": {
+        "value": "Ayuntamiento de Ciudad"
+    }, 
+    "media_url": {
+        "value": "http://exaple.org/media/638344.jpg"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
       "id": "service-request:638344",
       "type": "Open311:ServiceRequest",
@@ -157,6 +226,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       },
       "media_url":"http://exaple.org/media/638344.jpg"
     }
+```
 
 ## Test it with real services
 

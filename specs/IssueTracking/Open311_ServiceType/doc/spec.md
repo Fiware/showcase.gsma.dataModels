@@ -88,8 +88,72 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "o311:servicetype-guadalajara-sidewalks",
+    "type": "Open311:ServiceType",
+    "group": {
+        "value": "street"
+    }, 
+    "description": {
+        "value": "When a sidewalk is broken or dirty allows citizens to request a fix"
+    }, 
+    "service_code": {
+        "value": 234
+    }, 
+    "service_name": {
+        "value": "Aceras"
+    }, 
+    "open311:type": {
+        "value": "realtime"
+    }, 
+    "jurisdiction_id": {
+        "value": "www.smartguadalajara.com"
+    }, 
+    "dateCreated": {
+        "type": "DateTime", 
+        "value": "2007-01-01"
+    }, 
+    "keywords": {
+        "value": "street,sidewalk, cleaning, repair"
+    }, 
+    "attributes": {
+        "value": [
+            {
+                "code": "ISSUE_TYPE", 
+                "description": "What is the identified problem at the sidewalk?", 
+                "datatype": "singlevaluelist", 
+                "required": true, 
+                "values": [
+                    {
+                        "name": "Bump", 
+                        "key": 123
+                    }, 
+                    {
+                        "name": "Dirty", 
+                        "key": 124
+                    }
+                ], 
+                "variable": true, 
+                "order": 1, 
+                "datatype_description": null
+            }
+        ]
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
       "id": "o311:servicetype-guadalajara-sidewalks",
       "type": "Open311:ServiceType",
@@ -123,6 +187,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
         }
       ]
     }
+```
 
 ## Test it with a real service
 
