@@ -86,7 +86,44 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use
+## Examples
+
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "SSPOT-F94C51A295D9",
+    "type": "SmartSpot",
+    "announcementPeriod": {
+        "value": 500
+    }, 
+    "signalStrength": {
+        "value": "highest"
+    }, 
+    "announcedUrl": {
+        "value": "http://goo.gl/EJ81JP"
+    }, 
+    "availability": {
+        "value": "Tu,Th 16:00-20:00"
+    }, 
+    "coverageRadius": {
+        "value": 30
+    }, 
+    "bluetoothChannel": {
+        "value": "37,38,39"
+    }, 
+    "refSmartPointOfInteraction": {
+        "type": "Relationship", 
+        "value": "SPOI-ES-4326"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
