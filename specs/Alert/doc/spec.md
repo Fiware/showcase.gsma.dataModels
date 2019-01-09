@@ -125,9 +125,13 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of use (traffic)
+## Examples
 
-```
+### Normalized Example
+
+Normalized NGSI response
+
+```json
 {
   "id": "Alert:1",
   "type": "Alert",
@@ -147,9 +151,11 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 }
 ```
 
-## Examples of use (security)
+### key-value pairs Example
 
-```
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
 {
   "id": "VisualEvent123",
   "type": "Alert",
