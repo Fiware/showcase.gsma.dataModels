@@ -1,0 +1,13 @@
+{
+    "id": "FlowerBed-345",
+    "type": "FlowerBed",
+    "category": ["urbanTreeSpot"],
+    "dateLastWatering": "2017-03-31T08:00",
+    "address": {
+        "streetAddress": "Paseo Zorrilla, 122",
+        "adressLocality": "Valladolid",
+        "addressCountry": "Spain"
+    },
+    "soilTemperature": 17,
+    "soilMoistureVwc": 0.85
+}

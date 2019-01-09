@@ -1,0 +1,52 @@
+{
+    "id": "Santander-Garden-Piquio",
+    "type": "Garden",
+    "category": {
+        "value": [
+            "public"
+        ]
+    }, 
+    "style": {
+        "value": "french"
+    }, 
+    "description": {
+        "value": "Jardines de Piquio. Zona El Sardinero"
+    }, 
+    "dateLastWatering": {
+        "type": "DateTime", 
+        "value": "2017-03-31T:08:00"
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -3.7836974, 
+                43.4741091
+            ]
+        }
+    }, 
+    "refRecord": {
+        "type": "Relationship", 
+        "value": [
+            "Santander-Garden-Piquio-Record-1"
+        ]
+    }, 
+    "areaServed": {
+        "value": "El Sardinero"
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressLocality": "Santander", 
+            "postalCode": "39005", 
+            "streetAddress": "Avenida Casta\u00f1eda"
+        }
+    }, 
+    "openingHours": {
+        "value": "Mo-Su"
+    }, 
+    "name": {
+        "value": "Jardines de Piquio"
+    }
+}
