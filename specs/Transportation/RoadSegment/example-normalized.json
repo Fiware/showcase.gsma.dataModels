@@ -1,0 +1,87 @@
+{
+    "id": "Spain-RoadSegment-A62-osm-24702186",
+    "type": "RoadSegment",
+    "category": {
+        "value": [
+            "oneway"
+        ]
+    }, 
+    "endPoint": {
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -4.55167335377909, 
+                41.8570461783071
+            ]
+        }
+    }, 
+    "name": {
+        "value": "Valladolid-Due\u00f1as"
+    }, 
+    "startPoint": {
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -4.7299180606009, 
+                41.6844918725019
+            ]
+        }
+    }, 
+    "allowedVehicleType": {
+        "value": [
+            "car", 
+            "bus", 
+            "lorry", 
+            "trailer", 
+            "tanker", 
+            "van", 
+            "caravan"
+        ]
+    }, 
+    "source": {
+        "value": "http://wwww.openstreetmap.org"
+    }, 
+    "totalLaneNumber": {
+        "value": 2
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "LineString", 
+            "coordinates": [
+                [
+                    -4.7299180606009, 
+                    41.6844918725019
+                ], 
+                [
+                    -4.72855890957602, 
+                    41.6860596957855
+                ], 
+                [
+                    -4.5520357341647, 
+                    41.8569278186523
+                ], 
+                [
+                    -4.55167335377909, 
+                    41.8570461783071
+                ]
+            ]
+        }
+    }, 
+    "minimumAllowedSpeed": {
+        "value": 60
+    }, 
+    "refRoad": {
+        "type": "Relationship", 
+        "value": "Spain-Road-A62"
+    }, 
+    "maximumAllowedSpeed": {
+        "value": 120
+    }, 
+    "laneUsage": {
+        "value": [
+            "forward", 
+            "forward"
+        ]
+    }
+}

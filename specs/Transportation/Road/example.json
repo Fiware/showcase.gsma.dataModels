@@ -1,0 +1,12 @@
+{
+    "id": "Spain-Road-A62",
+    "type": "Road",
+    "name": "A-62",
+    "alternateName": "E-80",
+    "description": "Autovía de Castilla",
+    "roadClass": "motorway",
+    "length": 355,
+    "refRoadSegment": ["Spain-RoadSegment-A62-0-355-forwards",
+                       "Spain-RoadSegment-A62-0-355-backwards"],
+    "responsible": "Ministerio de Fomento - Gobierno de España"
+}

@@ -94,7 +94,47 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "Spain-Road-A62",
+    "type": "Road",
+    "refRoadSegment": {
+        "type": "Relationship", 
+        "value": [
+            "Spain-RoadSegment-A62-0-355-forwards", 
+            "Spain-RoadSegment-A62-0-355-backwards"
+        ]
+    }, 
+    "roadClass": {
+        "value": "motorway"
+    }, 
+    "description": {
+        "value": "Autov\u00eda de Castilla"
+    }, 
+    "responsible": {
+        "value": "Ministerio de Fomento - Gobierno de Espa\u00f1a"
+    }, 
+    "length": {
+        "value": 355
+    }, 
+    "alternateName": {
+        "value": "E-80"
+    }, 
+    "name": {
+        "value": "A-62"
+    }
+}
 ```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
         "id": "Spain-Road-A62",
         "type": "Road",
