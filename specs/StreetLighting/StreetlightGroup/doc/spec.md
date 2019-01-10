@@ -152,8 +152,83 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of Use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "streetlightgroup:mycity:A12",
+    "type": "StreetlightGroup",
+    "circuitId": {
+        "value": "C-456-A467"
+    }, 
+    "powerState": {
+        "value": "on"
+    }, 
+    "dateLastSwitchingOn": {
+        "type": "DateTime", 
+        "value": "2016-07-07T19:59:06.618Z"
+    }, 
+    "refStreetlightCabinetController": {
+        "type": "Relationship", 
+        "value": "cabinetcontroller:CC45A34"
+    }, 
+    "dateLastSwitchingOff": {
+        "type": "DateTime", 
+        "value": "2016-07-07T07:59:06.618Z"
+    }, 
+    "switchingOnHours": {
+        "value": [
+            {
+                "hours": "Mo,Su 16:00-02:00", 
+                "to": "--01-07", 
+                "from": "--11-30", 
+                "description": "Christmas"
+            }
+        ]
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "MultiLineString", 
+            "coordinates": [
+                [
+                    [
+                        100.0, 
+                        0.0
+                    ], 
+                    [
+                        101.0, 
+                        1.0
+                    ]
+                ], 
+                [
+                    [
+                        102.0, 
+                        2.0
+                    ], 
+                    [
+                        103.0, 
+                        3.0
+                    ]
+                ]
+            ]
+        }
+    }, 
+    "areaServed": {
+        "value": "Calle Comercial Centro"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
       "id": "streetlightgroup:mycity:A12",
       "type": "StreetlightGroup",
@@ -179,6 +254,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
         }
       ]
     }
+```
 
 ## Test it with a real service
 

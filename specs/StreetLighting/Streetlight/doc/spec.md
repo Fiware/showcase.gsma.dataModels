@@ -199,8 +199,67 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Examples of Use
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "streetlight:guadalajara:4567",
+    "type": "Streetlight",
+    "status": {
+        "value": "ok"
+    }, 
+    "powerState": {
+        "value": "off"
+    }, 
+    "circuit": {
+        "value": "C-456-A467"
+    }, 
+    "locationCategory": {
+        "value": "centralIsland"
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -3.164485591715449, 
+                40.62785133667262
+            ]
+        }
+    }, 
+    "areaServed": {
+        "value": "Roundabouts city entrance"
+    }, 
+    "controllingMethod": {
+        "value": "individual"
+    }, 
+    "refStreetlightGroup": {
+        "type": "Relationship", 
+        "value": "streetlightgroup:G345"
+    }, 
+    "dateLastLampChange": {
+        "type": "DateTime", 
+        "value": "2016-07-08T08:02:21.753Z"
+    }, 
+    "lanternHeight": {
+        "value": 10
+    }, 
+    "refStreetlightModel": {
+        "type": "Relationship", 
+        "value": "streetlightmodel:STEEL_Tubular_10m"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
       "id": "streetlight:guadalajara:4567",
       "type": "Streetlight",
@@ -219,6 +278,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       "controllingMethod": "individual",
       "dateLastLampChange": "2016-07-08T08:02:21.753Z"
     }
+```
 
 ## Test it with a real service
 

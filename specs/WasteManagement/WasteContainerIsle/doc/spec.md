@@ -95,8 +95,80 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Example
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "wastecontainerisle:Fleming:12",
+    "type": "WasteContainerIsle",
+    "refWasteContainer": {
+        "type": "Relationship", 
+        "value": [
+            "wastecontainer:Fleming:12a", 
+            "wastecontainer:Fleming:12b"
+        ]
+    }, 
+    "features": {
+        "value": [
+            "underground"
+        ]
+    }, 
+    "description": {
+        "value": "Container isle located downtown"
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Polygon", 
+            "coordinates": [
+                [
+                    [
+                        -3.164485591715449, 
+                        40.62785133667262
+                    ], 
+                    [
+                        -3.164445130316209, 
+                        40.62787156737224
+                    ], 
+                    [
+                        -3.164394553567159, 
+                        40.62777209976578
+                    ], 
+                    [
+                        -3.164424899616589, 
+                        40.62775018317452
+                    ], 
+                    [
+                        -3.164485591715449, 
+                        40.62785133667262
+                    ]
+                ]
+            ]
+        }
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressLocality": "Guadalajara", 
+            "addressCountry": "ES", 
+            "streetAddress": "Calle Dr. Fleming, 12"
+        }
+    }, 
+    "name": {
+        "value": "Dr. Fleming 12, Esquina Manuel Paez Xaramillo"
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
       "id": "wastecontainerisle:Fleming:12",
       "type": "WasteContainerIsle",
@@ -122,6 +194,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
       "description": "Container isle located downtown",
       "containers": ["wastecontainer:Fleming:12a", "wastecontainer:Fleming:12b"]
     }
+```
 
 ## Test it with a real service
 

@@ -240,23 +240,91 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 
-    {
-      "id": "device-9845A",
-      "type": "Device",
-      "category": ["sensor"],
-      "controlledProperty": ["fillingLevel","temperature"],
-      "controlledAsset": ["wastecontainer-Osuna-100"],
-      "ipAddress": ["192.14.56.78"],
-      "mcc": "214",
-      "mnc": "07",
-      "batteryLevel": 0.75,
-      "serialNumber": "9845A",
-      "refDeviceModel": "myDevice-wastecontainer-sensor-345",
-      "value": "l=0.22;t=21.2",
-      "deviceState": "ok",
-      "dateFirstUsed": "2014-09-11T11:00:00Z",
-      "owner": ["http://person.org/leon"]
+### Normalized Example
+
+Normalized NGSI response
+```json
+{
+    "id": "device-9845A",
+    "type": "Device",
+    "category": {
+        "value": [
+            "sensor"
+        ]
+    }, 
+    "batteryLevel": {
+        "value": 0.75
+    }, 
+    "dateFirstUsed": {
+        "type": "DateTime", 
+        "value": "2014-09-11T11:00:00Z"
+    }, 
+    "controlledAsset": {
+        "value": [
+            "wastecontainer-Osuna-100"
+        ]
+    }, 
+    "serialNumber": {
+        "value": "9845A"
+    }, 
+    "mcc": {
+        "value": "214"
+    }, 
+    "value": {
+        "value": "l%3D0.22%3Bt%3D21.2"
+    }, 
+    "refDeviceModel": {
+        "type": "Relationship", 
+        "value": "myDevice-wastecontainer-sensor-345"
+    }, 
+    "controlledProperty": {
+        "value": [
+            "fillingLevel", 
+            "temperature"
+        ]
+    }, 
+    "owner": {
+        "value": [
+            "http://person.org/leon"
+        ]
+    }, 
+    "mnc": {
+        "value": "07"
+    }, 
+    "ipAddress": {
+        "value": [
+            "192.14.56.78"
+        ]
+    }, 
+    "deviceState": {
+        "value": "ok"
     }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
+    {
+        "id": "device-9845A",
+        "type": "Device",
+        "category": ["sensor"],
+        "controlledProperty": ["fillingLevel""temperature"],
+        "controlledAsset":["wastecontainer-Osuna-100"],
+        "ipAddress": ["192.14.56.78"],
+        "mcc": "214",
+        "mnc": "07",
+        "batteryLevel": 0.75,
+        "serialNumber": "9845A",
+        "refDeviceModel":"myDevice-wastecontainer-sensor-345",
+        "value": "l=0.22;t=21.2",
+        "deviceState": "ok",
+        "dateFirstUsed": "2014-09-11T11:00:00Z",
+        "owner": ["http://person.org/leon"]
+    }
+```
 
 **N.B.:** This example to work in Orion Context Broker implementation of NGSI
 v2, requires that value attribute is URL Encoded. As documented

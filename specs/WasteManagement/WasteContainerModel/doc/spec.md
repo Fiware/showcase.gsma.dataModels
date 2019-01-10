@@ -170,8 +170,64 @@ means that to test the JSON schema examples with a
 [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
 API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
-## Example
+## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "wastecontainermodel:c1",
+    "type": "WasteContainerModel",
+    "category": {
+        "value": [
+            "dumpster"
+        ]
+    }, 
+    "cargoVolume": {
+        "value": 150
+    }, 
+    "modelName": {
+        "value": "C1"
+    }, 
+    "name": {
+        "value": "Dumpster_Brute_2009_Plastic_Green"
+    }, 
+    "compliantWith": {
+        "value": [
+            "UNE-EN 840-2:2013"
+        ]
+    }, 
+    "madeOf": {
+        "value": "plastic"
+    }, 
+    "height": {
+        "value": 0.8
+    }, 
+    "width": {
+        "value": 0.5
+    }, 
+    "depth": {
+        "value": 0.4
+    }, 
+    "brandName": {
+        "value": "Brute"
+    }, 
+    "features": {
+        "value": [
+            "wheels", 
+            "lid"
+        ]
+    }
+}
+```
+
+### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
+
+```json
     {
        "id": "wastecontainermodel:c1",
        "type": "WasteContainerModel",
@@ -187,6 +243,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
        "features": ["wheels", "lid"],
        "category": ["dumpster"]
     }
+```
 
 ## Test it with a real service
 

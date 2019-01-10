@@ -185,7 +185,70 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples
 
+### Normalized Example
+
+Normalized NGSI response
+
+```json
+{
+    "id": "AeroAllergenObserved-CDMX-Pollen-Cuajimalpa",
+    "type": "AeroAllergenObserved",
+    "dateObserved": {
+        "type": "DateTime", 
+        "value": "2018-02-11T00:00:00.00Z"
+    }, 
+    "alnus": {
+        "value": 40
+    }, 
+    "alnus_Allergenicity": {
+        "value": "3"
+    }, 
+    "allergenRisk": {
+        "value": "moderate"
+    }, 
+    "casuarina": {
+        "value": 1
+    }, 
+    "casuarina_Level": {
+        "value": "low"
+    }, 
+    "casuarina_Allergenicity": {
+        "value": "3"
+    }, 
+    "source": {
+        "value": "http://rema.atmosfera.unam.mx/rema/"
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -99.276977, 
+                19.381877
+            ]
+        }
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressCountry": "MX", 
+            "addressLocality": "Ciudad de M\u00e9xico", 
+            "streetAddress": "Colegio Franco-Ingl\u00e9s"
+        }
+    }, 
+    "dateModified": {
+        "type": "DateTime", 
+        "value": "2018-02-16T17:24:39.00Z"
+    }, 
+    "alnus_Level": {
+        "value": "moderate"
+    }
+}
+```
+
 ### key-value pairs Example
+
+Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
