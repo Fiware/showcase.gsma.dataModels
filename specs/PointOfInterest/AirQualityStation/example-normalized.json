@@ -1,0 +1,31 @@
+{
+    "id": "AirQualityStation-ES-Madrid-004",
+    "type": "PointOfInterest",
+    "category": {
+        "value": "AirQualityStation"
+    }, 
+    "name": {
+        "value": "Pza. de Espa\u00f1a"
+    }, 
+    "source": {
+        "value": "http://datos.madrid.es"
+    }, 
+    "location": {
+        "type": "geo:json", 
+        "value": {
+            "type": "Point", 
+            "coordinates": [
+                -3.712247222222222, 
+                40.423852777777775
+            ]
+        }
+    }, 
+    "address": {
+        "type": "PostalAddress", 
+        "value": {
+            "addressCountry": "ES", 
+            "addressLocality": "Madrid", 
+            "streetAddress": "Plaza de Espa\u00f1a"
+        }
+    }
+}
