@@ -104,7 +104,7 @@ Normalized NGSI response
         ]
     }, 
     "applicationUrl": {
-        "type": "url",
+        "type": "URL",
         "value": "http://www.example.org"
     }, 
     "areaCovered": {
