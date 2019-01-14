@@ -17,7 +17,7 @@ from pytz import timezone
 default_csv = 'stations.csv'
 default_orion = 'http://orion:1026'
 default_latest = True
-default_loglevel = 'INFO'
+default_log_level = 'INFO'
 default_path = '/Spain'
 default_service = 'weather'
 default_timeout = -1
@@ -71,8 +71,6 @@ def log_level_to_int(log_level_string):
         raise argparse.ArgumentTypeError(message)
 
     log_level_int = getattr(logging, log_level_string, logging.ERROR)
-
-    assert isinstance(log_level_int, int)
 
     return log_level_int
 
@@ -201,10 +199,10 @@ def post(body):
     }
 
     if service:
-        headers['Fiware-Service'] = service
+        headers['FIWARE-SERVICE'] = service
 
     if path:
-        headers['Fiware-Servicepath'] = path
+        headers['FIWARE-SERVICEPATH'] = path
 
     try:
         resp = requests.post(orion + '/v2/op/update', headers=headers, data=data)
@@ -255,7 +253,7 @@ if __name__ == '__main__':
                         help='Path to file with stations data',
                         action="store")
     parser.add_argument('--log-level',
-                        default=default_loglevel,
+                        default=default_log_level,
                         dest='log_level',
                         nargs='?',
                         help='Set the logging output level. {0}'.format(log_levels))
@@ -287,8 +285,8 @@ if __name__ == '__main__':
     for s in args.stations:
         stations_on.append(s)
 
-    with contextlib.closing(open(args.csv, 'r')) as csvfile:
-        reader_orig = csv.reader(csvfile, delimiter=',')
+    with contextlib.closing(open(args.csv, 'r')) as csv_file:
+        reader_orig = csv.reader(csv_file, delimiter=',')
         i = 0
         for el in reader_orig:
             check = True
@@ -339,6 +337,7 @@ if __name__ == '__main__':
 
     to_post = list()
     while True:
+        # noinspection PyUnresolvedReferences
         to_post.clear()
         for station in stations:
             res = harvest(station)
