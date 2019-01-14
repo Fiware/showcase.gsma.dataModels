@@ -101,6 +101,7 @@ def get_data(row, index, conversion=float, factor=1.0):
 
 def harvest(station_code):
     url = url_template.format(station_code, station_code)
+    observation = dict()
 
     try:
         request = requests.get(url)
@@ -114,7 +115,8 @@ def harvest(station_code):
             logger.debug('Harvesting info about station %s skipped', station_code)
             return False
     else:
-        logger.error('Harvesting info about station %s failed due to the return code %s', station_code, request.status_code)
+        logger.error('Harvesting info about station %s failed due to the return code %s',
+                     station_code, request.status_code)
         return False
 
     reader = csv.reader(io.StringIO(data), delimiter=',')
@@ -174,9 +176,10 @@ def harvest(station_code):
         observation['address'] = {
             'value': {
                 'addressLocality': stations[station_code]['address'],
-                'addressCountry': 'ES'},
+                'addressCountry': 'ES'
+            },
             'type': 'PostalAddress'
-            }
+        }
         observation['location'] = stations[station_code]['location']
         observation['id'] = 'Spain-WeatherObserved' + '-' + station_code + '-' + date_observed.isoformat()
         if latest:
