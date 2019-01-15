@@ -148,7 +148,7 @@ def log_level_to_int(log_level_string):
 
 def post(body):
     headers = {
-            'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
     }
     if service:
         headers['FIWARE-SERVICE'] = service

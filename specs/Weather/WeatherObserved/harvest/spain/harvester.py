@@ -225,12 +225,13 @@ def setup_stations(csv_source):
             if check:
                 el_name = sanitize(el[3])
                 el_address = sanitize(el[4])
+
                 el_coords = dict()
                 el_coords['type'] = 'geo:json'
                 el_coords['value'] = {
-                        'type': 'Point',
-                        'coordinates': [float(el[0]), float(el[1])]
-                    }
+                    'type': 'Point',
+                    'coordinates': [float(el[0]), float(el[1])]
+                }
 
                 stations[el_code] = dict()
                 stations[el_code]['name'] = el_name,
