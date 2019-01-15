@@ -1,26 +1,25 @@
 # Weather Observed
 
-Weather observed from the [Spanish National Meteorology Agency](http://aemet.es)
-(AEMET) is exposed through NGSIv2. The Weather observed is provided by
-[weather stations](../../PointOfInterest/WeatherStation) owned by AEMET and by
-the IPMA (Portuguese Institute for Sea and Atmosphere).
+The Weather observed in Spain is provided by [Spanish National Meteorology Agency](http://aemet.es), from Portugal
+by [Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt). [Harvesters](./harvest) transform this data to NGSIv2.
+
+[Harvester for Spain](./harvest/spain) requires the [list](../../PointOfInterest/WeatherStation) of stations.
+
 
 This folder contains the following scripts:
 
 -   `weather_observed.py` .- Contains all the logic to expose the weather
     observed as an NGSIv2 data model (outdated).
--   `spain_weather_observed_harvest.py` .- Performs data harvesting using
-    AEMET's data site as origin and Orion Context Broker as destination.
--   `portugal_weather_observed_harvest.py` .- Performs data harvesting using
-    IPMA's data site as origin and Orion Context Broker as destination.
+-   `spain/harvester.py` .- Performs data harvesting using
+    AEMET's data site as the origin and Orion Context Broker as the destination.
+-   `portugal/harvester.py` .- Performs data harvesting using
+    IPMA's data site as the origin and Orion Context Broker as the destination.
 
-Please check data licenses at the original data sources before using this data
-in an application.
+Please check data licenses at the original data sources before using this data in an application.
 
 ## Public instance
 
-To get access to a public instance offering weather observed data please have a
-look at the
+To get access to a public instance offering weather observed data please have a look at the
 [GSMA's API Directory](http://apidirectory.connectedliving.gsma.com).
 
 The instance described
@@ -34,34 +33,37 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-What was the weather observed today at 07:00 UTC in Valladolid (Spain)?
+What was the weather observed today in Valladolid (Spain)?
 
-`curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' -H 'x-auth-token:<my_token>' "http://iotbd-v2.lab.fiware.org/v2/entities?type=WeatherObserved&q=dateObserved:2018-11-30T07:00;address.addressLocality:Valladolid&options=keyValues"`
+`curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' "https://orion.lab.fiware.org/v2/entities?type=WeatherObserved&q=address.addressLocality:Valladolid&options=keyValues"`
 
 ```json
 [
     {
-        "id": "Spain-WeatherObserved-2422-2018-11-30T08:00:00",
-        "type": "WeatherObserved",
         "address": {
-            "addressLocality": "Valladolid",
-            "addressCountry": "ES"
+            "addressCountry": "ES",
+            "addressLocality": "Valladolid"
         },
-        "atmosphericPressure": 934.8,
+        "atmosphericPressure": 937.7,
         "dataProvider": "FIWARE",
-        "dateObserved": "2018-11-30T07:00:00.00Z",
+        "dateObserved": "2019-01-10T19:00:00.00Z",
+        "id": "Spain-WeatherObserved-2422-latest",
         "location": {
-            "type": "Point",
-            "coordinates": [-4.754444444, 41.640833333]
+            "coordinates": [
+                -4.754444444,
+                41.640833333
+            ],
+            "type": "Point"
         },
         "precipitation": 0,
-        "pressureTendency": 1.2,
-        "relativeHumidity": 0.9,
+        "pressureTendency": 0.7,
+        "relativeHumidity": 0.65,
         "source": "http://www.aemet.es",
         "stationCode": "2422",
         "stationName": "Valladolid",
-        "temperature": 5.5,
-        "windDirection": 90,
+        "temperature": 1.9,
+        "type": "WeatherObserved",
+        "windDirection": -135,
         "windSpeed": 2.8
     }
 ]

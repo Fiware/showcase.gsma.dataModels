@@ -13,66 +13,21 @@ import contextlib
 import csv
 import json
 from pytz import timezone
+import yaml
 
 default_csv = 'stations.csv'
 default_orion = 'http://orion:1026'
-default_latest = True
+default_latest = False
 default_log_level = 'INFO'
 default_path = '/Spain'
 default_service = 'weather'
 default_timeout = -1
 
+http_ok = [200, 201, 204]
 log_levels = ['ERROR', 'INFO', 'DEBUG']
-stations = dict()
-stations_off = [
-    '6332X',
-    '76',
-    '349',
-    '367',
-    '6381',
-    '9174',
-    '0171C',
-    '0229I',
-    '1036A',
-    '1331D',
-    '2331X',
-    '2503X',
-    '3125Y',
-    '4492E',
-    '6032B',
-    '6205X',
-    '6332X',
-    '7012C',
-    '7250X',
-    '8290X',
-    '9198A',
-    '9263I',
-    '9283X',
-    '9443V',
-    '9531X',
-    '9574X',
-    '9576C',
-    '9814A',
-    '9894X',
-    '9918X',
-    'C229X',
-    'C315P',
-    'C468B'
-]
-stations_on = list()
 tz = timezone('CET')
 url_template = ("http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv"
                 "?k=cle&l={}&datos=det&w=0&f=temperatura&x=h6")
-
-
-def log_level_to_int(log_level_string):
-    if log_level_string not in log_levels:
-        message = 'invalid choice: {0} (choose from {1})'.format(log_level_string, log_levels)
-        raise argparse.ArgumentTypeError(message)
-
-    log_level_int = getattr(logging, log_level_string, logging.ERROR)
-
-    return log_level_int
 
 
 def decode_wind_direction(direction):
@@ -86,10 +41,6 @@ def decode_wind_direction(direction):
         'Sureste': -45,
         'Suroeste': 45
     }.get(direction, None)
-
-
-def sanitize(str_in):
-    return re.sub(r"[<(>)\"\'=;-]", "", str_in)
 
 
 def get_data(row, index, conversion=float, factor=1.0):
@@ -107,10 +58,10 @@ def harvest(station_code):
         logger.error('Harvesting info about station %s failed due to the connection problem', station_code)
         return False
 
-    if request.status_code == 200:
+    if request.status_code in http_ok:
         data = request.text
         if data.find('initial-scale') != -1:
-            logger.debug('Harvesting info about station %s skipped', station_code)
+            logger.info('Harvesting info about station %s skipped', station_code)
             return False
     else:
         logger.error('Harvesting info about station %s failed due to the return code %s',
@@ -125,52 +76,18 @@ def harvest(station_code):
             index += 1
             continue
 
-        observation = {
-            'type': 'WeatherObserved',
-            'stationCode': {
-                'value': station_code
-            },
-            'stationName': {
-                'value': stations[station_code]['name']
-            }
+        observation['stationCode'] = {
+            'value': station_code
         }
+        observation['stationName'] = {
+            'value': stations[station_code]['name']
+        }
+        observation['type'] = 'WeatherObserved'
 
         if len(row) < 2:
+            logger.info('Harvesting info about station %s skipped', station_code)
             continue
 
-        observation['temperature'] = {
-            'value': get_data(row, 1)
-        }
-        observation['windSpeed'] = {
-            'value': get_data(row, 2, float, 1 / 0.28)
-        }
-        observation['windDirection'] = {
-            'value': decode_wind_direction(row[3])
-        }
-        observation['precipitation'] = {
-            'value': get_data(row, 6)
-        }
-        observation['atmosphericPressure'] = {
-            'value': get_data(row, 7)
-        }
-        observation['pressureTendency'] = {
-            'value': get_data(row, 8)
-        }
-        observation['relativeHumidity'] = {
-            'value': get_data(row, 9, factor=100.0)
-        }
-        date_observed = datetime.datetime.strptime(row[0], '%d/%m/%Y %H:%M')
-        observation['dateObserved'] = {
-            'value': date_observed.replace(tzinfo=tz).isoformat(),
-            'type': 'DateTime'
-        }
-        observation['source'] = {
-            'value': 'http://www.aemet.es',
-            'type': 'URL'
-        }
-        observation['dataProvider'] = {
-            'value': 'FIWARE'
-        }
         observation['address'] = {
             'value': {
                 'addressLocality': stations[station_code]['address'],
@@ -178,13 +95,57 @@ def harvest(station_code):
             },
             'type': 'PostalAddress'
         }
+        observation['atmosphericPressure'] = {
+            'value': get_data(row, 7)
+        }
+        observation['dataProvider'] = {
+            'value': 'FIWARE'
+        }
+        date_observed = datetime.datetime.strptime(row[0], '%d/%m/%Y %H:%M')
+        observation['dateObserved'] = {
+            'value': date_observed.replace(tzinfo=tz).isoformat(),
+            'type': 'DateTime'
+        }
+        observation['id'] = 'Spain-WeatherObserved-' + station_code + '-' + date_observed.isoformat()
         observation['location'] = stations[station_code]['location']
-        observation['id'] = 'Spain-WeatherObserved' + '-' + station_code + '-' + date_observed.isoformat()
+        observation['precipitation'] = {
+            'value': get_data(row, 6)
+        }
+        observation['pressureTendency'] = {
+            'value': get_data(row, 8)
+        }
+        observation['relativeHumidity'] = {
+            'value': get_data(row, 9, factor=100.0)
+        }
+        observation['source'] = {
+            'value': 'http://www.aemet.es',
+            'type': 'URL'
+        }
+        observation['temperature'] = {
+            'value': get_data(row, 1)
+        }
+        observation['windDirection'] = {
+            'value': decode_wind_direction(row[3])
+        }
+        observation['windSpeed'] = {
+            'value': get_data(row, 2, float, 1 / 0.28)
+        }
+
         if latest:
-            observation['id'] = 'Spain-WeatherObserved' + '-' + station_code + '-' + 'latest'
+            observation['id'] = 'Spain-WeatherObserved-' + station_code + '-latest'
             break
-        logger.debug('Harvesting info for station %s succeeded', station_code)
+
     return observation
+
+
+def log_level_to_int(log_level_string):
+    if log_level_string not in log_levels:
+        message = 'invalid choice: {0} (choose from {1})'.format(log_level_string, log_levels)
+        raise argparse.ArgumentTypeError(message)
+
+    log_level_int = getattr(logging, log_level_string, logging.ERROR)
+
+    return log_level_int
 
 
 def post(body):
@@ -210,7 +171,7 @@ def post(body):
         logger.error('Posting data to %s failed due to the connection problem', orion)
         return False
 
-    if resp.status_code == 204:
+    if resp.status_code in http_ok:
         logger.debug('Context was successfully updated')
     else:
         logger.error('Context failed to update')
@@ -219,57 +180,12 @@ def post(body):
     return True
 
 
-if __name__ == '__main__':
+def sanitize(str_in):
+    return re.sub(r"[<(>)\"\'=;-]", "", str_in)
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--service',
-                        dest="service",
-                        default=default_service,
-                        help='FIWARE Service',
-                        action="store")
-    parser.add_argument('--path',
-                        dest="path",
-                        default=default_path,
-                        help='FIWARE Service Path',
-                        action="store")
-    parser.add_argument('--orion',
-                        dest='orion',
-                        default=default_orion,
-                        help='Orion Context Broker',
-                        action="store")
-    parser.add_argument('--latest',
-                        dest='latest',
-                        default=default_latest,
-                        help='Harvest only latest observation',
-                        action="store_true")
-    parser.add_argument('--timeout',
-                        dest='timeout',
-                        default=default_timeout,
-                        help='Run harvester as a service',
-                        action="store")
-    parser.add_argument('--csv',
-                        dest='csv',
-                        default=default_csv,
-                        help='Path to file with stations data',
-                        action="store")
-    parser.add_argument('--log-level',
-                        default=default_log_level,
-                        dest='log_level',
-                        nargs='?',
-                        help='Set the logging output level. {0}'.format(log_levels))
-    parser.add_argument('stations',
-                        metavar='stations',
-                        type=str,
-                        nargs='*',
-                        help='Station codes separated by spaces. ' +
-                        'See https://jmcanterafonseca.carto.com/viz/e7ccc6c6-9e5b-11e5-a595-0ef7f98ade21/public_map')
-    args = parser.parse_args()
 
-    service = args.service
-    path = args.path
-    orion = args.orion
-    latest = args.latest
-    timeout = int(args.timeout)
+def setup_logger():
+    global logger
 
     logger = logging.getLogger('root')
     logger_req = logging.getLogger('requests')
@@ -282,10 +198,13 @@ if __name__ == '__main__':
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-    for s in args.stations:
-        stations_on.append(s)
 
-    with contextlib.closing(open(args.csv, 'r')) as csv_file:
+def setup_stations(csv_source):
+    global stations
+
+    stations = dict()
+
+    with contextlib.closing(open(csv_source, 'r')) as csv_file:
         reader_orig = csv.reader(csv_file, delimiter=',')
         i = 0
         for el in reader_orig:
@@ -296,36 +215,69 @@ if __name__ == '__main__':
 
             el_code = el[2]
 
-            if len(stations_on) > 0:
+            if limit_on:
                 if el_code not in stations_on:
                     check = False
-
-            if len(stations_off) > 0:
+            if limit_off:
                 if el_code in stations_off:
                     check = False
 
             if check:
                 el_name = sanitize(el[3])
                 el_address = sanitize(el[4])
-                el_coords = {
-                    'type': 'geo:json',
-                    'value': {
+                el_coords = dict()
+                el_coords['type'] = 'geo:json'
+                el_coords['value'] = {
                         'type': 'Point',
                         'coordinates': [float(el[0]), float(el[1])]
                     }
-                }
 
-                stations[el_code] = {
-                    'name': el_name,
-                    'address': el_address,
-                    'location': el_coords
-                }
+                stations[el_code] = dict()
+                stations[el_code]['name'] = el_name,
+                stations[el_code]['address'] = el_address,
+                stations[el_code]['location'] = el_coords
+
             i += 1
+
     if len(stations_on) > 0:
         if len(stations) != len(stations_on):
             logger.error('Errors in the list of stations (stations_on) detected')
             sys.exit(1)
 
+
+def setup_stations_config(f):
+    global stations_off
+    global stations_on
+    global limit_off
+    global limit_on
+
+    stations_off = list()
+    stations_on = list()
+    limit_off = False
+    limit_on = False
+
+    if f:
+        try:
+            with io.open(f, 'r', encoding='utf8') as source_file:
+                temp = yaml.load(source_file)
+                if 'exclude' in temp:
+                    for el in temp['exclude']:
+                        stations_off.append(str(el))
+
+                if 'include' in temp:
+                    for el in temp['include']:
+                        stations_on.append(str(el))
+        except TypeError:
+            logging.error('List of stations to be excluded is empty or wrong')
+            sys.exit(1)
+
+    if len(stations_off) > 0:
+        limit_off = True
+    if len(stations_on) > 0:
+        limit_on = True
+
+
+def setup_status():
     logger.info('Orion: %s', orion)
     logger.info('FIWARE Service: %s', service)
     logger.info('FIWARE Service-Path: %s', path)
@@ -335,10 +287,65 @@ if __name__ == '__main__':
     logger.info('Log level: %s', args.log_level)
     logger.info('Started')
 
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config',
+                        dest='config',
+                        help='YAML file with list of stations to be harvested or excluded from harvesting. ' +
+                        'See https://jmcanterafonseca.carto.com/viz/e7ccc6c6-9e5b-11e5-a595-0ef7f98ade21/public_map')
+    parser.add_argument('--csv',
+                        action='store',
+                        default=default_csv,
+                        dest='csv',
+                        help='Path to file with stations data')
+    parser.add_argument('--latest',
+                        action='store_true',
+                        default=default_latest,
+                        dest='latest',
+                        help='Harvest only latest observation')
+    parser.add_argument('--log-level',
+                        default=default_log_level,
+                        dest='log_level',
+                        help='Set the logging output level. {0}'.format(log_levels),
+                        nargs='?')
+    parser.add_argument('--orion',
+                        action='store',
+                        default=default_orion,
+                        dest='orion',
+                        help='Orion Context Broker')
+    parser.add_argument('--path',
+                        action='store',
+                        default=default_path,
+                        dest='path',
+                        help='FIWARE Service Path')
+    parser.add_argument('--service',
+                        action='store',
+                        default=default_service,
+                        dest="service",
+                        help='FIWARE Service')
+    parser.add_argument('--timeout',
+                        action='store',
+                        default=default_timeout,
+                        dest='timeout',
+                        help='Run harvester as a service')
+
+    args = parser.parse_args()
+
+    latest = args.latest
+    orion = args.orion
+    path = args.path
+    service = args.service
+    timeout = int(args.timeout)
+
+    setup_logger()
+    setup_stations_config(args.config)
+    setup_stations(args.csv)
+    setup_status()
+
     to_post = list()
     while True:
-        # noinspection PyUnresolvedReferences
-        to_post.clear()
         for station in stations:
             res = harvest(station)
             if res:
