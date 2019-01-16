@@ -19,7 +19,14 @@ default_service = 'weather'
 default_timeout = -1
 
 http_ok = [200, 201, 204]
+limit_off = False
+limit_on = False
 log_levels = ['ERROR', 'INFO', 'DEBUG']
+logger = None
+logger_req = None
+stations = dict()
+stations_off = list()
+stations_on = list()
 url_observation = 'https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json'
 url_stations = 'https://www.ipma.pt/resources.www/transf/obs-sup/stations.json'
 
@@ -186,24 +193,23 @@ def sanitize(str_in):
 
 
 def setup_logger():
-    global logger
-
-    logger = logging.getLogger('root')
-    logger_req = logging.getLogger('requests')
-    logger.setLevel(log_level_to_int(args.log_level))
-    logger_req.setLevel(logging.WARNING)
+    local_logger = logging.getLogger('root')
+    local_logger.setLevel(log_level_to_int(args.log_level))
 
     handler = logging.StreamHandler(sys.stdout)
     handler.setLevel(log_level_to_int(args.log_level))
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%dT%H:%M:%SZ')
     handler.setFormatter(formatter)
-    logger.addHandler(handler)
+    local_logger.addHandler(handler)
+
+    local_logger_req = logging.getLogger('requests')
+    local_logger_req.setLevel(logging.WARNING)
+
+    return local_logger, local_logger_req
 
 
 def setup_stations():
-    global stations
-
-    stations = dict()
+    local_stations = dict()
 
     resp = requests.get(url_stations)
 
@@ -223,22 +229,18 @@ def setup_stations():
             if station_code in stations_off:
                 continue
 
-        stations[station_code] = dict()
-        stations[station_code]['name'] = sanitize(station['properties']['localEstacao'])
-        stations[station_code]['location'] = station['geometry']
-    return True
+        local_stations[station_code] = dict()
+        local_stations[station_code]['name'] = sanitize(station['properties']['localEstacao'])
+        local_stations[station_code]['location'] = station['geometry']
+
+    return local_stations
 
 
 def setup_stations_config(f):
-    global stations_off
-    global stations_on
-    global limit_off
-    global limit_on
-
-    stations_off = list()
-    stations_on = list()
-    limit_off = False
-    limit_on = False
+    local_limit_off = False
+    local_limit_on = False
+    local_stations_off = list()
+    local_stations_on = list()
 
     if f:
         try:
@@ -246,19 +248,21 @@ def setup_stations_config(f):
                 temp = yaml.load(source_file)
                 if 'exclude' in temp:
                     for el in temp['exclude']:
-                        stations_off.append(str(el))
+                        local_stations_off.append(str(el))
 
                 if 'include' in temp:
                     for el in temp['include']:
-                        stations_on.append(str(el))
+                        local_stations_on.append(str(el))
         except TypeError:
             logging.error('List of stations to be excluded is empty or wrong')
             sys.exit(1)
 
-    if len(stations_off) > 0:
-        limit_off = True
-    if len(stations_on) > 0:
-        limit_on = True
+    if len(local_stations_off) > 0:
+        local_limit_off = True
+    if len(local_stations_on) > 0:
+        local_limit_on = True
+
+    return local_limit_on, local_limit_off, local_stations_on, local_stations_off
 
 
 def setup_status():
@@ -318,9 +322,9 @@ if __name__ == '__main__':
     service = args.service
     timeout = int(args.timeout)
 
-    setup_logger()
-    setup_stations_config(args.config)
-    setup_stations()
+    logger, logger_req = setup_logger()
+    limit_on, limit_off, stations_on, stations_off = setup_stations_config(args.config)
+    stations = setup_stations()
     setup_status()
 
     while True:

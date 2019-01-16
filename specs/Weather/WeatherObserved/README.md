@@ -5,7 +5,6 @@ by [Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt). [Harvest
 
 [Harvester for Spain](./harvest/spain) requires the [list](../../PointOfInterest/WeatherStation) of stations.
 
-
 This folder contains the following scripts:
 
 -   `weather_observed.py` .- Contains all the logic to expose the weather
