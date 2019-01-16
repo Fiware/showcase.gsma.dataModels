@@ -245,7 +245,7 @@ def setup_stations_config(f):
     if f:
         try:
             with io.open(f, 'r', encoding='utf8') as source_file:
-                temp = yaml.load(source_file)
+                temp = yaml.safe_load(source_file)
                 if 'exclude' in temp:
                     for el in temp['exclude']:
                         local_stations_off.append(str(el))
