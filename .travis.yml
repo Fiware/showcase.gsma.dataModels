@@ -30,11 +30,10 @@ matrix:
         - sudo apt-get install -y docker-ce
         - docker run --name mongodb -d mongo:3.4
         - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
-      before_script:
+      script:
         - npm run lint -C ./validator
         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
-      script:
-        - true
+        - npm test -C ./validator
 
 notifications:
   on_success: change
