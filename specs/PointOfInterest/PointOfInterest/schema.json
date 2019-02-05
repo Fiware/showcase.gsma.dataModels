@@ -37,11 +37,11 @@
       }
     }
   ],
+  "anyOf": [{"required": ["location"]}, {"required": ["address"]}],
   "required": [
     "id",
     "type",
     "category",
-    "location",
     "name"
   ]
 }
