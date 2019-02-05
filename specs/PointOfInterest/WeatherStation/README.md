@@ -6,41 +6,42 @@ owned by the Spanish Meteorological Agency ([AEMET](http://aemet.es)).
 
 Here you can find the following files:
 
--   `stations-normalized-wgs84.csv`. This is a list of weather stations owned by
-    AEMET which provide automated readings.
--   `stations.py` This is the Python code that was used to generate the former
-    file from an
-    [Excel Sheet](http://datosclima.es/Aemet2013/Archivos/ListadoEstaciones2016-02.xlsx)
-    downloaded.
--   `aemet-st.js`. This script loads all the weather stations to Orion Context
-    Broker.
+- [stations.json](stations.json). This is a list of weather stations owned by AEMET and a list of municipalities which provide automated readings.
+- [generate.py](generate.py). This is the Python code that was used to generate the [stations.json](stations.json).
+- [info.xls](info.xls). This is a list of Spain provinces and communities with codes that needed for [generate.py](generate.py).
+- [upload.py](upload.py). This is the Python code that upload [stations.json](stations.json) to the Orion Context Broker.
 
-```
-curl http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:WeatherStation
+
+## Public instance
+
+You can read about public instance offering information about weather stations [here](../../gsma.md).
+
+
+## Example of use
+
+```bash
+curl -s -H 'fiware-service:poi' -H 'fiware-servicepath:/Spain'  'https://orion.lab.fiware.org/v2/entities?type=PointOfInterest&q=category:WeatherStation&options=keyValues&limit=1' | python -m json.tool
 ```
 
 ```json
-{
-    "category": "WeatherStation",
-    "location": {
-        "type": "Point",
-        "coordinates": [-7.684722222222222, 43.78611111111111]
-    },
-    "name": "Estaca de Bares",
-    "postalAddress": {
-        "addressCountry": "ES",
-        "addressLocality": "Mañón",
-        "addressRegion": "A Coruña"
-    },
-    "source": "http://aemet.es",
-    "type": "PointOfInterest",
-    "id": "WeatherStation-ES-1351"
-}
-```
-
-If you want to know the Weather Stations close to a certain location, for
-instance Santander (Spain), you can issue a GET request like
-
-```
-http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:WeatherStation&georel=near;maxDistance=10000&coords=43.4275,-3.8224
+[
+    {
+        "address": {
+            "addressCommunity": "Navarra",
+            "addressCountry": "ES",
+            "addressLocality": "Baztan",
+            "addressProvince": "Navarra"
+        },
+        "category": "WeatherStation",
+        "id": "Spain-WeatherStations-1002Y",
+        "location": {
+            "coordinates": [
+                -1.543055556,
+                43.135833333
+            ],
+            "type": "Point"
+        },
+        "type": "PointOfInterest"
+    }
+]
 ```

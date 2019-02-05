@@ -5,7 +5,7 @@ from aiohttp import ClientSession, client_exceptions
 from argparse import ArgumentTypeError, ArgumentParser
 from asyncio import Semaphore, ensure_future, gather, run
 from copy import deepcopy
-from datetime import datetime
+from datetime import datetime, timedelta
 from io import open
 from json import dumps
 from pytz import timezone
@@ -18,7 +18,7 @@ import logging
 
 default_latest = False
 default_limit_entities = 50
-default_limit_source = 50
+default_limit_source = 35
 default_limit_target = 50
 default_log_level = 'INFO'
 default_orion = 'http://orion:1026'
@@ -26,6 +26,7 @@ default_path = '/Portugal'
 default_service = 'weather'
 default_timeout = -1
 
+data = dict()
 http_ok = [200, 201, 204]
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
@@ -36,43 +37,54 @@ stations_file = 'stations.json'
 tz = timezone('UTC')
 tz_wet = timezone('Europe/Lisbon')
 tz_azot = timezone('Atlantic/Azores')
-tz_azot_codes = ['932', '501', '502', '504', '506', '507', '510', '511', '512', '513', '515']
-url_observation = 'https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json'
-url_stations = 'http://api.ipma.pt/open-data/observation/meteorology/stations/obs-surface.geojson'
+tz_azot_codes = ['3490100', '3480200', '3470100', '3460200', '3450200', '3440100', '3420300', '3410100']
+url_observation = 'http://api.ipma.pt/json/alldata/{}.json'
+url_stations = 'http://api.ipma.pt/json/locations.json'
 
 schema_template = {
-    'id': 'Portugal-WeatherObserved-',
-    'type': 'WeatherObserved',
+    'id': 'Portugal-WeatherForecast-',
+    'type': 'WeatherForecast',
     'address': {
         'type': 'PostalAddress',
         'value': {
-           'addressCountry': 'PT',
-           "addressLocality": None
+            'addressCountry': 'PT',
+            'addressLocality': None,
+            'postalCode': None
         }
     },
-    'atmosphericPressure': {
-        'type': 'Number',
+    'dateIssued': {
+        'type': 'DateTime',
         'value': None
     },
     'dataProvider': {
         'type': 'Text',
         'value': 'FIWARE'
     },
-    'dateObserved': {
-        'type': 'DateTime'
+    'dateRetrieved': {
+        'type': 'DateTime',
+        'value': None
     },
-    'location': {
-        'type': 'geo:json',
+    'dayMaximum': {
+        'type': 'Object',
         'value': {
-            'type': 'Point',
-            'coordinates': None
+            'feelsLikeTemperature': None,
+            'temperature': None,
+            'relativeHumidity': None
         }
     },
-    'precipitation': {
+    'dayMinimum': {
+        'type': 'Object',
+        'value': {
+            'feelsLikeTemperature': None,
+            'temperature': None,
+            'relativeHumidity': None
+        }
+    },
+    'feelsLikeTemperature': {
         'type': 'Number',
         'value': None
     },
-    'pressureTendency': {
+    'precipitationProbability': {
         'type': 'Number',
         'value': None
     },
@@ -82,16 +94,26 @@ schema_template = {
     },
     'source': {
         'type': 'URL',
-        'value': 'https://www.ipma.pt'
-    },
-    'stationCode': {
-        'type': 'Text'
-    },
-    'stationName': {
-        'type': 'Text'
+        'value': 'http://www.ipma.pt'
     },
     'temperature': {
         'type': 'Number',
+        'value': None
+    },
+    'validFrom': {
+        'type': 'DateTime',
+        'value': None
+    },
+    'validTo': {
+        'type': 'DateTime',
+        'value': None
+    },
+    'validity': {
+        'type': 'Text',
+        'value': None
+    },
+    'weatherType': {
+        'type': 'Text',
         'value': None
     },
     'windDirection': {
@@ -102,8 +124,29 @@ schema_template = {
         'type': 'Number',
         'value': None
     }
-
 }
+
+
+def check_entity(forecast, item):
+    if item in forecast:
+        if forecast[item] != '-99.0' and forecast[item] != -99:
+            return forecast[item]
+
+    return None
+
+
+def decode_weather_type(weather_type):
+    return {
+        1: 'clear',
+        2: 'slightlyCloudy',
+        3: 'partlyCloudy',
+        4: 'overcast',
+        5: 'highClouds',
+        6: 'lightRain',
+        7: 'drizzle',
+        9: 'rain',
+        11: 'heavyRain'
+    }.get(weather_type, None)
 
 
 def decode_wind_direction(direction):
@@ -116,7 +159,6 @@ def decode_wind_direction(direction):
     South-East: -45
     East: -90
     North-East: -135
-
     """
 
     return {
@@ -139,50 +181,69 @@ def decode_wind_direction(direction):
     }.get(direction, None)
 
 
-def harvest():
+async def harvest():
     logger.debug('Harvesting info started')
-    result = list()
-    last = ''
 
-    try:
-        request = get(url_observation)
-    except exceptions.ConnectionError:
-        logger.error('Harvesting info failed due to the connection problem')
-        return False
+    tasks = list()
 
-    if request.status_code in http_ok:
-        content = safe_load(request.text)
-    else:
-        logger.error('Harvesting info failed due to the return code')
-        return False
+    sem = Semaphore(limit_source)
 
-    if latest:
-        last = sorted(content.items(), reverse=True)[0][0]
+    async with ClientSession() as session:
+        for station in stations:
+            task = ensure_future(harvest_bounded(station, sem, session))
+            tasks.append(task)
 
-    for date in content:
-        if latest and date != last:
-            continue
-        for station_code in content[date]:
-            if station_code not in stations:
-                continue
+        result = await gather(*tasks)
 
-            if not content[date][station_code]:
-                logger.info('Harvesting info about station %s skipped', station_code)
-                continue
-
-            item = dict()
-            item['id'] = station_code
-            item['atmosphericPressure'] = content[date][station_code]['pressao']
-            item['dateObserved'] = datetime.strptime(date, '%Y-%m-%dT%H:%M')
-            item['precipitation'] = content[date][station_code]['precAcumulada']
-            item['relativeHumidity'] = content[date][station_code]['humidade']
-            item['temperature'] = content[date][station_code]['temperatura']
-            item['windDirection'] = content[date][station_code]['idDireccVento']
-            item['windSpeed'] = content[date][station_code]['intensidadeVento']
-
-            result.append(item)
+    while False in result:
+        result.remove(False)
 
     logger.debug('Harvesting info ended')
+    return result
+
+
+async def harvest_bounded(station, sem, session):
+    async with sem:
+        return await harvest_one(station, session)
+
+
+async def harvest_one(station, session):
+
+    try:
+        async with session.get(stations[station]['url']) as response:
+            content = await response.read()
+    except client_exceptions.ClientConnectorError:
+        logger.error('Harvesting info about station %s failed due to the connection problem', station)
+        return False
+
+    if response.status not in http_ok:
+        logger.error('Harvesting info about station %s failed due to the return code %s', station, response.status)
+        return False
+
+    content = safe_load(content)
+
+    result = dict()
+    result['id'] = station
+    result['retrieved'] = datetime.now().replace(microsecond=0)
+    result['forecasts'] = dict()
+
+    for forecast in content:
+        date = forecast['dataPrev']
+        if date not in result['forecasts']:
+            result['forecasts'][date] = dict()
+
+        result['forecasts'][date]['feelsLikeTemperature'] = check_entity(forecast, 'utci')
+        result['forecasts'][date]['issued'] = datetime.strptime(forecast['dataUpdate'], '%Y-%m-%dT%H:%M:%S')
+        result['forecasts'][date]['period'] = forecast['idPeriodo']
+        result['forecasts'][date]['precipitationProbability'] = check_entity(forecast, 'probabilidadePrecipita')
+        result['forecasts'][date]['relativeHumidity'] = check_entity(forecast, 'hR')
+        result['forecasts'][date]['temperature'] = check_entity(forecast, 'tMed')
+        result['forecasts'][date]['tMax'] = check_entity(forecast, 'tMax')
+        result['forecasts'][date]['tMin'] = check_entity(forecast, 'tMin')
+        result['forecasts'][date]['weatherType'] = check_entity(forecast, 'idTipoTempo')
+        result['forecasts'][date]['windDirection'] = check_entity(forecast, 'ddVento')
+        result['forecasts'][date]['windSpeed'] = check_entity(forecast, 'ffVento')
+
     return result
 
 
@@ -282,56 +343,91 @@ async def prepare_schema(source):
 
     logger.debug('Schema preparation ended')
 
-    return result
+    return [j for i in result for j in i]
 
 
 async def prepare_schema_one(source):
+    result = list()
     id_local = source['id']
+
+    today = datetime.now(tz).strftime("%Y-%m-%d") + 'T00:00:00'
+    tomorrow = (datetime.now(tz) + timedelta(days=1)).strftime("%Y-%m-%d") + 'T00:00:00'
 
     if id_local in tz_azot_codes:
         tz_local = tz_azot
     else:
         tz_local = tz_wet
 
-    date_local = tz_local.localize(source['dateObserved']).astimezone(tz).isoformat()
+    retrieved = source['retrieved'].replace(tzinfo=tz).isoformat()
 
-    result = deepcopy(schema_template)
+    for date in source['forecasts']:
+        if date not in [today, tomorrow]:
+            continue
+        if source['forecasts'][date]['period'] != 24:
+            continue
 
-    if latest:
-        result['id'] = result['id'] + id_local + '-' + 'latest'
-    else:
-        result['id'] = result['id'] + id_local + '-' + date_local
+        item = deepcopy(schema_template)
+        ft = source['forecasts'][date]
 
-    result['address']['value']['addressLocality'] = stations[id_local]['name']
+        ft_date = tz_local.localize(ft['issued'])
+        issued = ft_date.astimezone(tz).isoformat()
+        valid_from = tz_local.localize(datetime.strptime(date, '%Y-%m-%dT%H:%M:%S'))
+        valid_to = valid_from + timedelta(hours=24)
 
-    if 'atmosphericPressure' in source:
-        result['atmosphericPressure']['value'] = float(source['atmosphericPressure'])
+        valid_from_iso = valid_from.isoformat()
+        valid_from_short = valid_from.strftime('%H:%M:%S%z')
+        valid_from = valid_from.astimezone(tz).isoformat()
+        valid_to_iso = valid_to.isoformat()
+        valid_to_short = valid_to.strftime('%H:%M:%S%z')
+        valid_to = valid_to.astimezone(tz).isoformat()
 
-    result['dateObserved']['value'] = date_local
+        if latest:
+            if date == today:
+                item['id'] = item['id'] + id_local + '_today_' + valid_from_short + '_' + valid_to_short
+            if date == tomorrow:
+                item['id'] = item['id'] + id_local + '_tomorrow_' + valid_from_short + '_' + valid_to_short
+        else:
+            item['id'] = item['id'] + id_local + '_' + valid_from_iso + '_' + valid_to_iso
 
-    result['location']['value']['coordinates'] = stations[id_local]['coordinates']
+        item['address']['value']['addressLocality'] = stations[id_local]['addressLocality']
+        item['address']['value']['postalCode'] = stations[id_local]['postalCode']
 
-    if 'precipitation' in source:
-        result['precipitation']['value'] = float(source['precipitation'])
+        item['dateIssued']['value'] = issued
 
-    if 'pressureTendency' in source:
-        result['pressureTendency']['value'] = float(source['pressureTendency'])
+        item['dateRetrieved']['value'] = retrieved
 
-    if 'relativeHumidity' in source:
-        result['relativeHumidity']['value'] = float(source['relativeHumidity']) / 100
+        item['dayMaximum']['value']['temperature'] = float(ft['tMax'])
 
-    result['stationCode']['value'] = id_local
+        item['dayMinimum']['value']['temperature'] = float(ft['tMin'])
 
-    result['stationName']['value'] = stations[id_local]['name']
+        if ft['feelsLikeTemperature'] is not None:
+            item['feelsLikeTemperature']['value'] = float(ft['feelsLikeTemperature'])
 
-    if 'temperature' in source:
-        result['temperature']['value'] = float(source['temperature'])
+        if ft['precipitationProbability'] is not None:
+            item['precipitationProbability']['value'] = float(ft['precipitationProbability'] / 100)
 
-    if 'windDirection' in source:
-        result['windDirection']['value'] = decode_wind_direction(str(source['windDirection']))
+        if ft['relativeHumidity'] is not None:
+            item['relativeHumidity']['value'] = float(ft['relativeHumidity'])
 
-    if 'windSpeed' in source:
-        result['windSpeed']['value'] = float(source['windSpeed']) * 0.28
+        if ft['temperature'] is not None:
+            item['temperature']['value'] = float(ft['temperature'])
+
+        item['validFrom']['value'] = valid_from
+
+        item['validTo']['value'] = valid_to
+
+        item['validity']['value'] = valid_from_iso + '/' + valid_to_iso
+
+        if ft['weatherType'] is not None:
+            item['weatherType']['value'] = decode_weather_type(ft['weatherType'])
+
+        if ft['windDirection'] is not None:
+            item['windDirection']['value'] = decode_wind_direction(ft['windDirection'])
+
+        if ft['windSpeed'] is not None:
+            item['windSpeed']['value'] = round(float(ft['windSpeed']) * 0.28, 2)
+
+        result.append(item)
 
     return result
 
@@ -343,6 +439,7 @@ def reply_status():
     logger.info('Timeout: %s', str(timeout))
     logger.info('Stations: %s', str(len(stations)))
     logger.info('Latest: %s', str(latest))
+    logger.info('Limit_source: %s', str(limit_source))
     logger.info('limit_target: %s', str(limit_target))
     logger.info('Log level: %s', args.log_level)
     logger.info('Started')
@@ -387,13 +484,13 @@ def setup_stations(stations_limit):
         exit(1)
 
     if resp.status_code in http_ok:
-        content = safe_load(resp.text)['features']
+        content = safe_load(resp.text)
     else:
         logger.error('Harvesting init data from the stations failed due to the connection problem')
         exit(1)
 
     for station in content:
-        station_code = str(station['properties']['idEstacao'])
+        station_code = str(station['globalIdLocal'])
 
         if limit_on:
             if station_code not in stations_limit['include']:
@@ -403,8 +500,9 @@ def setup_stations(stations_limit):
                 continue
 
         result[station_code] = dict()
-        result[station_code]['name'] = sanitize(station['properties']['localEstacao'])
-        result[station_code]['coordinates'] = station['geometry']['coordinates']
+        result[station_code]['postalCode'] = station_code
+        result[station_code]['addressLocality'] = sanitize(station['local'])
+        result[station_code]['url'] = url_observation.format(station_code)
 
     if limit_on:
         if len(result) != len(stations_limit['include']):
@@ -471,6 +569,10 @@ if __name__ == '__main__':
                         default=default_limit_entities,
                         dest='limit_entities',
                         help='Limit amount of entities per 1 post request to orion')
+    parser.add_argument('--limit-source',
+                        default=default_limit_source,
+                        dest='limit_source',
+                        help='Limit amount of parallel requests to aemet')
     parser.add_argument('--limit-target',
                         default=default_limit_target,
                         dest='limit_target',
@@ -505,6 +607,7 @@ if __name__ == '__main__':
 
     latest = args.latest
     limit_entities = int(args.limit_entities)
+    limit_source = int(args.limit_source)
     limit_target = int(args.limit_target)
     orion = args.orion
     path = args.path
@@ -517,7 +620,7 @@ if __name__ == '__main__':
     reply_status()
 
     while True:
-        res = harvest()
+        res = run(harvest())
         res = run(prepare_schema(res))
         run(post(res))
         if timeout == -1:

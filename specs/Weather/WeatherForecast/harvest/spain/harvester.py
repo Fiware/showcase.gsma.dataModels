@@ -5,21 +5,22 @@ from aiohttp import ClientSession, client_exceptions
 from argparse import ArgumentTypeError, ArgumentParser
 from asyncio import Semaphore, ensure_future, gather, run
 from copy import deepcopy
-from datetime import datetime
-from io import open, StringIO
+from datetime import datetime, timedelta
+from io import open
 from json import dumps, load
 from pytz import timezone
 from re import sub
 from requests import get, exceptions
 from sys import exit, stdout
 from time import sleep
-from csv import reader as csv_reader
+from xml.dom.minidom import parseString
 from yaml import safe_load
 import logging
 
+
 default_latest = False
 default_limit_entities = 50
-default_limit_source = 50
+default_limit_source = 10
 default_limit_target = 50
 default_log_level = 'INFO'
 default_orion = 'http://orion:1026'
@@ -34,49 +35,58 @@ logger_req = None
 matches = list()
 stations = dict()
 stations_file = 'stations.json'
-tz = timezone('UTC')
 tz_cet = timezone('Europe/Madrid')
 tz_wet = timezone('Atlantic/Canary')
-url_observation = ("http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv"
-                   "?k={}&l={}&datos=det&w=0&f=temperatura&x=")
+tz = timezone('UTC')
+url_observation = "http://www.aemet.es/xml/municipios/localidad_{}.xml"
 #url_stations = ("https://raw.githubusercontent.com/"
 #               "FIWARE/dataModels/master/specs/PointOfInterest/WeatherStation/stations.json")
 url_stations = ("https://raw.githubusercontent.com/"
                 "caa06d9c/dataModels/wf/specs/PointOfInterest/WeatherStation/stations.json")
-
 schema_template = {
-    'id': 'Spain-WeatherObserved-',
-    'type': 'WeatherObserved',
+    'id': 'Spain-WeatherForecast-',
+    'type': 'WeatherForecast',
     'address': {
         'type': 'PostalAddress',
         'value': {
-           'addressCountry': 'ES',
-           "addressLocality": None
+            'addressCountry': 'ES',
+            'addressLocality': None,
+            'postalCode': None
         }
     },
-    'atmosphericPressure': {
-        'type': 'Number',
+    'dateIssued': {
+        'type': 'DateTime',
         'value': None
     },
     'dataProvider': {
         'type': 'Text',
         'value': 'FIWARE'
     },
-    'dateObserved': {
-        'type': 'DateTime'
+    'dateRetrieved': {
+        'type': 'DateTime',
+        'value': None
     },
-    'location': {
-        'type': 'geo:json',
+    'dayMaximum': {
+        'type': 'Object',
         'value': {
-            'type': 'Point',
-            'coordinates': None
+            'feelsLikeTemperature': None,
+            'temperature': None,
+            'relativeHumidity': None
         }
     },
-    'precipitation': {
+    'dayMinimum': {
+        'type': 'Object',
+        'value': {
+            'feelsLikeTemperature': None,
+            'temperature': None,
+            'relativeHumidity': None
+        }
+    },
+    'feelsLikeTemperature': {
         'type': 'Number',
         'value': None
     },
-    'pressureTendency': {
+    'precipitationProbability': {
         'type': 'Number',
         'value': None
     },
@@ -88,16 +98,24 @@ schema_template = {
         'type': 'URL',
         'value': 'http://www.aemet.es'
     },
-    'stationCode': {
-        'type': 'Text',
-        'value': None
-    },
-    'stationName': {
-        'type': 'Text',
-        'value': None
-    },
     'temperature': {
         'type': 'Number',
+        'value': None
+    },
+    'validFrom': {
+        'type': 'DateTime',
+        'value': None
+    },
+    'validTo': {
+        'type': 'DateTime',
+        'value': None
+    },
+    'validity': {
+        'type': 'Text',
+        'value': None
+    },
+    'weatherType': {
+        'type': 'Text',
         'value': None
     },
     'windDirection': {
@@ -111,12 +129,51 @@ schema_template = {
 }
 
 
-def check_entity(row, item):
-    if item in row:
-        if row[item] != '':
-            return row[item]
+def decode_weather_type(weather_type):
+    if weather_type is None:
+        return None
 
-    return None
+    param = weather_type.lower()
+
+    trailing = ''
+    if param.endswith('noche'):
+        trailing = ', night'
+        param = param[0:param.index('noche')].strip()
+
+    out = {
+        'despejado': 'sunnyDay',
+        'poco nuboso': 'slightlyCloudy',
+        'intervalos nubosos': 'partlyCloudy',
+        'nuboso': 'cloudy',
+        'muy nuboso': 'veryCloudy',
+        'cubierto': 'overcast',
+        'nubes altas': 'highClouds',
+        'intervalos nubosos con lluvia escasa': 'partlyCloudy,drizzle',
+        'nuboso con lluvia escasa': 'cloudy, drizzle',
+        'muy nuboso con lluvia escasa': 'veryCloudy, drizzle',
+        'cubierto con lluvia escasa': 'overcast, drizzle',
+        'intervalos nubosos con lluvia': 'partlyCloudy,lightRain',
+        'nuboso con lluvia': 'cloudy,lightRain',
+        'muy nuboso con lluvia': 'veryCloudy, lightRain',
+        'cubierto con lluvia': 'overcast, lightRain',
+        'intervalos nubosos con nieve escasa': 'partlyCloudy, lightSnow',
+        'nuboso con nieve escasa': 'cloudy, lightSnow',
+        'muy nuboso con nieve escasa': 'veryCloudy, lightSnow',
+        'cubierto con nieve escasa': 'overcast, lightSnow',
+        'intervalos nubosos con nieve': 'partlyCloudy,snow',
+        'nuboso con nieve': 'cloudy, snow',
+        'muy nuboso con nieve': 'veryCloudy, snow',
+        'cubierto con nieve': 'overcast, snow',
+        'intervalos nubosos con tormenta': 'partlyCloudy, thunder',
+        'nuboso con tormenta': 'cloudy, thunder',
+        'muy nuboso con tormenta': 'veryCloudy,thunder',
+        'cubierto con tormenta': 'overcast, thunder',
+        'intervalos nubosos con tormenta y lluvia escasa': 'partlyCloudy, thunder, lightRainShower',
+        'nuboso con tormenta y lluvia escasa': 'cloudy, thunder, lightRainShower',
+        'muy nuboso con tormenta y lluvia escasa': 'veryCloudy, thunder, lightRainShower',
+        'cubierto con tormenta y lluvia escasa': 'overcast, thunder, lightRainShower',
+        'despejado noche': 'clearNight'}.get(param, None)
+    return (out + trailing) if out else None
 
 
 def decode_wind_direction(direction):
@@ -187,7 +244,7 @@ async def harvest_bounded(station, sem, session):
 async def harvest_one(station, session):
     result = dict()
     result['id'] = station
-    result['observed'] = list()
+    result['forecasts'] = dict()
 
     try:
         async with session.get(stations[station]['url']) as response:
@@ -200,47 +257,119 @@ async def harvest_one(station, session):
         logger.error('Harvesting info about station %s failed due to the return code %s', station, response.status)
         return False
 
-    content = content.decode("latin-1")
+    content = parseString(content).documentElement
 
-    if content.find('initial-scale') != -1:
-        logger.info('Harvesting info about station %s skipped', station)
-        return False
+    element = content.getElementsByTagName('elaborado')[0].firstChild.nodeValue
+    result['issued'] = datetime.strptime(element, '%Y-%m-%dT%H:%M:%S')
 
-    reader = csv_reader(StringIO(content), delimiter=',')
-    index = 0
+    element = datetime.now().replace(microsecond=0)
+    result['retrieved'] = element
 
-    for row in reader:
-        if index < 4:
-            index += 1
-            continue
+    forecasts = content.getElementsByTagName('prediccion')[0].getElementsByTagName('dia')
+    for forecast in forecasts:
+        date = forecast.getAttribute('fecha')
+        result['forecasts'][date] = dict()
 
-        if len(row) < 2:
-            logger.info('Harvesting info about station %s skipped', station)
-            continue
+        # uv
+        element = forecast.getElementsByTagName('uv_max')
+        if len(element) > 0:
+            element = forecast.getElementsByTagName('uv_max')[0]
 
-        item = dict()
+            if element.firstChild and element.firstChild.nodeValue:
+                value = element.firstChild.nodeValue
+            else:
+                value = None
 
-        item['dateObserved'] = datetime.strptime(row[0], '%d/%m/%Y %H:%M')
+            result['forecasts'][date]['uv'] = value
 
-        if row[7] != '':
-            item['atmosphericPressure'] = row[7]
-        if row[6] != '':
-            item['precipitation'] = row[6]
-        if row[8] != '':
-            item['pressureTendency'] = row[8]
-        if row[9] != '':
-            item['relativeHumidity'] = row[9]
-        if row[1] != '':
-            item['temperature'] = row[1]
-        if row[3] != '':
-            item['windDirection'] = row[3]
-        if row[2] != '':
-            item['windSpeed'] = row[2]
+        # precipitationProbability
+        elements = forecast.getElementsByTagName('prob_precipitacion')
+        for element in elements:
+            period = element.getAttribute('periodo')
+            if not period:
+                period = '0-24'
 
-        result['observed'].append(item)
+            if period not in result['forecasts'][date]:
+                result['forecasts'][date][period] = dict()
 
-        if latest:
-            break
+            if element.firstChild and element.firstChild.nodeValue:
+                value = element.firstChild.nodeValue
+            else:
+                value = None
+
+            result['forecasts'][date][period]['prob_precipitacion'] = value
+
+        # weatherType
+        elements = forecast.getElementsByTagName('estado_cielo')
+        for element in elements:
+            period = element.getAttribute('periodo')
+            if not period:
+                period = '0-24'
+
+            if period not in result['forecasts'][date]:
+                result['forecasts'][date][period] = dict()
+
+            if element.firstChild and element.firstChild.nodeValue:
+                value = element.getAttribute('descripcion')
+            else:
+                value = None
+
+            result['forecasts'][date][period]['estado_cielo'] = value
+
+        # windDirection, windSpeed
+        elements = forecast.getElementsByTagName('viento')
+        for element in elements:
+            period = element.getAttribute('periodo')
+            if not period:
+                period = '0-24'
+
+            if period not in result['forecasts'][date]:
+                result['forecasts'][date][period] = dict()
+
+            wind_direction = element.getElementsByTagName('direccion')[0]
+            wind_speed = element.getElementsByTagName('velocidad')[0]
+
+            if wind_speed.firstChild and wind_speed.firstChild.nodeValue:
+                value = wind_speed.firstChild.nodeValue
+            else:
+                value = None
+
+            result['forecasts'][date][period]['velocidad'] = value
+
+            if wind_direction.firstChild and wind_direction.firstChild.nodeValue:
+                value = wind_direction.firstChild.nodeValue
+            else:
+                value = None
+
+            result['forecasts'][date][period]['direccion'] = value
+
+        # temperature, feelsLikeTemperature, relativeHumidity
+        for tag in ['temperatura', 'sens_termica', 'humedad_relativa']:
+            # limits
+            element = forecast.getElementsByTagName(tag)[0]
+            result['forecasts'][date][tag] = dict()
+
+            for subtag in ['maxima', 'minima']:
+                if element.getElementsByTagName(subtag)[0].firstChild is not None:
+                    value = element.getElementsByTagName(subtag)[0].firstChild.nodeValue
+                else:
+                    value = None
+                result['forecasts'][date][tag][subtag] = value
+
+            # periods
+            elements = element.getElementsByTagName('dato')
+            for element in elements:
+                period = element.getAttribute('hora')
+
+                if period not in result['forecasts'][date]:
+                    result['forecasts'][date][period] = dict()
+
+                if element.firstChild and element.firstChild.nodeValue:
+                    value = float(element.firstChild.nodeValue)
+                else:
+                    value = None
+
+                result['forecasts'][date][period][tag] = value
 
     return result
 
@@ -347,55 +476,117 @@ async def prepare_schema(source):
 async def prepare_schema_one(source):
     result = list()
     id_local = source['id']
+    tz_local = None
+    ft_period = None
+    valid_from = None
+    valid_to = None
+
+    today = datetime.now(tz).strftime("%Y-%m-%d")
+    tomorrow = (datetime.now(tz) + timedelta(days=1)).strftime("%Y-%m-%d")
 
     if stations[id_local]['timezone'] == 'cet':
         tz_local = tz_cet
-    else:
+    if stations[id_local]['timezone'] == 'wet':
         tz_local = tz_wet
 
-    for i in range(0, len(source['observed'])):
-        item = deepcopy(schema_template)
+    issued = tz_local.localize(source['issued']).astimezone(tz).isoformat()
+    retrieved = source['retrieved'].replace(tzinfo=tz).isoformat()
 
-        observation = source['observed'][i]
-        date_local = tz_local.localize(observation['dateObserved']).astimezone(tz).isoformat()
+    for date in source['forecasts']:
+        if date not in [today, tomorrow]:
+            continue
+        for period in ['06', '12', '18', '24']:
+            item = deepcopy(schema_template)
 
-        if latest:
-            item['id'] = item['id'] + id_local + '-' + 'latest'
-        else:
-            item['id'] = item['id'] + id_local + '-' + date_local
+            ft = source['forecasts'][date]
 
-        item['address']['value']['addressLocality'] = stations[id_local]['name']
+            ft_date = datetime.strptime(date + '00:00:00', '%Y-%m-%d%H:%M:%S')
 
-        if 'atmosphericPressure' in observation:
-            item['atmosphericPressure']['value'] = float(observation['atmosphericPressure'])
+            if period == '06':
+                valid_from = tz_local.localize(ft_date)
+                valid_to = tz_local.localize(ft_date + timedelta(hours=6))
+                ft_period = '00-06'
+            if period == '12':
+                valid_from = tz_local.localize(ft_date + timedelta(hours=6))
+                valid_to = tz_local.localize(ft_date + timedelta(hours=12))
+                ft_period = '06-12'
+            if period == '18':
+                valid_from = tz_local.localize(ft_date + timedelta(hours=12))
+                valid_to = tz_local.localize(ft_date + timedelta(hours=18))
+                ft_period = '12-18'
+            if period == '24':
+                valid_from = tz_local.localize(ft_date + timedelta(hours=18))
+                valid_to = tz_local.localize(ft_date + timedelta(hours=24))
+                ft_period = '18-24'
 
-        item['dateObserved']['value'] = date_local
+            valid_from_iso = valid_from.isoformat()
+            valid_from_short = valid_from.strftime('%H:%M:%S%z')
+            valid_from = valid_from.astimezone(tz).isoformat()
+            valid_to_iso = valid_to.isoformat()
+            valid_to_short = valid_to.strftime('%H:%M:%S%z')
+            valid_to = valid_to.astimezone(tz).isoformat()
 
-        item['location']['value']['coordinates'] = stations[id_local]['coordinates']
+            if latest:
+                if date == today:
+                    item['id'] = item['id'] + id_local + '_today_' + valid_from_short + '_' + valid_to_short
+                if date == tomorrow:
+                    item['id'] = item['id'] + id_local + '_tomorrow_' + valid_from_short + '_' + valid_to_short
+            else:
+                item['id'] = item['id'] + id_local + '_' + valid_from_iso + '_' + valid_to_iso
 
-        if 'precipitation' in observation:
-            item['precipitation']['value'] = float(observation['precipitation'])
+            item['address']['value']['addressLocality'] = stations[id_local]['addressLocality']
+            item['address']['value']['postalCode'] = stations[id_local]['postalCode']
 
-        if 'pressureTendency' in observation:
-            item['pressureTendency']['value'] = float(observation['pressureTendency'])
+            item['dateIssued']['value'] = issued
 
-        if 'relativeHumidity' in observation:
-            item['relativeHumidity']['value'] = float(observation['relativeHumidity']) / 100.0
+            item['dateRetrieved']['value'] = retrieved
 
-        item['stationCode']['value'] = id_local
+            if ft['sens_termica']['maxima'] is not None:
+                item['dayMaximum']['value']['feelsLikeTemperature'] = float(ft['sens_termica']['maxima'])
 
-        item['stationName']['value'] = stations[id_local]['name']
+            if ft['temperatura']['maxima'] is not None:
+                item['dayMaximum']['value']['temperature'] = float(ft['temperatura']['maxima'])
 
-        if 'temperature' in observation:
-            item['temperature']['value'] = float(observation['temperature'])
+            if ft['humedad_relativa']['maxima'] is not None:
+                item['dayMaximum']['value']['relativeHumidity'] = float(ft['humedad_relativa']['maxima']) / 100
 
-        if 'windDirection' in observation:
-            item['windDirection']['value'] = decode_wind_direction(observation['windDirection'])
+            if ft['sens_termica']['minima'] is not None:
+                item['dayMinimum']['value']['feelsLikeTemperature'] = float(ft['sens_termica']['minima'])
 
-        if 'windSpeed' in observation:
-            item['windSpeed']['value'] = round(float(observation['windSpeed']) * 0.28, 2)
+            if ft['temperatura']['minima'] is not None:
+                item['dayMinimum']['value']['temperature'] = float(ft['temperatura']['minima'])
 
-        result.append(item)
+            if ft['humedad_relativa']['minima'] is not None:
+                item['dayMinimum']['value']['relativeHumidity'] = float(ft['humedad_relativa']['minima']) / 100
+
+            if ft[period]['sens_termica'] is not None:
+                item['feelsLikeTemperature']['value'] = float(ft[period]['sens_termica'])
+
+            if ft[ft_period]['prob_precipitacion'] is not None:
+                item['precipitationProbability']['value'] = float(ft[ft_period]['prob_precipitacion']) / 100
+
+            if ft[period]['humedad_relativa'] is not None:
+                item['relativeHumidity']['value'] = float(ft[period]['humedad_relativa']) / 100
+
+            if ft[period]['temperatura'] is not None:
+                item['temperature']['value'] = float(ft[period]['temperatura'])
+
+            item['validFrom']['value'] = valid_from
+
+            item['validTo']['value'] = valid_to
+
+            item['validity']['value'] = valid_from_iso + '/' + valid_to_iso
+
+            if ft[ft_period]['estado_cielo'] is not None:
+                item['weatherType']['value'] = decode_weather_type(ft[ft_period]['estado_cielo'])
+
+            if ft[ft_period]['direccion'] is not None:
+                item['windDirection']['value'] = decode_wind_direction(ft[ft_period]['direccion'])
+
+            if ft[ft_period]['velocidad'] is not None:
+                item['windSpeed']['value'] = round(float(ft[ft_period]['velocidad']) * 0.28, 2)
+
+            result.append(item)
 
     return result
 
@@ -415,6 +606,12 @@ def reply_status():
 
 def sanitize(str_in):
     return sub(r"[<(>)\"\'=;-]", "", str_in)
+
+
+def setup_config_re(station):
+    fix = sub('-', '', station.group()).strip()
+    matches.append(fix)
+    return "- '{}'\n".format(fix)
 
 
 def setup_logger():
@@ -464,7 +661,7 @@ def setup_stations(stations_limit):
             logger.error('Harvesting init data from the stations failed due to the connection problem')
             exit(1)
 
-        for station in source['stations']:
+        for station in source['municipalities']:
             check = True
             if limit_on:
                 if station not in stations_limit['include']:
@@ -474,24 +671,13 @@ def setup_stations(stations_limit):
                     check = False
 
             if check:
-                try:
-                    m = source['stations'][station]['municipality']
-                    p = source['municipalities'][m]['province']
-                    c = source['provinces'][p]['community']
-                    name = source['municipalities'][m]['name']
-                except KeyError:
-                    c = source['stations'][station]['community']
-                    name = source['communities'][c]['name']
-
-
-                c_tag = source['communities'][c]['tag']
+                p = source['municipalities'][station]['province']
+                c = source['provinces'][p]['community']
                 result[station] = dict()
-
-                result[station]['coordinates'] = [float(source['stations'][station]['longitude']),
-                                                  float(source['stations'][station]['latitude'])]
-                result[station]['name'] = sanitize(name)
-                result[station]['url'] = url_observation.format(station, c_tag, station)
+                result[station]['postalCode'] = station
+                result[station]['addressLocality'] = sanitize(source['municipalities'][station]['name'])
                 result[station]['timezone'] = source['communities'][c]['timezone']
+                result[station]['url'] = url_observation.format(station)
 
     if limit_on:
         if len(result) != len(stations_limit['include']):
@@ -537,14 +723,7 @@ def setup_stations_config(f):
     return local_stations
 
 
-def setup_config_re(station):
-    fix = sub('-', '', station.group()).strip()
-    matches.append(fix)
-    return "- '{}'\n".format(fix)
-
-
 if __name__ == '__main__':
-
     parser = ArgumentParser()
     parser.add_argument('--config',
                         dest='config',

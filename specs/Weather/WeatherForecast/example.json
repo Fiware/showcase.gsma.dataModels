@@ -1,36 +1,101 @@
-    {
-        "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
-        "type": "WeatherForecast",
-        "address":
-        {
-            "addressCountry": "Spain",
-            "postalCode": "46005",
-            "addressLocality": "Valencia"
+{
+    "id": "Spain-WeatherForecast-28079_tomorrow_18:00:00+0100_00:00:00+0100",
+    "type": "WeatherForecast",
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "addressCountry": "ES",
+            "addressLocality": "Madrid",
+            "postalCode": "28079"
         },
-        "dataProvider": "TEF",
-        "dateIssued": "2016-12-01T10:40:01.00Z",
-        "dateRetrieved": "2016-12-01T12:57:24.00Z",
-        "dayMaximum":
-        {
-            "feelsLikeTemperature": 15,
-            "temperature": 15,
-            "relativeHumidity": 0.9
+        "metadata": {}
+    },
+    "dataProvider": {
+        "type": "Text",
+        "value": "FIWARE",
+        "metadata": {}
+    },
+    "dateIssued": {
+        "type": "DateTime",
+        "value": "2019-02-21T10:44:01.00Z",
+        "metadata": {}
+    },
+    "dateRetrieved": {
+        "type": "DateTime",
+        "value": "2019-02-21T11:31:32.00Z",
+        "metadata": {}
+    },
+    "dayMaximum": {
+        "type": "Object",
+        "value": {
+            "feelsLikeTemperature": 19,
+            "temperature": 19,
+            "relativeHumidity": 0.55
         },
-        "dayMinimum":
-        {
-            "feelsLikeTemperature": 11,
-            "temperature": 11,
-            "relativeHumidity": 0.7
+        "metadata": {}
+    },
+    "dayMinimum": {
+        "type": "Object",
+        "value": {
+            "feelsLikeTemperature": 0,
+            "temperature": 3,
+            "relativeHumidity": 0.2
         },
-        "feelsLikeTemperature": 12,
-        "precipitationProbability": 0.15,
-        "relativeHumidity": 0.85,
-        "source": "http://www.aemet.es/xml/municipios/localidad_46250.xml",
-        "temperature": 12,
-        "validFrom": "2016-12-01T17:00:00.00Z",
-        "validTo": "2016-12-01T23:00:00.00Z",
-        "validity": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00",
-        "weatherType": "overcast",
-        "windDirection": null,
-        "windSpeed": 0
+        "metadata": {}
+    },
+    "feelsLikeTemperature": {
+        "type": "Number",
+        "value": 8,
+        "metadata": {}
+    },
+    "precipitationProbability": {
+        "type": "Number",
+        "value": 0,
+        "metadata": {}
+    },
+    "relativeHumidity": {
+        "type": "Number",
+        "value": 0.35,
+        "metadata": {}
+    },
+    "source": {
+        "type": "URL",
+        "value": "http://www.aemet.es",
+        "metadata": {}
+    },
+    "temperature": {
+        "type": "Number",
+        "value": 8,
+        "metadata": {}
+    },
+    "validFrom": {
+        "type": "DateTime",
+        "value": "2019-02-22T17:00:00.00Z",
+        "metadata": {}
+    },
+    "validTo": {
+        "type": "DateTime",
+        "value": "2019-02-22T23:00:00.00Z",
+        "metadata": {}
+    },
+    "validity": {
+        "type": "Text",
+        "value": "2019-02-22T18:00:00+01:00/2019-02-23T00:00:00+01:00",
+        "metadata": {}
+    },
+    "weatherType": {
+        "type": "Text",
+        "value": "sunnyDay",
+        "metadata": {}
+    },
+    "windDirection": {
+        "type": "Number",
+        "value": null,
+        "metadata": {}
+    },
+    "windSpeed": {
+        "type": "Number",
+        "value": 0,
+        "metadata": {}
     }
+}
