@@ -1,6 +1,6 @@
 # Point Of interest
 
-This folder contains all the code related to a harmonized NGSIv2 endpoint.
+This folder contains all the code related to a harmonized NGSI v2 endpoint.
 
 Such endpoint serves entities of type `PointOfInterest`. Data comes from
 different sources:

@@ -1,6 +1,6 @@
 # Weather Forecast
 
-This folder contains a set of scripts which allow to expose a NGSIv2 endpoint
+This folder contains a set of scripts which allow to expose a NGSI v2 endpoint
 intended to provide weather forecasts.
 
 Source of weather forecast are the

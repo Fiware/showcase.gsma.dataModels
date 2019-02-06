@@ -1,7 +1,7 @@
 # Street parking
 
 This folder holds all the code needed to support datasets which expose
-`StreetParking` instances as NGSIv2.
+`StreetParking` instances as NGSI v2.
 
 The list below provides a description of the files present in this folder:
 

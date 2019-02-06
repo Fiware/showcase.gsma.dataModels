@@ -65,8 +65,8 @@ The data model is defined as shown below:
 -   `roadClass` : The classification of this road.
 
     -   Attribute type: [Text](https://schema.org/Text)
-    -   Allowed values: Those described by
-        [http://wiki.openstreetmap.org/wiki/Key:highway](OpenStreetMap).
+    -   Allowed values: Those described by [OpenStreetMap]
+        (http://wiki.openstreetmap.org/wiki/Key:highway).
     -   Mandatory
 
 -   `refRoadSegment` : Road segments which define this road.
