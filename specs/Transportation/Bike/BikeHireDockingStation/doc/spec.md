@@ -31,14 +31,14 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Normative References:
-        [http://schema.org/DateTime](http://schema.org/DateTime)[ ](http://schema.org/DateTime)
+        [http://schema.org/DateTime](http://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
 -   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Normative References:
-        [http://schema.org/DateTime](http://schema.org/DateTime)[ ](http://schema.org/DateTime)
+        [http://schema.org/DateTime](http://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
 -   `location` : Geolocation of the station represented by a GeoJSON

@@ -89,7 +89,7 @@ The data model is defined as shown below:
         saved by FIWARE's IoT Agents. Note: This attribute has not been
         harmonized to keep backwards compatibility with current FIWARE reference
         implementations.
-        -   Type: [DateTime]((https://schema.org/DateTime). here can be
+        -   Type: [DateTime](https://schema.org/DateTime). here can be
             production environmments where the attribute type is equal to the
             `ISO8601` string. If so, it must be considered as a synonym of
             `DateTime`.

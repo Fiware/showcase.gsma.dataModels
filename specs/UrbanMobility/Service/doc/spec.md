@@ -84,7 +84,6 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-
 ```json
 {
     "id": "urn:ngsi-ld:Service:Malaga:LAB",

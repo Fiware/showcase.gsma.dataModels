@@ -55,7 +55,7 @@ used by applications.
 -   `description` : Description of this museum.
 
     -   Normative References:
-        [https://schema.org/description](https://schema.org/description]
+        [https://schema.org/description](https://schema.org/description)
     -   Optional
 
 -   `location` : Location of this museum represented by a GeoJSON geometry,
@@ -178,70 +178,59 @@ Normalized NGSI response
     "type": "Museum",
     "alternateName": {
         "value": "MACBA"
-    }, 
+    },
     "openingHoursSpecification": {
         "value": [
             {
-                "dayOfWeek": "Mo, Wed, Thu, Fr", 
-                "closes": "19:30", 
+                "dayOfWeek": "Mo, Wed, Thu, Fr",
+                "closes": "19:30",
                 "opens": "11:00"
-            }, 
+            },
             {
-                "dayOfWeek": "Sat", 
-                "closes": "21:00", 
+                "dayOfWeek": "Sat",
+                "closes": "21:00",
                 "opens": "10:00"
-            }, 
+            },
             {
-                "dayOfWeek": "Sun", 
-                "closes": "15:00", 
+                "dayOfWeek": "Sun",
+                "closes": "15:00",
                 "opens": "10:00"
             }
         ]
-    }, 
+    },
     "description": {
         "value": "The MACBA was designed by the American architect Richard Meier and inaugurated in 1995."
-    }, 
+    },
     "source": {
         "value": "http://www.tourspain.es"
-    }, 
+    },
     "artPeriod": {
-        "value": [
-            "contemporary"
-        ]
-    }, 
+        "value": ["contemporary"]
+    },
     "museumType": {
-        "value": [
-            "fineArts"
-        ]
-    }, 
+        "value": ["fineArts"]
+    },
     "facilities": {
-        "value": [
-            "shop", 
-            "cloakRoom", 
-            "guidedTour"
-        ]
-    }, 
+        "value": ["shop", "cloakRoom", "guidedTour"]
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                2.1668771521199393, 
-                41.38302235796602
-            ]
+            "type": "Point",
+            "coordinates": [2.1668771521199393, 41.38302235796602]
         }
-    }, 
+    },
     "address": {
-        "type": "PostalAddress", 
+        "type": "PostalAddress",
         "value": {
-            "addressCountry": "ES", 
-            "addressLocality": "Barcelona", 
+            "addressCountry": "ES",
+            "addressLocality": "Barcelona",
             "streetAddress": "Plaza Dels \u00c0ngels, 1"
         }
-    }, 
+    },
     "touristArea": {
         "value": "Barcelona-Capital"
-    }, 
+    },
     "name": {
         "value": "Museo de Arte Contemporaneo de Barcelona"
     }
@@ -253,44 +242,44 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-         "id": "Museum-Barcelona-MACBA-1234",
-         "type": "Museum",
-         "name": "Museo de Arte Contemporaneo de Barcelona",
-         "alternateName": "MACBA",
-         "description": "The MACBA was designed by the American architect Richard Meier and inaugurated in 1995.",
-         "address": {
-            "addressCountry": "ES",
-            "addressLocality": "Barcelona",
-            "streetAddress": "Plaza Dels Àngels, 1"
-         },
-         "museumType": ["fineArts"],
-         "artPeriod": ["contemporary"],
-         "facilities": ["shop", "cloakRoom", "guidedTour"],
-         "location": {
-            "type": "Point",
-            "coordinates": [ 2.1668771521199393, 41.38302235796602]
-         },
-         "openingHoursSpecification": [
-            {
-                "opens":  "11:00",
-                "closes": "19:30",
-                "dayOfWeek": "Mo, Wed, Thu, Fr"
-            },
-            {
-                "opens": "10:00",
-                "closes": "21:00",
-                "dayOfWeek": "Sat"
-            },
-            {
-                "opens": "10:00",
-                "closes": "15:00",
-                "dayOfWeek": "Sun"
-            }
-        ],
-        "touristArea": "Barcelona-Capital",
-        "source": "http://www.tourspain.es"
-    }
+{
+    "id": "Museum-Barcelona-MACBA-1234",
+    "type": "Museum",
+    "name": "Museo de Arte Contemporaneo de Barcelona",
+    "alternateName": "MACBA",
+    "description": "The MACBA was designed by the American architect Richard Meier and inaugurated in 1995.",
+    "address": {
+        "addressCountry": "ES",
+        "addressLocality": "Barcelona",
+        "streetAddress": "Plaza Dels Àngels, 1"
+    },
+    "museumType": ["fineArts"],
+    "artPeriod": ["contemporary"],
+    "facilities": ["shop", "cloakRoom", "guidedTour"],
+    "location": {
+        "type": "Point",
+        "coordinates": [2.1668771521199393, 41.38302235796602]
+    },
+    "openingHoursSpecification": [
+        {
+            "opens": "11:00",
+            "closes": "19:30",
+            "dayOfWeek": "Mo, Wed, Thu, Fr"
+        },
+        {
+            "opens": "10:00",
+            "closes": "21:00",
+            "dayOfWeek": "Sat"
+        },
+        {
+            "opens": "10:00",
+            "closes": "15:00",
+            "dayOfWeek": "Sun"
+        }
+    ],
+    "touristArea": "Barcelona-Capital",
+    "source": "http://www.tourspain.es"
+}
 ```
 
 ## Use it with a real service

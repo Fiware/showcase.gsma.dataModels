@@ -309,16 +309,16 @@ available [here](https://tools.ietf.org/html/rfc7946#appendix-A).
 
 ### How to specify units of measurement
 
-1. If your data use the default unit defined in the Data Model, you don't need
-   to specify any. It is implied.
-1. Unless explicitly stated otherwise, all FIWARE data models use the metric
-   system of measurements by default. Regardless the model specification include
-   explicit reference to the scale adopted.
-1. If your data use a different unit, you will need to use the `unitCode`
-   metadata annotation in your data (and you will need to adopt the normalised
-   representation). Code used should be the ones defined by
-   [UN/CEFACT](https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20_rev3_Annex3e.pdf).
-   E.g.:
+1.  If your data use the default unit defined in the Data Model, you don't need
+    to specify any. It is implied.
+2.  Unless explicitly stated otherwise, all FIWARE data models use the metric
+    system of measurements by default. Regardless the model specification
+    include explicit reference to the scale adopted.
+3.  If your data use a different unit, you will need to use the `unitCode`
+    metadata annotation in your data (and you will need to adopt the normalised
+    representation). Code used should be the ones defined by
+    [UN/CEFACT](https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20_rev3_Annex3e.pdf).
+    E.g.:
 
 ```json
 "length": {

@@ -216,84 +216,55 @@ Normalized NGSI response
     "type": "RoadSegment",
     "category": {
         "value": "oneway"
-    }, 
+    },
     "endPoint": {
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -4.55167335377909, 
-                41.8570461783071
-            ]
+            "type": "Point",
+            "coordinates": [-4.55167335377909, 41.8570461783071]
         }
-    }, 
+    },
     "name": {
         "value": "Valladolid-Due\u00f1as"
-    }, 
+    },
     "startPoint": {
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -4.7299180606009, 
-                41.6844918725019
-            ]
+            "type": "Point",
+            "coordinates": [-4.7299180606009, 41.6844918725019]
         }
-    }, 
+    },
     "allowedVehicleType": {
-        "value": [
-            "car", 
-            "bus", 
-            "lorry", 
-            "trailer", 
-            "tanker", 
-            "van", 
-            "caravan"
-        ]
-    }, 
+        "value": ["car", "bus", "lorry", "trailer", "tanker", "van", "caravan"]
+    },
     "source": {
         "value": "http://wwww.openstreetmap.org"
-    }, 
+    },
     "totalLaneNumber": {
         "value": 2
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "LineString", 
+            "type": "LineString",
             "coordinates": [
-                [
-                    -4.7299180606009, 
-                    41.6844918725019
-                ], 
-                [
-                    -4.72855890957602, 
-                    41.6860596957855
-                ], 
-                [
-                    -4.5520357341647, 
-                    41.8569278186523
-                ], 
-                [
-                    -4.55167335377909, 
-                    41.8570461783071
-                ]
+                [-4.7299180606009, 41.6844918725019],
+                [-4.72855890957602, 41.6860596957855],
+                [-4.5520357341647, 41.8569278186523],
+                [-4.55167335377909, 41.8570461783071]
             ]
         }
-    }, 
+    },
     "minimumAllowedSpeed": {
         "value": 60
-    }, 
+    },
     "refRoad": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "Spain-Road-A62"
-    }, 
+    },
     "maximumAllowedSpeed": {
         "value": 120
-    }, 
+    },
     "laneUsage": {
-        "value": [
-            "forward", 
-            "forward"
-        ]
+        "value": ["forward", "forward"]
     }
 }
 ```
@@ -316,33 +287,30 @@ points just to make the example shorter.
     "maximumAllowedSpeed": 120,
     "minimumAllowedSpeed": 60,
     "startPoint": {
-      "type": "Point",
-      "coordinates": [-4.7299180606009, 41.6844918725019]
+        "type": "Point",
+        "coordinates": [-4.7299180606009, 41.6844918725019]
     },
     "endPoint": {
-      "type": "Point",
-      "coordinates": [-4.55167335377909, 41.8570461783071]
+        "type": "Point",
+        "coordinates": [-4.55167335377909, 41.8570461783071]
     },
     "allowedVehicleType": [
-        "car", "bus", "lorry", "trailer",
-        "tanker", "van", "caravan"
+        "car",
+        "bus",
+        "lorry",
+        "trailer",
+        "tanker",
+        "van",
+        "caravan"
     ],
     "location": {
-       "type": "LineString",
-       "coordinates": [
-            [
-               -4.7299180606009, 41.6844918725019
-            ],
-            [
-              -4.72855890957602, 41.6860596957855
-            ],
-            [
-              -4.5520357341647, 41.8569278186523
-            ],
-            [
-               -4.55167335377909, 41.8570461783071
-            ]
-       ]
+        "type": "LineString",
+        "coordinates": [
+            [-4.7299180606009, 41.6844918725019],
+            [-4.72855890957602, 41.6860596957855],
+            [-4.5520357341647, 41.8569278186523],
+            [-4.55167335377909, 41.8570461783071]
+        ]
     },
     "laneUsage": ["forward", "forward"],
     "source": "http://wwww.openstreetmap.org"

@@ -18,7 +18,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```bash
 curl http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:AirQualityStation
 ```
 
@@ -44,6 +44,6 @@ curl http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:AirQu
 If you want to know the Air Quality Stations close to a certain location, for
 instance Plaza de España
 
-```
+```text
 http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:AirQualityStation&limit=100&georel=near;maxDistance=2000&coords=40.42,-3.71
 ```

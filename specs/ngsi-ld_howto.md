@@ -53,7 +53,7 @@ instantiations of the FIWARE Data Models to NGSI-LD:
 
 The FIWARE Community has already provided a simple script to migrate FIWARE NGSI
 entity representations to NGSI-LD, see
-[https://github.com/Fiware/dataModels/blob/master/tools/normalized2LD.py]
+[normalized2LD.py](https://github.com/Fiware/dataModels/blob/master/tools/normalized2LD.py)
 
 ## Example of migration to NGSI-LD
 

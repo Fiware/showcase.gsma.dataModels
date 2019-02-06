@@ -151,7 +151,8 @@ The data model is defined as shown below:
 
 -   `acceptedPaymentMethod` : Accepted payment method(s).
 
-    -   Normative references: https://schema.org/acceptedPaymentMethod
+    -   Normative references:
+        [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod)
     -   Optional
 
 -   `priceRatePerMinute` : Price rate per minute.

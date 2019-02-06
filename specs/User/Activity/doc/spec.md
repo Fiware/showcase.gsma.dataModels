@@ -100,24 +100,24 @@ Normalized NGSI response
     "type": "UserActivity",
     "description": {
         "value": "User1 drive Car1 to Office1"
-    }, 
+    },
     "refTarget": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "Office1"
-    }, 
+    },
     "activityType": {
         "value": "Drive"
-    }, 
+    },
     "dateActivityStarted": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-11-30T07:00:00.00Z"
-    }, 
+    },
     "refAgent": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "User1"
-    }, 
+    },
     "refObject": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "Car1"
     }
 }

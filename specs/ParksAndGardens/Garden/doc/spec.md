@@ -56,7 +56,8 @@ A JSON Schema corresponding to this data model can be found
     -   Optional
 -   `description` : Garden's description
 
-    -   Normative References: [https://schema.org/description]
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
     -   Optional
 
 -   `category` : Garden's category.
@@ -73,7 +74,8 @@ A JSON Schema corresponding to this data model can be found
     -   Optional
 
 -   `openingHours` : Opening hours of this garden.
-    -   Normative references: [https://schema.org/openingHours]
+    -   Normative references:
+        [https://schema.org/openingHours](https://schema.org/openingHours)
     -   Optional
 -   `areaServed` : Higher level area to which the garden belongs to. It can be
     used to group gardens per responsible, district, neighbourhood, etc.
@@ -110,50 +112,43 @@ Normalized NGSI response
     "id": "Santander-Garden-Piquio",
     "type": "Garden",
     "category": {
-        "value": [
-            "public"
-        ]
-    }, 
+        "value": ["public"]
+    },
     "style": {
         "value": "french"
-    }, 
+    },
     "description": {
         "value": "Jardines de Piquio. Zona El Sardinero"
-    }, 
+    },
     "dateLastWatering": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2017-03-31T:08:00"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.7836974, 
-                43.4741091
-            ]
+            "type": "Point",
+            "coordinates": [-3.7836974, 43.4741091]
         }
-    }, 
+    },
     "refRecord": {
-        "type": "Relationship", 
-        "value": [
-            "Santander-Garden-Piquio-Record-1"
-        ]
-    }, 
+        "type": "Relationship",
+        "value": ["Santander-Garden-Piquio-Record-1"]
+    },
     "areaServed": {
         "value": "El Sardinero"
-    }, 
+    },
     "address": {
-        "type": "PostalAddress", 
+        "type": "PostalAddress",
         "value": {
-            "addressLocality": "Santander", 
-            "postalCode": "39005", 
+            "addressLocality": "Santander",
+            "postalCode": "39005",
             "streetAddress": "Avenida Casta\u00f1eda"
         }
-    }, 
+    },
     "openingHours": {
         "value": "Mo-Su"
-    }, 
+    },
     "name": {
         "value": "Jardines de Piquio"
     }

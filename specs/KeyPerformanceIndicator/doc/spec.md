@@ -222,56 +222,54 @@ Normalized NGSI response
     "id": "kpi-2016-Ciudad-containers-faults",
     "type": "KeyPerformanceIndicator",
     "category": {
-        "value": [
-            "quantitative"
-        ]
-    }, 
+        "value": ["quantitative"]
+    },
     "dateModified": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-06-29T15:59:09.224Z"
-    }, 
+    },
     "calculationFrequency": {
         "value": "monthly"
-    }, 
+    },
     "description": {
         "value": "Number of incidences raised on containers per month"
-    }, 
+    },
     "currentStanding": {
         "value": "good"
-    }, 
+    },
     "address": {
-        "type": "PostalAddress", 
+        "type": "PostalAddress",
         "value": {
-            "addressLocality": "Ciudad", 
+            "addressLocality": "Ciudad",
             "addressCountry": "ESP"
         }
-    }, 
+    },
     "calculationPeriod": {
         "value": {
-            "to": "2016-06-30", 
+            "to": "2016-06-30",
             "from": "2016-06-01"
         }
-    }, 
+    },
     "dateNextCalculation": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-07-31"
-    }, 
+    },
     "calculationMethod": {
         "value": "automatic"
-    }, 
+    },
     "provider": {
         "value": {
             "name": "Cleaning Service Provider S.A."
         }
-    }, 
+    },
     "organization": {
         "value": {
             "name": "Ayuntamiento de Ciudad"
         }
-    }, 
+    },
     "kpiValue": {
         "value": 20
-    }, 
+    },
     "name": {
         "value": "Incidencias-Contenedores-Mensual"
     }
@@ -283,33 +281,33 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "kpi-2016-Ciudad-containers-faults",
-      "type": "KeyPerformanceIndicator",
-      "name": "Incidencias-Contenedores-Mensual",
-      "description": "Number of incidences raised on containers per month",
-      "category": ["quantitative"],
-      "organization": {
-         "name": "Ayuntamiento de Ciudad"
-      },
-      "provider": {
-         "name": "Cleaning Service Provider S.A."
-      },
-      "kpiValue": 20,
-      "currentStanding": "good",
-      "calculationPeriod": {
+{
+    "id": "kpi-2016-Ciudad-containers-faults",
+    "type": "KeyPerformanceIndicator",
+    "name": "Incidencias-Contenedores-Mensual",
+    "description": "Number of incidences raised on containers per month",
+    "category": ["quantitative"],
+    "organization": {
+        "name": "Ayuntamiento de Ciudad"
+    },
+    "provider": {
+        "name": "Cleaning Service Provider S.A."
+    },
+    "kpiValue": 20,
+    "currentStanding": "good",
+    "calculationPeriod": {
         "from": "2016-06-01",
-        "to":   "2016-06-30"
-      },
-      "calculationMethod": "automatic",
-      "calculationFrequency": "monthly",
-      "dateModified": "2016-06-29T15:59:09.224Z",
-      "dateNextCalculation": "2016-07-31",
-      "address": {
+        "to": "2016-06-30"
+    },
+    "calculationMethod": "automatic",
+    "calculationFrequency": "monthly",
+    "dateModified": "2016-06-29T15:59:09.224Z",
+    "dateNextCalculation": "2016-07-31",
+    "address": {
         "addressLocality": "Ciudad",
         "addressCountry": "ESP"
-      }
     }
+}
 ```
 
 ## Test it with a real service

@@ -47,7 +47,7 @@ these schemas the
 [AJV JSON Schema Validator](https://github.com/epoberezkin/ajv) is being used.
 For using it just install it through npm:
 
-```
+```console
     npm install ajv
     npm install ajv-cli
 ```

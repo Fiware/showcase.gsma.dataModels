@@ -15,7 +15,7 @@ Here you can find the following files:
 -   `aemet-st.js`. This script loads all the weather stations to Orion Context
     Broker.
 
-```
+```bash
 curl http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:WeatherStation
 ```
 
@@ -41,6 +41,6 @@ curl http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:Weath
 If you want to know the Weather Stations close to a certain location, for
 instance Santander (Spain), you can issue a GET request like
 
-```
+```text
 http://130.206.83.68:1027/v2/entities?type=PointOfInterest&q=category:WeatherStation&georel=near;maxDistance=10000&coords=43.4275,-3.8224
 ```

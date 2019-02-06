@@ -41,7 +41,7 @@ Command-line available options are:
 
 -   `-i, --dmv:importSchemas`. Additional schemas that will be included during
     validation. Default imported schemas are: common-schema.json,
-    geometry-schema.json [array]
+    geometry-schema.json \[array\]
 -   `-w, --dmv:warnings`. How to handle FIWARE Data Models checks warnings.
     -   `true (default)` - print warnings, but does not fail.
     -   `ignore` - do nothing and do not print warnings.

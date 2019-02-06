@@ -27,7 +27,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```bash
 curl http://130.206.83.68:1026/v2/entities?type=StreetParking
 ```
 

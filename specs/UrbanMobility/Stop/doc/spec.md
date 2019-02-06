@@ -63,7 +63,7 @@ The data model is defined as shown below:
     -   Optional
 
 -   `location`: Stop's location encoded as GeoJSON Point which coordinates shall
-    be in the form [`stop_long`,`stop_lat`].
+    be in the form \[`stop_long`,`stop_lat`\].
 
     -   Attribute type: GeoProperty. `geo:json`.
     -   Normative References: [rfc7946](https://tools.ietf.org/html/rfc7946)
@@ -132,7 +132,6 @@ Normalized NGSI response
 ### key-value pairs Example
 
 Sample uses simplified representation for data consumers `?options=keyValues`
-
 
 ```json
 {

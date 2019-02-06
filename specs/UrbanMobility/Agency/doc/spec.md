@@ -105,7 +105,6 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-
 ```json
 {
     "id": "urn:ngsi-ld:gtfs:Agency:Malaga_EMT",

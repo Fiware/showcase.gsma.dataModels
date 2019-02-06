@@ -181,44 +181,37 @@ Normalized NGSI response
     "id": "wastecontainermodel:c1",
     "type": "WasteContainerModel",
     "category": {
-        "value": [
-            "dumpster"
-        ]
-    }, 
+        "value": ["dumpster"]
+    },
     "cargoVolume": {
         "value": 150
-    }, 
+    },
     "modelName": {
         "value": "C1"
-    }, 
+    },
     "name": {
         "value": "Dumpster_Brute_2009_Plastic_Green"
-    }, 
+    },
     "compliantWith": {
-        "value": [
-            "UNE-EN 840-2:2013"
-        ]
-    }, 
+        "value": ["UNE-EN 840-2:2013"]
+    },
     "madeOf": {
         "value": "plastic"
-    }, 
+    },
     "height": {
         "value": 0.8
-    }, 
+    },
     "width": {
         "value": 0.5
-    }, 
+    },
     "depth": {
         "value": 0.4
-    }, 
+    },
     "brandName": {
         "value": "Brute"
-    }, 
+    },
     "features": {
-        "value": [
-            "wheels", 
-            "lid"
-        ]
+        "value": ["wheels", "lid"]
     }
 }
 ```
@@ -228,21 +221,21 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-       "id": "wastecontainermodel:c1",
-       "type": "WasteContainerModel",
-       "name": "Dumpster_Plastic_Brute_2009",
-       "width": 0.50,
-       "height": 0.80,
-       "depth": 0.40,
-       "cargoVolume": 150,
-       "brandName": "Brute",
-       "modelName": "C1",
-       "compliantWith": ["UNE-EN 840-2:2013"],
-       "madeOf": "plastic",
-       "features": ["wheels", "lid"],
-       "category": ["dumpster"]
-    }
+{
+    "id": "wastecontainermodel:c1",
+    "type": "WasteContainerModel",
+    "name": "Dumpster_Plastic_Brute_2009",
+    "width": 0.5,
+    "height": 0.8,
+    "depth": 0.4,
+    "cargoVolume": 150,
+    "brandName": "Brute",
+    "modelName": "C1",
+    "compliantWith": ["UNE-EN 840-2:2013"],
+    "madeOf": "plastic",
+    "features": ["wheels", "lid"],
+    "category": ["dumpster"]
+}
 ```
 
 ## Test it with a real service

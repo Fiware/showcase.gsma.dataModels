@@ -93,7 +93,6 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-
 ```json
 {
     "id": "urn:ngsi-ld:AccessPoint:Madrid:acc_4_1_3",

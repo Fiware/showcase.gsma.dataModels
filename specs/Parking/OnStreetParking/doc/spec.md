@@ -100,10 +100,10 @@ The data model is defined as shown below:
     value which must contain a subproperty per each required permit, indicating
     when the permit is active. If nothing specified (or `null`) for a permit it
     will mean that a permit is always required. `null`or empty object means
-    always active. The syntax must be conformant with schema.org (opening hours
-    specification)[https://schema.org/openingHours]. For instance, a blue zone
-    which is only active on dayweeks will be encoded as "blueZonePermit":
-    "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
+    always active. The syntax must be conformant with schema.org
+    [opening hours specification](https://schema.org/openingHours). For
+    instance, a blue zone which is only active on dayweeks will be encoded as
+    "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
 
     -   Attribute type: [StructuredValue](http://schema.org/StructuredValue)
     -   Mandatory. It can be `null`.
@@ -219,7 +219,8 @@ The data model is defined as shown below:
 
 -   `acceptedPaymentMethod` : Accepted payment method(s)
 
-    -   Normative references: https://schema.org/acceptedPaymentMethod
+    -   Normative references:
+        [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod)
     -   Optional
 
 -   `image` : A URL containing a photo of this parking site.

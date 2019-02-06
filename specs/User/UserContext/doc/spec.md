@@ -86,25 +86,22 @@ Normalized NGSI response
     "id": "UserContext1",
     "type": "UserContext",
     "refActivity": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "UserActivity1"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -4.754444444, 
-                41.640833333
-            ]
+            "type": "Point",
+            "coordinates": [-4.754444444, 41.640833333]
         }
-    }, 
+    },
     "refUser": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "User1"
-    }, 
+    },
     "refUserDevice": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "Device1"
     }
 }
@@ -116,18 +113,15 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
-  "id": "UserContext1",
-  "type": "UserContext",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -4.754444444,
-      41.640833333
-    ]
-  },
-  "refActivity": "UserActivity1",
-  "refUserDevice": "Device1",
-  "refUser": "User1"
+    "id": "UserContext1",
+    "type": "UserContext",
+    "location": {
+        "type": "Point",
+        "coordinates": [-4.754444444, 41.640833333]
+    },
+    "refActivity": "UserActivity1",
+    "refUserDevice": "Device1",
+    "refUser": "User1"
 }
 ```
 

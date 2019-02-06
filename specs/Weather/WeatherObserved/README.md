@@ -1,24 +1,29 @@
 # Weather Observed
 
-The Weather observed in Spain is provided by [Spanish National Meteorology Agency](http://aemet.es), from Portugal
-by [Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt). [Harvesters](./harvest) transform this data to NGSIv2.
+The Weather observed in Spain is provided by
+[Spanish National Meteorology Agency](http://aemet.es), from Portugal by
+[Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt).
+[Harvesters](./harvest) transform this data to NGSIv2.
 
-[Harvester for Spain](./harvest/spain) requires the [list](../../PointOfInterest/WeatherStation) of stations.
+[Harvester for Spain](./harvest/spain) requires the
+[list](../../PointOfInterest/WeatherStation) of stations.
 
 This folder contains the following scripts:
 
 -   `weather_observed.py` .- Contains all the logic to expose the weather
     observed as an NGSIv2 data model (outdated).
--   `spain/harvester.py` .- Performs data harvesting using
-    AEMET's data site as the origin and Orion Context Broker as the destination.
--   `portugal/harvester.py` .- Performs data harvesting using
-    IPMA's data site as the origin and Orion Context Broker as the destination.
+-   `spain/harvester.py` .- Performs data harvesting using AEMET's data site as
+    the origin and Orion Context Broker as the destination.
+-   `portugal/harvester.py` .- Performs data harvesting using IPMA's data site
+    as the origin and Orion Context Broker as the destination.
 
-Please check data licenses at the original data sources before using this data in an application.
+Please check data licenses at the original data sources before using this data
+in an application.
 
 ## Public instance
 
-To get access to a public instance offering weather observed data please have a look at the
+To get access to a public instance offering weather observed data please have a
+look at the
 [GSMA's API Directory](http://apidirectory.connectedliving.gsma.com).
 
 The instance described
@@ -48,10 +53,7 @@ What was the weather observed today in Valladolid (Spain)?
         "dateObserved": "2019-01-10T19:00:00.00Z",
         "id": "Spain-WeatherObserved-2422-latest",
         "location": {
-            "coordinates": [
-                -4.754444444,
-                41.640833333
-            ],
+            "coordinates": [-4.754444444, 41.640833333],
             "type": "Point"
         },
         "precipitation": 0,

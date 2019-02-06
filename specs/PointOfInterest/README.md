@@ -18,7 +18,7 @@ commercial application.
 
 Currently the following categories are supported: (For a more extended list of
 categories please check
-https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json)
+[factual_taxonomy.json](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json))
 
 -   `OffStreetParking: 418`
 -   `Restaurant: 347`

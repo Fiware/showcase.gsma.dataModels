@@ -56,7 +56,7 @@ A JSON Schema corresponding to this data model can be found
                 production environmments where the attribute type is equal to
                 the `ISO8601` string. If so, it must be considered as a synonym
                 of `DateTime`.
-    -   Allowed values: Interval [0,1].
+    -   Allowed values: Interval \[0,1\].
     -   Optional
 
 -   `fullnessThreshold` : The level at which the container will generate a
@@ -77,7 +77,7 @@ A JSON Schema corresponding to this data model can be found
                 production environmments where the attribute type is equal to
                 the `ISO8601` string. If so, it must be considered as a synonym
                 of `DateTime`.
-    -   Allowed values: Interval [0,1].
+    -   Allowed values: Interval \[0,1\].
     -   Optional
 
 -   `cargoWeight` : Weight of the container load.
@@ -364,47 +364,40 @@ Normalized NGSI response
     "type": "WasteContainer",
     "status": {
         "value": "ok"
-    }, 
+    },
     "category": {
-        "value": [
-            "underground"
-        ]
-    }, 
+        "value": ["underground"]
+    },
     "dateLastEmptying": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-06-21T15:05:59.408Z"
-    }, 
+    },
     "serialNumber": {
         "value": "ab56kjl"
-    }, 
+    },
     "nextActuationDeadline": {
         "value": "2016-06-28T15:05:59.408Z"
-    }, 
+    },
     "refWasteContainerIsle": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "wastecontainerisle:Fleming:12"
-    }, 
+    },
     "refDevice": {
-        "type": "Relationship", 
-        "value": [
-            "device-Fleming:12a:1"
-        ]
-    }, 
+        "type": "Relationship",
+        "value": ["device-Fleming:12a:1"]
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.164485591715449, 
-                40.62785133667262
-            ]
+            "type": "Point",
+            "coordinates": [-3.164485591715449, 40.62785133667262]
         }
-    }, 
+    },
     "fillingLevel": {
         "value": 0.4
-    }, 
+    },
     "refWasteContainerModel": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "wastecontainermodel:c1"
     }
 }
@@ -415,23 +408,23 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-       "id": "wastecontainer:Fleming:12a",
-       "type": "WasteContainer",
-       "refWasteContainerModel": "wastecontainermodel:c1",
-       "refWasteContainerIsle":  "wastecontainerisle:Fleming:12",
-       "serialNumber": "ab56kjl",
-       "location": {
-         "type": "Point",
-         "coordinates": [  -3.164485591715449, 40.62785133667262 ]
-       },
-       "fillingLevel" : 0.4,
-       "dateLastEmptying": "2016-06-21T15:05:59.408Z",
-       "nextActuationDeadline": "2016-06-28T15:05:59.408Z",
-       "status": "ok",
-       "category": ["underground"],
-       "refDevice": ["device-Fleming:12a:1"]
-    }
+{
+    "id": "wastecontainer:Fleming:12a",
+    "type": "WasteContainer",
+    "refWasteContainerModel": "wastecontainermodel:c1",
+    "refWasteContainerIsle": "wastecontainerisle:Fleming:12",
+    "serialNumber": "ab56kjl",
+    "location": {
+        "type": "Point",
+        "coordinates": [-3.164485591715449, 40.62785133667262]
+    },
+    "fillingLevel": 0.4,
+    "dateLastEmptying": "2016-06-21T15:05:59.408Z",
+    "nextActuationDeadline": "2016-06-28T15:05:59.408Z",
+    "status": "ok",
+    "category": ["underground"],
+    "refDevice": ["device-Fleming:12a:1"]
+}
 ```
 
 ## Test it with real services

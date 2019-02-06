@@ -53,7 +53,7 @@ The data model is defined as shown below:
     from. Typically it will contain an identifier that will allow to obtain more
     information about such circuit.
 
-    -   Attribute type: Text](http://schema.org/Text)
+    -   Attribute type: [Text](http://schema.org/Text)
     -   Optional
 
 -   `refStreetlightModel` : Streetlight's model.
@@ -211,45 +211,42 @@ Normalized NGSI response
     "type": "Streetlight",
     "status": {
         "value": "ok"
-    }, 
+    },
     "powerState": {
         "value": "off"
-    }, 
+    },
     "circuit": {
         "value": "C-456-A467"
-    }, 
+    },
     "locationCategory": {
         "value": "centralIsland"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.164485591715449, 
-                40.62785133667262
-            ]
+            "type": "Point",
+            "coordinates": [-3.164485591715449, 40.62785133667262]
         }
-    }, 
+    },
     "areaServed": {
         "value": "Roundabouts city entrance"
-    }, 
+    },
     "controllingMethod": {
         "value": "individual"
-    }, 
+    },
     "refStreetlightGroup": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "streetlightgroup:G345"
-    }, 
+    },
     "dateLastLampChange": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-07-08T08:02:21.753Z"
-    }, 
+    },
     "lanternHeight": {
         "value": 10
-    }, 
+    },
     "refStreetlightModel": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "streetlightmodel:STEEL_Tubular_10m"
     }
 }
@@ -260,24 +257,24 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "streetlight:guadalajara:4567",
-      "type": "Streetlight",
-      "location": {
+{
+    "id": "streetlight:guadalajara:4567",
+    "type": "Streetlight",
+    "location": {
         "type": "Point",
-        "coordinates": [  -3.164485591715449, 40.62785133667262 ]
-      },
-      "areaServed": "Roundabouts city entrance",
-      "status": "ok",
-      "refStreetlightGroup": "streetlightgroup:G345",
-      "refStreetlightModel": "streetlightmodel:STEEL_Tubular_10m",
-      "circuit": "C-456-A467",
-      "lanternHeight": 10,
-      "locationCategory" : "centralIsland",
-      "powerState": "off",
-      "controllingMethod": "individual",
-      "dateLastLampChange": "2016-07-08T08:02:21.753Z"
-    }
+        "coordinates": [-3.164485591715449, 40.62785133667262]
+    },
+    "areaServed": "Roundabouts city entrance",
+    "status": "ok",
+    "refStreetlightGroup": "streetlightgroup:G345",
+    "refStreetlightModel": "streetlightmodel:STEEL_Tubular_10m",
+    "circuit": "C-456-A467",
+    "lanternHeight": 10,
+    "locationCategory": "centralIsland",
+    "powerState": "off",
+    "controllingMethod": "individual",
+    "dateLastLampChange": "2016-07-08T08:02:21.753Z"
+}
 ```
 
 ## Test it with a real service

@@ -231,41 +231,35 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-```
-    {
-       "id": "TrafficFlowObserved-Valladolid-osm-60821110",
-       "type": "TrafficFlowObserved",
-       "laneId": 1,
-       "address": {
-         "streetAddress": "Avenida de Salamanca",
-         "addressLocality": "Valladolid",
-         "addressCountry": "ES"
-       },
-       "location": {
-         "type": "LineString",
-         "coordinates": [
-           [
-             -4.73735395519672, 41.6538181849672
-           ],
-           [
-             -4.73414858659993, 41.6600594193478
-           ],
-           [
-             -4.73447575302641, 41.659585195093
-           ]
-         ]
-       },
-       "dateObserved": "2016-12-07T11:10:00/2016-12-07T11:15:00",
-       "dateObservedFrom": "2016-12-07T11:10:00Z",
-       "dateObservedTo": "2016-12-07T11:15:00Z",
-       "averageHeadwayTime": 0.5,
-       "intensity": 197,
-       "occupancy": 0.76,
-       "averageVehicleSpeed": 52.6,
-       "averageVehicleLength": 9.87,
-       "reversedLane": false,
-       "laneDirection": "forward"
-    }
+```json
+{
+    "id": "TrafficFlowObserved-Valladolid-osm-60821110",
+    "type": "TrafficFlowObserved",
+    "laneId": 1,
+    "address": {
+        "streetAddress": "Avenida de Salamanca",
+        "addressLocality": "Valladolid",
+        "addressCountry": "ES"
+    },
+    "location": {
+        "type": "LineString",
+        "coordinates": [
+            [-4.73735395519672, 41.6538181849672],
+            [-4.73414858659993, 41.6600594193478],
+            [-4.73447575302641, 41.659585195093]
+        ]
+    },
+    "dateObserved": "2016-12-07T11:10:00/2016-12-07T11:15:00",
+    "dateObservedFrom": "2016-12-07T11:10:00Z",
+    "dateObservedTo": "2016-12-07T11:15:00Z",
+    "averageHeadwayTime": 0.5,
+    "intensity": 197,
+    "occupancy": 0.76,
+    "averageVehicleSpeed": 52.6,
+    "averageVehicleLength": 9.87,
+    "reversedLane": false,
+    "laneDirection": "forward"
+}
 ```
 
 ## Use it with a real service

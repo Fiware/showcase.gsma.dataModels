@@ -164,60 +164,42 @@ Normalized NGSI response
     "type": "StreetlightGroup",
     "circuitId": {
         "value": "C-456-A467"
-    }, 
+    },
     "powerState": {
         "value": "on"
-    }, 
+    },
     "dateLastSwitchingOn": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-07-07T19:59:06.618Z"
-    }, 
+    },
     "refStreetlightCabinetController": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "cabinetcontroller:CC45A34"
-    }, 
+    },
     "dateLastSwitchingOff": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-07-07T07:59:06.618Z"
-    }, 
+    },
     "switchingOnHours": {
         "value": [
             {
-                "hours": "Mo,Su 16:00-02:00", 
-                "to": "--01-07", 
-                "from": "--11-30", 
+                "hours": "Mo,Su 16:00-02:00",
+                "to": "--01-07",
+                "from": "--11-30",
                 "description": "Christmas"
             }
         ]
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "MultiLineString", 
+            "type": "MultiLineString",
             "coordinates": [
-                [
-                    [
-                        100.0, 
-                        0.0
-                    ], 
-                    [
-                        101.0, 
-                        1.0
-                    ]
-                ], 
-                [
-                    [
-                        102.0, 
-                        2.0
-                    ], 
-                    [
-                        103.0, 
-                        3.0
-                    ]
-                ]
+                [[100.0, 0.0], [101.0, 1.0]],
+                [[102.0, 2.0], [103.0, 3.0]]
             ]
         }
-    }, 
+    },
     "areaServed": {
         "value": "Calle Comercial Centro"
     }
@@ -229,31 +211,31 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "streetlightgroup:mycity:A12",
-      "type": "StreetlightGroup",
-      "location": {
+{
+    "id": "streetlightgroup:mycity:A12",
+    "type": "StreetlightGroup",
+    "location": {
         "type": "MultiLineString",
         "coordinates": [
-          [ [100.0, 0.0], [101.0, 1.0] ],
-          [ [102.0, 2.0], [103.0, 3.0] ]
+            [[100.0, 0.0], [101.0, 1.0]],
+            [[102.0, 2.0], [103.0, 3.0]]
         ]
-      },
-      "powerState": "on",
-      "areaServed": "Calle Comercial Centro",
-      "circuitId": "C-456-A467",
-      "dateLastSwitchingOn":  "2016-07-07T19:59:06.618Z",
-      "dateLastSwitchingOff": "2016-07-07T07:59:06.618Z",
-      "refStreetlightCabinetController": "cabinetcontroller:CC45A34",
-      "switchingOnHours": [
+    },
+    "powerState": "on",
+    "areaServed": "Calle Comercial Centro",
+    "circuitId": "C-456-A467",
+    "dateLastSwitchingOn": "2016-07-07T19:59:06.618Z",
+    "dateLastSwitchingOff": "2016-07-07T07:59:06.618Z",
+    "refStreetlightCabinetController": "cabinetcontroller:CC45A34",
+    "switchingOnHours": [
         {
-          "from" :  "--11-30",
-          "to" :    "--01-07",
-          "hours" : "Mo,Su 16:00-02:00",
-          "description": "Christmas"
+            "from": "--11-30",
+            "to": "--01-07",
+            "hours": "Mo,Su 16:00-02:00",
+            "description": "Christmas"
         }
-      ]
-    }
+    ]
+}
 ```
 
 ## Test it with a real service

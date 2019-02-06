@@ -177,7 +177,7 @@ The data model is defined as shown below:
     determined.
 
     -   Type: [Number](https://schema.org/Number)
-    -   Allowed values: Interval [0,1]
+    -   Allowed values: Interval \[0,1\]
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened. This value can also appear as a FIWARE
@@ -243,59 +243,49 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 ### Normalized Example
 
 Normalized NGSI response
+
 ```json
 {
     "id": "device-9845A",
     "type": "Device",
     "category": {
-        "value": [
-            "sensor"
-        ]
-    }, 
+        "value": ["sensor"]
+    },
     "batteryLevel": {
         "value": 0.75
-    }, 
+    },
     "dateFirstUsed": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2014-09-11T11:00:00Z"
-    }, 
+    },
     "controlledAsset": {
-        "value": [
-            "wastecontainer-Osuna-100"
-        ]
-    }, 
+        "value": ["wastecontainer-Osuna-100"]
+    },
     "serialNumber": {
         "value": "9845A"
-    }, 
+    },
     "mcc": {
         "value": "214"
-    }, 
+    },
     "value": {
         "value": "l%3D0.22%3Bt%3D21.2"
-    }, 
+    },
     "refDeviceModel": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "myDevice-wastecontainer-sensor-345"
-    }, 
+    },
     "controlledProperty": {
-        "value": [
-            "fillingLevel", 
-            "temperature"
-        ]
-    }, 
+        "value": ["fillingLevel", "temperature"]
+    },
     "owner": {
-        "value": [
-            "http://person.org/leon"
-        ]
-    }, 
+        "value": ["http://person.org/leon"]
+    },
     "mnc": {
         "value": "07"
-    }, 
+    },
     "ipAddress": {
-        "value": [
-            "192.14.56.78"
-        ]
-    }, 
+        "value": ["192.14.56.78"]
+    },
     "deviceState": {
         "value": "ok"
     }

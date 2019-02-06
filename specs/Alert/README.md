@@ -23,22 +23,19 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```json
 {
-  "id": "Alert:1",
-  "type": "Alert",
-  "category": "traffic",
-  "subCategory": "trafficJam",
-  "severity": "high",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -3.712247222222222,
-      40.423852777777775
-    ]
-  },
-  "dateIssued": "2017-01-02T09:25:55.00Z",
-  "description": "The road is completely blocked for 3kms",
-  "alertSource": "https://account.lab.fiware.org/users/8"
+    "id": "Alert:1",
+    "type": "Alert",
+    "category": "traffic",
+    "subCategory": "trafficJam",
+    "severity": "high",
+    "location": {
+        "type": "Point",
+        "coordinates": [-3.712247222222222, 40.423852777777775]
+    },
+    "dateIssued": "2017-01-02T09:25:55.00Z",
+    "description": "The road is completely blocked for 3kms",
+    "alertSource": "https://account.lab.fiware.org/users/8"
 }
 ```

@@ -106,58 +106,38 @@ Normalized NGSI response
     "id": "wastecontainerisle:Fleming:12",
     "type": "WasteContainerIsle",
     "refWasteContainer": {
-        "type": "Relationship", 
-        "value": [
-            "wastecontainer:Fleming:12a", 
-            "wastecontainer:Fleming:12b"
-        ]
-    }, 
+        "type": "Relationship",
+        "value": ["wastecontainer:Fleming:12a", "wastecontainer:Fleming:12b"]
+    },
     "features": {
-        "value": [
-            "underground"
-        ]
-    }, 
+        "value": ["underground"]
+    },
     "description": {
         "value": "Container isle located downtown"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Polygon", 
+            "type": "Polygon",
             "coordinates": [
                 [
-                    [
-                        -3.164485591715449, 
-                        40.62785133667262
-                    ], 
-                    [
-                        -3.164445130316209, 
-                        40.62787156737224
-                    ], 
-                    [
-                        -3.164394553567159, 
-                        40.62777209976578
-                    ], 
-                    [
-                        -3.164424899616589, 
-                        40.62775018317452
-                    ], 
-                    [
-                        -3.164485591715449, 
-                        40.62785133667262
-                    ]
+                    [-3.164485591715449, 40.62785133667262],
+                    [-3.164445130316209, 40.62787156737224],
+                    [-3.164394553567159, 40.62777209976578],
+                    [-3.164424899616589, 40.62775018317452],
+                    [-3.164485591715449, 40.62785133667262]
                 ]
             ]
         }
-    }, 
+    },
     "address": {
-        "type": "PostalAddress", 
+        "type": "PostalAddress",
         "value": {
-            "addressLocality": "Guadalajara", 
-            "addressCountry": "ES", 
+            "addressLocality": "Guadalajara",
+            "addressCountry": "ES",
             "streetAddress": "Calle Dr. Fleming, 12"
         }
-    }, 
+    },
     "name": {
         "value": "Dr. Fleming 12, Esquina Manuel Paez Xaramillo"
     }
@@ -169,31 +149,31 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "wastecontainerisle:Fleming:12",
-      "type": "WasteContainerIsle",
-      "location": {
-         "type": "Polygon",
-         "coordinates": [
-          [
-            [ -3.164485591715449, 40.62785133667262 ],
-            [ -3.164445130316209, 40.627871567372239 ],
-            [ -3.164394553567159, 40.627772099765778 ],
-            [ -3.164424899616589, 40.62775018317452 ],
-            [ -3.164485591715449, 40.62785133667262 ]
-          ]
-         ]
-      },
-      "address": {
-         "streetAddress" : "Calle Dr. Fleming, 12",
-         "addressLocality": "Guadalajara",
-         "addressCountry": "ES"
-      },
-      "features": ["underground"],
-      "name": "Dr. Fleming 12, Esquina Manuel Paez Xaramillo",
-      "description": "Container isle located downtown",
-      "containers": ["wastecontainer:Fleming:12a", "wastecontainer:Fleming:12b"]
-    }
+{
+    "id": "wastecontainerisle:Fleming:12",
+    "type": "WasteContainerIsle",
+    "location": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [-3.164485591715449, 40.62785133667262],
+                [-3.164445130316209, 40.627871567372239],
+                [-3.164394553567159, 40.627772099765778],
+                [-3.164424899616589, 40.62775018317452],
+                [-3.164485591715449, 40.62785133667262]
+            ]
+        ]
+    },
+    "address": {
+        "streetAddress": "Calle Dr. Fleming, 12",
+        "addressLocality": "Guadalajara",
+        "addressCountry": "ES"
+    },
+    "features": ["underground"],
+    "name": "Dr. Fleming 12, Esquina Manuel Paez Xaramillo",
+    "description": "Container isle located downtown",
+    "containers": ["wastecontainer:Fleming:12a", "wastecontainer:Fleming:12b"]
+}
 ```
 
 ## Test it with a real service
