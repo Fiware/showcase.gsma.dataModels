@@ -54,7 +54,7 @@
 	},
 	"scripts": {
 		"lint": "eslint . --cache --fix",
-		"lint:text": "textlint  --fix '../README.md' 'README.md' '../specs/*.md' '../specs/**/*.md'",
+		"lint:text": "textlint '../README.md' 'README.md' '../specs/*.md' '../specs/**/*.md'",
 		"lint:md": "remark 'README.md' '../specs'",
 		"precommit": "lint-staged",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
