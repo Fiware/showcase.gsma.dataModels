@@ -12,6 +12,7 @@ extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.o
 pages:
   - Home: index.md
   - How to: howto.md
+  - NGSI-LD How to: ngsi-ld_howto.md
   - NGSI-LD FAQ:  ngsi-ld_faq.md
   - Guidelines  : guidelines.md
   - Alerts:
