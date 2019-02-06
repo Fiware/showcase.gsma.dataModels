@@ -133,21 +133,41 @@ Normalized NGSI response
 
 ```json
 {
-  "id": "Alert:1",
-  "type": "Alert",
-  "category": "traffic",
-  "subCategory": "trafficJam",
-  "severity": "high",
-  "location": {
-    "type": "Point",
-      "coordinates": [
-        -3.712247222222222,
-        40.423852777777775
-      ]
-  },
-  "dateIssued": "2017-01-02T09:25:55.00Z",
-  "description": "The road is completely blocked for 3kms",
-  "alertSource": "https://account.lab.fiware.org/users/8"
+    "id": "Alert:1",
+    "type": "Alert",
+    "category": {
+        "value": "traffic"
+    },
+    "subCategory": {
+        "value": "trafficJam"
+    },
+    "validTo": {
+        "value": "2017-01-02T10:25:55.00Z"
+    },
+    "description": {
+        "value": "The road is completely blocked for 3kms"
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+            "type": "Point",
+            "coordinates": [-3.712247222222222, 40.423852777777775]
+        }
+    },
+    "dateIssued": {
+        "type": "DateTime",
+        "value": "2017-01-02T09:25:55.00Z"
+    },
+    "alertSource": {
+        "value": "https://account.lab.fiware.org/users/8"
+    },
+    "validFrom": {
+        "type": "DateTime",
+        "value": "2017-01-02T09:25:55.00Z"
+    },
+    "severity": {
+        "value": "high"
+    }
 }
 ```
 
@@ -157,26 +177,23 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
-  "id": "VisualEvent123",
-  "type": "Alert",
-  "category": "security",
-  "subCategory": "robbery",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -3.712247222222222,
-      40.423852777777775
-    ]
-  },
-  "dateIssued": "2017-04-25T09:25:55.00Z",
-  "description": "Potential robbery in main building",
-  "alertSource": "Camera1234",
-  "data": {
-    "videoURL": "www.smartsecurity.com/video123.mp4",
-    "initialFrame": "80",
-    "finalFrame": "120"
-  },
-  "severity" : "informational"
+    "id": "VisualEvent123",
+    "type": "Alert",
+    "category": "security",
+    "subCategory": "robbery",
+    "location": {
+        "type": "Point",
+        "coordinates": [-3.712247222222222, 40.423852777777775]
+    },
+    "dateIssued": "2017-04-25T09:25:55.00Z",
+    "description": "Potential robbery in main building",
+    "alertSource": "Camera1234",
+    "data": {
+        "videoURL": "www.smartsecurity.com/video123.mp4",
+        "initialFrame": "80",
+        "finalFrame": "120"
+    },
+    "severity": "informational"
 }
 ```
 

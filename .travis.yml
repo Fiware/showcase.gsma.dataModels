@@ -1,44 +1,47 @@
 language: python
 cache: pip
 python:
-- 2.7
-- 3.6
+  - 2.7
+  - 3.6
 install:
-- pip install flake8
+  - pip install flake8
 before_script:
-- flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
-- flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+  # stop the build if there are Python syntax errors, PEP8 violations, undefined names
+  - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
+  # exit-zero treats all errors as warnings.  GitHub editor is 127 chars wide
+  - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 script:
-- true
+  - true  # add other tests here
+
 matrix:
   include:
-  - language: node_js
-    python: 
-    node_js:
-    - 8
-    install:
-    - npm install -C ./validator
-    - sudo apt-get remove -y docker docker-engine docker.io
-    - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu
-      $(lsb_release -cs) stable"
-    - sudo apt-get -qq update
-    - sudo apt-get install -y docker-ce
-    - docker run --name mongodb -d mongo:3.4
-    - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion
-      -dbhost mongodb
-    before_script:
-    - npm run lint -C ./validator
-    - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i
-      specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs
-      -c true
-    - npm test -C ./validator
-    script:
-    - true
+    - language: node_js
+      python:
+      node_js:
+        - 8
+      install:
+      ## Data model validator
+        - npm install -C ./validator
+        - sudo apt-get remove -y docker docker-engine docker.io
+        - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+        - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        - sudo apt-get -qq update
+        - sudo apt-get install -y docker-ce
+        - docker run --name mongodb -d mongo:3.4
+        - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
+      before_script:
+        - npm run lint -C ./validator
+        - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
+        - npm test -C ./validator
+      script:
+        - true
+
 notifications:
   on_success: change
   on_failure: always
   webhooks:
+    on_success: always
+    on_failure: never
     urls:
-      secure: Cj4XhZn8fWu32mHXzWOwdflmR4VCOs3W2vmO1J6hCktnhwgyyvqiUBXlKsvPQQiqyKGc6Z+8FD4Pt/nscoR50lxWM3wZ++lSPLFVH3YtrO8iMRolKTuQYNSF3jbeYPo0zaSdCXqmGCnZ5VCzUo+bf/l3JSMGc/d5yU7RLgRJjrI89pgkyFuOI5Cs15AfTJxw4lHYjcybh87Oqz8k0zsCb9nJf/l/3gLE5spD6vbn9G85ORsSAz0Quf0BioVSBg8Wm52gPrvi5XaK1FWxIO3LU8Lf42XX0ACuVNSbxPiMxc/TJBTSzOvsWGC/wjMSDeTjZWJrcRqs73HyJJAVDTYqmCatx6rOd2gauM/6EMuOuAUV5q0emx/umbjrVBeA6WyVAx4P9GIy06yfiR6ngRChAP5Xh7vAh8sKFa8pEenVTXS0dEIXTso+ivfQxZzwYzKOXoejm37FKuN2qdgWFlq925s9LhHcfPd0uRryaekyb8fGGFuhNbsZaprCgON+PRCptYV/pRhA1IF353qkwZqd0zPEIV+LLTJbBhztgEtnaqfcE6lei3Tk2kuSxHygd2QclWIz8SXxo8pOyUnidHPqQz1k4It3ChbRmgsnwKA1LrW9qXf0zY16Yd+lH5T0mawZhucJZ1CYD6MT1a51Nnd3hx4ghdZR1EZin3aORY4OltQ=
+      secure: fOXYC8PKUi/0yK+E4NzhDkEYmxZ8m7Zz8mkG4+C6VXaVZymuY2kyi92R5N1Qx7ptadf9keRPibqVa+BhvwwPRMG7Q79YfR4wD8l09Z1cQkbTUGIZ2sy+3wBgbmH+4e1VvhZJK4PtJ3gsvEevhUe0thIaoCNnbfraZN79FhyzS1RMfekTyPDhXr/G6WUcpqnvEn1acWUnDhbM+/fpM7F6g/bcdQFeKtBCI5KTTrMHyl2j+YZUGnA5YFlX317ybxLJdQZeQV0lbfW3RI2jMy80glWwwzn3dcdP8AmserUNbPdjFKJMySFbBJy8oyuqV3C6SNx8C0imd4244XP+CtU+1AdcoD78HOuw4YwqD9nuJ/mREddm2Ujl+6uY5Ihyk18JcA6vKSvqikU1q0dCZp9DaS/adOBCTEGNKA0uBWjGxhIutGj8tBG0S6Z6pUu5ERjLoNDgScXG8A9tZVnmqsNfapPPzlAdx+4pkCEFGocleGX/sHkHgLaj6LhaxEIinFOhaxU1hM80LWkaoaOaiYj1so9J9RaRrG69K8UVaLtzxL6o/hCWVHFZXQPiHA8Kvy6wJTqc6qgkDjiFy1v0mLvhU+9qzUfNhpZX71w4BhB6DA/RlPE4HG0qAI3gWiTXZYKwokABiie1x8EgsJ2N/GynXtkZRVD8M+gAokHYIon2PnI=
