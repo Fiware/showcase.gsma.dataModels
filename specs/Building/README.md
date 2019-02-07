@@ -2,7 +2,7 @@
 
 This folders contains a number of data models related to the modelling of
 Building and its management based on
-[GSMA](http://www.gsma.com/connectedliving/iot-big-data/) activities. Compared
+[GSMA](https://www.gsma.com/connectedliving/iot-big-data/) activities. Compared
 to GSMA models, we introduced some changes and removed the `BuildingType` model.
 
 The following entity types are supported:
