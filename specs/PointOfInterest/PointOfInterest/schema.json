@@ -5,6 +5,15 @@
   "description": "A point of interest",
   "type": "object",
   "allOf": [
+    {"anyOf": [{"required": ["location"]}, {"required": ["address"]}]},
+    {
+      "required": [
+        "id",
+        "type",
+        "category",
+        "name"
+      ]
+	},
     { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
     { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
     {
@@ -36,12 +45,5 @@
         }  
       }
     }
-  ],
-  "anyOf": [{"required": ["location"]}, {"required": ["address"]}],
-  "required": [
-    "id",
-    "type",
-    "category",
-    "name"
   ]
 }
