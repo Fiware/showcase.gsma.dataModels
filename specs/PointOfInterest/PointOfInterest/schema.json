@@ -5,7 +5,20 @@
   "description": "A point of interest",
   "type": "object",
   "allOf": [
-    {"anyOf": [{"required": ["location"]}, {"required": ["address"]}]},
+    {
+      "anyOf": [
+        {
+          "required": [
+            "location"
+          ]
+        },
+        {
+          "required": [
+            "address"
+          ]
+        }
+      ]
+    },
     {
       "required": [
         "id",
@@ -13,9 +26,13 @@
         "category",
         "name"
       ]
-	},
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
     {
       "properties": {
         "type": {
@@ -38,11 +55,13 @@
         "refSeeAlso": {
           "type": "array",
           "items": {
-            "anyOf": [{
-              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-            }]
+            "anyOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              }
+            ]
           }
-        }  
+        }
       }
     }
   ]
