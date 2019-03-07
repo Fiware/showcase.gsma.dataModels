@@ -6,9 +6,9 @@ The Weather forecast in Spain is provided by
 [Harvesters](./harvesters) transform this data to NGSI v2.
 
 This folder contains the following scripts:
-- `harvest/spain/harvester.py` - Performs data harvesting using
+-   `harvest/spain/harvester.py` - Performs data harvesting using
     AEMET's data site as the origin and Orion Context Broker as the destination.
-- `harvest/portugal/harvester.py` - Performs data harvesting using
+-   `harvest/portugal/harvester.py` - Performs data harvesting using
     IPMA's data site as the origin and Orion Context Broker as the destination.
 
 Please check data licenses at the original data sources before using this data

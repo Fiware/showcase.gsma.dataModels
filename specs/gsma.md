@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Public Data sources](#public-data-sources)
-- [Data / IoT Device providers](#data-/-iot-device-providers)
-- [Endpoints](#endpoints)
-- [Harmonized data published](#harmonized-data-published)
-- [Useful links](#useful-links)
-- [Examples](#examples)
+-   [Introduction](#introduction)
+-   [Public Data sources](#public-data-sources)
+-   [Data / IoT Device providers](#data-/-iot-device-providers)
+-   [Endpoints](#endpoints)
+-   [Harmonized data published](#harmonized-data-published)
+-   [Useful links](#useful-links)
+-   [Examples](#examples)
 
 ### Introduction
 This document describes the IoT-BD instance developed under the [GSMA IoT Big Data Project](https://www.gsma.com/iot/connected-living-mobilising-the-internet-of-things/), part of GSMA’s Connected Living Programme.
