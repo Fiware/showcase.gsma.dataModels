@@ -6,11 +6,10 @@ from argparse import ArgumentTypeError, ArgumentParser
 from asyncio import Semaphore, ensure_future, gather, run
 from copy import deepcopy
 from datetime import datetime
-from io import open
 from json import dumps
 from pytz import timezone
 from re import sub
-from sys import exit, stdout
+from sys import stdout
 from time import sleep
 from yaml import safe_load
 from requests import get, exceptions

@@ -6,7 +6,6 @@ from argparse import ArgumentTypeError, ArgumentParser
 from asyncio import Semaphore, ensure_future, gather, run
 from copy import deepcopy
 from datetime import datetime, timedelta
-from io import open
 from json import dumps, load
 from pytz import timezone
 from re import sub
@@ -39,10 +38,9 @@ tz_cet = timezone('Europe/Madrid')
 tz_wet = timezone('Atlantic/Canary')
 tz = timezone('UTC')
 url_observation = "http://www.aemet.es/xml/municipios/localidad_{}.xml"
-#url_stations = ("https://raw.githubusercontent.com/"
-#               "FIWARE/dataModels/master/specs/PointOfInterest/WeatherStation/stations.json")
 url_stations = ("https://raw.githubusercontent.com/"
-                "caa06d9c/dataModels/wf/specs/PointOfInterest/WeatherStation/stations.json")
+                "FIWARE/dataModels/master/specs/PointOfInterest/WeatherStation/stations.json")
+
 schema_template = {
     'id': 'Spain-WeatherForecast-',
     'type': 'WeatherForecast',
@@ -661,23 +659,23 @@ def setup_stations(stations_limit):
             logger.error('Harvesting init data from the stations failed due to the connection problem')
             exit(1)
 
-        for station in source['municipalities']:
-            check = True
-            if limit_on:
-                if station not in stations_limit['include']:
-                    check = False
-            if limit_off:
-                if station in stations_limit['exclude']:
-                    check = False
+    for station in source['municipalities']:
+        check = True
+        if limit_on:
+            if station not in stations_limit['include']:
+                check = False
+        if limit_off:
+            if station in stations_limit['exclude']:
+                check = False
 
-            if check:
-                p = source['municipalities'][station]['province']
-                c = source['provinces'][p]['community']
-                result[station] = dict()
-                result[station]['postalCode'] = station
-                result[station]['addressLocality'] = sanitize(source['municipalities'][station]['name'])
-                result[station]['timezone'] = source['communities'][c]['timezone']
-                result[station]['url'] = url_observation.format(station)
+        if check:
+            p = source['municipalities'][station]['province']
+            c = source['provinces'][p]['community']
+            result[station] = dict()
+            result[station]['postalCode'] = station
+            result[station]['addressLocality'] = sanitize(source['municipalities'][station]['name'])
+            result[station]['timezone'] = source['communities'][c]['timezone']
+            result[station]['url'] = url_observation.format(station)
 
     if limit_on:
         if len(result) != len(stations_limit['include']):

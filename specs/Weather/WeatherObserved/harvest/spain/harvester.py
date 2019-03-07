@@ -6,12 +6,12 @@ from argparse import ArgumentTypeError, ArgumentParser
 from asyncio import Semaphore, ensure_future, gather, run
 from copy import deepcopy
 from datetime import datetime
-from io import open, StringIO
+from io import StringIO
 from json import dumps, load
 from pytz import timezone
 from re import sub
 from requests import get, exceptions
-from sys import exit, stdout
+from sys import stdout
 from time import sleep
 from csv import reader as csv_reader
 from yaml import safe_load
@@ -39,10 +39,8 @@ tz_cet = timezone('Europe/Madrid')
 tz_wet = timezone('Atlantic/Canary')
 url_observation = ("http://www.aemet.es/es/eltiempo/observacion/ultimosdatos_{}_datos-horarios.csv"
                    "?k={}&l={}&datos=det&w=0&f=temperatura&x=")
-#url_stations = ("https://raw.githubusercontent.com/"
-#               "FIWARE/dataModels/master/specs/PointOfInterest/WeatherStation/stations.json")
 url_stations = ("https://raw.githubusercontent.com/"
-                "caa06d9c/dataModels/wf/specs/PointOfInterest/WeatherStation/stations.json")
+               "FIWARE/dataModels/master/specs/PointOfInterest/WeatherStation/stations.json")
 
 schema_template = {
     'id': 'Spain-WeatherObserved-',
@@ -464,34 +462,34 @@ def setup_stations(stations_limit):
             logger.error('Harvesting init data from the stations failed due to the connection problem')
             exit(1)
 
-        for station in source['stations']:
-            check = True
-            if limit_on:
-                if station not in stations_limit['include']:
-                    check = False
-            if limit_off:
-                if station in stations_limit['exclude']:
-                    check = False
+    for station in source['stations']:
+        check = True
+        if limit_on:
+            if station not in stations_limit['include']:
+                check = False
+        if limit_off:
+            if station in stations_limit['exclude']:
+                check = False
 
-            if check:
-                try:
-                    m = source['stations'][station]['municipality']
-                    p = source['municipalities'][m]['province']
-                    c = source['provinces'][p]['community']
-                    name = source['municipalities'][m]['name']
-                except KeyError:
-                    c = source['stations'][station]['community']
-                    name = source['communities'][c]['name']
+        if check:
+            try:
+                m = source['stations'][station]['municipality']
+                p = source['municipalities'][m]['province']
+                c = source['provinces'][p]['community']
+                name = source['municipalities'][m]['name']
+            except KeyError:
+                c = source['stations'][station]['community']
+                name = source['communities'][c]['name']
 
 
-                c_tag = source['communities'][c]['tag']
-                result[station] = dict()
+            c_tag = source['communities'][c]['tag']
+            result[station] = dict()
 
-                result[station]['coordinates'] = [float(source['stations'][station]['longitude']),
-                                                  float(source['stations'][station]['latitude'])]
-                result[station]['name'] = sanitize(name)
-                result[station]['url'] = url_observation.format(station, c_tag, station)
-                result[station]['timezone'] = source['communities'][c]['timezone']
+            result[station]['coordinates'] = [float(source['stations'][station]['longitude']),
+                                              float(source['stations'][station]['latitude'])]
+            result[station]['name'] = sanitize(name)
+            result[station]['url'] = url_observation.format(station, c_tag, station)
+            result[station]['timezone'] = source['communities'][c]['timezone']
 
     if limit_on:
         if len(result) != len(stations_limit['include']):

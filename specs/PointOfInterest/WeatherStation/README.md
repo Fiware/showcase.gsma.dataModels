@@ -6,16 +6,14 @@ owned by the Spanish Meteorological Agency ([AEMET](http://aemet.es)).
 
 Here you can find the following files:
 
-- [stations.json](stations.json). This is a list of weather stations owned by AEMET and a list of municipalities which provide automated readings.
-- [generate.py](generate.py). This is the Python code that was used to generate the [stations.json](stations.json).
-- [info.xls](info.xls). This is a list of Spain provinces and communities with codes that needed for [generate.py](generate.py).
-- [upload.py](upload.py). This is the Python code that upload [stations.json](stations.json) to the Orion Context Broker.
-
+  - [stations.json](stations.json). This is a list of weather stations owned by AEMET and a list of municipalities which provide automated readings.
+  - [generate.py](generate.py). This is the Python code that was used to generate the [stations.json](stations.json).
+  - [info.xls](info.xls). This is a list of Spain provinces and communities with codes that needed for [generate.py](generate.py).
+  - [upload.py](upload.py). This is the Python code that upload [stations.json](stations.json) to the Orion Context Broker.
 
 ## Public instance
 
 You can read about public instance offering information about weather stations [here](../../gsma.md).
-
 
 ## Example of use
 
