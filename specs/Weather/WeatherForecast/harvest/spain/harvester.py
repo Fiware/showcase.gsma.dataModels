@@ -10,7 +10,7 @@ from json import dumps, load
 from pytz import timezone
 from re import sub
 from requests import get, exceptions
-from sys import exit, stdout
+from sys import stdout
 from time import sleep
 from xml.dom.minidom import parseString
 from yaml import safe_load
