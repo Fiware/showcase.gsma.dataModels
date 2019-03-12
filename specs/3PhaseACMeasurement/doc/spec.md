@@ -85,7 +85,7 @@ A JSON Schema corresponding to this data model can be found
     the measurement .
 
     -   Attribute type: List of Reference to entity(ies) of type
-        [Device](../../../Device/Device/doc/spec.md)
+        [Device](../../Device/Device/doc/spec.md)
     -   Optional
 
 -   `dateModified` : Last update timestamp of this entity.
