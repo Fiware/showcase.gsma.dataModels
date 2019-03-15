@@ -1,0 +1,110 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://github.com/Ficodes/dataModels/specs/AgriFood/AgriCrop/schema.json",
+    "title": "FIWARE - Agri Food",
+    "description": "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+    "type": "object",
+    "properties": {
+	"id": {
+	    "type": "string",
+	    "format": "uri"
+	},
+	"type": {
+	    "type": "string",
+	    "enum": ["AgriCrop"],
+	    "description": "NGSI Entity Type"
+	},
+	"@context": {
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "enum": [
+			"https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
+			"https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Crop-context.jsonld"
+		    ]
+		}
+	    ]	     
+	},
+	"createdAt": {
+	    "type": "string",
+	    "format": "date-time"
+	},
+	"modifiedAt": {
+	    "type": "string",
+	    "format": "date-time"
+	},
+	"source": {
+	    "type": "string",
+	    "format": "url"
+	},
+	"dataProvider": {
+	    "type": "string",
+	    "format": "url"
+	},
+	"entityVersion": {
+	    "type": "number",
+	    "minimum": 2.0
+	},
+	"name": {
+	    "$ref": "#/../common-schema.json/PropertyString"
+	},
+	"alternateName": {
+	    "$ref": "#/../common-schema.json/PropertyString"
+	},
+	"description": {
+	    "$ref": "#/../common-schema.json/PropertyString"
+	},
+	"agriSoil": {
+	    "$ref": "#/../common-schema.json/Relationship"
+	},
+	"agriFertiliser": {
+	    "$ref": "#/../common-schema.json/Relationship"
+	},
+	"agriPest": {
+	    "$ref": "#/../common-schema.json/Relationship"
+	},
+	"harvestingInterval": {
+	    "type": "object",
+	    "values": {
+		"type": {
+		    "type": "string",
+		    "enum": ["Property"]
+		},
+		"value": {
+		    "$ref": "#/../common-schema.json/definitions/Interval"
+		}
+	    },
+	    "required": ["type", "value"]
+	},
+	"plantingFrom": {
+	    "type": "object",
+	    "values": {
+		"type": {
+		    "type": "string",
+		    "enum": ["Property"]
+		},
+		"value": {
+		    "$ref": "#/../common-schema.json/definitions/Interval"
+		}
+		
+	    },
+	    "required": ["type", "value"]
+	},
+	"wateringFrequency": {
+	    "type": "object",
+	    "values": {
+		"type": {
+		    "type": "string",
+		    "enum": ["Property"]
+		},
+		"value": {
+		    "type": "string",
+		    "enum": ["daily", "weekly", "biweekly", "monthly", "onDemand", "other"]
+		}
+	    },
+	    "required": ["type", "value"]
+	}
+    },
+    "required": ["id", "type", "createdAt", "name"]
+}
