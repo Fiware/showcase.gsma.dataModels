@@ -1,6 +1,6 @@
 {
-    "id": "3PhaseACMeasurement:LV3_Ventilation",
-    "type": "3PhaseACMeasurement",
+    "id": "ThreePhaseAcMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMeasurement",
     "dateEnergyMeteringStarted": {
         "type": "DateTime", 
         "value": "2018-07-07T15:05:59.408Z"
@@ -13,7 +13,7 @@
         "value": "HKAPK0200"
     },
     "description": {
-        "value": "Ventilation machine rooms"
+        "value": "measurement corresponding to the ventilation machine rooms"
     },
     "totalActiveEnergyImport": {
         "metadata": {
@@ -278,7 +278,7 @@
             "L31": 407.734558
         }
     },
-    "THDVoltage": {
+    "thdVoltage": {
         "metadata": {
             "timestamp": {
                 "type": "DateTime",
@@ -298,7 +298,7 @@
             "L3": 0.01541459
         }
     },
-    "THDCurrent": {
+    "thdCurrent": {
         "metadata": {
             "timestamp": {
                 "type": "DateTime",

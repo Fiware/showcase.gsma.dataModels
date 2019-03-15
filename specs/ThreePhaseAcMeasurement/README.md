@@ -1,7 +1,7 @@
 # Three-phase alternating current measurement
 
-A 3PhaseACMeasurement entity represents a measurement from an electrical system
-that uses three-phase alternating current. It has attributes for various
+A ThreePhaseAcMeasurement entity represents a measurement from an electrical
+system that uses three-phase alternating current. It has attributes for various
 electrical measurements such as power, frequency, current and voltage. For some
 attributes such as current and voltage the value is a structured value with
 properties for the three different phases: L1, L2 and L3. For some measurements

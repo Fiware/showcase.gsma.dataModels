@@ -2,7 +2,7 @@
 
 ## Description
 
-A 3PhaseACMeasurement entity represents a measurement from an electrical system
+A ThreePhaseAcMeasurement entity represents a measurement from an electrical system
 that uses three-phase alternating current. It has attributes for various
 electrical measurements such as power, frequency, current and voltage. For some
 attributes such as current and voltage the value is a structured value with
@@ -36,7 +36,7 @@ A JSON Schema corresponding to this data model can be found
 
 -   `id` : Entity's unique identifier.
 
--   `type` : It must be equal to `3PhaseACMeasurement`.
+-   `type` : It must be equal to `ThreePhaseAcMeasurement`.
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
@@ -74,15 +74,20 @@ A JSON Schema corresponding to this data model can be found
         [https://schema.org/address](https://schema.org/address)
     -   Optional
 
--   `areaServed` : Higher level area to which the measurement belongs to. It can
+-   `areaServed` : Higher level area to which the measurement target belongs to. It can
     be used to group per responsible, district, neighbourhood, etc.
 
     -   Normative References:
         [https://schema.org/areaServed](https://schema.org/areaServed)
     -   Optional
 
--   `refDevice` : Reference to the device(s) measured or the devices that made
-    the measurement .
+-   `refDevice` : Device(s) used to obtain the measurement.
+
+    -   Attribute type: List of Reference to entity(ies) of type
+        [Device](../../Device/Device/doc/spec.md)
+    -   Optional
+
+-   `refTargetDevice` : Device(s) for which the measurement was taken.
 
     -   Attribute type: List of Reference to entity(ies) of type
         [Device](../../Device/Device/doc/spec.md)
@@ -501,7 +506,7 @@ A JSON Schema corresponding to this data model can be found
             -   type: [Number](http://schema.org/Number)
     -   Optional
 
--   `THDVoltage` : Total harmonic distortion of voltage for each phase. The
+-   `thdVoltage` : Total harmonic distortion of voltage for each phase. The
     actual values will be conveyed by one subproperty per alternating current
     phase: L1, L2 and L3
 
@@ -519,7 +524,7 @@ A JSON Schema corresponding to this data model can be found
             -   type: [Number](http://schema.org/Number)
     -   Optional
 
--   `THDCurrent` : Total harmonic distortion of electrical current. The actual
+-   `thdCurrent` : Total harmonic distortion of electrical current. The actual
     values will be conveyed by one subproperty per alternating current phase:
     L1, L2 and L3
 
@@ -550,8 +555,8 @@ Normalized NGSI response
 
 ```json
 {
-    "id": "3PhaseACMeasurement:LV3_Ventilation",
-    "type": "3PhaseACMeasurement",
+    "id": "ThreePhaseAcMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMeasurement",
     "dateEnergyMeteringStarted": {
         "type": "DateTime",
         "value": "2018-07-07T15:05:59.408Z"
@@ -564,7 +569,7 @@ Normalized NGSI response
         "value": "HKAPK0200"
     },
     "description": {
-        "value": "Ventilation machine rooms"
+        "value": "measurement corresponding to the ventilation machine rooms"
     },
     "totalActiveEnergyImport": {
         "metadata": {
@@ -829,7 +834,7 @@ Normalized NGSI response
             "L31": 407.734558
         }
     },
-    "THDVoltage": {
+    "thdVoltage": {
         "metadata": {
             "timestamp": {
                 "type": "DateTime",
@@ -849,7 +854,7 @@ Normalized NGSI response
             "L3": 0.01541459
         }
     },
-    "THDCurrent": {
+    "thdCurrent": {
         "metadata": {
             "timestamp": {
                 "type": "DateTime",
@@ -878,12 +883,12 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
-    "id": "3PhaseACMeasurement:LV3_Ventilation",
-    "type": "3PhaseACMeasurement",
+    "id": "ThreePhaseAcMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMeasurement",
     "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z",
     "refDevice": ["Device:eQL-EDF3GL-2006201705"],
     "name": "HKAPK0200",
-    "description": "Ventilation machine rooms",
+    "description": "measurement corresponding to the ventilation machine rooms",
     "totalActiveEnergyImport": 150781.96448,
     "totalReactiveEnergyImport": 20490.3392,
     "totalActiveEnergyExport": 1059.80176,
@@ -933,12 +938,12 @@ Sample uses simplified representation for data consumers `?options=keyValues`
         "L23": 407.081238,
         "L31": 407.734558
     },
-    "THDVoltage": {
+    "thdVoltage": {
         "L1": 0.01471114,
         "L2": 0.01600046,
         "L3": 0.01541459
     },
-    "THDCurrent": {
+    "thdCurrent": {
         "L1": 0.38497337,
         "L2": 0.45807529,
         "L3": 0.4938652

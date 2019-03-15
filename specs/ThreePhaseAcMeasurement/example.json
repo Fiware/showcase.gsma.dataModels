@@ -1,12 +1,12 @@
 {
-    "id": "3PhaseACMeasurement:LV3_Ventilation",
-    "type": "3PhaseACMeasurement",
+    "id": "ThreePhaseAcMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMeasurement",
     "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z",
     "refDevice": [
         "Device:eQL-EDF3GL-2006201705"
     ],
     "name": "HKAPK0200",
-    "description": "Ventilation machine rooms",
+    "description": "measurement corresponding to the ventilation machine rooms",
     "totalActiveEnergyImport": 150781.96448,
     "totalReactiveEnergyImport": 20490.3392,
     "totalActiveEnergyExport": 1059.80176,
@@ -56,12 +56,12 @@
         "L23": 407.081238,
         "L31": 407.734558
     },
-    "THDVoltage": {
+    "thdVoltage": {
         "L1": 0.01471114,
         "L2": 0.01600046,
         "L3": 0.01541459
     },
-    "THDCurrent": {
+    "thdCurrent": {
         "L1": 0.38497337,
         "L2": 0.45807529,
         "L3": 0.4938652
