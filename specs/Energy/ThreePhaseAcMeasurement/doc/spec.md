@@ -2,8 +2,8 @@
 
 ## Description
 
-A ThreePhaseAcMeasurement entity represents a measurement from an electrical system
-that uses three-phase alternating current. It has attributes for various
+A ThreePhaseAcMeasurement entity represents a measurement from an electrical
+system that uses three-phase alternating current. It has attributes for various
 electrical measurements such as power, frequency, current and voltage. For some
 attributes such as current and voltage the value is a structured value with
 properties for the three different phases: L1, L2 and L3. For some measurements
@@ -74,8 +74,8 @@ A JSON Schema corresponding to this data model can be found
         [https://schema.org/address](https://schema.org/address)
     -   Optional
 
--   `areaServed` : Higher level area to which the measurement target belongs to. It can
-    be used to group per responsible, district, neighbourhood, etc.
+-   `areaServed` : Higher level area to which the measurement target belongs to.
+    It can be used to group per responsible, district, neighbourhood, etc.
 
     -   Normative References:
         [https://schema.org/areaServed](https://schema.org/areaServed)
@@ -84,13 +84,13 @@ A JSON Schema corresponding to this data model can be found
 -   `refDevice` : Device(s) used to obtain the measurement.
 
     -   Attribute type: List of Reference to entity(ies) of type
-        [Device](../../Device/Device/doc/spec.md)
+        [Device](../../../Device/Device/doc/spec.md)
     -   Optional
 
 -   `refTargetDevice` : Device(s) for which the measurement was taken.
 
     -   Attribute type: List of Reference to entity(ies) of type
-        [Device](../../Device/Device/doc/spec.md)
+        [Device](../../../Device/Device/doc/spec.md)
     -   Optional
 
 -   `dateModified` : Last update timestamp of this entity.
