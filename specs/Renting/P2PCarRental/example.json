@@ -17,12 +17,12 @@
                     60.181715
                 ]
             },
-            "address": {
-                "zipcode": "33100",
-                "city": "Tampere",
-                "area": "Pirkanmaaa",
-                "street": "Lars Plonkin Katu 14B",
-		"extra": "behind the barn"
+            "PostalAddress": {
+		"addressCountry":"Finland",
+                "postalCode": "33100",
+                "addressLocality": "Tampere",
+                "addressRegion": "Pirkanmaaa",
+                "streetAddress": "Lars Plonkin Katu 14B"
             }
         },
         "availability": [

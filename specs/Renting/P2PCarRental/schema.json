@@ -118,7 +118,7 @@
       "title": "The Vehicle_location Schema",
       "required": [
         "geometry",
-        "address"
+        "PostalAddress"
       ],
       "properties": {
         "geometry": {
@@ -157,16 +157,16 @@
             }
           }
         },
-        "address": {
-          "$id": "#/properties/vehicle_location/properties/address",
+        "PostalAddress": {
+          "$id": "#/properties/vehicle_location/properties/PostalAddress",
           "type": "object",
-          "title": "The Address Schema",
+          "title": "The PostalAddress Schema",
           "required": [
-            "zipcode",
-            "city",
-            "area",
-            "street",
-            "extra"
+            "addressCountry",
+            "postalCode",
+            "addressLocality",
+            "addressRegion",
+            "streetAddress"
           ],
           "properties": {
             "zipcode": {
