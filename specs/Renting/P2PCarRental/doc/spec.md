@@ -3,8 +3,8 @@
 ## Description
 
 This entity contains a description of a peer to peer rental car.
-It aims to describe basic charateristics of the vehicle and it's owner. In addition to this it has some other details, like price and availability.
-We hope that this model recceives contributions and will be developed further by the community.
+It aims to describe basic characteristics of the vehicle and it's owner. In addition to this it has some other details, like price and availability.
+We hope that this model receives contributions and will be developed further by the community.
 
 This data model has been created in co-operation with share it blox car.
 
@@ -14,7 +14,7 @@ This data model has been created in co-operation with share it blox car.
 Please see also the [example.json](../example.json) and [schema.json](../schema.json). Look at those if the explanations in this document don't open up the usage.
 
 A JSON Schema corresponding to this data model can be found
-[here](../schema.json). All the following entiries are mandatory.
+[here](../schema.json). All the following entries are mandatory.
 
 -   `id` : Unique identifier.
 
