@@ -1,0 +1,440 @@
+﻿{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/Renting/P2PCarRental/schema.json",
+   "type": "object",
+   "title": "The Root Schema",
+  "required": [
+    "id",
+    "type",
+    "vehicle_model",
+    "vehicle_title",
+    "manufacture_year",
+    "fuel_type",
+    "timezone",
+    "vehicle_maker",
+    "vehicle_location",
+    "availability",
+    "contact_details",
+    "seating_capacity",
+    "price_currency",
+    "prices",
+    "added"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "default": "",
+      "examples": [
+       "Rental-car-8f7ewf88ejjnf993jfU83HDJ"
+      ]
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "title": "The Type Schema",
+      "default": "P2PCarRental",
+      "examples": [
+        "P2PCarRental"
+      ]
+    },
+    "vehicle_average_rating": {
+      "$id": "#/properties/vehicle_average_rating",
+      "type": "number",
+      "title": "The Vehicle_average_rating Schema",
+      "default": 0.0,
+      "examples": [
+        1.2
+      ]
+    },
+    "details_url": {
+      "$id": "#/properties/details_url",
+      "type": "string",
+      "format": "uri",
+      "title": "The Details_url Schema",
+      "default": null,
+      "examples": [
+        "https://vehicele.com/details/vehicless/"
+      ]
+    },
+    "vehicle_model": {
+      "$id": "#/properties/vehicle_model",
+      "type": "string",
+      "title": "The Vehicle model Schema",
+      "default": "",
+      "examples": [
+        "SQ5"
+      ]
+    },
+    "vehicle_title": {
+      "$id": "#/properties/vehicle_title",
+      "type": "string",
+      "title": "The vehicle Title Schema",
+      "default": "",
+      "examples": [
+        "Audi SQ5"
+      ]
+    },
+    "manufacture_year": {
+      "$id": "#/properties/manufature_year",
+      "type": "integer",
+      "title": "The Manufacture Year Schema",
+      "default": 0,
+      "examples": [
+        1913
+      ]
+    },
+    "fuel_type": {
+      "$id": "#/properties/fuel_type",
+      "type": "string",
+      "title": "The Fuel_type Schema",
+      "default": "",
+      "examples": [
+        "petrol"
+      ]
+    },
+    "timezone": {
+      "$id": "#/properties/timezone",
+      "type": "string",
+      "title": "The Timezone Schema",
+      "default": "",
+      "examples": [
+        "Europe/Helsinki"
+      ]
+    },
+    "vehicle_maker": {
+      "$id": "#/properties/vehicle_maker",
+      "type": "string",
+      "title": "The Vehicle maker Schema",
+      "default": "",
+      "examples": [
+        "Audi"
+      ]
+    },
+    "vehicle_location": {
+      "$id": "#/properties/vehicle_location",
+      "type": "object",
+      "title": "The Vehicle_location Schema",
+      "required": [
+        "geometry",
+        "address"
+      ],
+      "properties": {
+        "geometry": {
+          "$id": "#/properties/vehicle_location/properties/geometry",
+          "type": "object",
+          "title": "The Geometry Schema",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "$id": "#/properties/vehicle_location/properties/geometry/properties/type",
+              "type": "string",
+              "title": "The Type Schema",
+              "default": "",
+              "examples": [
+                "Point"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "coordinates": {
+              "$id": "#/properties/vehicle_location/properties/geometry/properties/coordinates",
+              "type": "array",
+              "title": "The Coordinates Schema",
+              "items": {
+                "$id": "#/properties/vehicle_location/properties/geometry/properties/coordinates/items",
+                "type": "number",
+                "title": "The Items Schema",
+                "default": 0.0,
+                "examples": [
+                  25.0147951,
+                  60.181715
+                ]
+              }
+            }
+          }
+        },
+        "address": {
+          "$id": "#/properties/vehicle_location/properties/address",
+          "type": "object",
+          "title": "The Address Schema",
+          "required": [
+            "zipcode",
+            "city",
+            "area",
+            "street",
+            "extra"
+          ],
+          "properties": {
+            "zipcode": {
+             "$id": "#/properties/vehicle_location/properties/address/properties/zipcode",
+              "type": "string",
+              "title": "The Zipcode Schema",
+              "default": "",
+              "examples": [
+                "33100"
+              ]
+            },
+            "city": {
+              "$id": "#/properties/vehicle_location/properties/address/properties/city",
+              "type": "string",
+              "title": "The City Schema",
+              "default": "",
+              "examples": [
+                "Tampere"
+              ]
+            },
+            "area": {
+              "$id": "#/properties/vehicle_location/properties/address/properties/area",
+              "type": "string",
+              "title": "The Area Schema",
+              "default": "",
+              "examples": [
+                "Pirkanmaaa"
+              ]
+            },
+            "street": {
+              "$id": "#/properties/vehicle_location/properties/address/properties/street",
+              "type": "string",
+              "title": "The Street Schema",
+              "default": "",
+              "examples": [
+                "Lars Plonkin Katu 14B"
+              ]
+            },
+            "extra": {
+              "$id": "#/properties/vehicle_location/properties/address/properties/extra",
+              "type": "string",
+              "title": "The Extra Schema",
+              "default": "",
+              "examples": [
+                "behind the barn"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "availability": {
+      "$id": "#/properties/availability",
+      "type": "array",
+      "title": "The Availability Schema",
+      "items": {
+        "$id": "#/properties/availability/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "end",
+          "begin"
+        ],
+        "properties": {
+          "end": {
+            "$id": "#/properties/availability/items/properties/end",
+            "type": "string",
+            "title": "The End Schema",
+            "default": "",
+            "examples": [
+              "2029-12-31T23:45:00"
+            ]
+          },
+          "begin": {
+            "$id": "#/properties/availability/items/properties/begin",
+            "type": "string",
+            "title": "The Begin Schema",
+            "default": "",
+            "examples": [
+              "2019-03-12T08:39:07.211823"
+            ]
+          }
+        }
+      }
+    },
+    "rent_description": {
+      "$id": "#/properties/rent_description",
+      "type": "array",
+      "title": "The Rent description Schema",
+      "items": {
+        "$id": "#/properties/rent_description/items",
+        "type": "object",
+       "title": "The Items Schema",
+        "required": [
+          "content",
+          "language"
+        ],
+        "properties": {
+         "content": {
+           "$id": "#/properties/rent_description/items/properties/content",
+            "type": "string",
+            "title": "The Content Schema",
+            "default": "",
+            "examples": [
+              "Best car for you my friend!"
+           ]
+          },
+          "language": {
+            "$id": "#/properties/description/items/properties/language",
+            "type": "string",
+            "title": "The Language Schema",
+            "default": "",
+            "examples": [
+              "en"
+            ]
+          }
+        }
+      }
+    },
+    "contact_details": {
+      "$id": "#/properties/contact_details",
+      "type": "object",
+      "title": "The Contact_details Schema",
+      "required": [
+        "name",
+        "phone",
+        "email",
+        "additional"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/contact_details/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Zighn Fergusson"
+          ]
+        },
+        "phone": {
+          "$id": "#/properties/contact_details/properties/phone",
+          "type": "string",
+          "title": "The Phone Schema",
+          "default": "",
+          "examples": [
+            "+358 44 723 8734"
+          ]
+        },
+       "email": {
+          "$id": "#/properties/contact_details/properties/email",
+          "type": "string",
+          "title": "The Email Schema",
+          "default": "",
+          "examples": [
+            "zin877@gmail.com"
+          ]
+        },
+        "additional": {
+          "$id": "#/properties/contact_details/properties/additional",
+          "type": "string",
+          "title": "The Additional Schema",
+         "default": "",
+          "examples": [
+            "Contact between 9 and six"
+          ]
+        }
+      }
+    },
+    "seating_capacity": {
+      "$id": "#/properties/seating_capacity",
+      "type": "integer",
+      "title": "The Seating_capacity Schema",
+      "default": 0,
+      "examples": [
+        5
+     ]
+    },
+    "price_currency": {
+      "$id": "#/properties/price_currency",
+      "type": "string",
+      "title": "The Price_currency Schema",
+      "default": "",
+      "examples": [
+        "euro"
+      ]
+    },
+    "prices": {
+      "$id": "#/properties/prices",
+      "type": "array",
+      "title": "The Prices Schema",
+      "items": {
+        "$id": "#/properties/prices/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "pricing",
+          "extra_km_price",
+          "free_km",
+          "price"
+        ],
+        "properties": {
+          "pricing": {
+            "$id": "#/properties/prices/items/properties/pricing",
+            "type": "string",
+            "title": "The Pricing Schema",
+            "default": "",
+            "examples": [
+              "hourly"
+            ]
+          },
+          "extra_km_price": {
+            "$id": "#/properties/prices/items/properties/extra_km_price",
+            "type": "number",
+            "title": "The Extra_km_price Schema",
+            "default": 0.0,
+            "examples": [
+              0.099
+            ]
+          },
+          "free_km": {
+            "$id": "#/properties/prices/items/properties/free_km",
+            "type": "number",
+            "title": "The Free_km Schema",
+            "default": 0,
+            "examples": [
+              20
+            ]
+          },
+          "price": {
+            "$id": "#/properties/prices/items/properties/price",
+            "type": "number",
+            "title": "The Price Schema",
+            "default": 0,
+            "examples": [
+              6
+            ]
+          }
+        }
+      }
+    },
+    "image": {
+      "$id": "#/properties/image",
+      "type": "string",
+      "format": "uri",
+      "title": "The Image Schema",
+      "default": "",
+      "examples": [
+        "https://imageurlexample.com/5d44d6c8-90e5-4578-9f47-8c2c2ae0b8e6.jpeg"
+      ]
+    },
+   "web_url": {
+      "$id": "#/properties/web_url",
+      "type": "string",
+      "format": "uri",
+      "title": "The Web_url Schema",
+      "default": "",
+      "examples": [
+        "https://operator.com/vehicle/1"
+      ]
+    },
+    "added": {
+      "$id": "#/properties/added",
+      "type": "string",
+      "title": "The Added Schema",
+      "default": "",
+      "examples": [
+        "2016-06-20T10:15:50"
+      ]
+    }
+  }
+}
