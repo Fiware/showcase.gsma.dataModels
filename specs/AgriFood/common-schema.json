@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json",
+    "$id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json",
     "title": "FIWARE - Agri Food Common Schema",
     "description": "Common NGSI-LD validators used in Agri Food data models",
     "type": "object",
