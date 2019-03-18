@@ -8,5 +8,5 @@ Renting can be peer to peer or by a company to an individual or any other mix.
 
 The following types are supported:
 
--   `P2PCarRental`: An Activity where cars are rented peer to peer (Not by rental agency to an individial).
+-   `P2PCarRental`: An Activity where cars are rented peer to peer (Not by rental agency to an individual).
 	
