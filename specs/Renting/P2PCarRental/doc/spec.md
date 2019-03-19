@@ -35,7 +35,7 @@ A JSON Schema corresponding to this data model can be found
 -   `vehicle_location`: Location of the vehicle. If you punch these coordinates to the navigator and get there, given the availability, the vehicle should be in that location.
     -   Attribute type: `geo:json`.
     -   Normative References:
-        [https://tools.ietf.org/html/draft-ietf-geojson-03](https://tools.ietf.org/html/draft-ietf-geojson-03)
+        [https://github.com/geojson/schema/blob/master/src/schema/Feature.js](https://github.com/geojson/schema/blob/master/src/schema/Feature.js)
     
 -   `availability` : Array of times when vehicle is available for rent. Times in [DateTime](https://schema.org/DateTime), which is same as [ISO 8601 Datetime format](https://www.iso.org/standard/40874.html). Example: 2029-12-31T23:45:00
 
