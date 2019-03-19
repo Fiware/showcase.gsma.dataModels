@@ -48,3 +48,11 @@ A JSON Schema corresponding to this data model can be found
 -   `prices` : Entries for hourly, daily and weekly prices.
 
 -   `added`: When the entry was originally added, follows [DateTime](https://schema.org/DateTime)
+
+Following entries are optional:
+
+-`vehicle_average_rating`
+-`details_url`
+-`rent_description`
+-`image`
+-`web_url`
