@@ -52,9 +52,6 @@ A JSON Schema corresponding to this data model can be found
     [ISO 8601 Datetime format](https://www.iso.org/standard/40874.html).
     Example: 2029-12-31T23:45:00
 
--   `PostalAddress` : Address of the vehicle, following
-    [PostalAddress](https://schema.org/PostalAddress) schema.
-
 -   `seating_capacity`: Integer. How many seats
 
 -   `price_currency` : In free text. For example "euro".
@@ -64,6 +61,8 @@ A JSON Schema corresponding to this data model can be found
 -   `added`: When the entry was originally added, follows [DateTime](https://schema.org/DateTime)
 
 Following entries are optional:
+
+-   `PostalAddress` : Address of the vehicle, following [PostalAddress](https://schema.org/PostalAddress) schema.
 
 -   `vehicle_average_rating`: Float, range from 1-5. Peers can give a rating for the renting experience.
 
