@@ -30,7 +30,6 @@ jobs:
        
       script:
          - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
-         - npm test -C ./validator
 
     - stage: test
       name: "Unit Tests 3.6"
@@ -59,7 +58,6 @@ jobs:
        
       script:
          - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
-         - npm test -C ./validator
 
     - stage: test
       name: "Documentation Tests"
@@ -72,6 +70,8 @@ jobs:
       script:
         - npm run lint:md -C ./validator
         - npm run lint:text -C ./validator
+
+
 
 notifications:
   on_success: change

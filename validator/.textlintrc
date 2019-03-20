@@ -191,7 +191,9 @@
           "mailto:*",
           "https://schema.org/*",
           "http://schema.org/*",
-          "https://www.tourspain.es/en-us"
+          "https://www.tourspain.es/en-us",
+          "http://apidirectory.connectedliving.gsma.com"
+          "http://apidirectory.connectedliving.gsma.com/*"
       ]
     }
   }
