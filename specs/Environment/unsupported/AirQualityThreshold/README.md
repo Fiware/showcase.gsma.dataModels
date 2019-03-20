@@ -1,7 +1,7 @@
 # Air quality threshold
 
-This folder contains a NGSI v2 data set which provides the air quality thresholds
-in Europe.
+This folder contains a NGSI v2 data set which provides the air quality
+thresholds in Europe.
 
 Air quality thresholds allow to calculate an air quality index (AQI).
 
