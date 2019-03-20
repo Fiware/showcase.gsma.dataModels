@@ -193,7 +193,8 @@
           "http://schema.org/*",
           "https://www.tourspain.es/en-us",
           "http://apidirectory.connectedliving.gsma.com",
-          "http://apidirectory.connectedliving.gsma.com/*"
+          "http://apidirectory.connectedliving.gsma.com/api/air-quality-spain",
+          "http://apidirectory.connectedliving.gsma.com/api/weather-spain"
       ]
     }
   }
