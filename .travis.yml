@@ -1,26 +1,21 @@
 language: python
 cache: pip
-python:
-  - 2.7
-  - 3.6
-install:
-  - pip install flake8
-before_script:
-  # stop the build if there are Python syntax errors, PEP8 violations, undefined names
-  - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
-  # exit-zero treats all errors as warnings.  GitHub editor is 127 chars wide
-  - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-script:
-  - true  # add other tests here
 
-matrix:
+jobs:
   include:
-    - language: node_js
-      python:
-      node_js:
-        - 8
+    - stage: test
+      name: "Unit Tests 2.7"
+      python: 2.7
+      node_js: 10
+
+      before_install:
+        - pip install flake8
+        # stop the build if there are Python syntax errors, PEP8 violations, undefined names
+        - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
+        # exit-zero treats all errors as warnings.  GitHub editor is 127 chars wide
+        - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       install:
-      ## Data model validator
+        ## Data model validator
         - npm install -C ./validator
         - sudo apt-get remove -y docker docker-engine docker.io
         - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
@@ -32,12 +27,51 @@ matrix:
         - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
       before_script:
         - npm run lint -C ./validator
+       
+      script:
+         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
+         - npm test -C ./validator
+
+    - stage: test
+      name: "Unit Tests 3.6"
+      python: 3.6
+      node_js: 10
+
+      before_install:
+        - pip install flake8
+        # stop the build if there are Python syntax errors, PEP8 violations, undefined names
+        - flake8 . --count --select=E,F821,F822,F823 --max-line-length=127 --show-source --statistics
+        # exit-zero treats all errors as warnings.  GitHub editor is 127 chars wide
+        - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      install:
+        ## Data model validator
+        - npm install -C ./validator
+        - sudo apt-get remove -y docker docker-engine docker.io
+        - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+        - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        - sudo apt-get -qq update
+        - sudo apt-get install -y docker-ce
+        - docker run --name mongodb -d mongo:3.4
+        - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
+      before_script:
+        - npm run lint -C ./validator
+       
+      script:
+         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
+         - npm test -C ./validator
+
+    - stage: test
+      name: "Documentation Tests"
+      language: node_js
+      node_js: 10
+
+      install:
+        - npm install -C ./validator
+
+      script:
         - npm run lint:md -C ./validator
         - npm run lint:text -C ./validator
-        - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
-        - npm test -C ./validator
-      script:
-        - true
 
 notifications:
   on_success: change
