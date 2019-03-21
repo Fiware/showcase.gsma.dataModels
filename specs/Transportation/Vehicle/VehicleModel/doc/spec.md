@@ -192,15 +192,15 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
-  "id": "vehiclemodel:econic",
-  "type": "VehicleModel",
-  "name": "MBenz-Econic2014",
-  "brandName": "Mercedes Benz",
-  "modelName": "Econic",
-  "manufacturerName": "Daimler",
-  "vehicleType": "lorry",
-  "cargoVolume": 1000,
-  "fuelType": "diesel"
+    "id": "vehiclemodel:econic",
+    "type": "VehicleModel",
+    "name": "MBenz-Econic2014",
+    "brandName": "Mercedes Benz",
+    "modelName": "Econic",
+    "manufacturerName": "Daimler",
+    "vehicleType": "lorry",
+    "cargoVolume": 1000,
+    "fuelType": "diesel"
 }
 ```
 
