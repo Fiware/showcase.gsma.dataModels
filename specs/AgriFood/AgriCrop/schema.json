@@ -13,18 +13,6 @@
 	    "enum": ["AgriCrop"],
 	    "description": "NGSI Entity Type"
 	},
-	"@context": {
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "enum": [
-			"https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
-			"https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Crop-context.jsonld"
-		    ]
-		}
-	    ]	     
-	},
 	"createdAt": {
 	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateCreated"
 	},
