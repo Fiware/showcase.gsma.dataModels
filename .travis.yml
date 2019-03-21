@@ -32,8 +32,8 @@ jobs:
          - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
 
     - stage: test
-      name: "Unit Tests 3.6"
-      python: 3.6
+      name: "Unit Tests 3.7"
+      python: 3.7
       node_js: 10
 
       before_install:
