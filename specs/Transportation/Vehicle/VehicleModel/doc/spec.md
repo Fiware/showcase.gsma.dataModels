@@ -190,17 +190,19 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-    {
-      "id": "vehiclemodel:econic",
-      "type": "VehicleModel",
-      "name": "MBenz-Econic2014",
-      "brandName": "Mercedes Benz",
-      "modelName": "Econic",
-      "manufacturerName": "Daimler",
-      "vehicleType": "lorry",
-      "cargoVolume": 1000,
-      "fuelType": "diesel"
-    }
+```json
+{
+  "id": "vehiclemodel:econic",
+  "type": "VehicleModel",
+  "name": "MBenz-Econic2014",
+  "brandName": "Mercedes Benz",
+  "modelName": "Econic",
+  "manufacturerName": "Daimler",
+  "vehicleType": "lorry",
+  "cargoVolume": 1000,
+  "fuelType": "diesel"
+}
+```
 
 ## Test it with a real service
 
