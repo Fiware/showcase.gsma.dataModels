@@ -6,8 +6,7 @@
     "type": "object",
     "properties": {
 	"id": {
-	    "type": "string",
-	    "format": "uri"
+	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/id"
 	},
 	"type": {
 	    "type": "string",
@@ -27,20 +26,16 @@
 	    ]	     
 	},
 	"createdAt": {
-	    "type": "string",
-	    "format": "date-time"
+	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateCreated"
 	},
 	"modifiedAt": {
-	    "type": "string",
-	    "format": "date-time"
+	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateModified"
 	},
 	"source": {
-	    "type": "string",
-	    "format": "url"
+	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/source"
 	},
 	"dataProvider": {
-	    "type": "string",
-	    "format": "url"
+	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dataProvider"
 	},
 	"entityVersion": {
 	    "type": "number",
