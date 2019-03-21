@@ -19,16 +19,6 @@
 	"modifiedAt": {
 	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateModified"
 	},
-	"source": {
-	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/source"
-	},
-	"dataProvider": {
-	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dataProvider"
-	},
-	"entityVersion": {
-	    "type": "number",
-	    "minimum": 2.0
-	},
 	"name": {
 	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/PropertyString"
 	},
