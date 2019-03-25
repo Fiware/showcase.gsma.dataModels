@@ -23,6 +23,7 @@ A JSON Schema corresponding to this data model can be found
 
 -   `vehicle_model` : The model of the vehicle omitting make, for example "159"
     or "Golf".
+	-   Attribute type: String
 
 -   `vehicle_title` : Descriptive and more verbose title intended for human
     readers. For example "Great Alfa Romeo 159 for rental".
