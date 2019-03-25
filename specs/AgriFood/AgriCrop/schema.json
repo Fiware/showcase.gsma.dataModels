@@ -4,80 +4,91 @@
     "title": "FIWARE - Agri Food",
     "description": "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications.",
     "type": "object",
-    "properties": {
-	"id": {
-	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/id"
-	},
-	"type": {
-	    "type": "string",
-	    "enum": ["AgriCrop"],
-	    "description": "NGSI Entity Type"
-	},
-	"createdAt": {
-	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateCreated"
-	},
-	"modifiedAt": {
-	    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateModified"
-	},
-	"name": {
-	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/PropertyString"
-	},
-	"alternateName": {
-	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/PropertyString"
-	},
-	"description": {
-	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/PropertyString"
-	},
-	"agriSoil": {
-	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/Relationship"
-	},
-	"agriFertiliser": {
-	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/Relationship"
-	},
-	"agriPest": {
-	    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json#/definitions/Relationship"
-	},
-	"harvestingInterval": {
-	    "type": "object",
-	    "values": {
-		"type": {
-		    "type": "string",
-		    "enum": ["Property"]
-		},
-		"value": {
-		    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json/definitions#/definitions/Interval"
-		}
-	    },
-	    "required": ["type", "value"]
-	},
-	"plantingFrom": {
-	    "type": "object",
-	    "values": {
-		"type": {
-		    "type": "string",
-		    "enum": ["Property"]
-		},
-		"value": {
-		    "$ref": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/common-schema.json/definitions#/definitions/Interval"
-		}
-		
-	    },
-	    "required": ["type", "value"]
-	},
-	"wateringFrequency": {
-	    "type": "object",
-	    "values": {
-		"type": {
-		    "type": "string",
-		    "enum": ["Property"]
-		},
-		"value": {
-		    "type": "string",
-		    "enum": ["daily", "weekly", "biweekly", "monthly", "onDemand", "other"]
-		}
-	    },
-	    "required": ["type", "value"]
-	}
-    },
+    "allOf": [
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+	{
+            "properties": {
+                "id": {
+                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/id"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriCrop"],
+                    "description": "NGSI Entity Type"
+                },
+                "createdAt": {
+                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateCreated"
+                },
+                "modifiedAt": {
+                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateModified"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "alternateName": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "agriSoil": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "agriFertiliser": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "agriPest": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "harvestingInterval": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "values": {
+                                "dateRange": {
+                                    "type": "string",
+                                    "pattern": "^-[0-1][0-9]-[0-3][0-9]\/-[0-1][0-9]-[0-3][0-9]$"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "plantingFrom": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "values": {
+                                "dateRange": {
+                                    "type": "string",
+                                    "pattern": "^-[0-1][0-9]-[0-3][0-9]\/-[0-1][0-9]-[0-3][0-9]$"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "wateringFrequency": {
+                    "type": "string",
+                    "enum": ["daily", "weekly", "biweekly", "monthly", "onDemand", "other"]
+                }
+            }
+        }
+    ],
     "required": ["id", "type", "createdAt", "name"]
 }
