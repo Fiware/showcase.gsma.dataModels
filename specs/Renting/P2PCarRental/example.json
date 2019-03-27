@@ -1,72 +1,77 @@
 {
-   	"id": "Rental-car-8f7ewf88ejjnf993jfU83HDJ",
-	"type": "P2PCarRental",
-	"vehicle_average_rating": 1.2,
-        "details_url": "https://webaddress.io/dekekd/mopsd/",
-        "vehicle_model": "SQ5",
-        "vehicle_title": "Audi SQ5",
-        "manufacture_year": 1913,
-	"fuel_type": "petrol",
-        "timezone": "Europe/Helsinki",
-        "vehicle_maker": "Audi",
-        "vehicle_location": {
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    25.0147951,
-                    60.181715
-                ]
-            },
-            "PostalAddress": {
-		"addressCountry":"Finland",
-                "postalCode": "33100",
-                "addressLocality": "Tampere",
-                "addressRegion": "Pirkanmaaa",
-                "streetAddress": "Lars Plonkin Katu 14B"
-            }
-        },
-        "availability": [
-            {
-                "end": "2029-12-31T23:45:00",
-                "begin": "2019-03-12T08:39:07.211823"
-            }
-        ],
-        "rent_description": [
-            {
-                "content": "Best car for you my friend!",
-                "language": "en"
-            }
-        ],
-        "contact_details": {
-		"name": "Zighn Fergusson",
-		"phone": "+358 44 723 8734",
-		"email": "zin877@gmail.com",
-		"additional": "Contact between 9 and six" 
-	},
-        "seating_capacity": 5,
-        "price_currency": "euro",
-        "prices": [
-            {
-                "pricing": "hourly",
-                "extra_km_price": 0.099,
-                "free_km": 20,
-                "price": 6
-            },
-            {
-                "pricing": "daily",
-                "extra_km_price": 0.099,
-                "free_km": 400,
-                "price": 29.7
-            },
-            {
-                "pricing": "weekly",
-                "extra_km_price": 0.099,
-                "free_km": 650,
-                "price": 171
-            }
-        ],
-        "image": "https://imageurlexample.com/5d44d6c8-90e5-4578-9f47-8c2c2ae0b8e6.jpeg",
-        "web_url": "https://operator.com/vehicle/1",
-        "added": "2016-06-20T10:15:50"
+  "id": "Rental-car-8f7ewf88ejjnf993jfU83HDJ",
+  "type": "P2PCarRental",
+  "vehicle_average_rating": 1.2,
+  "timezone": "Europe/Helsinki",
+  "vehicle_information": {
+    "id": "Rental-car-8f7ewf88ejjnf993jfU83HDJ",
+    "name": "greatest vehicle ever lived",  
+    "url": "https://webaddress.io/dekekd/mopsd/",
+    "type": "VehicleModel",
+    "vehicleType": "car",
+    "brandName": "Audi",  
+    "modelName": "SQ5",    
+    "manufacturerName": "Audi",
+    "fuel_type": "petrol",
+    "image": "https://imageurlexample.com/5d44d6c8-90e5-4578-9f47-8c2c2ae0b8e6.jpeg",
+    "dataProvider": "https://operator.com/vehicle/1"
+  },
+  "manufacture_year": 1913,
+  "seating_capacity": 5,
+  "vehicle_location": {
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.0147951,
+        60.181715
+      ]
+    },
+    "PostalAddress": {
+      "addressCountry": "Finland",
+      "postalCode": "33100",
+      "addressLocality": "Tampere",
+      "addressRegion": "Pirkanmaaa",
+      "streetAddress": "Lars Plonkin Katu 14B"
+    }
+  },
+  "availability": [
+    {
+      "end": "2029-12-31T23:45:00",
+      "begin": "2019-03-12T08:39:07.211823"
+    }
+  ],
+  "rent_description": [
+    {
+      "content": "Best car for you my friend!",
+      "language": "en"
+    }
+  ],
+  "contact_details": {
+    "name": "Zighn Fergusson",
+    "phone": "+358 44 723 8734",
+    "email": "zin877@gmail.com",
+    "additional": "Contact between 9 and six"
+  },
+  "price_currency": "euro",
+  "prices": [
+    {
+      "pricing": "hourly",
+      "extra_km_price": 0.099,
+      "free_km": 20,
+      "price": 6
+    },
+    {
+      "pricing": "daily",
+      "extra_km_price": 0.099,
+      "free_km": 400,
+      "price": 29.7
+    },
+    {
+      "pricing": "weekly",
+      "extra_km_price": 0.099,
+      "free_km": 650,
+      "price": 171
+    }
+  ],
+  "added": "2016-06-20T10:15:50"
 }
-

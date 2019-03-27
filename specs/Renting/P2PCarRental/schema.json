@@ -1,17 +1,14 @@
-﻿{
+{
   "$schema": "http://json-schema.org/schema#",
   "$id": "https://fiware.github.io/dataModels/specs/Renting/P2PCarRental/schema.json",
-   "type": "object",
-   "title": "The Root Schema",
+  "type": "object",
+  "title": "The Root Schema",
   "required": [
     "id",
     "type",
-    "vehicle_model",
-    "vehicle_title",
-    "manufacture_year",
-    "fuel_type",
-    "timezone",
-    "vehicle_maker",
+    "vehicle_information",
+    "manufacture_year",    
+    "timezone",    
     "vehicle_location",
     "availability",
     "contact_details",
@@ -27,7 +24,7 @@
       "title": "The Id Schema",
       "default": "",
       "examples": [
-       "Rental-car-8f7ewf88ejjnf993jfU83HDJ"
+        "Rental-car-8f7ewf88ejjnf993jfU83HDJ"
       ]
     },
     "type": {
@@ -43,55 +40,9 @@
       "$id": "#/properties/vehicle_average_rating",
       "type": "number",
       "title": "The Vehicle_average_rating Schema",
-      "default": 0.0,
-      "examples": [
-        1.2
-      ]
-    },
-    "details_url": {
-      "$id": "#/properties/details_url",
-      "type": "string",
-      "format": "uri",
-      "title": "The Details_url Schema",
-      "default": null,
-      "examples": [
-        "https://vehicele.com/details/vehicless/"
-      ]
-    },
-    "vehicle_model": {
-      "$id": "#/properties/vehicle_model",
-      "type": "string",
-      "title": "The Vehicle model Schema",
-      "default": "",
-      "examples": [
-        "SQ5"
-      ]
-    },
-    "vehicle_title": {
-      "$id": "#/properties/vehicle_title",
-      "type": "string",
-      "title": "The vehicle Title Schema",
-      "default": "",
-      "examples": [
-        "Audi SQ5"
-      ]
-    },
-    "manufacture_year": {
-      "$id": "#/properties/manufature_year",
-      "type": "integer",
-      "title": "The Manufacture Year Schema",
       "default": 0,
       "examples": [
-        1913
-      ]
-    },
-    "fuel_type": {
-      "$id": "#/properties/fuel_type",
-      "type": "string",
-      "title": "The Fuel_type Schema",
-      "default": "",
-      "examples": [
-        "petrol"
+        1.2
       ]
     },
     "timezone": {
@@ -103,13 +54,23 @@
         "Europe/Helsinki"
       ]
     },
-    "vehicle_maker": {
-      "$id": "#/properties/vehicle_maker",
-      "type": "string",
-      "title": "The Vehicle maker Schema",
-      "default": "",
+    "vehicle_information": { "$ref": "https://github.com/Fiware/dataModels/tree/master/Transportation/Vehicle/VehicleModel/schema.json"},  
+    "manufacture_year": {
+      "$id": "#/properties/manufature_year",
+      "type": "integer",
+      "title": "The Manufacture Year Schema",
+      "default": 0,
       "examples": [
-        "Audi"
+        1913
+      ]
+    },
+    "seating_capacity": {
+      "$id": "#/properties/seating_capacity",
+      "type": "integer",
+      "title": "The Seating_capacity Schema",
+      "default": 0,
+      "examples": [
+        5
       ]
     },
     "vehicle_location": {
@@ -148,7 +109,7 @@
                 "$id": "#/properties/vehicle_location/properties/geometry/properties/coordinates/items",
                 "type": "number",
                 "title": "The Items Schema",
-                "default": 0.0,
+                "default": 0,
                 "examples": [
                   25.0147951,
                   60.181715
@@ -170,7 +131,7 @@
           ],
           "properties": {
             "zipcode": {
-             "$id": "#/properties/vehicle_location/properties/address/properties/zipcode",
+              "$id": "#/properties/vehicle_location/properties/address/properties/zipcode",
               "type": "string",
               "title": "The Zipcode Schema",
               "default": "",
@@ -259,20 +220,20 @@
       "items": {
         "$id": "#/properties/rent_description/items",
         "type": "object",
-       "title": "The Items Schema",
+        "title": "The Items Schema",
         "required": [
           "content",
           "language"
         ],
         "properties": {
-         "content": {
-           "$id": "#/properties/rent_description/items/properties/content",
+          "content": {
+            "$id": "#/properties/rent_description/items/properties/content",
             "type": "string",
             "title": "The Content Schema",
             "default": "",
             "examples": [
               "Best car for you my friend!"
-           ]
+            ]
           },
           "language": {
             "$id": "#/properties/description/items/properties/language",
@@ -315,7 +276,7 @@
             "+358 44 723 8734"
           ]
         },
-       "email": {
+        "email": {
           "$id": "#/properties/contact_details/properties/email",
           "type": "string",
           "title": "The Email Schema",
@@ -328,22 +289,13 @@
           "$id": "#/properties/contact_details/properties/additional",
           "type": "string",
           "title": "The Additional Schema",
-         "default": "",
+          "default": "",
           "examples": [
             "Contact between 9 and six"
           ]
         }
       }
-    },
-    "seating_capacity": {
-      "$id": "#/properties/seating_capacity",
-      "type": "integer",
-      "title": "The Seating_capacity Schema",
-      "default": 0,
-      "examples": [
-        5
-     ]
-    },
+    },    
     "price_currency": {
       "$id": "#/properties/price_currency",
       "type": "string",
@@ -381,7 +333,7 @@
             "$id": "#/properties/prices/items/properties/extra_km_price",
             "type": "number",
             "title": "The Extra_km_price Schema",
-            "default": 0.0,
+            "default": 0,
             "examples": [
               0.099
             ]
@@ -406,26 +358,6 @@
           }
         }
       }
-    },
-    "image": {
-      "$id": "#/properties/image",
-      "type": "string",
-      "format": "uri",
-      "title": "The Image Schema",
-      "default": "",
-      "examples": [
-        "https://imageurlexample.com/5d44d6c8-90e5-4578-9f47-8c2c2ae0b8e6.jpeg"
-      ]
-    },
-   "web_url": {
-      "$id": "#/properties/web_url",
-      "type": "string",
-      "format": "uri",
-      "title": "The Web_url Schema",
-      "default": "",
-      "examples": [
-        "https://operator.com/vehicle/1"
-      ]
     },
     "added": {
       "$id": "#/properties/added",
