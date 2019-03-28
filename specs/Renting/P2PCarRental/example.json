@@ -5,18 +5,18 @@
   "timezone": "Europe/Helsinki",
   "vehicle_information": {
     "id": "Rental-car-8f7ewf88ejjnf993jfU83HDJ",
-    "name": "greatest vehicle ever lived",  
+    "name": "Alfa Romeo Giulia Quadrifoglio",  
     "url": "https://webaddress.io/dekekd/mopsd/",
     "type": "VehicleModel",
     "vehicleType": "car",
-    "brandName": "Audi",  
-    "modelName": "SQ5",    
-    "manufacturerName": "Audi",
+    "brandName": "Alfa Romeo",  
+    "modelName": "Giulia",    
+    "manufacturerName": "Alfa Romeo",
     "fuel_type": "petrol",
     "image": "https://imageurlexample.com/5d44d6c8-90e5-4578-9f47-8c2c2ae0b8e6.jpeg",
     "dataProvider": "https://operator.com/vehicle/1"
   },
-  "manufacture_year": 1913,
+  "manufacture_year": 2018,
   "seating_capacity": 5,
   "vehicle_location": {
     "geometry": {
@@ -42,7 +42,7 @@
   ],
   "rent_description": [
     {
-      "content": "Best car for you my friend!",
+      "content": "Best car for you my friend! P.S. Fill with 98 octane or higher",
       "language": "en"
     }
   ],
