@@ -5,7 +5,11 @@
   "dataProvider": "http://www.gaiasense.gr/en",
   "category": "agriculture",
   "subCategory": "fungus",
-  "data": "Altenaria",
+  "data": {
+    "additionalType": "Altenaria",
+    "identifier" : "http://aims.fao.org/aos/agrovoc/c_f75f5af0.rdf",
+    "potentialAction" : "spray"
+  },
   "severity": "high",
   "location": {
       "type": "Polygon",
