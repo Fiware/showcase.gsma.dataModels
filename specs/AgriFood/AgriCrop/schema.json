@@ -15,12 +15,6 @@
                     "enum": ["AgriCrop"],
                     "description": "NGSI Entity Type"
                 },
-                "createdAt": {
-                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateCreated"
-                },
-                "modifiedAt": {
-                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/dateModified"
-                },
                 "name": {
                     "type": "string"
                 },
