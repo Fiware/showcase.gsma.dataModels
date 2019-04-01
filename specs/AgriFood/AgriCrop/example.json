@@ -1,8 +1,8 @@
 {
     "id": "urn:ngsi-ld:AgriCrop:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
     "type": "AgriCrop",
-    "createdAt": "2017-01-01T01:20:00Z",
-    "modifiedAt": "2017-05-04T12:30:00Z",
+    "dateCreated": "2017-01-01T01:20:00Z",
+    "dateCreated": "2017-05-04T12:30:00Z",
     "name": "Wheat",
     "alternateName": "Triticum aestivum",
     "description": "Spring wheat",
