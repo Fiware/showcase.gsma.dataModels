@@ -10,9 +10,6 @@
         { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
 	{
             "properties": {
-                "id": {
-                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/id"
-                },
                 "type": {
                     "type": "string",
                     "enum": ["AgriCrop"],
@@ -90,5 +87,5 @@
             }
         }
     ],
-    "required": ["id", "type", "createdAt", "name"]
+    "required": ["id", "type", "name"]
 }
