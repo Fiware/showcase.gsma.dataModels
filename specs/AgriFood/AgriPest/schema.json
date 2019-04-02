@@ -6,23 +6,12 @@
     "type": "object",
     "allOf": [
 	{ "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
 	{
 	    "properties": {
                 "type": {
                     "type": "string",
                     "enum": ["AgriPest"],
                     "description": "NGSI Entity Type"
-                },
-		"name": {
-                    "type": "string"
-                },
-                "alternateName": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
                 },
 		"agriProduct": {
                     "type": "array",
