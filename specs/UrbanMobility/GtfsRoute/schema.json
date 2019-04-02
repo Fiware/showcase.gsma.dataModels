@@ -5,6 +5,28 @@
   "description": "GTFS Route",
   "type": "object",
   "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "shortName"
+          ]
+        }
+      ]
+    },
+	{
+      "required": [
+        "id",
+        "type",
+        "routeType",
+        "operatedBy"
+      ]
+    },
     { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
     {
       "properties": {
@@ -47,13 +69,5 @@
         }
       }
     }
-  ],
-  "required": [
-    "id",
-    "type",
-    "shortName",
-    "name",
-    "routeType",
-    "operatedBy"
   ]
 }
