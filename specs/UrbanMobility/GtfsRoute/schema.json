@@ -41,6 +41,9 @@
         "operatedBy": {
           "type": "string",
           "format": "uri"
+        },
+        "shortName": {
+          "type": "string"
         }
       }
     }

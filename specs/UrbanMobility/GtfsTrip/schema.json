@@ -46,6 +46,7 @@
   "required": [
     "id",
     "type",
-    "hasRoute"
+    "hasRoute",
+    "hasService"
   ]
 }

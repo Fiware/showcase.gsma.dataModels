@@ -64,7 +64,7 @@ The data model is defined as shown below:
 
     -   Attribute type: Relationship. It shall point to an Entity of Type
         [GtfsService](../../GtfsService/doc/spec.md)
-    -   Optional
+    -   Mandatory
 
 -   `hasShape`: Same as GTFS `shape_id`.
 
