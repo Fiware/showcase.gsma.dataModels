@@ -20,15 +20,15 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```json
 {
-  "id": "UserActivity1",
-  "type": "UserActivity",
-  "activityType": "Drive",
-  "description": "User1 drive Car1 to Office1",
-  "dateActivityStarted": "2016-11-30T07:00:00.00Z",
-  "refObject": "Car1",
-  "refTarget": "Office1",
-  "refAgent": "User1"
+    "id": "UserActivity1",
+    "type": "UserActivity",
+    "activityType": "Drive",
+    "description": "User1 drive Car1 to Office1",
+    "dateActivityStarted": "2016-11-30T07:00:00.00Z",
+    "refObject": "Car1",
+    "refTarget": "Office1",
+    "refAgent": "User1"
 }
 ```

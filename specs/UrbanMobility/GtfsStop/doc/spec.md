@@ -164,8 +164,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ### Relationships
 
-| GTFS Field       | NGSI Attribute     | LinkedGTFS           | Comment                                              |
-| :--------------- | :----------------- | :------------------- | :--------------------------------------------------- |
+| GTFS Field       | NGSI Attribute     | LinkedGTFS           | Comment                                             |
+| :--------------- | :----------------- | :------------------- | :-------------------------------------------------- |
 | `parent_station` | `hasParentStation` | `gtfs:parentStation` | Shall point to another Entity of Type `GtfsStation` |
 |                  | `operatedBy`       |                      | Shall point to another Entity of Type `GtfsAgency`  |
 

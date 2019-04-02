@@ -143,7 +143,7 @@ published by FIWARE at the suggested URL.
     },
     "@context": [
         "https://schema.lab.fiware.org/ld/jsonldcontext.jsonld",
-        "http://uri.etsi.org/ngsi-ld/ngsi-ld-core-context.jsonld"
+        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }
 ```
@@ -171,7 +171,7 @@ published by FIWARE at the suggested URL.
     },
     "@context": [
         "https://schema.lab.fiware.org/ld/jsonldcontext.jsonld",
-        "http://uri.etsi.org/ngsi-ld/ngsi-ld-core-context.jsonld"
+        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }
 ```

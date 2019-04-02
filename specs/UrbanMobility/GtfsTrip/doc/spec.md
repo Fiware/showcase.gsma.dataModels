@@ -65,12 +65,12 @@ The data model is defined as shown below:
     -   Attribute type: Relationship. It shall point to an Entity of Type
         [GtfsService](../../GtfsService/doc/spec.md)
     -   Optional
-    
+
 -   `hasShape`: Same as GTFS `shape_id`.
 
     -   Attribute type: Relationship. It shall point to an Entity of Type
         [GtfsShape](../../GtfsShape/doc/spec.md)
-    -   Optional    
+    -   Optional
 
 -   `hasRoute`: Same as `route_id`.
 
@@ -142,20 +142,20 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ### Properties
 
-| GTFS Field              | NGSI Attribute         | LinkedGTFS                  | Comment                                                 |
-| :---------------------- | :--------------------- | :-------------------------- | :------------------------------------------------------ |
-| `trip_headsign`         | `headSign`             | `gtfs:headsign`             |                                                         |
-| `trip_short_name`       | `shortName`            | `gtfs:shortName`            |                                                         |
-| `direction_id`          | `direction`            | `gtfs:direction`            |                                                         |
-| `block_id`              | `block`                | `gtfs:block`                |                                                         |
-| `wheelchair_accessible` | `wheelchairAccessible` | `gtfs:wheelchairAccessible` |                                                         |
-| `bikes_allowed`         | `bikesAllowed`         | `gtfs:bikesAllowed`         |                                                         |
+| GTFS Field              | NGSI Attribute         | LinkedGTFS                  | Comment |
+| :---------------------- | :--------------------- | :-------------------------- | :------ |
+| `trip_headsign`         | `headSign`             | `gtfs:headsign`             |         |
+| `trip_short_name`       | `shortName`            | `gtfs:shortName`            |         |
+| `direction_id`          | `direction`            | `gtfs:direction`            |         |
+| `block_id`              | `block`                | `gtfs:block`                |         |
+| `wheelchair_accessible` | `wheelchairAccessible` | `gtfs:wheelchairAccessible` |         |
+| `bikes_allowed`         | `bikesAllowed`         | `gtfs:bikesAllowed`         |         |
 
 ### Relationships
 
-| GTFS Field   | NGSI Attribute | LinkedGTFS     | Comment                                            |
-| :----------- | :------------- | :------------- | :------------------------------------------------- |
-| `route_id`   | `hasRoute`     |                |                                                    |
+| GTFS Field   | NGSI Attribute | LinkedGTFS     | Comment                                           |
+| :----------- | :------------- | :------------- | :------------------------------------------------ |
+| `route_id`   | `hasRoute`     |                |                                                   |
 | `service_id` | `hasService`   | `gtfs:service` | It shall point to an Entity of Type `GtfsService` |
 | `shape_id`   | `hasShape`     | `gtfs:shape`   | It shall point to an Entity of Type `GtfsShape`   |
 
