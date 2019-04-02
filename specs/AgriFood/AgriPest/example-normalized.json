@@ -1,0 +1,23 @@
+{
+    "id": "urn:ngsi-ld:AgriPest:fb3f1295-500c-4aa3-b995-c909097d5c01",
+    "type": "AgriPest",
+    "dateCreated": "2017-01-01T01:20:00Z",
+    "dateModified": "2017-05-04T12:30:00Z",
+    "name": {
+        "value": "Grasshopper"
+    },
+    "alternateName": {
+        "value": "Chorthippus parallelus"
+    },
+    "description": {
+        "value": "Common European grasshopper"
+    },
+    "agriProduct": {
+        "type": "Relationship",
+        "value": [
+            "urn:ngsi-ld:AgriProduct:06afffde-4488-11e8-861a-cfcf50aaa9cc",
+            "urn:ngsi-ld:AgriProduct:0c094486-4488-11e8-a15f-afa816790c64",
+            "urn:ngsi-ld:AgriProduct:14bf9f26-4488-11e8-9e3d-bfb78de66dd3"
+        ]
+    }
+}
