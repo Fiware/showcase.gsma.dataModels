@@ -7,9 +7,6 @@
     "type": "AgriGreenhouse",
     "createdAt": "2017-01-01T01:20:00Z",
     "modifiedAt": "2017-05-04T12:30:00Z",
-    "source": "https://source.example.com",
-    "dataProvider": "https://provider.example.com",
-    "entityVersion": 2.0,
     "agriParcelParent": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b"
