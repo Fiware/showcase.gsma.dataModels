@@ -7,7 +7,6 @@
     "allOf": [
 	{ "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
         { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
 	{
 	    "properties": {
 		"id": {
@@ -22,9 +21,6 @@
                     "type": "string",
                     "format": "uri"
                 },
-		"location": {
-		    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons/properties/location"
-		},
 		"soilTemperature": {
 		    "type": "object",
 		    "values": {
@@ -129,9 +125,6 @@
 			}
 		    },
 		    "required": ["value", "unitCode", "observedAt"]
-		},
-		"description": {
-		    "type": "string"
 		},
 		"devices": {
 		    "type": "array",
