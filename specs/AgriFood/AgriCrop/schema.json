@@ -13,15 +13,6 @@
                     "enum": ["AgriCrop"],
                     "description": "NGSI Entity Type"
                 },
-                "name": {
-                    "type": "string"
-                },
-                "alternateName": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
                 "agriSoil": {
 		    "type": "array",
 		    "items": [{
