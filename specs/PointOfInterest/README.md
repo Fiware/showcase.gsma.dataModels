@@ -29,7 +29,7 @@ categories please check
 
 ## Examples of use
 
-```
+```text
 http://iotbd-v2.lab.fiware.org/v2/entities?type=PointOfInterest&q=category=='311'&limit=1
 ```
 

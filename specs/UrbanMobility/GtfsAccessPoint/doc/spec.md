@@ -120,8 +120,8 @@ Same as `GtfsStop`.
 
 ### Relationships
 
-| GTFS Field | NGSI Attribute     | LinkedGTFS | Comment                                                   |
-| :--------- | :----------------- | :--------- | :-------------------------------------------------------- |
+| GTFS Field | NGSI Attribute     | LinkedGTFS | Comment                                                  |
+| :--------- | :----------------- | :--------- | :------------------------------------------------------- |
 |            | `hasParentStation` |            | shall point to another Entity(ies) of type `GtfsStation` |
 
 ## Open issues

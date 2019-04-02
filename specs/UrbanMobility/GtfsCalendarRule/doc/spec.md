@@ -199,8 +199,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ### Relationships
 
-| GTFS Field | NGSI Attribute | LinkedGTFS     | Comment                                              |
-| :--------- | :------------- | :------------- | :--------------------------------------------------- |
+| GTFS Field | NGSI Attribute | LinkedGTFS     | Comment                                             |
+| :--------- | :------------- | :------------- | :-------------------------------------------------- |
 |            | `hasService`   | `gtfs:service` | Shall point to another Entity of Type `GtfsService` |
 
 ## Open issues
