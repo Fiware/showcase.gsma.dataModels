@@ -1,0 +1,37 @@
+{
+    "@context": [
+        "https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
+        "https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Product-Type-context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriProductType:398aa5f4-6a81-4dea-9f85-e9869441a257",
+    "type": "AgriProductType",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "source": "https://source.example.com",
+    "dataProvider": "https://provider.example.com",
+    "entityVersion": 2.0,
+    "name": {
+        "type": "Property",
+        "value": "Soft Fruits"
+    },
+    "description": {
+        "type": "Property",
+        "value": "Soft edible fruits"
+    },
+    "root": {
+        "type": "Property",
+        "value": true
+    },
+    "agriProductParent": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AgriProductType:b99c940d-7156-4280-9a2b-4a9e533cd20e"
+    },
+    "agriProductChildren": {
+        "type": "Relationship",
+        "object": [
+            "urn:ngsi-ld:AgriProductType:836258d0-448b-11e8-84ec-ef61d9425fe8",
+            "urn:ngsi-ld:AgriProductType:83d607f8-448b-11e8-9fe3-0fd5140ae8db",
+            "urn:ngsi-ld:AgriProductType:90cbac88-448b-11e8-acb0-a78dab9d0555"
+        ]
+    }
+}
