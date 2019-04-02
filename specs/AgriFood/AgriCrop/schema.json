@@ -25,16 +25,25 @@
                     "type": "string"
                 },
                 "agriSoil": {
-                    "type": "string",
-                    "format": "uri"
+		    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
                 },
                 "agriFertiliser": {
-                    "type": "string",
-                    "format": "uri"
+                    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
                 },
                 "agriPest": {
-                    "type": "string",
-                    "format": "uri"
+                    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
                 },
                 "harvestingInterval": {
                     "type": "array",
