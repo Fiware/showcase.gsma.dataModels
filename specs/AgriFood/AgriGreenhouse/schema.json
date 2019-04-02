@@ -6,147 +6,147 @@
     "type": "object",
     "allOf": [
         { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-	{
-	    "properties": {
+        {
+            "properties": {
                 "type": {
                     "type": "string",
                     "enum": ["AgriGreenhouse"],
                     "description": "NGSI Entity Type"
                 },
-		"agriParcelParent": {
+                "agriParcelParent": {
                     "type": "string",
                     "format": "uri"
                 },
-		"agriParcelChildren": {
+                "agriParcelChildren": {
                     "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
                 },
-		"weatherObserved": {
-		    "type": "string",
+                "weatherObserved": {
+                    "type": "string",
                     "format": "uri"
-		},
-		"waterQualityObserved": {
-		    "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
-		},
-		"relativeHumidity": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number",
-			    "minimum": 0.0,
-			    "maximum": 1.0
-			},
-			"unitCode": {
-			    "type": "string"
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
-		},
-		"leafTemperature": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "integer",
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["CEL"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
-		},
-		"co2": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "integer",
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["M1"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
-		},
-		"dailyLight": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "integer",
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["N78"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
-		},
-		"drainFlow": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "object",
-			    "values": {
-				"value": {
-				    "type": "number",
-				    "minimum": 0
-				},
-				"maxValue": {
-				    "type": "number",
-				    "minimum": 0
-				},
-				"minValue": {
-				    "type": "number",
-				    "minimum": 0
-				},
-				"unitText": {
-				    "type": "string"
-				}
-			    }
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["G51"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
-		},
-		"devices": {
-		    "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
-		}
-	    }
-	}
+                },
+                "waterQualityObserved": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
+                },
+                "relativeHumidity": {
+                    "type": "object",
+                    "values": {
+                        "value": {
+                            "type": "number",
+                            "minimum": 0.0,
+                            "maximum": 1.0
+                        },
+                        "unitCode": {
+                            "type": "string"
+                        },
+                        "observedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "required": ["value", "unitCode", "observedAt"]
+                },
+                "leafTemperature": {
+                    "type": "object",
+                    "values": {
+                        "value": {
+                            "type": "integer",
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "enum": ["CEL"]
+                        },
+                        "observedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "required": ["value", "unitCode", "observedAt"]
+                },
+                "co2": {
+                    "type": "object",
+                    "values": {
+                        "value": {
+                            "type": "integer"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "enum": ["M1"]
+                        },
+                        "observedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "required": ["value", "unitCode", "observedAt"]
+                },
+                "dailyLight": {
+                    "type": "object",
+                    "values": {
+                        "value": {
+                            "type": "integer",
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "enum": ["N78"]
+                        },
+                        "observedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "required": ["value", "unitCode", "observedAt"]
+                },
+                "drainFlow": {
+                    "type": "object",
+                    "values": {
+                        "value": {
+                            "type": "object",
+                            "values": {
+                                "value": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "maxValue": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "minValue": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "unitText": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "enum": ["G51"]
+                        },
+                        "observedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "required": ["value", "unitCode", "observedAt"]
+                },
+                "devices": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
+                }
+            }
+        }
     ],
     "required": ["id", "type", "agriParcelParent"]
 }
