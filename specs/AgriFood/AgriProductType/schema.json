@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/AgriProductType/schema.json",
+    "title": "FIWARE - Agri Product Type",
+    "description": "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way.",
+    "type": "object",
+    "allOf": [
+	{ "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+	{
+	    "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriProductType"],
+                    "description": "NGSI Entity Type"
+                },
+		"name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+		"agriProductParent": {
+                    "type": "string",
+                    "format": "uri"
+                },
+		"agriProductChildren": {
+                    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
+                },
+		"root": {
+		    "type": "boolean"
+		}
+	    }
+	}
+    ],
+    "required": ["id", "type", "name", "description", "root"]
+}
