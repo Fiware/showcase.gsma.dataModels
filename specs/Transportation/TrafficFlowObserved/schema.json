@@ -74,6 +74,9 @@
             "backward"
           ]
         },
+        "vehicleType": {
+          "type": "string"       
+        },
         "reversedLane": {
           "type": "boolean"
         }
