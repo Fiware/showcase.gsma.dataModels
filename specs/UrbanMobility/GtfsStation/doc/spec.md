@@ -134,8 +134,8 @@ Same as [GtfsStop](../../GtfsStop/doc/spec.md)
 
 ### Relationships
 
-| GTFS Field | NGSI Attribute     | LinkedGTFS | Comment                                            |
-| :--------- | :----------------- | :--------- | :------------------------------------------------- |
+| GTFS Field | NGSI Attribute     | LinkedGTFS | Comment                                           |
+| :--------- | :----------------- | :--------- | :------------------------------------------------ |
 |            | `hasStop`          |            | shall point to Entities of type `GtfsStop`        |
 |            | `hasAccessPoint`   |            | shall point to Entities of type `GtfsAccessPoint` |
 |            | `hasParentStation` |            | shall point to an Entity of type `GtfsStation`    |

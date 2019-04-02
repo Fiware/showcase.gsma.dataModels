@@ -42,7 +42,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute type: [Text](https://schema.org/Text)
     -   Allowed values:
         -   (`traffic`, `naturalDisaster`, `weather`, `environment`, `health`,
-            `security` )
+            `security`, `agriculture`)
     -   Mandatory
 
 -   `subCategory` : Describe the sub category of alert.
@@ -64,6 +64,9 @@ A JSON Schema corresponding to this data model can be found
             (for `health` category)
         -   (`suspiciousAction`, `robbery`, `assault`, `civilDisorder`,
             `buildingFire`, `forestFire`) (for `security` category)
+        -   (`noxiousWeed`, `snail`, `insect`, `rodent`, `bacteria`,
+            `microbe`, `fungus`,`mite`, `virus`, `nematodes`, `irrigation`,
+            `fertilisation`) (for `agriculture` category)
     -   Optional
 
 -   `location` : Location of alert represented by a GeoJSON geometry.
