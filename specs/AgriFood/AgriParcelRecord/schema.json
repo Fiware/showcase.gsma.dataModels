@@ -61,7 +61,7 @@
 		    "type": "object",
 		    "values": {
 			"value": {
-			    "type": "number",
+			    "type": "number"
 			},
 			"unitCode": {
 			    "type": "string",
@@ -78,7 +78,7 @@
 		    "type": "object",
 		    "values": {
 			"value": {
-			    "type": "number",
+			    "type": "number"
 			},
 			"unitCode": {
 			    "type": "string",
@@ -113,7 +113,7 @@
 		    "type": "object",
 		    "values": {
 			"value": {
-			    "type": "number",
+			    "type": "number"
 			},
 			"unitCode": {
 			    "type": "string",
