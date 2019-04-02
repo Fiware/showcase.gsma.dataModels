@@ -1,0 +1,30 @@
+{
+    "@context": [
+        "https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
+        "https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Pest-context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriPest:fb3f1295-500c-4aa3-b995-c909097d5c01",
+    "type": "AgriPest",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "name": {
+        "type": "Property",
+        "value": "Grasshopper"
+    },
+    "alternateName": {
+        "type": "Property",
+        "value": "Chorthippus parallelus"
+    },
+    "description": {
+        "type": "Property",
+        "value": "Common European grasshopper"
+    },
+    "agriProduct": {
+        "type": "Relationship",
+        "object": [
+            "urn:ngsi-ld:AgriProduct:06afffde-4488-11e8-861a-cfcf50aaa9cc",
+            "urn:ngsi-ld:AgriProduct:0c094486-4488-11e8-a15f-afa816790c64",
+            "urn:ngsi-ld:AgriProduct:14bf9f26-4488-11e8-9e3d-bfb78de66dd3"
+        ]
+    }
+}
