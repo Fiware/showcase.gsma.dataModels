@@ -47,7 +47,7 @@
           ]
         },
         "stopHeadsign": {
-          "type": "string",
+          "type": "string"
         },
         "dropOffType": {
           "type": "string",
