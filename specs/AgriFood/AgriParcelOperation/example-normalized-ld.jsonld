@@ -1,0 +1,67 @@
+{
+    "@context": [
+        "https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
+        "https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Parcel-Operation-context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriParcelOperation:e1e9d3a3-074f-46f1-9375-52000d05a62b",
+    "type": "AgriParcelOperation",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "agriParcel": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AgriParcel:318366a9-7643-4d8e-9a11-c76a8c29d8eb"
+    },
+    "operationType": {
+        "type": "Property",
+        "value": "fertiliser"
+    },
+    "description": {
+        "type": "Property",
+        "value": "Monthly fertiliser application"
+    },
+    "result": {
+        "type": "Property",
+        "value": "ok"
+    },
+    "plannedStartAt": {
+        "type": "Property",
+        "value": "2016-08-22T10:18:16Z"
+    },
+    "plannedEndAt": {
+        "type": "Property",
+        "value": "2016-08-28T10:18:16Z"
+    },
+    "status": {
+        "type": "Property",
+        "value": "finished"
+    },
+    "operator": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
+    },
+    "startedAt": {
+        "type": "Property",
+        "value": "2016-08-22T10:18:16Z"
+    },
+    "endedAt": {
+        "type": "Property",
+        "value": "2016-08-28T10:18:16Z"
+    },
+    "reportedAt": {
+        "type": "Property",
+        "value": "2016-08-28T10:18:16Z"
+    },
+    "agriProduct": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AgriProduct:a8f616b8-13fb-473a-8e61-b7a80c6c93ec"
+    },
+    "quantity": {
+        "type": "Property",
+        "value": 40,
+        "unitCode": "KGM"
+    },
+    "waterSource": {
+        "type": "Property",
+        "value": "rainwater capture"
+    }
+}
