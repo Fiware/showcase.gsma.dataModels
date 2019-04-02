@@ -141,8 +141,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ### Relationships
 
-| GTFS Field | NGSI Attribute | LinkedGTFS | Comment                                         |
-| :--------- | :------------- | :--------- | :---------------------------------------------- |
+| GTFS Field | NGSI Attribute | LinkedGTFS | Comment                                        |
+| :--------- | :------------- | :--------- | :--------------------------------------------- |
 | `trip_id`  | `hasTrip`      |            | It shall point to an Entity of Type `GtfsTrip` |
 
 ### Open issues

@@ -1,0 +1,46 @@
+{
+  "id": "urn:ngsi-ld:Alert:agriculture:fungus:f57f-4610-a589",
+  "type": "Alert",
+  "source": "gaiasense Agriculture Warnings System - NEUROPUBLIC S.A.",
+  "dataProvider": "http://www.gaiasense.gr/en",
+  "category": "agriculture",
+  "subCategory": "fungus",
+  "data": {
+    "additionalType": "Altenaria",
+    "identifier" : "http://aims.fao.org/aos/agrovoc/c_f75f5af0.rdf",
+    "potentialAction" : "spray"
+  },
+  "severity": "high",
+  "location": {
+      "type": "Polygon",
+      "coordinates": [
+          [
+            [
+              22.501029968261715,
+              39.38499845743629
+            ],
+            [
+              22.543087005615234,
+              39.38499845743629
+            ],
+            [
+              22.543087005615234,
+              39.41179407178009
+            ],
+            [
+              22.501029968261715,
+              39.41179407178009
+            ],
+            [
+              22.501029968261715,
+              39.38499845743629
+            ]
+          ]
+        ]
+  },
+  "dateIssued": "2019-03-26T09:25:55.00Z",
+  "validFrom": "2017-03-26T09:25:55.00Z",
+  "validTo": "2017-03-28T10:25:55.00Z",
+  "description": "There is a HIGH RISK for FUNGUS of type ALTENARIA infestations in the area due to weather conditions. It is suggested to spray with the recommended pesticides",
+  "alertSource": "https://warnings-app.gaiasense.gr/"
+}

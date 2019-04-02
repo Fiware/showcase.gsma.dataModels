@@ -63,7 +63,19 @@
                     "assault",
                     "civilDisorder", 
                     "buildingFire", 
-                    "forestFire"
+                    "forestFire",
+                    "noxiousWeed",
+                    "snail",
+                    "insect",
+                    "rodent",
+                    "bacteria",
+                    "microbe",
+                    "fungus",
+                    "mite",
+                    "virus",
+                    "nematodes",
+                    "irrigation",
+                    "fertilisation"
                   ]
               },
               {

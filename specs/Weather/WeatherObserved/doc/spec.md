@@ -314,37 +314,31 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-```
+```json
 {
-            "id": "Spain-WeatherObserved-2422-2016-11-30T08:00:00",
-            "type": "WeatherObserved",
-            "address":
-            {
-                "addressLocality": "Valladolid",
-                "addressCountry": "ES"
-            },
-            "atmosphericPressure": 938.9,
-            "dataProvider": "TEF",
-            "dateObserved": "2016-11-30T07:00:00.00Z",
-            "location":
-            {
-                "type": "Point",
-                "coordinates":
-                [
-                    -4.754444444,
-                    41.640833333
-                ]
-            },
-            "precipitation": 0,
-            "pressureTendency": 0.5,
-            "relativeHumidity": 1,
-            "source": "http://www.aemet.es",
-            "stationCode": "2422",
-            "stationName": "Valladolid",
-            "temperature": 3.3,
-            "windDirection": -45,
-            "windSpeed": 2,
-            "illuminance": 1000
+    "id": "Spain-WeatherObserved-2422-2016-11-30T08:00:00",
+    "type": "WeatherObserved",
+    "address": {
+        "addressLocality": "Valladolid",
+        "addressCountry": "ES"
+    },
+    "atmosphericPressure": 938.9,
+    "dataProvider": "TEF",
+    "dateObserved": "2016-11-30T07:00:00.00Z",
+    "location": {
+        "type": "Point",
+        "coordinates": [-4.754444444, 41.640833333]
+    },
+    "precipitation": 0,
+    "pressureTendency": 0.5,
+    "relativeHumidity": 1,
+    "source": "http://www.aemet.es",
+    "stationCode": "2422",
+    "stationName": "Valladolid",
+    "temperature": 3.3,
+    "windDirection": -45,
+    "windSpeed": 2,
+    "illuminance": 1000
 }
 ```
 

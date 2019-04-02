@@ -40,7 +40,8 @@
             "weather",
             "environment",
             "health",
-            "security"
+            "security",
+            "agriculture"
           ]
         },
         "alertSource": {

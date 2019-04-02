@@ -29,6 +29,8 @@ pages:
       - Introduction           : Device/doc/introduction.md
       - Device                 : Device/Device/doc/spec.md
       - DeviceModel            : Device/DeviceModel/doc/spec.md
+  - Energy:
+      - ThreePhaseAcMeasurement      : Energy/ThreePhaseAcMeasurement/doc/spec.md
   - Environment:
       - Introduction           : Environment/doc/introduction.md
       - AeroAllergenObserved   : Environment/AeroAllergenObserved/doc/spec.md

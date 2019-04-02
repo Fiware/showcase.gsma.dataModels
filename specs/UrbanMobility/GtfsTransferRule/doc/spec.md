@@ -132,8 +132,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ### Relationships
 
-| GTFS Field     | NGSI Attribute   | LinkedGTFS             | Comment                                                           |
-| :------------- | :--------------- | :--------------------- | :---------------------------------------------------------------- |
+| GTFS Field     | NGSI Attribute   | LinkedGTFS             | Comment                                                         |
+| :------------- | :--------------- | :--------------------- | :-------------------------------------------------------------- |
 | `from_stop_id` | `hasOrigin`      | `gtfs:originStop`      | It shall point to an Entity of Type `GtfsStop` or `GtfsStation` |
 | `to_stop_id`   | `hasDestination` | `gtfs:destinationStop` | It shall point to an Entity of Type `GtfsStop` or `GtfsStation` |
 
