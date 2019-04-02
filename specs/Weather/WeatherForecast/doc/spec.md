@@ -246,43 +246,40 @@ Normalized NGSI response
 
 Sample uses simplified representation for data consumers `?options=keyValues`
 
-```
+```json
 {
-        "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
-        "type": "WeatherForecast",
-        "address":
-        {
-            "addressCountry": "Spain",
-            "postalCode": "46005",
-            "addressLocality": "Valencia"
-        },
-        "dataProvider": "TEF",
-        "dateIssued": "2016-12-01T10:40:01.00Z",
-        "dateRetrieved": "2016-12-01T12:57:24.00Z",
-        "dayMaximum":
-        {
-            "feelsLikeTemperature": 15,
-            "temperature": 15,
-            "relativeHumidity": 0.9
-        },
-        "dayMinimum":
-        {
-            "feelsLikeTemperature": 11,
-            "temperature": 11,
-            "relativeHumidity": 0.7
-        },
-        "feelsLikeTemperature": 12,
-        "precipitationProbability": 0.15,
-        "relativeHumidity": 0.85,
-        "source": "http://www.aemet.es/xml/municipios/localidad_46250.xml",
-        "temperature": 12,
-        "validFrom": "2016-12-01T17:00:00.00Z",
-        "validTo": "2016-12-01T23:00:00.00Z",
-        "validity": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00",
-        "weatherType": "overcast",
-        "windDirection": null,
-        "windSpeed": 0
-    }
+    "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
+    "type": "WeatherForecast",
+    "address": {
+        "addressCountry": "Spain",
+        "postalCode": "46005",
+        "addressLocality": "Valencia"
+    },
+    "dataProvider": "TEF",
+    "dateIssued": "2016-12-01T10:40:01.00Z",
+    "dateRetrieved": "2016-12-01T12:57:24.00Z",
+    "dayMaximum": {
+        "feelsLikeTemperature": 15,
+        "temperature": 15,
+        "relativeHumidity": 0.9
+    },
+    "dayMinimum": {
+        "feelsLikeTemperature": 11,
+        "temperature": 11,
+        "relativeHumidity": 0.7
+    },
+    "feelsLikeTemperature": 12,
+    "precipitationProbability": 0.15,
+    "relativeHumidity": 0.85,
+    "source": "http://www.aemet.es/xml/municipios/localidad_46250.xml",
+    "temperature": 12,
+    "validFrom": "2016-12-01T17:00:00.00Z",
+    "validTo": "2016-12-01T23:00:00.00Z",
+    "validity": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00",
+    "weatherType": "overcast",
+    "windDirection": null,
+    "windSpeed": 0
+}
 ```
 
 ## Use it with a real service

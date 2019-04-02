@@ -21,12 +21,13 @@ The data model is defined as shown below:
 
     -   It shall be equal to `GtfsShape`
 
-- `source` : A sequence of characters giving the source of the entity data.
+-   `source` : A sequence of characters giving the source of the entity data.
 
     -   Attribute type: Text or URL
     -   Optional
 
-- `dataProvider` : Specifies the URL to information about the provider of this information
+-   `dataProvider` : Specifies the URL to information about the provider of this
+    information
 
     -   Attribute type: URL
     -   Optional
@@ -41,18 +42,21 @@ The data model is defined as shown below:
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
--   `location`: The geographical shape associated to this entity encoded as GeoJSON
-    `LineString` or `MultiLineString`. The coordinates shall be obtained from
-    the `shapes.txt` feed file as per the value of `shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`.
-    
+-   `location`: The geographical shape associated to this entity encoded as
+    GeoJSON `LineString` or `MultiLineString`. The coordinates shall be obtained
+    from the `shapes.txt` feed file as per the value of `shape_id`,
+    `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`.
+
     -   Attribute type: GeoProperty. `geo:json`
     -   Optional
 
--   `distanceTravelled`: An array of the distance travelled when reaching each of the points that make the `LineString` or `MultiLineString` that represents this shape. It shall match the
-same number of elements as the corresponding `LineString` or `MultiLineString`. 
+-   `distanceTravelled`: An array of the distance travelled when reaching each
+    of the points that make the `LineString` or `MultiLineString` that
+    represents this shape. It shall match the same number of elements as the
+    corresponding `LineString` or `MultiLineString`.
 
-    - Attribute type: List of Number if the Shape is defined by a `LineString`. List of List of Number if the Shape is defined by a `MultiLineString`.
-    - Optional
+        - Attribute type: List of Number if the Shape is defined by a `LineString`. List of List of Number if the Shape is defined by a `MultiLineString`.
+        - Optional
 
 ### Example 1 (Normalized Format)
 
@@ -112,17 +116,17 @@ same number of elements as the corresponding `LineString` or `MultiLineString`.
 
 ### Properties
 
-| GTFS Field            | NGSI Attribute         | LinkedGTFS                  | Comment                                                  |
-| :-------------------- | :--------------------- | :-------------------------- | :------------------------------------------------------- |
-| `shape_pt_lat`        | `location`             | `geo:lat`                   | Latitude of points.                                      |
-| `shape_pt_lon`        | `location`             | `geo:long`                  | Longitude of points.                                     |
-| `shape_pt_sequence`   | `location`             | `gtfs:pointSequence`        | Sequence of points.                                      |
-| `shape_dist_traveled` | `distanceTravelled`    | `gtfs:distanceTravelled`    | Distance travelled                                       |
+| GTFS Field            | NGSI Attribute      | LinkedGTFS               | Comment              |
+| :-------------------- | :------------------ | :----------------------- | :------------------- |
+| `shape_pt_lat`        | `location`          | `geo:lat`                | Latitude of points.  |
+| `shape_pt_lon`        | `location`          | `geo:long`               | Longitude of points. |
+| `shape_pt_sequence`   | `location`          | `gtfs:pointSequence`     | Sequence of points.  |
+| `shape_dist_traveled` | `distanceTravelled` | `gtfs:distanceTravelled` | Distance travelled   |
 
 ### Relationships
 
-| GTFS Field       | NGSI Attribute     | LinkedGTFS           | Comment                                              |
-| :--------------- | :----------------- | :------------------- | :--------------------------------------------------- |
+| GTFS Field | NGSI Attribute | LinkedGTFS | Comment |
+| :--------- | :------------- | :--------- | :------ |
 
 
 ## Open issues

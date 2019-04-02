@@ -150,8 +150,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ### Relationships
 
-| GTFS Field | NGSI Attribute | LinkedGTFS    | Comment                                             |
-| :--------- | :------------- | :------------ | :-------------------------------------------------- |
+| GTFS Field | NGSI Attribute | LinkedGTFS    | Comment                                            |
+| :--------- | :------------- | :------------ | :------------------------------------------------- |
 |            | `operatedBy`   | `gtfs:agency` | Shall point to another Entity of Type `GtfsAgency` |
 
 ### Open issues

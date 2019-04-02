@@ -5,8 +5,8 @@ data as NGSI version 2.
 
 The data provided corresponds to different cities in Spain being the original
 data source different
-[air quality stations](../../PointOfInterest/AirQualityStation/README.md) managed by
-municipalities or regional governments.
+[air quality stations](../../PointOfInterest/AirQualityStation/README.md)
+managed by municipalities or regional governments.
 
 Please check the original data source before making use of this data in an
 application.
