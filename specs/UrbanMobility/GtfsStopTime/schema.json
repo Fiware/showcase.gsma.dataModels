@@ -46,10 +46,9 @@
             "0", "1", "2", "3"
           ]
         },
-		"stopHeadsign": {
-			"type": "string",
-			"minValue": 0
-		},
+        "stopHeadsign": {
+          "type": "string",
+        },
         "dropOffType": {
           "type": "string",
           "default": "0",
