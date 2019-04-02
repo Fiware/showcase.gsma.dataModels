@@ -55,7 +55,7 @@
 	"scripts": {
 		"lint": "eslint . --cache --fix",
 		"lint:text": "textlint '../README.md' 'README.md' '../specs/*.md' '../specs/**/*.md'",
-		"lint:md": "remark 'README.md' '../specs'",
+		"lint:md": "remark -f 'README.md' '../specs'",
 		"precommit": "lint-staged",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write **/*.js *.js",
 		"prettier:text": "prettier '../*.md' '../specs/*.md' '../specs/**/*.md' --tab-width 4 --print-width 80 --write --prose-wrap always",

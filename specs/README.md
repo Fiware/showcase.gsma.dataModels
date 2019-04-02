@@ -6,6 +6,7 @@ themes:
 -   [Alert](./Alert)
 -   [Building](./Building)
 -   [Device](./Device)
+-   [Energy](./Energy)
 -   [Environment](./Environment)
 -   [IssueTracking](./IssueTracking)
 -   [KeyPerformanceIndicator](./KeyPerformanceIndicator)

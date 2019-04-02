@@ -15,7 +15,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```bash
 curl http://<orion_host:port>/v2/entities?type=Alert&q=category==weather&address.addressCountry==ES
 ```
 
