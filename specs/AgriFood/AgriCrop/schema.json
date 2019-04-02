@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/AgriCrop/schema.json",
+    "title": "FIWARE - Agri Food",
+    "description": "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+    "type": "object",
+    "allOf": [
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+	{
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriCrop"],
+                    "description": "NGSI Entity Type"
+                },
+                "agriSoil": {
+		    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
+                },
+                "agriFertiliser": {
+                    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
+                },
+                "agriPest": {
+                    "type": "array",
+		    "items": [{
+			"type": "string",
+			"format": "uri"
+		    }]
+                },
+                "harvestingInterval": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "values": {
+                                "dateRange": {
+                                    "type": "string",
+                                    "pattern": "^-[0-1][0-9]-[0-3][0-9]\/-[0-1][0-9]-[0-3][0-9]$"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "plantingFrom": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "values": {
+                                "dateRange": {
+                                    "type": "string",
+                                    "pattern": "^-[0-1][0-9]-[0-3][0-9]\/-[0-1][0-9]-[0-3][0-9]$"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "wateringFrequency": {
+                    "type": "string",
+                    "enum": ["daily", "weekly", "biweekly", "monthly", "onDemand", "other"]
+                }
+            }
+        }
+    ],
+    "required": ["id", "type", "name"]
+}
