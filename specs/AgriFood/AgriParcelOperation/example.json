@@ -1,0 +1,23 @@
+{
+    "id": "urn:ngsi-ld:AgriParcelOperation:e1e9d3a3-074f-46f1-9375-52000d05a62b",
+    "type": "AgriParcelOperation",
+    "dateCreated": "2017-01-01T01:20:00Z",
+    "dateModified": "2017-05-04T12:30:00Z",
+    "agriParcel": "urn:ngsi-ld:AgriParcel:318366a9-7643-4d8e-9a11-c76a8c29d8eb",
+    "operationType": "fertiliser",
+    "description": "Monthly fertiliser application",
+    "result": "ok",
+    "plannedStartAt": "2016-08-22T10:18:16Z",
+    "plannedEndAt": "2016-08-28T10:18:16Z",
+    "status": "finished",
+    "operator": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c",
+    "startedAt": "2016-08-22T10:18:16Z",
+    "endedAt": "2016-08-28T10:18:16Z",
+    "reportedAt": "2016-08-28T10:18:16Z",
+    "agriProduct": "urn:ngsi-ld:AgriProduct:a8f616b8-13fb-473a-8e61-b7a80c6c93ec",
+    "quantity": {
+        "value": 40,
+        "unitCode": "KGM"
+    },
+    "waterSource": "rainwater capture"
+}
