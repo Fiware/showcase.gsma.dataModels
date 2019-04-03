@@ -10,10 +10,10 @@
 	"value": "2017-05-04T12:30:00Z"
     },
     "location": {
-	"type": "Property",
+	"type": "geo:json",
         "value": {
             "type": "Polygon",
-            "coordinates": [
+            "coordinates": [[
                 [
                     100,
                     0
@@ -34,7 +34,7 @@
                     100,
                     0
                 ]
-            ]
+            ]]
         }
     },
     "area": {
