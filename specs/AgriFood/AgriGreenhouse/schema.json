@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/AgriGreenhouse/schema.json",
+    "$id": "https://raw.githubusercontent.com/FIWARE/dataModels/agriDataModels/specs/AgriFood/AgriGreenhouse/schema.json",
     "title": "FIWARE - Agri Greenhouse",
     "description": "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications.",
     "type": "object",
