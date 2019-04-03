@@ -11,22 +11,12 @@
 	    "properties": {
                 "type": {
                     "type": "string",
-                    "enum": ["AgriGreenhouse"],
+                    "enum": ["AgriParcel"],
                     "description": "NGSI Entity Type"
                 },
 		"area": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number",
-			    "minimum": 0
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["MTK"]
-			}
-		    },
-		    "required": ["value", "unitCode"]
+		    "type": "number",
+		    "minimum": 0
 		},
 		"category": {
 		    "value": "string"
@@ -46,6 +36,10 @@
                     "type": "string",
                     "format": "uri"
                 },
+		"agriSoil": {
+                    "type": "string",
+                    "format": "uri"
+                },
 		"cropStatus": {
 		    "type": "string",
 		    "enum": ["seeded", "justBorn", "growing", "maturing", "readyForHarvesting"]
@@ -60,7 +54,7 @@
 			"type": "string",
 			"format": "uri"
 		    }]
-                },
+                }
 	    }
 	}
     ],

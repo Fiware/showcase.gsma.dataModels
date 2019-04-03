@@ -1,9 +1,16 @@
 {
     "id": "urn:ngsi-ld:AgriParcel:72d9fb43-53f8-4ec8-a33c-fa931360259a",
     "type": "AgriParcel",
-    "dateCreated": "2017-01-01T01:20:00Z",
-    "dateModified": "2017-05-04T12:30:00Z",
+    "dateCreated": {
+	"type": "DateTime",
+	"value":"2017-01-01T01:20:00Z"
+    },
+    "dateModified": {
+	"type": "DateTime",
+	"value": "2017-05-04T12:30:00Z"
+    },
     "location": {
+	"type": "Property",
         "value": {
             "type": "Polygon",
             "coordinates": [
@@ -31,8 +38,7 @@
         }
     },
     "area": {
-        "value": 200,
-        "unitCode": "MTK"
+        "value": 200
     },
     "description": {
         "value": "Spring wheat"
@@ -67,7 +73,7 @@
     },
     "devices": {
         "type": "Relationship",
-        "object": [
+        "value": [
             "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
             "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
             "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",

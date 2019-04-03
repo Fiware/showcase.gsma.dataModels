@@ -28,10 +28,7 @@
             ]
         ]
     },
-    "area": {
-        "value": 200,
-        "unitCode": "MTK"
-    },
+    "area": 200,
     "description": "Spring wheat",
     "category": "arable",
     "agriParcelParent": "urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081",
