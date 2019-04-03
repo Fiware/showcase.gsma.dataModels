@@ -68,5 +68,5 @@
 	    }
 	}
     ],
-    "required": ["id", "type", "AgriParcel", "plannedStartAt", "plannedEndAt"]
+    "required": ["id", "type", "agriParcel", "plannedStartAt", "plannedEndAt"]
 }
