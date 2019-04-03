@@ -14,6 +14,7 @@
         "value": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
     },
     "location": {
+	"type": "GeoProperty",
         "value": {
             "type": "Polygon",
             "coordinates": [

@@ -5,54 +5,53 @@
     "description": "This entity contains a harmonised description of the conditions recorded on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.",
     "type": "object",
     "allOf": [
-	{ "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-	{
-	    "properties": {
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        {
+            "properties": {
                 "type": {
                     "type": "string",
                     "enum": ["AgriParcelRecord"],
                     "description": "NGSI Entity Type"
                 },
-		"agriParcel": {
+                "agriParcel": {
                     "type": "string",
                     "format": "uri"
                 },
-		"soilTemperature": {
-		    "type": "number"
-		},
-		"soilMoistureVwc": {
-		    "type": "number",
-		    "minimum": 0,
-		    "maximum": 1	
-		},
-		"soilMoistureEC": {
-		    "type": "number"
-		},
-		"solarRadiaton": {
-		    "type": "number"
-		},
-		"relativeHumidity": {
-		    "type": "number",
-		    "minimum": 0.0,
-		    "maximum": 1.0
-		},
-		"atmosphericPressure": {
-		    "type": "number"
-		},
-		"devices": {
-		    "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
-		},
-		"observedAt": {
-		    "type": "string",
-		    "format": "date-time"
-		}
-	    }
-	}
+                "soilTemperature": {
+                    "type": "number"
+                },
+                "soilMoistureVwc": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "soilMoistureEC": {
+                    "type": "number"
+                },
+                "solarRadiaton": {
+                    "type": "number"
+                },
+                "relativeHumidity": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                },
+                "atmosphericPressure": {
+                    "type": "number"
+                },
+                "devices": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
+                },
+                "observedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        }
     ],
     "required": ["id", "type", "agriParcel", "location"]
 }
