@@ -1,8 +1,14 @@
 {
     "id": "urn:ngsi-ld:AgriPest:fb3f1295-500c-4aa3-b995-c909097d5c01",
     "type": "AgriPest",
-    "dateCreated": "2017-01-01T01:20:00Z",
-    "dateModified": "2017-05-04T12:30:00Z",
+    "dateCreated": {
+	"type": "DateTime",
+	"value": "2017-01-01T01:20:00Z"
+    },
+    "dateModified": {
+	"type": "DateTime",
+	"value": "2017-05-04T12:30:00Z"
+    },
     "name": {
         "value": "Grasshopper"
     },
