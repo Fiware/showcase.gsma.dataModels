@@ -36,107 +36,38 @@
                     }]
                 },
                 "relativeHumidity": {
-                    "type": "object",
-                    "values": {
-                        "value": {
-                            "type": "number",
-                            "minimum": 0.0,
-                            "maximum": 1.0
-                        },
-                        "unitCode": {
-                            "type": "string"
-                        },
-                        "observedAt": {
-                            "type": "string",
-                            "format": "date-time"
-                        }
-                    },
-                    "required": ["value", "unitCode", "observedAt"]
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
                 },
                 "leafTemperature": {
-                    "type": "object",
-                    "values": {
-                        "value": {
-                            "type": "integer"
-                        },
-                        "unitCode": {
-                            "type": "string",
-                            "enum": ["CEL"]
-                        },
-                        "observedAt": {
-                            "type": "string",
-                            "format": "date-time"
-                        }
-                    },
-                    "required": ["value", "unitCode", "observedAt"]
+                    "type": "integer"
                 },
                 "co2": {
-                    "type": "object",
-                    "values": {
-                        "value": {
-                            "type": "integer"
-                        },
-                        "unitCode": {
-                            "type": "string",
-                            "enum": ["M1"]
-                        },
-                        "observedAt": {
-                            "type": "string",
-                            "format": "date-time"
-                        }
-                    },
-                    "required": ["value", "unitCode", "observedAt"]
+                    "type": "integer"
                 },
                 "dailyLight": {
-                    "type": "object",
-                    "values": {
-                        "value": {
-                            "type": "integer"
-                        },
-                        "unitCode": {
-                            "type": "string",
-                            "enum": ["N78"]
-                        },
-                        "observedAt": {
-                            "type": "string",
-                            "format": "date-time"
-                        }
-                    },
-                    "required": ["value", "unitCode", "observedAt"]
+                    "type": "integer"
                 },
                 "drainFlow": {
                     "type": "object",
                     "values": {
                         "value": {
-                            "type": "object",
-                            "values": {
-                                "value": {
-                                    "type": "number",
-                                    "minimum": 0
-                                },
-                                "maxValue": {
-                                    "type": "number",
-                                    "minimum": 0
-                                },
-                                "minValue": {
-                                    "type": "number",
-                                    "minimum": 0
-                                },
-                                "unitText": {
-                                    "type": "string"
-                                }
-                            }
+                            "type": "number",
+                            "minimum": 0
                         },
-                        "unitCode": {
-                            "type": "string",
-                            "enum": ["G51"]
+                        "maxValue": {
+                            "type": "number",
+                            "minimum": 0
                         },
-                        "observedAt": {
-                            "type": "string",
-                            "format": "date-time"
+                        "minValue": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "unitText": {
+                            "type": "string"
                         }
-                    },
-                    "required": ["value", "unitCode", "observedAt"]
+                    }
                 },
                 "devices": {
                     "type": "array",
