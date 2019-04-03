@@ -16,8 +16,8 @@
     "location": {
 	"type": "GeoProperty",
         "value": {
-            "type": "Polygon",
-            "coordinates": [
+            "type": "geo:json",
+            "coordinates": [[
                 [
                     100,
                     0
@@ -38,7 +38,7 @@
                     100,
                     0
                 ]
-            ]
+            ]]
         }
     },
     "soilTemperature": {
