@@ -58,17 +58,8 @@
                     "format": "uri"
 		},
 		"quantity": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number",
-			    "minimum": 0
-			},
-			"unitCode": {
-			    "type": "string"
-			}
-		    },
-		    "required": ["value", "unitCode"]
+		    "type": "number",
+		    "minimum": 0
 		},
 		"waterSource": {
 		    "type": "string",

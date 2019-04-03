@@ -15,9 +15,6 @@
     "endedAt": "2016-08-28T10:18:16Z",
     "reportedAt": "2016-08-28T10:18:16Z",
     "agriProduct": "urn:ngsi-ld:AgriProduct:a8f616b8-13fb-473a-8e61-b7a80c6c93ec",
-    "quantity": {
-        "value": 40,
-        "unitCode": "KGM"
-    },
+    "quantity": 40,
     "waterSource": "rainwater capture"
 }
