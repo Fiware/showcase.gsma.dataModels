@@ -13,35 +13,15 @@
         "urn:ngsi-ld:WaterQualityObserved:49f86e0b-bb90-4751-a1c3-d5a891920807",
         "urn:ngsi-ld:WaterQualityObserved:853bf420-43fc-11e8-942f-6b7615517118"
     ],
-    "relativeHumidity": {
-        "value": 0.4,
-        "unitCode": "C62",
-        "observedAt": "2016-08-22T19:20Z"
-    },
-    "leafTemperature": {
-        "value": 22,
-        "unitCode": "CEL",
-        "observedAt": "2016-08-22T19:20Z"
-    },
-    "co2": {
-        "value": 28,
-        "unitCode": "M1",
-        "observedAt": "2016-08-22T19:20Z"
-    },
-    "dailyLight": {
-        "value": 24,
-        "unitCode": "N78",
-        "observedAt": "2016-08-22T19:20Z"
-    },
+    "relativeHumidity": 0.4,
+    "leafTemperature": 22,
+    "co2": 28,
+    "dailyLight": 24,
     "drainFlow": {
-        "value": {
-            "value": 33,
-            "maxValue": 50,
-            "minValue": 25,
-            "unitText": "Litre per second"
-        },
-        "unitCode": "G51",
-        "observedAt": "2016-08-22T19:20Z"
+        "value": 33,
+        "maxValue": 50,
+        "minValue": 25,
+        "unitText": "Litre per second"
     },
     "devices": [
             "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
