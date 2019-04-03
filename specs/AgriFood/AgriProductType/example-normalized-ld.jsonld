@@ -1,15 +1,12 @@
 {
     "@context": [
-        "https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
+        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
         "https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Product-Type-context.jsonld"
     ],
     "id": "urn:ngsi-ld:AgriProductType:398aa5f4-6a81-4dea-9f85-e9869441a257",
     "type": "AgriProductType",
     "createdAt": "2017-01-01T01:20:00Z",
     "modifiedAt": "2017-05-04T12:30:00Z",
-    "source": "https://source.example.com",
-    "dataProvider": "https://provider.example.com",
-    "entityVersion": 2.0,
     "name": {
         "type": "Property",
         "value": "Soft Fruits"
