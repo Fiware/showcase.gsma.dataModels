@@ -9,9 +9,6 @@
         { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
 	{
 	    "properties": {
-		"id": {
-                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons/properties/id"
-                },
                 "type": {
                     "type": "string",
                     "enum": ["AgriParcelRecord"],
@@ -22,109 +19,26 @@
                     "format": "uri"
                 },
 		"soilTemperature": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number"
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["CEL"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
+		    "type": "number"
 		},
 		"soilMoistureVwc": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number",
-			    "minimum": 0,
-			    "maximum": 1
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["C62"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
+		    "type": "number",
+		    "minimum": 0,
+		    "maximum": 1	
 		},
 		"soilMoistureEC": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number"
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["CEL"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
+		    "type": "number"
 		},
 		"solarRadiaton": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number"
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["CEL"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
+		    "type": "number"
 		},
 		"relativeHumidity": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number",
-			    "minimum": 0.0,
-			    "maximum": 1.0
-			},
-			"unitCode": {
-			    "type": "string"
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
+		    "type": "number",
+		    "minimum": 0.0,
+		    "maximum": 1.0
 		},
 		"atmosphericPressure": {
-		    "type": "object",
-		    "values": {
-			"value": {
-			    "type": "number"
-			},
-			"unitCode": {
-			    "type": "string",
-			    "enum": ["A97"]
-			},
-			"observedAt": {
-			    "type": "string",
-			    "format": "date-time"
-			}
-		    },
-		    "required": ["value", "unitCode", "observedAt"]
+		    "type": "number"
 		},
 		"devices": {
 		    "type": "array",
