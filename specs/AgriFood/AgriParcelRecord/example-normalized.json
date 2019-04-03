@@ -14,9 +14,9 @@
         "value": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
     },
     "location": {
-	"type": "GeoProperty",
+	"type": "geo:json",
         "value": {
-            "type": "geo:json",
+            "type": "Polygon",
             "coordinates": [[
                 [
                     100,
@@ -75,6 +75,7 @@
         ]
     },
     "observedAt": {
+	"type": "DateTime",
         "value": "2017-05-04T10:18:16Z"
     }
 }

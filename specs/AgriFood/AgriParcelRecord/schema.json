@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/AgriParcelRecord/schema.json",
+    "$id": "https://raw.githubusercontent.com/FIWARE/dataModels/agriDataModels/specs/AgriFood/AgriParcelRecord/schema.json",
     "title": "FIWARE - Agri Parcel Record",
     "description": "This entity contains a harmonised description of the conditions recorded on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.",
     "type": "object",
