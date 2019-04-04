@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$id": "https://raw.githubusercontent.com/FIWARE/dataModels/agriDataModels/specs/AgriFood/AgriProductType/schema.json",
+    "$id": "https://fiware.github.io/dataModels/agriDataModels/specs/AgriFood/AgriProductType/schema.json",
     "title": "FIWARE - Agri Product Type",
     "description": "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way.",
     "type": "object",
