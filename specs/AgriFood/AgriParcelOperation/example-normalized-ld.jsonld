@@ -24,12 +24,18 @@
         "value": "ok"
     },
     "plannedStartAt": {
-        "type": "DateTime",
-        "value": "2016-08-22T10:18:16Z"
+        "type": "Property",
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "plannedEndAt": {
-        "type": "DateTime",
-        "value": "2016-08-28T10:18:16Z"
+        "type": "Property",
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "status": {
         "type": "Property",
@@ -40,16 +46,25 @@
         "object": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
     },
     "startedAt": {
-        "type": "DateTime",
-        "value": "2016-08-22T10:18:16Z"
+        "type": "Property",
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "endedAt": {
-        "type": "DateTime",
-        "value": "2016-08-28T10:18:16Z"
+        "type": "Property",
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "reportedAt": {
-        "type": "DateTime",
-        "value": "2016-08-28T10:18:16Z"
+        "type": "Property",
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "agriProduct": {
         "type": "Relationship",
