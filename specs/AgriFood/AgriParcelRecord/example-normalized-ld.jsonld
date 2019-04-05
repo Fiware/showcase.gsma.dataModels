@@ -43,43 +43,92 @@
         "type": "Property",
         "value": 27,
         "unitCode": "CEL",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "soilMoistureVwc": {
         "type": "Property",
         "value": 0.08,
         "unitCode": "C62",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "soilMoistureEc": {
         "type": "Property",
         "value": 17,
         "unitCode": "D10",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "airTemperature": {
         "type": "Property",
         "value": 20,
         "unitCode": "CEL",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "solarRadiation": {
         "type": "Property",
         "value": 15,
         "unitCode": "N78",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "relativeHumidity": {
         "type": "Property",
         "value": 0.15,
         "unitCode": "C62",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "atmosphericPressure": {
         "type": "Property",
         "value": 1013.25,
         "unitCode": "A97",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": {
+	    "type": "Property",
+	    "value": {
+		"@type": "DateTime",
+		"@value": "2017-05-04T12:30:00Z"
+	    }
+
+	}
     },
     "description": {
         "type": "Property",
@@ -95,7 +144,10 @@
         ]
     },
     "observedAt": {
-        "type": "DateTime",
-        "value": "2017-05-04T10:18:16Z"
+	"type": "Property",
+	"value": {
+	    "@type": "DateTime",
+	    "@value": "2017-05-04T12:30:00Z"
+	}	
     }
 }
