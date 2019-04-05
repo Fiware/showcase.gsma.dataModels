@@ -67,8 +67,11 @@
         "value": "seeded"
     },
     "lastPlantedAt": {
-        "type": "DateTime",
-        "value": "2016-08-23T10:18:16Z"
+        "type": "Property",
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "agriSoil": {
         "type": "Relationship",
