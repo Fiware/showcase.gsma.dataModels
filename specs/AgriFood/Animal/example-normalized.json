@@ -1,0 +1,61 @@
+{
+    "id": "urn:ngsi-ld:Animal:ca3f1295-500c-4aa3-b745-d143097d5c01",
+    "type": "Animal",
+    "species":{
+        "value":"sheep"
+    },
+    "legalId":{
+        "value":"ES142589652140"
+    },
+    "birthdate":{
+        "type":"DateTime",
+        "value":"2017-01-01T01:20:00Z"
+    },
+    "dateModified":{
+        "type":"DateTime",
+        "value":"2017-05-04T12:30:00Z",
+    },
+    "sex": {
+        "value":"female"
+    },
+    "breed": {
+        "value":"Merina"
+    },
+    "calvedBy": {
+        "value":"urn:ngsi-ld:Animal:aa9f1295-425c-8ba3-b745-b653097d5a87"
+    },
+    "siredBy": {
+        "value":"urn:ngsi-ld:Animal:aa9f1295-425c-8ba3-b745-b653097d5a87"
+    },
+    "location":
+    {
+        "type": "Point",
+        "coordinates":
+        [
+            -4.754444444,
+            41.640833333
+        ]
+    },
+    "weight":{
+        "value":65.3
+    },
+    "ownedBy":{
+        "value":"reference_to_farmer"
+    },
+    "locatedAt":"reference_to_farm/AgriParcel",
+    "phenologicalCondition":{
+        "value":"adult"
+    },
+    "reproductiveCondition":{
+        "value":"inCalf"
+    },
+    "healthCondition":{
+        "value":"healthy"
+    },
+    "feedWith":{
+        "value":"reference_to_feed"
+    },
+    "welfareCondition":{
+        "value":"adequate"
+    }
+}
