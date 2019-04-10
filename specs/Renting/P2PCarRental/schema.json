@@ -54,7 +54,7 @@
         "Europe/Helsinki"
       ]
     },
-    "vehicle_information": { "$ref": "https://github.com/Fiware/dataModels/tree/master/Transportation/Vehicle/VehicleModel/schema.json"},  
+    "vehicle_information": { "$ref": "https://fiware.github.io/dataModels/common-schema.json"},  
     "manufacture_year": {
       "$id": "#/properties/manufature_year",
       "type": "integer",
