@@ -27,9 +27,9 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 
 -   `vehicle_information` : Follows [VehicleModel](https://github.com/FIWARE/dataModels/tree/master/specs/Transportation/Vehicle/VehicleModel) more details how to use the model are there. How ever, some of the semantics when using this datamodel are different. Here is a explanation how those are used in this model:
 
-	- `ID`: Unique id of the vehicle, can be autocreated.
+	- `Id`: Unique ID of the vehicle, can be autocreated.
 	- `name`: Descriptive name of the vehile, like "Alfa Romeo Giulia Quadrifoglio".
-	- `URL`: Url containing information about the vehicle.
+	- `Url`: URL containing information about the vehicle.
 	- `type`: Mandatory, needs to be "VehicleModel".
 	- `vehicleType`: Enum for example "car".
 	- `brandName`: Brandname, not necessarily same as manufacturer.
