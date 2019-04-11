@@ -1,6 +1,6 @@
 {
     "@context": [
-        "https://forge.etsi.org/gitlab/NGSI-LD/NGSI-LD/raw/master/coreContext/ngsi-ld-core-context.json",
+        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
         "https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Parcel-context.jsonld"
     ],
     "id": "urn:ngsi-ld:AgriParcel:72d9fb43-53f8-4ec8-a33c-fa931360259a",
@@ -68,7 +68,10 @@
     },
     "lastPlantedAt": {
         "type": "Property",
-        "value": "2016-08-23T10:18:16Z"
+        "value": {
+	    "@type": "DateTime",
+	    "@value": "2016-08-22T10:18:16Z"
+	}
     },
     "agriSoil": {
         "type": "Relationship",
