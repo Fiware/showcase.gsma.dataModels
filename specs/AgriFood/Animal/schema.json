@@ -64,17 +64,17 @@
                 },
                 "phenologicalCondition":{
                     "type":"string",
-                    "enum":["lactating baby","grazing baby","male adult","female adult","male young","female young"],
+                    "enum":["lactatingBaby","grazingBaby","maleAdult","femaleAdult","maleYoung","femaleYoung"],
                     "description":"Phenological condition of the animal"
                 },
                 "reproductiveCondition":{
                     "type":"string",
-                    "enum":["no status","inactive","inCalf","inHeat","active"],
+                    "enum":["noStatus","inactive","inCalf","inHeat","active"],
                     "description":"Reproductive condition of the animal"
                 },
                 "healthCondition":{
                     "type":"string",
-                    "enum":["healthy","sick","in treatment"],
+                    "enum":["healthy","sick","inTreatment"],
                     "description":"Phenological condition of the animal"
                 },
                 "feedWith":{
