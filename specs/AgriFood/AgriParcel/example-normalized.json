@@ -65,6 +65,7 @@
         "value": "seeded"
     },
     "lastPlantedAt": {
+	"type": "DateTime",
         "value": "2016-08-23T10:18:16Z"
     },
     "agriSoil": {
