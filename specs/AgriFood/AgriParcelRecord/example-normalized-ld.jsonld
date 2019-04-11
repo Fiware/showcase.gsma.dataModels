@@ -43,64 +43,43 @@
         "type": "Property",
         "value": 27,
         "unitCode": "CEL",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "soilMoistureVwc": {
         "type": "Property",
         "value": 0.08,
         "unitCode": "C62",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "soilMoistureEc": {
         "type": "Property",
         "value": 17,
         "unitCode": "D10",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "airTemperature": {
         "type": "Property",
         "value": 20,
         "unitCode": "CEL",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "solarRadiation": {
         "type": "Property",
         "value": 15,
         "unitCode": "N78",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "relativeHumidity": {
         "type": "Property",
         "value": 0.15,
         "unitCode": "C62",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "atmosphericPressure": {
         "type": "Property",
         "value": 1013.25,
         "unitCode": "A97",
-        "observedAt": {
-	    "@type": "DateTime",
-	    "@value": "2017-05-04T12:30:00Z"
-	}
+        "observedAt": "2017-05-04T12:30:00Z"
     },
     "description": {
         "type": "Property",
@@ -115,5 +94,8 @@
             "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
         ]
     },
-    "observedAt":  "2017-05-04T12:30:00Z"
+    "observedAt": {
+	"@type": "DateTime",
+	"@value": "2017-05-04T12:30:00Z"
+    }
 }
