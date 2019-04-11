@@ -42,25 +42,67 @@
         }
     },
     "soilTemperature": {
-        "value": 27
+        "value": 27,
+	"metadata": {
+	    "unitCode": "CEL",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "soilMoistureVwc": {
-        "value": 0.08
+        "value": 0.08,
+	"metadata": {
+	    "unitCode": "C62",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "soilMoistureEc": {
-        "value": 17
+        "value": 17,
+	"metadata": {
+	    "unitCode": "D10",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "airTemperature": {
-        "value": 20
+        "value": 20,
+	"metadata": {
+	    "unitCode": "CEL",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "solarRadiation": {
-        "value": 15
+        "value": 15,
+	"metadata": {
+	    "unitCode": "CEL",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "relativeHumidity": {
-        "value": 0.15
+        "value": 0.15,
+	"metadata": {
+	    "unitCode": "C62",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "atmosphericPressure": {
-        "value": 1013.25
+        "value": 1013.25,
+	"metadata": {
+	    "unitCode": "A97",
+            "timestamp": {
+		"value": "2017-05-04T12:30:00Z"
+	    }
+	}
     },
     "description": {
         "value": "Monthly fertiliser application"
