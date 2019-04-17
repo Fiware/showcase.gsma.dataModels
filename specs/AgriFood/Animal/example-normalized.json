@@ -22,9 +22,11 @@
         "value":"Merina"
     },
     "calvedBy": {
+        "type": "Relationship",
         "value":"urn:ngsi-ld:Animal:aa9f1295-425c-8ba3-b745-b653097d5a87"
     },
     "siredBy": {
+        "type": "Relationship",
         "value":"urn:ngsi-ld:Animal:aa9f1295-425c-8ba3-b745-b653097d5a87"
     },
     "location": {
@@ -42,9 +44,13 @@
         "value":65.3
     },
     "ownedBy":{
-        "value":"reference_to_farmer"
+        "type": "Relationship",
+        "value":"http://person.org/leon"
     },
-    "locatedAt":"reference_to_farm/AgriParcel",
+    "locatedAt":{
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081"
+    },
     "phenologicalCondition":{
         "value":"adult"
     },
@@ -55,6 +61,7 @@
         "value":"healthy"
     },
     "feedWith":{
+        "type": "Relationship",
         "value":"reference_to_feed"
     },
     "welfareCondition":{
