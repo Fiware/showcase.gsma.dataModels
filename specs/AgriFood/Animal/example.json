@@ -24,6 +24,6 @@
     "phenologicalCondition":"adult",
     "reproductiveCondition":"inCalf",
     "healthCondition":"healthy",
-    "feedWith":"reference_to_feed",
+    "fedWith":"reference_to_feed",
     "welfareCondition":"adequate"
 }

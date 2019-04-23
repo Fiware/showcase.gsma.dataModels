@@ -60,7 +60,7 @@ The proposed model for the animal entity has the following properties:
         - timestamp: optional timestamp for the observed value.
             - Type: DateTime
     - Optional
-- locatedAt: AgridataParcel relationship:
+- locatedAt: AgriParcel relationship:
     - Attribute type: Relationship
     - Attribute metadata:
         - timestamp: optional timestamp for the observed value.
@@ -84,7 +84,7 @@ The proposed model for the animal entity has the following properties:
         - timestamp: optional timestamp for the observed value.
             - Type: DateTime
     - Optional
-- feedWith: Food used for the animal
+- fedWith: Food used for the animal
     - Attribute type: Relationship
     - Attribute metadata:
         - timestamp: optional timestamp for the observed value.
@@ -101,7 +101,7 @@ The proposed model for the animal entity has the following properties:
 Below a JSON example of the animal data model is shown:
 ```json
 {
-    "id":"8943423481234123",
+    "id":"urn:ngsi-ld:Animal:ca3f1295-500c-4aa3-b745-d143097d5c01",
     "type":"Animal",
     "species":{
         "value":"sheep"
@@ -121,11 +121,11 @@ Below a JSON example of the animal data model is shown:
     },
     "calvedBy":{
         "type":"Relationship",
-        "value":"6325415874"
+        "value":"urn:ngsi-ld:Animal:aa9f1295-425c-8ba3-b745-b653097d5a87"
     },
     "siredBy":{
         "type":"Relationship",
-        "value":"1478515874"
+        "value":"urn:ngsi-ld:Animal:aa9f1295-425c-8ba3-b745-b653041d5a87"
     },
     "location":{
         "type":"geo:json",
@@ -151,7 +151,7 @@ Below a JSON example of the animal data model is shown:
     },
     "ownedBy":{
         "type":"Relationship",
-        "value":"32541789",
+        "value":"http://person.org/leon",
         "metadata":{
             "timestamp":{
                 "type":"DateTime",
@@ -161,7 +161,7 @@ Below a JSON example of the animal data model is shown:
     },
     "locatedAt":{
         "type":"Relationship",
-        "value":"145879654",
+        "value":"urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081",
         "metadata":{
             "timestamp":{
                 "type":"DateTime",
@@ -170,7 +170,7 @@ Below a JSON example of the animal data model is shown:
         }
     },
     "phenologicalCondition":{
-        "value":"lactacting animal",
+        "value":"adult",
         "metadata":{
             "timestamp":{
                 "type":"DateTime",
@@ -179,7 +179,7 @@ Below a JSON example of the animal data model is shown:
         }
     },
     "reproductiveCondition":{
-        "value":"nonbreeding animal",
+        "value":"inCalf",
         "metadata":{
             "timestamp":{
                 "type":"DateTime",
@@ -196,9 +196,9 @@ Below a JSON example of the animal data model is shown:
             }
         }
     },
-    "feedWith":{
+    "fedWith":{
         "type":"Relationship",
-        "value":"241587",
+        "value":"urn:ngsi-ld:FEED:1ea0f120-4474-11e8-9919-0000000081",
         "metadata":{
             "timestamp":{
                 "type":"DateTime",

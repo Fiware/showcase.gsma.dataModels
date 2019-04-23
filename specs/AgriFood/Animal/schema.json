@@ -77,7 +77,7 @@
                     "enum":["healthy","sick","inTreatment"],
                     "description":"Phenological condition of the animal"
                 },
-                "feedWith":{
+                "fedWith":{
                     "type":"string",
                     "format":"uri",
                     "description":"Food used for the animal"

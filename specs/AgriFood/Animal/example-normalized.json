@@ -60,7 +60,7 @@
     "healthCondition":{
         "value":"healthy"
     },
-    "feedWith":{
+    "fedWith":{
         "type": "Relationship",
         "value":"reference_to_feed"
     },
