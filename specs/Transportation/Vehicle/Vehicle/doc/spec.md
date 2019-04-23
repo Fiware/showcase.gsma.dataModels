@@ -31,17 +31,6 @@ The data model is defined as shown below:
     -   Attribute type: Text or URL
     -   Optional
 
--   `dataProvider` : Specifies the URL to information about the provider of this
-    information
-
-    -   Attribute type: URL
-    -   Optional
-
--   `name` : Name given to this vehicl
-
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
-    -   Optional
-
 -   `description` : Vehicle description.
 
     -   Normative References:
