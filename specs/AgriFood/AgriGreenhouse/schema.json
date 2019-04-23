@@ -13,6 +13,10 @@
                     "enum": ["AgriGreenhouse"],
                     "description": "NGSI Entity Type"
                 },
+                "ownedBy": {
+                    "type": "string",
+                    "format": "uri"
+                },
                 "agriParcelParent": {
                     "type": "string",
                     "format": "uri"
