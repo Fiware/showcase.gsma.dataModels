@@ -49,7 +49,7 @@
     },
     "ownedBy": {
         "type": "Relationship",
-        "value": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
+        "object": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
     },
     "agriParcelParent": {
         "type": "Relationship",
