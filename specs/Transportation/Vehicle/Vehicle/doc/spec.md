@@ -23,7 +23,7 @@ The data model is defined as shown below:
     -   Attribute type: URL
     -   Optional
 
--   `name` : Name given to this vehicl
+-   `name` : Name given to this vehicle
 
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Optional
