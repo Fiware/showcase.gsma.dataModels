@@ -21,6 +21,10 @@
 		"category": {
 		    "value": "string"
 		},
+		"ownedBy": {
+			"type": "string",
+			"format": "uri"
+		},
 		"agriParcelParent": {
                     "type": "string",
                     "format": "uri"
