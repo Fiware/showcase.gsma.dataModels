@@ -16,7 +16,7 @@
         "value": "Triticum aestivum"
     },
     "agroVocConcept": {
-        "type": "Property",
+        "type": "URL",
         "value": "http://aims.fao.org/aos/agrovoc/c_7951"
     },
     "description": {
