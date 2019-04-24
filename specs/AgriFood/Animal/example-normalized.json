@@ -62,7 +62,7 @@
     },
     "fedWith":{
         "type": "Relationship",
-        "value":"reference_to_feed"
+        "value":"urn:ngsi-ld:FEED:1ea0f120-4474-11e8-9919-0000000081"
     },
     "welfareCondition":{
         "value":"adequate"

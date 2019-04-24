@@ -19,11 +19,11 @@
         ]
     },
     "weight":65.3,
-    "ownedBy":"reference_to_farmer",
-    "locatedAt":"reference_to_farm/AgriParcel",
+    "ownedBy":"http://person.org/leon",
+    "locatedAt":"urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081",
     "phenologicalCondition":"adult",
     "reproductiveCondition":"inCalf",
     "healthCondition":"healthy",
-    "fedWith":"reference_to_feed",
+    "fedWith":"urn:ngsi-ld:FEED:1ea0f120-4474-11e8-9919-0000000081",
     "welfareCondition":"adequate"
 }
