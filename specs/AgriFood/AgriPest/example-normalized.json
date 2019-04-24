@@ -15,6 +15,10 @@
     "alternateName": {
         "value": "Chorthippus parallelus"
     },
+    "agroVocConcept": {
+        "type": "URL",
+        "value": "http://aims.fao.org/aos/agrovoc/c_31924"
+    },
     "description": {
         "value": "Common European grasshopper"
     },

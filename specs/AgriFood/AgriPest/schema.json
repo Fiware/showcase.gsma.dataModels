@@ -13,15 +13,19 @@
                     "enum": ["AgriPest"],
                     "description": "NGSI Entity Type"
                 },
-		"agriProduct": {
+                "agroVocConcept": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "agriProduct": {
                     "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                        }]
+                    }
                 }
-	    }
-	}
-    ],
+            }
+        ],
     "required": ["id", "type", "name"]
 }

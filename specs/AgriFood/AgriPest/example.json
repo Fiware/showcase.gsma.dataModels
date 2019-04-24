@@ -5,6 +5,7 @@
     "dateModified": "2017-05-04T12:30:00Z",
     "name": "Grasshopper",
     "alternateName": "Chorthippus parallelus",
+    "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_31924",
     "description": "Common European grasshopper",
     "agriProduct": [
         "urn:ngsi-ld:AgriProduct:06afffde-4488-11e8-861a-cfcf50aaa9cc",
