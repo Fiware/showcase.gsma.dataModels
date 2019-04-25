@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriFarm/schema.json",
+    "title": "FIWARE - Agri Farm",
+    "description": "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+    "type": "object",
+    "allOf": [
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriFarm"],
+                    "description": "NGSI Entity Type"
+                },
+                "ownedBy": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "hasBuilding": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
+                },
+                "hasAgriParcel": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
+                }
+            }
+        }
+    ],
+    "required": ["id", "type", "location"]
+}
