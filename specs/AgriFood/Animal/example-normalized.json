@@ -13,7 +13,7 @@
     },
     "dateModified":{
         "type":"DateTime",
-        "value":"2017-05-04T12:30:00Z",
+        "value":"2017-05-04T12:30:00Z"
     },
     "sex": {
         "value":"female"

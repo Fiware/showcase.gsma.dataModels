@@ -92,8 +92,9 @@
     ],
     "required": [
         "id",
+        "type",
         "species",
         "legalId",
-        "sex",
+        "sex"
     ]
 }
