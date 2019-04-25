@@ -13,6 +13,10 @@
                     "enum": ["AgriProductType"],
                     "description": "NGSI Entity Type"
                 },
+                "agroVocConcept": {
+                    "type": "string",
+                    "format": "uri"
+                },
 		"agriProductParent": {
                     "type": "string",
                     "format": "uri"

@@ -15,6 +15,10 @@
         "type": "Property",
         "value": "Soft edible fruits"
     },
+    "agroVocConcept": {
+        "type": "Property",
+        "value": "http://aims.fao.org/aos/agrovoc/c_3128"
+    },
     "root": {
         "type": "Property",
         "value": true
