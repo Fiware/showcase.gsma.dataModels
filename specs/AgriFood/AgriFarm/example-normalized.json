@@ -23,7 +23,6 @@
         }
     },
     "landLocation": {
-        "type": "geo:json",
         "value": {
             "type": "Polygon",
             "coordinates": [[
