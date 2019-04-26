@@ -49,7 +49,7 @@
     },
     "locatedAt":{
         "type": "Relationship",
-        "object": "urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081"
+        "value": "urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081"
     },
     "phenologicalCondition":{
         "value":"adult"
