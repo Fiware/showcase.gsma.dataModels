@@ -43,6 +43,7 @@
         }
     },
     "contactPoint": {
+        "type": "ContactPoint",
         "value": {
             "email": "wheatfarm@email.com",
             "telephone": "00349674532"

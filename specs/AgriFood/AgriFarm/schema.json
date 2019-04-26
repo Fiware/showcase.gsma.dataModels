@@ -16,7 +16,7 @@
                 },
                 "landLocation": {
                     "$ref": "http://json-schema.org/geojson/geometry.json#",
-                    "description": "Geometry defining the boundaries of the farm"
+                    "description": "Geometry defining the boundaries of the farm land"
                 },
                 "contactPoint": {
                     "type": "object",
@@ -41,7 +41,7 @@
                         "type": "string",
                         "format": "uri"
                     }],
-                    "description": "List of parcels belonging to the farm"
+                    "description": "List of agri parcels belonging to the farm"
                 }
             }
         }
