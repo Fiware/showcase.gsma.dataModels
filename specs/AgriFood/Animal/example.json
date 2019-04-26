@@ -21,7 +21,7 @@
     "weight":65.3,
     "ownedBy":"http://person.org/leon",
     "locatedAt":"urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081",
-    "phenologicalCondition":"adult",
+    "phenologicalCondition":"maleAdult",
     "reproductiveCondition":"inCalf",
     "healthCondition":"healthy",
     "fedWith":"urn:ngsi-ld:FEED:1ea0f120-4474-11e8-9919-0000000081",
