@@ -6,6 +6,10 @@
     "name": "Wheat farm",
     "description": "A farm producing wheat",
     "location": {
+        "type": "Point",
+        "coordinates": [[100,0], [101,0]]
+    },
+    "landLocation": {
         "type": "Polygon",
         "coordinates": [[
             [100,0],
@@ -14,6 +18,15 @@
             [100,1],
             [100,0]
         ]]
+    },
+    "address": {
+        "addressLocality": "Valdepeñas",
+        "addressCountry": "ES",
+        "streetAddress": "Camino de Membrilla 17"
+    },
+    "contactPoint": {
+        "email": "wheatfarm@email.com",
+        "telephone": "00349674532"
     },
     "ownedBy": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c",
     "hasBuilding": [

@@ -18,6 +18,13 @@
     "location": {
         "type": "geo:json",
         "value": {
+            "type": "Point",
+            "coordinates": [[100,0], [101,0]]
+        }
+    },
+    "landLocation": {
+        "type": "geo:json",
+        "value": {
             "type": "Polygon",
             "coordinates": [[
                 [100,0],
@@ -26,6 +33,20 @@
                 [100,1],
                 [100,0]
             ]]
+        }
+    },
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "addressLocality": "Valdepeñas",
+            "addressCountry": "ES",
+            "streetAddress": "Camino de Membrilla 17"
+        }
+    },
+    "contactPoint": {
+        "value": {
+            "email": "wheatfarm@email.com",
+            "telephone": "00349674532"
         }
     },
     "ownedBy": {

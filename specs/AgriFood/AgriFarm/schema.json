@@ -14,26 +14,37 @@
                     "enum": ["AgriFarm"],
                     "description": "NGSI Entity Type"
                 },
+                "landLocation": {
+                    "$ref": "http://json-schema.org/geojson/geometry.json#",
+                    "description": "Geometry defining the boundaries of the farm"
+                },
+                "contactPoint": {
+                    "type": "object",
+                    "description": "Contact information of the farm i.e email, telephone, etc"
+				},
                 "ownedBy": {
                     "type": "string",
-                    "format": "uri"
+                    "format": "uri",
+                    "description": "Owner (Person or Organization) of the farm"
                 },
                 "hasBuilding": {
                     "type": "array",
                     "items": [{
                         "type": "string",
                         "format": "uri"
-                    }]
+                    }],
+                    "description": "List of buildings belonging to the farm"
                 },
                 "hasAgriParcel": {
                     "type": "array",
                     "items": [{
                         "type": "string",
                         "format": "uri"
-                    }]
+                    }],
+                    "description": "List of parcels belonging to the farm"
                 }
             }
         }
     ],
-    "required": ["id", "type", "location"]
+    "required": ["id", "type"]
 }
