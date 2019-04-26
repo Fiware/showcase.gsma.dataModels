@@ -19,7 +19,7 @@
         "type": "geo:json",
         "value": {
             "type": "Point",
-            "coordinates": [[100,0], [101,0]]
+            "coordinates": [101,0]
         }
     },
     "landLocation": {
