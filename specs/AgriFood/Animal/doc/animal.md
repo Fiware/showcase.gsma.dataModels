@@ -16,87 +16,87 @@ The proposed animal data model has been made from a more general point of view, 
 
 The proposed model for the animal entity has the following properties:
 
-- id: unique identifier
-- type: Entity type. It must be equal to “Animal”
-- species: Species to which the animal belongs
-  - Attribute type: Text
-  - Allowed values: (dairy cattle, beef cattle, sheep, goat, horse, pig)
-  - Mandatory
-- legalID: Legal ID of the animal:
-  - Attribute type: Text
-  - Mandatory
-- birthdate: Animal’s birthdate
-  - Attribute type: DateTime
-  - Mandatory
-- sex: Sex of the animal
-  - Attribute type: Text
-  - Allowed values: (female, male)
-  - Mandatory
-- breed: Breed of the animal
-  - Attribute type: Text
-  - Optional
-- calvedBy: Mother of the animal
-  - Attribute type: Relationship
-  - Optional
-- siredBy: Father of the animal
-  - Attribute type: Relationship
-  - Optional
-- location: Location of the animal represented by a GeoJSON geometry.
-  - Attribute type: geo:json.
-  - Normative References: https://tools.ietf.org/html/rfc7946
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- weight: The weight of the animal as a number
-  - Attribute type: Number
-  - Default unit: kg
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- ownedBy: The owner of the animal:
-  - Attribute type: Relationship
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- locatedAt: AgriParcel relationship:
-  - Attribute type: Relationship
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- phenologicalCondition: Phenological condition of the animal
-  - Attribute type: Text
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- reproductiveCondition: Reproductive condition of the animal
-  - Attribute type: Text
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- healthCondition: Health condition of the animal
-  - Attribute type: Text
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
-- fedWith: Food used for the animal
-  - Attribute type: Relationship
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-    - Type: DateTime
-  - Optional
-- welfareCondition: Indicator of the animal welfare
-  - Attribute type: Text
-  - Attribute metadata:
-    - timestamp: optional timestamp for the observed value.
-      - Type: DateTime
-  - Optional
+*  id: unique identifier
+*  type: Entity type. It must be equal to “Animal”
+*  species: Species to which the animal belongs
+  *  Attribute type: Text
+  *  Allowed values: (dairy cattle, beef cattle, sheep, goat, horse, pig)
+  *  Mandatory
+*  legalID: Legal ID of the animal:
+  *  Attribute type: Text
+  *  Mandatory
+*  birthdate: Animal’s birthdate
+  *  Attribute type: DateTime
+  *  Mandatory
+*  sex: Sex of the animal
+  *  Attribute type: Text
+  *  Allowed values: (female, male)
+  *  Mandatory
+*  breed: Breed of the animal
+  *  Attribute type: Text
+  *  Optional
+*  calvedBy: Mother of the animal
+  *  Attribute type: Relationship
+  *  Optional
+*  siredBy: Father of the animal
+  *  Attribute type: Relationship
+  *  Optional
+*  location: Location of the animal represented by a GeoJSON geometry.
+  *  Attribute type: geo:json.
+  *  Normative References: https://tools.ietf.org/html/rfc7946
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  weight: The weight of the animal as a number
+  *  Attribute type: Number
+  *  Default unit: kg
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  ownedBy: The owner of the animal:
+  *  Attribute type: Relationship
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  locatedAt: AgriParcel relationship:
+  *  Attribute type: Relationship
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  phenologicalCondition: Phenological condition of the animal
+  *  Attribute type: Text
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  reproductiveCondition: Reproductive condition of the animal
+  *  Attribute type: Text
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  healthCondition: Health condition of the animal
+  *  Attribute type: Text
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
+*  fedWith: Food used for the animal
+  *  Attribute type: Relationship
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+    *  Type: DateTime
+  *  Optional
+*  welfareCondition: Indicator of the animal welfare
+  *  Attribute type: Text
+  *  Attribute metadata:
+    *  timestamp: optional timestamp for the observed value.
+      *  Type: DateTime
+  *  Optional
 
 ### Example
 
