@@ -114,9 +114,17 @@
           "maximum": 1
         },
         "rssi": {
-          "type": "number",
-          "minimum": -1,
-          "maximum": 1
+          "oneOf": [
+            {
+              "type": "number",
+              "const": -1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          ]
         },
         "deviceState": {
           "type": "string"
