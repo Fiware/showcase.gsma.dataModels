@@ -190,7 +190,7 @@ The data model is defined as shown below:
     signal is missing. `-1.0` when it cannot be determined.
 
     -   Type: [Number](https://schema.org/Number)
-    -   Allowed values: Interval \[-1,0,1\]
+    -   Allowed values: Interval \[0,1\] and -1
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened. This value can also appear as a FIWARE
