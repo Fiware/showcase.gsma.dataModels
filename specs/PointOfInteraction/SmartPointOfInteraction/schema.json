@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://fiware.github.io/dataModels/specs/PointOfInteraction/SmartPointOfInteraction/doc/schema.json",
+	"$id": "https://fiware.github.io/dataModels/specs/PointOfInteraction/SmartPointOfInteraction/doc/schema.json",
 	"title": "FIWARE - Smart Point of Interaction",
 	"description": "FIWARE Smart Point of Interaction entity schema intended for validation tools",
 	"type": "object",

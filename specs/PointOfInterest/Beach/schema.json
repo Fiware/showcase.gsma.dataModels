@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/PointOfInterest/Beach/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/PointOfInterest/Beach/schema.json",
   "title": "FIWARE - Beach schema",
   "description": "A beach",
   "type": "object",

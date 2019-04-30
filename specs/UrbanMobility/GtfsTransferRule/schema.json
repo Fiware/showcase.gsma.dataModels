@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsTransferRule/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsTransferRule/schema.json",
   "title": "NGSI GTFS Schema - TransferRule",
   "description": "GTFS Transfer Rule",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/Garden/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/Garden/schema.json",
   "title": "FIWARE - Parks and Gardens / Garden",
   "description": "A garden is a distinguishable planned space, usually outdoors, set aside for the display, cultivation, and enjoyment of plants and other forms of nature.",
   "type": "object",

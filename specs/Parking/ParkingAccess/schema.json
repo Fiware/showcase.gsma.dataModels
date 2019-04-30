@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://fiware.github.io/dataModels/specs/Parking/ParkingAcccess/schema.json",
+	"$id": "https://fiware.github.io/dataModels/specs/Parking/ParkingAcccess/schema.json",
 	"title": "FIWARE - Parking / Parking Access",
 	"description": "Parking Access - TODO: Provide a complete Schema",
 	"type": "object",

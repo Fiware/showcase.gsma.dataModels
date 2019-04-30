@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Environment/WaterQualityObserved/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Environment/WaterQualityObserved/schema.json",
   "title": "GSMA / FIWARE - Water quality observed schema",
   "description": "Water Quality data model is intended to represent water quality parameters at a certain water mass (river,  lake, sea, etc.) section",
   "type": "object",

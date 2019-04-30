@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsFrequency/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsFrequency/schema.json",
   "title": "NGSI GTFS Schema - Frequency",
   "description": "GTFS Frequency",
   "type": "object",

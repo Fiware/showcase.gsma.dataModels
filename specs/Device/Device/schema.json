@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Device/Device/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Device/Device/schema.json",
   "title": "GSMA / FIWARE - Device schema",
   "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
   "type": "object",

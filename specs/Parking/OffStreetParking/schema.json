@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://fiware.github.io/dataModels/specs/Parking/OffStreetParking/schema.json",
+	"$id": "https://fiware.github.io/dataModels/specs/Parking/OffStreetParking/schema.json",
 	"title": "FIWARE - Parking / Off Street Parking",
 	"description": "Off street parking",
 	"type": "object",
@@ -371,22 +371,22 @@
 			"averageSpotWidth": {
 				"type": "number",
 				"minimum": 0,
-				"exclusiveMinimum": true
+				"exclusiveMinimum": 0
 			},
 			"averageSpotLength": {
 				"type": "number",
 				"minimum": 0,
-				"exclusiveMinimum": true
+				"exclusiveMinimum": 0
 			},
 			"maximumAllowedHeight": {
 				"type": "number",
 				"minimum": 0,
-				"exclusiveMinimum": true
+				"exclusiveMinimum": 0
 			},
 			"maximumAllowedWidth": {
 				"type": "number",
 				"minimum": 0,
-				"exclusiveMinimum": true
+				"exclusiveMinimum": 0
 			},
 			"refParkingAccess": {
 				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"

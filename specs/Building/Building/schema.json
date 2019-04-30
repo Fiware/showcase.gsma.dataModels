@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Building/Building/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Building/Building/schema.json",
   "title": "FIWARE - Building schema",
   "description": "Information on a given Building",
   "type": "object",

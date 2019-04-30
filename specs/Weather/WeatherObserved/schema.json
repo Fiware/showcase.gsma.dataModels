@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Weather/WeatherObserved/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Weather/WeatherObserved/schema.json",
   "title": "GSMA / FIWARE - Weather Observed schema",
   "description": "An observation of weather conditions at a certain place and time. This data model has been developed in cooperation with mobile operators and the GSMA.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/PointOfInterest/PointOfInterest/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/PointOfInterest/PointOfInterest/schema.json",
   "title": "GSMA / FIWARE - Point of Interest schema",
   "description": "A point of interest",
   "type": "object",

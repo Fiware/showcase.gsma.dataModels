@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/common-schema.json",
+  "$id": "https://fiware.github.io/dataModels/common-schema.json",
   "title": "Common definitions for FIWARE Harmonized Data Models",
   "definitions": {
     "EntityIdentifierType": {
@@ -9,10 +9,14 @@
       "maxLength": 256,
       "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$"
     },
+    "DateYearLess": {
+      "type": "string",
+      "pattern": "^--((0[13578]|1[02])-31|(0[1,3-9]|1[0-2])-30|(0\\d|1[0-2])-([0-2]\\d))$"
+    },
     "GSMA-Commons": {
       "type": "object",
       "properties": {
-        "id": {
+        "$id": {
           "$ref": "#/definitions/EntityIdentifierType"
         },
         "dateCreated": {

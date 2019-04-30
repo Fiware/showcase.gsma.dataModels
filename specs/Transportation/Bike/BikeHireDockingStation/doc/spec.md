@@ -211,7 +211,7 @@ Bike hire docking station real time data in Malaga
 
 ```json
 {
-   "id": "malaga-bici-7"
+   "id": "malaga-bici-7",
    "type": "BikeHireDockingStation",
    "name": "07-Diputacion",
    "location": {

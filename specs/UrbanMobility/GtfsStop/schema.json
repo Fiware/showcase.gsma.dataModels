@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsStop/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsStop/schema.json",
   "title": "NGSI GTFS Schema",
   "description": "GTFS Stop",
   "type": "object",

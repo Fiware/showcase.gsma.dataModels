@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Device/device-schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Device/device-schema.json",
   "title": "GSMA / FIWARE - Device  Commons schema",
   "description": "Common defintions to describe Device and Device Model scemas.",
   "definitions": {

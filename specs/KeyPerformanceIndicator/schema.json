@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/KeyPerformanceIndicator/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/KeyPerformanceIndicator/schema.json",
   "title": "FIWARE - Key Performance Indicator",
   "description": "A Key Performance Indicator (KPI) is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages.",
   "type": "object",

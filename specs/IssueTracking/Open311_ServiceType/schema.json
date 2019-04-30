@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/IssueTracking/Open311_ServiceType/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/IssueTracking/Open311_ServiceType/schema.json",
   "title": "FIWARE - Open311 Service Type",
   "description": "As per Open311 an entity of type ServiceType is an acceptable 311 service request type. A request type can be unique to the city/jurisdiction.",
   "type": "object",

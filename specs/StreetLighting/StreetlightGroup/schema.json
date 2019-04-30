@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/Streetlight/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/StreetLighting/Streetlight/schema.json",
   "title": "FIWARE - Street Lighting / Streetlight Group",
   "description": "A Street light group",
   "type": "object",
@@ -48,14 +48,14 @@
                 "type": "string",
                 "oneOf": [
                   {"format": "date"},
-                  {"format": "ext-date-yearless"}
+                  {"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/DateYearLess"}
                 ]
               },
               "to": {
                 "type": "string",
                 "oneOf": [
                   {"format": "date"},
-                  {"format": "ext-date-yearless"}
+                  {"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/DateYearLess"}
                 ]
               },
               "hours": {

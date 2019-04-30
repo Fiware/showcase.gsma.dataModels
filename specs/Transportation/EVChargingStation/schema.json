@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://fiware.github.io/dataModels/specs/Transportation/EVChargingStation/schema.json",
+	"$id": "https://fiware.github.io/dataModels/specs/Transportation/EVChargingStation/schema.json",
 	"title": "FIWARE - Transportation / EV Charging Station",
 	"description": "EV Charging Station",
 	"type": "object",
@@ -113,12 +113,12 @@
 				"amperage": {
 					"type": "number",
 					"minimum": 0,
-					"exclusiveMinimum": true
+					"exclusiveMinimum": 0
 				},
 				"voltage": {
 					"type": "number",
 					"minimum": 0,
-					"exclusiveMinimum": true
+					"exclusiveMinimum": 0
 				},
 				"chargeType": {
 				  "type": "array",

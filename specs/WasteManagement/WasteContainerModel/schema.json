@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/WasteManagement/WasteContainerModel/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/WasteManagement/WasteContainerModel/schema.json",
   "title": "FIWARE - Waste Management / Waste Container Model",
   "description": "A waste container model",
   "type": "object",

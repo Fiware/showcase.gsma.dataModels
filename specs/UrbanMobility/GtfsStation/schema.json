@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsStation/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsStation/schema.json",
   "title": "NGSI GTFS Schema - Station",
   "description": "GTFS Station",
   "type": "object",

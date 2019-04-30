@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://json-schema.org/geojson/geometry.json#",
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "http://json-schema.org/geojson/geometry.json#",
     "title": "geometry",
     "description": "One geometry as defined by GeoJSON. Licensed as per original source is https://github.com/fge/sample-json-schemas/blob/master/geojson/geometry.json",
     "type": "object",

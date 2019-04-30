@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Transportation/CrowdFlowObserved/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Transportation/CrowdFlowObserved/schema.json",
   "title": "FIWARE - SynchroniCity - Transportation / CrowdFlowObserved",
   "description": "CrowdFlowObserved",
   "type": "object",

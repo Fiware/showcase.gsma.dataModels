@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/StreetLighting/StreetlightControlCabinet/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/StreetLighting/StreetlightControlCabinet/schema.json",
   "title": "FIWARE - Street Lighting / Streetlight Control Cabinet",
   "description": "A Streetlight control cabinet",
   "type": "object",
