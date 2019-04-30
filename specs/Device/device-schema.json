@@ -83,7 +83,7 @@
             "lte-m",
             "cat-m",
             "3g",
-            "grps",
+            "gprs",
             "coap"
           ]
         }
