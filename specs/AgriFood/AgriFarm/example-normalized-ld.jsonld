@@ -46,6 +46,7 @@
     "contactPoint": {
         "type": "Property",
         "value": {
+            "type": "ContactPoint",
             "email": "wheatfarm@email.com",
             "telephone": "00349674532"
         }
