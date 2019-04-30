@@ -38,6 +38,7 @@
     "address": {
         "type": "Property",
         "value": {
+            "type": "PostalAddress",
             "addressLocality": "Valdepeñas",
             "addressCountry": "ES",
             "streetAddress": "Camino de Membrilla 17"
