@@ -21,6 +21,10 @@
 		"category": {
 		    "value": "string"
 		},
+		"belongsTo": {
+			"type": "string",
+			"format": "uri"
+		},
 		"ownedBy": {
 			"type": "string",
 			"format": "uri"

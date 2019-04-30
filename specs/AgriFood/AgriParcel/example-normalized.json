@@ -46,6 +46,10 @@
     "category": {
         "value": "arable"
     },
+    "belongsTo": {
+        "type": "Relationship",
+        "value": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765"
+    },
     "ownedBy": {
         "type": "Relationship",
         "value": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
