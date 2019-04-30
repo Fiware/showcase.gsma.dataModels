@@ -21,6 +21,15 @@
 		"category": {
 		    "value": "string"
 		},
+		"seeAlso": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
 		"belongsTo": {
 			"type": "string",
 			"format": "uri"
