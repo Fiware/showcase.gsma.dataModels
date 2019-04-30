@@ -2,18 +2,24 @@
     "id": "urn:ngsi-ld:AgriPest:fb3f1295-500c-4aa3-b995-c909097d5c01",
     "type": "AgriPest",
     "dateCreated": {
-	"type": "DateTime",
-	"value": "2017-01-01T01:20:00Z"
+        "type": "DateTime",
+        "value": "2017-01-01T01:20:00Z"
     },
     "dateModified": {
-	"type": "DateTime",
-	"value": "2017-05-04T12:30:00Z"
+        "type": "DateTime",
+        "value": "2017-05-04T12:30:00Z"
     },
     "name": {
         "value": "Grasshopper"
     },
     "alternateName": {
         "value": "Chorthippus parallelus"
+    },
+    "seeAlso": {
+        "value": [
+            "https://example.org/concept/pest",
+            "https://datamodel.org/example/pest"
+        ]
     },
     "agroVocConcept": {
         "type": "URL",

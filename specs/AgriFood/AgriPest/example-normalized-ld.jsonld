@@ -15,6 +15,13 @@
         "type": "Property",
         "value": "Chorthippus parallelus"
     },
+    "seeAlso": {
+        "type": "Property",
+        "value": [
+            "https://example.org/concept/pest",
+            "https://datamodel.org/example/pest"
+        ]
+    },
     "agroVocConcept": {
         "type": "Property",
         "value": "http://aims.fao.org/aos/agrovoc/c_31924"
