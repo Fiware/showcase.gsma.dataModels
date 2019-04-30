@@ -19,6 +19,15 @@
                     "type": "string",
                     "format": "uri"
                 },
+                "seeAlso": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    ]
+                },
                 "agriSoil": {
                     "type": "array",
                     "items": [

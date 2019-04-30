@@ -6,6 +6,10 @@
     "name": "Wheat",
     "alternateName": "Triticum aestivum",
     "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_7951",
+    "seeAlso": [
+        "https://example.org/concept/wheat",
+        "https://datamodel.org/example/wheat"
+    ],
     "description": "Spring wheat",
     "agriSoil": [
             "urn:ngsi-ld:AgriSoil:00411b56-bd1b-4551-96e0-a6e7fde9c840",

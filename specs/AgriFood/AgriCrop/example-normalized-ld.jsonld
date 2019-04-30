@@ -19,6 +19,13 @@
         "type": "Property",
         "value": "http://aims.fao.org/aos/agrovoc/c_7951"
     },
+    "seeAlso": {
+        "type": "Property",
+        "value" :[
+            "https://example.org/concept/wheat",
+            "https://datamodel.org/example/wheat"
+        ]
+    },
     "description": {
         "type": "Property",
         "value": "Spring wheat"

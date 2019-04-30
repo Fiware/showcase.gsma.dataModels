@@ -19,6 +19,12 @@
         "type": "URL",
         "value": "http://aims.fao.org/aos/agrovoc/c_7951"
     },
+    "seeAlso": {
+        "value" :[
+            "https://example.org/concept/wheat",
+            "https://datamodel.org/example/wheat"
+        ]
+    },
     "description": {
         "value": "Spring wheat"
     },
