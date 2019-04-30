@@ -3,6 +3,10 @@
     "type": "AgriParcelRecord",
     "dateCreated": "2017-01-01T01:20:00Z",
     "dateModified": "2017-05-04T12:30:00Z",
+    "seeAlso": [
+        "https://example.org/concept/agriparcelrec",
+        "https://datamodel.org/example/agriparcelrec"
+    ],
     "agriParcel": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed",
     "location": {
         "type": "Polygon",
