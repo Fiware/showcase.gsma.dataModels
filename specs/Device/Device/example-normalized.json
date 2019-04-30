@@ -32,7 +32,7 @@
         "type": "Relationship", 
         "value": "myDevice-wastecontainer-sensor-345"
     },  
-    "rssi ": {
+    "rssi": {
         "value": 0.86
     }, 
     "controlledProperty": {
