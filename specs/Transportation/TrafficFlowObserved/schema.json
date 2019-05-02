@@ -100,11 +100,6 @@
             "sweepingMachine",
             "cleaningTrolley"
           ],
-          "metadata":{
-             "subType": {
-                "value": "string"
-              }
-          }
         },
         "reversedLane": {
           "type": "boolean"
