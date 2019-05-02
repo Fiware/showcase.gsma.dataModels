@@ -25,7 +25,7 @@ The data model is defined as shown below:
         -   `subType` : A string value that allows more granular breakdown of the allowed vehicleType. Eg if the vehicleType is
             set to `Lorry`, the subType may be `OGV1` or `OGV2`(specific types of lorry, specifying further characteristics not 
             conveyed by the overall vehicleType)
-    -   Mandatory
+    -   Optional
 
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
