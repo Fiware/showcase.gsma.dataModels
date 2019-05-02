@@ -19,6 +19,15 @@ The data model is defined as shown below:
     -   Attribute type: Text or URL
     -   Optional
 
+-   `vehicleType` : Type of vehicle from the point of view of its structural characteristics.
+    -   See definition at [Vehicle](../../Vehicle/doc/spec.md).
+    -   Attribute metadata:
+        -   `subType` : A string value that allows more granular breakdown of the allowed vehicleType. Eg if the vehicleType is
+            set to `Lorry`, the subType may be `OGV1` or `OGV2`(specific types of lorry, specifying further characteristics not 
+            conveyed by the overall vehicleType)
+    -   Mandatory
+
+
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
