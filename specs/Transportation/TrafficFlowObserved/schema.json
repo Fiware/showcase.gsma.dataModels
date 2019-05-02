@@ -75,7 +75,36 @@
           ]
         },
         "vehicleType": {
-          "type": "string"       
+          "type": "string",
+          "enum": [
+            "agriculturalVehicle",
+            "bicycle",
+            "bus",
+            "minibus",
+            "car",
+            "tram",
+            "tanker",
+            "carWithCaravan",
+            "carWithTrailer",
+            "lorry",
+            "moped",
+            "motorcycle",
+            "motorcycleWithSideCar",
+            "motorscooter",
+            "trailer",
+            "van",
+            "caravan",
+            "constructionOrMaintenanceVehicle",
+            "trolley",
+            "binTrolley",
+            "sweepingMachine",
+            "cleaningTrolley"
+          ],
+          "metadata":{
+             "subtype": {
+                "value": "string"
+              }
+          }
         },
         "reversedLane": {
           "type": "boolean"
