@@ -101,7 +101,7 @@
             "cleaningTrolley"
           ],
           "metadata":{
-             "subtype": {
+             "subType": {
                 "value": "string"
               }
           }
