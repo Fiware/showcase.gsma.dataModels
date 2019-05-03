@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Energy/ThreePhaseAcMultiCircuitMeasurement/schema.json",
+  "title": "FIWARE - Energy / Three Phase Multi Circuit AC Measurement",
+  "description": "Electrical measurement from a device that can measure multiple circuits.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "ThreePhaseAcMultiCircuitMeasurement"
+      ]
+    },
+    "refDevice": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "frequency": {
+      "type": "number",
+      "minimum": 0
+    },
+    "phaseVoltage": {
+      "type": "object",
+      "properties": {
+        "L1": {
+          "type": "number",
+          "minimum": 0
+        },
+        "L2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "L3": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "phaseToPhaseVoltage": {
+      "type": "object",
+      "properties": {
+        "L12": {
+          "type": "number",
+          "minimum": 0
+        },
+        "L23": {
+          "type": "number",
+          "minimum": 0
+        },
+        "L31": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "fftVoltage": {
+      "type": "object",
+      "properties": {
+        "L1": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "L2": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "L3": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "thdVoltage": {
+      "type": "object",
+      "properties": {
+        "L1": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "L2": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "L3": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "crestFactorVoltage": {
+      "type": "object",
+      "properties": {
+        "L1": {
+          "type": "number"
+        },
+        "L2": {
+          "type": "number"
+        },
+        "L3": {
+          "type": "number"
+        }
+      }
+    },
+    "circuitLabel": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 256
+      }
+    },
+    "refVoltagePhase": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "L1",
+          "L2",
+          "L3"
+        ]
+      }
+    },
+    "currentSensorConfiguration ": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "current": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "activePower": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "reactivePower": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "apparentPower": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "powerFactor": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "dateEnergyMeteringStarted": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "activeEnergy": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "reactiveEnergy": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "apparentEnergy": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "fftCurrent": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        }
+      }
+    },
+    "thdCurrent": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "crestFactorCurrent": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type"
+  ]
+}

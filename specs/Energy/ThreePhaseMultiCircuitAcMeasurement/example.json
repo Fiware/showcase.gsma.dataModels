@@ -1,0 +1,73 @@
+{
+    "id": "ThreePhaseAcMultiCircuitMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMultiCircuitMeasurement",
+    "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z",
+    "refDevice": "Device:eQL-EDF3GL-2006201705",
+    "name": "HKAPK0200",
+    "description": "measurement corresponding to the ventilation machine rooms",
+    "frequency": 50.020672,
+    "phaseVoltage": {
+        "L1": 234.961304,
+        "L2": 234.563477,
+        "L3": 235.354034
+    },
+    "phaseToPhaseVoltage": {
+        "L12": 406.769196,
+        "L23": 407.081238,
+        "L31": 407.734558
+    },
+    "circuitLabel": [
+        "Circuit 1",
+        "Circuit 2",
+        "Circuit 3",
+        "Circuit 4",
+        "Circuit 5",
+        "Circuit 6",
+        "Circuit 7",
+        "Circuit 8",
+        "Circuit 9",
+        "Circuit 10",
+        "Circuit 11",
+        "Circuit 12",
+        "Circuit 13",
+        "Circuit 14",
+        "Circuit 15",
+        "Circuit 16"
+    ],
+    "refVoltagePhase": [
+        "L1",
+        "L2",
+        "L3",
+        "L1",
+        "L2",
+        "L3",
+        "L1",
+        "L2",
+        "L3",
+        "L1",
+        "L2",
+        "L3",
+        "L1",
+        "L2",
+        "L3",
+        "L1"
+    ],
+    "current": [
+        33.55,
+        34.77,
+        31.32,
+        32.40,
+        34.08,
+        13.33,
+        10.86,
+        11.11,
+        23.31,
+        11.31,
+        14.16,
+        40.19,
+        29.60,
+        13.36,
+        33.99,
+        24.28
+    ]
+}

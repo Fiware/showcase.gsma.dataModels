@@ -5,3 +5,7 @@ one entity type has been defined:
 
 -   `ThreePhaseAcMeasurement`: represents a measurement from an electrical
     system that uses three-phase alternating current
+
+-   `ThreePhaseMultiCircuitAcMeasurement`: represents a measurement from an electrical
+    sub-metering system that monitors three-phase alternating current across multiple
+	 circuits
