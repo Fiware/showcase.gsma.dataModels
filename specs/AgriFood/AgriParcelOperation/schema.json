@@ -13,15 +13,6 @@
                     "enum": ["AgriParcelOperation"],
                     "description": "NGSI Entity Type"
                 },
-                "seeAlso": {
-                    "type": "array",
-                    "items": [
-                        {
-                            "type": "string",
-                            "format": "uri"
-                        }
-                    ]
-                },
                 "agriParcel": {
                     "type": "string",
                     "format": "uri"
