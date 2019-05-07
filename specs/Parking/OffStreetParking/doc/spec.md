@@ -38,12 +38,7 @@ The data model is defined as shown below:
 
         -   Attribute type: Text or URL
         -   Optional
-
--   `dateCreated` : Entity's creation timestamp
-
-    -   Attribute type: [DateTime](https://schema.org/DateTime)
-    -   Read-Only. Automatically generated.
-
+        
 -   `dateModified` : Last update timestamp of this entity
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
