@@ -12,7 +12,6 @@
 
 ### Introduction
 This document describes the IoT-BD instance developed under the [GSMA IoT Big Data Project](https://www.gsma.com/iot/connected-living-mobilising-the-internet-of-things/), part of GSMA’s Connected Living Programme.
-Such instance was originally developed by Telefónica and later transferred to the FIWARE Foundation e.V. 
 
 ### Public Data sources
 Here there is a description of the original public data sources used to perform data harmonization. 
@@ -67,7 +66,7 @@ The usage of the data offered through this instance is subject to the terms, con
 | Data source                                                | Terms and Conditions                                                                   |
 | ---------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Generalidad de Cataluña                                    | <http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/> (Spanish)                      |
-| Ayuntamiento de Madrid                                     | <http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html> (Spanish) |
+| Madrid                                                     | <http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html> (Spanish) |
 | AEMET Agencia Estatal de Meteorología                      | <http://www.aemet.es/es/nota_legal> (Spanish)                                          |
 | IPMA Instituto português do mar y do atmosfera             | <https://www.ipma.pt/en/siteinfo/index.html?page=index.xml> (English)                  |
 | The Network of European Meteorological Services (EUMETNET) | <http://www.meteoalarm.eu/terms.php?lang=en_UK> (English)                              |
@@ -147,3 +146,4 @@ Below there is a description of the harmonized data currently published
 ### Examples
 
 Some Postman recipes prepared, you can read documents [here](https://documenter.getpostman.com/view/3940441/RznEMKdr).
+Be aware, Postman recipes use environment variables, don't forget to change it to "FIWARE Data Streams"

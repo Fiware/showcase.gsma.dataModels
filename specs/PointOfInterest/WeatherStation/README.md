@@ -1,15 +1,12 @@
 # Point Of Interest - Weather Stations
 
 This folder contains code to generate a set of POIs which correspond to the
-[Weather Stations](https://jmcanterafonseca.cartodb.com/viz/e7ccc6c6-9e5b-11e5-a595-0ef7f98ade21/map)
+[Weather Stations](https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw)
 owned by the Spanish Meteorological Agency ([AEMET](http://aemet.es)).
 
 Here you can find the following files:
 
--   [stations.json](stations.json). This is a list of weather stations owned by AEMET and a list of municipalities which provide automated readings.
--   [generate.py](generate.py). This is the Python code that was used to generate the [stations.json](stations.json).
--   [info.xls](info.xls). This is a list of Spain provinces and communities with codes that needed for [generate.py](generate.py).
--   [upload.py](upload.py). This is the Python code that upload [stations.json](stations.json) to the Orion Context Broker.
+-   [run.py](run.py). Python code to generate and upload the list of stations.
 
 ## Public instance
 
@@ -18,27 +15,28 @@ You can read about public instance offering information about weather stations [
 ## Example of use
 
 ```bash
-curl -s -H 'fiware-service:poi' -H 'fiware-servicepath:/Spain'  'https://orion.lab.fiware.org/v2/entities?type=PointOfInterest&q=category:WeatherStation&options=keyValues&limit=1' | python -m json.tool
+curl -s -H 'fiware-service:poi' -H 'fiware-servicepath:/Spain'  'http:/streams.lab.fiware.org:1026/v2/entities?type=PointOfInterest&q=category:WeatherStation&options=keyValues&limit=1' | python -m json.tool
 ```
-
 ```json
 [
     {
         "address": {
-            "addressCommunity": "Navarra",
             "addressCountry": "ES",
-            "addressLocality": "Baztan",
-            "addressProvince": "Navarra"
+            "addressLocality": "Zaragoza, Valdespartera",
+            "addressRegion": [
+                "province"
+            ]
         },
         "category": "WeatherStation",
-        "id": "Spain-WeatherStations-1002Y",
+        "id": "WeatherStation-ES-9434P",
         "location": {
             "coordinates": [
-                -1.543055556,
-                43.135833333
+                -0.935,
+                41.620833
             ],
             "type": "Point"
         },
+        "source": "https://opendata.aemet.es/",
         "type": "PointOfInterest"
     }
 ]

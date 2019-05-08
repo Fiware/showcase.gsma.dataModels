@@ -1,11 +1,13 @@
-FROM python:3.7.2-alpine3.8
+FROM python:3.7.3-alpine3.9
 
-COPY harvester.py /opt/
-COPY config.example.yml /opt/
-
-RUN pip3 install pytz==2018.9 pyaml==3.13 aiohttp==3.5.4 \
-&&  chmod +x /opt/*.py
+LABEL maintainer="Dmitrii Demin <mail@demin.co>"
 
 WORKDIR /opt/
 
-ENTRYPOINT ["python3", "-u", "/opt/harvester.py"]
+COPY . /opt
+
+RUN apk add --no-cache git build-base && \
+    pip install --upgrade pip && pip install -r requirements.txt && \
+    apk del build-base git
+
+ENTRYPOINT ["/usr/bin/env", "python3", "-u", "/opt/run.py"]

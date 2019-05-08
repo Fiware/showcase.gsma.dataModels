@@ -1,6 +1,17 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+"""
+    This program parses xml provided by http://www.ine.es/en/welcome.shtml
+    and prepares the initial data for weather harvesters.
+
+    It collects:
+      - weather stations (weather observed id for municipality)
+      - municipalities (weather forecast id for municipality)
+      - provinces (for future purposes)
+      - communities (for future purposes)
+"""
+
 import sys
 import json
 from aiohttp import ClientSession, client_exceptions

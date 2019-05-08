@@ -1,37 +1,46 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+"""
+    This program collects Portugal weather forecast from IPMA and uploads it to the Orion Context Broker.
+    It upload the list of stations on-fly from http://api.ipma.pt/json/locations.json.
+
+    Source: http://api.ipma.pt/json/alldata/{}.json
+    Example: curl -X GET --header 'Accept: application/json' \
+                 'http://api.ipma.pt/json/alldata/1110600.json'
+
+"""
 
 from aiohttp import ClientSession, client_exceptions
 from argparse import ArgumentTypeError, ArgumentParser
 from asyncio import Semaphore, ensure_future, gather, run
 from copy import deepcopy
 from datetime import datetime, timedelta
-from json import dumps
 from pytz import timezone
 from re import sub
+from requests import get, exceptions
 from sys import stdout
 from time import sleep
-from yaml import safe_load
-from requests import get, exceptions
+from yajl import dumps, loads
+from yaml import safe_load as load
 import logging
 
-default_latest = False
-default_limit_entities = 50
-default_limit_source = 35
-default_limit_target = 50
+default_latest = False                # preserve only latest values
+default_limit_entities = 50           # amount of entities per 1 request to Orion
+default_limit_source = 10             # amount of parallel request to IPMA
+default_limit_target = 50             # amount of parallel request to Orion
 default_log_level = 'INFO'
-default_orion = 'http://orion:1026'
-default_path = '/Portugal'
-default_service = 'weather'
-default_timeout = -1
+default_orion = 'http://orion:1026'   # Orion Contest Broker endpoint
+default_path = '/Portugal'            # header FIWARE-SERVICEPATH
+default_service = 'weather'           # header FIWARE-SERVICE
+default_timeout = -1                  # if value != -1, then work as a service
 
 data = dict()
 http_ok = [200, 201, 204]
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
-matches = list()
-stations = dict()
+stations = dict()                     # preprocessed list of stations
 stations_file = 'stations.json'
 tz = timezone('UTC')
 tz_wet = timezone('Europe/Lisbon')
@@ -40,7 +49,7 @@ tz_azot_codes = ['3490100', '3480200', '3470100', '3460200', '3450200', '3440100
 url_observation = 'http://api.ipma.pt/json/alldata/{}.json'
 url_stations = 'http://api.ipma.pt/json/locations.json'
 
-schema_template = {
+template = {
     'id': 'Portugal-WeatherForecast-',
     'type': 'WeatherForecast',
     'address': {
@@ -126,6 +135,13 @@ schema_template = {
 }
 
 
+"""
+    async def name - entry point for asynchronous data processing/http requests and post processing
+    async def name_bounded - intermediate step to limit amount of parallel workers
+    async def name_one - worker process   
+"""
+
+
 def check_entity(forecast, item):
     if item in forecast:
         if forecast[item] != '-99.0' and forecast[item] != -99:
@@ -180,8 +196,8 @@ def decode_wind_direction(direction):
     }.get(direction, None)
 
 
-async def harvest():
-    logger.debug('Harvesting info started')
+async def collect():
+    logger.debug('Connecting data from IPMA started')
 
     tasks = list()
 
@@ -189,7 +205,7 @@ async def harvest():
 
     async with ClientSession() as session:
         for station in stations:
-            task = ensure_future(harvest_bounded(station, sem, session))
+            task = ensure_future(collect_bounded(station, sem, session))
             tasks.append(task)
 
         result = await gather(*tasks)
@@ -197,29 +213,29 @@ async def harvest():
     while False in result:
         result.remove(False)
 
-    logger.debug('Harvesting info ended')
+    logger.debug('Collecting data from IPMA ended')
     return result
 
 
-async def harvest_bounded(station, sem, session):
+async def collect_bounded(station, sem, session):
     async with sem:
-        return await harvest_one(station, session)
+        return await collect_one(station, session)
 
 
-async def harvest_one(station, session):
+async def collect_one(station, session):
 
     try:
         async with session.get(stations[station]['url']) as response:
-            content = await response.read()
+            result = await response.read()
     except client_exceptions.ClientConnectorError:
-        logger.error('Harvesting info about station %s failed due to the connection problem', station)
+        logger.error('Collecting data from IPMA station %s failed due to the connection problem', station)
         return False
 
     if response.status not in http_ok:
-        logger.error('Harvesting info about station %s failed due to the return code %s', station, response.status)
+        logger.error('Collecting data from IPMA station %s failed due to the return code %s', station, response.status)
         return False
 
-    content = safe_load(content)
+    content = loads(result.decode('UTF-8'))
 
     result = dict()
     result['id'] = station
@@ -255,7 +271,7 @@ def log_level_to_int(log_level_string):
 
 
 async def post(body):
-    logger.debug('Posting info started')
+    logger.debug('Posting data to Orion started')
 
     tasks = list()
 
@@ -270,25 +286,26 @@ async def post(body):
 
     sem = Semaphore(limit_target)
 
-    i = 0
-    j = 0
+    # splitting list to list of lists to fit into limits
+    block = 0
+    items = 0
     body_divided = dict()
-    body_divided[i] = list()
+    body_divided[0] = list()
     while True:
         if len(body) > 0:
-            if j < limit_entities:
-                body_divided[i].append(body.pop())
-                j += 1
+            if items < limit_entities:
+                body_divided[block].append(body.pop())
+                items += 1
             else:
-                j = 0
-                i += 1
-                body_divided[i] = list()
+                items = 0
+                block += 1
+                body_divided[block] = list()
         else:
             break
 
     async with ClientSession() as session:
-        for el in body_divided:
-            task = ensure_future(post_bounded(body_divided[el], headers, sem, session))
+        for item in body_divided:
+            task = ensure_future(post_bounded(body_divided[item], headers, sem, session))
             tasks.append(task)
 
         response = await gather(*tasks)
@@ -297,21 +314,21 @@ async def post(body):
     if True in response:
         response.remove(True)
 
-    for el in response:
-        logger.error('Posting info failed due to %s', el)
+    for item in response:
+        logger.error('Posting data to Orion failed due to %s', item)
 
-    logger.debug('Posting info ended')
+    logger.debug('Posting data to Orion ended')
 
 
-async def post_bounded(el, headers, sem, session):
+async def post_bounded(item, headers, sem, session):
     async with sem:
-        return await post_one(el, headers, session)
+        return await post_one(item, headers, session)
 
 
-async def post_one(el, headers, session):
+async def post_one(item, headers, session):
     payload = {
         'actionType': 'APPEND',
-        'entities': el
+        'entities': item
     }
 
     payload = dumps(payload)
@@ -321,10 +338,10 @@ async def post_one(el, headers, session):
         async with session.post(url, headers=headers, data=payload) as response:
             await response.read()
     except client_exceptions.ClientConnectorError:
-        return 'connection problems'
+        return 'Posting data to Orion failed due to the connection problems'
 
     if response.status not in http_ok:
-        return 'return code ' + str(response.status)
+        return 'Posting data to Orion failed due to response code ' + str(response.status)
 
     return True
 
@@ -365,7 +382,7 @@ async def prepare_schema_one(source):
         if source['forecasts'][date]['period'] != 24:
             continue
 
-        item = deepcopy(schema_template)
+        item = deepcopy(template)
         ft = source['forecasts'][date]
 
         ft_date = tz_local.localize(ft['issued'])
@@ -479,14 +496,13 @@ def setup_stations(stations_limit):
     try:
         resp = get(url_stations)
     except exceptions.ConnectionError:
-        logger.error('Harvesting init data from the stations failed due to the connection problem')
         exit(1)
 
-    if resp.status_code in http_ok:
-        content = safe_load(resp.text)
-    else:
-        logger.error('Harvesting init data from the stations failed due to the connection problem')
+    if resp.status_code not in http_ok:
+        logger.error('Collecting the list of stations from IPMA failed due to the return code %s', resp.status_code)
         exit(1)
+
+    content = loads(resp.text)
 
     for station in content:
         station_code = str(station['globalIdLocal'])
@@ -505,7 +521,7 @@ def setup_stations(stations_limit):
 
     if limit_on:
         if len(result) != len(stations_limit['include']):
-            logger.error('Errors in the list of stations (stations_on) detected')
+            logger.error('Errors in the list of stations detected')
             exit(1)
 
     return result
@@ -521,24 +537,24 @@ def setup_stations_config(f):
                 config = sub(r'-.*\n?',  setup_config_re, content)
             f.close()
 
-            source = safe_load(config)
+            source = load(config)
 
             if 'exclude' in source and 'include' in source:
-                logging.error('List of stations is empty or wrong')
+                logging.error('Config file is empty or wrong')
                 exit(1)
 
             if 'exclude' in source:
                 local_stations['exclude'] = list()
-                for el in source['exclude']:
-                    local_stations['exclude'].append(el)
+                for item in source['exclude']:
+                    local_stations['exclude'].append(item)
 
             if 'include' in source:
                 local_stations['include'] = list()
-                for el in source['include']:
-                    local_stations['include'].append(el)
+                for item in source['include']:
+                    local_stations['include'].append(item)
 
         except TypeError:
-            logging.error('List of stations is empty or wrong')
+            logging.error('Config file  is empty or wrong')
             exit(1)
         except FileNotFoundError:
             logging.error('Config file not found')
@@ -549,7 +565,6 @@ def setup_stations_config(f):
 
 def setup_config_re(station):
     fix = sub('-', '', station.group()).strip()
-    matches.append(fix)
     return "- '{}'\n".format(fix)
 
 
@@ -558,24 +573,24 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('--config',
                         dest='config',
-                        help='YAML file with list of stations to be harvested or excluded from harvesting')
+                        help='YAML file with list of stations to be collected or excluded from collecting')
     parser.add_argument('--latest',
                         action='store_true',
                         default=default_latest,
                         dest='latest',
-                        help='Harvest only latest observation')
+                        help='Collect only latest forecast')
     parser.add_argument('--limit-entities',
                         default=default_limit_entities,
                         dest='limit_entities',
-                        help='Limit amount of entities per 1 post request to orion')
+                        help='Limit amount of entities per 1 request to orion')
     parser.add_argument('--limit-source',
                         default=default_limit_source,
                         dest='limit_source',
-                        help='Limit amount of parallel requests to aemet')
+                        help='Limit amount of parallel requests to IPMA')
     parser.add_argument('--limit-target',
                         default=default_limit_target,
                         dest='limit_target',
-                        help='Limit amount of parallel requests to orion')
+                        help='Limit amount of parallel requests to Orion')
     parser.add_argument('--log-level',
                         default=default_log_level,
                         dest='log_level',
@@ -585,7 +600,7 @@ if __name__ == '__main__':
                         action='store',
                         default=default_orion,
                         dest='orion',
-                        help='Orion Context Broker')
+                        help='Orion Context Broker endpoint')
     parser.add_argument('--path',
                         action='store',
                         default=default_path,
@@ -600,7 +615,7 @@ if __name__ == '__main__':
                         action='store',
                         default=default_timeout,
                         dest='timeout',
-                        help='Run harvester as a service')
+                        help='Run as a service')
 
     args = parser.parse_args()
 
@@ -619,12 +634,15 @@ if __name__ == '__main__':
     reply_status()
 
     while True:
-        res = run(harvest())
-        res = run(prepare_schema(res))
-        run(post(res))
+        res = run(collect())
+        if res:
+            res = run(prepare_schema(res))
+            run(post(res))
         if timeout == -1:
-            logger.info('Ended')
             break
         else:
             logger.debug('Sleeping for the %s seconds', timeout)
             sleep(timeout)
+
+    logger.info('Ended')
+    exit(0)

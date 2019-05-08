@@ -46,4 +46,3 @@ jspm_packages/
 *.tgz
 .env
 .next
-dump.json
