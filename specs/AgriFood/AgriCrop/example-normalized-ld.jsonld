@@ -30,6 +30,15 @@
         "type": "Property",
         "value": "Spring wheat"
     },
+    "relatedSource": {
+        "type": "Property",
+        "value": [
+            {
+                "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+                "entityId": "app:weat"
+            }
+        ]
+    }
     "agriSoil": {
         "type": "Relationship",
         "object": [
