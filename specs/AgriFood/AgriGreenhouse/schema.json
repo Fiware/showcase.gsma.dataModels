@@ -6,6 +6,7 @@
     "type": "object",
     "allOf": [
         { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
         {
             "properties": {
                 "type": {

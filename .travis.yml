@@ -31,7 +31,7 @@ jobs:
         - npm run lint -C ./validator
        
       script:
-         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
+         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -i specs/AgriFood/agrifood-schema.json -p specs -c true
 
     - stage: test
       name: "Unit Tests 3.7"
@@ -59,7 +59,7 @@ jobs:
         - npm run lint -C ./validator
        
       script:
-         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p specs -c true
+         - node ./validator/validate.js -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -i specs/AgriFood/agrifood-schema.json -p specs -c true
 
     - stage: test
       name: "Documentation Tests"
