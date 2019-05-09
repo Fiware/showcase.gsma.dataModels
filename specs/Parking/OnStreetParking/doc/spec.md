@@ -79,7 +79,6 @@ The data model is defined as shown below:
         application.
     -   Mandatory
 
-
 -   `allowedVehicleType` : Vehicle type allowed (only one per on street
     parking).
 
