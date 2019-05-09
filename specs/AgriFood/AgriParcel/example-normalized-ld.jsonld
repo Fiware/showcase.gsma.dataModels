@@ -47,6 +47,13 @@
         "type": "Property",
         "value": "arable"
     },
+    "seeAlso": {
+        "type": "Property",
+        "value" :[
+            "https://example.org/concept/agriparcel",
+            "https://datamodel.org/example/agriparcel"
+        ]
+    },
     "belongsTo": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765"

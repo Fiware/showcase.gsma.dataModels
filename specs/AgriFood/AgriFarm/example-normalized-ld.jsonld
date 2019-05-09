@@ -15,6 +15,13 @@
         "type": "Property",
         "value": "A farm producing wheat"
     },
+    "seeAlso": {
+        "type": "Property",
+        "value" :[
+            "https://example.org/concept/farm",
+            "https://datamodel.org/example/farm"
+        ]
+    },
     "location": {
         "type": "GeoProperty",
         "value": {

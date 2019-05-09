@@ -1,0 +1,32 @@
+{
+    "id": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "type": "AgriApp",
+    "dateCreated": {
+        "type": "DateTime",
+        "value":"2017-01-01T01:20:00Z"
+    },
+    "dateModified": {
+        "type": "DateTime",
+        "value": "2017-05-04T12:30:00Z"
+    },
+    "name": {
+        "value": "Wine track"
+    },
+    "description":{
+        "value": "An app for wine tracking"
+    },
+    "version": {
+        "value": "1.0"
+    },
+    "provider": {
+        "type": "Relationship",
+        "value": "urn:ngsi-ld:Organization:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
+    },
+    "endpoint": {
+        "type": "URL",
+        "value": "https://app.endpoint/download"
+    },
+    "category": {
+        "value": ["TBD"]
+    }
+}

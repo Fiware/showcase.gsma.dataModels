@@ -15,6 +15,12 @@
     "description":{
         "value": "A farm producing wheat"
     },
+    "seeAlso": {
+        "value" :[
+            "https://example.org/concept/farm",
+            "https://datamodel.org/example/farm"
+        ]
+    },
     "location": {
         "type": "geo:json",
         "value": {

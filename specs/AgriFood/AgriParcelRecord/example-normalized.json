@@ -2,12 +2,18 @@
     "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
     "type": "AgriParcelRecord",
     "dateCreated": {
-	"type": "DateTime",
-	"value": "2017-01-01T01:20:00Z"
+        "type": "DateTime",
+        "value": "2017-01-01T01:20:00Z"
     },
     "dateModified": {
-	"type": "DateTime",
-	"value": "2017-05-04T12:30:00Z"
+        "type": "DateTime",
+        "value": "2017-05-04T12:30:00Z"
+    },
+    "seeAlso": {
+        "value": [
+            "https://example.org/concept/agriparcelrec",
+            "https://datamodel.org/example/agriparcelrec"
+        ]
     },
     "agriParcel": {
         "type": "Relationship",

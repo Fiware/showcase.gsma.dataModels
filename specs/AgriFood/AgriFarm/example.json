@@ -5,6 +5,10 @@
     "dateModified": "2017-05-04T12:30:00Z",
     "name": "Wheat farm",
     "description": "A farm producing wheat",
+    "seeAlso": [
+        "https://example.org/concept/farm",
+        "https://datamodel.org/example/farm"
+    ],
     "location": {
         "type": "Point",
         "coordinates": [100, 0]

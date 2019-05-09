@@ -17,6 +17,10 @@
                     "type": "string",
                     "format": "uri"
                 },
+                "belongsTo": {
+                    "type": "string",
+                    "format": "uri"
+                },
                 "agriParcelParent": {
                     "type": "string",
                     "format": "uri"

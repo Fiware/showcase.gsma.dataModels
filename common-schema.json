@@ -55,6 +55,24 @@
               }
             ]
           }
+        },
+        "seeAlso": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
         }
       }
     },
