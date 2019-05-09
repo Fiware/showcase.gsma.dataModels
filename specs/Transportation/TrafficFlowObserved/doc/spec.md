@@ -20,7 +20,7 @@ The data model is defined as shown below:
     -   Optional
 
 -   `vehicleType` : Type of vehicle from the point of view of its structural characteristics.
-    -   See definition at [Vehicle](../../Vehicle/doc/spec.md).
+    -   See definition at [Vehicle](../../Vehicle/Vehicle/doc/spec.md).
     -   Optional
     
 -   `vehicleSubType` : allows to specify a sub type of `vehicleType` , eg if the `vehicleType` is set
