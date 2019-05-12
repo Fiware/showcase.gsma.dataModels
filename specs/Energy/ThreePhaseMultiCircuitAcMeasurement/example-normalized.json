@@ -1,0 +1,66 @@
+{
+    "id": "ThreePhaseAcMultiCircuitMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMultiCircuitMeasurement",
+    "currentCircuit": {
+        "value": [
+            {
+                "activePower": 0, 
+                "apparentPower": 0, 
+                "powerFactor": 0, 
+                "activeEnergy": 0, 
+                "fft": [], 
+                "refVoltagePhase": "L1", 
+                "current": 0, 
+                "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z", 
+                "reactiveEnergy": 0, 
+                "circuitLabel": "ABC 1", 
+                "crestFactor": 0, 
+                "reactivePower": 0, 
+                "currentSensorConfiguration": {}, 
+                "apparentEnergy": 0, 
+                "thd": 0
+            }, 
+            {
+                "activePower": 0, 
+                "apparentPower": 0, 
+                "powerFactor": 0, 
+                "activeEnergy": 0, 
+                "fft": [], 
+                "refVoltagePhase": "L1", 
+                "current": 0, 
+                "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z", 
+                "reactiveEnergy": 0, 
+                "circuitLabel": "ABC 2", 
+                "crestFactor": 0, 
+                "reactivePower": 0, 
+                "currentSensorConfiguration": {}, 
+                "apparentEnergy": 0, 
+                "thd": 0
+            }
+        ]
+    }, 
+    "name": {
+        "value": "HKAPK0200"
+    }, 
+    "refDevice": {
+        "type": "Relationship", 
+        "value": "Device:eQL-EDF3GL-2006201705"
+    }, 
+    "voltagePhase": {
+        "value": {
+            "frequency": 50, 
+            "L2": {
+                "voltage": 230.312
+            }, 
+            "L3": {
+                "voltage": 230.312
+            }, 
+            "L1": {
+                "voltage": 230.312
+            }
+        }
+    }, 
+    "description": {
+        "value": "measurement corresponding to the ventilation machine rooms"
+    }
+}

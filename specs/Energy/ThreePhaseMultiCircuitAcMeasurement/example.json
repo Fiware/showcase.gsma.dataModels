@@ -1,0 +1,55 @@
+{
+    "id": "ThreePhaseAcMultiCircuitMeasurement:LV3_Ventilation",
+    "type": "ThreePhaseAcMultiCircuitMeasurement",
+    "description": "measurement corresponding to the ventilation machine rooms",
+    "refDevice": "Device:eQL-EDF3GL-2006201705",
+    "name": "HKAPK0200",
+    "voltagePhase": {
+        "L1": {
+            "voltage": 230.312
+        },
+        "L2": {
+            "voltage": 230.312
+        },
+        "L3": {
+            "voltage": 230.312
+        },
+        "frequency": 50
+    },
+    "currentCircuit": [
+        {
+            "circuitLabel": "ABC 1",
+            "refVoltagePhase": "L1",
+            "current": 0,
+            "activePower": 0,
+            "reactivePower": 0,
+            "apparentPower": 0,
+            "powerFactor": 0,
+            "activeEnergy": 0,
+            "reactiveEnergy": 0,
+            "apparentEnergy": 0,
+            "fft": [],
+            "thd": 0,
+            "crestFactor": 0,
+            "currentSensorConfiguration": {},
+            "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z"
+        },
+        {
+            "circuitLabel": "ABC 2",
+            "refVoltagePhase": "L1",
+            "current": 0,
+            "activePower": 0,
+            "reactivePower": 0,
+            "apparentPower": 0,
+            "powerFactor": 0,
+            "activeEnergy": 0,
+            "reactiveEnergy": 0,
+            "apparentEnergy": 0,
+            "fft": [],
+            "thd": 0,
+            "crestFactor": 0,
+            "currentSensorConfiguration": {},
+            "dateEnergyMeteringStarted": "2018-07-07T15:05:59.408Z"
+        }
+    ]
+}

@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Energy/ThreePhaseAcMultiCircuitMeasurement/schema.json",
+  "title": "FIWARE - Energy / Three Phase Multi Circuit AC Measurement",
+  "description": "Electrical measurement from a device that can measure multiple circuits.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ThreePhaseAcMultiCircuitMeasurement"
+          ]
+        },
+        "refDevice": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "voltagePhase": {
+          "type": "object",
+          "properties": {
+            "L1": {
+              "type": "object",
+              "properties": {
+                "voltage": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "fft": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "thd": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "crestFactor": {
+                  "type": "number"
+                }
+              }
+            },
+            "L2": {
+              "type": "object",
+              "properties": {
+                "voltage": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "fft": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "thd": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "crestFactor": {
+                  "type": "number"
+                }
+              }
+            },
+            "L3": {
+              "type": "object",
+              "properties": {
+                "voltage": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "fft": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "thd": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "crestFactor": {
+                  "type": "number"
+                }
+              }
+            },
+            "frequency": {
+              "type": "number"
+            }
+          }
+        },
+        "currentCircuit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "circuitLabel": {
+                "type": "string",
+                "maxLength": 256
+              },
+              "refVoltagePhase": {
+                "type": "string",
+                "enum": [
+                  "L1",
+                  "L2",
+                  "L3"
+                ]
+              },
+              "currentSensorConfiguration": {
+                "type": "object"
+              },
+              "current": {
+                "type": "number"
+              },
+              "activePower": {
+                "type": "number"
+              },
+              "reactivePower": {
+                "type": "number"
+              },
+              "apparentPower": {
+                "type": "number"
+              },
+              "powerFactor": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "activeEnergy": {
+                "type": "number"
+              },
+              "reactiveEnergy": {
+                "type": "number"
+              },
+              "apparentEnergy": {
+                "type": "number"
+              },
+              "fft": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "thd": {
+                "type": "number"
+              },
+              "crestFactor": {
+                "type": "number"
+              },
+              "dateEnergyMeteringStarted": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "dateModified": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "dateCreated": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type"
+  ]
+}
