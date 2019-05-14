@@ -14,7 +14,7 @@
     "relatedSource": [
         {
             "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-            "entityId": "app:weat"
+            "applicationEntityId": "app:weat"
         }
     ],
     "agriSoil": [

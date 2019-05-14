@@ -18,24 +18,6 @@
                     "type": "string",
                     "format": "uri"
                 },
-                "relatedSource": {
-                    "type": "array",
-                    "description": "List of IDs the current entity may have in external applications",
-                    "items": [
-                        {
-                            "type": "object",
-                            "values": {
-                                "application": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "entityId": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    ]
-                },
                 "agriSoil": {
                     "type": "array",
                     "items": [
