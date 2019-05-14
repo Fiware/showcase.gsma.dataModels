@@ -19,6 +19,10 @@
             "https://datamodel.org/example/agrigeenhouse"
         ]
     },
+    "belongsTo": {
+        "type": "Relationship",
+        "value": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765"
+    },
     "agriParcelParent": {
         "type": "Relationship",
         "value": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b"

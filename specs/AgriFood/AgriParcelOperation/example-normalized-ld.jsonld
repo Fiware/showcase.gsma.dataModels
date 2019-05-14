@@ -7,6 +7,13 @@
     "type": "AgriParcelOperation",
     "createdAt": "2017-01-01T01:20:00Z",
     "modifiedAt": "2017-05-04T12:30:00Z",
+    "seeAlso": {
+        "type": "Property",
+        "value" :[
+            "https://example.org/concept/agriparcelop",
+            "https://datamodel.org/example/agriparcelop"
+        ]
+    },
     "agriParcel": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriParcel:318366a9-7643-4d8e-9a11-c76a8c29d8eb"

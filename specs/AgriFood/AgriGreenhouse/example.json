@@ -8,6 +8,7 @@
         "https://example.org/concept/agrigeenhouse",
         "https://datamodel.org/example/agrigeenhouse"
     ],
+    "belongsTo": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765",
     "agriParcelParent": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b",
     "agriParcelChildren": [
         "urn:ngsi-ld:AgriParcel:8c3a525d-b42e-4048-bcdd-a119d8ddb0a5",

@@ -38,11 +38,26 @@ The data model is defined as shown below:
 
         -   Attribute type: Text or URL
         -   Optional
-        
+
 -   `dateModified` : Last update timestamp of this entity
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
+
+-   `status` : Status of the parking site.
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
+    -   Allowed values: The following defined by the following enumerations
+        defined by DATEX II version 2.3 :
+        -   _ParkingSiteStatusEnum_
+        -   _OpeningStatusEnum_
+        -   (`open`, `closed`, `closedAbnormal`,`openingTimesInForce`, `full`,
+            `fullAtEntrance`, `spacesAvailable`, `almostFull`)
+        -   Or any other application-specific
+    -   Optional
 
 -   `location` : Geolocation of the parking site represented by a GeoJSON
     (Multi)Polygon or Point.
@@ -62,6 +77,18 @@ The data model is defined as shown below:
 
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Mandatory
+
+-   `description` : Description about the parking site.
+
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
+
+-   `image` : A URL containing a photo of this parking site.
+
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
 
 -   `category` : Parking site's category(ies). The purpose of this field is to
     allow to tag, generally speaking, off street parking entities.
@@ -100,17 +127,6 @@ The data model is defined as shown below:
             `anyVehicle`)
     -   Mandatory
 
--   `chargeType` : Type(s) of charge performed by the parking site.
-
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Allowed values: Some of those defined by the DATEX II version 2.3 _
-        ChargeTypeEnum_ enumeration:
-        -   (`flat`, `minimum`, `maximum`, `additionalIntervalPrice`
-            `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
-            `annualPayment`, `monthlyPayment`, `free`, `other`)
-        -   Any other application-specific
-    -   Mandatory
-
 -   `requiredPermit` : This attribute captures what permit(s) might be needed to
     park at this site. Semantics is that at least _one of_ these permits is
     needed to park. When a permit is composed by more than one item (and) they
@@ -128,21 +144,29 @@ The data model is defined as shown below:
         -   Any other application-specific
     -   Mandatory
 
--   `occupancyDetectionType` : Occupancy detection method(s).
-
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Allowed values: The following from DATEX II version 2.3 _
-        OccupancyDetectionTypeEnum_:
-        -   (`none`, `balancing`, `singleSpaceDetection`, `modelBased`,
-            `manual`)
-        -   Or any other application-specific
-    -   Mandatory
-
--   `acceptedPaymentMethod` : Accepted payment method(s).
+-   `openingHours` : Opening hours of the parking site.
 
     -   Normative references:
-        [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod)
+        [http://schema.org/openingHours](http://schema.org/openingHours)
     -   Optional
+
+-   `maximumParkingDuration` : Maximum allowed stay at site, on a general basis,
+    encoded as a ISO8601 duration. A `null` or empty value indicates an
+    indefinite duration.
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
+
+-   `chargeType` : Type(s) of charge performed by the parking site.
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Some of those defined by the DATEX II version 2.3 _
+        ChargeTypeEnum_ enumeration:
+        -   (`flat`, `minimum`, `maximum`, `additionalIntervalPrice`
+            `seasonTicket` `temporaryPrice` `firstIntervalPrice`,
+            `annualPayment`, `monthlyPayment`, `free`, `other`)
+        -   Any other application-specific
+    -   Mandatory
 
 -   `priceRatePerMinute` : Price rate per minute.
 
@@ -156,28 +180,10 @@ The data model is defined as shown below:
         [https://schema.org/priceCurrency](https://schema.org/priceCurrency)
     -   Optional
 
--   `description` : Description about the parking site.
+-   `acceptedPaymentMethod` : Accepted payment method(s).
 
-    -   Normative References:
-        [https://schema.org/description](https://schema.org/description)
-    -   Optional
-
--   `image` : A URL containing a photo of this parking site.
-
-    -   Normative References:
-        [https://schema.org/image](https://schema.org/image)
-    -   Optional
-
--   `layout` : Parking layout. Gives more details to the `category` attribute.
-
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Allowed values: As per the _ParkingLayoutEnum_ of DATEX II version 2.3:
-        -   one Of (`automatedParkingGarage`, `surface`, `multiStorey`,
-            `singleLevel`, `multiLevel`, `openSpace`, `covered`, `nested`,
-            `field`, `rooftop`, `sheds`, `carports`, `garageBoxes`, `other`).
-            See also
-            [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking).
-        -   Or any other value useful for the application and not covered above.
+    -   Normative references:
+        [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod)
     -   Optional
 
 -   `usageScenario` : Usage scenario(s). Gives more details to the `category`
@@ -194,12 +200,110 @@ The data model is defined as shown below:
         -   Or any other value useful for the application and not covered above.
     -   Optional
 
+-   `totalSpotNumber` : The total number of spots offered by this parking site.
+    This number can be difficult to be obtained for those parking locations on
+    which spots are not clearly marked by lines.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: Any positive integer number or 0.
+        -   Normative references: DATEX 2 version 2.3 attribute
+            _parkingNumberOfSpaces_ of the _ParkingRecord_ class.
+    -   Optional
+
+-   `availableSpotNumber` : The number of spots available (_including_ all
+    vehicle types or reserved spaces, such as those for disabled people, long
+    term parkers and so on). This might be harder to estimate at those parking
+    locations on which spots borders are not clearly marked by lines.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: A positive integer number, including 0. It must lower or
+        equal than `totalSpotNumber`.
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
+    -   Optional
+
+-   `measuresPeriod` : The measures period related to availableSpotNumber and
+    priceRatePerMinute.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Optional
+
+-   `measuresPeriodUnit` : The measures period unit related to
+    availableSpotNumber and priceRatePerMinute.
+
+    -   Attribute type: [unitText](http://schema.org/unitText)
+    -   Optional
+
+-   `extraSpotNumber` : The number of extra spots _available_, i.e. free. This
+    value must aggregate free spots from all groups mentioned below: A/ Those
+    reserved for special purposes and usually require a permit. Permit details
+    will be found at parking group level (entity of type `ParkingGroup`). B/
+    Those reserved for other vehicle types different than the principal allowed
+    vehicle type. C/ Any other group of parking spots not subject to the general
+    condition rules conveyed by this entity.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Allowed values: A positive integer number, including 0.
+    -   Metadata:
+        -   `timestamp` : Timestamp of the last attribute update
+        -   Type: [DateTime](https://schema.org/DateTime)
+    -   Optional
+
+-   `occupancyDetectionType` : Occupancy detection method(s).
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: The following from DATEX II version 2.3 _
+        OccupancyDetectionTypeEnum_:
+        -   (`none`, `balancing`, `singleSpaceDetection`, `modelBased`,
+            `manual`)
+        -   Or any other application-specific
+    -   Mandatory
+
 -   `parkingMode` : Parking mode(s).
 
     -   Attribute type: List of [Text](http://schema.org/Text)
     -   Allowed values: Those defined by the DATEX II version 2.3
         _ParkingModeEnum_ enumeration:
         -   (`perpendicularParking`, `parallelParking`, `echelonParking`)
+    -   Optional
+
+-   `averageSpotWidth` : The average width of parking spots.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
+
+-   `averageSpotLength` : The average length of parking spots.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
+
+-   `maximumAllowedHeight` : Maximum allowed height for vehicles. If there are
+    multiple zones, it will be the minimum height of all the zones.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
+
+-   `maximumAllowedWidth` : Maximum allowed width for vehicles. If there are
+    multiple zones, it will be the minimum width of all the zones.
+
+    -   Attribute type: [Number](http://schema.org/Number)
+    -   Default unit: Meters
+    -   Optional
+
+-   `layout` : Parking layout. Gives more details to the `category` attribute.
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed values: As per the _ParkingLayoutEnum_ of DATEX II version 2.3:
+        -   one Of (`automatedParkingGarage`, `surface`, `multiStorey`,
+            `singleLevel`, `multiLevel`, `openSpace`, `covered`, `nested`,
+            `field`, `rooftop`, `sheds`, `carports`, `garageBoxes`, `other`).
+            See also
+            [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking).
+        -   Or any other value useful for the application and not covered above.
     -   Optional
 
 -   `facilities` : Facilities provided by this parking site.
@@ -243,57 +347,6 @@ The data model is defined as shown below:
     -   Allowed values: An integer number.
     -   Optional
 
--   `maximumParkingDuration` : Maximum allowed stay at site, on a general basis,
-    encoded as a ISO8601 duration. A `null` or empty value indicates an
-    indefinite duration.
-
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Optional
-
--   `totalSpotNumber` : The total number of spots offered by this parking site.
-    This number can be difficult to be obtained for those parking locations on
-    which spots are not clearly marked by lines.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: Any positive integer number or 0.
-        -   Normative references: DATEX 2 version 2.3 attribute
-            _parkingNumberOfSpaces_ of the _ParkingRecord_ class.
-    -   Optional
-
--   `availableSpotNumber` : The number of spots available (_including_ all
-    vehicle types or reserved spaces, such as those for disabled people, long
-    term parkers and so on). This might be harder to estimate at those parking
-    locations on which spots borders are not clearly marked by lines.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: A positive integer number, including 0. It must lower or
-        equal than `totalSpotNumber`.
-    -   Metadata:
-        -   `timestamp` : Timestamp of the last attribute update
-        -   Type: [DateTime](https://schema.org/DateTime)
-    -   Optional
-
--   `extraSpotNumber` : The number of extra spots _available_, i.e. free. This
-    value must aggregate free spots from all groups mentioned below: A/ Those
-    reserved for special purposes and usually require a permit. Permit details
-    will be found at parking group level (entity of type `ParkingGroup`). B/
-    Those reserved for other vehicle types different than the principal allowed
-    vehicle type. C/ Any other group of parking spots not subject to the general
-    condition rules conveyed by this entity.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Allowed values: A positive integer number, including 0.
-    -   Metadata:
-        -   `timestamp` : Timestamp of the last attribute update
-        -   Type: [DateTime](https://schema.org/DateTime)
-    -   Optional
-
--   `openingHours` : Opening hours of the parking site.
-
-    -   Normative references:
-        [http://schema.org/openingHours](http://schema.org/openingHours)
-    -   Optional
-
 -   `firstAvailableFloor` : Number of the floor closest to the ground which
     currently has available parking spots.
 
@@ -319,21 +372,6 @@ The data model is defined as shown below:
         `other`)
     -   Optional
 
--   `status` : Status of the parking site.
-
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Metadata:
-        -   `timestamp` : Timestamp of the last attribute update
-        -   Type: [DateTime](https://schema.org/DateTime)
-    -   Allowed values: The following defined by the following enumerations
-        defined by DATEX II version 2.3 :
-        -   _ParkingSiteStatusEnum_
-        -   _OpeningStatusEnum_
-        -   (`open`, `closed`, `closedAbnormal`,`openingTimesInForce`, `full`,
-            `fullAtEntrance`, `spacesAvailable`, `almostFull`)
-        -   Or any other application-specific
-    -   Optional
-
 -   `reservationType` : Conditions for reservation.
 
     -   Attribute type: [Text](http://schema.org/Text)
@@ -353,48 +391,10 @@ The data model is defined as shown below:
         [https://schema.org/provider](https://schema.org/provider)
     -   Optional
 
--   `measuresPeriod` : The measures period related to availableSpotNumber and
-    priceRatePerMinute.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Optional
-
--   `measuresPeriodUnit` : The measures period unit related to
-    availableSpotNumber and priceRatePerMinute.
-
-    -   Attribute type: [unitText](http://schema.org/unitText)
-    -   Optional
-
 -   `contactPoint` : Parking site contact point.
 
     -   Normative references:
         [https://schema.org/contactPoint](https://schema.org/contactPoint)
-    -   Optional
-
--   `averageSpotWidth` : The average width of parking spots.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Default unit: Meters
-    -   Optional
-
--   `averageSpotLength` : The average length of parking spots.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Default unit: Meters
-    -   Optional
-
--   `maximumAllowedHeight` : Maximum allowed height for vehicles. If there are
-    multiple zones, it will be the minimum height of all the zones.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Default unit: Meters
-    -   Optional
-
--   `maximumAllowedWidth` : Maximum allowed width for vehicles. If there are
-    multiple zones, it will be the minimum width of all the zones.
-
-    -   Attribute type: [Number](http://schema.org/Number)
-    -   Default unit: Meters
     -   Optional
 
 -   `refParkingAccess` : Parking site's access point(s).
@@ -403,18 +403,18 @@ The data model is defined as shown below:
         [ParkingAccess](../../ParkingAccess/doc/spec.md)
     -   Optional
 
--   `refParkingGroup` : Parking site's identified group(s). A group can
-    correspond to a zone, a complete storey, a group of spots, etc.
-
-    -   Attribute type: List of references to
-        [ParkingGroup](../../ParkingGroup/doc/spec.md)
-    -   Optional
-
 -   `refParkingSpot` : Individual parking spots belonging to this offstreet
     parking site.
 
     -   Attribute type: List of references to
         [ParkingSpot](../../ParkingSpot/doc/spec.md)
+    -   Optional
+
+-   `refParkingGroup` : Parking site's identified group(s). A group can
+    correspond to a zone, a complete storey, a group of spots, etc.
+
+    -   Attribute type: List of references to
+        [ParkingGroup](../../ParkingGroup/doc/spec.md)
     -   Optional
 
 -   `areaServed` : Area served by this parking site. Precise semantics can

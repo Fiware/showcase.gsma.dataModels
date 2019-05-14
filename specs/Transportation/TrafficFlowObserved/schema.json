@@ -73,10 +73,41 @@
             "forward",
             "backward"
           ]
-        },
+        },       
         "reversedLane": {
           "type": "boolean"
+        },
+        "vehicleType": {
+          "type": "string",
+          "enum": [
+            "agriculturalVehicle",
+            "bicycle",
+            "bus",
+            "minibus",
+            "car",
+            "caravan",
+            "tram",
+            "tanker",
+            "carWithCaravan",
+            "carWithTrailer",
+            "lorry",
+            "moped",
+            "motorcycle",
+            "motorcycleWithSideCar",
+            "motorscooter",
+            "trailer",
+            "van",
+            "constructionOrMaintenanceVehicle",
+            "trolley",
+            "binTrolley",
+            "sweepingMachine",
+            "cleaningTrolley"
+          ]
+        },
+         "vehicleSubType": {
+          "type": "string"
         }
+        
       }
     }
   ],
