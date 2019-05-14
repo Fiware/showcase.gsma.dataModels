@@ -11,6 +11,15 @@
         "type": "Relationship",
         "object": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
     },
+    "relatedSource": {
+        "type": "Property",
+        "value": [
+            {
+                "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+                "applicationEntityId": "app:greenhouse1"
+            }
+        ]
+    },
     "seeAlso": {
         "type": "Property",
         "value" :[
