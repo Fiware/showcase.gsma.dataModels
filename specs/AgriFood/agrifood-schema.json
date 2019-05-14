@@ -19,7 +19,7 @@
                                     "format": "uri"
                                 },
                                 "entityId": {
-                                    "type": "string"
+                                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
                                 }
                             }
                         }
