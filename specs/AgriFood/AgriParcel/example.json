@@ -16,6 +16,12 @@
     "area": 200,
     "description": "Spring wheat",
     "category": "arable",
+    "relatedSource": [
+        {
+            "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+            "applicationEntityId": "app:parcel1"
+        }
+    ],
     "seeAlso": [
         "https://example.org/concept/agriparcel",
         "https://datamodel.org/example/agriparcel"
