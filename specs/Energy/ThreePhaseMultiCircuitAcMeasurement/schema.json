@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Energy/ThreePhaseAcMultiCircuitMeasurement/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Energy/ThreePhaseAcMultiCircuitMeasurement/schema.json",
   "title": "FIWARE - Energy / Three Phase Multi Circuit AC Measurement",
   "description": "Electrical measurement from a device that can measure multiple circuits.",
   "type": "object",
