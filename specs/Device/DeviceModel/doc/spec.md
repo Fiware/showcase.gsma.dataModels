@@ -88,7 +88,7 @@ The data model is defined as shown below:
     -   Attribute type: List of [Text](https://schema.org/Text).
     -   Allowed values: (`ul20`, `mqtt`, `lwm2m`, `http`, `websocket`, `onem2m`,
         `sigfox`, `lora`, `nb-iot`, `ec-gsm-iot`, `lte-m`, `cat-m`, `3g`,
-        `grps`) or any other value meaningful for an application.
+        `gprs`,`coap`) or any other value meaningful for an application.
     -   Optional
 
 -   `supportedUnits` : Units of measurement supported by the device.
