@@ -7,6 +7,15 @@
     "type": "AgriParcelOperation",
     "createdAt": "2017-01-01T01:20:00Z",
     "modifiedAt": "2017-05-04T12:30:00Z",
+    "relatedSource": {
+        "type": "Property",
+        "value": [
+            {
+                "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+                "applicationEntityId": "app:parcelop1"
+            }
+        ]
+    },
     "seeAlso": {
         "type": "Property",
         "value" :[
