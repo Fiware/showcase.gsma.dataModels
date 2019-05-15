@@ -23,8 +23,8 @@
     },
     "seeAlso": {
         "value" :[
-            "https://example.org/concept/agrigeenhouse",
-            "https://datamodel.org/example/agrigeenhouse"
+            "https://example.org/concept/agrigreenhouse",
+            "https://datamodel.org/example/agrigreenhouse"
         ]
     },
     "belongsTo": {

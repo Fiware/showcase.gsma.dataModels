@@ -11,8 +11,8 @@
         }
     ],
     "seeAlso": [
-        "https://example.org/concept/agrigeenhouse",
-        "https://datamodel.org/example/agrigeenhouse"
+        "https://example.org/concept/agrigreenhouse",
+        "https://datamodel.org/example/agrigreenhouse"
     ],
     "belongsTo": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765",
     "agriParcelParent": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b",
