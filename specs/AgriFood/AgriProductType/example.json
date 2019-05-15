@@ -5,6 +5,12 @@
     "dateModified":"2017-05-04T12:30:00Z",
     "name": "Soft Fruits",
     "description": "Soft edible fruits",
+    "relatedSource": [
+        {
+            "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+            "applicationEntityId": "app:product1"
+        }
+    ],
     "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_3128",
     "root": true,
     "agriProductParent": "urn:ngsi-ld:AgriProductType:b99c940d-7156-4280-9a2b-4a9e533cd20e",
