@@ -94,5 +94,17 @@
     "waterSource": {
         "type": "Property",
         "value": "rainwater capture"
+    },
+    "workOrder": {
+        "type": "Property",
+        "value": "https://example.com/agriparcelrecords/workorder1"
+    },
+    "workRecord": {
+        "type": "Property",
+        "value": "https://example.com/agriparcelrecords/workrecord1"
+    },
+    "irrigationRecord": {
+        "type": "Property",
+        "value": "https://example.com/agriparcelrecords/irrigationrecord1"
     }
 }

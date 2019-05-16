@@ -72,5 +72,17 @@
     },
     "waterSource": {
         "value": "rainwater capture"
+    },
+    "workOrder": {
+        "type": "URL",
+        "value": "https://example.com/agriparcelrecords/workorder1"
+    },
+    "workRecord": {
+        "type": "URL",
+        "value": "https://example.com/agriparcelrecords/workrecord1"
+    },
+    "irrigationRecord": {
+        "type": "URL",
+        "value": "https://example.com/agriparcelrecords/irrigationrecord1"
     }
 }

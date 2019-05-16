@@ -26,5 +26,8 @@
     "reportedAt": "2016-08-28T10:18:16Z",
     "agriProduct": "urn:ngsi-ld:AgriProduct:a8f616b8-13fb-473a-8e61-b7a80c6c93ec",
     "quantity": 40,
-    "waterSource": "rainwater capture"
+    "waterSource": "rainwater capture",
+    "workOrder": "https://example.com/agriparcelrecords/workorder1",
+    "workRecord": "https://example.com/agriparcelrecords/workrecord1",
+    "irrigationRecord": "https://example.com/agriparcelrecords/irrigationrecord1"
 }
