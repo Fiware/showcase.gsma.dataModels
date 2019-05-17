@@ -1,6 +1,6 @@
 {
     "id": "service-request:638344",
-    "type": "Open311:ServiceRequest",
+    "type": "Open311ServiceRequest",
     "service_request_id": 638344,
     "status": "closed",
     "status_notes": "Duplicate request.",

@@ -17,7 +17,7 @@ The data model is defined as shown below:
 -   `id` : Entity's unique identifier. It might be equal to a string
     representation of `service_request_id`.
 
--   `type` : It must be `Open311:ServiceRequest`.
+-   `type` : It must be `Open311ServiceRequest`.
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
@@ -141,7 +141,7 @@ Normalized NGSI response
 ```json
 {
     "id": "service-request:638344",
-    "type": "Open311:ServiceRequest",
+    "type": "Open311ServiceRequest",
     "status": {
         "value": "closed"
     },
@@ -200,7 +200,7 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 ```json
 {
     "id": "service-request:638344",
-    "type": "Open311:ServiceRequest",
+    "type": "Open311ServiceRequest",
     "service_request_id": 638344,
     "status": "closed",
     "status_notes": "Duplicate request.",

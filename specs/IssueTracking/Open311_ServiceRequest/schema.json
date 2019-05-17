@@ -16,7 +16,7 @@
         "type": {
           "type": "string",
           "enum": [
-            "Open311:ServiceRequest"
+            "Open311ServiceRequest"
           ],
           "description": "NGSI Entity type"
         }
