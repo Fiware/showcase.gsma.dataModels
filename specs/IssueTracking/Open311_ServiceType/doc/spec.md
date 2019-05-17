@@ -14,7 +14,7 @@ The data model is defined as shown below:
 
 -   `id` : Entity's unique identifier.
 
--   `type` : It must be `Open311:ServiceType`.
+-   `type` : It must be `Open311ServiceType`.
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
@@ -97,7 +97,7 @@ Normalized NGSI response
 ```json
 {
     "id": "o311:servicetype-guadalajara-sidewalks",
-    "type": "Open311:ServiceType",
+    "type": "Open311ServiceType",
     "group": {
         "value": "street"
     },
@@ -156,7 +156,7 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 ```json
 {
     "id": "o311:servicetype-guadalajara-sidewalks",
-    "type": "Open311:ServiceType",
+    "type": "Open311ServiceType",
     "dateCreated": "2007-01-01T12:00:00Z",
     "jurisdiction_id": "www.smartguadalajara.com",
     "open311:type": "realtime",

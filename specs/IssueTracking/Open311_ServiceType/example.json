@@ -1,6 +1,6 @@
 {
     "id": "o311:servicetype-guadalajara-sidewalks",
-    "type": "Open311:ServiceType",
+    "type": "Open311ServiceType",
     "dateCreated": "2007-01-01T12:00:00Z",
     "jurisdiction_id": "www.smartguadalajara.com",
     "open311:type": "realtime",
