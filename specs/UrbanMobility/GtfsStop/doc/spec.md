@@ -97,7 +97,7 @@ The data model is defined as shown below:
 -   `operatedBy` : Agency that operates this stop.
     -   Attribute type: Relationship. It shall point to an Entity of Type
         [GtfsAgency](../../GtfsAgency/doc/spec.md)
-    -   Mandatory
+    -   Optional
 
 ## Examples
 

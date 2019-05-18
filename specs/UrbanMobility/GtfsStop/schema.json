@@ -28,7 +28,6 @@
     "id",
     "type",
     "name",
-    "location",
-    "operatedBy"
+    "location"
   ]
 }
