@@ -82,7 +82,7 @@ section.
 
     which contains a reference to an entity of type `StreetlightModel`. This
     option has been extensively used by data models initially intended to be
-    used with NGSIv2 . + B/ Name the attribute using a verb (plus optionally an
+    used with NGSI v2 . + B/ Name the attribute using a verb (plus optionally an
     object) such as `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the
     one advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities,
     and NGSI-LD URNs already convey the type of the target entity, for instance
@@ -105,7 +105,7 @@ be considered as the recommended one and A option is to some extent
     date.
 
 -   `dateCreated` and `dateModified` are special entity attributes provided
-    off-the-shelf by NGSIv2 implementations. Be careful because they can be
+    off-the-shelf by NGSI v2 implementations. Be careful because they can be
     different than the actual creation or update date of the real world entity
     represented by its corresponding digital entity.
 
@@ -122,7 +122,7 @@ be considered as the recommended one and A option is to some extent
     timestamp of a dynamic attribute. Please note that this is the actual date
     at which the measured value was obtained (from a sensor, by visual
     observation, etc.), and that date might be different than the date (metadata
-    attribute named `dateModified` as per NGSIv2) at which the attribute of the
+    attribute named `dateModified` as per NGSI v2) at which the attribute of the
     digital entity was updated, as typically there might be delay, specially on
     IoT networks which deliver data only at specific timeslots.
 

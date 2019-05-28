@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/PointOfInterest/Museum/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/PointOfInterest/Museum/schema.json",
   "title": "FIWARE - Museum schema",
   "description": "A museum",
   "type": "object",

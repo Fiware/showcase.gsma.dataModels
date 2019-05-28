@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/Garden/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/Garden/schema.json",
   "title": "FIWARE - Parks and Gardens / Garden",
   "description": "A garden is a distinguishable planned space, usually outdoors, set aside for the display, cultivation, and enjoyment of plants and other forms of nature.",
   "type": "object",
@@ -35,10 +35,8 @@
           }
         },
         "style": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
+          "type": "string",
+          "enum": [
               "english",
               "french",
               "chinese",
@@ -47,8 +45,7 @@
               "rosarium",
               "herb_garden",
               "kitchen"
-            ]
-          }
+          ]
         },
         "openingHours": {
           "type": "string"
@@ -65,7 +62,10 @@
           "format": "date-time"
         },
         "refRecord": {
-          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          "type": "array",
+          "items": {
+             "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          }
         }
       }
     }

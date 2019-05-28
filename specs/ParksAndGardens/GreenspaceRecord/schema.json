@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/GreenspaceRecord/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/GreenspaceRecord/schema.json",
   "title": "FIWARE - Parks and Gardens / Greenspace Record",
   "description": "This entity contains a harmonised description of the conditions recorded on a particular area or point inside a greenspace (flower bed, garden, etc.). This entity type has been inspired by the AgriParcelRecord entity type defined by the GSMA Harmonized Data Models.",
   "type": "object",

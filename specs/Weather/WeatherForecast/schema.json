@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Weather/WeatherForecast/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Weather/WeatherForecast/schema.json",
   "title": "GSMA / FIWARE - Weather Forecast schema",
   "description": "A harmonised description of a Weather Forecast",
   "type": "object",

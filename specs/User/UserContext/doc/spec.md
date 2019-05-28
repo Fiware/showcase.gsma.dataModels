@@ -58,16 +58,16 @@ A JSON Schema corresponding to this data model can be found
     -   Mandatory if `location` is not present.
 
 -   `refUserDevice` : An object representing the current device used by the
-    User. See [Device](../../Device/Device/doc/spec.md) definition.
+    User. See [Device](../../../Device/Device/doc/spec.md) definition.
 
     -   Attribute type: A references to a
-        [Device](../../Device/Device/doc/spec.md) entity.
+        [Device](../../../Device/Device/doc/spec.md) entity.
     -   Optional
 
 -   `refActivity` : An object representing the current activity performed by the
-    User. See [UserActivity](../UserActivity/doc/spec.md) definition.
+    User. See [UserActivity](../../Activity/doc/spec.md) definition.
     -   Attribute type: A references to a
-        [UserActivity](../UserActivity/doc/spec.md) entity.
+        [UserActivity](../../Activity/doc/spec.md) entity.
     -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
@@ -86,25 +86,22 @@ Normalized NGSI response
     "id": "UserContext1",
     "type": "UserContext",
     "refActivity": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "UserActivity1"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -4.754444444, 
-                41.640833333
-            ]
+            "type": "Point",
+            "coordinates": [-4.754444444, 41.640833333]
         }
-    }, 
+    },
     "refUser": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "User1"
-    }, 
+    },
     "refUserDevice": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "Device1"
     }
 }
@@ -116,18 +113,15 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
 {
-  "id": "UserContext1",
-  "type": "UserContext",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -4.754444444,
-      41.640833333
-    ]
-  },
-  "refActivity": "UserActivity1",
-  "refUserDevice": "Device1",
-  "refUser": "User1"
+    "id": "UserContext1",
+    "type": "UserContext",
+    "location": {
+        "type": "Point",
+        "coordinates": [-4.754444444, 41.640833333]
+    },
+    "refActivity": "UserActivity1",
+    "refUserDevice": "Device1",
+    "refUser": "User1"
 }
 ```
 

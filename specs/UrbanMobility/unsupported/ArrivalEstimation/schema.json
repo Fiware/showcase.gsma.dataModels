@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "UrbanMobility/ArrivalEstimation/schema.json",
+  "title": "SC Standalone Arrival Estimation Schema",
+  "description": "Standalone arrival estimation. These entities can be used to create GTFS-RT feeds or to be used in a standalone way",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ArrivalEstimation"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "refGtfsTransitFeedFile": {
+          "type": "string",
+          "format": "uri"
+        },
+        "routeId": {
+          "type": "string"
+        },
+        "stopId": {
+          "type": "string"
+        },
+        "lastupdatedAt": {
+          "type": "string", 
+          "format": "date-time"
+        },
+        "arrivalEstimationUpdate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tripId": {
+                "type": "string"
+              },
+              "arrivalDelay": {
+                "type": "integer"
+              },
+              "arrivalTime": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "vehicleId": {
+                "type": "string"
+              },
+              "vehicleLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "tripId"
+            ],
+            "anyOf": [
+              { "required": ["arrivalDelay"]}, 
+              { "required": ["arrivalTime"]}
+            ]
+          }
+        }
+      }  
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "routeId",
+    "stopId",
+    "arrivalEstimationUpdate"
+  ]
+}

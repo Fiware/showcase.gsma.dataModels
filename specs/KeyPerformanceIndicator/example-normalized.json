@@ -54,5 +54,8 @@
     }, 
     "name": {
         "value": "Incidencias-Contenedores-Mensual"
+    },
+    "process": {
+        "value": "Garbage Collection"
     }
 }

@@ -120,27 +120,28 @@ Normalized NGSI response
     "id": "Santander-Garden-Piquio-Record-1",
     "type": "GreenspaceRecord",
     "refGreenspace": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "Santander-Garden-Piquio"
-    }, 
+    },
     "temperature": {
         "value": 17
-    }, 
+    },
     "soilTemperature": {
         "value": 13
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.7836974, 
-                43.4741091
-            ]
+            "type": "Point",
+            "coordinates": [-3.7836974, 43.4741091]
         }
-    }, 
+    },
     "relativeHumidity": {
         "value": 0.87
+    },
+    "dateObserved": {
+        "type": "DateTime",
+        "value": "2019-01-15T12:00:00Z"
     }
 }
 ```
@@ -160,7 +161,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
     "temperature": 17,
     "relativeHumidity": 0.87,
     "soilTemperature": 13,
-    "refGreenspace": "Santander-Garden-Piquio"
+    "refGreenspace": "Santander-Garden-Piquio",
+    "dateObserved": "2019-01-15T12:00:00Z"
 }
 ```
 

@@ -14,7 +14,7 @@ The data model is defined as shown below:
 
 -   `id` : Entity's unique identifier.
 
--   `type` : It must be `Open311:ServiceType`.
+-   `type` : It must be `Open311ServiceType`.
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
@@ -97,51 +97,51 @@ Normalized NGSI response
 ```json
 {
     "id": "o311:servicetype-guadalajara-sidewalks",
-    "type": "Open311:ServiceType",
+    "type": "Open311ServiceType",
     "group": {
         "value": "street"
-    }, 
+    },
     "description": {
         "value": "When a sidewalk is broken or dirty allows citizens to request a fix"
-    }, 
+    },
     "service_code": {
         "value": 234
-    }, 
+    },
     "service_name": {
         "value": "Aceras"
-    }, 
+    },
     "open311:type": {
         "value": "realtime"
-    }, 
+    },
     "jurisdiction_id": {
         "value": "www.smartguadalajara.com"
-    }, 
+    },
     "dateCreated": {
-        "type": "DateTime", 
-        "value": "2007-01-01"
-    }, 
+        "type": "DateTime",
+        "value": "2007-01-01T12:00:00Z"
+    },
     "keywords": {
         "value": "street,sidewalk, cleaning, repair"
-    }, 
+    },
     "attributes": {
         "value": [
             {
-                "code": "ISSUE_TYPE", 
-                "description": "What is the identified problem at the sidewalk?", 
-                "datatype": "singlevaluelist", 
-                "required": true, 
+                "code": "ISSUE_TYPE",
+                "description": "What is the identified problem at the sidewalk?",
+                "datatype": "singlevaluelist",
+                "required": true,
                 "values": [
                     {
-                        "name": "Bump", 
+                        "name": "Bump",
                         "key": 123
-                    }, 
+                    },
                     {
-                        "name": "Dirty", 
+                        "name": "Dirty",
                         "key": 124
                     }
-                ], 
-                "variable": true, 
-                "order": 1, 
+                ],
+                "variable": true,
+                "order": 1,
                 "datatype_description": null
             }
         ]
@@ -154,39 +154,39 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "o311:servicetype-guadalajara-sidewalks",
-      "type": "Open311:ServiceType",
-      "dateCreated": "2007-01-01",
-      "jurisdiction_id": "www.smartguadalajara.com",
-      "open311:type": "realtime",
-      "service_code": 234,
-      "service_name": "Aceras",
-      "description": "When a sidewalk is broken or dirty allows citizens to request a fix",
-      "keywords": "street,sidewalk, cleaning, repair",
-      "group": "street",
-      "attributes": [
+{
+    "id": "o311:servicetype-guadalajara-sidewalks",
+    "type": "Open311ServiceType",
+    "dateCreated": "2007-01-01T12:00:00Z",
+    "jurisdiction_id": "www.smartguadalajara.com",
+    "open311:type": "realtime",
+    "service_code": 234,
+    "service_name": "Aceras",
+    "description": "When a sidewalk is broken or dirty allows citizens to request a fix",
+    "keywords": "street,sidewalk, cleaning, repair",
+    "group": "street",
+    "attributes": [
         {
-          "variable": true,
-          "code": "ISSUE_TYPE",
-          "datatype": "singlevaluelist",
-          "required": true,
-          "datatype_description": null,
-          "order": 1,
-          "description": "What is the identified problem at the sidewalk?",
-          "values": [
-            {
-              "key": 123,
-              "name": "Bump"
-            },
-            {
-              "key": 124,
-              "name":"Dirty"
-            }
-          ]
+            "variable": true,
+            "code": "ISSUE_TYPE",
+            "datatype": "singlevaluelist",
+            "required": true,
+            "datatype_description": null,
+            "order": 1,
+            "description": "What is the identified problem at the sidewalk?",
+            "values": [
+                {
+                    "key": 123,
+                    "name": "Bump"
+                },
+                {
+                    "key": 124,
+                    "name": "Dirty"
+                }
+            ]
         }
-      ]
-    }
+    ]
+}
 ```
 
 ## Test it with a real service

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsAccessPoint/schema.json",
+  "title": "NGSI GTFS Schema",
+  "description": "GTFS Access Point",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/specs/UrbanMobility/gtfs-schema.json#/definitions/GTFS-Stop-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "GtfsAccessPoint"
+          ],
+          "description": "NGSI Entity type"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "location"
+  ]
+}

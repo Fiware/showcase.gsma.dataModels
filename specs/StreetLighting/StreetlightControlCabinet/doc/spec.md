@@ -186,7 +186,7 @@ The data model is defined as shown below:
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
-            -   Type: [DateTime](http://schema.org/DateTime
+            -   Type: [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateMeteringStarted` : The starting date for metering energy consumed.
@@ -345,69 +345,61 @@ Normalized NGSI response
     "type": "StreetlightControlCabinet",
     "modelName": {
         "value": "Simatic S7 1200"
-    }, 
+    },
     "lastMeterReading": {
         "value": 161237
-    }, 
+    },
     "dateMeteringStarted": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2013-07-07T15:05:59.408Z"
-    }, 
+    },
     "dateLastProgramming": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-07-08T16:04:30.201Z"
-    }, 
+    },
     "refStreetlightGroup": {
-        "type": "Relationship", 
-        "value": [
-            "streetlightgroup:BG678", 
-            "streetlightgroup:789"
-        ]
-    }, 
+        "type": "Relationship",
+        "value": ["streetlightgroup:BG678", "streetlightgroup:789"]
+    },
     "compliantWith": {
-        "value": [
-            "IP54"
-        ]
-    }, 
+        "value": ["IP54"]
+    },
     "intensity": {
         "value": {
-            "S": 14.4, 
-            "R": 20.1, 
+            "S": 14.4,
+            "R": 20.1,
             "T": 22
         }
-    }, 
+    },
     "workingMode": {
         "value": "automatic"
-    }, 
+    },
     "energyConsumed": {
         "value": 162456
-    }, 
+    },
     "meterReadingPeriod": {
         "value": 60
-    }, 
+    },
     "cupboardMadeOf": {
         "value": "plastic"
-    }, 
+    },
     "brandName": {
         "value": "Siemens"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.164485591715449, 
-                40.62785133667262
-            ]
+            "type": "Point",
+            "coordinates": [-3.164485591715449, 40.62785133667262]
         }
-    }, 
+    },
     "reactivePower": {
         "value": {
-            "S": 43.5, 
-            "R": 45, 
+            "S": 43.5,
+            "R": 45,
             "T": 42
         }
-    }, 
+    },
     "maximumPowerAvailable": {
         "value": 10
     }
@@ -419,36 +411,36 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "streetlightcontrolcabinet:A45HGJK",
-      "type": "StreetlightControlCabinet",
-      "location": {
+{
+    "id": "streetlightcontrolcabinet:A45HGJK",
+    "type": "StreetlightControlCabinet",
+    "location": {
         "type": "Point",
-        "coordinates": [  -3.164485591715449, 40.62785133667262 ]
-      },
-      "cupboardMadeOf": "plastic",
-      "brandName": "Siemens",
-      "modelName": "Simatic S7 1200",
-      "refStreetlightGroup": ["streetlightgroup:BG678", "streetlightgroup:789"],
-      "compliantWith": ["IP54"],
-      "dateLastProgramming": "2016-07-08T16:04:30.201Z",
-      "maximumPowerAvailable": 10,
-      "energyConsumed": 162456,
-      "dateMeteringStarted": "2013-07-07T15:05:59.408Z",
-      "lastMeterReading": 161237,
-      "meterReadingPeriod": 60,
-      "intensity": {
-         "R": 20.1,
-         "S": 14.4,
-         "T": 22
-      },
-      "reactivePower": {
+        "coordinates": [-3.164485591715449, 40.62785133667262]
+    },
+    "cupboardMadeOf": "plastic",
+    "brandName": "Siemens",
+    "modelName": "Simatic S7 1200",
+    "refStreetlightGroup": ["streetlightgroup:BG678", "streetlightgroup:789"],
+    "compliantWith": ["IP54"],
+    "dateLastProgramming": "2016-07-08T16:04:30.201Z",
+    "maximumPowerAvailable": 10,
+    "energyConsumed": 162456,
+    "dateMeteringStarted": "2013-07-07T15:05:59.408Z",
+    "lastMeterReading": 161237,
+    "meterReadingPeriod": 60,
+    "intensity": {
+        "R": 20.1,
+        "S": 14.4,
+        "T": 22
+    },
+    "reactivePower": {
         "R": 45,
         "S": 43.5,
         "T": 42
-      },
-      "workingMode": "automatic"
-    }
+    },
+    "workingMode": "automatic"
+}
 ```
 
 ## Test it with a real service

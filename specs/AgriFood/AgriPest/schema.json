@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriPest/schema.json",
+    "title": "FIWARE - Agri Pest",
+    "description": "This entity contains a harmonised description of an agricultural pest. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+    "type": "object",
+    "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
+	{
+	    "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriPest"],
+                    "description": "NGSI Entity Type"
+                },
+                "agroVocConcept": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "agriProduct": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                        }]
+                    }
+                }
+            }
+        ],
+    "required": ["id", "type", "name"]
+}

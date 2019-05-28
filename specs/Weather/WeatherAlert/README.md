@@ -1,7 +1,7 @@
 # Weather Alert
 
 This folder contains all the software artefacts to offer weather alert data in
-NGSIv2. The source of this data is the global
+NGSI v2. The source of this data is the global
 [European Weather Alarm Service](http://meteoalarm.eu).
 
 -   `meteoalarm_harvest.py`. A harvester for weather alarms throughout Europe.
@@ -15,7 +15,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```bash
 curl http://<orion_host:port>/v2/entities?type=Alert&q=category==weather&address.addressCountry==ES
 ```
 

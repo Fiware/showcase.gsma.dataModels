@@ -172,32 +172,25 @@ Normalized NGSI response
     "id": "myDevice-wastecontainer-sensor-345",
     "type": "DeviceModel",
     "category": {
-        "value": [
-            "sensor"
-        ]
-    }, 
+        "value": ["sensor"]
+    },
     "function": {
-        "value": [
-            "sensing"
-        ]
-    }, 
+        "value": ["sensing"]
+    },
     "modelName": {
         "value": "S4Container 345"
-    }, 
+    },
     "name": {
         "value": "myDevice Sensor for Containers 345"
-    }, 
+    },
     "brandName": {
         "value": "myDevice"
-    }, 
+    },
     "manufacturerName": {
         "value": "myDevice Inc."
-    }, 
+    },
     "controlledProperty": {
-        "value": [
-            "fillingLevel", 
-            "temperature"
-        ]
+        "value": ["fillingLevel", "temperature"]
     }
 }
 ```
@@ -207,17 +200,17 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-        "id": "myDevice-wastecontainer-sensor-345",
-        "type": "DeviceModel",
-        "name": "myDevice Sensor for Containers 345",
-        "brandName": "myDevice",
-        "modelName": "S4Container 345",
-        "manufacturerName": "myDevice Inc.",
-        "category": ["sensor"],
-        "function": ["sensing"],
-        "controlledProperty": ["fillingLevel","temperature"]
-    }
+{
+    "id": "myDevice-wastecontainer-sensor-345",
+    "type": "DeviceModel",
+    "name": "myDevice Sensor for Containers 345",
+    "brandName": "myDevice",
+    "modelName": "S4Container 345",
+    "manufacturerName": "myDevice Inc.",
+    "category": ["sensor"],
+    "function": ["sensing"],
+    "controlledProperty": ["fillingLevel", "temperature"]
+}
 ```
 
 ## Test it with a real service

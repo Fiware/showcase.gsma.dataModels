@@ -1,8 +1,8 @@
 {
   "id": "urn:ngsi-ld:ArrivalEstimation:L5C1_Stop74_1",
   "type": "ArrivalEstimation",
-  "hasStop": "urn:ngsi-ld:gtfs:Stop:tus:74",
-  "hasTrip": "urn:ngsi-ld:gtfs:Trip:tus:5C1",
+  "hasStop": "urn:ngsi-ld:GtfsStop:tus:74",
+  "hasTrip": "urn:ngsi-ld:GtfsTrip:tus:5C1",
   "remainingTime": "PT8M5S",
   "remainingDistance": 1200,
   "headSign": "Plaza Italia"

@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/KeyPerformanceIndicator/schema.json",
+  "title": "FIWARE - Key Performance Indicator",
+  "description": "A Key Performance Indicator (KPI) is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "KeyPerformanceIndicator"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "category": {
+          "type": "array",
+          "minitems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "quantitative",
+              "qualitative",
+              "leading",
+              "lagging",
+              "input",
+              "process",
+              "output",
+              "practical",
+              "directional",
+              "actionable",
+              "financial"
+            ]
+          }
+        },
+        "organization": {
+          "type": "object"
+        },
+        "process": {
+          "type": "string"
+        },
+        "product": {
+          "type": "object"
+        },
+        "provider": {
+          "type": "object"
+        },
+        "businessTarget": {
+          "type": "string"
+        },
+        "calculationFrequency": {
+          "type": "string",
+          "enum": [
+            "hourly",
+            "daily",
+            "weekly",
+            "monthly",
+            "yearly",
+            "quarterly",
+            "bimonthly",
+            "biweekly"
+          ]
+        },
+        "calculatedBy": {
+          "type": "object"
+        },
+        "calculationMethod": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "automatic",
+            "semiautomatic"
+          ]
+        },
+        "calculationFormula": {
+          "type": "string"
+        },
+        "aggregatedData": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "entityType": {
+                "type": "string"
+              },
+              "attrs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "entityType",
+              "attrs"
+            ]
+          }
+        },
+        "calculationPeriod": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string",
+              "format": "date"
+            },
+            "to": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ]
+        },
+        "currentStanding": {
+          "type": "string",
+          "enum": [
+            "veryGood",
+            "good",
+            "fair",
+            "bad",
+            "veryBad"
+          ]
+        },
+        "kpiValue": {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "object",
+            "array"
+          ]
+        },
+        "effectiveSince": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateNextCalculation": {
+          "type": "string",
+          "format": "date"
+        },
+        "dateExpires": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "area": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "allOf": [
+        {
+          "required": [
+            "id",
+            "type",
+            "name",
+            "organization",
+            "kpiValue",
+            "calculationFrequency",
+            "category",
+            "calculationPeriod"
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "process"
+              ]
+            },
+            {
+              "required": [
+                "product"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

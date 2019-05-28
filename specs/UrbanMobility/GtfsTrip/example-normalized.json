@@ -1,0 +1,22 @@
+{
+    "id": "urn:ngsi-ld:GtfsTrip:Spain:Malaga:1",
+    "type": "GtfsTrip", 
+    "direction": {
+        "value": 0
+    }, 
+    "headSign": {
+        "value": "San Andr\u00e9s"
+    }, 
+    "hasRoute": {
+        "type": "Relationship", 
+        "value": "urn:ngsi-ld:GtfsRoute:Spain:Malaga:1"
+    }, 
+    "hasService": {
+        "type": "Relationship", 
+        "value": "urn:ngsi-ld:GtfsService:Malaga_LAB"
+    },
+    "hasShape": {
+        "type": "Relationship",
+        "value": "urn:ngsi-ld:GtfsShape:Shape01"
+    }
+}

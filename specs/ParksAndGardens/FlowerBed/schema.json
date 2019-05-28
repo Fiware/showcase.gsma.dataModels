@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/FlowerBed/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/ParksAndGardens/FlowerBed/schema.json",
   "title": "FIWARE - Parks and Gardens / Flower Bed",
   "description": "A garden plot in which flowers (or other plants) are grown. Usually you will find flower beds in parks, gardens, pedestrian areas or at big highway interchanges.",
   "type": "object",

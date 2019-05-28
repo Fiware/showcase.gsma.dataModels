@@ -1,0 +1,9 @@
+{
+  "id": "urn:ngsi-ld:GtfsAgency:Malaga_EMT",
+  "type": "GtfsAgency",
+  "name": "Empresa Malagueña de Transportes",
+  "page": "http://www.emtmalaga.es/",
+  "timezone": "Europe/Madrid",
+  "language": "ES",
+  "source": "http://datosabiertos.malaga.eu/dataset/lineas-y-horarios-bus-google-transit/resource/24e86888-b91e-45bf-a48c-09855832fd52"
+}

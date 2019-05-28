@@ -17,7 +17,7 @@ The data model is defined as shown below:
 -   `id` : Entity's unique identifier. It might be equal to a string
     representation of `service_request_id`.
 
--   `type` : It must be `Open311:ServiceRequest`.
+-   `type` : It must be `Open311ServiceRequest`.
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
@@ -141,57 +141,52 @@ Normalized NGSI response
 ```json
 {
     "id": "service-request:638344",
-    "type": "Open311:ServiceRequest",
+    "type": "Open311ServiceRequest",
     "status": {
         "value": "closed"
-    }, 
+    },
     "description": {
         "value": "Acera en mal estado con bordillo partido en dos"
-    }, 
+    },
     "service_code": {
         "value": 234
-    }, 
+    },
     "status_notes": {
         "value": "Duplicate request."
-    }, 
+    },
     "service_name": {
         "value": "Aceras"
-    }, 
+    },
     "service_request_id": {
         "value": 638344
-    }, 
+    },
     "updated_datetime": {
         "value": "2010-04-14T06:37:38-08:00"
-    }, 
+    },
     "address_string": {
         "value": "Calle San Juan Bautista, 2"
-    }, 
+    },
     "requested_datetime": {
         "value": "2010-04-14T06:37:38-08:00"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.164485591715449, 
-                40.62785133667262
-            ]
+            "type": "Point",
+            "coordinates": [-3.164485591715449, 40.62785133667262]
         }
-    }, 
+    },
     "attributes": {
         "value": {
-            "ISSUE_TYPE": [
-                "Bordillo"
-            ]
+            "ISSUE_TYPE": ["Bordillo"]
         }
-    }, 
+    },
     "expected_datetime": {
         "value": "2010-04-15T06:37:38-08:00"
-    }, 
+    },
     "agency_responsible": {
         "value": "Ayuntamiento de Ciudad"
-    }, 
+    },
     "media_url": {
         "value": "http://exaple.org/media/638344.jpg"
     }
@@ -203,29 +198,29 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "service-request:638344",
-      "type": "Open311:ServiceRequest",
-      "service_request_id": 638344,
-      "status": "closed",
-      "status_notes": "Duplicate request.",
-      "service_name": "Aceras",
-      "service_code": 234,
-      "description": "Acera en mal estado con bordillo partido en dos",
-      "agency_responsible": "Ayuntamiento de Ciudad",
-      "requested_datetime": "2010-04-14T06:37:38-08:00",
-      "updated_datetime": "2010-04-14T06:37:38-08:00",
-      "expected_datetime": "2010-04-15T06:37:38-08:00",
-      "address_string": "Calle San Juan Bautista, 2",
-      "attributes": {
-         "ISSUE_TYPE": ["Bordillo"]
-      },
-      "location": {
+{
+    "id": "service-request:638344",
+    "type": "Open311ServiceRequest",
+    "service_request_id": 638344,
+    "status": "closed",
+    "status_notes": "Duplicate request.",
+    "service_name": "Aceras",
+    "service_code": 234,
+    "description": "Acera en mal estado con bordillo partido en dos",
+    "agency_responsible": "Ayuntamiento de Ciudad",
+    "requested_datetime": "2010-04-14T06:37:38-08:00",
+    "updated_datetime": "2010-04-14T06:37:38-08:00",
+    "expected_datetime": "2010-04-15T06:37:38-08:00",
+    "address_string": "Calle San Juan Bautista, 2",
+    "attributes": {
+        "ISSUE_TYPE": ["Bordillo"]
+    },
+    "location": {
         "type": "Point",
-        "coordinates": [  -3.164485591715449, 40.62785133667262 ]
-      },
-      "media_url":"http://exaple.org/media/638344.jpg"
-    }
+        "coordinates": [-3.164485591715449, 40.62785133667262]
+    },
+    "media_url": "http://exaple.org/media/638344.jpg"
+}
 ```
 
 ## Test it with real services

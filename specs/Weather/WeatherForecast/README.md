@@ -6,9 +6,9 @@ The Weather forecast in Spain is provided by
 [Harvesters](./harvesters) transform this data to NGSI v2.
 
 This folder contains the following scripts:
--   `harvest/spain/harvester.py` - Performs data harvesting using
+-   `harvest/spain/run.py` - Performs data harvesting using
     AEMET's data site as the origin and Orion Context Broker as the destination.
--   `harvest/portugal/harvester.py` - Performs data harvesting using
+-   `harvest/portugal/hrun.py` - Performs data harvesting using
     IPMA's data site as the origin and Orion Context Broker as the destination.
 
 Please check data licenses at the original data sources before using this data
@@ -21,41 +21,44 @@ You can read about public instance offering information about weather stations [
 ## Examples of use
 
 ```bash
-curl -H 'fiware-service:weather' -H 'fiware-servicepath:/Spain' "https://orion.lab.fiware.org/v2/entities?type=WeatherForecast&q=address.addressLocality:Madrid&options=keyValues&limit=1"
+curl -X GET \
+  'http://streams.lab.fiware.org:1026/v2/entities?type=WeatherForecast&options=keyValues&q=address.addressLocality:Barcelona&limit=1' \
+  -H 'fiware-service: weather' \
+  -H 'fiware-servicepath: /Spain' | python -m json.tool
 ```
 
 ```json
 [
     {
-        "id": "Spain-WeatherForecast-28079_tomorrow_18:00:00+0100_00:00:00+0100",
-        "type": "WeatherForecast",
         "address": {
             "addressCountry": "ES",
-            "addressLocality": "Madrid",
-            "postalCode": "28079"
+            "addressLocality": "Barcelona",
+            "postalCode": "08019"
         },
         "dataProvider": "FIWARE",
-        "dateIssued": "2019-02-21T10:44:01.00Z",
-        "dateRetrieved": "2019-02-21T11:31:32.00Z",
+        "dateIssued": "2019-05-28T00:00:00.00Z",
+        "dateRetrieved": "2019-05-28T20:35:34.00Z",
         "dayMaximum": {
-            "feelsLikeTemperature": 19,
-            "temperature": 19,
-            "relativeHumidity": 0.55
+            "feelsLikeTemperature": 20,
+            "relativeHumidity": 0.9,
+            "temperature": 20
         },
         "dayMinimum": {
-            "feelsLikeTemperature": 0,
-            "temperature": 3,
-            "relativeHumidity": 0.2
+            "feelsLikeTemperature": 14,
+            "relativeHumidity": 0.6,
+            "temperature": 14
         },
-        "feelsLikeTemperature": 8,
+        "feelsLikeTemperature": 15,
+        "id": "Spain-WeatherForecast-08019_tomorrow_18:00:00_00:00:00",
         "precipitationProbability": 0,
-        "relativeHumidity": 0.35,
+        "relativeHumidity": 0.85,
         "source": "http://www.aemet.es",
-        "temperature": 8,
-        "validFrom": "2019-02-22T17:00:00.00Z",
-        "validTo": "2019-02-22T23:00:00.00Z",
-        "validity": "2019-02-22T18:00:00+01:00/2019-02-23T00:00:00+01:00",
-        "weatherType": "sunnyDay",
+        "temperature": 15,
+        "type": "WeatherForecast",
+        "validFrom": "2019-05-29T18:00:00.00Z",
+        "validTo": "2019-05-30T00:00:00.00Z",
+        "validity": "2019-05-29T18:00:00Z/2019-05-30T00:00:00Z",
+        "weatherType": "slightlyCloudy",
         "windDirection": null,
         "windSpeed": 0
     }

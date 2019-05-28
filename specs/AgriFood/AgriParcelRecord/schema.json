@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriParcelRecord/schema.json",
+    "title": "FIWARE - Agri Parcel Record",
+    "description": "This entity contains a harmonised description of the conditions recorded on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+    "type": "object",
+    "allOf": [
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriParcelRecord"],
+                    "description": "NGSI Entity Type"
+                },
+                "agriParcel": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "soilTemperature": {
+                    "type": "number"
+                },
+                "soilMoistureVwc": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "soilMoistureEC": {
+                    "type": "number"
+                },
+                "solarRadiaton": {
+                    "type": "number"
+                },
+                "relativeHumidity": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                },
+                "atmosphericPressure": {
+                    "type": "number"
+                },
+                "devices": {
+                    "type": "array",
+                    "items": [{
+                        "type": "string",
+                        "format": "uri"
+                    }]
+                },
+                "observedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        }
+    ],
+    "required": ["id", "type", "agriParcel", "location"]
+}

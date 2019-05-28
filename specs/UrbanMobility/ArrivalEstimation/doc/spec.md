@@ -42,13 +42,13 @@ The data model is defined as shown below:
 -   `hasStop` : Stop to which this estimation applies to.
 
     -   Attribute type: Relationship. It shall point to an Entity of Type
-        [gtfs:Stop](../../Stop/doc/spec.md)
+        [GtfsStop](../../GtfsStop/doc/spec.md)
     -   Mandatory
 
 -   `hasTrip` : The trip to which this estimation applies to.
 
     -   Attribute type: Relationship. It shall point to an Entity of Type
-        [gtfs:Trip](../../Trip/doc/spec.md)
+        [GtfsTrip](../../GtfsTrip/doc/spec.md)
     -   Mandatory
 
 -   `remainingTime`: It shall contain the remaining time of arrival for the trip
@@ -92,7 +92,7 @@ Normalized NGSI response
     "type": "ArrivalEstimation",
     "hasTrip": {
         "type": "Relationship",
-        "value": "urn:ngsi-ld:gtfs:Trip:tus:5C1"
+        "value": "urn:ngsi-ld:GtfsTrip:tus:5C1"
     },
     "headSign": {
         "value": "Plaza Italia"
@@ -102,7 +102,7 @@ Normalized NGSI response
     },
     "hasStop": {
         "type": "Relationship",
-        "value": "urn:ngsi-ld:gtfs:Stop:tus:74"
+        "value": "urn:ngsi-ld:GtfsStop:tus:74"
     },
     "remainingDistance": {
         "value": 1200
@@ -118,8 +118,8 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 {
     "id": "urn:ngsi-ld:ArrivalEstimation:L5C1_Stop74_1",
     "type": "ArrivalEstimation",
-    "hasStop": "urn:ngsi-ld:gtfs:Stop:tus:74",
-    "hasTrip": "urn:ngsi-ld:gtfs:Trip:tus:5C1",
+    "hasStop": "urn:ngsi-ld:GtfsStop:tus:74",
+    "hasTrip": "urn:ngsi-ld:GtfsTrip:tus:5C1",
     "remainingTime": "PT8M5S",
     "remainingDistance": 1200,
     "headSign": "Plaza Italia"

@@ -66,14 +66,21 @@ The data model is defined as shown below:
 
     -   Attribute type: [Text](https://schema.org/Text)
     -   Allowed values: Those described by
-        [http://wiki.openstreetmap.org/wiki/Key:highway](OpenStreetMap).
+        [OpenStreetMap](http://wiki.openstreetmap.org/wiki/Key:highway).
     -   Mandatory
 
 -   `refRoadSegment` : Road segments which define this road.
 
     -   Attribute type: List of references to entities of type
         [RoadSegment](../../RoadSegment/doc/spec.md).
-    -   MAndatory
+    -   Mandatory if `location` is not defined
+
+-   `location` : A GeoJSON (multi)line string which defines this road.
+
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
+    -   Attribute type: `geo:json`
+    -   Mandatory if `refRoadSegment` is not defined
 
 -   `length` : Total length of this road in kilometers.
 
@@ -103,27 +110,27 @@ Normalized NGSI response
     "id": "Spain-Road-A62",
     "type": "Road",
     "refRoadSegment": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": [
-            "Spain-RoadSegment-A62-0-355-forwards", 
+            "Spain-RoadSegment-A62-0-355-forwards",
             "Spain-RoadSegment-A62-0-355-backwards"
         ]
-    }, 
+    },
     "roadClass": {
         "value": "motorway"
-    }, 
+    },
     "description": {
         "value": "Autov\u00eda de Castilla"
-    }, 
+    },
     "responsible": {
         "value": "Ministerio de Fomento - Gobierno de Espa\u00f1a"
-    }, 
+    },
     "length": {
         "value": 355
-    }, 
+    },
     "alternateName": {
         "value": "E-80"
-    }, 
+    },
     "name": {
         "value": "A-62"
     }
@@ -135,18 +142,20 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-        "id": "Spain-Road-A62",
-        "type": "Road",
-        "name": "A-62",
-        "alternateName": "E-80",
-        "description": "Autovía de Castilla",
-        "roadClass": "motorway",
-        "length": 355,
-        "refRoadSegment": ["Spain-RoadSegment-A62-0-355-forwards",
-                           "Spain-RoadSegment-A62-0-355-backwards"],
-        "responsible": "Ministerio de Fomento - Gobierno de España"
-    }
+{
+    "id": "Spain-Road-A62",
+    "type": "Road",
+    "name": "A-62",
+    "alternateName": "E-80",
+    "description": "Autovía de Castilla",
+    "roadClass": "motorway",
+    "length": 355,
+    "refRoadSegment": [
+        "Spain-RoadSegment-A62-0-355-forwards",
+        "Spain-RoadSegment-A62-0-355-backwards"
+    ],
+    "responsible": "Ministerio de Fomento - Gobierno de España"
+}
 ```
 
 ## Use it with a real service

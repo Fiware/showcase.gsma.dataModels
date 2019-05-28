@@ -23,5 +23,6 @@
     "address": {
       "addressLocality": "Ciudad",
       "addressCountry": "ESP"
-    }
+    },
+    "process": "Garbage Collection"
 }

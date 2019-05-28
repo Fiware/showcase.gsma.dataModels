@@ -264,32 +264,27 @@ Normalized NGSI response
     "id": "waterqualityobserved:Sevilla:D1",
     "type": "WaterQualityObserved",
     "dateObserved": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2017-01-31T06:45:00Z"
-    }, 
+    },
     "temperature": {
         "value": 24.4
-    }, 
+    },
     "NO3": {
         "value": 0.01
-    }, 
+    },
     "location": {
         "type": "geo:json",
         "value": {
             "type": "Point",
-            "coordinates": [
-                -5.993307,
-                37.362882
-            ]
+            "coordinates": [-5.993307, 37.362882]
         }
-    }, 
+    },
     "pH": {
         "value": 7.4
     },
     "measurand": {
-        "value": [
-            "NO3, 0.01, M1, Concentration of Nitrates"
-        ]
+        "value": ["NO3, 0.01, M1, Concentration of Nitrates"]
     },
     "conductivity": {
         "value": 0.005

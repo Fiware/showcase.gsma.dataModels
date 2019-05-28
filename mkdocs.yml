@@ -12,6 +12,8 @@ extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.o
 pages:
   - Home: index.md
   - How to: howto.md
+  - NGSI-LD How to: ngsi-ld_howto.md
+  - NGSI-LD FAQ:  ngsi-ld_faq.md
   - Guidelines  : guidelines.md
   - Alerts:
       - Alert                        : Alert/doc/spec.md
@@ -21,12 +23,14 @@ pages:
       - BuildingOperation            : Building/BuildingOperation/doc/spec.md
   - Civic Issue Tracking:
       - Introduction                 : IssueTracking/doc/introduction.md
-      - Open311:ServiceType          : IssueTracking/Open311_ServiceType/doc/spec.md 
-      - Open311:ServiceRequest       : IssueTracking/Open311_ServiceRequest/doc/spec.md
+      - Open311ServiceType           : IssueTracking/Open311_ServiceType/doc/spec.md 
+      - Open311ServiceRequest        : IssueTracking/Open311_ServiceRequest/doc/spec.md
   - Device:                           
       - Introduction           : Device/doc/introduction.md
       - Device                 : Device/Device/doc/spec.md
       - DeviceModel            : Device/DeviceModel/doc/spec.md
+  - Energy:
+      - ThreePhaseAcMeasurement      : Energy/ThreePhaseAcMeasurement/doc/spec.md
   - Environment:
       - Introduction           : Environment/doc/introduction.md
       - AeroAllergenObserved   : Environment/AeroAllergenObserved/doc/spec.md
@@ -72,19 +76,20 @@ pages:
       - EVChargingStation      : Transportation/EVChargingStation/doc/spec.md
   - UrbanMobility:
       - Introduction           : UrbanMobility/doc/introduction.md
-      - gtfs:Agency            : UrbanMobility/Agency/doc/spec.md
-      - gtfs:Stop              : UrbanMobility/Stop/doc/spec.md
-      - gtfs:Station           : UrbanMobility/Station/doc/spec.md
-      - gtfs:AccessPoint       : UrbanMobility/AccessPoint/doc/spec.md
-      - gtfs:Route             : UrbanMobility/Route/doc/spec.md
-      - gtfs:Trip              : UrbanMobility/Trip/doc/spec.md
-      - gtfs:StopTime          : UrbanMobility/StopTime/doc/spec.md
-      - gtfs:Service           : UrbanMobility/Service/doc/spec.md
-      - gtfs:CalendarRule      : UrbanMobility/CalendarRule/doc/spec.md
-      - gtfs:CalendarDateRule  : UrbanMobility/CalendarDateRule/doc/spec.md
-      - gtfs:Frequency         : UrbanMobility/Frequency/doc/spec.md
-      - gtfs:TransferRule      : UrbanMobility/TransferRule/doc/spec.md
-      - ArrivalEstimation      : UrbanMobility/ArrivalEstimation/doc/spec.md
+      - GtfsAgency            : UrbanMobility/GtfsAgency/doc/spec.md
+      - GtfsStop              : UrbanMobility/GtfsStop/doc/spec.md
+      - GtfsStation           : UrbanMobility/GtfsStation/doc/spec.md
+      - GtfsAccessPoint       : UrbanMobility/GtfsAccessPoint/doc/spec.md
+      - GtfsRoute             : UrbanMobility/GtfsRoute/doc/spec.md
+      - GtfsTrip              : UrbanMobility/GtfsTrip/doc/spec.md
+      - GtfsStopTime          : UrbanMobility/GtfsStopTime/doc/spec.md
+      - GtfsService           : UrbanMobility/GtfsService/doc/spec.md
+      - GtfsCalendarRule      : UrbanMobility/GtfsCalendarRule/doc/spec.md
+      - GtfsCalendarDateRule  : UrbanMobility/GtfsCalendarDateRule/doc/spec.md
+      - GtfsFrequency         : UrbanMobility/GtfsFrequency/doc/spec.md
+      - GtfsTransferRule      : UrbanMobility/GtfsTransferRule/doc/spec.md
+      - GtfsShape             : UrbanMobility/GtfsShape/doc/spec.md
+      - ArrivalEstimation     : UrbanMobility/ArrivalEstimation/doc/spec.md
   -  Weather:
       - Introduction         : Weather/doc/introduction.md
       - WeatherObserved      : Weather/WeatherObserved/doc/spec.md

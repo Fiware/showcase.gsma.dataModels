@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsStopTime/schema.json",
+  "title": "NGSI GTFS Schema - StopTime",
+  "description": "GTFS Stop Time",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "GtfsStopTime"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "hasStop": {
+          "type": "string",
+          "format": "uri"
+        },
+        "hasTrip": {
+          "type": "string",
+          "format": "uri"
+        },
+        "arrivalTime": {
+          "type": "string",
+          "pattern": "^([0-3][0-9]|4[0-7]):[0-5][0-9]:[0-5][0-9]$"
+        },
+        "departureTime": {
+          "type": "string",
+          "pattern": "^([0-3][0-9]|4[0-7]):[0-5][0-9]:[0-5][0-9]$"
+        },
+        "stopSequence": {
+          "type": "integer",
+          "minValue": 1
+        },
+        "distanceTravelled": {
+          "type": "number",
+          "minValue": 0
+        },
+        "pickupType": {
+          "type": "string",
+          "default": "0",
+          "enum": [
+            "0", "1", "2", "3"
+          ]
+        },
+        "stopHeadsign": {
+          "type": "string"
+        },
+        "dropOffType": {
+          "type": "string",
+          "default": "0",
+          "enum": [
+            "0", "1", "2", "3"
+          ]
+        },
+        "timepoint": {
+          "type": "string",
+          "default": "1",
+          "enum": ["0", "1"]
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "arrivalTime",
+    "departureTime",
+    "hasStop",
+    "hasTrip",
+    "stopSequence"
+  ]
+}

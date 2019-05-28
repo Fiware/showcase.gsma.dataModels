@@ -1,7 +1,7 @@
 # Street parking
 
 This folder holds all the code needed to support datasets which expose
-`StreetParking` instances as NGSIv2.
+`StreetParking` instances as NGSI v2.
 
 The list below provides a description of the files present in this folder:
 
@@ -27,7 +27,7 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```bash
 curl http://130.206.83.68:1026/v2/entities?type=StreetParking
 ```
 

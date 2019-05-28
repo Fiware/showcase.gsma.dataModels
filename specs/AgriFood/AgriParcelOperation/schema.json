@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriParcelOperation/schema.json",
+    "title": "FIWARE - Agri Parcel Operation",
+    "description": "This entity contains a harmonised description of a generic operations performed on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+    "type": "object",
+    "allOf": [
+        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["AgriParcelOperation"],
+                    "description": "NGSI Entity Type"
+                },
+                "agriParcel": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "operationType": {
+                    "type": "string",
+                    "enum": ["fertiliser", "inspection", "pesticide", "water", "other"]
+                },
+                "result": {
+                    "type": "string",
+                    "enum": ["ok", "aborted", "failed"]
+                },
+                "plannedStartAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "plannedEndAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": ["planned", "ongoing", "finished", "scheduled", "cancelled"]
+                },
+                "operator": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "startedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "reportedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "agriProduct": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "quantity": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "waterSource": {
+                    "type": "string",
+                    "enum": ["borehole", "rainfall", "river", "rainwater capture", "water dam", "commercial supply"]
+                },
+                "workOrder": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "workRecord": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "irrigationRecord": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        }
+    ],
+    "required": ["id", "type", "agriParcel", "plannedStartAt", "plannedEndAt"]
+}

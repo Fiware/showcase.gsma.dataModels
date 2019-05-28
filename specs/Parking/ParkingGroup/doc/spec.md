@@ -30,17 +30,6 @@ The data model is defined as shown below:
 
 -   `category` : Parking Group's category.
 
-    -   Attribute type: Text or URL
-    -   Optional
-
--   `dataProvider` : Specifies the URL to information about the provider of this
-    information
-
-    -   Attribute type: URL
-    -   Optional
-
--   `category` : Parking Group's category.
-
     -   Attribute type: List of [Text](http://schema.org/Text)
     -   Allowed values:
         -   `onstreet` if the parking group belongs to an `OnStreetParking`.

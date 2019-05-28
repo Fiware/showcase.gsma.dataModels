@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Environment/NoiseLevelObserved/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Environment/NoiseLevelObserved/schema.json",
   "title": "GSMA / FIWARE - Noise Level observed schema",
   "description": "An observation of those acoustic parameters that estimate noise pressure levels at a certain place and time. ",
   "type": "object",

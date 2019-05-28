@@ -88,7 +88,7 @@ A JSON Schema corresponding to this data model can be found
     corresponding to the air quality observed.
 
     -   Attribute type: [Number](https://schema.org/Number)
-    -   Allowed values: Interval [0,1]
+    -   Allowed values: Interval \[0,1\]
     -   Optional
 
 -   `refDevice` : A reference to the device(s) which captured this observation.

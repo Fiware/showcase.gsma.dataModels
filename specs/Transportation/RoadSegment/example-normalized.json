@@ -2,9 +2,7 @@
     "id": "Spain-RoadSegment-A62-osm-24702186",
     "type": "RoadSegment",
     "category": {
-        "value": [
-            "oneway"
-        ]
+        "value": "oneway"
     }, 
     "endPoint": {
         "value": {

@@ -1,0 +1,84 @@
+{
+    "id": "urn:ngsi-ld:AgriFarm:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "type": "AgriFarm",
+    "dateCreated": {
+        "type": "DateTime",
+        "value":"2017-01-01T01:20:00Z"
+    },
+    "dateModified": {
+        "type": "DateTime",
+        "value": "2017-05-04T12:30:00Z"
+    },
+    "name": {
+        "value": "Wheat farm"
+    },
+    "description":{
+        "value": "A farm producing wheat"
+    },
+    "relatedSource": {
+        "value": [
+            {
+                "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+                "applicationEntityId": "app:farm1"
+            }
+        ]
+    },
+    "seeAlso": {
+        "value" :[
+            "https://example.org/concept/farm",
+            "https://datamodel.org/example/farm"
+        ]
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+            "type": "Point",
+            "coordinates": [101,0]
+        }
+    },
+    "landLocation": {
+        "value": {
+            "type": "Polygon",
+            "coordinates": [[
+                [100,0],
+                [101,0],
+                [101,1],
+                [100,1],
+                [100,0]
+            ]]
+        }
+    },
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "addressLocality": "Valdepeñas",
+            "addressCountry": "ES",
+            "streetAddress": "Camino de Membrilla 17"
+        }
+    },
+    "contactPoint": {
+        "type": "ContactPoint",
+        "value": {
+            "email": "wheatfarm@email.com",
+            "telephone": "00349674532"
+        }
+    },
+    "ownedBy": {
+        "type": "Relationship",
+        "value": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
+    },
+    "hasBuilding": {
+        "type": "Relationship",
+        "value": [
+            "urn:ngsi-ld:Building:a6ba44e0-4474-11e8-8ed1-ab9e0ea93827",
+            "urn:ngsi-ld:Building:d95b8874-4474-11e8-8d6b-dbe144258354"
+        ]
+    },
+    "hasAgriParcel": {
+        "type": "Relationship",
+        "value": [
+            "urn:ngsi-ld:AgriParcel:26ba4be0-4474-11e8-8ec1-ab9e0ea93835",
+            "urn:ngsi-ld:AgriParcel:2d5b8874-4474-11e8-8d6b-dbe14425b5e4"
+        ]
+    }
+}

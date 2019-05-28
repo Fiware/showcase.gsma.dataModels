@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/UrbanMobility/ArrivalEstimation/schema.json",
+  "$id": "https://fiware.github.io/dataModels/UrbanMobility/ArrivalEstimation/schema.json",
   "title": "NGSI GTFS Schema",
   "description": "Arrival Estimation",
   "type": "object",

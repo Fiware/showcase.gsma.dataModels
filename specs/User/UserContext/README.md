@@ -11,19 +11,16 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 ## Examples of use
 
-```
+```json
 {
-  "id": "UserContext1",
-  "type": "UserContext",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -4.754444444,
-      41.640833333
-    ]
-  },
-  "refActivity": "UserActivity1",
-  "refUserDevice": "Device1",
-  "refUser": "User1"
+    "id": "UserContext1",
+    "type": "UserContext",
+    "location": {
+        "type": "Point",
+        "coordinates": [-4.754444444, 41.640833333]
+    },
+    "refActivity": "UserActivity1",
+    "refUserDevice": "Device1",
+    "refUser": "User1"
 }
 ```

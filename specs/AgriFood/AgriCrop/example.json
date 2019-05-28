@@ -1,0 +1,53 @@
+{
+    "id": "urn:ngsi-ld:AgriCrop:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+    "type": "AgriCrop",
+    "dateCreated": "2017-01-01T01:20:00Z",
+    "dateModified": "2017-05-04T12:30:00Z",
+    "name": "Wheat",
+    "alternateName": "Triticum aestivum",
+    "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_7951",
+    "seeAlso": [
+        "https://example.org/concept/wheat",
+        "https://datamodel.org/example/wheat"
+    ],
+    "description": "Spring wheat",
+    "relatedSource": [
+        {
+            "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+            "applicationEntityId": "app:weat"
+        }
+    ],
+    "agriSoil": [
+            "urn:ngsi-ld:AgriSoil:00411b56-bd1b-4551-96e0-a6e7fde9c840",
+            "urn:ngsi-ld:AgriSoil:e8a8389a-edf5-4345-8d2c-b98ac1ce8e2a"
+    ],
+    "agriFertiliser": [
+            "urn:ngsi-ld:AgriFertiliser:1b0d6cf7-320c-4a2b-b2f1-4575ea850c73",
+            "urn:ngsi-ld:AgriFertiliser:380973c8-4d3b-4723-a899-0c0c5cc63e7e"
+    ],
+    "agriPest": [
+            "urn:ngsi-ld:AgriPest:1b0d6cf7-320c-4a2b-b2f1-4575ea850c73",
+            "urn:ngsi-ld:AgriPest:380973c8-4d3b-4723-a899-0c0c5cc63e7e"
+    ],
+    "plantingFrom": [
+            {
+                "dateRange": "-09-28/-10-12",
+                "description": "Best Season"
+            },
+            {
+                "dateRange": "-10-11/-10-18",
+                "description": "Season OK"
+            }
+    ],
+    "harvestingInterval": [
+        {
+            "dateRange": "-03-21/-04-01",
+            "description": "Best Season"
+        },
+        {
+            "dateRange": "-04-02/-04-15",
+            "description": "Season OK"
+        }
+    ],
+    "wateringFrequency": "daily"
+}

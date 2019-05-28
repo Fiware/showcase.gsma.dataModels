@@ -3,7 +3,7 @@
     "type": "ArrivalEstimation",
     "hasTrip": {
         "type": "Relationship", 
-        "value": "urn:ngsi-ld:gtfs:Trip:tus:5C1"
+        "value": "urn:ngsi-ld:GtfsTrip:tus:5C1"
     }, 
     "headSign": {
         "value": "Plaza Italia"
@@ -13,7 +13,7 @@
     }, 
     "hasStop": {
         "type": "Relationship", 
-        "value": "urn:ngsi-ld:gtfs:Stop:tus:74"
+        "value": "urn:ngsi-ld:GtfsStop:tus:74"
     }, 
     "remainingDistance": {
         "value": 1200

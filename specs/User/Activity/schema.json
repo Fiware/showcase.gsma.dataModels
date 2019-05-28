@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/User/UserActivity/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/User/UserActivity/schema.json",
   "title": "FIWARE - User Activity schema",
   "description": "Information on the current activity performed by an anonymized user in a given point in time",
   "type": "object",

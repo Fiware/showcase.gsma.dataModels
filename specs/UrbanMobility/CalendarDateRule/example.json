@@ -1,8 +1,0 @@
-{
-  "id": "urn:ngsi-ld:CalendarDateRule:Malaga:Rule67",
-  "type": "gtfs:CalendarDateRule",
-  "name": "Rule Fair Area",
-  "hasService": "urn:ngsi-ld:Service:Malaga:FairArea_1",
-  "appliesOn": "2018-03-19",
-  "exceptionType": "1"
-}

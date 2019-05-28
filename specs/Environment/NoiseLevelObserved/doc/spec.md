@@ -51,12 +51,13 @@ The data model is defined as shown below:
 
 -   `name` : Name given to this observation.
 
-    -   Normative References: [https://schema.org/name]
+    -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Optional
 
 -   `description` : Description given to this observation.
 
-    -   Normative References: [https://schema.org/description]
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
     -   Optional
 
 -   `dateObserved` : The date and time of this observation represented by an

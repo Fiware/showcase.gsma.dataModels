@@ -1,0 +1,9 @@
+{
+  "id": "urn:ngsi-ld:GtfsRoute:Spain:Malaga:1",
+  "type": "GtfsRoute",
+  "shortName": "1",
+  "name": "Parque del Sur _ Alameda Principal _ San Andrés",
+  "page": "http://www.emtmalaga.es/emt-mobile/informacionLinea.html",
+  "routeType": "3",
+  "operatedBy": "urn:ngsi-ld:GtfsAgency:Malaga_EMT"
+}

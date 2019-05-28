@@ -1,6 +1,6 @@
 {
     "id": "o311:servicetype-guadalajara-sidewalks",
-    "type": "Open311:ServiceType",
+    "type": "Open311ServiceType",
     "group": {
         "value": "street"
     }, 
@@ -21,7 +21,7 @@
     }, 
     "dateCreated": {
         "type": "DateTime", 
-        "value": "2007-01-01"
+        "value": "2007-01-01T12:00:00Z"
     }, 
     "keywords": {
         "value": "street,sidewalk, cleaning, repair"

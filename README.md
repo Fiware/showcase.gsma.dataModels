@@ -1,11 +1,11 @@
 # FIWARE Data Models
 
 [![FIWARE Core Context Management](https://nexus.lab.fiware.org/repository/raw/public/badges/chapters/core.svg)](https://www.fiware.org/developers/catalogue/)
-[![License: MIT](https://img.shields.io/github/license/fiware/dataModels.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/FIWARE/dataModels.svg)](https://opensource.org/licenses/MIT)
 [![Support badge](https://img.shields.io/badge/support-askbot-yellowgreen.svg)](http://ask.fiware.org)
 <br/>
 [![Documentation](https://img.shields.io/readthedocs/fiware-datamodels.svg)](https://fiware-datamodels.rtfd.io)
-[![Build badge](https://img.shields.io/travis/Fiware/dataModels.svg "Travis build status")](https://travis-ci.org/Fiware/dataModels/)
+[![Build badge](https://img.shields.io/travis/FIWARE/dataModels.svg "Travis build status")](https://travis-ci.org/FIWARE/dataModels/)
 
 This repository contains:
 
@@ -47,7 +47,7 @@ these schemas the
 [AJV JSON Schema Validator](https://github.com/epoberezkin/ajv) is being used.
 For using it just install it through npm:
 
-```
+```console
     npm install ajv
     npm install ajv-cli
 ```
@@ -164,7 +164,7 @@ See:
 
 [MIT](LICENSE) © 2019 FIWARE Foundation e.V.
 
-[![License: MIT](https://img.shields.io/github/license/fiware/dataModels.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/FIWARE/dataModels.svg)](https://opensource.org/licenses/MIT)
 
 All the code in this repository is licensed under the MIT License. However each
 original data source may have a different license. So before using harmonized

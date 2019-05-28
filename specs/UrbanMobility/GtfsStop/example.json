@@ -1,0 +1,11 @@
+{
+  "id": "urn:ngsi-ld:GtfsStop:Malaga_101",
+  "type": "GtfsStop",
+  "code": "101",
+  "name": "Alameda Principal Sur",
+  "location": {
+    "type": "Point",
+    "coordinates": [-4.424393,36.716872]
+  },
+  "operatedBy": "urn:ngsi-ld:GtfsAgency:Malaga_EMT"
+}

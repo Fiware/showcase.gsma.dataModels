@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:GtfsStation:Madrid:est_90_21",
+  "type": "GtfsStation",
+  "code": "21",
+  "name": "Intercambiador de Plaza de Castilla",
+  "location": {
+    "type": "Point",
+    "coordinates": [-3.6892,40.4669]
+  },
+  "address": {
+    "streetAddress": "Paseo de la Castellana 189",
+    "addressLocality": "Madrid",
+    "addressCountry": "ES"
+  },
+  "hasStop": ["urn:ngsi-ld:GtfsStop:Madrid_par_4_1"]
+}

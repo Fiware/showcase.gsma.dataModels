@@ -1,0 +1,13 @@
+{
+  "id": "urn:ngsi-ld:GtfsShape:101",
+  "type": "GtfsShape",
+  "location": {
+    "type": "LineString",
+    "coordinates": [
+                 [-4.421394,36.73826],
+                 [-4.421428,36.73825],
+                 [-4.421505,36.738186],
+                 [-4.421525,36.738033]
+    ]
+  }
+}

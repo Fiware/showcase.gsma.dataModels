@@ -99,55 +99,39 @@ Normalized NGSI response
     "id": "SPOI-ES-4326",
     "type": "SmartPointOfInteraction",
     "category": {
-        "value": [
-            "co-creation"
-        ]
-    }, 
+        "value": ["co-creation"]
+    },
     "applicationUrl": {
         "type": "URL",
         "value": "http://www.example.org"
-    }, 
+    },
     "areaCovered": {
         "value": {
-            "type": "Polygon", 
+            "type": "Polygon",
             "coordinates": [
                 [
-                    [
-                        25.774, 
-                        -80.19
-                    ], 
-                    [
-                        18.466, 
-                        -66.118
-                    ], 
-                    [
-                        32.321, 
-                        -64.757
-                    ], 
-                    [
-                        25.774, 
-                        -80.19
-                    ]
+                    [25.774, -80.19],
+                    [18.466, -66.118],
+                    [32.321, -64.757],
+                    [25.774, -80.19]
                 ]
             ]
         }
-    }, 
+    },
     "availability": {
         "value": "Tu,Th 16:00-20:00"
-    }, 
+    },
     "refSmartSpot": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": [
-            "SSPOT-F94C58E29DD5", 
-            "SSPOT-F94C53E21DD2", 
+            "SSPOT-F94C58E29DD5",
+            "SSPOT-F94C53E21DD2",
             "SSPOT-F94C51A295D9"
         ]
-    }, 
+    },
     "refRelatedEntity": {
-        "type": "Relationship", 
-        "value": [
-            "POI-PlazaCazorla-3123"
-        ]
+        "type": "Relationship",
+        "value": ["POI-PlazaCazorla-3123"]
     }
 }
 ```

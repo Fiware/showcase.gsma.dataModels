@@ -2,7 +2,7 @@
     "id": "Spain-RoadSegment-A62-osm-24702186",
     "type": "RoadSegment",
     "name": "Valladolid-Dueñas",
-    "category": ["oneway"],
+    "category": "oneway",
     "refRoad": "Spain-Road-A62",
     "totalLaneNumber": 2,
     "maximumAllowedSpeed": 120,

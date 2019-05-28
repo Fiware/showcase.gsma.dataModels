@@ -14,7 +14,7 @@
     }, 
     "dateLastWatering": {
         "type": "DateTime", 
-        "value": "2017-03-31T:08:00"
+        "value": "2017-03-31T08:00:00Z"
     }, 
     "location": {
         "type": "geo:json", 

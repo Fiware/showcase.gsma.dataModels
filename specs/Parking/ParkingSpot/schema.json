@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://github.com/Fiware/dataModels/tree/master/Parking/ParkingSpot/schema.json",
+  "$id": "https://github.com/Fiware/dataModels/tree/master/Parking/ParkingSpot/schema.json",
   "title": "FIWARE - Parking / Parking Spot",
   "description": "A parking spot is an area well delimited where one vehicle can be parked. The aim of this entity type is to monitor the status of parking spots individually. Thus, an entity of type ParkingSpot cannot exist without a containing entity of type (OnStreetParking, OffStreetParking). A parking spot might belong to one group.",
   "type": "object",

@@ -1,6 +1,6 @@
 # Point Of interest
 
-This folder contains all the code related to a harmonized NGSIv2 endpoint.
+This folder contains all the code related to a harmonized NGSI v2 endpoint.
 
 Such endpoint serves entities of type `PointOfInterest`. Data comes from
 different sources:
@@ -18,7 +18,7 @@ commercial application.
 
 Currently the following categories are supported: (For a more extended list of
 categories please check
-https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json)
+[factual_taxonomy.json](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json))
 
 -   `OffStreetParking: 418`
 -   `Restaurant: 347`
@@ -29,7 +29,7 @@ https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json)
 
 ## Examples of use
 
-```
+```text
 http://iotbd-v2.lab.fiware.org/v2/entities?type=PointOfInterest&q=category=='311'&limit=1
 ```
 ```json

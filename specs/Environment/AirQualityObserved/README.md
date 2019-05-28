@@ -5,8 +5,8 @@ data as NGSI version 2.
 
 The data provided corresponds to different cities in Spain being the original
 data source different
-[air quality stations](../PointOfInterest/AirQualityStation) managed by
-municipalities or regional governments.
+[air quality stations](../../PointOfInterest/AirQualityStation/README.md)
+managed by municipalities or regional governments.
 
 Please check the original data source before making use of this data in an
 application.
@@ -18,7 +18,7 @@ The following scripts are present:
 -   `barcelona_air_quality_harvest.py`.- A data harvest and harmonization
     program for official Barcelona's Air Quality Data provided by Catalonia's
     Government.
--   `madrid_air_quality.py` .- Offers both an NGSIv2 endpoint and NGSI10 to
+-   `madrid_air_quality.py` .- Offers both an NGSI v2 endpoint and NGSI10 to
     provide ambient observed data (outdated)
 -   `ngsi_helper.py` .- Contains helper functions to support the NGSI protocol
     (outdated)

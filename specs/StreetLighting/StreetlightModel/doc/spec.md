@@ -210,43 +210,41 @@ Normalized NGSI response
     "id": "streetlightmodel:TubularNumana:ASR42CG:HPS:100",
     "type": "StreetlightModel",
     "category": {
-        "value": [
-            "postTop"
-        ]
-    }, 
+        "value": ["postTop"]
+    },
     "colorRenderingIndex": {
         "value": 25
-    }, 
+    },
     "columnColor": {
         "value": "green"
-    }, 
+    },
     "name": {
         "value": "Tubular Numana 6M - ASR42CG - Son-T 100"
-    }, 
+    },
     "powerConsumption": {
         "value": 100
-    }, 
+    },
     "lanternManufacturerName": {
         "value": "Indal WRTL"
-    }, 
+    },
     "luminousFlux": {
         "value": 2300
-    }, 
+    },
     "lampTechnology": {
         "value": "HPS"
-    }, 
+    },
     "colorTemperature": {
         "value": 3000
-    }, 
+    },
     "lanternModelName": {
         "value": "ASR42CG"
-    }, 
+    },
     "columnModelName": {
         "value": "01 TUBULAR P/T 6M NUMANA"
-    }, 
+    },
     "lampModelName": {
         "value": "SON-T"
-    }, 
+    },
     "lampBrandName": {
         "value": "Philips"
     }
@@ -258,23 +256,23 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-      "id": "streetlightmodel:TubularNumana:ASR42CG:HPS:100",
-      "type": "StreetlightModel",
-      "name": "Tubular Numana 6M - ASR42CG - Son-T 100",
-      "columnModelName": "01 TUBULAR P/T 6M NUMANA",
-      "columnColor": "green",
-      "lanternModelName": "ASR42CG",
-      "lanternManufacturerName": "Indal WRTL",
-      "lampModelName": "SON-T",
-      "lampBrandName": "Philips",
-      "lampTechnology": "HPS",
-      "powerConsumption": 100,
-      "colorTemperature": 3000,
-      "colorRenderingIndex": 25,
-      "luminousFlux": 2300,
-      "category": ["postTop"]
-    }
+{
+    "id": "streetlightmodel:TubularNumana:ASR42CG:HPS:100",
+    "type": "StreetlightModel",
+    "name": "Tubular Numana 6M - ASR42CG - Son-T 100",
+    "columnModelName": "01 TUBULAR P/T 6M NUMANA",
+    "columnColor": "green",
+    "lanternModelName": "ASR42CG",
+    "lanternManufacturerName": "Indal WRTL",
+    "lampModelName": "SON-T",
+    "lampBrandName": "Philips",
+    "lampTechnology": "HPS",
+    "powerConsumption": 100,
+    "colorTemperature": 3000,
+    "colorRenderingIndex": 25,
+    "luminousFlux": 2300,
+    "category": ["postTop"]
+}
 ```
 
 ## Test it with a real service

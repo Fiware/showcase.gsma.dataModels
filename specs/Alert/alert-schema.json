@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Alert/alert-schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Alert/alert-schema.json",
   "title": "Alert base schema",
   "description": "Common definitions for Alert data model",
   "definitions": {
@@ -40,7 +40,8 @@
             "weather",
             "environment",
             "health",
-            "security"
+            "security",
+            "agriculture"
           ]
         },
         "alertSource": {

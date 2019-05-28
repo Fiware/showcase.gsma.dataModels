@@ -12,27 +12,32 @@ Here you can find the following files:
 
 You can read about public instance offering information about weather stations [here](../../gsma.md).
 
+
+You can read about public instance offering information about weather stations [here](../../gsma.md).
+
 ## Example of use
 
 ```bash
-curl -s -H 'fiware-service:poi' -H 'fiware-servicepath:/Spain'  'http:/streams.lab.fiware.org:1026/v2/entities?type=PointOfInterest&q=category:WeatherStation&options=keyValues&limit=1' | python -m json.tool
+curl -X GET \
+  'http://streams.lab.fiware.org:1026/v2/entities?type=PointOfInterest&q=category:WeatherStation&options=keyValues&limit=1' \
+  -H 'fiware-service: poi' \
+  -H 'fiware-servicepath: /Spain' | python -m json.tool
 ```
+
 ```json
 [
     {
         "address": {
             "addressCountry": "ES",
-            "addressLocality": "Zaragoza, Valdespartera",
-            "addressRegion": [
-                "province"
-            ]
+            "addressLocality": "Calamocha",
+            "addressRegion": "Teruel"
         },
         "category": "WeatherStation",
-        "id": "WeatherStation-ES-9434P",
+        "id": "WeatherStation-ES-9381I",
         "location": {
             "coordinates": [
-                -0.935,
-                41.620833
+                -1.29333,
+                40.9261
             ],
             "type": "Point"
         },

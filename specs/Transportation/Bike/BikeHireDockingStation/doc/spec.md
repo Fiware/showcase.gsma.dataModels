@@ -31,14 +31,14 @@ A JSON Schema corresponding to this data model can be found
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Normative References:
-        [http://schema.org/DateTime](http://schema.org/DateTime)[ ](http://schema.org/DateTime)
+        [http://schema.org/DateTime](http://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
 -   `dateModified` : Last update timestamp of this entity.
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Normative References:
-        [http://schema.org/DateTime](http://schema.org/DateTime)[ ](http://schema.org/DateTime)
+        [http://schema.org/DateTime](http://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
 -   `location` : Geolocation of the station represented by a GeoJSON
@@ -209,24 +209,26 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 
 Bike hire docking station real time data in Malaga
 
-    {
-       "id": "malaga-bici-7"
-       "type": "BikeHireDockingStation",
-       "name": "07-Diputacion",
-       "location": {
-    	 "coordinates": [-4.43573, 36.699694],
-    	  "type": "Point"
-       },
-       "availableBikeNumber": 18,
-       "freeSlotNumber": 10,
-       "address": {
-    	  "streetAddress": "Paseo Antonio Banderas (Diputación)",
-    	  "addressLocality": "Malaga",
-    	  "addressCountry": "España"
-       },
-       "description": "Punto de alquiler de bicicletas próximo a Diputación",
-       "dateModified": "2017-05-09T09:25:55.00Z"
-    }
+```json
+{
+   "id": "malaga-bici-7",
+   "type": "BikeHireDockingStation",
+   "name": "07-Diputacion",
+   "location": {
+	 "coordinates": [-4.43573, 36.699694],
+	  "type": "Point"
+   },
+   "availableBikeNumber": 18,
+   "freeSlotNumber": 10,
+   "address": {
+	  "streetAddress": "Paseo Antonio Banderas (Diputación)",
+	  "addressLocality": "Malaga",
+	  "addressCountry": "España"
+   },
+   "description": "Punto de alquiler de bicicletas próximo a Diputación",
+   "dateModified": "2017-05-09T09:25:55.00Z"
+}
+```
 
 ## Use it with a real service
 

@@ -1,0 +1,7 @@
+{
+  "id": "urn:ngsi-ld:Service:Malaga:LAB",
+  "type": "GtfsService",
+  "name": "LAB",
+  "description": "Laborables",
+  "operatedBy": "urn:ngsi-ld:GtfsAgency:Malaga_EMT"
+}

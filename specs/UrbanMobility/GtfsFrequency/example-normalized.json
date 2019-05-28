@@ -1,0 +1,23 @@
+{
+    "id": "urn:ngsi-ld:GtfsFrequency:Malaga:Linea1",
+    "type": "GtfsFrequency", 
+    "description": {
+        "value": "Cada 10 minutos"
+    }, 
+    "hasTrip": {
+        "type": "Relationship", 
+        "value": "urn:ngsi-ld:GtfsTrip:Spain:Malaga:1"
+    }, 
+    "headwaySeconds": {
+        "value": 600
+    }, 
+    "startTime": {
+        "value": "07:00:00"
+    }, 
+    "endTime": {
+        "value": "10:25:00"
+    }, 
+    "name": {
+        "value": "Laborables"
+    }
+}

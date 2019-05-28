@@ -1,0 +1,21 @@
+{
+    "id": "urn:ngsi-ld:GtfsTransferRule:Malaga:Linea1_Linea5",
+    "type": "GtfsTransferRule", 
+    "transferType": {
+        "value": "0"
+    }, 
+    "minimumTransferTime": {
+        "value": 10
+    }, 
+    "hasDestination": {
+        "type": "Relationship", 
+        "value": "urn:ngsi-ld:GtfsStop:Malaga_508"
+    }, 
+    "hasOrigin": {
+        "type": "Relationship", 
+        "value": "urn:ngsi-ld:GtfsStop:Malaga_101"
+    }, 
+    "name": {
+        "value": "L1_L5"
+    }
+}

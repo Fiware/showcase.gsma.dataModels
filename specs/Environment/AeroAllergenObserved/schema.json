@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Environment/AeroAllergenObserved/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Environment/AeroAllergenObserved/schema.json",
   "title": "GSMA / FIWARE - Pollen levels observed schema",
   "description": "An observation of pollen levels at a certain place and time.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Environment/AirQualityObserved/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Environment/AirQualityObserved/schema.json",
   "title": "GSMA / FIWARE - Air quality observed schema",
   "description": "An observation of air quality conditions at a certain place and time.",
   "type": "object",

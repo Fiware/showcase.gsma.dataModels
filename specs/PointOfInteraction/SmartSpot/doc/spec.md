@@ -98,24 +98,24 @@ Normalized NGSI response
     "type": "SmartSpot",
     "announcementPeriod": {
         "value": 500
-    }, 
+    },
     "signalStrength": {
         "value": "highest"
-    }, 
+    },
     "announcedUrl": {
         "value": "http://goo.gl/EJ81JP"
-    }, 
+    },
     "availability": {
         "value": "Tu,Th 16:00-20:00"
-    }, 
+    },
     "coverageRadius": {
         "value": 30
-    }, 
+    },
     "bluetoothChannel": {
         "value": "37,38,39"
-    }, 
+    },
     "refSmartPointOfInteraction": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "SPOI-ES-4326"
     }
 }

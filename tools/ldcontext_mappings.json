@@ -1,0 +1,23 @@
+{
+  "name": "http://schema.org/name",
+  "alternativeName": "http://schema.org/alternativeName",
+  "description": "http://schema.org/description",
+  "openingHours": "http://schema.org/openingHours",
+  "address": "http://schema.org/address",
+  "areaServed": "http://schema.org/areaServed",
+  "location": "http://uri.etsi.org/ngsi-ld/location",
+  "coordinates": {
+    "@id": "https://purl.org/geojson/vocab#coordinates",
+    "@container": "@list"
+  },
+  "LineString": "https://purl.org/geojson/vocab#LineString",
+  "MultiLineString": "https://purl.org/geojson/vocab#MultiLineString",
+  "MultiPoint": "https://purl.org/geojson/vocab#MultiPoint",
+  "MultiPolygon": "https://purl.org/geojson/vocab#MultiPolygon",
+  "Point": "https://purl.org/geojson/vocab#Point",
+  "Polygon": "https://purl.org/geojson/vocab#Polygon",
+  "bbox": {
+    "@container": "@list",
+    "@id": "https://purl.org/geojson/vocab#bbox"
+  }
+}

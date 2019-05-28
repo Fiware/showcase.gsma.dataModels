@@ -1,0 +1,9 @@
+{
+  "id": "urn:ngsi-ld:GtfsTrip:Spain:Malaga:1",
+  "type": "GtfsTrip",
+  "hasService": "urn:ngsi-ld:GtfsService:Malaga_LAB",
+  "headSign": "San Andrés",
+  "direction": 0,
+  "hasRoute": "urn:ngsi-ld:GtfsRoute:Spain:Malaga:1",
+  "hasShape": "urn:ngsi-ld:GtfsShape:Shape01"
+}

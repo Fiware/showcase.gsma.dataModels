@@ -8,5 +8,6 @@
     "temperature": 17,
     "relativeHumidity": 0.87,
     "soilTemperature": 13,
-    "refGreenspace": "Santander-Garden-Piquio"
+    "refGreenspace": "Santander-Garden-Piquio",
+    "dateObserved": "2019-01-15T12:00:00Z"
 }

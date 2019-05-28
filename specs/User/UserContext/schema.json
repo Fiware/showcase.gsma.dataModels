@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/User/UserContext/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/User/UserContext/schema.json",
   "title": "FIWARE - User Context schema",
   "description": "Information on the context of an anonymized in a given point in time",
   "type": "object",

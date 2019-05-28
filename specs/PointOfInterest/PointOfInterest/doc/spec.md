@@ -149,26 +149,23 @@ Normalized NGSI response
 Sample uses simplified representation for data consumers `?options=keyValues`
 
 ```json
-    {
-        "id": "PointOfInterest-A-Concha-123456",
-        "type": "PointOfInterest",
-        "name": "Playa de a Concha",
-        "description": "La Playa de A Concha se presenta como una continuación de la Playa de Compostela, una de las más frecuentadas de Vilagarcía.",
-        "address": {
-          "addressCountry": "ES",
-          "addressLocality": "Vilagarcía de Arousa"
-        },
-        "category": ["113"],
-        "location": {
-          "type": "Point",
-          "coordinates": [
-            -8.768460000000001,
-            42.60214472222222
-          ]
-        },
-        "source": "http://www.tourspain.es",
-        "refSeeAlso": ["Beach-A-Concha-123456"]
-    }
+{
+    "id": "PointOfInterest-A-Concha-123456",
+    "type": "PointOfInterest",
+    "name": "Playa de a Concha",
+    "description": "La Playa de A Concha se presenta como una continuación de la Playa de Compostela, una de las más frecuentadas de Vilagarcía.",
+    "address": {
+        "addressCountry": "ES",
+        "addressLocality": "Vilagarcía de Arousa"
+    },
+    "category": ["113"],
+    "location": {
+        "type": "Point",
+        "coordinates": [-8.768460000000001, 42.60214472222222]
+    },
+    "source": "http://www.tourspain.es",
+    "refSeeAlso": ["Beach-A-Concha-123456"]
+}
 ```
 
 ## Use it with a real service

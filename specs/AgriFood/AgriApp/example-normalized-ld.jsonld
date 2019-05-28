@@ -1,0 +1,34 @@
+{
+    "@context": [
+        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://schema.lab.fiware.org/ld/jsonldcontext.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "type": "AgriApp",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "name": {
+        "type": "Property",
+        "value": "Wine track"
+    },
+    "description": {
+        "type": "Property",
+        "value": "An app for wine tracking"
+    },
+    "version": {
+        "type": "Property",
+        "value": "1.0"
+    },
+    "provider": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Organization:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
+    },
+    "endpoint": {
+        "type": "Property",
+        "value": "https://app.endpoint/download"
+    },
+    "category": {
+        "type": "Property",
+        "value": ["TBD"]
+    }
+}

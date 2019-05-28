@@ -96,10 +96,11 @@ The structure of such an attribute will be as follows:
 
 -   Attribute name: Equal to the name of the allergen, for instance `alnus`. A
     list of commonly used aero allergens in Europe can be found on
-    [polleninfo.org](https://www.polleninfo.org/en/allergy/profiles/) a web site
-    maintained by the European Aeroallergen Network. A World Health Organization
-    (WHO) Allergen Nomenclature (covering not only aero transported allergens)
-    is available at [http://www.allergen.org](http://www.allergen.org).
+    [polleninfo.org](https://www.polleninfo.org/en/allergy/profiles/alder.html)
+    a site maintained by the European Aeroallergen Network. A World Health
+    Organization (WHO) Allergen Nomenclature (covering not only aero transported
+    allergens) is available at
+    [http://www.allergen.org](http://www.allergen.org).
 
 -   Attribute type: [Number](https://schema.org/Number)
 
@@ -194,52 +195,49 @@ Normalized NGSI response
     "id": "AeroAllergenObserved-CDMX-Pollen-Cuajimalpa",
     "type": "AeroAllergenObserved",
     "dateObserved": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2018-02-11T00:00:00.00Z"
-    }, 
+    },
     "alnus": {
         "value": 40
-    }, 
+    },
     "alnus_Allergenicity": {
         "value": "3"
-    }, 
+    },
     "allergenRisk": {
         "value": "moderate"
-    }, 
+    },
     "casuarina": {
         "value": 1
-    }, 
+    },
     "casuarina_Level": {
         "value": "low"
-    }, 
+    },
     "casuarina_Allergenicity": {
         "value": "3"
-    }, 
+    },
     "source": {
         "value": "http://rema.atmosfera.unam.mx/rema/"
-    }, 
+    },
     "location": {
-        "type": "geo:json", 
+        "type": "geo:json",
         "value": {
-            "type": "Point", 
-            "coordinates": [
-                -99.276977, 
-                19.381877
-            ]
+            "type": "Point",
+            "coordinates": [-99.276977, 19.381877]
         }
-    }, 
+    },
     "address": {
-        "type": "PostalAddress", 
+        "type": "PostalAddress",
         "value": {
-            "addressCountry": "MX", 
-            "addressLocality": "Ciudad de M\u00e9xico", 
+            "addressCountry": "MX",
+            "addressLocality": "Ciudad de M\u00e9xico",
             "streetAddress": "Colegio Franco-Ingl\u00e9s"
         }
-    }, 
+    },
     "dateModified": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2018-02-16T17:24:39.00Z"
-    }, 
+    },
     "alnus_Level": {
         "value": "moderate"
     }

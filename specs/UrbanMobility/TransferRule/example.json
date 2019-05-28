@@ -1,9 +1,0 @@
-{
-  "id": "urn:ngsi-ld:gtfs:TransferRule:Malaga:Linea1_Linea5",
-  "type": "gtfs:TransferRule",
-  "name": "L1_L5",
-  "hasOrigin": "urn:ngsi-ld:gtfs:Stop:Malaga_101",
-  "hasDestination": "urn:ngsi-ld:gtfs:Stop:Malaga_508",
-  "transferType": "0",
-  "minimumTransferTime": 10
-}

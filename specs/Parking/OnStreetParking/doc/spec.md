@@ -30,17 +30,6 @@ The data model is defined as shown below:
 
 -   `dateCreated` : Entity's creation timestamp
 
-    -   Attribute type: Text or URL
-    -   Optional
-
--   `dataProvider` : Specifies the URL to information about the provider of this
-    information
-
-    -   Attribute type: URL
-    -   Optional
-
--   `dateCreated` : Entity's creation timestamp
-
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
@@ -48,16 +37,6 @@ The data model is defined as shown below:
 
     -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
-
--   `category` : Street parking category.
-
-    -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Allowed values: - (`forDisabled`, `forResidents`, `forLoadUnload`,
-        `onlyWithPermit`, `forELectricalCharging`) - (`free`, `feeCharged`) -
-        (`blueZone`, `greenZone`) - (`taxiStop`) - (`shortTerm`, `mediumTerm`) -
-        Any value not covered by the above enumeration and meaningful for the
-        application.
-    -   Mandatory
 
 -   `location` : Geolocation of the parking site represented by a GeoJSON
     (Multi)Polygon.
@@ -78,14 +57,38 @@ The data model is defined as shown below:
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Mandatory
 
--   `chargeType` : Type of charge(s) performed by the parking site.
+-   `description` : Description about the onstreet parking zone.
+
+    -   Normative References:
+        [https://schema.org/description](https://schema.org/description)
+    -   Optional
+
+-   `image` : A URL containing a photo of this parking site.
+
+    -   Normative References:
+        [https://schema.org/image](https://schema.org/image)
+    -   Optional
+
+-   `category` : Street parking category.
 
     -   Attribute type: List of [Text](http://schema.org/Text)
-    -   Allowed values: Some of those defined by the DATEX II version 2.3
-        _ChargeTypeEnum_ enumeration: - (`flat`, `minimum`, `maximum`,
-        `additionalIntervalPrice` `seasonTicket` `temporaryPrice`
-        `firstIntervalPrice`, `annualPayment`, `monthlyPayment`, `free`,
-        `unknown`, `other`) - Any other application-specific
+    -   Allowed values: - (`forDisabled`, `forResidents`, `forLoadUnload`,
+        `onlyWithPermit`, `forELectricalCharging`) - (`free`, `feeCharged`) -
+        (`blueZone`, `greenZone`) - (`taxiStop`) - (`shortTerm`, `mediumTerm`) -
+        Any value not covered by the above enumeration and meaningful for the
+        application.
+    -   Mandatory
+
+-   `allowedVehicleType` : Vehicle type allowed (only one per on street
+    parking).
+
+    -   Attribute type: [Text](http://schema.org/Text)
+    -   Allowed Values: The following values defined by _VehicleTypeEnum_
+        [DATEX 2 version 2.3](http://d2docs.ndwcloud.nu/downloads/modelv23.html)
+        : - (`bicycle`, `bus`, `car`, `caravan`, `carWithCaravan`,
+        `carWithTrailer`, `constructionOrMaintenanceVehicle`, `lorry`, `moped`,
+        `motorcycle`, `motorcycleWithSideCar`, `motorscooter`, `tanker`,
+        `trailer`, `van`, `anyVehicle`)
     -   Mandatory
 
 -   `requiredPermit` : This attribute captures what permit(s) might be needed to
@@ -111,30 +114,34 @@ The data model is defined as shown below:
     value which must contain a subproperty per each required permit, indicating
     when the permit is active. If nothing specified (or `null`) for a permit it
     will mean that a permit is always required. `null`or empty object means
-    always active. The syntax must be conformant with schema.org (opening hours
-    specification)[https://schema.org/openingHours]. For instance, a blue zone
-    which is only active on dayweeks will be encoded as "blueZonePermit":
-    "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
+    always active. The syntax must be conformant with schema.org
+    [opening hours specification](https://schema.org/openingHours). For
+    instance, a blue zone which is only active on dayweeks will be encoded as
+    "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
 
     -   Attribute type: [StructuredValue](http://schema.org/StructuredValue)
     -   Mandatory. It can be `null`.
-
--   `allowedVehicleType` : Vehicle type allowed (only one per on street
-    parking).
-
-    -   Attribute type: [Text](http://schema.org/Text)
-    -   Allowed Values: The following values defined by _VehicleTypeEnum_
-        [DATEX 2 version 2.3](http://d2docs.ndwcloud.nu/downloads/modelv23.html)
-        : - (`bicycle`, `bus`, `car`, `caravan`, `carWithCaravan`,
-        `carWithTrailer`, `constructionOrMaintenanceVehicle`, `lorry`, `moped`,
-        `motorcycle`, `motorcycleWithSideCar`, `motorscooter`, `tanker`,
-        `trailer`, `van`, `anyVehicle`)
-    -   Mandatory
 
 -   `maximumParkingDuration` : Maximum allowed stay at site encoded as a ISO8601
     duration. A `null` or empty value indicates an indefinite duration.
 
     -   Attribute type: [Text](http://schema.org/Text)
+    -   Optional
+
+-   `chargeType` : Type of charge(s) performed by the parking site.
+
+    -   Attribute type: List of [Text](http://schema.org/Text)
+    -   Allowed values: Some of those defined by the DATEX II version 2.3
+        _ChargeTypeEnum_ enumeration: - (`flat`, `minimum`, `maximum`,
+        `additionalIntervalPrice` `seasonTicket` `temporaryPrice`
+        `firstIntervalPrice`, `annualPayment`, `monthlyPayment`, `free`,
+        `unknown`, `other`) - Any other application-specific
+    -   Mandatory
+
+-   `acceptedPaymentMethod` : Accepted payment method(s)
+
+    -   Normative references:
+        [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod)
     -   Optional
 
 -   `usageScenario` : Usage scenario. Gives more details about the `category`
@@ -147,18 +154,6 @@ The data model is defined as shown below:
             `liftshare`, `carSharing`, `vehicleLift`, `loadingBay`, `dropOff`,
             `overnightParking`, `other`)
         -   Or any other value useful for the application and not covered above.
-    -   Optional
-
--   `description` : Description about the onstreet parking zone.
-
-    -   Normative References:
-        [https://schema.org/description](https://schema.org/description)
-    -   Optional
-
--   `areBordersMarked` : Denotes whether parking spots are delimited (with blank
-    lines or similar) or not.
-
-    -   Attribute type: [Boolean](https://schema.org/Boolean)
     -   Optional
 
 -   `totalSpotNumber` : The total number of spots offered by this parking site.
@@ -216,6 +211,12 @@ The data model is defined as shown below:
         -   (`perpendicularParking`, `parallelParking`, `echelonParking`)
     -   Optional
 
+-   `areBordersMarked` : Denotes whether parking spots are delimited (with blank
+    lines or similar) or not.
+
+    -   Attribute type: [Boolean](https://schema.org/Boolean)
+    -   Optional
+
 -   `averageSpotWidth` : The average width of parking spots.
 
     -   Attribute type: [Number](http://schema.org/Number)
@@ -226,17 +227,6 @@ The data model is defined as shown below:
 
     -   Attribute type: [Number](http://schema.org/Number)
     -   Default unit: Meters
-    -   Optional
-
--   `acceptedPaymentMethod` : Accepted payment method(s)
-
-    -   Normative references: https://schema.org/acceptedPaymentMethod
-    -   Optional
-
--   `image` : A URL containing a photo of this parking site.
-
-    -   Normative References:
-        [https://schema.org/image](https://schema.org/image)
     -   Optional
 
 -   `refParkingSpot` : Individual parking spots belonging to this on street

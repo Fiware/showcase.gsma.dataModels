@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:AccessPoint:Madrid:acc_4_1_3",
+  "type": "GtfsAccessPoint",
+  "name": "Bravo Murillo",
+  "location": {
+    "type": "Point",
+    "coordinates": [-3.69036,40.46629]
+  },
+  "address": {
+    "type": "PostalAddress",
+    "streetAddress": "Calle de Bravo Murillo 377",
+    "addressLocality": "Madrid",
+    "addressCountry": "ES"
+  },
+  "hasParentStation": "urn:ngsi-ld:Gtfstation:Madrid:est_90_21"
+}

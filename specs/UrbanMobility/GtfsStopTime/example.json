@@ -1,0 +1,10 @@
+{
+  "id": "urn:ngsi-ld:GtfsStopTime:Spain:Madrid:EMT:FE0010011_737",
+  "type": "GtfsStopTime",
+  "hasStop": "urn:ngsi-ld:GtfsStop:Madrid:EMT:737",
+  "hasTrip": "urn:ngsi-ld:GtfsTrip:Madrid:EMT:FE0010011",
+  "distanceTravelled": 759,
+  "stopSequence": 4,
+  "arrivalTime": "07:04:24",
+  "departureTime": "07:04:24"
+}

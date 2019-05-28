@@ -1,0 +1,31 @@
+{
+  "id": "urn:ngsi-ld:ArrivalEstimation:Santander:1",
+  "type": "ArrivalEstimation",
+  "refGtfsTransitFeedFile": {
+    "value": "urn:ngsi-ld:GtfsTransitFeedFile:Santander:bus"
+  },
+  "routeId": {
+    "value": "route1"
+  },
+  "stopId": {
+    "value": "stop1"
+  },
+  "lastUpdatedAt": {
+    "value": "2018-12-19T10:14:00.238Z",
+    "type": "DateTime"
+  },
+  "arrivalEstimationUpdate": {
+    "value": [
+      {
+        "tripId": "1",
+        "arrivalDelay": -2
+      }, {
+        "tripId": "2",
+        "arrivalDelay": -2
+      }, {
+        "tripId": "3",
+        "arrivalDelay": -2
+      }
+    ]
+  }
+}

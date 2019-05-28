@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://fiware.github.io/dataModels/specs/Transportation/BikeHire/schema.json",
+	"$id": "https://fiware.github.io/dataModels/specs/Transportation/BikeHire/schema.json",
 	"title": "FIWARE - Transportation / Bike Hire Docking Station",
 	"description": "Bike Hire Docking Station",
 	"type": "object",

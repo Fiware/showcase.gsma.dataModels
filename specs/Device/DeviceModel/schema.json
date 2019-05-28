@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Device/DeviceModel/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/Device/DeviceModel/schema.json",
   "title": "GSMA / FIWARE - Device Model schema",
   "description": "This entity captures the static properties of a Device. ",
   "type": "object",

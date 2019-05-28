@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/UrbanMobility/GtfsService/schema.json",
+  "title": "NGSI GTFS Schema",
+  "description": "GTFS Service",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "GtfsService"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "operatedBy": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "operatedBy"
+  ]
+}

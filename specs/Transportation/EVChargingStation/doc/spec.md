@@ -188,7 +188,8 @@ A JSON Schema corresponding to this data model can be found
     -   Optional
 
 -   `acceptedPaymentMethod` : Accepted payment method(s).
-    -   Normative references: https://schema.org/acceptedPaymentMethod
+    -   Normative references:
+        [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod)
     -   Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this
@@ -201,7 +202,6 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 ### Normalized Example
 
 Normalized NGSI response
-
 
 ```json
 {
@@ -289,6 +289,6 @@ T.B.D.
 
 ## See also
 
--   https://openchargemap.org/
--   https://wiki.openstreetmap.org/wiki/Tag:amenity=charging_station
--   https://www.plugshare.com/
+-   [https://openchargemap.org/](https://openchargemap.org/)
+-   [https://wiki.openstreetmap.org/wiki/Tag:amenity=charging_station](https://wiki.openstreetmap.org/wiki/Tag:amenity=charging_station)
+-   [https://www.plugshare.com/](https://wiki.openstreetmap.org/wiki/Tag:amenity=charging_station)
