@@ -1,17 +1,16 @@
 # Point Of Interest - Weather Stations
 
-This folder contains code to generate a set of POIs which correspond to the
-[Weather Stations](https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw)
-owned by the Spanish Meteorological Agency ([AEMET](http://aemet.es)).
+This folder contains the following scripts: 
+-   `harvesters/spain/spain_weather_stations.py` - Performs data harvesting using AEMET's data site as the origin and 
+Orion Context Broker as the destination. It also prepares config for other harvesters.
 
-Here you can find the following files:
+The list of weather station in Spain provided by [Spanish National Meteorology Agency](http://aemet.es),
+the list of Spain municipalities provided by [The National Statistics Institute](http://ine.es/en/).
 
--   [run.py](run.py). Python code to generate and upload the list of stations.
+Please check data licenses at the original data sources before using this data
+in an application.
 
 ## Public instance
-
-You can read about public instance offering information about weather stations [here](../../gsma.md).
-
 
 You can read about public instance offering information about weather stations [here](../../gsma.md).
 
@@ -19,7 +18,7 @@ You can read about public instance offering information about weather stations [
 
 ```bash
 curl -X GET \
-  'http://streams.lab.fiware.org:1026/v2/entities?type=PointOfInterest&q=category:WeatherStation&options=keyValues&limit=1' \
+  'https://streams.lab.fiware.org/v2/entities?type=PointOfInterest&id=WeatherStation-ES-C929I' \
   -H 'fiware-service: poi' \
   -H 'fiware-servicepath: /Spain' | python -m json.tool
 ```
@@ -29,19 +28,21 @@ curl -X GET \
     {
         "address": {
             "addressCountry": "ES",
-            "addressLocality": "Calamocha",
-            "addressRegion": "Teruel"
+            "addressLocality": "Hierro Aeropuerto",
+            "addressRegion": "Santa Cruz de Tenerife"
         },
-        "category": "WeatherStation",
-        "id": "WeatherStation-ES-9381I",
+        "category": [
+            "WeatherStation"
+        ],
+        "id": "WeatherStation-ES-C929I",
         "location": {
             "coordinates": [
-                -1.29333,
-                40.9261
+                -17.8889,
+                27.8189
             ],
             "type": "Point"
         },
-        "source": "https://opendata.aemet.es/",
+        "source": "http://www.aemet.es",
         "type": "PointOfInterest"
     }
 ]

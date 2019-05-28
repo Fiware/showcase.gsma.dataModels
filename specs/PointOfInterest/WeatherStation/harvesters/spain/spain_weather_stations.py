@@ -5,25 +5,32 @@
     This program collects information about Spain weather stations and Spain municipalities from AEMET and INE and
     prepares config that can be used by harvester itself to uploads the list of Spain weather stations to
     Orion Context Broker or export data required by other weather harvesters:
-    - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherObserved
-    - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherForecast
+      - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherObserved
+      - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherForecast
 
     It can also exports data to the CSV file (./stations.csv), that can be used to upload the list of weather stations
     to Google Maps:
-    https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw&usp=sharing .
+      - https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw&usp=sharing .
 
-    if AEMET data should be used, you must provide a valid API key, that can be obtained via email
-    (https://opendata.aemet.es/centrodedescargas/altaUsuario?).
+    if AEMET data should be used, you must provide a valid API key, that can be obtained via email:
+     - https://opendata.aemet.es/centrodedescargas/altaUsuario?.
 
+    Legal notes:
+      - http://www.aemet.es/en/nota_legal
+      - http://ine.es/ss/Satellite?L=1&c=Page&cid=1254735849170&p=1254735849170&pagename=Ayuda%2FINELayout
 
-    AEMET:
-      - example: curl -X GET --header 'Accept: application/json' --header "api_key: ${KEY}" ' \
-                 https://opendata.aemet.es/opendata/api/valores/climatologicos/inventarioestaciones/todasestaciones'
-    INE:
-      - list of data sources: http://www.ine.es/CDINEbase/consultar.do?
-        mes=&operacion=Relaci%F3n+de+municipios+y+c%F3digos+por+provincias+y+comunidades+aut%F3nomas&id_oper=Ir&L=1
-      - example URL: http://www.ine.es/en/daco/inebase_mensual/febrero_2019/relacion_municipios_en.zip
+    Examples:
+      - get the list of stations from AEMET:
+        curl -X GET --header 'Accept: application/json' --header "api_key: ${KEY}" \
+            'https://opendata.aemet.es/opendata/api/valores/climatologicos/inventarioestaciones/todasestaciones'
+      - get the list of Spain administrative units:
+        curl -o list.zip \
+            'http://www.ine.es/en/daco/inebase_mensual/febrero_2019/relacion_municipios_en.zip'
 
+    AsyncIO name convention:
+    async def name - entry point for asynchronous data processing/http requests and post processing
+    async def name_bounded - intermediate step to limit amount of parallel workers
+    async def name_one - worker process
 """
 
 from aiohttp import ClientSession, client_exceptions
@@ -43,22 +50,21 @@ from yaml import safe_load as load, dump
 from zipfile import ZipFile
 import logging
 
-
-default_limit_entities = 50
-default_limit_targets = 50
+default_limit_entities = 50           # amount of entities per 1 request to Orion
+default_limit_targets = 50            # amount of parallel request to Orion
 default_log_level = 'INFO'
 default_orion = 'http://orion:1026'
-default_path = '/Spain'
-default_service = 'poi'
-default_timeout = -1
+default_path = '/Spain'               # header FIWARE-SERVICEPATH
+default_service = 'poi'               # header FIWARE-SERVICE
+default_timeout = -1                  # if value != -1, then work as a service
 
 http_ok = [200, 201, 204]
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
 matches = list()
-stations_file_yml = 'stations.yml'
-stations_file_csv = 'stations.csv'
+stations_file_yml = 'stations.yml'   # destination file for yml format
+stations_file_csv = 'stations.csv'   # destination file for csv format
 tz_africa = 'Africa/Ceuta'
 tz_europe = 'Europe/Madrid'
 tz_atlantic = 'Atlantic/Canary'
@@ -69,8 +75,10 @@ template = {
     'id': 'WeatherStation-ES-',
     'type': 'PointOfInterest',
     'category': {
-        'type': 'Text',
-        'value': 'WeatherStation'
+        'type': 'object',
+        'value': [
+            'WeatherStation'
+        ]
     },
     'address': {
         'type': 'PostalAddress',
@@ -89,7 +97,7 @@ template = {
     },
     'source': {
         'type': 'Text',
-        'value': 'https://opendata.aemet.es/'
+        'value': 'http://www.aemet.es'
     },
 }
 
@@ -107,6 +115,7 @@ def collect_aemet(key):
         logger.error('Collecting data from AEMET failed due to the return code')
         return False
 
+    logger.debug('Remaining requests %s', result.headers.get('Remaining-request-count'))
     result = loads(result.text)
 
     try:
@@ -121,7 +130,7 @@ def collect_aemet(key):
 
     result = loads(result.text)
 
-    logger.debug("Collection data from AEMET утвув")
+    logger.debug("Collection data from AEMET ended")
     return result
 
 
@@ -192,7 +201,7 @@ def collect_ine():
                         'community': sheet.cell_value(row, 0),
                         'province': sheet.cell_value(row, 1)})
 
-    logger.debug("Collection data INE утвув")
+    logger.debug("Collection data from INE ended")
     return result
 
 
@@ -218,7 +227,7 @@ def log_level_to_int(log_level_string):
 
 
 async def post(body):
-    logger.debug('Posting data started')
+    logger.debug('Posting data to Orion started')
 
     tasks = list()
 
@@ -233,6 +242,7 @@ async def post(body):
 
     sem = Semaphore(limit_targets)
 
+    # splitting list to list of lists to fit into limits
     block = 0
     items = 0
     body_divided = dict()
@@ -250,8 +260,8 @@ async def post(body):
             break
 
     async with ClientSession() as session:
-        for i in body_divided:
-            task = ensure_future(post_bounded(body_divided[i], headers, sem, session))
+        for item in body_divided:
+            task = ensure_future(post_bounded(body_divided[item], headers, sem, session))
             tasks.append(task)
 
         response = await gather(*tasks)
@@ -261,9 +271,9 @@ async def post(body):
         response.remove(True)
 
     for item in response:
-        logger.error('Posting data to Orion failed due to %s', item)
+        logger.error('Posting data to Orion failed due to the %s', item)
 
-    logger.debug('Posting data to Orion утвув')
+    logger.debug('Posting data to Orion ended')
     return True
 
 
@@ -285,10 +295,10 @@ async def post_one(el, headers, session):
         async with session.post(url, headers=headers, data=payload) as response:
             await response.read()
     except client_exceptions.ClientConnectorError:
-        return 'Posting data to Orion failed due to the connection problems'
+        return 'connection problems'
 
     if response.status not in http_ok:
-        return 'Posting data to Orion failed due to response code ' + str(response.status)
+        return 'response code ' + str(response.status)
 
     return True
 
@@ -316,7 +326,7 @@ async def prepare_data(aemet_data, ine_data):
         result['municipalities'][item['id']] = deepcopy(item)
         result['municipalities'][item['id']].pop('id')
 
-    logger.debug('Municipality preparation finished')
+    logger.debug('Municipality preparation ended')
 
     for item in aemet_data:
         tasks_forecast.append(ensure_future(prepare_data_forecasts(item, result['municipalities'])))
@@ -330,8 +340,8 @@ async def prepare_data(aemet_data, ine_data):
         result['stations'][item['id']] = deepcopy(item)
         result['stations'][item['id']].pop('id')
 
-    logger.debug('Station preparation finished')
-    logger.debug('Data preparation finished')
+    logger.debug('Station preparation ended')
+    logger.debug('Data preparation ended')
 
     return result
 
@@ -348,6 +358,7 @@ async def prepare_data_forecasts(station, municipalities):
 
     status = False
 
+    # There is a difference in names in AEMET and INE sources, so fix it
     if result['province'] == 'a coruña':
         result['province'] = 'Coruña, A'
     elif result['province'] == 'alicante':
@@ -591,5 +602,5 @@ if __name__ == '__main__':
                 logger.debug('Sleeping for the %s seconds', timeout)
                 sleep(timeout)
 
-    logger.info('Finished')
+    logger.info('Ended')
     exit(0)

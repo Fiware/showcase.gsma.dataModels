@@ -3,12 +3,21 @@
 
 """
     This program collects Portugal weather forecast from IPMA and uploads it to the Orion Context Broker.
-    It upload the list of stations on-fly from http://api.ipma.pt/json/locations.json.
+    It uploads the list of stations on-fly from
+      - http://api.ipma.pt/json/locations.json.
 
-    Source: http://api.ipma.pt/json/alldata/{}.json
-    Example: curl -X GET --header 'Accept: application/json' \
-                 'http://api.ipma.pt/json/alldata/1110600.json'
+    Legal notes:
+      - http://www.ipma.pt/en/siteinfo/index.html?page=index.xml
 
+    Examples:
+      - get the weather forecast from IPMA:
+        curl -X GET --header 'Accept: application/json' \
+            'http://api.ipma.pt/json/alldata/1110600.json'
+
+    AsyncIO name convention:
+    async def name - entry point for asynchronous data processing/http requests and post processing
+    async def name_bounded - intermediate step to limit amount of parallel workers
+    async def name_one - worker process
 """
 
 from aiohttp import ClientSession, client_exceptions
@@ -41,10 +50,9 @@ log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
 stations = dict()                     # preprocessed list of stations
-stations_file = 'stations.json'
 tz = timezone('UTC')
-tz_wet = timezone('Europe/Lisbon')
-tz_azot = timezone('Atlantic/Azores')
+tz_wet = 'Europe/Lisbon'
+tz_azot = 'Atlantic/Azores'
 tz_azot_codes = ['3490100', '3480200', '3470100', '3460200', '3450200', '3440100', '3420300', '3410100']
 url_observation = 'http://api.ipma.pt/json/alldata/{}.json'
 url_stations = 'http://api.ipma.pt/json/locations.json'
@@ -73,19 +81,15 @@ template = {
         'value': None
     },
     'dayMaximum': {
-        'type': 'Object',
+        'type': 'StructuredValue',
         'value': {
-            'feelsLikeTemperature': None,
-            'temperature': None,
-            'relativeHumidity': None
+            'temperature': None
         }
     },
     'dayMinimum': {
-        'type': 'Object',
+        'type': 'StructuredValue',
         'value': {
-            'feelsLikeTemperature': None,
-            'temperature': None,
-            'relativeHumidity': None
+            'temperature': None
         }
     },
     'feelsLikeTemperature': {
@@ -135,13 +139,6 @@ template = {
 }
 
 
-"""
-    async def name - entry point for asynchronous data processing/http requests and post processing
-    async def name_bounded - intermediate step to limit amount of parallel workers
-    async def name_one - worker process   
-"""
-
-
 def check_entity(forecast, item):
     if item in forecast:
         if forecast[item] != '-99.0' and forecast[item] != -99:
@@ -150,8 +147,8 @@ def check_entity(forecast, item):
     return None
 
 
-def decode_weather_type(weather_type):
-    return {
+def decode_weather_type(item):
+    out = {
         1: 'clear',
         2: 'slightlyCloudy',
         3: 'partlyCloudy',
@@ -161,10 +158,15 @@ def decode_weather_type(weather_type):
         7: 'drizzle',
         9: 'rain',
         11: 'heavyRain'
-    }.get(weather_type, None)
+    }.get(item, None)
+
+    if out is None:
+        logger.error('Unknown value of WeatherType detected, %s', item)
+
+    return out if out else None
 
 
-def decode_wind_direction(direction):
+def decode_wind_direction(item):
     """
     North: 180
     North-West: 135
@@ -176,7 +178,7 @@ def decode_wind_direction(direction):
     North-East: -135
     """
 
-    return {
+    out = {
         '9': 180,
         '8': 135,
         '7': 90,
@@ -193,7 +195,12 @@ def decode_wind_direction(direction):
         'SE': -45,
         'E': -90,
         'NE': -135
-    }.get(direction, None)
+    }.get(item, None)
+
+    if out is None:
+        logger.error('Unknown value of WindDirection detected, %s', item)
+
+    return out if out else None
 
 
 async def collect():
@@ -242,10 +249,19 @@ async def collect_one(station, session):
     result['retrieved'] = datetime.now().replace(microsecond=0)
     result['forecasts'] = dict()
 
+    today = datetime.now(tz).strftime("%Y-%m-%d") + 'T00:00:00'
+    tomorrow = (datetime.now(tz) + timedelta(days=1)).strftime("%Y-%m-%d") + 'T00:00:00'
+
     for forecast in content:
+        if forecast['idPeriodo'] != 24:
+            continue
+
         date = forecast['dataPrev']
-        if date not in result['forecasts']:
-            result['forecasts'][date] = dict()
+
+        if date not in [today, tomorrow]:
+            continue
+
+        result['forecasts'][date] = dict()
 
         result['forecasts'][date]['feelsLikeTemperature'] = check_entity(forecast, 'utci')
         result['forecasts'][date]['issued'] = datetime.strptime(forecast['dataUpdate'], '%Y-%m-%dT%H:%M:%S')
@@ -315,7 +331,7 @@ async def post(body):
         response.remove(True)
 
     for item in response:
-        logger.error('Posting data to Orion failed due to %s', item)
+        logger.error('Posting data to Orion failed due to the %s', item)
 
     logger.debug('Posting data to Orion ended')
 
@@ -338,10 +354,10 @@ async def post_one(item, headers, session):
         async with session.post(url, headers=headers, data=payload) as response:
             await response.read()
     except client_exceptions.ClientConnectorError:
-        return 'Posting data to Orion failed due to the connection problems'
+        return 'connection problems'
 
     if response.status not in http_ok:
-        return 'Posting data to Orion failed due to response code ' + str(response.status)
+        return 'response code ' + str(response.status)
 
     return True
 
@@ -368,34 +384,26 @@ async def prepare_schema_one(source):
 
     today = datetime.now(tz).strftime("%Y-%m-%d") + 'T00:00:00'
     tomorrow = (datetime.now(tz) + timedelta(days=1)).strftime("%Y-%m-%d") + 'T00:00:00'
-
-    if id_local in tz_azot_codes:
-        tz_local = tz_azot
-    else:
-        tz_local = tz_wet
-
-    retrieved = source['retrieved'].replace(tzinfo=tz).isoformat()
+    retrieved = source['retrieved'].replace(tzinfo=tz).isoformat().replace('+00:00', 'Z')
 
     for date in source['forecasts']:
-        if date not in [today, tomorrow]:
-            continue
-        if source['forecasts'][date]['period'] != 24:
-            continue
 
         item = deepcopy(template)
-        ft = source['forecasts'][date]
 
-        ft_date = tz_local.localize(ft['issued'])
-        issued = ft_date.astimezone(tz).isoformat()
-        valid_from = tz_local.localize(datetime.strptime(date, '%Y-%m-%dT%H:%M:%S'))
+        forecast = source['forecasts'][date]
+
+        issued = forecast['issued'].replace(tzinfo=tz).isoformat().replace('+00:00', 'Z')
+
+        forecast_date = datetime.strptime(date, '%Y-%m-%dT00:00:00')
+
+        valid_from = forecast_date.replace(tzinfo=tz)
         valid_to = valid_from + timedelta(hours=24)
 
-        valid_from_iso = valid_from.isoformat()
-        valid_from_short = valid_from.strftime('%H:%M:%S%z')
-        valid_from = valid_from.astimezone(tz).isoformat()
-        valid_to_iso = valid_to.isoformat()
-        valid_to_short = valid_to.strftime('%H:%M:%S%z')
-        valid_to = valid_to.astimezone(tz).isoformat()
+        valid_from_iso = valid_from.isoformat().replace('+00:00', 'Z')
+        valid_from_short = valid_from.strftime('%H:%M:%S')
+
+        valid_to_iso = valid_to.isoformat().replace('+00:00', 'Z')
+        valid_to_short = valid_to.strftime('%H:%M:%S')
 
         if latest:
             if date == today:
@@ -412,36 +420,58 @@ async def prepare_schema_one(source):
 
         item['dateRetrieved']['value'] = retrieved
 
-        item['dayMaximum']['value']['temperature'] = float(ft['tMax'])
+        if 'tMax' in forecast:
+            item['dayMaximum']['value']['temperature'] = float(forecast['tMax'])
+        else:
+            del item['dayMaximum']
 
-        item['dayMinimum']['value']['temperature'] = float(ft['tMin'])
+        if 'tMin' in forecast:
+            item['dayMinimum']['value']['temperature'] = float(forecast['tMin'])
+        else:
+            del item['dayMinimum']
 
-        if ft['feelsLikeTemperature'] is not None:
-            item['feelsLikeTemperature']['value'] = float(ft['feelsLikeTemperature'])
+        if forecast['feelsLikeTemperature'] is not None:
+            item['feelsLikeTemperature']['value'] = float(forecast['feelsLikeTemperature'])
+        else:
+            del item ['feelsLikeTemperature']
 
-        if ft['precipitationProbability'] is not None:
-            item['precipitationProbability']['value'] = float(ft['precipitationProbability'] / 100)
+        if forecast['precipitationProbability'] is not None:
+            item['precipitationProbability']['value'] = float(forecast['precipitationProbability'] / 100)
+        else:
+            del item['precipitationProbability']
 
-        if ft['relativeHumidity'] is not None:
-            item['relativeHumidity']['value'] = float(ft['relativeHumidity'])
+        if forecast['relativeHumidity'] is not None:
+            item['relativeHumidity']['value'] = float(forecast['relativeHumidity'])
+        else:
+            del item['relativeHumidity']
 
-        if ft['temperature'] is not None:
-            item['temperature']['value'] = float(ft['temperature'])
+        if forecast['temperature'] is not None:
+            item['temperature']['value'] = float(forecast['temperature'])
+        else:
+            del item['temperature']
 
-        item['validFrom']['value'] = valid_from
+        item['validFrom']['value'] = valid_from_iso
 
-        item['validTo']['value'] = valid_to
+        item['validTo']['value'] = valid_to_iso
 
         item['validity']['value'] = valid_from_iso + '/' + valid_to_iso
 
-        if ft['weatherType'] is not None:
-            item['weatherType']['value'] = decode_weather_type(ft['weatherType'])
+        if forecast['weatherType'] is not None:
+            item['weatherType']['value'] = decode_weather_type(forecast['weatherType'])
 
-        if ft['windDirection'] is not None:
-            item['windDirection']['value'] = decode_wind_direction(ft['windDirection'])
+        if item['weatherType']['value'] is None:
+            del item['weatherType']
 
-        if ft['windSpeed'] is not None:
-            item['windSpeed']['value'] = round(float(ft['windSpeed']) * 0.28, 2)
+        if forecast['windDirection'] is not None:
+            item['windDirection']['value'] = decode_wind_direction(forecast['windDirection'])
+
+        if item['windDirection']['value'] is None:
+            del item['windDirection']
+
+        if forecast['windSpeed'] is not None:
+            item['windSpeed']['value'] = round(float(forecast['windSpeed']) * 0.28, 2)
+        else:
+            del item['windSpeed']
 
         result.append(item)
 
@@ -485,7 +515,6 @@ def setup_stations(stations_limit):
     result = dict()
     limit_on = False
     limit_off = False
-    content = None
     resp = None
 
     if 'include' in stations_limit:
@@ -518,6 +547,10 @@ def setup_stations(stations_limit):
         result[station_code]['postalCode'] = station_code
         result[station_code]['addressLocality'] = sanitize(station['local'])
         result[station_code]['url'] = url_observation.format(station_code)
+        if station_code in tz_azot_codes:
+            result[station_code]['timezone'] = tz_azot
+        else:
+            result[station_code]['timezone'] = tz_wet
 
     if limit_on:
         if len(result) != len(stations_limit['include']):

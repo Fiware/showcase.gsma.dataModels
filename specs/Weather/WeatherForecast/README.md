@@ -6,9 +6,9 @@ The Weather forecast in Spain is provided by
 [Harvesters](./harvesters) transform this data to NGSI v2.
 
 This folder contains the following scripts:
--   `harvest/spain/run.py` - Performs data harvesting using
+-   `harvesters/spain/spain_weather_forecast.py` - Performs data harvesting using
     AEMET's data site as the origin and Orion Context Broker as the destination.
--   `harvest/portugal/hrun.py` - Performs data harvesting using
+-   `harvesters/portugal/portugal_weather_forecast.py` - Performs data harvesting using
     IPMA's data site as the origin and Orion Context Broker as the destination.
 
 Please check data licenses at the original data sources before using this data
@@ -22,7 +22,7 @@ You can read about public instance offering information about weather stations [
 
 ```bash
 curl -X GET \
-  'http://streams.lab.fiware.org:1026/v2/entities?type=WeatherForecast&options=keyValues&q=address.addressLocality:Barcelona&limit=1' \
+  'https://streams.lab.fiware.org/v2/entities?type=WeatherForecast&options=keyValues&q=address.addressLocality:Barcelona&limit=1' \
   -H 'fiware-service: weather' \
   -H 'fiware-servicepath: /Spain' | python -m json.tool
 ```

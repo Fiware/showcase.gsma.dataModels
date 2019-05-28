@@ -1,33 +1,72 @@
 {
-    "id": "Spain-WeatherForecast-28079_tomorrow_18:00:00+0100_00:00:00+0100",
+    "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
     "type": "WeatherForecast",
-    "address": {
-        "addressCountry": "ES",
-        "addressLocality": "Madrid",
-        "postalCode": "28079"
-    },
-    "dataProvider": "FIWARE",
-    "dateIssued": "2019-02-21T10:44:01.00Z",
-    "dateRetrieved": "2019-02-21T11:31:32.00Z",
-    "dayMaximum": {
-        "feelsLikeTemperature": 19,
-        "temperature": 19,
-        "relativeHumidity": 0.55
-    },
     "dayMinimum": {
-        "feelsLikeTemperature": 0,
-        "temperature": 3,
-        "relativeHumidity": 0.2
+        "value": {
+            "feelsLikeTemperature": 11,
+            "temperature": 11,
+            "relativeHumidity": 0.7
+        }
     },
-    "feelsLikeTemperature": 8,
-    "precipitationProbability": 0,
-    "relativeHumidity": 0.35,
-    "source": "http://www.aemet.es",
-    "temperature": 8,
-    "validFrom": "2019-02-22T17:00:00.00Z",
-    "validTo": "2019-02-22T23:00:00.00Z",
-    "validity": "2019-02-22T18:00:00+01:00/2019-02-23T00:00:00+01:00",
-    "weatherType": "sunnyDay",
-    "windDirection": null,
-    "windSpeed": 0
+    "feelsLikeTemperature": {
+        "value": 12
+    },
+    "dataProvider": {
+        "value": "TEF"
+    },
+    "temperature": {
+        "value": 12
+    },
+    "validTo": {
+        "type": "DateTime",
+        "value": "2016-12-01T23:00:00.00Z"
+    },
+    "weatherType": {
+        "value": "overcast"
+    },
+    "precipitationProbability": {
+        "value": 0.15
+    },
+    "dayMaximum": {
+        "value": {
+            "feelsLikeTemperature": 15,
+            "temperature": 15,
+            "relativeHumidity": 0.9
+        }
+    },
+    "source": {
+        "value": "http://www.aemet.es/xml/municipios/localidad_46250.xml"
+    },
+    "windSpeed": {
+        "value": 0
+    },
+    "validity": {
+        "value": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00"
+    },
+    "dateIssued": {
+        "type": "DateTime",
+        "value": "2016-12-01T10:40:01.00Z"
+    },
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "addressCountry": "Spain",
+            "postalCode": "46005",
+            "addressLocality": "Valencia"
+        }
+    },
+    "dateRetrieved": {
+        "type": "DateTime",
+        "value": "2016-12-01T12:57:24.00Z"
+    },
+    "validFrom": {
+        "type": "DateTime",
+        "value": "2016-12-01T17:00:00.00Z"
+    },
+    "windDirection": {
+        "value": null
+    },
+    "relativeHumidity": {
+        "value": 0.85
+    }
 }

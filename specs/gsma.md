@@ -86,7 +86,7 @@ Below there is a list of data / IoT Device providers who kindly are publishing a
 ### Endpoints
 | Endpoint                          | URL                            |
 | --------------------------------- | ------------------------------ |
-| Harmonized data endpoint (NGSIv2) | <https://orion.lab.fiware.org> |
+| Harmonized data endpoint (NGSIv2) | <https://streams.lab.fiware.org> |
 
 ### Useful links
 | Information                    | URL                                                                   |

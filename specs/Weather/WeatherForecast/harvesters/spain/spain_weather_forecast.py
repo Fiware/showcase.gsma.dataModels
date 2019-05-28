@@ -4,17 +4,26 @@
 """
     This program collects Spain weather forecast from AEMET and uploads it to the Orion Context Broker.
     It use predefined list of municipalities (./stations.yml), that can be obtained by other harvester:
-    https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation
+      - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation
 
     You must provide a valid API key to collect data from AEMET data portal. That key can be obtained via email
-    (https://opendata.aemet.es/centrodedescargas/altaUsuario?).
+      - https://opendata.aemet.es/centrodedescargas/altaUsuario?.
 
-    You must provide a valid id of municipality, that can be found in stations.yml
+    Legal notes:
+      - http://www.aemet.es/en/nota_legal
 
-    Source: https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{}
-    Example: curl -X GET --header 'Accept: application/json' --header "api_key: ${KEY}" \
-                 'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/28079'
+    Examples:
+      - get the weather forecast for AEMET:
+        curl -X GET --header 'Accept: application/json' --header "api_key: ${KEY}" \
+            'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/28079'
 
+    AsyncIO name convention:
+    async def name - entry point for asynchronous data processing/http requests and post processing
+    async def name_bounded - intermediate step to limit amount of parallel workers
+    async def name_one - worker process
+
+    Warning! AEMET open data portal has a requests limit. So you can't make more then 149 requests from one try.
+    This limit will be removed in the next version.
 """
 
 from aiohttp import ClientSession, client_exceptions
@@ -31,26 +40,24 @@ from yajl import dumps, loads
 from yaml import safe_load as load
 import logging
 
-
-default_latest = False                # preserve only latest values
-default_limit_entities = 50           # amount of entities per 1 request to Orion
-default_limit_source = 10             # amount of parallel request to AEMET
-default_limit_target = 50             # amount of parallel request to Orion
+default_latest = False                 # preserve only latest values
+default_limit_entities = 50            # amount of entities per 1 request to Orion
+default_limit_source = 10              # amount of parallel request to AEMET
+default_limit_target = 50              # amount of parallel request to Orion
 default_log_level = 'INFO'
-default_orion = 'http://orion:1026'   # Orion Contest Broker endpoint
-default_path = '/Spain'               # header FIWARE-SERVICEPATH
-default_service = 'weather'           # header FIWARE-SERVICE
-default_timeout = -1                  # if value != -1, then work as a service
+default_orion = 'http://orion:1026'    # Orion Contest Broker endpoint
+default_path = '/Spain'                # header FIWARE-SERVICEPATH
+default_service = 'weather'            # header FIWARE-SERVICE
+default_station_file = 'stations.yml'  # source file with list of municipalities
+default_timeout = -1                   # if value != -1, then work as a service
 
 http_ok = [200, 201, 204]
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
-stations = dict()                     # preprocessed list of stations
-stations_file = 'stations.yml'
+stations = dict()                      # preprocessed list of stations
 tz = timezone('UTC')
 url_aemet = "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{}"
-
 
 template = {
     'id': 'Spain-WeatherForecast-',
@@ -76,7 +83,7 @@ template = {
         'value': None
     },
     'dayMaximum': {
-        'type': 'Object',
+        'type': 'StructuredValue',
         'value': {
             'feelsLikeTemperature': None,
             'temperature': None,
@@ -84,7 +91,7 @@ template = {
         }
     },
     'dayMinimum': {
-        'type': 'Object',
+        'type': 'StructuredValue',
         'value': {
             'feelsLikeTemperature': None,
             'temperature': None,
@@ -138,13 +145,6 @@ template = {
 }
 
 
-"""
-    async def name - entry point for asynchronous data processing/http requests and post processing
-    async def name_bounded - intermediate step to limit amount of parallel workers
-    async def name_one - worker process   
-"""
-
-
 async def collect(key):
     logger.debug('Collecting data from AEMET started')
 
@@ -181,7 +181,8 @@ async def collect_one(station, session, key):
         return False
 
     if response.status not in http_ok:
-        logger.error('Collecting link from AEMET station %s failed due to the return code %s', station, str(response.status))
+        logger.error('Collecting link from AEMET station %s failed due to the return code %s', station,
+                     str(response.status))
         return False
 
     logger.debug('Remaining requests %s', response.headers.get('Remaining-request-count'))
@@ -194,17 +195,19 @@ async def collect_one(station, session, key):
         return False
 
     if content.status_code not in http_ok:
-        logger.error('Collecting data from AEMET station %s failed due to the return code', station, str(response.status))
+        logger.error('Collecting data from AEMET station %s failed due to the return code %s', station,
+                     str(response.status))
         return False
 
     content = loads(content.text)
 
     result = dict()
     result['station'] = station
-    result['issued'] = datetime.strptime(content[0]['elaborado'], "%Y-%m-%d").replace(tzinfo=tz).isoformat().replace('+00:00', 'Z')
+    issued = datetime.strptime(content[0]['elaborado'], "%Y-%m-%d")
+    result['issued'] = issued.replace(tzinfo=tz).isoformat().replace('+00:00', 'Z')
     result['retrieved'] = datetime.now(tz).replace(tzinfo=tz).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
 
-    content = sorted(content[0]['prediccion']['dia'], key=lambda k:(k['fecha']), reverse=False)
+    content = sorted(content[0]['prediccion']['dia'], key=lambda k: (k['fecha']), reverse=False)
 
     result['today'] = content[0]
     result['tomorrow'] = content[1]
@@ -216,69 +219,37 @@ def decode_weather_type(item):
 
     """
     11 – Despejado
-    11n – Despejado noche
-    12 Poco nuboso
-    12n – Poco nuboso noche
+    12 - Poco nuboso
     13 – Intervalos nubosos
-    13n – Intervalos nubosos noche
     14 – Nuboso
-    14n – Nuboso noche
     15 – Muy nuboso
-    16n – Muy nuboso
     16 – Cubierto
-    16n – Cubierto
     17 – Nubes altas
-    17n – Nubes altas noche
     23 – Intervalos nubosos con lluvia
-    23n – Intervalos nubosos con lluvia noche
     24 – Nuboso con lluvia
-    24n – Nuboso con lluvia noche
     25 – Muy nuboso con lluvia
-    25n – Muy nuboso con lluvia
     26 – Cubierto con lluvia
-    26n – Cubierto con lluvia
     33 – Intervalos nubosos con nieve
-    33n – Intervalos nubosos con nieve noche
     34 – Nuboso con nieve
-    34n – Nuboso con nieve noche
     35 – Muy nuboso con nieve
-    35n – Muy nuboso con nieve
     36 – Cubierto con nieve
-    36n – Cubierto con nieve
     43 – Intervalos nubosos con lluvia escasa
-    43n – Intervalos nubosos con lluvia escasa noche
     44 – Nuboso con lluvia escasa
-    44n – Nuboso con lluvia escasa noche
-    45n – Muy nuboso con lluvia escasa
-    46n – Cubierto con lluvia escasa
+    45 – Muy nuboso con lluvia escasa
+    46 – Cubierto con lluvia escasa
     51 – Intervalos nubosos con tormenta
-    51n – Intervalos nubosos con tormenta noche
     52 – Nuboso con tormenta
-    52n – Nuboso con tormenta noche
     53 – Muy nuboso con tormenta
-    53n – Muy nuboso con tormenta
     54 – Cubierto con tormenta
-    54n – Cubierto con tormenta
     61 – Intervalos nubosos con tormenta y lluvia escasa
-    61n – Intervalos nubosos con tormenta y lluvia escasa noche
-    62 Nuboso con tormenta y lluvia escasa
-    62n – Nuboso con tormenta y lluvia escasa noche
+    62 - Nuboso con tormenta y lluvia escasa
     63 – Muy nuboso con tormenta y lluvia escasa
-    63n – Muy nuboso con tormenta y lluvia escasa
-    64 Cubierto con tormenta y lluvia escasa
-    64n Cubierto con tormenta y lluvia escasa
+    64 - Cubierto con tormenta y lluvia escasa
     71 – Intervalos nubosos con nieve escasa
-    71n – Intervalos nubosos con nieve escasa noche
-    72 Nuboso con nieve escasa
-    72n – Nuboso con nieve escasa noche
+    72 - Nuboso con nieve escasa
     73 – Muy nuboso con nieve escasa
-    73n – Muy nuboso con nieve escasa
-    74 Cubierto con nieve escasa
-    74n Cubierto con nieve escasa
+    74 - Cubierto con nieve escasa
     """
-
-    if item is None:
-        return None
 
     if item == '11':
         return 'sunnyDay'
@@ -326,10 +297,14 @@ def decode_weather_type(item):
         '73': 'veryCloudy, lightSnow',
         '74': 'overcast, lightSnow'
         }.get(item, None)
+
+    if out is None:
+        logger.error('Unknown value of WeatherType detected, %s', item)
+
     return (out + trailing) if out else None
 
 
-def decode_wind_direction(direction):
+def decode_wind_direction(item):
     """
     North: 180
     North-West: 135
@@ -343,7 +318,7 @@ def decode_wind_direction(direction):
     Speed of wind is 0: None
     """
 
-    return {
+    out = {
         'Norte': 180,
         'Noroeste': 135,
         'Oeste': 90,
@@ -363,9 +338,17 @@ def decode_wind_direction(direction):
         'SE': -45,
         'E': -90,
         'NE': -135,
-        'Calma': None,
-        'C': None
-    }.get(direction, None)
+        'Calma': 'Calm',
+        'C': 'Calm'
+    }.get(item, None)
+
+    if out is None:
+        logger.error('Unknown value of WindDirection detected, %s', item)
+
+    if out == 'Calm':
+        out = None
+
+    return out if out else None
 
 
 def log_level_to_int(log_level_string):
@@ -421,7 +404,7 @@ async def post(body):
         response.remove(True)
 
     for item in response:
-        logger.error('Posting data to Orion failed due to %s', item)
+        logger.error('Posting data to Orion failed due to the %s', item)
 
     logger.debug('Posting data to Orion ended')
 
@@ -444,10 +427,10 @@ async def post_one(item, headers, session):
         async with session.post(url, headers=headers, data=payload) as response:
             await response.read()
     except client_exceptions.ClientConnectorError:
-        return 'Posting data to Orion failed due to the connection problems'
+        return 'connection problems'
 
     if response.status not in http_ok:
-        return 'Posting data to Orion failed due to response code ' + str(response.status)
+        return 'response code ' + str(response.status)
 
     return True
 
@@ -474,31 +457,32 @@ async def prepare_schema_one(source):
 
     for day in ['today', 'tomorrow']:
 
-        ft_date = datetime.strptime(source[day]['fecha'],'%Y-%m-%d')
+        forecast_date = datetime.strptime(source[day]['fecha'], '%Y-%m-%d').replace(tzinfo=tz)
         for period in [0, 1, 2, 3]:
 
             item = deepcopy(template)
             valid_from = None
             valid_to = None
+            l_period = period + 3
 
             if period == 0:
-                valid_from = ft_date
-                valid_to = ft_date + timedelta(hours=6)
+                valid_from = forecast_date
+                valid_to = forecast_date + timedelta(hours=6)
             if period == 1:
-                valid_from = ft_date + timedelta(hours=6)
-                valid_to = ft_date + timedelta(hours=12)
+                valid_from = forecast_date + timedelta(hours=6)
+                valid_to = forecast_date + timedelta(hours=12)
             if period == 2:
-                valid_from = ft_date + timedelta(hours=12)
-                valid_to = ft_date + timedelta(hours=18)
+                valid_from = forecast_date + timedelta(hours=12)
+                valid_to = forecast_date + timedelta(hours=18)
             if period == 3:
-                valid_from = ft_date + timedelta(hours=18)
-                valid_to = ft_date + timedelta(hours=24)
+                valid_from = forecast_date + timedelta(hours=18)
+                valid_to = forecast_date + timedelta(hours=24)
 
-            valid_from_iso = valid_from.astimezone(tz).isoformat().replace('+00:00', 'Z')
-            valid_from_short = valid_from.strftime('%H:%M:%S%z')
+            valid_from_iso = valid_from.isoformat().replace('+00:00', 'Z')
+            valid_from_short = valid_from.strftime('%H:%M:%S')
 
-            valid_to_iso = valid_to.astimezone(tz).isoformat().replace('+00:00', 'Z')
-            valid_to_short = valid_to.strftime('%H:%M:%S%z')
+            valid_to_iso = valid_to.isoformat().replace('+00:00', 'Z')
+            valid_to_short = valid_to.strftime('%H:%M:%S')
 
             if latest:
                 item['id'] = item['id'] + id_local + '_' + day + '_' + valid_from_short + '_' + valid_to_short
@@ -512,25 +496,61 @@ async def prepare_schema_one(source):
 
             item['dateRetrieved']['value'] = source['retrieved']
 
-            item['dayMaximum']['value']['feelsLikeTemperature'] = float(source[day]['sensTermica']['maxima'])
+            if source[day]['sensTermica']['maxima'] is not None:
+                item['dayMaximum']['value']['feelsLikeTemperature'] = float(source[day]['sensTermica']['maxima'])
+            else:
+                del item['dayMaximum']['value']['feelsLikeTemperature']
 
-            item['dayMaximum']['value']['temperature'] = float(source[day]['temperatura']['maxima'])
+            if source[day]['temperatura']['maxima'] is not None:
+                item['dayMaximum']['value']['temperature'] = float(source[day]['temperatura']['maxima'])
+            else:
+                del item['dayMaximum']['value']['temperature']
 
-            item['dayMaximum']['value']['relativeHumidity'] = float(source[day]['humedadRelativa']['maxima']) / 100
+            if source[day]['humedadRelativa']['maxima'] is not None:
+                item['dayMaximum']['value']['relativeHumidity'] = float(source[day]['humedadRelativa']['maxima']) / 100
+            else:
+                del item['dayMaximum']['value']['relativeHumidity']
 
-            item['dayMinimum']['value']['feelsLikeTemperature'] = float(source[day]['sensTermica']['minima'])
+            if len(item['dayMaximum']['value']) == 0:
+                del item['dayMaximum']
 
-            item['dayMinimum']['value']['temperature'] = float(source[day]['temperatura']['minima'])
+            if source[day]['sensTermica']['minima'] is not None:
+                item['dayMinimum']['value']['feelsLikeTemperature'] = float(source[day]['sensTermica']['minima'])
+            else:
+                del item['dayMinimum']['value']['feelsLikeTemperature']
 
-            item['dayMinimum']['value']['relativeHumidity'] = float(source[day]['humedadRelativa']['minima']) / 100
+            if source[day]['temperatura']['minima'] is not None:
+                item['dayMinimum']['value']['temperature'] = float(source[day]['temperatura']['minima'])
+            else:
+                del item['dayMinimum']['value']['temperature']
 
-            item['feelsLikeTemperature']['value'] = float(source[day]['sensTermica']['dato'][period]['value'])
+            if source[day]['humedadRelativa']['minima'] is not None:
+                item['dayMinimum']['value']['relativeHumidity'] = float(source[day]['humedadRelativa']['minima']) / 100
+            else:
+                del item['dayMinimum']['value']['relativeHumidity']
 
-            item['precipitationProbability']['value'] = float(source[day]['probPrecipitacion'][period + 3]['value']) / 100
+            if len(item['dayMinimum']['value']) == 0:
+                del item['dayMinimum']
 
-            item['relativeHumidity']['value'] = float(source[day]['humedadRelativa']['dato'][period]['value']) / 100
+            if source[day]['sensTermica']['dato'][period]['value'] is not None:
+                item['feelsLikeTemperature']['value'] = float(source[day]['sensTermica']['dato'][period]['value'])
+            else:
+                del item['feelsLikeTemperature']
 
-            item['temperature']['value'] = float(source[day]['temperatura']['dato'][period]['value'])
+            if source[day]['probPrecipitacion'][l_period]['value'] is not None:
+                item['precipitationProbability']['value'] = float(source[day]['probPrecipitacion'][l_period]['value']) / 100
+            else:
+                del item['precipitationProbability']
+
+            if source[day]['humedadRelativa']['dato'][period]['value'] is not None:
+                item['relativeHumidity']['value'] = float(source[day]['humedadRelativa']['dato'][period]['value']) / 100
+            else:
+                del item['relativeHumidity']
+
+            if source[day]['temperatura']['dato'][period]['value'] is not None:
+                item['temperature']['value'] = float(source[day]['temperatura']['dato'][period]['value'])
+            else:
+                del item['temperature']
 
             item['validFrom']['value'] = valid_from_iso
 
@@ -538,12 +558,22 @@ async def prepare_schema_one(source):
 
             item['validity']['value'] = valid_from_iso + '/' + valid_to_iso
 
-            item['weatherType']['value'] = decode_weather_type(source[day]['estadoCielo'][period + 3]['value'])
+            if source[day]['estadoCielo'][l_period]['value'] != '':
+                item['weatherType']['value'] = decode_weather_type(source[day]['estadoCielo'][l_period]['value'])
 
-            item['windDirection']['value'] = decode_wind_direction(source[day]['viento'][period + 3]['direccion'])
+            if item['weatherType']['value'] is None:
+                del item['weatherType']
 
-            item['windSpeed']['value'] = round(float(source[day]['viento'][period + 3]['velocidad']) * 0.28, 2)
+            if source[day]['viento'][l_period]['direccion'] is not None:
+                item['windDirection']['value'] = decode_wind_direction(source[day]['viento'][l_period]['direccion'])
 
+            if item['windDirection']['value'] is None:
+                del item['windDirection']
+
+            if source[day]['viento'][period + 3]['velocidad'] is not None:
+                item['windSpeed']['value'] = round(float(source[day]['viento'][period + 3]['velocidad']) * 0.28, 2)
+            else:
+                del item['windSpeed']
             result.append(item)
 
     return result
@@ -579,7 +609,7 @@ def setup_logger():
     return local_logger, local_logger_req
 
 
-def setup_stations(stations_limit):
+def setup_stations(stations_limit, station_file):
     result = dict()
     source = None
     limit_off = False
@@ -591,7 +621,7 @@ def setup_stations(stations_limit):
         limit_off = True
 
     try:
-        with open(stations_file, 'r') as f:
+        with open(station_file, 'r') as f:
             source = load(f)
 
     except FileNotFoundError:
@@ -709,6 +739,11 @@ if __name__ == '__main__':
                         default=default_service,
                         dest="service",
                         help='FIWARE Service')
+    parser.add_argument('--stations',
+                        action='store',
+                        default=default_station_file,
+                        dest="station_file",
+                        help='Station file')
     parser.add_argument('--timeout',
                         action='store',
                         default=default_timeout,
@@ -728,7 +763,7 @@ if __name__ == '__main__':
 
     logger, logger_req = setup_logger()
     res = setup_stations_config(args.config)
-    stations = setup_stations(res)
+    stations = setup_stations(res, args.station_file)
     reply_status()
 
     while True:

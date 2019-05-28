@@ -2,5 +2,4 @@
 *.csv
 *.yml
 *.md
-doc
 Dockerfile

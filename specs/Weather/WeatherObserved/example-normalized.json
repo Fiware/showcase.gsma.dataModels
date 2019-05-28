@@ -1,83 +1,71 @@
 {
-    "id": "Spain-WeatherObserved-3129-latest",
+    "id": "Spain-WeatherObserved-Valladolid-2016-11-30T07:00:00.00Z",
     "type": "WeatherObserved",
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "addressCountry": "ES",
-            "addressLocality": "Madrid Aeropuerto"
-        },
-        "metadata": {}
-    },
-    "atmosphericPressure": {
-        "type": "Number",
-        "value": 960.3,
-        "metadata": {}
-    },
-    "dataProvider": {
-        "type": "Text",
-        "value": "FIWARE",
-        "metadata": {}
-    },
     "dateObserved": {
         "type": "DateTime",
-        "value": "2019-02-21T11:00:00.00Z",
-        "metadata": {}
+        "value": "2016-11-30T07:00:00.00Z"
+    },
+    "illuminance": {
+        "value": 1000
+    },
+    "temperature": {
+        "value": 3.3
+    },
+    "precipitation": {
+        "value": 0
+    },
+    "atmosphericPressure": {
+        "value": 938.9
+    },
+    "pressureTendency": {
+        "value": 0.5
+    },
+    "refDevice": {
+        "type": "Relationship",
+        "value": "device-0A3478"
+    },
+    "source": {
+        "value": "http://www.aemet.es"
+    },
+    "windSpeed": {
+        "value": 2
     },
     "location": {
         "type": "geo:json",
         "value": {
             "type": "Point",
             "coordinates": [
-                -3.555555556,
-                40.466666667
+                -4.754444444,
+                41.640833333
             ]
-        },
-        "metadata": {}
-    },
-    "precipitation": {
-        "type": "Number",
-        "value": 0,
-        "metadata": {}
-    },
-    "pressureTendency": {
-        "type": "Number",
-        "value": 0.3,
-        "metadata": {}
-    },
-    "relativeHumidity": {
-        "type": "Number",
-        "value": 0.63,
-        "metadata": {}
-    },
-    "source": {
-        "type": "URL",
-        "value": "http://www.aemet.es",
-        "metadata": {}
-    },
-    "stationCode": {
-        "type": "Text",
-        "value": "3129",
-        "metadata": {}
+        }
     },
     "stationName": {
-        "type": "Text",
-        "value": "Madrid Aeropuerto",
-        "metadata": {}
+        "value": "Valladolid"
     },
-    "temperature": {
-        "type": "Number",
-        "value": 10.9,
-        "metadata": {}
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "addressLocality": "Valladolid",
+            "addressCountry": "ES"
+        }
+    },
+    "stationCode": {
+        "value": "2422"
+    },
+    "dataProvider": {
+        "value": "TEF"
     },
     "windDirection": {
-        "type": "Number",
-        "value": 0,
-        "metadata": {}
+        "value": -45
     },
-    "windSpeed": {
-        "type": "Number",
-        "value": 1.12,
-        "metadata": {}
+    "relativeHumidity": {
+        "value": 1
+    },
+    "streamGauge": {
+        "value": 50
+    },
+     "snowHeight": {
+        "value": 20
     }
 }

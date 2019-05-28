@@ -29,8 +29,11 @@ categories please check
 
 ## Examples of use
 
-```text
-http://iotbd-v2.lab.fiware.org/v2/entities?type=PointOfInterest&q=category=='311'&limit=1
+```bash
+curl -X GET \
+  'https://streams.lab.fiware.org/v2/entities?q=category==%27311%27&type=PointOfInterest' \
+  -H 'fiware-service: poi' \
+  -H 'fiware-servicepath: /Spain' | python -m json.tool
 ```
 ```json
 [
