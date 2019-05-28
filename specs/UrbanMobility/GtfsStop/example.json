@@ -7,5 +7,5 @@
     "type": "Point",
     "coordinates": [-4.424393,36.716872]
   },
-  "operatedBy": "urn:ngsi-ld:GtfsAgency:Malaga_EMT"
+  "operatedBy": "['urn:ngsi-ld:GtfsAgency:Malaga_EMT']"
 }
