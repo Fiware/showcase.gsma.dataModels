@@ -111,7 +111,10 @@
         ]
     },
     "observedAt": {
-	"@type": "DateTime",
-	"@value": "2017-05-04T12:30:00Z"
+        "type": "Property",
+        "value": {
+            "@type": "DateTime",
+            "@value": "2017-05-04T12:30:00Z"
+        }
     }
 }
