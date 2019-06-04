@@ -1,22 +1,26 @@
 # Weather Forecast
 
-The Weather forecast in Spain is provided by 
-[Spanish National Meteorology Agency](http://aemet.es), from Portugal by 
-[Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt). 
+The Weather forecast in Spain is provided by
+[Spanish National Meteorology Agency](http://aemet.es), from Portugal by
+[Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt).
 [Harvesters](./harvesters) transform this data to NGSI v2.
 
 This folder contains the following scripts:
--   `harvesters/spain/spain_weather_forecast.py` - Performs data harvesting using
-    AEMET's data site as the origin and Orion Context Broker as the destination.
--   `harvesters/portugal/portugal_weather_forecast.py` - Performs data harvesting using
-    IPMA's data site as the origin and Orion Context Broker as the destination.
+
+-   `harvesters/spain/spain_weather_forecast.py` - Performs data harvesting
+    using AEMET's data site as the origin and Orion Context Broker as the
+    destination.
+-   `harvesters/portugal/portugal_weather_forecast.py` - Performs data
+    harvesting using IPMA's data site as the origin and Orion Context Broker as
+    the destination.
 
 Please check data licenses at the original data sources before using this data
 in an application.
 
 ## Public instance
 
-You can read about public instance offering information about weather stations [here](../../gsma.md).
+You can read about public instance offering information about weather stations
+[here](../../gsma.md).
 
 ## Examples of use
 

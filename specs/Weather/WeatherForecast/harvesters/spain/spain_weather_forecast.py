@@ -296,7 +296,7 @@ def decode_weather_type(item):
         '72': 'cloudy, lightSnow',
         '73': 'veryCloudy, lightSnow',
         '74': 'overcast, lightSnow'
-        }.get(item, None)
+    }.get(item, None)
 
     if out is None:
         logger.error('Unknown value of WeatherType detected, %s', item)
@@ -538,7 +538,8 @@ async def prepare_schema_one(source):
                 del item['feelsLikeTemperature']
 
             if source[day]['probPrecipitacion'][l_period]['value'] is not None:
-                item['precipitationProbability']['value'] = float(source[day]['probPrecipitacion'][l_period]['value']) / 100
+                value = float(source[day]['probPrecipitacion'][l_period]['value']) / 100
+                item['precipitationProbability']['value'] = value
             else:
                 del item['precipitationProbability']
 
@@ -658,7 +659,7 @@ def setup_stations_config(f):
         try:
             with open(f, 'r', encoding='utf8') as f:
                 content = f.read()
-                config = sub(r'-.*\n?',  setup_config_re, content)
+                config = sub(r'-.*\n?', setup_config_re, content)
             f.close()
 
             source = load(config)

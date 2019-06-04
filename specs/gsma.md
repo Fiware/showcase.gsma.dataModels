@@ -1,4 +1,4 @@
-# FIWARE IoT-BigData Instance 
+# FIWARE IoT-BigData Instance
 
 ## Table of Contents
 
@@ -11,10 +11,15 @@
 -   [Examples](#examples)
 
 ### Introduction
-This document describes the IoT-BD instance developed under the [GSMA IoT Big Data Project](https://www.gsma.com/iot/connected-living-mobilising-the-internet-of-things/), part of GSMA’s Connected Living Programme.
+
+This document describes the IoT-BD instance developed under the
+[GSMA IoT Big Data Project](https://www.gsma.com/iot/connected-living-mobilising-the-internet-of-things/),
+part of GSMA’s Connected Living Programme.
 
 ### Public Data sources
-Here there is a description of the original public data sources used to perform data harmonization. 
+
+Here there is a description of the original public data sources used to perform
+data harmonization.
 
 <table border="0">
 <thead>
@@ -61,20 +66,25 @@ Here there is a description of the original public data sources used to perform 
 </tbody>
 </table>
 
-The usage of the data offered through this instance is subject to the terms, conditions and licenses expressed by the original data sources. In the table below, for each data source you can find a link to them.
+The usage of the data offered through this instance is subject to the terms,
+conditions and licenses expressed by the original data sources. In the table
+below, for each data source you can find a link to them.
 
-| Data source                                                | Terms and Conditions                                                                   |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| Generalidad de Cataluña                                    | <http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/> (Spanish)                      |
-| Madrid                                                     | <http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html> (Spanish) |
-| AEMET Agencia Estatal de Meteorología                      | <http://www.aemet.es/es/nota_legal> (Spanish)                                          |
-| IPMA Instituto português do mar y do atmosfera             | <https://www.ipma.pt/en/siteinfo/index.html?page=index.xml> (English)                  |
-| The Network of European Meteorological Services (EUMETNET) | <http://www.meteoalarm.eu/terms.php?lang=en_UK> (English)                              |
-| Ineco                                                      |                                                                                        |
-| FIWARE Foundation e.V.                                     |                                                                                        |
+| Data source                                                | Terms and Conditions                                                                                                                                               |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Generalidad de Cataluña                                    | [http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/](http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal) (Spanish)                                            |
+| Madrid                                                     | [http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html](http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html) (Spanish) |
+| AEMET Agencia Estatal de Meteorología                      | [http://www.aemet.es/es/nota_legal](http://www.aemet.es/es/nota_legal) (Spanish)                                                                                   |
+| IPMA Instituto português do mar y do atmosfera             | [https://www.ipma.pt/en/siteinfo/index.html?page=index.xml](https://www.ipma.pt/en/siteinfo/index.html?page=index.xml) (English)                                   |
+| The Network of European Meteorological Services (EUMETNET) | [http://www.meteoalarm.eu/terms.php?lang=en_UK](http://www.meteoalarm.eu/terms.php?lang=en_UK) (English)                                                           |
+| Ineco                                                      |                                                                                                                                                                    |
+| FIWARE Foundation e.V.                                     |                                                                                                                                                                    |
 
 ### Data / IoT Device providers
-Below there is a list of data / IoT Device providers who kindly are publishing a sample of their data to this instance. Such data must not be used for commercial purposes without the consent of their owners. 
+
+Below there is a list of data / IoT Device providers who kindly are publishing a
+sample of their data to this instance. Such data must not be used for commercial
+purposes without the consent of their owners.
 
 | Data Provider  | Data offered                                                          |
 | -------------- | --------------------------------------------------------------------- |
@@ -82,19 +92,22 @@ Below there is a list of data / IoT Device providers who kindly are publishing a
 | Urban Clouds   | Air quality data from Málaga (Spain). Sensors mounted on bicycles     |
 | Kunak          | Air quality data from Pamplona (Spain)                                |
 | Turespaña      | A sample of points of interest in Spain                               |
-
+
 ### Endpoints
-| Endpoint                          | URL                            |
-| --------------------------------- | ------------------------------ |
-| Harmonized data endpoint (NGSIv2) | <https://streams.lab.fiware.org> |
+
+| Endpoint                          | URL                              |
+| --------------------------------- | -------------------------------- |
+| Harmonized data endpoint (NGSIv2) | `https://streams.lab.fiware.org` |
 
 ### Useful links
-| Information                    | URL                                                                   |
-| ------------------------------ | --------------------------------------------------------------------- |
-| Harmonized data models by GSMA | <https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf> |
-| Data model by FIWARE           | <https://www.fiware.org/developers/data-models/>                      |
+
+| Information                    | URL                                                                                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Harmonized data models by GSMA | [https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf) |
+| Data model by FIWARE           | [https://www.fiware.org/developers/data-models/](https://www.fiware.org/developers/data-models/)                                           |
 
 ### Harmonized data published
+
 Below there is a description of the harmonized data currently published
 
 <table border="0">
@@ -145,5 +158,7 @@ Below there is a description of the harmonized data currently published
 
 ### Examples
 
-Some Postman recipes prepared, you can read documents [here](https://documenter.getpostman.com/view/3940441/RznEMKdr).
-Be aware, Postman recipes use environment variables, don't forget to change it to "FIWARE Data Streams"
+Some Postman recipes prepared, you can read documents
+[here](https://documenter.getpostman.com/view/3940441/RznEMKdr). Be aware,
+Postman recipes use environment variables, don't forget to change it to "FIWARE
+Data Streams"

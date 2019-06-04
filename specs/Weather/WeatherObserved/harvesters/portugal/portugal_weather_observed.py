@@ -62,8 +62,8 @@ template = {
     'address': {
         'type': 'PostalAddress',
         'value': {
-           'addressCountry': 'PT',
-           "addressLocality": None
+            'addressCountry': 'PT',
+            "addressLocality": None
         }
     },
     'atmosphericPressure': {
@@ -458,7 +458,7 @@ def setup_stations_config(f):
         try:
             with open(f, 'r', encoding='utf8') as f:
                 content = f.read()
-                config = sub(r'-.*\n?',  setup_config_re, content)
+                config = sub(r'-.*\n?', setup_config_re, content)
             f.close()
 
             source = load(config)

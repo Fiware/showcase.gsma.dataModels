@@ -433,7 +433,7 @@ async def prepare_schema_one(source):
         if forecast['feelsLikeTemperature'] is not None:
             item['feelsLikeTemperature']['value'] = float(forecast['feelsLikeTemperature'])
         else:
-            del item ['feelsLikeTemperature']
+            del item['feelsLikeTemperature']
 
         if forecast['precipitationProbability'] is not None:
             item['precipitationProbability']['value'] = float(forecast['precipitationProbability'] / 100)
@@ -567,7 +567,7 @@ def setup_stations_config(f):
         try:
             with open(f, 'r', encoding='utf8') as f:
                 content = f.read()
-                config = sub(r'-.*\n?',  setup_config_re, content)
+                config = sub(r'-.*\n?', setup_config_re, content)
             f.close()
 
             source = load(config)

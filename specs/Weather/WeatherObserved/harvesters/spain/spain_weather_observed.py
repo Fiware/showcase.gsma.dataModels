@@ -61,8 +61,8 @@ template = {
     'address': {
         'type': 'PostalAddress',
         'value': {
-           'addressCountry': 'ES',
-           "addressLocality": None
+            'addressCountry': 'ES',
+            "addressLocality": None
         }
     },
     'atmosphericPressure': {
@@ -308,7 +308,7 @@ async def prepare_schema_one(source):
         if 'ta' in source:
             result['temperature']['value'] = source['ta']
         else:
-             del result['temperature']
+            del result['temperature']
 
         if 'dv' in source:
             result['windDirection']['value'] = 180 - source['dv']
@@ -403,7 +403,7 @@ def setup_stations_config(f):
         try:
             with open(f, 'r', encoding='utf8') as f:
                 content = f.read()
-                config = sub(r'-.*\n?',  setup_config_re, content)
+                config = sub(r'-.*\n?', setup_config_re, content)
             f.close()
 
             source = load(config)

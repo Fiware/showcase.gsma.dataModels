@@ -35,6 +35,7 @@ curl -X GET \
   -H 'fiware-service: poi' \
   -H 'fiware-servicepath: /Spain' | python -m json.tool
 ```
+
 ```json
 [
     {
