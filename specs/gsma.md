@@ -88,7 +88,6 @@ Below there is a list of data / IoT Device providers who kindly are publishing a
 sample of their data to this instance. Such data must not be used for commercial
 purposes without the consent of their owners.
 
-
 | Data Provider  | Data offered                                                          |
 | -------------- | --------------------------------------------------------------------- |
 | EDP Ingeniería | Air quality data from Málaga (Spain). Sensors mounted on public buses |

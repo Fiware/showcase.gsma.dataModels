@@ -7,7 +7,7 @@ WORKDIR /opt/
 COPY . /opt
 
 RUN apk add --no-cache git build-base curl && \
-    pip install --upgrade pip && pip install -r requirements.txt && \
+    pip install -r requirements.txt && \
     apk del build-base git
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
