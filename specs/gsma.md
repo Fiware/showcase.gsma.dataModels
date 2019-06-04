@@ -70,6 +70,7 @@ The usage of the data offered through this instance is subject to the terms,
 conditions and licenses expressed by the original data sources. In the table
 below, for each data source you can find a link to them.
 
+<!-- textlint-disable terminology -->
 | Data source                                                | Terms and Conditions                                                                                                                                               |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Generalidad de Cataluña                                    | [http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/](http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal) (Spanish)                                            |
@@ -79,12 +80,14 @@ below, for each data source you can find a link to them.
 | The Network of European Meteorological Services (EUMETNET) | [http://www.meteoalarm.eu/terms.php?lang=en_UK](http://www.meteoalarm.eu/terms.php?lang=en_UK) (English)                                                           |
 | Ineco                                                      |                                                                                                                                                                    |
 | FIWARE Foundation e.V.                                     |                                                                                                                                                                    |
+<!-- textlint-enable terminology -->
 
 ### Data / IoT Device providers
 
 Below there is a list of data / IoT Device providers who kindly are publishing a
 sample of their data to this instance. Such data must not be used for commercial
 purposes without the consent of their owners.
+
 
 | Data Provider  | Data offered                                                          |
 | -------------- | --------------------------------------------------------------------- |
@@ -101,10 +104,12 @@ purposes without the consent of their owners.
 
 ### Useful links
 
+<!-- textlint-disable terminology -->
 | Information                    | URL                                                                                                                                        |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Harmonized data models by GSMA | [https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf) |
 | Data model by FIWARE           | [https://www.fiware.org/developers/data-models/](https://www.fiware.org/developers/data-models/)                                           |
+<!-- textlint-enable terminology -->
 
 ### Harmonized data published
 

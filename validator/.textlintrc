@@ -198,5 +198,8 @@
           "http://www.dipucadiz.es/export/sites/default/galeria_de_ficheros/desarrollo_sostenible/docu_cursos_jornadas/acustica_planeamiento_urb/Indices-Acusticos.pdf"
       ]
     }
+  },
+  "filters": {
+    "comments": true
   }
 }
