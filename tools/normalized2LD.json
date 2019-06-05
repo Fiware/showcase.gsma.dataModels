@@ -1,0 +1,27 @@
+{
+	"id": "bus001",
+	"type": "bus",
+	"volume": {
+		"type": "Number",
+		"value": 50
+	},
+	"fuel": {
+		"type": "Text",
+		"value": "electricity"
+	},
+	"dateObserved": {
+		"type": "DateTime",
+		"value": "2019-06-04T20:00:00Z"
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"value": [52.5206378, 13.3284346]
+		}
+	},
+	"refPark": {
+		"type": "Relationship",
+		"value": "park01"
+	}
+}

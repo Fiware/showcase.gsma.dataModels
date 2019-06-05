@@ -13,7 +13,6 @@ Author: José Manuel Cantera
 
 import sys
 import json
-import ntpath
 
 from entity_print import print_json_string
 
@@ -64,12 +63,11 @@ def write_json(data, outfile):
 def main(args):
     data = read_json(args[1])
     result = keyValues_2_normalized(data)
-    file_name = ntpath.basename(args[1])
     write_json(result, 'example-normalized.json')
 
 
 if __name__ == '__main__':
-    if(len(sys.argv) != 2):
+    if len(sys.argv) != 2:
         print("Usage: keyvalues2Normalized [file]")
         exit(-1)
 

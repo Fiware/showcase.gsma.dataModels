@@ -13,7 +13,6 @@ Author: José Manuel Cantera
 
 import sys
 import json
-import ntpath
 
 from rfc3987 import parse
 from entity_print import print_json_string
@@ -127,12 +126,11 @@ def write_json(data, outfile):
 def main(args):
     data = read_json(args[1])
     result = normalized_2_LD(data)
-    file_name = ntpath.basename(args[1])
     write_json(result, 'example-LD.jsonld')
 
 
 if __name__ == '__main__':
-    if(len(sys.argv) != 2):
+    if len(sys.argv) != 2:
         print("Usage: normalized2LD [file]")
         exit(-1)
 

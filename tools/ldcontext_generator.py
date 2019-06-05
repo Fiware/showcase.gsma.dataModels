@@ -143,7 +143,7 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
     entity_type = extract_entity_type(schema)
     enumerations = extract_enumerations(schema)
 
-    if (entity_type is not None):
+    if entity_type is not None:
         properties.append(entity_type)
 
     all_properties = properties + enumerations
@@ -155,7 +155,7 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
 
 
 def process_file(input_file, uri_prefix, predefined_mappings):
-    if (os.path.isfile(input_file) and input_file.endswith('schema.json')):
+    if os.path.isfile(input_file) and input_file.endswith('schema.json'):
         print(input_file)
         aggregate_ld_context(input_file, uri_prefix, predefined_mappings)
     elif os.path.isdir(input_file):

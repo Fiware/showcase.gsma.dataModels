@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/tools/ldcontext-generator-schema.json",
+  "title": "FIWARE - Example schema for ldcontext_generator",
+  "description": "Example to be used as an input data for ldcontext_generator tool",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "properties": {
+        "type": {
+           "type": "string",
+           "enum": [
+             "bus"
+           ],
+           "desctiption": "NGSI Entity type"
+        },
+        "dateObserved": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "volume": {
+          "type": "number"
+        },
+	    "fuel": {
+		  "type": "string",
+		  "value": "electricity"
+	    },
+        "refPark": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "dateObserved",
+    "location"
+  ]
+}

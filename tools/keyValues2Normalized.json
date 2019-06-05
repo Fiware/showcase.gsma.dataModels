@@ -1,0 +1,10 @@
+{
+	"id": "bus001",
+	"type": "bus",
+	"dateObserved": "2019-06-04T20:00:00Z",
+	"location": {
+	    "type": "Point",
+	    "coordinates": [52.5206378, 13.3284346]
+	},
+	"refPark": "park01"
+}
