@@ -21,5 +21,5 @@ docker run -d fiware/harvesters:weather-observed-portugal \
 ## Optional parameters
 
 It is possible to limit the amount of parallel requests to the sources and Orion. See parameters in the
-[harvester](./portugal_weather_forecast.py).
+[harvester](./portugal_weather_observed.py).
  
