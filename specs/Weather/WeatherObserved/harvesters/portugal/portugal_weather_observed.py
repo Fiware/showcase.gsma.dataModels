@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-    This program collects Portugal weather observation from IPMA and uploads it to the Orion Context Broker.
-    It upload the list of stations on-fly from
+    This program collects Portugal weather observations from IPMA and uploads them to the Orion Context Broker.
+    It uploads the list of stations on the fly from
       - http://api.ipma.pt/open-data/observation/meteorology/stations/obs-surface.geojson.
 
     Legal notes:
@@ -44,15 +44,19 @@ default_service = 'weather'           # header FIWARE-SERVICE
 default_timeout = -1                  # if value != -1, then work as a service
 
 http_ok = [200, 201, 204]
+
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
+
 stations = dict()                     # preprocessed list of stations
 stations_file = 'stations.json'       # source file with list of stations
+
 tz = timezone('UTC')
 tz_wet = timezone('Europe/Lisbon')
 tz_azot = timezone('Atlantic/Azores')
 tz_azot_codes = ['932', '501', '502', '504', '506', '507', '510', '511', '512', '513', '515']
+
 url_observation = 'https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json'
 url_stations = 'http://api.ipma.pt/open-data/observation/meteorology/stations/obs-surface.geojson'
 

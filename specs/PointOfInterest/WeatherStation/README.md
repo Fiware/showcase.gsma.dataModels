@@ -4,9 +4,9 @@ This folder contains the following scripts:
 
 -   `harvesters/spain/spain_weather_stations.py` - Performs data harvesting
     using AEMET's data site as the origin and Orion Context Broker as the
-    destination. It also prepares config for other harvesters.
+    destination. It also prepares a configuration file for other harvesters.
 
-The list of weather station in Spain provided by
+The list of weather stations in Spain provided by
 [Spanish National Meteorology Agency](http://aemet.es), the list of Spain
 municipalities provided by
 [The National Statistics Institute](http://ine.es/en/).

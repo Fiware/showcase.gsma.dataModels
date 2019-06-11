@@ -4,7 +4,7 @@
 
 -   [Introduction](#introduction)
 -   [Public Data sources](#public-data-sources)
--   [Data / IoT Device providers](#data-/-iot-device-providers)
+-   [Data and IoT Device providers](#data-and-iot-device-providers)
 -   [Endpoints](#endpoints)
 -   [Harmonized data published](#harmonized-data-published)
 -   [Useful links](#useful-links)
@@ -82,7 +82,7 @@ below, for each data source you can find a link to them.
 | FIWARE Foundation e.V.                                     |                                                                                                                                                                    |
 <!-- textlint-enable terminology -->
 
-### Data / IoT Device providers
+### Data and IoT Device providers
 
 Below there is a list of data / IoT Device providers who kindly are publishing a
 sample of their data to this instance. Such data must not be used for commercial

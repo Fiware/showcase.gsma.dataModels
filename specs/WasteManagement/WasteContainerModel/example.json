@@ -1,0 +1,22 @@
+{
+  "id": "wastecontainermodel:c1",
+  "type": "WasteContainerModel",
+  "width": 0.5,
+  "height": 0.8,
+  "depth": 0.4,
+  "cargoVolume": 150,
+  "brandName": "Brute",
+  "name": "Dumpster_Brute_2009_Plastic_Green",
+  "modelName": "C1",
+  "compliantWith": [
+    "UNE-EN 840-2:2013"
+  ],
+  "madeOf": "plastic",
+  "features": [
+    "wheels",
+    "lid"
+  ],
+  "category": [
+    "dumpster"
+  ]
+}

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-    This program collects Spain weather observation from AEMET and uploads it to the Orion Context Broker.
-    It use predefined list of stations (./stations.yml), that can be obtained by other harvester:
+    This program collects Spain weather observations from AEMET and uploads them to the Orion Context Broker.
+    It uses predefined list of stations (./stations.yml), that can be obtained by other harvester:
       - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation
 
     You must provide a valid API key to collect data from AEMET data portal. That key can be obtained via email
@@ -49,10 +49,13 @@ default_station_file = 'stations.yml'  # source file with list of municipalities
 default_timeout = -1                   # if value != -1, then work as a service
 
 http_ok = [200, 201, 204]
+
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
+
 stations = dict()                      # preprocessed list of stations
+
 url_aemet = 'https://opendata.aemet.es/opendata/api/observacion/convencional/todas'
 
 template = {

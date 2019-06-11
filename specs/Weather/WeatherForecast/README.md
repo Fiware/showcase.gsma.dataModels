@@ -1,6 +1,6 @@
 # Weather Forecast
 
-The Weather forecast in Spain is provided by
+The Weather forecasts in Spain are provided by
 [Spanish National Meteorology Agency](http://aemet.es), from Portugal by
 [Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt).
 [Harvesters](./harvesters) transform this data to NGSI v2.
@@ -63,7 +63,6 @@ curl -X GET \
         "validTo": "2019-05-30T00:00:00.00Z",
         "validity": "2019-05-29T18:00:00Z/2019-05-30T00:00:00Z",
         "weatherType": "slightlyCloudy",
-        "windDirection": null,
         "windSpeed": 0
     }
 ]

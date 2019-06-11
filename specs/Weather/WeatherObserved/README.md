@@ -1,6 +1,6 @@
 # Weather Observed
 
-The Weather observed in Spain is provided by
+The Weather observations in Spain are provided by
 [Spanish National Meteorology Agency](http://aemet.es), from Portugal by
 [Instituto Português do Mar e da Atmosfera](http://www.ipma.pt/pt).
 [Harvesters](./harvesters) transform this data to NGSI v2.
@@ -38,7 +38,6 @@ curl -X GET \
             "addressCountry": "ES",
             "addressLocality": "Barcelona"
         },
-        "atmosphericPressure": null,
         "dataProvider": "FIWARE",
         "dateObserved": "2019-05-27T21:00:00.00Z",
         "id": "Spain-WeatherObserved-0201D-latest",
@@ -47,7 +46,6 @@ curl -X GET \
             "type": "Point"
         },
         "precipitation": 0,
-        "pressureTendency": null,
         "relativeHumidity": 90,
         "source": "http://www.aemet.es",
         "stationCode": "0201D",

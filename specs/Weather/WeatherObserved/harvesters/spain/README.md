@@ -1,6 +1,6 @@
 ![FIWARE Banner](https://nexus.lab.fiware.org/content/images/fiware-logo1.png)
 ​
-# FIWARE harvester - Spain weather observation
+# FIWARE harvester - Spain weather observations
 
 ## Overview
 
@@ -28,4 +28,3 @@ It is possible to limit the amount of parallel requests to the sources and Orion
 
 API key from AEMET should be provided. See the help at the header of the
 [harvester](./spain_weather_observed.py).
-​

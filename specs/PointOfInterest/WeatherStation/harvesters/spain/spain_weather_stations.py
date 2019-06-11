@@ -3,12 +3,12 @@
 
 """
     This program collects information about Spain weather stations and Spain municipalities from AEMET and INE and
-    prepares config that can be used by harvester itself to uploads the list of Spain weather stations to
+    prepares config that can be used by harvester itself to upload the list of Spain weather stations to
     Orion Context Broker or export data required by other weather harvesters:
       - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherObserved
       - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherForecast
 
-    It can also exports data to the CSV file (./stations.csv), that can be used to upload the list of weather stations
+    It also exports data to the CSV file (./stations.csv), that can be used to upload the list of weather stations
     to Google Maps:
       - https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw&usp=sharing .
 
@@ -59,15 +59,18 @@ default_service = 'poi'               # header FIWARE-SERVICE
 default_timeout = -1                  # if value != -1, then work as a service
 
 http_ok = [200, 201, 204]
+
 log_levels = ['ERROR', 'INFO', 'DEBUG']
 logger = None
 logger_req = None
-matches = list()
+
 stations_file_yml = 'stations.yml'   # destination file for yml format
 stations_file_csv = 'stations.csv'   # destination file for csv format
+
 tz_africa = 'Africa/Ceuta'
 tz_europe = 'Europe/Madrid'
 tz_atlantic = 'Atlantic/Canary'
+
 url_aemet = 'https://opendata.aemet.es/opendata/api/valores/climatologicos/inventarioestaciones/todasestaciones'
 url_ine = 'http://www.ine.es/en/daco/inebase_mensual/febrero_{}/relacion_municipios_en.zip'
 
@@ -75,7 +78,7 @@ template = {
     'id': 'WeatherStation-ES-',
     'type': 'PointOfInterest',
     'category': {
-        'type': 'object',
+        'type': 'array',
         'value': [
             'WeatherStation'
         ]
@@ -350,6 +353,26 @@ async def prepare_data_forecasts(station, municipalities):
 
     result = dict()
 
+    mapping = {
+        'a coruña': 'Coruña, A',
+        'alicante': 'Alicante/Alacant',
+        'almeria': 'Almería',
+        'araba/alava': 'Araba/Álava',
+        'avila': 'Ávila',
+        'caceres': 'Cáceres',
+        'cadiz': 'Cádiz',
+        'castellon': 'Castellón/Castelló',
+        'cordoba': 'Córdoba',
+        'illes balears': 'Balears, Illes',
+        'jaen': 'Jaén',
+        'la rioja': 'Rioja, La',
+        'las palmas': 'Palmas, Las',
+        'leon': 'León',
+        'malaga': 'Málaga',
+        'sta. cruz de tenerife': 'Santa Cruz de Tenerife',
+        'valencia': 'Valencia/València'
+    }
+
     result['id'] = station['indicativo']
     result['longitude'] = convert_coordinates(station['longitud'])
     result['latitude'] = convert_coordinates(station['latitud'])
@@ -359,40 +382,8 @@ async def prepare_data_forecasts(station, municipalities):
     status = False
 
     # There is a difference in names in AEMET and INE sources, so fix it
-    if result['province'] == 'a coruña':
-        result['province'] = 'Coruña, A'
-    elif result['province'] == 'alicante':
-        result['province'] = 'Alicante/Alacant'
-    elif result['province'] == 'almeria':
-        result['province'] = 'Almería'
-    elif result['province'] == 'araba/alava':
-        result['province'] = 'Araba/Álava'
-    elif result['province'] == 'avila':
-        result['province'] = 'Ávila'
-    elif result['province'] == 'caceres':
-        result['province'] = 'Cáceres'
-    elif result['province'] == 'cadiz':
-        result['province'] = 'Cádiz'
-    elif result['province'] == 'castellon':
-        result['province'] = 'Castellón/Castelló'
-    elif result['province'] == 'cordoba':
-        result['province'] = 'Córdoba'
-    elif result['province'] == 'illes balears':
-        result['province'] = 'Balears, Illes'
-    elif result['province'] == 'jaen':
-        result['province'] = 'Jaén'
-    elif result['province'] == 'la rioja':
-        result['province'] = 'Rioja, La'
-    elif result['province'] == 'las palmas':
-        result['province'] = 'Palmas, Las'
-    elif result['province'] == 'leon':
-        result['province'] = 'León'
-    elif result['province'] == 'malaga':
-        result['province'] = 'Málaga'
-    elif result['province'] == 'sta. cruz de tenerife':
-        result['province'] = 'Santa Cruz de Tenerife'
-    elif result['province'] == 'valencia':
-        result['province'] = 'Valencia/València'
+    if result['province'] in mapping:
+        result['province'] = mapping[result['province']]
 
     for municipality in municipalities:
         if municipalities[municipality]['province'].lower() == result['province'].lower():
