@@ -13,7 +13,7 @@
 ### Introduction
 
 This document describes the IoT-BD instance developed under the
-[GSMA IoT Big Data Project](https://www.gsma.com/iot/connected-living-mobilising-the-internet-of-things/),
+[GSMA IoT Big Data Project](https://www.gsma.com/iot/iot-big-data/),
 part of GSMA’s Connected Living Programme.
 
 ### Public Data sources
@@ -106,7 +106,7 @@ purposes without the consent of their owners.
 <!-- textlint-disable terminology -->
 | Information                    | URL                                                                                                                                        |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Harmonized data models by GSMA | [https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf) |
+| Harmonized data models by GSMA | [https://github.com/GSMADeveloper/NGSI-LD-Entities](https://github.com/GSMADeveloper/NGSI-LD-Entities) |
 | Data model by FIWARE           | [https://www.fiware.org/developers/data-models/](https://www.fiware.org/developers/data-models/)                                           |
 <!-- textlint-enable terminology -->
 

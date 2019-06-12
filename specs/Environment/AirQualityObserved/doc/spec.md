@@ -4,7 +4,7 @@
 
 An observation of air quality conditions at a certain place and time. This data
 model has been developed in cooperation with mobile operators and the
-[GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+[GSMA](https://www.gsma.com/iot/iot-big-data/).
 
 ## Data Model
 

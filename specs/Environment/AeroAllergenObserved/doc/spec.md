@@ -6,7 +6,7 @@ This entity models aero allergens observed at a given location and related
 overall allergen risk.
 
 This data model has been developed based on
-[GSMA](http://www.gsma.com/connectedliving/iot-big-data/). Aero allergens
+[GSMA](https://www.gsma.com/iot/iot-big-data/). Aero allergens
 strictly depends on the geographical location. Common Aero allergens in Europe
 may be quite different from the ones in US due to the different biological
 species. A list of commonly used aero allergens in Europe can be found on

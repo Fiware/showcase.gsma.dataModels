@@ -7,7 +7,7 @@ is primarily associated with the vertical segments of the environment and
 agriculture but is applicable to many different applications.
 
 This data model has been developed in cooperation with mobile operators and the
-[GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+[GSMA](https://www.gsma.com/iot/iot-big-data/).
 
 You can see a description of weather forecast parameters provided by AEMET (in
 Spanish) [here](http://www.aemet.es/es/eltiempo/prediccion/municipios/ayuda).
