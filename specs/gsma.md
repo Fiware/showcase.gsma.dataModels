@@ -13,7 +13,7 @@
 ### Introduction
 
 This document describes the IoT-BD instance developed under the
-[GSMA IoT Big Data Project](https://www.gsma.com/iot/connected-living-mobilising-the-internet-of-things/),
+[GSMA IoT Big Data Project](https://www.gsma.com/iot/iot-big-data/),
 part of GSMA’s Connected Living Programme.
 
 ### Public Data sources
@@ -75,7 +75,7 @@ below, for each data source you can find a link to them.
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Generalidad de Cataluña                                    | [http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/](http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal) (Spanish)                                            |
 | Madrid                                                     | [http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html](http://www.mambiente.munimadrid.es/opencms/opencms/calaire/avisoLegal.html) (Spanish) |
-| AEMET Agencia Estatal de Meteorología                      | [http://www.aemet.es/es/nota_legal](http://www.aemet.es/es/nota_legal) (Spanish)                                                                                   |
+| AEMET Agencia Estatal de Meteorología                      | [http://www.aemet.es/en/nota_legal](http://www.aemet.es/en/nota_legal) (English)                                                                                   |
 | IPMA Instituto português do mar y do atmosfera             | [https://www.ipma.pt/en/siteinfo/index.html?page=index.xml](https://www.ipma.pt/en/siteinfo/index.html?page=index.xml) (English)                                   |
 | The Network of European Meteorological Services (EUMETNET) | [http://www.meteoalarm.eu/terms.php?lang=en_UK](http://www.meteoalarm.eu/terms.php?lang=en_UK) (English)                                                           |
 | Ineco                                                      |                                                                                                                                                                    |
@@ -106,7 +106,7 @@ purposes without the consent of their owners.
 <!-- textlint-disable terminology -->
 | Information                    | URL                                                                                                                                        |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Harmonized data models by GSMA | [https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf) |
+| Harmonized data models by GSMA | [https://github.com/GSMADeveloper/NGSI-LD-Entities](https://github.com/GSMADeveloper/NGSI-LD-Entities) |
 | Data model by FIWARE           | [https://www.fiware.org/developers/data-models/](https://www.fiware.org/developers/data-models/)                                           |
 <!-- textlint-enable terminology -->
 
@@ -114,51 +114,14 @@ purposes without the consent of their owners.
 
 Below there is a description of the harmonized data currently published
 
-<table border="0">
-<thead>
-<tr>
-<th>Entity Type</th>
-<th>FIWARE Service</th>
-<th>FIWARE Service Path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2">AirQualityObserved</td>
-<td rowspan="2">airquality</td>
-<td>/Barcelona</td>
- </tr>
- <tr>
-<td>/Madrid </td>
-</tr>
-<tr>
-<td rowspan="2">WeatherObserved</td>
-<td rowspan="2">weather</td>
-<td>/Spain</td>
- </tr>
- <tr>
-<td>/Portugal</td>
-</tr>
-<tr>
-<td rowspan="2">WeatherForecast</td>
-<td rowspan="2">weather</td>
-<td>/Spain</td>
- </tr>
- <tr>
- <td>/Portugal</td>
-</tr>
-<tr>
-<td>PointOfInterest</td>
-<td>poi</td>
-<td>/Spain</td>
-</tr>
-<tr>
-<td>Alert</td>
-<td>weather</td>
-<td>/Spain</td>
-</tr>
-</tbody>
-</table>
+| Entity Type        | FIWARE Service | Comment                                      |
+| ------------------ | -------------- | -------------------------------------------- |
+| AirQualityObserved | environment    | Air quality observations from Madrid         |
+| WeatherObserved    | weather        | Weather observations from Spain and Portugal |
+| WeatherForecast    | weather        | Weather forecasts from Spain and Portugal    |
+| Alert              | weather        | Weather alerts from Spain                    |
+| PointOfInterest    | poi            | Points of interest in Spain                  |
+
 
 ### Examples
 

@@ -17,7 +17,7 @@ This repository contains:
      and/or [NGSI-LD](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.01.01_60/gs_CIM009v010101p.pdf) APIs (query).
 
 This work is aligned with the results of the
-[GSMA IoT Big Data](http://www.gsma.com/connectedliving/iot-big-data/) Project.
+[GSMA IoT Big Data](https://www.gsma.com/iot/iot-big-data/) Project.
 Such project is working on the harmonization of APIs and data models for fueling
 IoT and Big Data Ecosystems. In fact the FIWARE data models are a superset of
 the

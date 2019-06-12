@@ -16,22 +16,28 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 ## Examples of use
 
 ```bash
-curl http://<orion_host:port>/v2/entities?type=Alert&q=category==weather&address.addressCountry==ES
+curl -X GET \
+  'https://streams.lab.fiware.org/v2/entities?type=Alert&orderBy=validTo&options=keyValues&limit=1' \
+  -H 'fiware-service: weather' | python -m json.tool
 ```
 
 ```json
-{
-    "severity": "medium",
-    "subCategory": "snow/ice",
-    "alertSource": "http://www.meteoalarm.eu",
-    "address": {
-        "addressCountry": "ES",
-        "addressRegion": "Huesca"
-    },
-    "dateIssued": "2016-03-14T13:54:01",
-    "type": "Alert",
-    "id": "WeatherAlert-83b872975414bfca10832e564a1bb416-7",
-    "validTo": "2016-03-14T23:59:00",
-    "validFrom": "2016-03-14T13:00:00"
-}
+[
+    {
+        "address": {
+            "addressCountry": "ES",
+            "addressRegion": "Costa  Litoral sur de Alicante",
+            "type": "PostalAddress"
+        },
+        "alertSource": "http://www.meteoalarm.eu",
+        "category": "weather",
+        "dateIssued": "2019-06-13T01:00:00.00Z",
+        "id": "WeatherAlert-ac175375a4d9a868d83ddc53e645a27d-3",
+        "severity": "medium",
+        "subCategory": "coastalEvent",
+        "type": "Alert",
+        "validFrom": "2019-06-13T11:00:00.00Z",
+        "validTo": "2019-06-13T20:59:00.00Z"
+    }
+]
 ```

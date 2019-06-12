@@ -9,7 +9,7 @@ data. A Device is always assumed to be capable of communicating electronically
 via a network.
 
 This data model has been partially developed in cooperation with mobile
-operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+operators and the [GSMA](https://www.gsma.com/iot/iot-big-data/).
 
 This data model reuses concepts coming from the
 [SAREF Ontology](http://www.etsi.org/deliver/etsi_ts/103200_103299/103264/01.01.01_60/ts_103264v010101p.pdf)

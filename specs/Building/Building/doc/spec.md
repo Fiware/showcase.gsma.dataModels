@@ -7,7 +7,7 @@ associated with the vertical segments of smart homes, smart cities, industry and
 related IoT applications.
 
 This data model has been partially developed in cooperation with mobile
-operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/),
+operators and the [GSMA](https://www.gsma.com/iot/iot-big-data/),
 compared to GSMA data model following changes are introduced:
 
 -   the reference to `BuildingType` is removed, since `BuildingType` compared to
@@ -25,7 +25,7 @@ compared to GSMA data model following changes are introduced:
 ## Data Model
 
 For a full description of the following attributes refer to GSMA
-[IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf)
+[IoT Big Data Harmonised Data Model](https://github.com/GSMADeveloper/NGSI-LD-Entities)
 
 -   `id`
 

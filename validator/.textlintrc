@@ -192,9 +192,6 @@
           "https://schema.org/*",
           "http://schema.org/*",
           "https://www.tourspain.es/en-us",
-          "http://apidirectory.connectedliving.gsma.com",
-          "http://apidirectory.connectedliving.gsma.com/api/air-quality-spain",
-          "http://apidirectory.connectedliving.gsma.com/api/weather-spain",
           "http://www.dipucadiz.es/export/sites/default/galeria_de_ficheros/desarrollo_sostenible/docu_cursos_jornadas/acustica_planeamiento_urb/Indices-Acusticos.pdf"
       ]
     }

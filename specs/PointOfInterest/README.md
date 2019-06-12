@@ -31,58 +31,34 @@ categories please check
 
 ```bash
 curl -X GET \
-  'https://streams.lab.fiware.org/v2/entities?q=category==%27311%27&type=PointOfInterest' \
-  -H 'fiware-service: poi' \
-  -H 'fiware-servicepath: /Spain' | python -m json.tool
+  'https://streams.lab.fiware.org/v2/entities?id=Museum-b24a98d7fd0e4f37947add846d75fc9b&options=keyValues' \
+  -H 'fiware-service: poi'| python -m json.tool
 ```
 
 ```json
 [
     {
-        "id": "Museum-b24a98d7fd0e4f37947add846d75fc9b",
-        "type": "PointOfInterest",
         "address": {
-            "type": "PostalAddress",
-            "value": {
-                "addressLocality": "Barcelona",
-                "addressRegion": "Barcelona",
-                "addressCountry": "ES"
-            },
-            "metadata": {}
+            "addressCountry": "ES",
+            "addressLocality": "Barcelona",
+            "addressRegion": "Barcelona"
         },
-        "category": {
-            "type": "List",
-            "value": ["311"],
-            "metadata": {}
-        },
-        "dataProvider": {
-            "type": "Text",
-            "value": "FIWARE Foundation e.V.",
-            "metadata": {}
-        },
-        "description": {
-            "type": "Text",
-            "value": "El Museo de la Sagrada Familia ofrece multitud de elementos y objetos que permiten comprender el significado y la complejidad de la gran obra de Gaudí. A través de planos, dibujos originales, maquetas reconstruidas y distintas piezas, el visitante descubrirá más a fondo el proceso de creación de este impresionante templo, que se ha convertido en el símbolo de Barcelona. Desde el museo, que se encuentra situado en el interior de la iglesia, también se puede admirar la sepultura de Gaudí.",
-            "metadata": {}
-        },
+        "category": [
+            "311"
+        ],
+        "dataProvider": "FIWARE Foundation e.V.",
+        "description": "El Museo de lastrong Sagrada Familia /strongofrece multitud de elementos y objetos que permiten comprender el significado y la complejidad de la gran obra de Gaud\u00ed. A trav\u00e9s de planos, dibujos originales, maquetas reconstruidas y distintas piezas, el visitante descubrir\u00e1 m\u00e1s a fondo el proceso de creaci\u00f3n de este impresionante templo, que se ha convertido en el s\u00edmbolo de strongBarcelona/strong. Desde el museo, que se encuentra situado en el interior de la iglesia, tambi\u00e9n se puede admirar la sepultura de Gaud\u00ed.",
+        "id": "Museum-b24a98d7fd0e4f37947add846d75fc9b",
         "location": {
-            "type": "geo:json",
-            "value": {
-                "type": "Point",
-                "coordinates": [2.174492788, 41.402942517]
-            },
-            "metadata": {}
+            "coordinates": [
+                2.174492788,
+                41.402942517
+            ],
+            "type": "Point"
         },
-        "name": {
-            "type": "Text",
-            "value": "Museo del Templo Expiatorio de la Sagrada Familia",
-            "metadata": {}
-        },
-        "source": {
-            "type": "URL",
-            "value": "http://www.tourspain.es",
-            "metadata": {}
-        }
+        "name": "Museo del Templo Expiatorio de la Sagrada Familia",
+        "source": "http://www.tourspain.es",
+        "type": "PointOfInterest"
     }
 ]
 ```

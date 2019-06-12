@@ -4,7 +4,7 @@
 
 An observation of weather conditions at a certain place and time. This data
 model has been developed in cooperation with mobile operators and the
-[GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+[GSMA](https://www.gsma.com/iot/iot-big-data/).
 
 ## Data Model
 
@@ -340,14 +340,9 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 }
 ```
 
-## Use it with a real service
+## Public instance
 
-To get access to a public instance offering weather observed data please have a
-look at the
-[GSMA's API Directory](http://apidirectory.connectedliving.gsma.com/api/weather-spain).
-
-The instance described
-[here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing)
-has been set up by the FIWARE Community.
+You can read about public instance offering information about observed weather
+[here](../../../gsma.md).
 
 ## Open Issues
