@@ -2,6 +2,12 @@
     "id": "urn:ngsi-ld:Animal:ca3f1295-500c-4aa3-b745-d143097d5c01",
     "type": "Animal",
     "species":"sheep",
+    "relatedSource": [
+        {
+            "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+            "applicationEntityId": "app:sheep1"
+        }
+    ],
     "legalId":"ES142589652140",
     "birthdate": "2017-01-01T01:20:00Z",
     "dateModified": "2017-05-04T12:30:00Z",

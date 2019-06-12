@@ -29,6 +29,14 @@ The proposed model for the animal entity has the following properties:
     -   Attribute type: Text
     -   Allowed values: (dairy cattle, beef cattle, sheep, goat, horse, pig)
     -   Mandatory
+-   relatedSource: ID of the animal in external applications
+    -   Attribute type: List of StructuredValue
+    -   Values:
+        -   application: ID of the particular AgriApp entity
+            -   Type: URI
+        -   applicationEntityId: ID of the animal in the external application
+            -   Type: Text
+    -   Optional
 -   legalID: Legal ID of the animal:
     -   Attribute type: Text
     -   Mandatory
