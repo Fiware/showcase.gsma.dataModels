@@ -66,7 +66,11 @@
           "weight",
           "waterConsumption",
           "gasComsumption",
-          "electricityConsumption"
+          "electricityConsumption",
+          "eatingActivity",
+          "milking",
+          "movementActivity",
+          "soilMoisture"
         ]
       },
       "SupportedProtocolType": {

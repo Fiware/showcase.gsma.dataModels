@@ -80,7 +80,8 @@ The data model is defined as shown below:
         `conductivity`, `conductance`, `tss`, `tds`, `turbidity`, `salinity`,
         `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`,
         `weight`, `waterConsumption`, `gasComsumption`,
-        `electricityConsumption`, `soilMoisture`, `trafficFlow`)
+        `electricityConsumption`, `soilMoisture`, `trafficFlow`, `eatingActivity`,
+        `milking`, `movementActivity`)
     -   Mandatory
 
 -   `function` : The functionality necessary to accomplish the task for which a
