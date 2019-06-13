@@ -324,12 +324,5 @@ Sample uses simplified representation for data consumers `?options=keyValues`
 }
 ```
 
-## Use it with a real service
-
-To get access to a public instance offering air quality observed data please
-have a look at the
-[GSMA's API Directory](http://apidirectory.connectedliving.gsma.com/api/air-quality-spain).
-
-The instance described
-[here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing)
-has been set up by the FIWARE Community.
+You can read about public instance offering information about observed air quality
+[here](../../../gsma.md).

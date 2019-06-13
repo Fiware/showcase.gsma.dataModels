@@ -25,52 +25,57 @@ The following scripts are present:
 
 ## Public instance
 
-To get access to a public instance offering air quality observed data please
-have a look at the
-[GSMA's API Directory](http://apidirectory.connectedliving.gsma.com/api/air-quality-spain).
-
-The instance described
-[here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing)
-has been set up by the FIWARE Community.
-
-**Note**: JSON Schemas only capture the NGSI simplified representation, this
-means that to test the JSON schema examples with a
-[FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable)
-API implementation, you need to use the `keyValues` mode (`options=keyValues`).
+You can read about public instance offering information about observed air quality
+[here](../../gsma.md).
 
 ## Examples of Use
 
-What was the air quality observed today at noon UTC at the "Plaza de España"
+What was the latest observed air quality at the "Parque Juan Carlos I frente oficinas mantenimiento"
 (Madrid) air quality station?
 
-`curl -S -H 'fiware-service:airquality' -H 'fiware-servicepath:/Spain_Madrid' -H 'x-auth-token:<my_token>' "http://130.206.118.244:1027/v2/entities?options=keyValues&q=dateObserved:2016-11-28T12:00;stationCode:'28079004'"`
+```bash
+curl -X GET \
+  'https://streams.lab.fiware.org/v2/entities?id=Madrid-AirQualityObserved-28079059-latest&options=keyValues' \
+  -H 'fiware-service: environment' | python -m json.tool
+```
 
 ```json
-{
-    "id": "Madrid-AmbientObserved-28079004-2016-11-28T13:00:00",
-    "type": "AirQualityObserved",
-    "CO": 0.3,
-    "NO": 18,
-    "NO2": 46,
-    "NOx": 73,
-    "SO2": 4,
-    "address": {
-        "addressCountry": "ES",
-        "addressLocality": "Madrid",
-        "streetAddress": "Plaza de España"
-    },
-    "dateObserved": "2016-11-28T12:00:00.00Z",
-    "hour": "13:00",
-    "location": {
-        "type": "Point",
-        "coordinates": [-3.712247222, 40.423852778]
-    },
-    "precipitation": 0,
-    "relativeHumidity": 0.69,
-    "source": "http://datos.madrid.es",
-    "stationCode": "28079004",
-    "stationName": "Pza. de España",
-    "temperature": 14.3,
-    "windDirection": 352
-}
+[
+    {
+        "NO": 2,
+        "NO2": 8,
+        "NOx": 11,
+        "O3": 115,
+        "address": {
+            "addressCountry": "ES",
+            "addressLocality": "Madrid",
+            "streetAddress": "Parque Juan Carlos I frente oficinas mantenimiento"
+        },
+        "dataProvider": "TEF",
+        "dateObserved": "2019-06-13T12:00:00.00Z",
+        "hour": "13:00",
+        "id": "Madrid-AirQualityObserved-28079059-latest",
+        "location": {
+            "coordinates": [
+                -3.609072222,
+                40.46525
+            ],
+            "type": "Point"
+        },
+        "measurand": [
+            "NO,2.0,GQ,Nitrogen Monoxide",
+            "NO2,8.0,GQ,Nitrogen Dioxide",
+            "NOx,11.0,GQ,Nitrogen oxides",
+            "O3,115.0,GQ,Ozone"
+        ],
+        "source": "http://datos.madrid.es",
+        "stationCode": "28079059",
+        "stationName": "Juan Carlos I",
+        "type": "AirQualityObserved",
+        "validity": {
+            "from": "2019-06-13T13:00:00+01:00",
+            "to": "2019-06-13T14:00:00+01:00"
+        }
+    }
+]
 ```

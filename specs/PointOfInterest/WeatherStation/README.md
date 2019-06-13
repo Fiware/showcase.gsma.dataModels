@@ -23,9 +23,8 @@ You can read about public instance offering information about weather stations
 
 ```bash
 curl -X GET \
-  'https://streams.lab.fiware.org/v2/entities?type=PointOfInterest&id=WeatherStation-ES-C929I' \
-  -H 'fiware-service: poi' \
-  -H 'fiware-servicepath: /Spain' | python -m json.tool
+  'https://streams.lab.fiware.org/v2/entities?id=WeatherStation-ES-C929I&options=keyValues' \
+  -H 'fiware-service: poi'| python -m json.tool
 ```
 
 ```json
@@ -36,10 +35,15 @@ curl -X GET \
             "addressLocality": "Hierro Aeropuerto",
             "addressRegion": "Santa Cruz de Tenerife"
         },
-        "category": ["WeatherStation"],
+        "category": [
+            "WeatherStation"
+        ],
         "id": "WeatherStation-ES-C929I",
         "location": {
-            "coordinates": [-17.8889, 27.8189],
+            "coordinates": [
+                -17.8889,
+                27.8189
+            ],
             "type": "Point"
         },
         "source": "http://www.aemet.es",

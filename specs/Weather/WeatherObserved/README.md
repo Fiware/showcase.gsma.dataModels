@@ -19,7 +19,7 @@ in an application.
 
 ## Public instance
 
-You can read about public instance offering information about weather stations
+You can read about public instance offering information about observed weather
 [here](../../gsma.md).
 
 ## Examples of use
