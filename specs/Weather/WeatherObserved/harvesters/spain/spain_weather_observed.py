@@ -43,8 +43,6 @@ default_limit_entities = 50            # amount of entities per 1 request to Ori
 default_limit_targets = 50             # amount of parallel request to Orion
 default_log_level = 'INFO'
 default_orion = 'http://orion:1026'    # Orion Contest Broker endpoint
-default_path = '/Spain'                # header FIWARE-SERVICEPATH
-default_service = 'weather'            # header FIWARE-SERVICE
 default_station_file = 'stations.yml'  # source file with list of municipalities
 default_timeout = -1                   # if value != -1, then work as a service
 
@@ -476,12 +474,10 @@ if __name__ == '__main__':
                         help='Orion Context Broker endpoint')
     parser.add_argument('--path',
                         action='store',
-                        default=default_path,
                         dest='path',
                         help='FIWARE Service Path')
     parser.add_argument('--service',
                         action='store',
-                        default=default_service,
                         dest="service",
                         help='FIWARE Service')
     parser.add_argument('--stations',
@@ -501,13 +497,18 @@ if __name__ == '__main__':
     limit_entities = int(args.limit_entities)
     limit_targets = int(args.limit_targets)
     orion = args.orion
-    path = args.path
-    service = args.service
     timeout = int(args.timeout)
 
+    if 'path' in args:
+        path = args.path
+    if 'service' in args:
+        service = args.service
+
     logger, logger_req = setup_logger()
+
     res = setup_stations_config(args.config)
     stations = setup_stations(res, args.station_file)
+
     reply_status()
 
     while True:
