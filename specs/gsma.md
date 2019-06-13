@@ -104,10 +104,10 @@ purposes without the consent of their owners.
 ### Useful links
 
 <!-- textlint-disable terminology -->
-| Information                    | URL                                                                                                                                        |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Information                    | URL                                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | Harmonized data models by GSMA | [https://github.com/GSMADeveloper/NGSI-LD-Entities](https://github.com/GSMADeveloper/NGSI-LD-Entities) |
-| Data model by FIWARE           | [https://www.fiware.org/developers/data-models/](https://www.fiware.org/developers/data-models/)                                           |
+| Data model by FIWARE           | [https://www.fiware.org/developers/data-models/](https://www.fiware.org/developers/data-models/)       |
 <!-- textlint-enable terminology -->
 
 ### Harmonized data published
