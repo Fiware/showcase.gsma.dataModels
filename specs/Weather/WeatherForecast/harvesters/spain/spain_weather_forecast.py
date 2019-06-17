@@ -62,7 +62,7 @@ tz = timezone('UTC')
 url_aemet = "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{}"
 
 template = {
-    'id': 'Spain-WeatherForecast-',
+    'id': 'urn:ngsi-ld:WeatherForecast:Spain-WeatherForecast-',
     'type': 'WeatherForecast',
     'address': {
         'type': 'PostalAddress',

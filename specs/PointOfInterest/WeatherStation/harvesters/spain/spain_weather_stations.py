@@ -73,7 +73,7 @@ url_aemet = 'https://opendata.aemet.es/opendata/api/valores/climatologicos/inven
 url_ine = 'http://www.ine.es/en/daco/inebase_mensual/febrero_{}/relacion_municipios_en.zip'
 
 template = {
-    'id': 'WeatherStation-ES-',
+    'id': 'urn:ngsi-ld:PointOfInterest:WeatherStation-ES-',
     'type': 'PointOfInterest',
     'category': {
         'type': 'array',

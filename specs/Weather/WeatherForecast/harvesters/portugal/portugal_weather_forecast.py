@@ -59,7 +59,7 @@ url_observation = 'http://api.ipma.pt/json/alldata/{}.json'
 url_stations = 'http://api.ipma.pt/json/locations.json'
 
 template = {
-    'id': 'Portugal-WeatherForecast-',
+    'id': 'urn:ngsi-ld:WeatherForecast:Portugal-WeatherForecast-',
     'type': 'WeatherForecast',
     'address': {
         'type': 'PostalAddress',

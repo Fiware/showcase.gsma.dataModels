@@ -57,7 +57,7 @@ stations = dict()                      # preprocessed list of stations
 url_aemet = 'https://opendata.aemet.es/opendata/api/observacion/convencional/todas'
 
 template = {
-    'id': 'Spain-WeatherObserved-',
+    'id': 'urn:ngsi-ld:WeatherObserved:Spain-WeatherObserved-',
     'type': 'WeatherObserved',
     'address': {
         'type': 'PostalAddress',

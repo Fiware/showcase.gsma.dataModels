@@ -59,7 +59,7 @@ url_observation = 'https://api.ipma.pt/open-data/observation/meteorology/station
 url_stations = 'http://api.ipma.pt/open-data/observation/meteorology/stations/obs-surface.geojson'
 
 template = {
-    'id': 'Portugal-WeatherObserved-',
+    'id': 'urn:ngsi-ld:WeatherObserved:Portugal-WeatherObserved-',
     'type': 'WeatherObserved',
     'address': {
         'type': 'PostalAddress',
