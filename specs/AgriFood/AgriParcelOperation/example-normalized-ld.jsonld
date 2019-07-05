@@ -1,7 +1,7 @@
 {
     "@context": [
         "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://raw.githubusercontent.com/GSMADeveloper/NGSI-LD-Entities/master/examples/Agri-Parcel-Operation-context.jsonld"
+        "https://schema.lab.fiware.org/ld/context"
     ],
     "id": "urn:ngsi-ld:AgriParcelOperation:e1e9d3a3-074f-46f1-9375-52000d05a62b",
     "type": "AgriParcelOperation",
