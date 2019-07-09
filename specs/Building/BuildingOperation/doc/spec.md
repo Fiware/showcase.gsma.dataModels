@@ -9,8 +9,8 @@ applicable to the building. This entity is associated with the vertical segments
 of smart homes, smart cities, industry and related IoT applications.
 
 This data model has been partially developed in cooperation with mobile
-operators and the [GSMA](https://www.gsma.com/iot/iot-big-data/),
-compared to GSMA data model the following changes are introduced:
+operators and the [GSMA](https://www.gsma.com/iot/iot-big-data/), compared to
+GSMA data model the following changes are introduced:
 
 -   `refRelatedDeviceOperation` replaces `refRelatedOperation`
 
@@ -116,67 +116,64 @@ Normalized NGSI response
     "type": "BuildingOperation",
     "status": {
         "value": "finished"
-    }, 
+    },
     "startDate": {
         "type": "DateTime",
         "value": "2016-08-08T10:18:16Z"
-    }, 
+    },
     "operationSequence": {
-        "value": [
-            "fan_power%3D0", 
-            "set_temperature%3D24"
-        ]
-    }, 
+        "value": ["fan_power%3D0", "set_temperature%3D24"]
+    },
     "endDate": {
         "type": "DateTime",
         "value": "2016-08-20T10:18:16Z"
-    }, 
+    },
     "description": {
         "value": "Air conditioning levels reduced due to out of hours"
-    }, 
+    },
     "refRelatedDeviceOperation": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": [
-            "36744245-6716-4a28-84c7-0e3d7520f143", 
+            "36744245-6716-4a28-84c7-0e3d7520f143",
             "33b2b713-9223-40a5-87a0-3f80a1264a6c"
         ]
-    }, 
+    },
     "dateCreated": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-08-08T10:18:16Z"
-    }, 
+    },
     "dateModified": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-08-08T10:18:16Z"
-    }, 
+    },
     "refRelatedBuildingOperation": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": [
-            "b4fb8bff-1a8f-455f-8cc0-ca43c069f865", 
+            "b4fb8bff-1a8f-455f-8cc0-ca43c069f865",
             "55c24793-3437-4157-9bda-667c9e1531fc"
         ]
-    }, 
+    },
     "source": {
         "value": "http://www.example.com"
-    }, 
+    },
     "refBuilding": {
-        "type": "Relationship", 
+        "type": "Relationship",
         "value": "building-a85e3da145c1"
-    }, 
+    },
     "result": {
         "value": "ok"
-    }, 
+    },
     "operationType": {
         "value": "airConditioning"
-    }, 
+    },
     "dateStarted": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-08-08T10:18:16Z"
-    }, 
+    },
     "dateFinished": {
-        "type": "DateTime", 
+        "type": "DateTime",
         "value": "2016-08-20T10:18:16Z"
-    }, 
+    },
     "dataProvider": {
         "value": "OperatorA"
     }
@@ -239,10 +236,7 @@ Sample uses the NGSI-LD representation
     },
     "operationSequence": {
         "type": "Property",
-        "value": [
-            "fan_power%3D0",
-            "set_temperature%3D24"
-        ]
+        "value": ["fan_power%3D0", "set_temperature%3D24"]
     },
     "endDate": {
         "type": "Property",

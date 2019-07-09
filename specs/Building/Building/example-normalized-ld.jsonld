@@ -83,43 +83,7 @@
     },
     "openingHours": {
         "type": "Property",
-        "value": [
-            {
-                "dayOfWeek": "http://schema.org/Sunday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Saturday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Thursday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Tuesday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Friday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Monday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Wednesday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            }
-        ]
+        "value": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]
     },
     "dataProvider": {
         "type": "Property",

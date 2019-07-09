@@ -118,28 +118,7 @@
         "openingHours": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "dayOfWeek": {
-                "type": "string"
-              },
-              "opens": {
-                "type": "string",
-                "format": "time"
-              },
-              "closes": {
-                "type": "string",
-                "format": "time"
-              },
-              "validFrom": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "validThrough": {
-                "type": "string",
-                "format": "date-time"
-              }
-            }
+            "type": "string"
           }
         }
       }
