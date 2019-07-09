@@ -1,51 +1,61 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriFarm/schema.json",
-    "title": "FIWARE - Agri Farm",
-    "description": "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications.",
-    "type": "object",
-    "allOf": [
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
-        {
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["AgriFarm"],
-                    "description": "NGSI Entity Type"
-                },
-                "landLocation": {
-                    "$ref": "http://geojson.org/schema/Geometry.json#",
-                    "description": "Geometry defining the boundaries of the farm land"
-                },
-                "contactPoint": {
-                    "type": "object",
-                    "description": "Contact information of the farm i.e email, telephone, etc"
-				},
-                "ownedBy": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Owner (Person or Organization) of the farm"
-                },
-                "hasBuilding": {
-                    "type": "array",
-                    "items": [{
-                        "type": "string",
-                        "format": "uri"
-                    }],
-                    "description": "List of buildings belonging to the farm"
-                },
-                "hasAgriParcel": {
-                    "type": "array",
-                    "items": [{
-                        "type": "string",
-                        "format": "uri"
-                    }],
-                    "description": "List of agri parcels belonging to the farm"
-                }
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriFarm/schema.json",
+  "title": "FIWARE - Agri Farm",
+  "description": "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["AgriFarm"],
+          "description": "NGSI Entity Type"
+        },
+        "landLocation": {
+          "$ref": "http://geojson.org/schema/Geometry.json#",
+          "description": "Geometry defining the boundaries of the farm land"
+        },
+        "contactPoint": {
+          "type": "object",
+          "description": "Contact information of the farm i.e email, telephone, etc"
+        },
+        "ownedBy": {
+          "type": "string",
+          "format": "uri",
+          "description": "Owner (Person or Organization) of the farm"
+        },
+        "hasBuilding": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
             }
+          ],
+          "description": "List of buildings belonging to the farm"
+        },
+        "hasAgriParcel": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ],
+          "description": "List of agri parcels belonging to the farm"
         }
-    ],
-    "required": ["id", "type"]
+      }
+    }
+  ],
+  "required": ["id", "type"]
 }

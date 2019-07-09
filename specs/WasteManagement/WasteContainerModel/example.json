@@ -8,15 +8,8 @@
   "brandName": "Brute",
   "name": "Dumpster_Brute_2009_Plastic_Green",
   "modelName": "C1",
-  "compliantWith": [
-    "UNE-EN 840-2:2013"
-  ],
+  "compliantWith": ["UNE-EN 840-2:2013"],
   "madeOf": "plastic",
-  "features": [
-    "wheels",
-    "lid"
-  ],
-  "category": [
-    "dumpster"
-  ]
+  "features": ["wheels", "lid"],
+  "category": ["dumpster"]
 }

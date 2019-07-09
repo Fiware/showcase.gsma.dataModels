@@ -5,16 +5,20 @@
   "description": "A waste container",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "WasteContainer"
-          ],
+          "enum": ["WasteContainer"],
           "description": "NGSI Entity type"
         },
         "fillingLevel": {
@@ -26,13 +30,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "fixed",
-              "underground",
-              "ground", 
-              "portable",
-              "other"
-            ]
+            "enum": ["fixed", "underground", "ground", "portable", "other"]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -134,7 +132,9 @@
         },
         "refDevice": {
           "type": "array",
-          "items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          },
           "minItems": 1,
           "uniqueItems": true
         },
@@ -145,9 +145,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location"
-  ]
+  "required": ["id", "type", "location"]
 }

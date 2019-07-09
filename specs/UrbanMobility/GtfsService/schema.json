@@ -5,14 +5,14 @@
   "description": "GTFS Service",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsService"
-          ],
+          "enum": ["GtfsService"],
           "description": "NGSI Entity type"
         },
         "operatedBy": {
@@ -22,10 +22,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "name",
-    "operatedBy"
-  ]
+  "required": ["id", "type", "name", "operatedBy"]
 }

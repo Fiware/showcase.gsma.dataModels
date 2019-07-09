@@ -1,34 +1,31 @@
 {
-    "dateObservedFrom": {
-        "type": "DateTime", 
-        "value": "2016-12-28T11:00:00.00Z"
-    }, 
-    "LAmax": {
-        "value": 94.5
-    }, 
-    "LAeq": {
-        "value": 67.8
-    }, 
-    "dateObservedTo": {
-        "type": "DateTime", 
-        "value": "2016-12-28T12:00:00.00Z"
-    }, 
-    "LAeq_d": {
-        "value": 65.4
-    }, 
-    "location": {
-        "type": "geo:json", 
-        "value": {
-            "type": "Point", 
-            "coordinates": [
-                -2.698, 
-                42.8491
-            ]
-        }
-    }, 
-    "type": "NoiseLevelObserved", 
-    "id": "Vitoria-NoiseLevelObserved-2016-12-28T11:00:00_2016-12-28T12:00:00", 
-    "LAS": {
-        "value": 91.6
+  "dateObservedFrom": {
+    "type": "DateTime",
+    "value": "2016-12-28T11:00:00.00Z"
+  },
+  "LAmax": {
+    "value": 94.5
+  },
+  "LAeq": {
+    "value": 67.8
+  },
+  "dateObservedTo": {
+    "type": "DateTime",
+    "value": "2016-12-28T12:00:00.00Z"
+  },
+  "LAeq_d": {
+    "value": 65.4
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [-2.698, 42.8491]
     }
+  },
+  "type": "NoiseLevelObserved",
+  "id": "Vitoria-NoiseLevelObserved-2016-12-28T11:00:00_2016-12-28T12:00:00",
+  "LAS": {
+    "value": 91.6
+  }
 }

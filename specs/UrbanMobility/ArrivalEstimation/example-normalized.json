@@ -1,21 +1,21 @@
 {
-    "id": "urn:ngsi-ld:ArrivalEstimation:L5C1_Stop74_1",
-    "type": "ArrivalEstimation",
-    "hasTrip": {
-        "type": "Relationship", 
-        "value": "urn:ngsi-ld:GtfsTrip:tus:5C1"
-    }, 
-    "headSign": {
-        "value": "Plaza Italia"
-    }, 
-    "remainingTime": {
-        "value": "PT8M5S"
-    }, 
-    "hasStop": {
-        "type": "Relationship", 
-        "value": "urn:ngsi-ld:GtfsStop:tus:74"
-    }, 
-    "remainingDistance": {
-        "value": 1200
-    }
+  "id": "urn:ngsi-ld:ArrivalEstimation:L5C1_Stop74_1",
+  "type": "ArrivalEstimation",
+  "hasTrip": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:GtfsTrip:tus:5C1"
+  },
+  "headSign": {
+    "value": "Plaza Italia"
+  },
+  "remainingTime": {
+    "value": "PT8M5S"
+  },
+  "hasStop": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:GtfsStop:tus:74"
+  },
+  "remainingDistance": {
+    "value": 1200
+  }
 }

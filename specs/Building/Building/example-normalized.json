@@ -1,155 +1,105 @@
 {
-    "id": "building-a85e3da145c1",
-    "type": "Building",
-    "category": {
-        "value": [
-            "office"
-        ]
-    }, 
-    "floorsBelowGround": {
-        "value": 0
-    }, 
-    "description": {
-        "value": "Office block"
-    }, 
-    "floorsAboveGround": {
-        "value": 7
-    }, 
-    "occupier": {
-        "type": "Relationship",
-        "value": [
-            "9830f692-7677-11e6-838b-4f9fb3dc5a4f"
-        ]
-    }, 
-    "mapUrl": {
-        "type": "URL",
-        "value": "http://www.example.com"
-    }, 
-    "dateCreated": {
-        "type": "DateTime", 
-        "value": "2016-08-08T10:18:16Z"
-    }, 
-    "source": {
-        "value": "http://www.example.com"
-    }, 
-    "location": {
-        "type": "geo:json", 
-        "value": {
-            "type": "Polygon", 
-            "coordinates": [
-                [
-                    [
-                        100, 
-                        0
-                    ], 
-                    [
-                        101, 
-                        0
-                    ], 
-                    [
-                        101, 
-                        1
-                    ], 
-                    [
-                        100, 
-                        1
-                    ], 
-                    [
-                        100, 
-                        0
-                    ]
-                ]
-            ]
-        }
-    }, 
-    "address": {
-        "type": "PostalAddress", 
-        "value": {
-            "addressLocality": "London", 
-            "postalCode": "EC4N 8AF", 
-            "streetAddress": "25 Walbrook"
-        }
-    }, 
-    "owner": {
-        "type": "Relationship",
-        "value": [
-            "cdfd9cb8-ae2b-47cb-a43a-b9767ffd5c84", 
-            "1be9cd61-ef59-421f-a326-4b6c84411ad4"
-        ]
-    }, 
-    "openingHours": {
-        "value": [
-            {
-                "dayOfWeek": "http://schema.org/Sunday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }, 
-            {
-                "dayOfWeek": "http://schema.org/Saturday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }, 
-            {
-                "dayOfWeek": "http://schema.org/Thursday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }, 
-            {
-                "dayOfWeek": "http://schema.org/Tuesday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }, 
-            {
-                "dayOfWeek": "http://schema.org/Friday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }, 
-            {
-                "dayOfWeek": "http://schema.org/Monday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }, 
-            {
-                "dayOfWeek": "http://schema.org/Wednesday", 
-                "closes": "17:00:00", 
-                "opens": "09:00:00"
-            }
-        ]
-    }, 
-    "dataProvider": {
-        "value": "OperatorA"
-    }, 
-    "dateModified": {
-        "type": "DateTime", 
-        "value": "2016-08-08T10:18:16Z"
-    }, 
-    "containedInPlace": {
-        "value": {
-            "type": "Polygon", 
-            "coordinates": [
-                [
-                    [
-                        100, 
-                        0
-                    ], 
-                    [
-                        101, 
-                        0
-                    ], 
-                    [
-                        101, 
-                        1
-                    ], 
-                    [
-                        100, 
-                        1
-                    ], 
-                    [
-                        100, 
-                        0
-                    ]
-                ]
-            ]
-        }
+  "id": "building-a85e3da145c1",
+  "type": "Building",
+  "category": {
+    "value": ["office"]
+  },
+  "floorsBelowGround": {
+    "value": 0
+  },
+  "description": {
+    "value": "Office block"
+  },
+  "floorsAboveGround": {
+    "value": 7
+  },
+  "occupier": {
+    "type": "Relationship",
+    "value": ["9830f692-7677-11e6-838b-4f9fb3dc5a4f"]
+  },
+  "mapUrl": {
+    "type": "URL",
+    "value": "http://www.example.com"
+  },
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2016-08-08T10:18:16Z"
+  },
+  "source": {
+    "value": "http://www.example.com"
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Polygon",
+      "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
     }
+  },
+  "address": {
+    "type": "PostalAddress",
+    "value": {
+      "addressLocality": "London",
+      "postalCode": "EC4N 8AF",
+      "streetAddress": "25 Walbrook"
+    }
+  },
+  "owner": {
+    "type": "Relationship",
+    "value": [
+      "cdfd9cb8-ae2b-47cb-a43a-b9767ffd5c84",
+      "1be9cd61-ef59-421f-a326-4b6c84411ad4"
+    ]
+  },
+  "openingHours": {
+    "value": [
+      {
+        "dayOfWeek": "http://schema.org/Sunday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      },
+      {
+        "dayOfWeek": "http://schema.org/Saturday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      },
+      {
+        "dayOfWeek": "http://schema.org/Thursday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      },
+      {
+        "dayOfWeek": "http://schema.org/Tuesday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      },
+      {
+        "dayOfWeek": "http://schema.org/Friday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      },
+      {
+        "dayOfWeek": "http://schema.org/Monday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      },
+      {
+        "dayOfWeek": "http://schema.org/Wednesday",
+        "closes": "17:00:00",
+        "opens": "09:00:00"
+      }
+    ]
+  },
+  "dataProvider": {
+    "value": "OperatorA"
+  },
+  "dateModified": {
+    "type": "DateTime",
+    "value": "2016-08-08T10:18:16Z"
+  },
+  "containedInPlace": {
+    "value": {
+      "type": "Polygon",
+      "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
+    }
+  }
 }

@@ -17,10 +17,7 @@
   "dateObserved": "2018-02-11T00:00:00.00Z",
   "location": {
     "type": "Point",
-    "coordinates": [
-      -99.276977,
-      19.381877
-    ]
+    "coordinates": [-99.276977, 19.381877]
   },
   "source": "http://rema.atmosfera.unam.mx/rema/"
 }

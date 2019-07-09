@@ -1,13 +1,13 @@
 {
-    "id": "Santander-Garden-Piquio-Record-1",
-    "type": "GreenspaceRecord",
-    "location": {
-        "type": "Point",
-        "coordinates": [-3.7836974, 43.4741091]
-    },
-    "temperature": 17,
-    "relativeHumidity": 0.87,
-    "soilTemperature": 13,
-    "refGreenspace": "Santander-Garden-Piquio",
-    "dateObserved": "2019-01-15T12:00:00Z"
+  "id": "Santander-Garden-Piquio-Record-1",
+  "type": "GreenspaceRecord",
+  "location": {
+    "type": "Point",
+    "coordinates": [-3.7836974, 43.4741091]
+  },
+  "temperature": 17,
+  "relativeHumidity": 0.87,
+  "soilTemperature": 13,
+  "refGreenspace": "Santander-Garden-Piquio",
+  "dateObserved": "2019-01-15T12:00:00Z"
 }

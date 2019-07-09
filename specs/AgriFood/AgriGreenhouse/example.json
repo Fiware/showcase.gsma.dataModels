@@ -1,44 +1,44 @@
 {
-    "id": "urn:ngsi-ld:AgriGreenhouse:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
-    "type": "AgriGreenhouse",
-    "dateCreated": "2017-01-01T01:20:00Z",
-    "dateModified": "2017-05-04T12:30:00Z",
-    "ownedBy": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c",
-    "relatedSource": [
-        {
-            "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-            "applicationEntityId": "app:greenhouse1"
-        }
-    ],
-    "seeAlso": [
-        "https://example.org/concept/agrigreenhouse",
-        "https://datamodel.org/example/agrigreenhouse"
-    ],
-    "belongsTo": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765",
-    "agriParcelParent": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b",
-    "agriParcelChildren": [
-        "urn:ngsi-ld:AgriParcel:8c3a525d-b42e-4048-bcdd-a119d8ddb0a5",
-        "urn:ngsi-ld:AgriParcel:178d74c1-e6fe-4042-b955-2c164fc90b83"
-    ],
-    "weatherObserved": "urn:ngsi-ld:WeatherObserved:c720cec5-ac6f-40b7-8e89-becb75702d0d",
-    "waterQualityObserved": [
-        "urn:ngsi-ld:WaterQualityObserved:49f86e0b-bb90-4751-a1c3-d5a891920807",
-        "urn:ngsi-ld:WaterQualityObserved:853bf420-43fc-11e8-942f-6b7615517118"
-    ],
-    "relativeHumidity": 0.4,
-    "leafTemperature": 22,
-    "co2": 28,
-    "dailyLight": 24,
-    "drainFlow": {
-        "value": 33,
-        "maxValue": 50,
-        "minValue": 25,
-        "unitText": "Litre per second"
-    },
-    "devices": [
-            "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
-            "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
-            "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",
-            "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
-    ]
+  "id": "urn:ngsi-ld:AgriGreenhouse:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+  "type": "AgriGreenhouse",
+  "dateCreated": "2017-01-01T01:20:00Z",
+  "dateModified": "2017-05-04T12:30:00Z",
+  "ownedBy": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c",
+  "relatedSource": [
+    {
+      "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+      "applicationEntityId": "app:greenhouse1"
+    }
+  ],
+  "seeAlso": [
+    "https://example.org/concept/agrigreenhouse",
+    "https://datamodel.org/example/agrigreenhouse"
+  ],
+  "belongsTo": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765",
+  "agriParcelParent": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b",
+  "agriParcelChildren": [
+    "urn:ngsi-ld:AgriParcel:8c3a525d-b42e-4048-bcdd-a119d8ddb0a5",
+    "urn:ngsi-ld:AgriParcel:178d74c1-e6fe-4042-b955-2c164fc90b83"
+  ],
+  "weatherObserved": "urn:ngsi-ld:WeatherObserved:c720cec5-ac6f-40b7-8e89-becb75702d0d",
+  "waterQualityObserved": [
+    "urn:ngsi-ld:WaterQualityObserved:49f86e0b-bb90-4751-a1c3-d5a891920807",
+    "urn:ngsi-ld:WaterQualityObserved:853bf420-43fc-11e8-942f-6b7615517118"
+  ],
+  "relativeHumidity": 0.4,
+  "leafTemperature": 22,
+  "co2": 28,
+  "dailyLight": 24,
+  "drainFlow": {
+    "value": 33,
+    "maxValue": 50,
+    "minValue": 25,
+    "unitText": "Litre per second"
+  },
+  "devices": [
+    "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
+    "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
+    "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",
+    "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
+  ]
 }

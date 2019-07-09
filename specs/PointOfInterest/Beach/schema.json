@@ -5,15 +5,17 @@
   "description": "A beach",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "Beach"
-          ],
+          "enum": ["Beach"],
           "description": "NGSI Entity type"
         },
         "width": {
@@ -43,11 +45,7 @@
         },
         "occupationRate": {
           "type": "string",
-          "enum": [
-            "high",
-            "medium",
-            "low"
-          ]
+          "enum": ["high", "medium", "low"]
         },
         "facilities": {
           "type": "array",
@@ -76,12 +74,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "privateVehicle",
-              "boat",
-              "onFoot",
-              "publicTransport"
-            ]
+            "enum": ["privateVehicle", "boat", "onFoot", "publicTransport"]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -89,18 +82,15 @@
         "refSeeAlso": {
           "type": "array",
           "items": {
-            "anyOf": [{
-              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-            }]
+            "anyOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              }
+            ]
           }
-        }  
+        }
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location",
-    "name"
-  ]
+  "required": ["id", "type", "location", "name"]
 }

@@ -15,16 +15,11 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "Open311ServiceRequest"
-          ],
+          "enum": ["Open311ServiceRequest"],
           "description": "NGSI Entity type"
         }
       }
     }
   ],
-  "required": [
-    "id",
-    "type"
-  ]
+  "required": ["id", "type"]
 }

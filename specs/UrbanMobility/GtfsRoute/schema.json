@@ -8,33 +8,24 @@
     {
       "anyOf": [
         {
-          "required": [
-            "name"
-          ]
+          "required": ["name"]
         },
         {
-          "required": [
-            "shortName"
-          ]
+          "required": ["shortName"]
         }
       ]
     },
-	{
-      "required": [
-        "id",
-        "type",
-        "routeType",
-        "operatedBy"
-      ]
+    {
+      "required": ["id", "type", "routeType", "operatedBy"]
     },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsRoute"
-          ],
+          "enum": ["GtfsRoute"],
           "description": "NGSI Entity type"
         },
         "name": {
@@ -51,10 +42,7 @@
         },
         "routeType": {
           "type": "string",
-          "enum": [
-            "0", "1", "2", "3",
-            "4", "5", "6", "7"
-          ]
+          "enum": ["0", "1", "2", "3", "4", "5", "6", "7"]
         },
         "routeSortOrder": {
           "type": "integer",

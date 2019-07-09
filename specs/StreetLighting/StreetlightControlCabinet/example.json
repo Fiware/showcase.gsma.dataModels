@@ -3,7 +3,7 @@
   "type": "StreetlightControlCabinet",
   "location": {
     "type": "Point",
-    "coordinates": [  -3.164485591715449, 40.62785133667262 ]
+    "coordinates": [-3.164485591715449, 40.62785133667262]
   },
   "cupboardMadeOf": "plastic",
   "brandName": "Siemens",
@@ -17,9 +17,9 @@
   "lastMeterReading": 161237,
   "meterReadingPeriod": 60,
   "intensity": {
-     "R": 20.1,
-     "S": 14.4,
-     "T": 22
+    "R": 20.1,
+    "S": 14.4,
+    "T": 22
   },
   "reactivePower": {
     "R": 45,

@@ -5,15 +5,17 @@
   "description": "Water Quality data model is intended to represent water quality parameters at a certain water mass (river,  lake, sea, etc.) section",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "WaterQualityObserved"
-          ],
+          "enum": ["WaterQualityObserved"],
           "description": "NGSI Entity type"
         },
         "dateObserved": {
@@ -100,10 +102,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateObserved",
-    "location"
-  ]
+  "required": ["id", "type", "dateObserved", "location"]
 }

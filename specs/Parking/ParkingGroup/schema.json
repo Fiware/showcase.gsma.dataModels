@@ -1,24 +1,22 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "https://fiware.github.io/dataModels/specs/Parking/ParkingGroup/schema.json",
-	"title": "FIWARE - Parking / Parking Group",
-	"description": "Parking Group - TODO: Provide a complete Schema",
-	"type": "object",
-	"allOf": [{
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
-	},{
-		"properties": {
-			"type": {
-				"type": "string",
-				"enum": [
-					"ParkingGroup"
-				],
-				"description": "NGSI Entity type"
-			}
-		}
-	}],
-	"required": [
-		"id",
-		"type"
-	]
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/Parking/ParkingGroup/schema.json",
+  "title": "FIWARE - Parking / Parking Group",
+  "description": "Parking Group - TODO: Provide a complete Schema",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["ParkingGroup"],
+          "description": "NGSI Entity type"
+        }
+      }
+    }
+  ],
+  "required": ["id", "type"]
 }

@@ -1,17 +1,17 @@
 {
-    "id": "urn:ngsi-ld:CalendarDateRule:Malaga:Rule67",
-    "type": "GtfsCalendarDateRule", 
-    "name": {
-        "value": "Rule Fair Area"
-    }, 
-    "exceptionType": {
-        "value": "1"
-    }, 
-    "hasService": {
-        "type": "Relationship", 
-        "value": "urn:ngsi-ld:GtfsService:Malaga:FairArea_1"
-    }, 
-    "appliesOn": {
-        "value": "2018-03-19"
-    }
+  "id": "urn:ngsi-ld:CalendarDateRule:Malaga:Rule67",
+  "type": "GtfsCalendarDateRule",
+  "name": {
+    "value": "Rule Fair Area"
+  },
+  "exceptionType": {
+    "value": "1"
+  },
+  "hasService": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:GtfsService:Malaga:FairArea_1"
+  },
+  "appliesOn": {
+    "value": "2018-03-19"
+  }
 }

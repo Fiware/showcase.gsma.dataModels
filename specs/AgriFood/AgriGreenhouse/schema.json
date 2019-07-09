@@ -1,92 +1,102 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriGreenhouse/schema.json",
-    "title": "FIWARE - Agri Greenhouse",
-    "description": "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications.",
-    "type": "object",
-    "allOf": [
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
-        {
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["AgriGreenhouse"],
-                    "description": "NGSI Entity Type"
-                },
-                "ownedBy": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "belongsTo": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "agriParcelParent": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "agriParcelChildren": {
-                    "type": "array",
-                    "items": [{
-                        "type": "string",
-                        "format": "uri"
-                    }]
-                },
-                "weatherObserved": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "waterQualityObserved": {
-                    "type": "array",
-                    "items": [{
-                        "type": "string",
-                        "format": "uri"
-                    }]
-                },
-                "relativeHumidity": {
-                    "type": "number",
-                    "minimum": 0.0,
-                    "maximum": 1.0
-                },
-                "leafTemperature": {
-                    "type": "integer"
-                },
-                "co2": {
-                    "type": "integer"
-                },
-                "dailyLight": {
-                    "type": "integer"
-                },
-                "drainFlow": {
-                    "type": "object",
-                    "values": {
-                        "value": {
-                            "type": "number",
-                            "minimum": 0
-                        },
-                        "maxValue": {
-                            "type": "number",
-                            "minimum": 0
-                        },
-                        "minValue": {
-                            "type": "number",
-                            "minimum": 0
-                        },
-                        "unitText": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "devices": {
-                    "type": "array",
-                    "items": [{
-                        "type": "string",
-                        "format": "uri"
-                    }]
-                }
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriGreenhouse/schema.json",
+  "title": "FIWARE - Agri Greenhouse",
+  "description": "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["AgriGreenhouse"],
+          "description": "NGSI Entity Type"
+        },
+        "ownedBy": {
+          "type": "string",
+          "format": "uri"
+        },
+        "belongsTo": {
+          "type": "string",
+          "format": "uri"
+        },
+        "agriParcelParent": {
+          "type": "string",
+          "format": "uri"
+        },
+        "agriParcelChildren": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
             }
+          ]
+        },
+        "weatherObserved": {
+          "type": "string",
+          "format": "uri"
+        },
+        "waterQualityObserved": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "relativeHumidity": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "leafTemperature": {
+          "type": "integer"
+        },
+        "co2": {
+          "type": "integer"
+        },
+        "dailyLight": {
+          "type": "integer"
+        },
+        "drainFlow": {
+          "type": "object",
+          "values": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "maxValue": {
+              "type": "number",
+              "minimum": 0
+            },
+            "minValue": {
+              "type": "number",
+              "minimum": 0
+            },
+            "unitText": {
+              "type": "string"
+            }
+          }
+        },
+        "devices": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
         }
-    ],
-    "required": ["id", "type", "agriParcelParent"]
+      }
+    }
+  ],
+  "required": ["id", "type", "agriParcelParent"]
 }

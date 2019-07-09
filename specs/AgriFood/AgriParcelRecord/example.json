@@ -1,42 +1,36 @@
 {
-    "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
-    "type": "AgriParcelRecord",
-    "dateCreated": "2017-01-01T01:20:00Z",
-    "dateModified": "2017-05-04T12:30:00Z",
-    "relatedSource": [
-        {
-            "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-            "applicationEntityId": "app:parcelrec1"
-        }
-    ],
-    "seeAlso": [
-        "https://example.org/concept/agriparcelrec",
-        "https://datamodel.org/example/agriparcelrec"
-    ],
-    "agriParcel": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed",
-    "location": {
-        "type": "Polygon",
-        "coordinates": [[
-            [100,0],
-            [101,0],
-            [101,1],
-            [100,1],
-            [100,0]
-        ]]
-    },
-    "soilTemperature": 27,
-    "soilMoistureVwc": 0.08,
-    "soilMoistureEc": 17,
-    "airTemperature": 20,
-    "solarRadiation": 15,
-    "relativeHumidity": 0.15,
-    "atmosphericPressure": 1013.25,
-    "description":"Monthly fertiliser application",
-    "devices": [
-        "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
-        "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
-        "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",
-        "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
-    ],
-    "observedAt": "2017-05-04T10:18:16Z"
+  "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
+  "type": "AgriParcelRecord",
+  "dateCreated": "2017-01-01T01:20:00Z",
+  "dateModified": "2017-05-04T12:30:00Z",
+  "relatedSource": [
+    {
+      "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+      "applicationEntityId": "app:parcelrec1"
+    }
+  ],
+  "seeAlso": [
+    "https://example.org/concept/agriparcelrec",
+    "https://datamodel.org/example/agriparcelrec"
+  ],
+  "agriParcel": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed",
+  "location": {
+    "type": "Polygon",
+    "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
+  },
+  "soilTemperature": 27,
+  "soilMoistureVwc": 0.08,
+  "soilMoistureEc": 17,
+  "airTemperature": 20,
+  "solarRadiation": 15,
+  "relativeHumidity": 0.15,
+  "atmosphericPressure": 1013.25,
+  "description": "Monthly fertiliser application",
+  "devices": [
+    "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
+    "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
+    "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",
+    "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
+  ],
+  "observedAt": "2017-05-04T10:18:16Z"
 }

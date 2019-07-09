@@ -1,37 +1,32 @@
 {
-    "id": "FlowerBed-345",
-    "type": "FlowerBed",
-    "category": {
-        "value": [
-            "urbanTreeSpot"
-        ]
-    }, 
-    "soilMoistureVwc": {
-        "value": 0.85
-    }, 
-    "dateLastWatering": {
-        "type": "DateTime", 
-        "value": "2017-03-31T08:00:00Z"
-    }, 
-    "soilTemperature": {
-        "value": 17
-    }, 
-    "address": {
-        "type": "PostalAddress", 
-        "value": {
-            "addressCountry": "Spain", 
-            "streetAddress": "Paseo Zorrilla, 122", 
-            "adressLocality": "Valladolid"
-        }
-    },
-    "location": {
-        "type": "geo:json", 
-        "value": {
-            "type": "Point", 
-            "coordinates": [
-                -4.743187,
-                41.627999
-            ]
-        }
+  "id": "FlowerBed-345",
+  "type": "FlowerBed",
+  "category": {
+    "value": ["urbanTreeSpot"]
+  },
+  "soilMoistureVwc": {
+    "value": 0.85
+  },
+  "dateLastWatering": {
+    "type": "DateTime",
+    "value": "2017-03-31T08:00:00Z"
+  },
+  "soilTemperature": {
+    "value": 17
+  },
+  "address": {
+    "type": "PostalAddress",
+    "value": {
+      "addressCountry": "Spain",
+      "streetAddress": "Paseo Zorrilla, 122",
+      "adressLocality": "Valladolid"
     }
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [-4.743187, 41.627999]
+    }
+  }
 }

@@ -1,49 +1,46 @@
 {
-    "id": "Alert:1",
-    "type": "Alert",
-    "dateCreated": {
-        "type": "DateTime",
-        "value": "2019-06-06T12:06:06"
-    },
-    "dateModified": {
-        "type": "DateTime",
-        "value": "2019-06-07T12:07:06"
-    },
-    "category": {
-        "value": "traffic"
-    }, 
-    "subCategory": {
-        "value": "trafficJam"
-    }, 
-    "validTo": {
-        "type": "DateTime",
-        "value": "2017-01-02T10:25:55.00Z"
-    }, 
-    "description": {
-        "value": "The road is completely blocked for 3kms"
-    }, 
-    "location": {
-        "type": "geo:json", 
-        "value": {
-            "type": "Point", 
-            "coordinates": [
-                -3.712247222222222, 
-                40.423852777777775
-            ]
-        }
-    }, 
-    "dateIssued": {
-        "type": "DateTime", 
-        "value": "2017-01-02T09:25:55.00Z"
-    }, 
-    "alertSource": {
-        "value": "https://account.lab.fiware.org/users/8"
-    }, 
-    "validFrom": {
-        "type": "DateTime",
-        "value": "2017-01-02T09:25:55.00Z"
-    }, 
-    "severity": {
-        "value": "high"
+  "id": "Alert:1",
+  "type": "Alert",
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2019-06-06T12:06:06"
+  },
+  "dateModified": {
+    "type": "DateTime",
+    "value": "2019-06-07T12:07:06"
+  },
+  "category": {
+    "value": "traffic"
+  },
+  "subCategory": {
+    "value": "trafficJam"
+  },
+  "validTo": {
+    "type": "DateTime",
+    "value": "2017-01-02T10:25:55.00Z"
+  },
+  "description": {
+    "value": "The road is completely blocked for 3kms"
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [-3.712247222222222, 40.423852777777775]
     }
+  },
+  "dateIssued": {
+    "type": "DateTime",
+    "value": "2017-01-02T09:25:55.00Z"
+  },
+  "alertSource": {
+    "value": "https://account.lab.fiware.org/users/8"
+  },
+  "validFrom": {
+    "type": "DateTime",
+    "value": "2017-01-02T09:25:55.00Z"
+  },
+  "severity": {
+    "value": "high"
+  }
 }

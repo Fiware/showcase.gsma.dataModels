@@ -8,24 +8,15 @@
     {
       "anyOf": [
         {
-          "required": [
-            "location"
-          ]
+          "required": ["location"]
         },
         {
-          "required": [
-            "address"
-          ]
+          "required": ["address"]
         }
       ]
     },
     {
-      "required": [
-        "id",
-        "type",
-        "category",
-        "name"
-      ]
+      "required": ["id", "type", "category", "name"]
     },
     {
       "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
@@ -37,9 +28,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "PointOfInterest"
-          ],
+          "enum": ["PointOfInterest"],
           "description": "NGSI Entity type"
         },
         "category": {

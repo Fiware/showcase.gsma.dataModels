@@ -1,31 +1,30 @@
 {
-      "id": "santander:daoiz_velarde_1_5",
-      "type": "OnStreetParking",
-      "category": ["blueZone", "shortTerm", "forDisabled"],
-      "allowedVehicleType": "car",
-      "chargeType": ["temporaryFee"],
-      "requiredPermit": ["blueZonePermit", "disabledPermit"],
-      "permitActiveHours": {
-        "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
-      },
-      "maximumAllowedStay": "PT2H",
-      "availableSpotNumber": 3,
-      "totalSpotNumber": 6,
-      "extraSpotNumber": 2,
-      "dateModified": "2016-06-02T09:25:55.00Z",
-      "location": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-3.80356167695194, 43.46296641666926 ],
-            [-3.803161973253841,43.46301091092682 ],
-            [-3.803147082548618,43.462879859445884],
-            [-3.803536474744068,43.462838666196674],
-            [-3.80356167695194, 43.46296641666926]
-          ]
-        ]
-      },
-      "areaServed": "Zona Centro",
-      "refParkingGroup": ["daoiz-velarde-1-5-main", "daoiz-velarde-1-5-disabled"]
-  }
-  
+  "id": "santander:daoiz_velarde_1_5",
+  "type": "OnStreetParking",
+  "category": ["blueZone", "shortTerm", "forDisabled"],
+  "allowedVehicleType": "car",
+  "chargeType": ["temporaryFee"],
+  "requiredPermit": ["blueZonePermit", "disabledPermit"],
+  "permitActiveHours": {
+    "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
+  },
+  "maximumAllowedStay": "PT2H",
+  "availableSpotNumber": 3,
+  "totalSpotNumber": 6,
+  "extraSpotNumber": 2,
+  "dateModified": "2016-06-02T09:25:55.00Z",
+  "location": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [-3.80356167695194, 43.46296641666926],
+        [-3.803161973253841, 43.46301091092682],
+        [-3.803147082548618, 43.462879859445884],
+        [-3.803536474744068, 43.462838666196674],
+        [-3.80356167695194, 43.46296641666926]
+      ]
+    ]
+  },
+  "areaServed": "Zona Centro",
+  "refParkingGroup": ["daoiz-velarde-1-5-main", "daoiz-velarde-1-5-disabled"]
+}

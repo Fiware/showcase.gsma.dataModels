@@ -5,62 +5,14 @@
   "dateModified": "2016-08-08T10:18:16Z",
   "source": "http://www.example.com",
   "dataProvider": "OperatorA",
-  "category": [
-    "office"
-  ],
+  "category": ["office"],
   "containedInPlace": {
     "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          100,
-          0
-        ],
-        [
-          101,
-          0
-        ],
-        [
-          101,
-          1
-        ],
-        [
-          100,
-          1
-        ],
-        [
-          100,
-          0
-        ]
-      ]
-    ]
+    "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
   },
   "location": {
     "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          100,
-          0
-        ],
-        [
-          101,
-          0
-        ],
-        [
-          101,
-          1
-        ],
-        [
-          100,
-          1
-        ],
-        [
-          100,
-          0
-        ]
-      ]
-    ]
+    "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
   },
   "address": {
     "addressLocality": "London",
@@ -71,9 +23,7 @@
     "cdfd9cb8-ae2b-47cb-a43a-b9767ffd5c84",
     "1be9cd61-ef59-421f-a326-4b6c84411ad4"
   ],
-  "occupier": [
-    "9830f692-7677-11e6-838b-4f9fb3dc5a4f"
-  ],
+  "occupier": ["9830f692-7677-11e6-838b-4f9fb3dc5a4f"],
   "floorsAboveGround": 7,
   "floorsBelowGround": 0,
   "description": "Office block",

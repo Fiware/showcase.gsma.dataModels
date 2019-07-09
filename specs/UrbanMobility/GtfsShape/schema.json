@@ -12,9 +12,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsShape"
-          ],
+          "enum": ["GtfsShape"],
           "description": "NGSI Entity type"
         },
         "distanceTravelled": {
@@ -38,9 +36,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location"
-  ]
+  "required": ["id", "type", "location"]
 }

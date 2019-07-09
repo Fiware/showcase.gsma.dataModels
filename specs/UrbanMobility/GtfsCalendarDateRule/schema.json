@@ -5,14 +5,14 @@
   "description": "GTFS Calendar Date Rule",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsCalendarDateRule"
-          ],
+          "enum": ["GtfsCalendarDateRule"],
           "description": "NGSI Entity type"
         },
         "appliesOn": {
@@ -30,11 +30,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "hasService",
-    "appliesOn",
-    "exceptionType"
-  ]
+  "required": ["id", "type", "hasService", "appliesOn", "exceptionType"]
 }

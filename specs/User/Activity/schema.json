@@ -56,18 +56,11 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "UserActivity"
-          ],
+          "enum": ["UserActivity"],
           "description": "NGSI Entity type"
         }
       }
     }
   ],
-  "required": [
-    "activityType",
-    "refAgent",
-    "type",
-    "id"
-  ]
+  "required": ["activityType", "refAgent", "type", "id"]
 }

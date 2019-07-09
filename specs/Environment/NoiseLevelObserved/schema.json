@@ -5,15 +5,17 @@
   "description": "An observation of those acoustic parameters that estimate noise pressure levels at a certain place and time. ",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "NoiseLevelObserved"
-          ],
+          "enum": ["NoiseLevelObserved"],
           "description": "NGSI Entity type"
         },
         "dateObserved": {
@@ -29,9 +31,7 @@
         },
         "sonometerClass": {
           "type": "string",
-          "enum": [
-            "0", "1", "2"
-          ]
+          "enum": ["0", "1", "2"]
         },
         "refDevice": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
@@ -45,11 +45,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateObservedFrom",
-    "dateObservedTo",
-    "location"
-  ]
+  "required": ["id", "type", "dateObservedFrom", "dateObservedTo", "location"]
 }

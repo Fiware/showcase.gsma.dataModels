@@ -5,14 +5,14 @@
   "description": "GTFS Stop Time",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsStopTime"
-          ],
+          "enum": ["GtfsStopTime"],
           "description": "NGSI Entity type"
         },
         "hasStop": {
@@ -42,9 +42,7 @@
         "pickupType": {
           "type": "string",
           "default": "0",
-          "enum": [
-            "0", "1", "2", "3"
-          ]
+          "enum": ["0", "1", "2", "3"]
         },
         "stopHeadsign": {
           "type": "string"
@@ -52,9 +50,7 @@
         "dropOffType": {
           "type": "string",
           "default": "0",
-          "enum": [
-            "0", "1", "2", "3"
-          ]
+          "enum": ["0", "1", "2", "3"]
         },
         "timepoint": {
           "type": "string",

@@ -1,407 +1,429 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "https://fiware.github.io/dataModels/specs/Parking/OffStreetParking/schema.json",
-	"title": "FIWARE - Parking / Off Street Parking",
-	"description": "Off street parking",
-	"type": "object",
-	"allOf": [{
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
-	}, {
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
-	}, {
-		"properties": {
-			"type": {
-				"type": "string",
-				"enum": [
-					"OffStreetParking"
-				],
-				"description": "NGSI Entity type"
-			},
-			"category": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"public", "private", "publicPrivate",
-						"urbanDeterrentParking", "parkingGarage", "parkingLot",
-						"shortTerm", "mediumTerm", "longTerm",
-						"free", "feeCharged",
-						"staffed", "guarded",
-						"barrierAccess", "gateAccess", "freeAccess",
-						"onlyResidents", "onlyWithPermit",
-						"forEmployees", "forVisitors", "forCustomers",
-						"forStudents", "forMembers", "forDisabled",
-						"forResidents", "forElectricalCharging",
-						"underground", "ground",
-						"other"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"extCategory": {
-				"type": "array",
-				"items": {
-					"type": "string"
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			}, 
-			"allowedVehicleType": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"agriculturalVehicle",
-						"bicycle",
-						"bus",
-						"car",
-						"caravan",
-						"carWithCaravan",
-						"carWithTrailer",
-						"constructionOrMaintenanceVehicle",
-						"lorry",
-						"moped",
-						"motorcycle",
-						"motorcycleWithSideCar",
-						"motorscooter",
-						"tanker",
-						"trailer",
-						"van",
-						"anyVehicle"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"chargeType": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"flat",
-						"minimum",
-						"maximum",
-						"additionalIntervalPrice",
-						"seasonTicket",
-						"temporaryPrice",
-						"firstIntervalPrice",
-						"annualPayment",
-						"monthlyPayment",
-						"free",
-						"other"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"requiredPermit": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"employeePermit",
-						"studentPermit",
-						"fairPermit",
-						"governmentPermit",
-						"residentPermit",
-						"specificIdentifiedVehiclePermit",
-						"visitorPermit",
-						"noPermitNeeded"
-					]
-				},
-				"minItems": 0,
-				"uniqueItems": true
-			},
-			"occupancyDetectionType": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"none",
-						"balancing",
-						"singleSpaceDetection",
-						"modelBased",
-						"manual"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"acceptedPaymentMethod": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"ByBankTransferInAdvance",
-						"ByInvoice",
-						"Cash",
-						"CheckInAdvance",
-						"COD",
-						"DirectDebit",
-						"GoogleCheckout",
-						"PayPal",
-						"PaySwarm"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"priceRatePerMinute": {
-			       "type": "number"
-			},
-			"priceCurrency": {
-			       "type": "string"
-			},			
-			"layout": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"automatedParkingGarage",
-						"surface",
-						"multiStorey",
-						"singleLevel",
-						"multiLevel",
-						"openSpace",
-						"covered",
-						"nested",
-						"field",
-						"rooftop",
-						"sheds",
-						"carports",
-						"garageBoxes",
-						"other"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"usageScenario": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"truckParking",
-						"parkAndRide",
-						"parkAndCycle",
-						"parkAndWalk",
-						"kissAndRide",
-						"liftshare",
-						"carSharing",
-						"restArea",
-						"serviceArea",
-						"dropOffWithValet",
-						"dropOffMechanical",
-						"eventParking",
-						"automaticParkingGuidance",
-						"staffGuidesToSpace",
-						"vehicleLift",
-						"loadingBay",
-						"dropOff",
-						"overnightParking",
-						"other"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"parkingMode": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"perpendicularParking",
-						"parallelParking",
-						"echelonParking"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"facilities": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"toilet", "shower",
-						"informationPoint",
-						"internetWireless",
-						"payDesk", "paymentMachine", "cashMachine", "vendingMachine",
-						"faxMachineOrService", "copyMachineOrService",
-						"safeDeposit", "luggageLocker",
-						"publicPhone",
-						"elevator", "dumpingStation",
-						"freshWater",
-						"wasteDisposal", "refuseBin",
-						"iceFreeScaffold",
-						"playground",
-						"electricChargingStation",
-						"bikeParking",
-						"tollTerminal",
-						"defibrillator", "firstAidEquipment", "fireHose", "fireExtinguisher", "fireHydrant"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"security": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"patrolled",
-						"securityStaff",
-						"externalSecurity",
-						"cctv",
-						"dog",
-						"guard24hours",
-						"lighting",
-						"floodLight",
-						"fences",
-						"areaSeperatedFromSurroundings"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"highestFloor": {
-				"type": "integer"
-			},
-			"lowestFloor": {
-				"type": "integer"
-			},
-			"maximumAllowedDuration": {
-				"type": "string"
-			},
-			"totalSpotNumber": {
-				"type": "integer",
-				"minimum": 1
-			},
-			"availableSpotNumber": {
-				"type": "integer",
-				"minimum": 0
-			},
-			"extraSpotNumber": {
-				"type": "integer",
-				"minimum": 0
-			},
-			"openingHours": {
-				"type": "string"
-			},
-			"firstAvailableFloor": {
-				"type": "integer"
-			},
-			"specialLocation": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"airportTerminal",
-						"exhibitonCentre",
-						"shoppingCentre",
-						"specificFacility",
-						"trainStation",
-						"campground",
-						"themePark",
-						"ferryTerminal",
-						"vehicleOnRailTerminal",
-						"coachStation",
-						"cableCarStation",
-						"publicTransportStation",
-						"market",
-						"religiousCentre",
-						"conventionCentre",
-						"cinema",
-						"skilift",
-						"hotel",
-						"other"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"status": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"open",
-						"closed",
-						"closedAbnormal",
-						"openingTimesInForce",
-						"full",
-						"fullAtEntrance",
-						"spacesAvailable",
-						"almostFull"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"reservationType": {
-				"type": "array",
-				"items": {
-					"type": "string",
-					"enum": [
-						"optional",
-						"mandatory",
-						"notAvailable",
-						"partly"
-					]
-				},
-				"minItems": 1,
-				"uniqueItems": true
-			},
-			"provider": {
-				"type": "object"
-			},
-			"measuresPeriod": {
-				"type": "number"
-			},
-			"measuresPeriodUnit": {
-				"type": "string"
-			},			
-			"contactPoint": {
-				"type": "object"
-			},
-			"averageSpotWidth": {
-				"type": "number",
-				"minimum": 0,
-				"exclusiveMinimum": 0
-			},
-			"averageSpotLength": {
-				"type": "number",
-				"minimum": 0,
-				"exclusiveMinimum": 0
-			},
-			"maximumAllowedHeight": {
-				"type": "number",
-				"minimum": 0,
-				"exclusiveMinimum": 0
-			},
-			"maximumAllowedWidth": {
-				"type": "number",
-				"minimum": 0,
-				"exclusiveMinimum": 0
-			},
-			"refParkingAccess": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-			},
-			"refParkingGroup": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-			},
-			"refParkingSpot": {
-				"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-			},
-			"aggregateRating": {
-				"type": "object"
-			}
-		}
-	}],
-	"required": [
-		"id",
-		"type",
-		"location"
-	]
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/Parking/OffStreetParking/schema.json",
+  "title": "FIWARE - Parking / Off Street Parking",
+  "description": "Off street parking",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["OffStreetParking"],
+          "description": "NGSI Entity type"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "publicPrivate",
+              "urbanDeterrentParking",
+              "parkingGarage",
+              "parkingLot",
+              "shortTerm",
+              "mediumTerm",
+              "longTerm",
+              "free",
+              "feeCharged",
+              "staffed",
+              "guarded",
+              "barrierAccess",
+              "gateAccess",
+              "freeAccess",
+              "onlyResidents",
+              "onlyWithPermit",
+              "forEmployees",
+              "forVisitors",
+              "forCustomers",
+              "forStudents",
+              "forMembers",
+              "forDisabled",
+              "forResidents",
+              "forElectricalCharging",
+              "underground",
+              "ground",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "extCategory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "allowedVehicleType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "agriculturalVehicle",
+              "bicycle",
+              "bus",
+              "car",
+              "caravan",
+              "carWithCaravan",
+              "carWithTrailer",
+              "constructionOrMaintenanceVehicle",
+              "lorry",
+              "moped",
+              "motorcycle",
+              "motorcycleWithSideCar",
+              "motorscooter",
+              "tanker",
+              "trailer",
+              "van",
+              "anyVehicle"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "chargeType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "flat",
+              "minimum",
+              "maximum",
+              "additionalIntervalPrice",
+              "seasonTicket",
+              "temporaryPrice",
+              "firstIntervalPrice",
+              "annualPayment",
+              "monthlyPayment",
+              "free",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "requiredPermit": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "employeePermit",
+              "studentPermit",
+              "fairPermit",
+              "governmentPermit",
+              "residentPermit",
+              "specificIdentifiedVehiclePermit",
+              "visitorPermit",
+              "noPermitNeeded"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "occupancyDetectionType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "balancing",
+              "singleSpaceDetection",
+              "modelBased",
+              "manual"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "acceptedPaymentMethod": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ByBankTransferInAdvance",
+              "ByInvoice",
+              "Cash",
+              "CheckInAdvance",
+              "COD",
+              "DirectDebit",
+              "GoogleCheckout",
+              "PayPal",
+              "PaySwarm"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "priceRatePerMinute": {
+          "type": "number"
+        },
+        "priceCurrency": {
+          "type": "string"
+        },
+        "layout": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "automatedParkingGarage",
+              "surface",
+              "multiStorey",
+              "singleLevel",
+              "multiLevel",
+              "openSpace",
+              "covered",
+              "nested",
+              "field",
+              "rooftop",
+              "sheds",
+              "carports",
+              "garageBoxes",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "usageScenario": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "truckParking",
+              "parkAndRide",
+              "parkAndCycle",
+              "parkAndWalk",
+              "kissAndRide",
+              "liftshare",
+              "carSharing",
+              "restArea",
+              "serviceArea",
+              "dropOffWithValet",
+              "dropOffMechanical",
+              "eventParking",
+              "automaticParkingGuidance",
+              "staffGuidesToSpace",
+              "vehicleLift",
+              "loadingBay",
+              "dropOff",
+              "overnightParking",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "parkingMode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "perpendicularParking",
+              "parallelParking",
+              "echelonParking"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "toilet",
+              "shower",
+              "informationPoint",
+              "internetWireless",
+              "payDesk",
+              "paymentMachine",
+              "cashMachine",
+              "vendingMachine",
+              "faxMachineOrService",
+              "copyMachineOrService",
+              "safeDeposit",
+              "luggageLocker",
+              "publicPhone",
+              "elevator",
+              "dumpingStation",
+              "freshWater",
+              "wasteDisposal",
+              "refuseBin",
+              "iceFreeScaffold",
+              "playground",
+              "electricChargingStation",
+              "bikeParking",
+              "tollTerminal",
+              "defibrillator",
+              "firstAidEquipment",
+              "fireHose",
+              "fireExtinguisher",
+              "fireHydrant"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "security": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "patrolled",
+              "securityStaff",
+              "externalSecurity",
+              "cctv",
+              "dog",
+              "guard24hours",
+              "lighting",
+              "floodLight",
+              "fences",
+              "areaSeperatedFromSurroundings"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "highestFloor": {
+          "type": "integer"
+        },
+        "lowestFloor": {
+          "type": "integer"
+        },
+        "maximumAllowedDuration": {
+          "type": "string"
+        },
+        "totalSpotNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "availableSpotNumber": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extraSpotNumber": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "openingHours": {
+          "type": "string"
+        },
+        "firstAvailableFloor": {
+          "type": "integer"
+        },
+        "specialLocation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "airportTerminal",
+              "exhibitonCentre",
+              "shoppingCentre",
+              "specificFacility",
+              "trainStation",
+              "campground",
+              "themePark",
+              "ferryTerminal",
+              "vehicleOnRailTerminal",
+              "coachStation",
+              "cableCarStation",
+              "publicTransportStation",
+              "market",
+              "religiousCentre",
+              "conventionCentre",
+              "cinema",
+              "skilift",
+              "hotel",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "open",
+              "closed",
+              "closedAbnormal",
+              "openingTimesInForce",
+              "full",
+              "fullAtEntrance",
+              "spacesAvailable",
+              "almostFull"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "reservationType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["optional", "mandatory", "notAvailable", "partly"]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "provider": {
+          "type": "object"
+        },
+        "measuresPeriod": {
+          "type": "number"
+        },
+        "measuresPeriodUnit": {
+          "type": "string"
+        },
+        "contactPoint": {
+          "type": "object"
+        },
+        "averageSpotWidth": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "averageSpotLength": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "maximumAllowedHeight": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "maximumAllowedWidth": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "refParkingAccess": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refParkingGroup": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "refParkingSpot": {
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
+        "aggregateRating": {
+          "type": "object"
+        }
+      }
+    }
+  ],
+  "required": ["id", "type", "location"]
 }

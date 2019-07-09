@@ -1,71 +1,87 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriParcel/schema.json",
-    "title": "FIWARE - Agri Parcel",
-    "description": "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.",
-    "type": "object",
-    "allOf": [
-	{ "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-	{ "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-	{ "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
-	{
-	    "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["AgriParcel"],
-                    "description": "NGSI Entity Type"
-                },
-		"area": {
-		    "type": "number",
-		    "minimum": 0
-		},
-		"category": {
-		    "value": "string"
-		},
-		"belongsTo": {
-			"type": "string",
-			"format": "uri"
-		},
-		"ownedBy": {
-			"type": "string",
-			"format": "uri"
-		},
-		"agriParcelParent": {
-                    "type": "string",
-                    "format": "uri"
-                },
-		"agriParcelChildren": {
-                    "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
-                },
-		"agriCrop": {
-                    "type": "string",
-                    "format": "uri"
-                },
-		"agriSoil": {
-                    "type": "string",
-                    "format": "uri"
-                },
-		"cropStatus": {
-		    "type": "string",
-		    "enum": ["seeded", "justBorn", "growing", "maturing", "readyForHarvesting"]
-		},
-		"lastPlantedAt": {
-		    "type": "string",
-		    "format": "date-time"
-		},
-		"devices": {
-                    "type": "array",
-		    "items": [{
-			"type": "string",
-			"format": "uri"
-		    }]
-                }
-	    }
-	}
-    ],
-    "required": ["id", "type", "location", "area", "agriCrop"]
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriParcel/schema.json",
+  "title": "FIWARE - Agri Parcel",
+  "description": "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["AgriParcel"],
+          "description": "NGSI Entity Type"
+        },
+        "area": {
+          "type": "number",
+          "minimum": 0
+        },
+        "category": {
+          "value": "string"
+        },
+        "belongsTo": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ownedBy": {
+          "type": "string",
+          "format": "uri"
+        },
+        "agriParcelParent": {
+          "type": "string",
+          "format": "uri"
+        },
+        "agriParcelChildren": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "agriCrop": {
+          "type": "string",
+          "format": "uri"
+        },
+        "agriSoil": {
+          "type": "string",
+          "format": "uri"
+        },
+        "cropStatus": {
+          "type": "string",
+          "enum": [
+            "seeded",
+            "justBorn",
+            "growing",
+            "maturing",
+            "readyForHarvesting"
+          ]
+        },
+        "lastPlantedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "devices": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "required": ["id", "type", "location", "area", "agriCrop"]
 }

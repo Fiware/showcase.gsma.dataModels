@@ -1,16 +1,14 @@
 {
-       "id": "waterqualityobserved:Sevilla:D1",
-       "type": "WaterQualityObserved",
-       "dateObserved": "2017-01-31T06:45:00Z",
-       "measurand": [
-         "NO3, 0.01, M1, Concentration of Nitrates"
-       ],
-       "location": {
-         "type": "Point",
-         "coordinates": [  -5.993307, 37.362882 ]
-       },
-       "temperature" : 24.4,
-       "conductivity": 0.005,
-       "pH": 7.4,
-       "NO3": 0.01
+  "id": "waterqualityobserved:Sevilla:D1",
+  "type": "WaterQualityObserved",
+  "dateObserved": "2017-01-31T06:45:00Z",
+  "measurand": ["NO3, 0.01, M1, Concentration of Nitrates"],
+  "location": {
+    "type": "Point",
+    "coordinates": [-5.993307, 37.362882]
+  },
+  "temperature": 24.4,
+  "conductivity": 0.005,
+  "pH": 7.4,
+  "NO3": 0.01
 }

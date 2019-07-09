@@ -1,69 +1,69 @@
 {
-    "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
-    "type": "WeatherForecast",
-    "dayMinimum": {
-        "value": {
-            "feelsLikeTemperature": 11,
-            "temperature": 11,
-            "relativeHumidity": 0.7
-        }
-    },
-    "feelsLikeTemperature": {
-        "value": 12
-    },
-    "dataProvider": {
-        "value": "TEF"
-    },
-    "temperature": {
-        "value": 12
-    },
-    "validTo": {
-        "type": "DateTime",
-        "value": "2016-12-01T23:00:00.00Z"
-    },
-    "weatherType": {
-        "value": "overcast"
-    },
-    "precipitationProbability": {
-        "value": 0.15
-    },
-    "dayMaximum": {
-        "value": {
-            "feelsLikeTemperature": 15,
-            "temperature": 15,
-            "relativeHumidity": 0.9
-        }
-    },
-    "source": {
-        "value": "http://www.aemet.es/xml/municipios/localidad_46250.xml"
-    },
-    "windSpeed": {
-        "value": 0
-    },
-    "validity": {
-        "value": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00"
-    },
-    "dateIssued": {
-        "type": "DateTime",
-        "value": "2016-12-01T10:40:01.00Z"
-    },
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "addressCountry": "Spain",
-            "postalCode": "46005",
-            "addressLocality": "Valencia"
-        }
-    },
-    "dateRetrieved": {
-        "type": "DateTime",
-        "value": "2016-12-01T12:57:24.00Z"
-    },
-    "validFrom": {
-        "type": "DateTime",
-        "value": "2016-12-01T17:00:00.00Z"
-    },
-    "relativeHumidity": {
-        "value": 0.85
+  "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
+  "type": "WeatherForecast",
+  "dayMinimum": {
+    "value": {
+      "feelsLikeTemperature": 11,
+      "temperature": 11,
+      "relativeHumidity": 0.7
     }
+  },
+  "feelsLikeTemperature": {
+    "value": 12
+  },
+  "dataProvider": {
+    "value": "TEF"
+  },
+  "temperature": {
+    "value": 12
+  },
+  "validTo": {
+    "type": "DateTime",
+    "value": "2016-12-01T23:00:00.00Z"
+  },
+  "weatherType": {
+    "value": "overcast"
+  },
+  "precipitationProbability": {
+    "value": 0.15
+  },
+  "dayMaximum": {
+    "value": {
+      "feelsLikeTemperature": 15,
+      "temperature": 15,
+      "relativeHumidity": 0.9
+    }
+  },
+  "source": {
+    "value": "http://www.aemet.es/xml/municipios/localidad_46250.xml"
+  },
+  "windSpeed": {
+    "value": 0
+  },
+  "validity": {
+    "value": "2016-12-01T18:00:00+01:00/2016-12-02T00:00:00+01:00"
+  },
+  "dateIssued": {
+    "type": "DateTime",
+    "value": "2016-12-01T10:40:01.00Z"
+  },
+  "address": {
+    "type": "PostalAddress",
+    "value": {
+      "addressCountry": "Spain",
+      "postalCode": "46005",
+      "addressLocality": "Valencia"
+    }
+  },
+  "dateRetrieved": {
+    "type": "DateTime",
+    "value": "2016-12-01T12:57:24.00Z"
+  },
+  "validFrom": {
+    "type": "DateTime",
+    "value": "2016-12-01T17:00:00.00Z"
+  },
+  "relativeHumidity": {
+    "value": 0.85
+  }
 }

@@ -1,151 +1,130 @@
 {
-    "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
-    "type": "AgriParcelRecord",
-    "dateCreated": {
-        "type": "DateTime",
-        "value": "2017-01-01T01:20:00Z"
-    },
-    "dateModified": {
-        "type": "DateTime",
-        "value": "2017-05-04T12:30:00Z"
-    },
-    "relatedSource": {
-        "value": [
-            {
-                "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-                "applicationEntityId": "app:parcelrec1"
-            }
-        ]
-    },
-    "seeAlso": {
-        "value": [
-            "https://example.org/concept/agriparcelrec",
-            "https://datamodel.org/example/agriparcelrec"
-        ]
-    },
-    "agriParcel": {
-        "type": "Relationship",
-        "value": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
-    },
-    "location": {
-	"type": "geo:json",
-        "value": {
-            "type": "Polygon",
-            "coordinates": [[
-                [
-                    100,
-                    0
-                ],
-                [
-                    101,
-                    0
-                ],
-                [
-                    101,
-                    1
-                ],
-                [
-                    100,
-                    1
-                ],
-                [
-                    100,
-                    0
-                ]
-            ]]
-        }
-    },
-    "soilTemperature": {
-        "value": 27,
-	"metadata": {
-	    "unitCode": {
-		"value": "CEL"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "soilMoistureVwc": {
-        "value": 0.08,
-	"metadata": {
-	    "unitCode": {
-		"value": "C62"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "soilMoistureEc": {
-        "value": 17,
-	"metadata": {
-	    "unitCode": {
-		"value": "D10"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "airTemperature": {
-        "value": 20,
-	"metadata": {
-	    "unitCode": {
-		"value": "CEL"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "solarRadiation": {
-        "value": 15,
-	"metadata": {
-	    "unitCode": {
-		"value": "CEL"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "relativeHumidity": {
-        "value": 0.15,
-	"metadata": {
-	    "unitCode": {
-		"value": "C62"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "atmosphericPressure": {
-        "value": 1013.25,
-	"metadata": {
-	    "unitCode": {
-		"value": "A97"
-	    },
-            "timestamp": {
-		"value": "2017-05-04T12:30:00Z"
-	    }
-	}
-    },
-    "description": {
-        "value": "Monthly fertiliser application"
-    },
-    "devices": {
-        "type": "Relationship",
-        "value": [
-            "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
-            "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
-            "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",
-            "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
-        ]
-    },
-    "observedAt": {
-	"type": "DateTime",
-        "value": "2017-05-04T10:18:16Z"
+  "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
+  "type": "AgriParcelRecord",
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2017-01-01T01:20:00Z"
+  },
+  "dateModified": {
+    "type": "DateTime",
+    "value": "2017-05-04T12:30:00Z"
+  },
+  "relatedSource": {
+    "value": [
+      {
+        "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+        "applicationEntityId": "app:parcelrec1"
+      }
+    ]
+  },
+  "seeAlso": {
+    "value": [
+      "https://example.org/concept/agriparcelrec",
+      "https://datamodel.org/example/agriparcelrec"
+    ]
+  },
+  "agriParcel": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Polygon",
+      "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
     }
+  },
+  "soilTemperature": {
+    "value": 27,
+    "metadata": {
+      "unitCode": {
+        "value": "CEL"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "soilMoistureVwc": {
+    "value": 0.08,
+    "metadata": {
+      "unitCode": {
+        "value": "C62"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "soilMoistureEc": {
+    "value": 17,
+    "metadata": {
+      "unitCode": {
+        "value": "D10"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "airTemperature": {
+    "value": 20,
+    "metadata": {
+      "unitCode": {
+        "value": "CEL"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "solarRadiation": {
+    "value": 15,
+    "metadata": {
+      "unitCode": {
+        "value": "CEL"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "relativeHumidity": {
+    "value": 0.15,
+    "metadata": {
+      "unitCode": {
+        "value": "C62"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "atmosphericPressure": {
+    "value": 1013.25,
+    "metadata": {
+      "unitCode": {
+        "value": "A97"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "description": {
+    "value": "Monthly fertiliser application"
+  },
+  "devices": {
+    "type": "Relationship",
+    "value": [
+      "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
+      "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
+      "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",
+      "urn:ngsi-ld:6f44b54e-4474-11e8-8577-d7ff6a8ef551"
+    ]
+  },
+  "observedAt": {
+    "type": "DateTime",
+    "value": "2017-05-04T10:18:16Z"
+  }
 }

@@ -1,27 +1,25 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "https://fiware.github.io/dataModels/specs/Parking/OnStreetParking/schema.json",
-	"title": "FIWARE - Parking / On Street Parking - TODO: Provide a complete schema",
-	"description": "On street parking",
-	"type": "object",
-	"allOf": [{
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
-	}, {
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
-	}, {
-		"properties": {
-			"type": {
-				"type": "string",
-				"enum": [
-					"OnStreetParking"
-				],
-				"description": "NGSI Entity type"
-			}
-		}
-	}],
-	"required": [
-		"id",
-		"type",
-		"location"
-	]
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/Parking/OnStreetParking/schema.json",
+  "title": "FIWARE - Parking / On Street Parking - TODO: Provide a complete schema",
+  "description": "On street parking",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["OnStreetParking"],
+          "description": "NGSI Entity type"
+        }
+      }
+    }
+  ],
+  "required": ["id", "type", "location"]
 }

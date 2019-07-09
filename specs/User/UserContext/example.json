@@ -3,10 +3,7 @@
   "type": "UserContext",
   "location": {
     "type": "Point",
-    "coordinates": [
-      -4.754444444,
-      41.640833333
-    ]
+    "coordinates": [-4.754444444, 41.640833333]
   },
   "refActivity": "UserActivity1",
   "refUserDevice": "Device1",

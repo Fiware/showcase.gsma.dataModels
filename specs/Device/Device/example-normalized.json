@@ -1,60 +1,49 @@
 {
-    "id": "device-9845A",
-    "type": "Device",
-    "category": {
-        "value": [
-            "sensor"
-        ]
-    }, 
-    "batteryLevel": {
-        "value": 0.75
-    }, 
-    "dateFirstUsed": {
-        "type": "DateTime", 
-        "value": "2014-09-11T11:00:00Z"
-    }, 
-    "controlledAsset": {
-        "type": "Relationship",
-        "value": [
-            "wastecontainer-Osuna-100"
-        ]
-    }, 
-    "serialNumber": {
-        "value": "9845A"
-    }, 
-    "mcc": {
-        "value": "214"
-    }, 
-    "value": {
-        "value": "l%3D0.22%3Bt%3D21.2"
-    }, 
-    "refDeviceModel": {
-        "type": "Relationship", 
-        "value": "myDevice-wastecontainer-sensor-345"
-    },  
-    "rssi": {
-        "value": 0.86
-    }, 
-    "controlledProperty": {
-        "value": [
-            "fillingLevel", 
-            "temperature"
-        ]
-    }, 
-    "owner": {
-        "value": [
-            "http://person.org/leon"
-        ]
-    }, 
-    "mnc": {
-        "value": "07"
-    }, 
-    "ipAddress": {
-        "value": [
-            "192.14.56.78"
-        ]
-    }, 
-    "deviceState": {
-        "value": "ok"
-    }
+  "id": "device-9845A",
+  "type": "Device",
+  "category": {
+    "value": ["sensor"]
+  },
+  "batteryLevel": {
+    "value": 0.75
+  },
+  "dateFirstUsed": {
+    "type": "DateTime",
+    "value": "2014-09-11T11:00:00Z"
+  },
+  "controlledAsset": {
+    "type": "Relationship",
+    "value": ["wastecontainer-Osuna-100"]
+  },
+  "serialNumber": {
+    "value": "9845A"
+  },
+  "mcc": {
+    "value": "214"
+  },
+  "value": {
+    "value": "l%3D0.22%3Bt%3D21.2"
+  },
+  "refDeviceModel": {
+    "type": "Relationship",
+    "value": "myDevice-wastecontainer-sensor-345"
+  },
+  "rssi": {
+    "value": 0.86
+  },
+  "controlledProperty": {
+    "value": ["fillingLevel", "temperature"]
+  },
+  "owner": {
+    "value": ["http://person.org/leon"]
+  },
+  "mnc": {
+    "value": "07"
+  },
+  "ipAddress": {
+    "value": ["192.14.56.78"]
+  },
+  "deviceState": {
+    "value": "ok"
+  }
 }

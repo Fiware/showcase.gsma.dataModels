@@ -5,16 +5,20 @@
   "description": "This entity contains a harmonised description of the conditions recorded on a particular area or point inside a greenspace (flower bed, garden, etc.). This entity type has been inspired by the AgriParcelRecord entity type defined by the GSMA Harmonized Data Models.",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GreenspaceRecord"
-          ],
+          "enum": ["GreenspaceRecord"],
           "description": "NGSI Entity type"
         },
         "dateObserved": {
@@ -41,10 +45,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location",
-    "dateObserved"
-  ]
+  "required": ["id", "type", "location", "dateObserved"]
 }

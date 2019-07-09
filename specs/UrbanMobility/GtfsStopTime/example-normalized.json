@@ -1,24 +1,24 @@
 {
-    "id": "urn:ngsi-ld:GtfsStopTime:Spain:Madrid:EMT:FE0010011_737",
-    "type": "GtfsStopTime", 
-    "departureTime": {
-        "value": "07:04:24"
-    }, 
-    "hasTrip": {
-        "type": "Relationship", 
-        "value": "urn:ngsi-ld:GtfsTrip:Madrid:EMT:FE0010011"
-    }, 
-    "stopSequence": {
-        "value": 4
-    }, 
-    "distanceTravelled": {
-        "value": 759
-    }, 
-    "arrivalTime": {
-        "value": "07:04:24"
-    }, 
-    "hasStop": {
-        "type": "Relationship", 
-        "value": "urn:ngsi-ld:GtfsStop:Madrid:EMT:737"
-    }
+  "id": "urn:ngsi-ld:GtfsStopTime:Spain:Madrid:EMT:FE0010011_737",
+  "type": "GtfsStopTime",
+  "departureTime": {
+    "value": "07:04:24"
+  },
+  "hasTrip": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:GtfsTrip:Madrid:EMT:FE0010011"
+  },
+  "stopSequence": {
+    "value": 4
+  },
+  "distanceTravelled": {
+    "value": 759
+  },
+  "arrivalTime": {
+    "value": "07:04:24"
+  },
+  "hasStop": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:GtfsStop:Madrid:EMT:737"
+  }
 }

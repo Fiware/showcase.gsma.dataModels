@@ -5,16 +5,20 @@
   "description": "A garden plot in which flowers (or other plants) are grown. Usually you will find flower beds in parks, gardens, pedestrian areas or at big highway interchanges.",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "FlowerBed"
-          ],
+          "enum": ["FlowerBed"],
           "description": "NGSI Entity type"
         },
         "taxon": {
@@ -41,12 +45,7 @@
           "minItems": 1,
           "items": {
             "type": "string",
-            "enum": [
-              "hedge",
-              "lawnArea",
-              "portable",
-              "urbanTreeSpot"
-            ]
+            "enum": ["hedge", "lawnArea", "portable", "urbanTreeSpot"]
           }
         },
         "shape": {
@@ -55,13 +54,7 @@
           "uniqueItems": true,
           "items": {
             "type": "string",
-            "enum": [
-              "rectangular",
-              "square",
-              "elliptic",
-              "polygon",
-              "circular"
-            ]
+            "enum": ["rectangular", "square", "elliptic", "polygon", "circular"]
           }
         },
         "dateLastWatering": {
@@ -78,9 +71,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "location",
-    "type"
-  ]
+  "required": ["id", "location", "type"]
 }

@@ -5,14 +5,14 @@
   "description": "GTFS Trip",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsTrip"
-          ],
+          "enum": ["GtfsTrip"],
           "description": "NGSI Entity type"
         },
         "shortName": {
@@ -43,10 +43,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "hasRoute",
-    "hasService"
-  ]
+  "required": ["id", "type", "hasRoute", "hasService"]
 }

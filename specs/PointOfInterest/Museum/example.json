@@ -1,38 +1,38 @@
-{      
-    "id": "Museum-Barcelona-MACBA-1234",        
-    "type": "Museum", 
-    "name": "Museo de Arte Contemporaneo de Barcelona",
-    "alternateName": "MACBA",
-    "description": "The MACBA was designed by the American architect Richard Meier and inaugurated in 1995.",
-    "address": {          
-       "addressCountry": "ES",          
-       "addressLocality": "Barcelona",
-       "streetAddress": "Plaza Dels Àngels, 1"
+{
+  "id": "Museum-Barcelona-MACBA-1234",
+  "type": "Museum",
+  "name": "Museo de Arte Contemporaneo de Barcelona",
+  "alternateName": "MACBA",
+  "description": "The MACBA was designed by the American architect Richard Meier and inaugurated in 1995.",
+  "address": {
+    "addressCountry": "ES",
+    "addressLocality": "Barcelona",
+    "streetAddress": "Plaza Dels Àngels, 1"
+  },
+  "museumType": ["fineArts"],
+  "artPeriod": ["contemporary"],
+  "facilities": ["shop", "cloakRoom", "guidedTour"],
+  "location": {
+    "type": "Point",
+    "coordinates": [2.1668771521199393, 41.38302235796602]
+  },
+  "openingHoursSpecification": [
+    {
+      "opens": "11:00",
+      "closes": "19:30",
+      "dayOfWeek": "Mo, Wed, Thu, Fr"
     },
-    "museumType": ["fineArts"],
-    "artPeriod": ["contemporary"],
-    "facilities": ["shop", "cloakRoom", "guidedTour"],
-    "location": {   
-       "type": "Point",          
-       "coordinates": [ 2.1668771521199393, 41.38302235796602]
+    {
+      "opens": "10:00",
+      "closes": "21:00",
+      "dayOfWeek": "Sat"
     },
-    "openingHoursSpecification": [
-       {
-           "opens":  "11:00",
-           "closes": "19:30",
-           "dayOfWeek": "Mo, Wed, Thu, Fr"
-       },
-       {
-           "opens": "10:00",
-           "closes": "21:00",
-           "dayOfWeek": "Sat"
-       },
-       {
-           "opens": "10:00",
-           "closes": "15:00",
-           "dayOfWeek": "Sun"
-       }
-   ],
-   "touristArea": "Barcelona-Capital",
-   "source": "http://www.tourspain.es"
+    {
+      "opens": "10:00",
+      "closes": "15:00",
+      "dayOfWeek": "Sun"
+    }
+  ],
+  "touristArea": "Barcelona-Capital",
+  "source": "http://www.tourspain.es"
 }

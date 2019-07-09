@@ -18,9 +18,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "Road"
-          ],
+          "enum": ["Road"],
           "description": "NGSI Entity type"
         },
         "roadClass": {
@@ -52,24 +50,15 @@
       },
       "allOf": [
         {
-          "required": [
-            "id",
-            "name",
-            "type",
-            "roadClass"
-          ]
+          "required": ["id", "name", "type", "roadClass"]
         },
         {
           "oneOf": [
             {
-              "required": [
-                "refRoadSegment"
-              ]
+              "required": ["refRoadSegment"]
             },
             {
-              "required": [
-                "location"
-              ]
+              "required": ["location"]
             }
           ]
         }

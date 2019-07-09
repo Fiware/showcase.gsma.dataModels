@@ -1,43 +1,49 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriApp/schema.json",
-    "title": "FIWARE - Agri App",
-    "description": "This entity contains a harmonised description of a generic app made for the Agrifood domain. This entity is primarily associated with the agricultural vertical and related IoT applications.",
-    "type": "object",
-    "allOf": [
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
-        {
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["AgriApp"],
-                    "description": "NGSI Entity Type"
-                },
-                "version": {
-                    "type": "string"
-                },
-                "provider": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Provider (Person or Organization) of the application"
-                },
-                "endpoint": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "category": {
-                    "type": "array",
-                    "items": [
-                        {
-                            "type": "string",
-                            "enum": ["TBD"]
-                        }
-                    ]
-                }
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriApp/schema.json",
+  "title": "FIWARE - Agri App",
+  "description": "This entity contains a harmonised description of a generic app made for the Agrifood domain. This entity is primarily associated with the agricultural vertical and related IoT applications.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["AgriApp"],
+          "description": "NGSI Entity Type"
+        },
+        "version": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string",
+          "format": "uri",
+          "description": "Provider (Person or Organization) of the application"
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "category": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": ["TBD"]
             }
+          ]
         }
-    ],
-    "required": ["id", "type"]
+      }
+    }
+  ],
+  "required": ["id", "type"]
 }

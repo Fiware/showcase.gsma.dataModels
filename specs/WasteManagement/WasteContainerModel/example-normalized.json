@@ -1,44 +1,37 @@
 {
-    "id": "wastecontainermodel:c1",
-    "type": "WasteContainerModel",
-    "category": {
-        "value": [
-            "dumpster"
-        ]
-    }, 
-    "cargoVolume": {
-        "value": 150
-    }, 
-    "modelName": {
-        "value": "C1"
-    }, 
-    "name": {
-        "value": "Dumpster_Brute_2009_Plastic_Green"
-    }, 
-    "compliantWith": {
-        "value": [
-            "UNE-EN 840-2:2013"
-        ]
-    }, 
-    "madeOf": {
-        "value": "plastic"
-    }, 
-    "height": {
-        "value": 0.8
-    }, 
-    "width": {
-        "value": 0.5
-    }, 
-    "depth": {
-        "value": 0.4
-    }, 
-    "brandName": {
-        "value": "Brute"
-    }, 
-    "features": {
-        "value": [
-            "wheels", 
-            "lid"
-        ]
-    }
+  "id": "wastecontainermodel:c1",
+  "type": "WasteContainerModel",
+  "category": {
+    "value": ["dumpster"]
+  },
+  "cargoVolume": {
+    "value": 150
+  },
+  "modelName": {
+    "value": "C1"
+  },
+  "name": {
+    "value": "Dumpster_Brute_2009_Plastic_Green"
+  },
+  "compliantWith": {
+    "value": ["UNE-EN 840-2:2013"]
+  },
+  "madeOf": {
+    "value": "plastic"
+  },
+  "height": {
+    "value": 0.8
+  },
+  "width": {
+    "value": 0.5
+  },
+  "depth": {
+    "value": 0.4
+  },
+  "brandName": {
+    "value": "Brute"
+  },
+  "features": {
+    "value": ["wheels", "lid"]
+  }
 }

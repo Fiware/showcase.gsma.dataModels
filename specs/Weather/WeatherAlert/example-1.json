@@ -1,15 +1,15 @@
 {
-    "severity": "medium",
-    "category": "weather",
-    "subCategory": "snow/ice",
-    "alertSource": "http://www.meteoalarm.eu",
-    "address": {
-      "addressCountry": "ES",
-      "addressRegion": "Huesca"
-    },
-    "dateIssued": "2016-03-14T13:54:01.00Z",
-    "type": "Alert",
-    "id": "WeatherAlert-83b872975414bfca10832e564a1bb416-7",
-    "validTo": "2016-03-14T23:59:00.00Z",
-    "validFrom": "2016-03-14T13:00:00.00Z"
+  "severity": "medium",
+  "category": "weather",
+  "subCategory": "snow/ice",
+  "alertSource": "http://www.meteoalarm.eu",
+  "address": {
+    "addressCountry": "ES",
+    "addressRegion": "Huesca"
+  },
+  "dateIssued": "2016-03-14T13:54:01.00Z",
+  "type": "Alert",
+  "id": "WeatherAlert-83b872975414bfca10832e564a1bb416-7",
+  "validTo": "2016-03-14T23:59:00.00Z",
+  "validFrom": "2016-03-14T13:00:00.00Z"
 }

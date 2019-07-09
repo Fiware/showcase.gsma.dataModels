@@ -4,7 +4,8 @@
   "title": "FIWARE - Parking / Parking Spot",
   "description": "A parking spot is an area well delimited where one vehicle can be parked. The aim of this entity type is to monitor the status of parking spots individually. Thus, an entity of type ParkingSpot cannot exist without a containing entity of type (OnStreetParking, OffStreetParking). A parking spot might belong to one group.",
   "type": "object",
-  "allOf": [{
+  "allOf": [
+    {
       "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
     },
     {
@@ -17,19 +18,12 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "ParkingSpot"
-          ],
+          "enum": ["ParkingSpot"],
           "description": "NGSI Entity type"
         },
         "status": {
           "type": "string",
-          "enum": [
-            "occupied",
-            "free",
-            "closed",
-            "unknown"
-          ]
+          "enum": ["occupied", "free", "closed", "unknown"]
         },
         "width": {
           "type": "number",
@@ -49,10 +43,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "onstreet",
-              "offstreet"
-            ]
+            "enum": ["onstreet", "offstreet"]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -72,12 +63,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "location",
-    "type",
-    "status",
-    "category",
-    "refParkingSite"
-  ]
+  "required": ["id", "location", "type", "status", "category", "refParkingSite"]
 }

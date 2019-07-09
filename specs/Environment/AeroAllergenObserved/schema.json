@@ -5,15 +5,17 @@
   "description": "An observation of pollen levels at a certain place and time.",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "AeroAllergenObserved"
-          ],
+          "enum": ["AeroAllergenObserved"],
           "description": "NGSI Entity type"
         },
         "dateObserved": {
@@ -21,13 +23,7 @@
         },
         "allergenRisk": {
           "type": "string",
-          "enum": [
-            "none",
-            "low",
-            "moderate",
-            "high",
-            "veryHigh"
-          ]
+          "enum": ["none", "low", "moderate", "high", "veryHigh"]
         },
         "refDevice": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
@@ -35,10 +31,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateObserved",
-    "location"
-  ]
+  "required": ["id", "type", "dateObserved", "location"]
 }

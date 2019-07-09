@@ -5,16 +5,20 @@
   "description": "A harmonised description of a Weather Forecast",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/specs/Weather/weather-schema.json#/definitions/Weather-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/Weather/weather-schema.json#/definitions/Weather-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "WeatherForecast"
-          ],
+          "enum": ["WeatherForecast"],
           "description": "NGSI Entity type"
         },
         "dateRetrieved": {
@@ -40,13 +44,17 @@
         "dayMaximum": {
           "type": "object",
           "allOf": [
-            { "$ref": "https://fiware.github.io/dataModels/specs/Weather/weather-schema.json#/definitions/Weather-AirConditions" }
+            {
+              "$ref": "https://fiware.github.io/dataModels/specs/Weather/weather-schema.json#/definitions/Weather-AirConditions"
+            }
           ]
         },
         "dayMinimum": {
           "type": "object",
           "allOf": [
-            { "$ref": "https://fiware.github.io/dataModels/specs/Weather/weather-schema.json#/definitions/Weather-AirConditions" }
+            {
+              "$ref": "https://fiware.github.io/dataModels/specs/Weather/weather-schema.json#/definitions/Weather-AirConditions"
+            }
           ]
         },
         "uVIndexMax": {
@@ -56,10 +64,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateIssued",
-    "address"
-  ]
+  "required": ["id", "type", "dateIssued", "address"]
 }

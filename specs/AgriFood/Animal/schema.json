@@ -1,101 +1,106 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "id": "https://fiware.github.io/dataModels/specs/AgriFood/Animal/schema.json",
-    "title": "Animal model IoF2020 ShareBeef UC",
-    "description": "An observation of animal conditions at a certain place and time. This data model has been developed for the IoF2020 UC ShareBeef by UCO and SensoWave.",
-    "type": "object",
-    "allOf":
-    [
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-        { "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons" },
-        {
-            "properties":
-            {
-                "type":{
-                    "type":"string",
-                    "enum":["Animal"],
-                    "description":"NGSI Entity Type"
-                },
-                "species":{
-                    "type":"string",
-                    "enum":["cow","goat","horse","pig","sheep"],
-                    "description":"Species to which the animal belongs"
-                },
-                "legalId":{
-                    "type":"string",
-                    "description":"Legal ID of the animal"
-                },
-                "birthdate":{
-                    "type": "string",
-                    "format": "date-time",
-                    "description":"Animal’s birthdate"
-                },
-                "sex":{
-                    "type":"string",
-                    "enum":["male","female"],
-                    "description":"Sex of the animal"
-                },
-                "breed":{
-                    "type":"string",
-                    "description":"Breed of the animal"
-                },
-                "calvedBy":{
-                    "type":"string",
-                    "format":"uri",
-                    "description":"Mother of the animal"
-                },
-                "siredBy":{
-                    "type":"string",
-                    "format":"uri",
-                    "description":"Father of the animal"
-                },
-                "weight": {
-                  "type": "number"
-                },
-                "ownedBy":{
-                    "type":"string",
-                    "format":"uri",
-                    "description":"The owner of the animal"
-                },
-                "locatedAt":{
-                    "type":"string",
-                    "format":"uri",
-                    "description":"AgridataParcel relationship"
-                },
-                "phenologicalCondition":{
-                    "type":"string",
-                    "enum":["lactatingBaby","grazingBaby","maleAdult","femaleAdult","maleYoung","femaleYoung"],
-                    "description":"Phenological condition of the animal"
-                },
-                "reproductiveCondition":{
-                    "type":"string",
-                    "enum":["noStatus","inactive","inCalf","inHeat","active"],
-                    "description":"Reproductive condition of the animal"
-                },
-                "healthCondition":{
-                    "type":"string",
-                    "enum":["healthy","sick","inTreatment"],
-                    "description":"Phenological condition of the animal"
-                },
-                "fedWith":{
-                    "type":"string",
-                    "format":"uri",
-                    "description":"Food used for the animal"
-                },
-                "welfareCondition":{
-                    "type":"string",
-                    "enum":["issue","adequate"],
-                    "description":"Indicator of the animal welfare"
-                }
-            }
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/AgriFood/Animal/schema.json",
+  "title": "Animal model IoF2020 ShareBeef UC",
+  "description": "An observation of animal conditions at a certain place and time. This data model has been developed for the IoF2020 UC ShareBeef by UCO and SensoWave.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/AgriFood/agrifood-schema.json#/definitions/AgriFood-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["Animal"],
+          "description": "NGSI Entity Type"
+        },
+        "species": {
+          "type": "string",
+          "enum": ["cow", "goat", "horse", "pig", "sheep"],
+          "description": "Species to which the animal belongs"
+        },
+        "legalId": {
+          "type": "string",
+          "description": "Legal ID of the animal"
+        },
+        "birthdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Animal’s birthdate"
+        },
+        "sex": {
+          "type": "string",
+          "enum": ["male", "female"],
+          "description": "Sex of the animal"
+        },
+        "breed": {
+          "type": "string",
+          "description": "Breed of the animal"
+        },
+        "calvedBy": {
+          "type": "string",
+          "format": "uri",
+          "description": "Mother of the animal"
+        },
+        "siredBy": {
+          "type": "string",
+          "format": "uri",
+          "description": "Father of the animal"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "ownedBy": {
+          "type": "string",
+          "format": "uri",
+          "description": "The owner of the animal"
+        },
+        "locatedAt": {
+          "type": "string",
+          "format": "uri",
+          "description": "AgridataParcel relationship"
+        },
+        "phenologicalCondition": {
+          "type": "string",
+          "enum": [
+            "lactatingBaby",
+            "grazingBaby",
+            "maleAdult",
+            "femaleAdult",
+            "maleYoung",
+            "femaleYoung"
+          ],
+          "description": "Phenological condition of the animal"
+        },
+        "reproductiveCondition": {
+          "type": "string",
+          "enum": ["noStatus", "inactive", "inCalf", "inHeat", "active"],
+          "description": "Reproductive condition of the animal"
+        },
+        "healthCondition": {
+          "type": "string",
+          "enum": ["healthy", "sick", "inTreatment"],
+          "description": "Phenological condition of the animal"
+        },
+        "fedWith": {
+          "type": "string",
+          "format": "uri",
+          "description": "Food used for the animal"
+        },
+        "welfareCondition": {
+          "type": "string",
+          "enum": ["issue", "adequate"],
+          "description": "Indicator of the animal welfare"
         }
-    ],
-    "required": [
-        "id",
-        "type",
-        "species",
-        "legalId",
-        "sex"
-    ]
+      }
+    }
+  ],
+  "required": ["id", "type", "species", "legalId", "sex"]
 }

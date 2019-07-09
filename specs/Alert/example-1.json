@@ -5,11 +5,8 @@
   "subCategory": "trafficJam",
   "severity": "high",
   "location": {
-      "type": "Point",
-      "coordinates": [
-        -3.712247222222222,
-        40.423852777777775
-      ]
+    "type": "Point",
+    "coordinates": [-3.712247222222222, 40.423852777777775]
   },
   "dateIssued": "2017-01-02T09:25:55.00Z",
   "validFrom": "2017-01-02T09:25:55.00Z",

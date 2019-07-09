@@ -1,12 +1,12 @@
 {
-      "id": "santander:daoiz_velarde_1_5:3",
-      "type": "ParkingSpot",
-      "name": "A-13",
-      "location": {
-        "type": "Point",
-        "coordinates": [-3.80356167695194, 43.46296641666926]
-      },
-      "status": "free",
-      "category": ["onstreet"],
-      "refParkingSite": "santander:daoiz_velarde_1_5"
+  "id": "santander:daoiz_velarde_1_5:3",
+  "type": "ParkingSpot",
+  "name": "A-13",
+  "location": {
+    "type": "Point",
+    "coordinates": [-3.80356167695194, 43.46296641666926]
+  },
+  "status": "free",
+  "category": ["onstreet"],
+  "refParkingSite": "santander:daoiz_velarde_1_5"
 }

@@ -1,47 +1,44 @@
 {
-    "id": "streetlight:guadalajara:4567",
-    "type": "Streetlight",
-    "location": {
-        "value": {
-            "type": "Point",
-            "coordinates": [
-                -3.164485591715449,
-                40.62785133667262
-            ]
-        },
-        "type": "geo:json"
+  "id": "streetlight:guadalajara:4567",
+  "type": "Streetlight",
+  "location": {
+    "value": {
+      "type": "Point",
+      "coordinates": [-3.164485591715449, 40.62785133667262]
     },
-    "areaServed": {
-        "value": "Roundabouts city entrance"
-    },
-    "status": {
-        "value": "ok"
-    },
-    "refStreetlightGroup": {
-        "value": "streetlightgroup:G345",
-        "type": "Relationship"
-    },
-    "refStreetlightModel": {
-        "value": "streetlightmodel:STEEL_Tubular_10m",
-        "type": "Relationship"
-    },
-    "circuit": {
-        "value": "C-456-A467"
-    },
-    "lanternHeight": {
-        "value": 10
-    },
-    "locationCategory": {
-        "value": "centralIsland"
-    },
-    "powerState": {
-        "value": "off"
-    },
-    "controllingMethod": {
-        "value": "individual"
-    },
-    "dateLastLampChange": {
-        "value": "2016-07-08T08:02:21.753Z",
-        "type": "DateTime"
-    }
+    "type": "geo:json"
+  },
+  "areaServed": {
+    "value": "Roundabouts city entrance"
+  },
+  "status": {
+    "value": "ok"
+  },
+  "refStreetlightGroup": {
+    "value": "streetlightgroup:G345",
+    "type": "Relationship"
+  },
+  "refStreetlightModel": {
+    "value": "streetlightmodel:STEEL_Tubular_10m",
+    "type": "Relationship"
+  },
+  "circuit": {
+    "value": "C-456-A467"
+  },
+  "lanternHeight": {
+    "value": 10
+  },
+  "locationCategory": {
+    "value": "centralIsland"
+  },
+  "powerState": {
+    "value": "off"
+  },
+  "controllingMethod": {
+    "value": "individual"
+  },
+  "dateLastLampChange": {
+    "value": "2016-07-08T08:02:21.753Z",
+    "type": "DateTime"
+  }
 }

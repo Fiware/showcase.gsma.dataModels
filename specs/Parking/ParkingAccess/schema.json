@@ -1,27 +1,25 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "https://fiware.github.io/dataModels/specs/Parking/ParkingAcccess/schema.json",
-	"title": "FIWARE - Parking / Parking Access",
-	"description": "Parking Access - TODO: Provide a complete Schema",
-	"type": "object",
-	"allOf": [{
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
-	}, {
-		"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
-	}, {
-		"properties": {
-			"type": {
-				"type": "string",
-				"enum": [
-					"ParkingAccess"
-				],
-				"description": "NGSI Entity type"
-			}
-		}
-	}],
-	"required": [
-		"id",
-		"type",
-		"location"
-	]
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/Parking/ParkingAcccess/schema.json",
+  "title": "FIWARE - Parking / Parking Access",
+  "description": "Parking Access - TODO: Provide a complete Schema",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["ParkingAccess"],
+          "description": "NGSI Entity type"
+        }
+      }
+    }
+  ],
+  "required": ["id", "type", "location"]
 }

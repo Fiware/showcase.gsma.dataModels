@@ -15,9 +15,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "Building"
-          ],
+          "enum": ["Building"],
           "description": "NGSI Entity type"
         },
         "category": {
@@ -90,11 +88,13 @@
             ]
           }
         },
-        "containedInPlace": { "$ref": "http://geojson.org/schema/Geometry.json#" },
+        "containedInPlace": {
+          "$ref": "http://geojson.org/schema/Geometry.json#"
+        },
         "occupier": {
           "type": "array",
           "items": {
-            "oneOf": [ 
+            "oneOf": [
               {
                 "type": "string",
                 "format": "uri"
@@ -145,10 +145,5 @@
       }
     }
   ],
-  "required": [
-    "type",
-    "id",
-    "category",
-    "address"
-  ]
+  "required": ["type", "id", "category", "address"]
 }

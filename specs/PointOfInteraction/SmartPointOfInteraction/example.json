@@ -2,18 +2,18 @@
   "id": "SPOI-ES-4326",
   "type": "SmartPointOfInteraction",
   "category": ["co-creation"],
-  "areaCovered": {                           
+  "areaCovered": {
     "type": "Polygon",
-    "coordinates": [[
-      [25.774, -80.190],
-      [18.466, -66.118], 
-      [32.321, -64.757], 
-      [25.774, -80.190] 
-    ]]
+    "coordinates": [
+      [[25.774, -80.19], [18.466, -66.118], [32.321, -64.757], [25.774, -80.19]]
+    ]
   },
   "applicationUrl": "http://www.example.org",
   "availability": "Tu,Th 16:00-20:00",
-  "refRelatedEntity": [ "POI-PlazaCazorla-3123" ],
-  "refSmartSpot": [ "SSPOT-F94C58E29DD5", "SSPOT-F94C53E21DD2", "SSPOT-F94C51A295D9"]
+  "refRelatedEntity": ["POI-PlazaCazorla-3123"],
+  "refSmartSpot": [
+    "SSPOT-F94C58E29DD5",
+    "SSPOT-F94C53E21DD2",
+    "SSPOT-F94C51A295D9"
+  ]
 }
-

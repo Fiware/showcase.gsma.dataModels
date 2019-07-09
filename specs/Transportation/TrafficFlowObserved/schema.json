@@ -15,9 +15,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "TrafficFlowObserved"
-          ],
+          "enum": ["TrafficFlowObserved"],
           "description": "NGSI Entity type"
         },
         "laneId": {
@@ -69,11 +67,8 @@
         },
         "laneDirection": {
           "type": "string",
-          "enum": [
-            "forward",
-            "backward"
-          ]
-        },       
+          "enum": ["forward", "backward"]
+        },
         "reversedLane": {
           "type": "boolean"
         },
@@ -104,21 +99,16 @@
             "cleaningTrolley"
           ]
         },
-         "vehicleSubType": {
+        "vehicleSubType": {
           "type": "string"
         }
-        
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateObserved"
-  ],
+  "required": ["id", "type", "dateObserved"],
   "anyOf": [
-    {"required" : ["refRoadSegment"]},
-    {"required" : ["location"]},
-    {"required" : ["address"]}
+    { "required": ["refRoadSegment"] },
+    { "required": ["location"] },
+    { "required": ["address"] }
   ]
 }

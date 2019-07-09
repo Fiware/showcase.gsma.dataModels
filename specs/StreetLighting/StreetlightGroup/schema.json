@@ -5,28 +5,27 @@
   "description": "A Street light group",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "StreetlightGroup"
-          ]
+          "enum": ["StreetlightGroup"]
         },
         "areaServed": {
           "type": "string"
         },
         "powerState": {
-            "type": "string",
-            "enum": [
-                "on",
-                "off",
-                "low",
-                "bootingUp"
-            ]
+          "type": "string",
+          "enum": ["on", "off", "low", "bootingUp"]
         },
         "refStreetlightControlCabinet": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
@@ -47,15 +46,19 @@
               "from": {
                 "type": "string",
                 "oneOf": [
-                  {"format": "date"},
-                  {"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/DateYearLess"}
+                  { "format": "date" },
+                  {
+                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/DateYearLess"
+                  }
                 ]
               },
               "to": {
                 "type": "string",
                 "oneOf": [
-                  {"format": "date"},
-                  {"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/DateYearLess"}
+                  { "format": "date" },
+                  {
+                    "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/DateYearLess"
+                  }
                 ]
               },
               "hours": {
@@ -65,11 +68,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "from",
-              "to",
-              "hours"
-            ]
+            "required": ["from", "to", "hours"]
           }
         },
         "switchingMode": {
@@ -115,9 +114,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location"
-  ]
+  "required": ["id", "type", "location"]
 }

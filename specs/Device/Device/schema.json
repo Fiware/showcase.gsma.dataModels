@@ -18,9 +18,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "Device"
-          ],
+          "enum": ["Device"],
           "description": "NGSI Entity type"
         },
         "controlledAsset": {
@@ -111,9 +109,9 @@
         "batteryLevel": {
           "oneOf": [
             {
-               "type": "number",
-               "minimum": 0,
-               "maximum": 1    
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             },
             {
               "type": "number",
@@ -147,10 +145,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "category",
-    "controlledProperty"
-  ]
+  "required": ["id", "type", "category", "controlledProperty"]
 }

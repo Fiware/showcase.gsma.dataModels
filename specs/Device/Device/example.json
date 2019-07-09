@@ -2,7 +2,7 @@
   "id": "device-9845A",
   "type": "Device",
   "category": ["sensor"],
-  "controlledProperty": ["fillingLevel","temperature"],
+  "controlledProperty": ["fillingLevel", "temperature"],
   "controlledAsset": ["wastecontainer-Osuna-100"],
   "ipAddress": ["192.14.56.78"],
   "mcc": "214",

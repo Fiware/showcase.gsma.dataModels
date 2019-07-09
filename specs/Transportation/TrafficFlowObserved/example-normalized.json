@@ -1,67 +1,58 @@
 {
-    "id": "TrafficFlowObserved-Valladolid-osm-60821110",
-    "type": "TrafficFlowObserved", 
-    "dateObserved": {
-        "value": "2016-12-07T11:10:00/2016-12-07T11:15:00"
-    }, 
-    "laneDirection": {
-        "value": "forward"
-    }, 
-    "dateObservedFrom": {
-        "type": "DateTime", 
-        "value": "2016-12-07T11:10:00Z"
-    }, 
-    "averageVehicleLength": {
-        "value": 9.87
-    }, 
-    "averageHeadwayTime": {
-        "value": 0.5
-    }, 
-    "occupancy": {
-        "value": 0.76
-    }, 
-    "reversedLane": {
-        "value": false
-    }, 
-    "dateObservedTo": {
-        "type": "DateTime", 
-        "value": "2016-12-07T11:15:00Z"
-    }, 
-    "intensity": {
-        "value": 197
-    }, 
-    "laneId": {
-        "value": 1
-    }, 
-    "location": {
-        "type": "geo:json", 
-        "value": {
-            "type": "LineString", 
-            "coordinates": [
-                [
-                    -4.73735395519672, 
-                    41.6538181849672
-                ], 
-                [
-                    -4.73414858659993, 
-                    41.6600594193478
-                ], 
-                [
-                    -4.73447575302641, 
-                    41.659585195093
-                ]
-            ]
-        }
-    }, 
-    "address": {
-        "type": "PostalAddress", 
-        "value": {
-            "addressLocality": "Valladolid", 
-            "addressCountry": "ES", 
-            "streetAddress": "Avenida de Salamanca"
-        }
-    }, 
-    "averageVehicleSpeed": {
-        "value": 52.6
+  "id": "TrafficFlowObserved-Valladolid-osm-60821110",
+  "type": "TrafficFlowObserved",
+  "dateObserved": {
+    "value": "2016-12-07T11:10:00/2016-12-07T11:15:00"
+  },
+  "laneDirection": {
+    "value": "forward"
+  },
+  "dateObservedFrom": {
+    "type": "DateTime",
+    "value": "2016-12-07T11:10:00Z"
+  },
+  "averageVehicleLength": {
+    "value": 9.87
+  },
+  "averageHeadwayTime": {
+    "value": 0.5
+  },
+  "occupancy": {
+    "value": 0.76
+  },
+  "reversedLane": {
+    "value": false
+  },
+  "dateObservedTo": {
+    "type": "DateTime",
+    "value": "2016-12-07T11:15:00Z"
+  },
+  "intensity": {
+    "value": 197
+  },
+  "laneId": {
+    "value": 1
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "LineString",
+      "coordinates": [
+        [-4.73735395519672, 41.6538181849672],
+        [-4.73414858659993, 41.6600594193478],
+        [-4.73447575302641, 41.659585195093]
+      ]
     }
+  },
+  "address": {
+    "type": "PostalAddress",
+    "value": {
+      "addressLocality": "Valladolid",
+      "addressCountry": "ES",
+      "streetAddress": "Avenida de Salamanca"
+    }
+  },
+  "averageVehicleSpeed": {
+    "value": 52.6
+  }
 }

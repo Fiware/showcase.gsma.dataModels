@@ -5,16 +5,20 @@
   "description": "A Streetlight control cabinet",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "StreetlightControlCabinet"
-          ]
+          "enum": ["StreetlightControlCabinet"]
         },
         "areaServed": {
           "type": "string"
@@ -41,21 +45,13 @@
         },
         "cupboardMadeOf": {
           "type": "string",
-          "enum": [
-            "plastic",
-            "metal",
-            "concrete",
-            "other"
-          ]
+          "enum": ["plastic", "metal", "concrete", "other"]
         },
         "features": {
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "astronomicalClock",
-              "individualControl"
-            ]
+            "enum": ["astronomicalClock", "individualControl"]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -76,7 +72,9 @@
         },
         "refDevice": {
           "type": "array",
-          "items": { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType" },
+          "items": {
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          },
           "minItems": 1,
           "uniqueItems": true
         },
@@ -97,11 +95,7 @@
         },
         "workingMode": {
           "type": "string",
-          "enum": [
-            "automatic",
-            "manual",
-            "semiautomatic"
-          ]
+          "enum": ["automatic", "manual", "semiautomatic"]
         },
         "description": {
           "type": "string"
@@ -267,11 +261,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location",
-    "refStreetlightGroup",
-    "workingMode"
-  ]
+  "required": ["id", "type", "location", "refStreetlightGroup", "workingMode"]
 }

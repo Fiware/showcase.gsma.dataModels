@@ -18,18 +18,12 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "DeviceModel"
-          ],
+          "enum": ["DeviceModel"],
           "description": "NGSI Entity type"
         },
         "deviceClass": {
           "type": "string",
-          "enum": [
-            "C0",
-            "C1",
-            "C2"
-          ]
+          "enum": ["C0", "C1", "C2"]
         },
         "controlledProperty": {
           "type": "array",
@@ -99,12 +93,7 @@
         },
         "energyLimitationClass": {
           "type": "string",
-          "enum": [
-            "E0",
-            "E1",
-            "E2",
-            "E9"
-          ]
+          "enum": ["E0", "E1", "E2", "E9"]
         },
         "documentation": {
           "type": "string",

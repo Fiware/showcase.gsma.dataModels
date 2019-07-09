@@ -10,10 +10,7 @@
   "category": ["113"],
   "location": {
     "type": "Point",
-    "coordinates": [
-      -8.768460000000001,
-      42.60214472222222
-    ]
+    "coordinates": [-8.768460000000001, 42.60214472222222]
   },
   "source": "http://www.tourspain.es",
   "refSeeAlso": ["Beach-A-Concha-123456"]

@@ -1,7 +1,7 @@
 {
   "id": "SSPOT-F94C51A295D9",
   "type": "SmartSpot",
-  "announcedUrl" : "http://goo.gl/EJ81JP",
+  "announcedUrl": "http://goo.gl/EJ81JP",
   "signalStrength": "highest",
   "bluetoothChannel": "37,38,39",
   "coverageRadius": 30,
@@ -9,4 +9,3 @@
   "availability": "Tu,Th 16:00-20:00",
   "refSmartPointOfInteraction": "SPOI-ES-4326"
 }
-

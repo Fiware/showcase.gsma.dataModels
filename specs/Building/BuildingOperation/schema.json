@@ -12,9 +12,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "BuildingOperation"
-          ],
+          "enum": ["BuildingOperation"],
           "description": "NGSI Entity type"
         },
         "refBuilding": {
@@ -44,10 +42,7 @@
         },
         "result": {
           "type": "string",
-          "enum": [
-            "ok",
-            "aborted"
-          ]
+          "enum": ["ok", "aborted"]
         },
         "startDate": {
           "type": "string",
@@ -67,13 +62,7 @@
         },
         "status": {
           "type": "string",
-          "enum": [
-            "planned",
-            "ongoing",
-            "finished",
-            "scheduled",
-            "cancelled"
-          ]
+          "enum": ["planned", "ongoing", "finished", "scheduled", "cancelled"]
         },
         "operationSequence": {
           "type": "array",
@@ -112,11 +101,5 @@
       }
     }
   ],
-  "required": [
-    "type",
-    "id",
-    "refBuilding",
-    "startDate",
-    "endDate"
-  ]
+  "required": ["type", "id", "refBuilding", "startDate", "endDate"]
 }

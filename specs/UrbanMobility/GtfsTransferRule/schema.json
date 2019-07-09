@@ -5,14 +5,14 @@
   "description": "GTFS Transfer Rule",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsTransferRule"
-          ],
+          "enum": ["GtfsTransferRule"],
           "description": "NGSI Entity type"
         },
         "name": {
@@ -31,9 +31,7 @@
         },
         "transferType": {
           "type": "string",
-          "enum": [
-            "0", "1", "2", "3"
-          ]
+          "enum": ["0", "1", "2", "3"]
         },
         "minimumTransferTime": {
           "type": "integer",
@@ -42,11 +40,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "hasOrigin",
-    "hasDestination",
-    "transferType"
-  ]
+  "required": ["id", "type", "hasOrigin", "hasDestination", "transferType"]
 }

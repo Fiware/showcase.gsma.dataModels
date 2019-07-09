@@ -15,9 +15,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "WasteContainerModel"
-          ],
+          "enum": ["WasteContainerModel"],
           "description": "NGSI Entity type"
         },
         "width": {
@@ -52,12 +50,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "dumpster",
-              "trashCan",
-              "wheelieBin",
-              "other"
-            ]
+            "enum": ["dumpster", "trashCan", "wheelieBin", "other"]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -68,12 +61,7 @@
         },
         "madeOf": {
           "type": "string",
-          "enum": [
-            "plastic",
-            "wood",
-            "metal",
-            "other"
-          ]
+          "enum": ["plastic", "wood", "metal", "other"]
         },
         "madeOfCode": {
           "type": "string"
@@ -114,9 +102,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "name"
-  ]
+  "required": ["id", "type", "name"]
 }

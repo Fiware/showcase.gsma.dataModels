@@ -24,13 +24,7 @@
         },
         "severity": {
           "type": "string",
-          "enum": [
-            "informational",
-            "low",
-            "medium",
-            "high",
-            "critical"
-          ]
+          "enum": ["informational", "low", "medium", "high", "critical"]
         },
         "category": {
           "type": "string",
@@ -45,16 +39,14 @@
           ]
         },
         "alertSource": {
-            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "data": {
           "type": "object"
         },
         "type": {
           "type": "string",
-          "enum": [
-            "Alert"
-          ],
+          "enum": ["Alert"],
           "description": "NGSI Entity type"
         }
       }

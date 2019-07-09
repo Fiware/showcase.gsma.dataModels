@@ -1,52 +1,52 @@
 {
-    "id": "o311:servicetype-guadalajara-sidewalks",
-    "type": "Open311ServiceType",
-    "group": {
-        "value": "street"
-    }, 
-    "description": {
-        "value": "When a sidewalk is broken or dirty allows citizens to request a fix"
-    }, 
-    "service_code": {
-        "value": 234
-    }, 
-    "service_name": {
-        "value": "Aceras"
-    }, 
-    "open311:type": {
-        "value": "realtime"
-    }, 
-    "jurisdiction_id": {
-        "value": "www.smartguadalajara.com"
-    }, 
-    "dateCreated": {
-        "type": "DateTime", 
-        "value": "2007-01-01T12:00:00Z"
-    }, 
-    "keywords": {
-        "value": "street,sidewalk, cleaning, repair"
-    }, 
-    "attributes": {
-        "value": [
-            {
-                "code": "ISSUE_TYPE", 
-                "description": "What is the identified problem at the sidewalk?", 
-                "datatype": "singlevaluelist", 
-                "required": true, 
-                "values": [
-                    {
-                        "name": "Bump", 
-                        "key": 123
-                    }, 
-                    {
-                        "name": "Dirty", 
-                        "key": 124
-                    }
-                ], 
-                "variable": true, 
-                "order": 1, 
-                "datatype_description": ""
-            }
-        ]
-    }
+  "id": "o311:servicetype-guadalajara-sidewalks",
+  "type": "Open311ServiceType",
+  "group": {
+    "value": "street"
+  },
+  "description": {
+    "value": "When a sidewalk is broken or dirty allows citizens to request a fix"
+  },
+  "service_code": {
+    "value": 234
+  },
+  "service_name": {
+    "value": "Aceras"
+  },
+  "open311:type": {
+    "value": "realtime"
+  },
+  "jurisdiction_id": {
+    "value": "www.smartguadalajara.com"
+  },
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2007-01-01T12:00:00Z"
+  },
+  "keywords": {
+    "value": "street,sidewalk, cleaning, repair"
+  },
+  "attributes": {
+    "value": [
+      {
+        "code": "ISSUE_TYPE",
+        "description": "What is the identified problem at the sidewalk?",
+        "datatype": "singlevaluelist",
+        "required": true,
+        "values": [
+          {
+            "name": "Bump",
+            "key": 123
+          },
+          {
+            "name": "Dirty",
+            "key": 124
+          }
+        ],
+        "variable": true,
+        "order": 1,
+        "datatype_description": ""
+      }
+    ]
+  }
 }

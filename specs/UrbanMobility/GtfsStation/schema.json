@@ -5,16 +5,20 @@
   "description": "GTFS Station",
   "type": "object",
   "allOf": [
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
-    { "$ref": "https://fiware.github.io/dataModels/specs/UrbanMobility/gtfs-schema.json#/definitions/GTFS-Stop-Commons" },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/specs/UrbanMobility/gtfs-schema.json#/definitions/GTFS-Stop-Commons"
+    },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "GtfsStation"
-          ],
+          "enum": ["GtfsStation"],
           "description": "NGSI Entity type"
         },
         "hasStop": {
@@ -34,11 +38,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "name",
-    "location",
-    "hasStop"
-  ]
+  "required": ["id", "type", "name", "location", "hasStop"]
 }

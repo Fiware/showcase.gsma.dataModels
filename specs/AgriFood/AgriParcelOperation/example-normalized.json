@@ -1,88 +1,88 @@
 {
-    "id": "urn:ngsi-ld:AgriParcelOperation:e1e9d3a3-074f-46f1-9375-52000d05a62b",
-    "type": "AgriParcelOperation",
-    "dateCreated": {
-        "type": "DateTime",
-        "value":"2017-01-01T01:20:00Z"
-    },
-    "dateModified": {
-        "type": "DateTime",
-        "value": "2017-05-04T12:30:00Z"
-    },
-    "relatedSource": {
-        "value": [
-            {
-                "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-                "applicationEntityId": "app:parcelop1"
-            }
-        ]
-    },
-    "seeAlso": {
-        "value" :[
-            "https://example.org/concept/agriparcelop",
-            "https://datamodel.org/example/agriparcelop"
-        ]
-    },
-    "agriParcel": {
-        "type": "Relationship",
-        "value": "urn:ngsi-ld:AgriParcel:318366a9-7643-4d8e-9a11-c76a8c29d8eb"
-    },
-    "operationType": {
-        "value": "fertiliser"
-    },
-    "description": {
-        "value": "Monthly fertiliser application"
-    },
-    "result": {
-        "value": "ok"
-    },
-    "plannedStartAt": {
-	"type": "DateTime",
-        "value": "2016-08-22T10:18:16Z"
-    },
-    "plannedEndAt": {
-	"type": "DateTime",
-        "value": "2016-08-28T10:18:16Z"
-    },
-    "status": {
-        "value": "finished"
-    },
-    "operator": {
-        "type": "Relationship",
-        "value": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
-    },
-    "startedAt": {
-	"type": "DateTime",
-        "value": "2016-08-22T10:18:16Z"
-    },
-    "endedAt": {
-	"type": "DateTime",
-        "value": "2016-08-28T10:18:16Z"
-    },
-    "reportedAt": {
-	"type": "DateTime",
-        "value": "2016-08-28T10:18:16Z"
-    },
-    "agriProduct": {
-        "type": "Relationship",
-        "value": "urn:ngsi-ld:AgriProduct:a8f616b8-13fb-473a-8e61-b7a80c6c93ec"
-    },
-    "quantity": {
-        "value": 40
-    },
-    "waterSource": {
-        "value": "rainwater capture"
-    },
-    "workOrder": {
-        "type": "URL",
-        "value": "https://example.com/agriparcelrecords/workorder1"
-    },
-    "workRecord": {
-        "type": "URL",
-        "value": "https://example.com/agriparcelrecords/workrecord1"
-    },
-    "irrigationRecord": {
-        "type": "URL",
-        "value": "https://example.com/agriparcelrecords/irrigationrecord1"
-    }
+  "id": "urn:ngsi-ld:AgriParcelOperation:e1e9d3a3-074f-46f1-9375-52000d05a62b",
+  "type": "AgriParcelOperation",
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2017-01-01T01:20:00Z"
+  },
+  "dateModified": {
+    "type": "DateTime",
+    "value": "2017-05-04T12:30:00Z"
+  },
+  "relatedSource": {
+    "value": [
+      {
+        "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+        "applicationEntityId": "app:parcelop1"
+      }
+    ]
+  },
+  "seeAlso": {
+    "value": [
+      "https://example.org/concept/agriparcelop",
+      "https://datamodel.org/example/agriparcelop"
+    ]
+  },
+  "agriParcel": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:AgriParcel:318366a9-7643-4d8e-9a11-c76a8c29d8eb"
+  },
+  "operationType": {
+    "value": "fertiliser"
+  },
+  "description": {
+    "value": "Monthly fertiliser application"
+  },
+  "result": {
+    "value": "ok"
+  },
+  "plannedStartAt": {
+    "type": "DateTime",
+    "value": "2016-08-22T10:18:16Z"
+  },
+  "plannedEndAt": {
+    "type": "DateTime",
+    "value": "2016-08-28T10:18:16Z"
+  },
+  "status": {
+    "value": "finished"
+  },
+  "operator": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
+  },
+  "startedAt": {
+    "type": "DateTime",
+    "value": "2016-08-22T10:18:16Z"
+  },
+  "endedAt": {
+    "type": "DateTime",
+    "value": "2016-08-28T10:18:16Z"
+  },
+  "reportedAt": {
+    "type": "DateTime",
+    "value": "2016-08-28T10:18:16Z"
+  },
+  "agriProduct": {
+    "type": "Relationship",
+    "value": "urn:ngsi-ld:AgriProduct:a8f616b8-13fb-473a-8e61-b7a80c6c93ec"
+  },
+  "quantity": {
+    "value": 40
+  },
+  "waterSource": {
+    "value": "rainwater capture"
+  },
+  "workOrder": {
+    "type": "URL",
+    "value": "https://example.com/agriparcelrecords/workorder1"
+  },
+  "workRecord": {
+    "type": "URL",
+    "value": "https://example.com/agriparcelrecords/workrecord1"
+  },
+  "irrigationRecord": {
+    "type": "URL",
+    "value": "https://example.com/agriparcelrecords/irrigationrecord1"
+  }
 }

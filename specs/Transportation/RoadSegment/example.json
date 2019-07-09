@@ -1,41 +1,38 @@
 {
-    "id": "Spain-RoadSegment-A62-osm-24702186",
-    "type": "RoadSegment",
-    "name": "Valladolid-Dueñas",
-    "category": "oneway",
-    "refRoad": "Spain-Road-A62",
-    "totalLaneNumber": 2,
-    "maximumAllowedSpeed": 120,
-    "minimumAllowedSpeed": 60,
-    "startPoint": {
-      "type": "Point",
-      "coordinates": [-4.7299180606009, 41.6844918725019]
-    },
-    "endPoint": {
-      "type": "Point",
-      "coordinates": [-4.55167335377909, 41.8570461783071]
-    },
-    "allowedVehicleType": [
-        "car", "bus", "lorry", "trailer",
-        "tanker", "van", "caravan"
-    ],
-    "location": {
-       "type": "LineString",
-       "coordinates": [
-            [
-               -4.7299180606009, 41.6844918725019
-            ],
-            [
-              -4.72855890957602, 41.6860596957855
-            ],
-            [
-              -4.5520357341647, 41.8569278186523
-            ],
-            [
-               -4.55167335377909, 41.8570461783071
-            ]
-       ]
-    },
-    "laneUsage": ["forward", "forward"],
-    "source": "http://wwww.openstreetmap.org"
+  "id": "Spain-RoadSegment-A62-osm-24702186",
+  "type": "RoadSegment",
+  "name": "Valladolid-Dueñas",
+  "category": "oneway",
+  "refRoad": "Spain-Road-A62",
+  "totalLaneNumber": 2,
+  "maximumAllowedSpeed": 120,
+  "minimumAllowedSpeed": 60,
+  "startPoint": {
+    "type": "Point",
+    "coordinates": [-4.7299180606009, 41.6844918725019]
+  },
+  "endPoint": {
+    "type": "Point",
+    "coordinates": [-4.55167335377909, 41.8570461783071]
+  },
+  "allowedVehicleType": [
+    "car",
+    "bus",
+    "lorry",
+    "trailer",
+    "tanker",
+    "van",
+    "caravan"
+  ],
+  "location": {
+    "type": "LineString",
+    "coordinates": [
+      [-4.7299180606009, 41.6844918725019],
+      [-4.72855890957602, 41.6860596957855],
+      [-4.5520357341647, 41.8569278186523],
+      [-4.55167335377909, 41.8570461783071]
+    ]
+  },
+  "laneUsage": ["forward", "forward"],
+  "source": "http://wwww.openstreetmap.org"
 }
