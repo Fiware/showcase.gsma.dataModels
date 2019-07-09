@@ -7,8 +7,8 @@ associated with the vertical segments of smart homes, smart cities, industry and
 related IoT applications.
 
 This data model has been partially developed in cooperation with mobile
-operators and the [GSMA](https://www.gsma.com/iot/iot-big-data/),
-compared to GSMA data model following changes are introduced:
+operators and the [GSMA](https://www.gsma.com/iot/iot-big-data/), compared to
+GSMA data model following changes are introduced:
 
 -   the reference to `BuildingType` is removed, since `BuildingType` compared to
     `category` attribute does not introduce significant information.
@@ -93,8 +93,9 @@ For a full description of the following attributes refer to GSMA
 
 The following attribute has been introduced:
 
--   `openingHours` : The number of floors above ground level in this building.
-    -   Attribute type: List of [Opening Hours](http://schema.org/openingHours)
+-   `openingHours` : Opening hours of this building.
+    -   Normative references:
+        [https://schema.org/openingHours](https://schema.org/openingHours)
     -   Optional
 
 **Note**: JSON Schemas are intended to capture the data type and associated
@@ -161,43 +162,7 @@ Normalized NGSI response
         ]
     },
     "openingHours": {
-        "value": [
-            {
-                "dayOfWeek": "http://schema.org/Sunday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Saturday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Thursday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Tuesday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Friday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Monday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Wednesday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            }
-        ]
+        "value": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]
     },
     "dataProvider": {
         "value": "OperatorA"
@@ -250,43 +215,7 @@ Sample uses simplified representation for data consumers `?options=keyValues`
     "floorsBelowGround": 0,
     "description": "Office block",
     "mapUrl": "http://www.example.com",
-    "openingHours": [
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Sunday",
-            "opens": "09:00:00"
-        },
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Saturday",
-            "opens": "09:00:00"
-        },
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Thursday",
-            "opens": "09:00:00"
-        },
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Tuesday",
-            "opens": "09:00:00"
-        },
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Friday",
-            "opens": "09:00:00"
-        },
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Monday",
-            "opens": "09:00:00"
-        },
-        {
-            "closes": "17:00:00",
-            "dayOfWeek": "http://schema.org/Wednesday",
-            "opens": "09:00:00"
-        }
-    ]
+    "openingHours": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]
 }
 ```
 
@@ -302,9 +231,7 @@ Sample uses the NGSI-LD representation
     "createdAt": "2016-08-08T10:18:16Z",
     "category": {
         "type": "Property",
-        "value": [
-            "office"
-        ]
+        "value": ["office"]
     },
     "floorsBelowGround": {
         "type": "Property",
@@ -320,9 +247,7 @@ Sample uses the NGSI-LD representation
     },
     "occupier": {
         "type": "Relationship",
-        "object": [
-            "urn:ngsi-ld:Person:9830f692-7677-11e6-838b-4f9fb3dc5a4f"
-        ]
+        "object": ["urn:ngsi-ld:Person:9830f692-7677-11e6-838b-4f9fb3dc5a4f"]
     },
     "mapUrl": {
         "type": "Property",
@@ -336,30 +261,7 @@ Sample uses the NGSI-LD representation
         "type": "GeoProperty",
         "value": {
             "type": "Polygon",
-            "coordinates": [
-                [
-                    [
-                        100,
-                        0
-                    ],
-                    [
-                        101,
-                        0
-                    ],
-                    [
-                        101,
-                        1
-                    ],
-                    [
-                        100,
-                        1
-                    ],
-                    [
-                        100,
-                        0
-                    ]
-                ]
-            ]
+            "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
         }
     },
     "address": {
@@ -380,43 +282,7 @@ Sample uses the NGSI-LD representation
     },
     "openingHours": {
         "type": "Property",
-        "value": [
-            {
-                "dayOfWeek": "http://schema.org/Sunday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Saturday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Thursday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Tuesday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Friday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Monday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            },
-            {
-                "dayOfWeek": "http://schema.org/Wednesday",
-                "closes": "17:00:00",
-                "opens": "09:00:00"
-            }
-        ]
+        "value": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]
     },
     "dataProvider": {
         "type": "Property",
@@ -426,30 +292,7 @@ Sample uses the NGSI-LD representation
         "type": "Property",
         "value": {
             "type": "Polygon",
-            "coordinates": [
-                [
-                    [
-                        100,
-                        0
-                    ],
-                    [
-                        101,
-                        0
-                    ],
-                    [
-                        101,
-                        1
-                    ],
-                    [
-                        100,
-                        1
-                    ],
-                    [
-                        100,
-                        0
-                    ]
-                ]
-            ]
+            "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
         }
     },
     "@context": [

@@ -28,41 +28,5 @@
   "floorsBelowGround": 0,
   "description": "Office block",
   "mapUrl": "http://www.example.com",
-  "openingHours": [
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Sunday",
-      "opens": "09:00:00"
-    },
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Saturday",
-      "opens": "09:00:00"
-    },
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Thursday",
-      "opens": "09:00:00"
-    },
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Tuesday",
-      "opens": "09:00:00"
-    },
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Friday",
-      "opens": "09:00:00"
-    },
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Monday",
-      "opens": "09:00:00"
-    },
-    {
-      "closes": "17:00:00",
-      "dayOfWeek": "http://schema.org/Wednesday",
-      "opens": "09:00:00"
-    }
-  ]
+  "openingHours": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]
 }

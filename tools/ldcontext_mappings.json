@@ -1,6 +1,7 @@
 {
   "name": "http://schema.org/name",
   "alternativeName": "http://schema.org/alternativeName",
+  "aggregateRating": "https://schema.org/aggregateRating",
   "description": "http://schema.org/description",
   "openingHours": "http://schema.org/openingHours",
   "address": "http://schema.org/address",
