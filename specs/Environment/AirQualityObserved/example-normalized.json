@@ -4,6 +4,8 @@
   "dateObserved": {
     "value": "2016-03-15T11:00:00/2016-03-15T12:00:00"
   },
+  "areaServed": "Brooklands",
+
   "airQualityLevel": {
     "value": "moderate"
   },

@@ -11,6 +11,7 @@
     "type": "Point",
     "coordinates": [-3.712247222222222, 40.423852777777775]
   },
+  "areaServed": "Brooklands",
   "source": "http://datos.madrid.es",
   "precipitation": 0,
   "relativeHumidity": 0.54,
