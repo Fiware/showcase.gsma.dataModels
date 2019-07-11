@@ -37,16 +37,27 @@ A JSON Schema corresponding to this data model can be found
     -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Mandatory if `address` is not defined.
+	
 -   `address` : Civic address of the air quality observation. Sometimes it
     corresponds to the air quality station address.
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
     -   Mandatory if `location` is not present.
+	
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
     -   Attribute type: [DateTime](https://schema.org/DateTime) or an ISO8601
         interval represented as [Text](https://schema.org/Text).
     -   Mandatory
+	
+-   `areaServed` : Higher level area to which this streetlight belongs to. It
+    can be used to group streetlights per responsible, district, neighbourhood,
+    etc.
+    -   Attribute type: [Text](https://schema.org/Text)
+    -   Normative References:
+        [https://schema.org/areaServed](https://schema.org/areaServed)
+    -   Optional
+
 -   `source` : A sequence of characters giving the source of the entity data.
     -   Attribute type: [Text](https://schema.org/Text) or
         [URL](https://schema.org/URL)

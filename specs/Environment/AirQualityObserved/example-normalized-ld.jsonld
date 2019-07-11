@@ -1,10 +1,13 @@
 {
     "id": "urn:ngsi-ld:AirQualityObserved:Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
     "type": "AirQualityObserved",
-	"areaServed": "Brooklands",
     "dateObserved": {
         "type": "Property",
         "value": "2016-03-15T11:00:00/2016-03-15T12:00:00"
+    },
+	"areaServed": {
+        "type": "Property",
+        "value": "Roundabouts city entrance"
     },
     "airQualityLevel": {
         "type": "Property",

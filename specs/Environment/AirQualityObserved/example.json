@@ -7,11 +7,11 @@
     "streetAddress": "Plaza de España"
   },
   "dateObserved": "2016-03-15T11:00:00/2016-03-15T12:00:00",
+  "areaServed": "Brooklands",
   "location": {
     "type": "Point",
     "coordinates": [-3.712247222222222, 40.423852777777775]
   },
-  "areaServed": "Brooklands",
   "source": "http://datos.madrid.es",
   "precipitation": 0,
   "relativeHumidity": 0.54,
