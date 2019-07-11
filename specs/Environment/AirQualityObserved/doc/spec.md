@@ -50,9 +50,8 @@ A JSON Schema corresponding to this data model can be found
         interval represented as [Text](https://schema.org/Text).
     -   Mandatory
 	
--   `areaServed` : Higher level area to which this streetlight belongs to. It
-    can be used to group streetlights per responsible, district, neighbourhood,
-    etc.
+-   `areaServed` : Higher level area to which this air quality measurement belongs to. It
+    can be used to group air quality measurements per district, neighbourhood, etc.
     -   Attribute type: [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/areaServed](https://schema.org/areaServed)
