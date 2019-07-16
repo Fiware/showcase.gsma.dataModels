@@ -33,8 +33,8 @@
     async def name_one - worker process
 """
 
-from aiohttp import ClientSession, client_exceptions
-from asyncio import Semaphore, ensure_future, gather, run
+from aiohttp import ClientSession, ClientConnectorError
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
 from argparse import ArgumentTypeError, ArgumentParser
 from copy import deepcopy
 from csv import DictWriter
@@ -43,7 +43,7 @@ from io import BytesIO
 from re import sub
 from requests import get, exceptions
 from sys import stdout
-from time import sleep
+from uvloop import EventLoopPolicy
 from xlrd import open_workbook
 from yajl import loads, dumps
 from yaml import safe_load as load, dump
@@ -294,12 +294,14 @@ async def post_one(el, headers, session):
     url = orion + '/v2/op/update'
     try:
         async with session.post(url, headers=headers, data=payload) as response:
-            await response.read()
-    except client_exceptions.ClientConnectorError:
-        return 'connection problems'
+            status = response.status
+    except ClientConnectorError:
+        return 'connection problem'
+    except TimeoutError:
+        return 'timeout problem'
 
-    if response.status not in http_ok:
-        return 'response code ' + str(response.status)
+    if status not in http_ok:
+        return 'response code ' + str(status)
 
     return True
 
@@ -450,11 +452,10 @@ def reply_status(stations):
     logger.info('Orion: %s', orion)
     logger.info('FIWARE Service: %s', service)
     logger.info('FIWARE Service-Path: %s', path)
-    logger.info('Stations: %s', str(len(stations)))
+    logger.info('Stations: %s', str(len(stations['stations'])))
     logger.info('limit_entities: %s', str(limit_entities))
     logger.info('limit_targets: %s', str(limit_targets))
     logger.info('Log level: %s', args.log_level)
-    logger.info('Timeout: %s', str(timeout))
 
 
 def sanitize(str_in):
@@ -522,18 +523,12 @@ if __name__ == '__main__':
                         action='store',
                         dest="service",
                         help='FIWARE Service')
-    parser.add_argument('--timeout',
-                        action='store',
-                        default=default_timeout,
-                        dest='timeout',
-                        help='Run harvester as a service')
 
     args = parser.parse_args()
 
     limit_entities = int(args.limit_entities)
     limit_targets = int(args.limit_targets)
     orion = args.orion
-    timeout = int(args.timeout)
 
     if 'path' in args:
         path = args.path
@@ -541,6 +536,8 @@ if __name__ == '__main__':
         service = args.service
 
     logger, logger_req = setup_logger()
+
+    set_event_loop_policy(EventLoopPolicy())
 
     logger.info('Started')
 
@@ -551,11 +548,14 @@ if __name__ == '__main__':
             logger.error('API Key is not provided')
             exit(1)
 
+        logger.debug('Initial data collection started')
+
         aemet = collect_aemet(args.key)
         ine = collect_ine()
 
         res = run(prepare_data(aemet, ine))
 
+        logger.debug('Initial data collection ended')
     else:
         try:
             with open(stations_file_yml, 'r') as file:
@@ -583,14 +583,8 @@ if __name__ == '__main__':
     if not args.yml and not args.csv:
         reply_status(res)
 
-        while True:
-            res = run(prepare_schema(res))
-            run(post(res))
-            if timeout == -1:
-                break
-            else:
-                logger.debug('Sleeping for the %s seconds', timeout)
-                sleep(timeout)
+        res = run(prepare_schema(res))
+        run(post(res))
 
     logger.info('Ended')
     exit(0)

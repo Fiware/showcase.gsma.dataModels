@@ -9,11 +9,9 @@ It performs data harvesting using AEMET's data site as the origin and Orion Cont
 ## How to run
 
 ```console
-docker run -d fiware/harvesters:weather-stations-spain \
-           --timeout ${TIMEOUT} \
+docker run -t --rm fiware/harvesters:weather-stations-spain \
            --import \
            --orion ${ORION_ENDPOINT} \
-           --path ${FIWARE_SERVICEPATH} \
            --service ${FIWARE_SERVICE}
 ```       
 

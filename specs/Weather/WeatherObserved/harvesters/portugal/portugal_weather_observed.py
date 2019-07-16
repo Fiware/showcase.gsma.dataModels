@@ -20,15 +20,16 @@
     async def name_one - worker process
 """
 
-from aiohttp import ClientSession, client_exceptions
+from aiohttp import ClientSession, ClientConnectorError
 from argparse import ArgumentTypeError, ArgumentParser
-from asyncio import Semaphore, ensure_future, gather, run
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
 from copy import deepcopy
 from datetime import datetime
 from pytz import timezone
 from re import sub
 from sys import stdout
 from time import sleep
+from uvloop import EventLoopPolicy
 from yajl import dumps, loads
 from yaml import safe_load as load
 from requests import get, exceptions
@@ -287,12 +288,14 @@ async def post_one(item, headers, session):
     url = orion + '/v2/op/update'
     try:
         async with session.post(url, headers=headers, data=payload) as response:
-            await response.read()
-    except client_exceptions.ClientConnectorError:
-        return 'connection problems'
+            status = response.status
+    except ClientConnectorError:
+        return 'connection problem'
+    except TimeoutError:
+        return 'timeout problem'
 
-    if response.status not in http_ok:
-        return 'response code ' + str(response.status)
+    if status not in http_ok:
+        return 'response code ' + str(status)
 
     return True
 
@@ -551,6 +554,8 @@ if __name__ == '__main__':
         service = args.service
 
     logger, logger_req = setup_logger()
+
+    set_event_loop_policy(EventLoopPolicy())
 
     res = setup_stations_config(args.config)
     stations = setup_stations(res)

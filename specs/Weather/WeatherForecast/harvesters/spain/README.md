@@ -13,7 +13,6 @@ docker run -d fiware/harvesters:weather-forecast-spain \
            --timeout ${TIMEOUT} \
            --latest \
            --orion ${ORION_ENDPOINT} \
-           --path ${FIWARE_SERVICEPATH} \
            --service ${FIWARE_SERVICE} \
            --config ${PATH_TO_CONFIG} \
            --key ${AEMET_API_KEY}

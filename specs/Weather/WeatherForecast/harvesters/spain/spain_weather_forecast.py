@@ -26,9 +26,9 @@
     This limit will be removed in the next version.
 """
 
-from aiohttp import ClientSession, client_exceptions
+from aiohttp import ClientSession, ClientConnectorError
 from argparse import ArgumentTypeError, ArgumentParser
-from asyncio import Semaphore, ensure_future, gather, run
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
 from copy import deepcopy
 from datetime import datetime, timedelta
 from pytz import timezone
@@ -36,6 +36,7 @@ from re import sub
 from requests import get, exceptions
 from sys import stdout
 from time import sleep
+from uvloop import EventLoopPolicy
 from yajl import dumps, loads
 from yaml import safe_load as load
 import logging
@@ -178,13 +179,16 @@ async def collect_one(station, session, key):
     try:
         async with session.get(stations[station]['url'], headers={'api_key': key}, ssl=False) as response:
             result = await response.read()
-    except client_exceptions.ClientConnectorError:
+            status = response.status
+    except ClientConnectorError:
         logger.error('Collecting link from AEMET station %s failed due to the connection problem', station)
         return False
+    except TimeoutError:
+        logger.error('Collecting link from AEMET station %s failed due to the timeout problem', station)
+        return False
 
-    if response.status not in http_ok:
-        logger.error('Collecting link from AEMET station %s failed due to the return code %s', station,
-                     str(response.status))
+    if status not in http_ok:
+        logger.error('Collecting link from AEMET station %s failed due to the return code %s', station, str(status))
         return False
 
     logger.debug('Remaining requests %s', response.headers.get('Remaining-request-count'))
@@ -301,7 +305,7 @@ def decode_weather_type(item):
     }.get(item, None)
 
     if out is None:
-        logger.error('Unknown value of WeatherType detected, %s', item)
+        logger.error('Unknown value of WeatherType detected, "%s"', item)
 
     return (out + trailing) if out else None
 
@@ -345,7 +349,7 @@ def decode_wind_direction(item):
     }.get(item, None)
 
     if out is None:
-        logger.error('Unknown value of WindDirection detected, %s', item)
+        logger.error('Unknown value of WindDirection detected, "%s"', item)
 
     if out == 'Calm':
         out = None
@@ -427,12 +431,14 @@ async def post_one(item, headers, session):
     url = orion + '/v2/op/update'
     try:
         async with session.post(url, headers=headers, data=payload) as response:
-            await response.read()
-    except client_exceptions.ClientConnectorError:
-        return 'connection problems'
+            status = response.status
+    except ClientConnectorError:
+        return 'connection problem'
+    except TimeoutError:
+        return 'timeout problem'
 
-    if response.status not in http_ok:
-        return 'response code ' + str(response.status)
+    if status not in http_ok:
+        return 'response code ' + str(status)
 
     return True
 
@@ -766,6 +772,8 @@ if __name__ == '__main__':
         service = args.service
 
     logger, logger_req = setup_logger()
+
+    set_event_loop_policy(EventLoopPolicy())
 
     res = setup_stations_config(args.config)
     stations = setup_stations(res, args.station_file)

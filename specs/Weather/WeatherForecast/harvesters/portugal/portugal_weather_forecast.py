@@ -20,9 +20,9 @@
     async def name_one - worker process
 """
 
-from aiohttp import ClientSession, client_exceptions
+from aiohttp import ClientSession, ClientConnectorError
 from argparse import ArgumentTypeError, ArgumentParser
-from asyncio import Semaphore, ensure_future, gather, run
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
 from copy import deepcopy
 from datetime import datetime, timedelta
 from pytz import timezone
@@ -30,6 +30,7 @@ from re import sub
 from requests import get, exceptions
 from sys import stdout
 from time import sleep
+from uvloop import EventLoopPolicy
 from yajl import dumps, loads
 from yaml import safe_load as load
 import logging
@@ -150,18 +151,37 @@ def check_entity(forecast, item):
 
 def decode_weather_type(item):
     out = {
-        1: 'clear',
-        2: 'slightlyCloudy',
-        3: 'partlyCloudy',
-        4: 'overcast',
+        0: None,
+        1: 'clearSky',
+        2: 'partlyCloudy',
+        3: 'sunnyIntervals',
+        4: 'cloudy',
         5: 'highClouds',
-        6: 'lightRain',
-        7: 'drizzle',
+        6: 'showers',
+        7: 'lightShowers',
+        8: 'heavyShowers',
         9: 'rain',
-        11: 'heavyRain'
+        10: 'lightRain',
+        11: 'heavyRain',
+        12: 'intermittentRain',
+        13: 'intermittentLightRain',
+        14: 'intermittentHeavyRain',
+        15: 'drizzle',
+        16: 'mist',
+        17: 'fog',
+        18: 'snow',
+        19: 'thunderstorms',
+        20: 'showersAndThunderstorms',
+        21: 'hail',
+        22: 'frost',
+        23: 'rainAndThunderstorms',
+        24: 'convectiveClouds',
+        25: 'partyCloudy',
+        26: 'fog',
+        27: 'cloudy'
     }.get(item, None)
 
-    if out is None:
+    if out is None and item != 0:
         logger.error('Unknown value of WeatherType detected, %s', item)
 
     return out if out else None
@@ -234,16 +254,20 @@ async def collect_one(station, session):
 
     try:
         async with session.get(stations[station]['url']) as response:
-            result = await response.read()
-    except client_exceptions.ClientConnectorError:
+            result = await response.text()
+            status = response.status
+    except ClientConnectorError:
         logger.error('Collecting data from IPMA station %s failed due to the connection problem', station)
         return False
-
-    if response.status not in http_ok:
-        logger.error('Collecting data from IPMA station %s failed due to the return code %s', station, response.status)
+    except TimeoutError:
+        logger.error('Collecting link from IPMA station %s failed due to the timeout problem', station)
         return False
 
-    content = loads(result.decode('UTF-8'))
+    if status not in http_ok:
+        logger.error('Collecting data from IPMA station %s failed due to the return code %s', station, status)
+        return False
+
+    content = loads(result)
 
     result = dict()
     result['id'] = station
@@ -353,12 +377,14 @@ async def post_one(item, headers, session):
     url = orion + '/v2/op/update'
     try:
         async with session.post(url, headers=headers, data=payload) as response:
-            await response.read()
-    except client_exceptions.ClientConnectorError:
-        return 'connection problems'
+            status = response.status
+    except ClientConnectorError:
+        return 'connection problem'
+    except TimeoutError:
+        return 'timeout problem'
 
-    if response.status not in http_ok:
-        return 'response code ' + str(response.status)
+    if status not in http_ok:
+        return 'response code ' + str(status)
 
     return True
 
@@ -664,6 +690,8 @@ if __name__ == '__main__':
         service = args.service
 
     logger, logger_req = setup_logger()
+
+    set_event_loop_policy(EventLoopPolicy())
 
     res = setup_stations_config(args.config)
     stations = setup_stations(res)
