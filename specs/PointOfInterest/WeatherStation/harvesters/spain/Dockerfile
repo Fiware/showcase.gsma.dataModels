@@ -8,7 +8,6 @@ COPY . /opt
 
 RUN apk update && \
     apk add --no-cache git build-base curl && \
-    pip install --upgrade pip && \
     pip install -r requirements.txt && \
     apk del build-base git && \
     rm -f /var/cache/apk/*

@@ -28,7 +28,7 @@
 
 from aiohttp import ClientSession, ClientConnectorError
 from argparse import ArgumentTypeError, ArgumentParser
-from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError as ToE, set_event_loop_policy
 from copy import deepcopy
 from datetime import datetime, timedelta
 from pytz import timezone
@@ -183,7 +183,7 @@ async def collect_one(station, session, key):
     except ClientConnectorError:
         logger.error('Collecting link from AEMET station %s failed due to the connection problem', station)
         return False
-    except TimeoutError:
+    except ToE:
         logger.error('Collecting link from AEMET station %s failed due to the timeout problem', station)
         return False
 
@@ -434,7 +434,7 @@ async def post_one(item, headers, session):
             status = response.status
     except ClientConnectorError:
         return 'connection problem'
-    except TimeoutError:
+    except ToE:
         return 'timeout problem'
 
     if status not in http_ok:

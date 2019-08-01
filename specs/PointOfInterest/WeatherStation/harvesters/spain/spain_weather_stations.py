@@ -34,7 +34,7 @@
 """
 
 from aiohttp import ClientSession, ClientConnectorError
-from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError as ToE, set_event_loop_policy
 from argparse import ArgumentTypeError, ArgumentParser
 from copy import deepcopy
 from csv import DictWriter
@@ -297,7 +297,7 @@ async def post_one(el, headers, session):
             status = response.status
     except ClientConnectorError:
         return 'connection problem'
-    except TimeoutError:
+    except ToE:
         return 'timeout problem'
 
     if status not in http_ok:

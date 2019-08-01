@@ -22,7 +22,7 @@
 
 from aiohttp import ClientSession, ClientConnectorError
 from argparse import ArgumentTypeError, ArgumentParser
-from asyncio import Semaphore, ensure_future, gather, run, TimeoutError, set_event_loop_policy
+from asyncio import Semaphore, ensure_future, gather, run, TimeoutError as ToE, set_event_loop_policy
 from copy import deepcopy
 from datetime import datetime
 from pytz import timezone
@@ -291,7 +291,7 @@ async def post_one(item, headers, session):
             status = response.status
     except ClientConnectorError:
         return 'connection problem'
-    except TimeoutError:
+    except ToE:
         return 'timeout problem'
 
     if status not in http_ok:
