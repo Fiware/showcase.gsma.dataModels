@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://fiware.github.io/dataModels/tools/ldcontext-generator-schema.json",
+  "$id": "https://fiware.github.io/dataModels/tools/ldcontext-generator.json",
   "title": "FIWARE - Example schema for ldcontext_generator",
   "description": "Example to be used as an input data for ldcontext_generator tool",
   "type": "object",

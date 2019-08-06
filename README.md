@@ -25,7 +25,7 @@ project is working on the harmonization of APIs and data models for fueling IoT
 and Big Data Ecosystems. In fact the FIWARE data models are a superset of the
 [GSMA Data Models](https://github.com/GSMADeveloper/NGSI-LD-Entities).
 
-**Some of the Data Models in this Repo have been adopted by 
+**Some of the Data Models in this Repository have been adopted by 
 a joint initiative between TM Forum and FIWARE Foundation. For more
 info please check 
 [https://github.com/smart-data-models/dataModels](https://github.com/smart-data-models/dataModels)**
@@ -72,9 +72,9 @@ API implementation, you need to use the `keyValues` mode (`options=keyValues`).
 
 Contributions should come in the form of pull requests. 
 
-**Please note that some of the Data Models in this Repo have been adopted by 
+**Please note that some of the Data Models in this Repository have been adopted by 
 a joint initiative between TM Forum and FIWARE Foundation. Pull Requests for those
-Data Models shall be done against the corresponding Repo at the [https://github.com/smart-data-models/](https://github.com/smart-data-models/) Organization**
+Data Models shall be done against the corresponding Repository at the [https://github.com/smart-data-models/](https://github.com/smart-data-models/) Organization**
 
 New data models should be added under a folder structured as follows:
 
