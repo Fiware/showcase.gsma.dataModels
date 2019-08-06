@@ -54,18 +54,25 @@
               "type": "string"
             },
             "visibility": {
-              "type": "string",
-              "enum": [
-                "veryPoor",
-                "poor",
-                "moderate",
-                "good",
-                "veryGood",
-                "excellent"
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "veryPoor",
+                    "poor",
+                    "moderate",
+                    "good",
+                    "veryGood",
+                    "excellent"
+                  ]
+                },
+                {
+                  "type": ["number", "null"]
+                }
               ]
             },
             "windDirection": {
-              "type": ["integer", "null"],
+              "type": ["number", "null"],
               "minimum": -180,
               "maximum": 180
             },
