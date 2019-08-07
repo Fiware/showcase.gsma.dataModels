@@ -18,6 +18,8 @@ from datetime import datetime
 aggregated_context = {
 }
 
+schema_url = 'https://fiware.github.io/dataModels/{}'
+
 
 def read_json(infile):
     with open(infile) as data_file:
@@ -138,7 +140,7 @@ def generate_ld_context(properties, uri_prefix, predefined_mappings):
 
 
 # Extracts from the schema the relevant JSON-LD @context
-def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
+def schema_2_ld_context(f, schema, uri_prefix, predefined_mappings):
     properties = extract_properties(schema)
     entity_type = extract_entity_type(schema)
     enumerations = extract_enumerations(schema)
@@ -149,7 +151,7 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
         all_properties, uri_prefix, predefined_mappings)
 
     if entity_type is not None:
-        ld_context[entity_type] = uri_prefix + '/' + 'entity-types' + '/' + entity_type
+        ld_context[entity_type] = schema_url.format(f.split('../')[1])
 
     return ld_context
 
@@ -168,7 +170,7 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings):
     global aggregated_context
 
     schema = read_json(f)
-    ld_context = schema_2_ld_context(schema, uri_prefix, predefined_mappings)
+    ld_context = schema_2_ld_context(f, schema, uri_prefix, predefined_mappings)
 
     for p in ld_context:
         aggregated_context[p] = ld_context[p]
