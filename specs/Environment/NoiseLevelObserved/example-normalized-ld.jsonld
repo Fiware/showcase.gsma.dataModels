@@ -42,84 +42,27 @@
         "value": 91.6
     },
     "frequencies": {
-        "type": "object",
+        "type": "Property",
         "value": {
-            "100" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "125" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "160" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "200" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "250" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "315" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "400" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "500" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "630" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "800" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "1000" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "1250" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "1600" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "2000" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "2500" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "3150" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "4000" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "8000" : {
-                "type":"integer",
-                "value": 40       
-            },
-            "10000" : {
-                "type":"integer",
-                "value": 40       
-            },
+            "100": 40,
+            "125":  40,
+            "160": 40,
+            "200": 40,
+            "250": 40,
+            "315": 40,
+            "400": 40,
+            "500": 40,
+            "630": 40,
+            "800": 40,
+            "1000": 40,
+            "1250": 40,
+            "1600": 40,
+            "2000": 40,
+            "2500": 40,
+            "3150": 40,
+            "4000": 40,
+            "8000": 40,
+            "10000": 40
         }
     },
     "@context": [
