@@ -33,6 +33,89 @@
           "type": "string",
           "enum": ["0", "1", "2"]
         },
+        "frequencies": {
+          "properties": {
+            "100": {
+              "type": "integer"
+            },
+            "125": {
+              "type": "integer"
+            },
+            "160": {
+              "type": "integer"
+            },
+            "200": {
+              "type": "integer"
+            },
+            "250": {
+              "type": "integer"
+            },
+            "315": {
+              "type": "integer"
+            },
+            "400": {
+              "type": "integer"
+            },
+            "500": {
+              "type": "integer"
+            },
+            "630": {
+              "type": "integer"
+            },
+            "800": {
+              "type": "integer"
+            },
+            "1000": {
+              "type": "integer"
+            },
+            "1250": {
+              "type": "integer"
+            },
+            "1600": {
+              "type": "integer"
+            },
+            "2000": {
+              "type": "integer"
+            },
+            "2500": {
+              "type": "integer"
+            },
+            "3150": {
+              "type": "integer"
+            },
+            "4000": {
+              "type": "integer"
+            },
+            "8000": {
+              "type": "integer"
+            },
+            "10000": {
+              "type": "integer"
+            }
+          },
+          "type": "object",
+          "required": [
+            "100",
+            "125",
+            "160",
+            "200",
+            "250",
+            "315",
+            "400",
+            "500",
+            "630",
+            "800",
+            "1000",
+            "1250",
+            "1600",
+            "2000",
+            "2500",
+            "3150",
+            "4000",
+            "8000",
+            "10000"
+          ]
+        },
         "refDevice": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
@@ -45,5 +128,12 @@
       }
     }
   ],
-  "required": ["id", "type", "dateObservedFrom", "dateObservedTo", "location"]
+  "required": [
+    "id",
+    "type",
+    "dateObservedFrom",
+    "dateObservedTo",
+    "location",
+    "frequencies"
+  ]
 }

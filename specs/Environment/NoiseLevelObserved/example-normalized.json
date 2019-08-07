@@ -23,8 +23,78 @@
       "coordinates": [-2.698, 42.8491]
     }
   },
+
+  "LAS": {
+    "value": 91.6
+  },
+  "frequencies": {
+    "value": {
+      "100": {
+        "value": 40
+      },
+      "125": {
+        "value": 40
+      },
+      "160": {
+        "value": 40
+      },
+      "200": {
+        "value": 40
+      },
+      "250": {
+        "value": 40
+      },
+      "315": {
+        "value": 40
+      },
+      "400": {
+        "value": 40
+      },
+      "500": {
+        "value": 40
+      },
+      "630": {
+        "value": 40
+      },
+      "800": {
+        "value": 40
+      },
+      "1000": {
+        "value": 40
+      },
+      "1250": {
+        "value": 40
+      },
+      "1600": {
+        "value": 40
+      },
+      "2000": {
+        "value": 40
+      },
+      "2500": {
+        "value": 40
+      },
+      "3150": {
+        "value": 40
+      },
+      "4000": {
+        "value": 40
+      },
+      "8000": {
+        "value": 40
+      },
+      "10000": {
+        "value": 40
+      }
+    },
+    "metadata": {
+      "description": {
+        "value": "A-weighted, frequency, sound level "
+      }
+    }
+  },
   "type": "NoiseLevelObserved",
-  "id": "Vitoria-NoiseLevelObserved-2016-12-28T11:00:00_2016-12-28T12:00:00",
+  "id": "Vitoria-NoiseLevelObserved",
   "LAS": {
     "value": 91.6
   }

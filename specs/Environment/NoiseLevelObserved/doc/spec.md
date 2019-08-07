@@ -5,7 +5,9 @@
 It represents an observation of those acoustic parameters that estimate noise
 pressure levels at a certain place and time. This entity is primarily associated
 with the Smart City and environment vertical segments and related IoT
-applications.
+applications. In addition it also represents a break down of the frequencies
+present in the sound in accordance with the ISO 3741:2010 standard frequencies
+of 100 Hz to 10 000 Hz one-third octave band.
 
 ## Data Model
 
@@ -95,9 +97,20 @@ The data model is defined as shown below:
     -   Allowed values: one of (`"0"`, `"1"`, `"2"`)
     -   Optional
 
+-   `frequencies` : Specifies the frequencies collected from the sensor
+    represented by the ISO 3741:2010 standard frequencies of 100 Hz to 10 000 Hz
+    one-third octave band. The value of each frequency is the A-weighted decibel
+    value recorded.
+
+    -   `Attribute type` : A StructuredObject of frequency : value pairs as
+        defined by the ISO 3741:2010 standard where the values are represented
+        as Numbers
+    -   Mandatory
+
 -   `refPointOfInterest` : A reference to a point of interest associated to this
     observation.
-    -   Attribute type: Relationship. Reference to an entity of type `PointOfInterest`
+    -   Attribute type: Relationship. Reference to an entity of type
+        `PointOfInterest`
     -   Optional
 
 ### Representing acoustic parameters
@@ -129,6 +142,12 @@ There are two options for representing them:
     `refWeatherObserved`) which will capture the associated weather conditions.
 -   B/ Adding weather-related properties defined at
     [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md).
+
+### Representing Frequency Data
+
+As the number of frequencies collected may vary from the ISO standard it is
+suggested that anything outside of this range be omitted and if frequencies
+within this range are missing the values are set to 0
 
 **Note**: JSON Schemas are intended to capture the data type and associated
 constraints of the different Attributes, regardless their final representation
@@ -190,6 +209,72 @@ Normalized NGSI Response
                 "value": "A-weighted, equivalent, day period, sound level"
             }
         }
+    },
+    "frequencies": {
+        "value": {
+            "100": {
+                "value": 40
+            },
+            "125": {
+                "value": 40
+            },
+            "160": {
+                "value": 40
+            },
+            "200": {
+                "value": 40
+            },
+            "250": {
+                "value": 40
+            },
+            "315": {
+                "value": 40
+            },
+            "400": {
+                "value": 40
+            },
+            "500": {
+                "value": 40
+            },
+            "630": {
+                "value": 40
+            },
+            "800": {
+                "value": 40
+            },
+            "1000": {
+                "value": 40
+            },
+            "1250": {
+                "value": 40
+            },
+            "1600": {
+                "value": 40
+            },
+            "2000": {
+                "value": 40
+            },
+            "2500": {
+                "value": 40
+            },
+            "3150": {
+                "value": 40
+            },
+            "4000": {
+                "value": 40
+            },
+            "8000": {
+                "value": 40
+            },
+            "10000": {
+                "value": 40
+            }
+        },
+        "metadata": {
+            "description": {
+                "value": "A-weighted, frequency, sound level "
+            }
+        }
     }
 }
 ```
@@ -211,6 +296,27 @@ Sample uses simplified representation for data consumers `?options=keyValues`
     "location": {
         "type": "Point",
         "coordinates": [-2.698, 42.8491]
+    },
+    "frequencies": {
+        "100": 40,
+        "125": 40,
+        "160": 40,
+        "200": 40,
+        "250": 40,
+        "315": 40,
+        "400": 40,
+        "500": 40,
+        "630": 40,
+        "800": 40,
+        "1000": 40,
+        "1250": 40,
+        "1600": 40,
+        "2000": 40,
+        "2500": 40,
+        "3150": 40,
+        "4000": 40,
+        "8000": 40,
+        "10000": 40
     }
 }
 ```
