@@ -9,16 +9,39 @@ Copyright (c) 2019 FIWARE Foundation e.V.
 Author: José M. Cantera
 """
 
-import sys
 import json
+import yaml
 import os
 from datetime import datetime
+from argparse import ArgumentParser
 
 # Here the aggregated @context will be stored
 aggregated_context = {
 }
 
-schema_url = 'https://fiware.github.io/dataModels/{}'
+# Here a list of mappings (attribute -> schema/spec) will be stored
+mapping_list = {
+    "attributes": {}
+}
+
+# Here a list of spec alerts will be stored
+alert_list = [
+]
+
+# Template to prepare a valid URL of a schema for a mapping
+schema_url = 'https://github.com/FIWARE/dataModels/blob/master/{}'
+
+# Agri* schemas stores at another github organization
+agri_url = 'https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/{}.md'
+agri_mapping = {
+    'AgriCrop': 'Agri-Crop',
+    'AgriGreenhouse': 'Agri-Greenhouse',
+    'AgriParcelOperation': 'Agri-Parcel-Operation',
+    'AgriParcelRecord': 'Agri-Parcel-Record',
+    'AgriParcel': 'Agri-Parcel',
+    'AgriPest': 'Agri-Pest',
+    'AgriProductType': 'Agri-Product-Type'
+}
 
 
 def read_json(infile):
@@ -30,8 +53,14 @@ def read_json(infile):
 
 def write_json(data, outfile):
     with open(outfile, 'w') as data_file:
-        data_file.write(json.dumps(data))
+        data_file.write(json.dumps(data, indent=4))
         data_file.write("\n")
+
+
+def write_yaml(data, outfile):
+    with open(outfile, 'w') as data_file:
+        data_file.write(yaml.dump(data))
+
 
 # Finds a node in a JSON Schema
 # (previously parsed as a Python dictionary)
@@ -140,7 +169,7 @@ def generate_ld_context(properties, uri_prefix, predefined_mappings):
 
 
 # Extracts from the schema the relevant JSON-LD @context
-def schema_2_ld_context(f, schema, uri_prefix, predefined_mappings):
+def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
     properties = extract_properties(schema)
     entity_type = extract_entity_type(schema)
     enumerations = extract_enumerations(schema)
@@ -151,7 +180,7 @@ def schema_2_ld_context(f, schema, uri_prefix, predefined_mappings):
         all_properties, uri_prefix, predefined_mappings)
 
     if entity_type is not None:
-        ld_context[entity_type] = schema_url.format(f.split('../')[1])
+        ld_context[entity_type] = uri_prefix + '/' + 'entity-types' + '/' + entity_type
 
     return ld_context
 
@@ -170,10 +199,35 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings):
     global aggregated_context
 
     schema = read_json(f)
-    ld_context = schema_2_ld_context(f, schema, uri_prefix, predefined_mappings)
+    ld_context = schema_2_ld_context(schema, uri_prefix, predefined_mappings)
 
     for p in ld_context:
         aggregated_context[p] = ld_context[p]
+
+        if p not in mapping_list['attributes']:
+            mapping_list['attributes'][p] = dict()
+            mapping_list['attributes'][p]['specs'] = list()
+            mapping_list['attributes'][p]['schemas'] = list()
+
+        mapping_list['attributes'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
+
+        try:
+            spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
+            spec2 = os.path.join(f.rsplit('/', 1)[0], 'doc/introduction.md')
+            if os.path.isfile(spec1):
+                mapping_list['attributes'][p]['specs'].append(schema_url.format(spec1.split('../')[1]))
+            elif os.path.isfile(spec2):
+                mapping_list['attributes'][p]['specs'].append(schema_url.format(spec2.split('../')[1]))
+            elif 'AgriFood' in f:
+                agri_type = f.split('AgriFood/')[1].split('/schema.json')[0]
+                if agri_type in agri_mapping:
+                    mapping_list['attributes'][p]['specs'].append(agri_url.format(agri_mapping[agri_type]))
+                else:
+                    alert_list.append('spec file not found: ' + f)
+            else:
+                alert_list.append('spec file not found: ' + f)
+        except UnboundLocalError:
+            pass
 
 
 def write_context_file():
@@ -185,22 +239,27 @@ def write_context_file():
     }
 
     write_json(ld_context, 'context.jsonld')
+    write_yaml(mapping_list, 'mapping_list.yml')
 
 
 def main(args):
-    uri_prefix = args[2]
+    uri_prefix = args.u
 
     predefined_mappings = read_json('ldcontext_mappings.json')
 
-    process_file(args[1], uri_prefix, predefined_mappings)
+    process_file(args.f, uri_prefix, predefined_mappings)
 
     write_context_file()
+
+    print("\n".join(set(alert_list)))
 
 
 # Entry point
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
-        print("Usage: ldcontext_generator [folder] [URI prefix]")
-        exit(-1)
+    parser = ArgumentParser()
+    parser.add_argument('-f', required=True, help='folder')
+    parser.add_argument('-u', required=True, help='URI prefix')
 
-    main(sys.argv)
+    arguments = parser.parse_args()
+
+    main(arguments)
