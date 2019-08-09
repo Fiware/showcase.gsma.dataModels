@@ -4,17 +4,18 @@
 
 ## Overview
 
-It performs data harvesting using IPMA's data site as the origin and Orion
-Context Broker as the destination.
+It performs data harvesting using IPMA's data site as the origin and Orion Context Broker as the destination. It uses 
+predefined list of stations (./stations.yml), that can be obtained by other 
+[harvester](https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation/harvesters/portugal).
 
 ## How to run
 
 ```console
-docker run -d fiware/harvesters:weather-observed-portugal \
+docker run -d -v ${PATH_TO_STATION_FILE}:/opt/stations.yml \
+           fiware/harvesters:weather-observed-portugal \
            --timeout ${TIMEOUT} \
            --latest \
            --orion ${ORION_ENDPOINT} \
-           --path ${FIWARE_SERVICEPATH} \
            --service ${FIWARE_SERVICE} \
            --config ${PATH_TO_CONFIG}
 ```

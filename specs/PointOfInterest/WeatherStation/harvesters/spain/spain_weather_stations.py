@@ -5,12 +5,12 @@
     This program collects information about Spain weather stations and Spain municipalities from AEMET and INE and
     prepares config that can be used by harvester itself to upload the list of Spain weather stations to
     Orion Context Broker or export data required by other weather harvesters:
-      - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherObserved
-      - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherForecast
+      - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherObserved/harvesters/spain
+      - https://github.com/FIWARE/dataModels/tree/master/specs/Weather/WeatherForecast/harvesters/spain
 
     It also exports data to the CSV file (./stations.csv), that can be used to upload the list of weather stations
     to Google Maps:
-      - https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw&usp=sharing .
+      - https://www.google.com/maps/d/viewer?mid=1Sd5uNFd2um0GPog2EGkyrlzmBnEKzPQw .
 
     if AEMET data should be used, you must provide a valid API key, that can be obtained via email:
      - https://opendata.aemet.es/centrodedescargas/altaUsuario?.
@@ -54,7 +54,6 @@ default_limit_entities = 50           # amount of entities per 1 request to Orio
 default_limit_targets = 50            # amount of parallel request to Orion
 default_log_level = 'INFO'
 default_orion = 'http://orion:1026'
-default_timeout = -1                  # if value != -1, then work as a service
 
 http_ok = [200, 201, 204]
 
@@ -576,6 +575,7 @@ if __name__ == '__main__':
 
             for element in res:
                 writer.writerow(element)
+
     if args.yml:
         with open(stations_file_yml, 'w', encoding='utf8') as file:
             file.write(dump(res, indent=4, allow_unicode=True))

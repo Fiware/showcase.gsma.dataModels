@@ -4,7 +4,7 @@
 """
     This program collects Spain weather observations from AEMET and uploads them to the Orion Context Broker.
     It uses predefined list of stations (./stations.yml), that can be obtained by other harvester:
-      - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation
+      - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation/harvesters/spain
 
     You must provide a valid API key to collect data from AEMET data portal. That key can be obtained via email
       - https://opendata.aemet.es/centrodedescargas/altaUsuario?.
@@ -130,7 +130,7 @@ def collect(key):
         return False
 
     if result.status_code not in http_ok:
-        logger.error('Collecting link from AEMET failed due to the return code')
+        logger.error('Collecting link from AEMET failed due to the return code %s', result.status_code)
         return False
 
     logger.debug('Remaining requests %s', result.headers.get('Remaining-request-count'))
@@ -143,7 +143,7 @@ def collect(key):
         return False
 
     if result.status_code not in http_ok:
-        logger.error('Collecting data from AEMET failed due to the return code')
+        logger.error('Collecting data from AEMET failed due to the return code %s', result.status_code)
         return False
 
     result = loads(result.text)
@@ -390,7 +390,6 @@ def setup_stations(stations_limit, station_file):
             result[station]['coordinates'] = [source['stations'][station]['longitude'],
                                               source['stations'][station]['latitude']]
             result[station]['name'] = source['stations'][station]['locality']
-            result[station]['timestamp'] = None
 
     if limit_on:
         if len(result) != len(stations_limit['include']):

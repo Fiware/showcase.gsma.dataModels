@@ -4,13 +4,15 @@
 
 ## Overview
 
-It performs data harvesting using AEMET's data site as the origin and Orion
-Context Broker as the destination.
+It performs data harvesting using AEMET's data site as the origin and Orion Context Broker as the destination. It uses
+predefined list of stations (./stations.yml), that can be obtained by other
+[harvester](https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation/harvesters/spain).
 
 ## How to run
 
 ```console
-docker run -d fiware/harvesters:weather-forecast-spain \
+docker run -d -v ${PATH_TO_STATION_FILE}:/opt/stations.yml \
+           fiware/harvesters:weather-forecast-spain \
            --timeout ${TIMEOUT} \
            --latest \
            --orion ${ORION_ENDPOINT} \

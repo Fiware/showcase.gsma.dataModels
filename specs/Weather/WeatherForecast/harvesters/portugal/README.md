@@ -4,8 +4,7 @@
 
 ## Overview
 
-It performs data harvesting using IPMA's data site as the origin and Orion
-Context Broker as the destination.
+It performs data harvesting using IPMA's data site as the origin and Orion Context Broker as the destination.
 
 ## How to run
 
@@ -14,7 +13,6 @@ docker run -d fiware/harvesters:weather-forecast-portugal \
            --timeout ${TIMEOUT} \
            --latest \
            --orion ${ORION_ENDPOINT} \
-           --path ${FIWARE_SERVICEPATH} \
            --service ${FIWARE_SERVICE} \
            --config ${PATH_TO_CONFIG}
 ```

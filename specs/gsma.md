@@ -124,7 +124,7 @@ Below there is a description of the harmonized data currently published
 | WeatherObserved    | weather        | Weather observations from Spain and Portugal |
 | WeatherForecast    | weather        | Weather forecasts from Spain and Portugal    |
 | Alert              | weather        | Weather alerts from Spain                    |
-| PointOfInterest    | poi            | Points of interest in Spain                  |
+| PointOfInterest    | poi            | Points of interest in Spain and Portugal     |
 
 ### Examples
 

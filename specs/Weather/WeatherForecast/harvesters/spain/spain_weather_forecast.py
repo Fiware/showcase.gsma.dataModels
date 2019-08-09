@@ -4,7 +4,7 @@
 """
     This program collects Spain weather forecasts from AEMET and uploads them to the Orion Context Broker.
     It use predefined list of municipalities (./stations.yml), that can be obtained by other harvester:
-      - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation
+      - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation/harvesters/spain
 
     You must provide a valid API key to collect data from AEMET data portal. That key can be obtained via email
       - https://opendata.aemet.es/centrodedescargas/altaUsuario?.
@@ -348,7 +348,7 @@ def decode_wind_direction(item):
         'C': 'Calm'
     }.get(item, None)
 
-    if out is None:
+    if out is None and item is not '':
         logger.error('Unknown value of WindDirection detected, "%s"', item)
 
     if out == 'Calm':
