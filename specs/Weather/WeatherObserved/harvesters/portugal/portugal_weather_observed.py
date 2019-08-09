@@ -3,8 +3,8 @@
 
 """
     This program collects Portugal weather observations from IPMA and uploads them to the Orion Context Broker.
-    It uploads the list of stations on the fly from
-      - http://api.ipma.pt/open-data/observation/meteorology/stations/obs-surface.geojson.
+    It uses predefined list of stations (./stations.yml), that can be obtained by other harvester:
+      - https://github.com/FIWARE/dataModels/tree/master/specs/PointOfInterest/WeatherStation
 
     Legal notes:
       - http://www.ipma.pt/en/siteinfo/index.html?page=index.xml
@@ -39,6 +39,7 @@ default_latest = False                # preserve only latest values
 default_limit_entities = 50           # amount of entities per 1 request to Orion
 default_limit_target = 50             # amount of parallel request to Orion
 default_log_level = 'INFO'
+default_station_file = 'stations.yml' # source file with list of municipalities
 default_orion = 'http://orion:1026'   # Orion Contest Broker endpoint
 default_timeout = -1                  # if value != -1, then work as a service
 
@@ -52,12 +53,8 @@ stations = dict()                     # preprocessed list of stations
 stations_file = 'stations.json'       # source file with list of stations
 
 tz = timezone('UTC')
-tz_wet = timezone('Europe/Lisbon')
-tz_azot = timezone('Atlantic/Azores')
-tz_azot_codes = ['932', '501', '502', '504', '506', '507', '510', '511', '512', '513', '515']
 
 url_observation = 'https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json'
-url_stations = 'http://api.ipma.pt/open-data/observation/meteorology/stations/obs-surface.geojson'
 
 template = {
     'id': 'urn:ngsi-ld:WeatherObserved:Portugal-WeatherObserved-',
@@ -405,12 +402,11 @@ def setup_logger():
     return local_logger, local_logger_req
 
 
-def setup_stations(stations_limit):
+def setup_stations(stations_limit, station_file):
     result = dict()
-    limit_on = False
+    source = None
     limit_off = False
-    content = None
-    resp = None
+    limit_on = False
 
     if 'include' in stations_limit:
         limit_on = True
@@ -418,35 +414,29 @@ def setup_stations(stations_limit):
         limit_off = True
 
     try:
-        resp = get(url_stations)
-    except exceptions.ConnectionError:
-        logger.error('Collecting the list of stations from IPMA failed due to connection problem')
+        with open(station_file, 'r') as f:
+            source = load(f)
+
+    except FileNotFoundError:
+        logger.error('Station file is not present')
         exit(1)
 
-    if resp.status_code in http_ok:
-        content = loads(resp.text)['features']
-    else:
-        logger.error('Collecting the list of stations from IPMA failed due to the return code %s', resp.status_code)
-        exit(1)
-
-    for station in content:
-        station_code = str(station['properties']['idEstacao'])
-
+    for station in source['stations']:
+        check = True
         if limit_on:
-            if station_code not in stations_limit['include']:
-                continue
+            if station not in stations_limit['include']:
+                check = False
         if limit_off:
-            if station_code in stations_limit['exclude']:
-                continue
+            if station in stations_limit['exclude']:
+                check = False
 
-        result[station_code] = dict()
-        result[station_code]['name'] = sanitize(station['properties']['localEstacao'])
-        result[station_code]['coordinates'] = station['geometry']['coordinates']
+        if check:
 
-        if station_code in tz_azot_codes:
-            result[station_code]['timezone'] = tz_azot
-        else:
-            result[station_code]['timezone'] = tz_wet
+            result[station] = dict()
+
+            result[station]['coordinates'] = [source['stations'][station]['longitude'],
+                                              source['stations'][station]['latitude']]
+            result[station]['name'] = source['stations'][station]['locality']
 
     if limit_on:
         if len(result) != len(stations_limit['include']):
@@ -534,6 +524,11 @@ if __name__ == '__main__':
                         action='store',
                         dest="service",
                         help='FIWARE Service')
+    parser.add_argument('--stations',
+                        action='store',
+                        default=default_station_file,
+                        dest="station_file",
+                        help='Station file')
     parser.add_argument('--timeout',
                         action='store',
                         default=default_timeout,
@@ -558,7 +553,7 @@ if __name__ == '__main__':
     set_event_loop_policy(EventLoopPolicy())
 
     res = setup_stations_config(args.config)
-    stations = setup_stations(res)
+    stations = setup_stations(res, args.station_file)
 
     reply_status()
 

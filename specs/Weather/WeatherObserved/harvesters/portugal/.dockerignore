@@ -1,2 +1,5 @@
 .*
+*.md
+*.yml
+!*example*
 Dockerfile

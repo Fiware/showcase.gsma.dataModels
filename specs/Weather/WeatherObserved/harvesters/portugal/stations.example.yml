@@ -1,0 +1,182 @@
+stations:
+    '501': {latitude: 39.4582, locality: Flores Aeroporto, longitude: -31.1301, timezone: Atlantic/Azores}
+    '502': {latitude: 39.6739, locality: Corvo Aeródromo, longitude: -31.1136, timezone: Atlantic/Azores}
+    '504': {latitude: 38.5522, locality: Pico Aeródromo, longitude: -28.4414, timezone: Atlantic/Azores}
+    '506': {latitude: 38.5408, locality: Horta Obs. Príncipe Alberto Mónaco, longitude: -28.6322,
+        timezone: Atlantic/Azores}
+    '507': {latitude: 39.0904, locality: Graciosa Aeródromo, longitude: -28.0285,
+        timezone: Atlantic/Azores}
+    '510': {latitude: 38.66, locality: São Jorge, longitude: -28.17, timezone: Atlantic/Azores}
+    '511': {latitude: 38.6659, locality: Angra do Heroísmo, longitude: -27.2166, timezone: Atlantic/Azores}
+    '512': {latitude: 37.7441, locality: Ponta Delgada Aeroporto, longitude: -25.6953,
+        timezone: Atlantic/Azores}
+    '513': {latitude: 37.7464, locality: Ponta Delgada Obs. Afonso Chaves, longitude: -25.6623,
+        timezone: Atlantic/Azores}
+    '515': {latitude: 36.9672, locality: Santa Maria Aeroporto, longitude: -25.1679,
+        timezone: Atlantic/Azores}
+    '521': {latitude: 32.6969, locality: Santa Catarina Aeroporto, longitude: -16.7761,
+        timezone: Europe/Lisbon}
+    '522': {latitude: 32.6479, locality: Funchal, longitude: -16.888, timezone: Europe/Lisbon}
+    '524': {latitude: 33.074, locality: Porto Santo Aeroporto, longitude: -16.3487,
+        timezone: Europe/Lisbon}
+    '531': {latitude: 39.38, locality: Cabo Carvoeiro, longitude: -9.4074, timezone: Europe/Lisbon}
+    '533': {latitude: 37.0128, locality: Sagres, longitude: -8.9491, timezone: Europe/Lisbon}
+    '535': {latitude: 38.7191, locality: Lisboa Geofísico, longitude: -9.1497, timezone: Europe/Lisbon}
+    '541': {latitude: 37.9545, locality: Sines, longitude: -8.8383, timezone: Europe/Lisbon}
+    '545': {latitude: 41.2335, locality: Porto Aeroporto, longitude: -8.6813, timezone: Europe/Lisbon}
+    '548': {latitude: 40.1501, locality: Coimbra Aeródromo, longitude: -8.4667, timezone: Europe/Lisbon}
+    '551': {latitude: 41.6489, locality: 'Viana Castelo, Chafé', longitude: -8.8046,
+        timezone: Europe/Lisbon}
+    '554': {latitude: 37.0166, locality: Faro Aeroporto, longitude: -7.972, timezone: Europe/Lisbon}
+    '558': {latitude: 38.5334, locality: Évora Aeródromo, longitude: -7.8834, timezone: Europe/Lisbon}
+    '560': {latitude: 40.7149, locality: Viseu Aeródromo, longitude: -7.8959, timezone: Europe/Lisbon}
+    '562': {latitude: 38.0249, locality: Beja, longitude: -7.8673, timezone: Europe/Lisbon}
+    '566': {latitude: 41.309, locality: Vila Real Cidade, longitude: -7.7405, timezone: Europe/Lisbon}
+    '567': {latitude: 41.2742, locality: Vila Real, longitude: -7.7171, timezone: Europe/Lisbon}
+    '568': {latitude: 40.4114, locality: Penhas Douradas, longitude: -7.5587, timezone: Europe/Lisbon}
+    '570': {latitude: 39.8334, locality: Castelo Branco, longitude: -7.4668, timezone: Europe/Lisbon}
+    '571': {latitude: 39.2955, locality: Portalegre, longitude: -7.42, timezone: Europe/Lisbon}
+    '575': {latitude: 41.8039, locality: Bragança, longitude: -6.7428, timezone: Europe/Lisbon}
+    '577': {latitude: 37.5471, locality: 'Odemira, S. Teotónio', longitude: -8.729,
+        timezone: Europe/Lisbon}
+    '579': {latitude: 38.7662, locality: Lisboa G.Coutinho, longitude: -9.1275, timezone: Europe/Lisbon}
+    '604': {latitude: 41.9667, locality: V.N.Cerveira Aeródromo, longitude: -8.6668,
+        timezone: Europe/Lisbon}
+    '605': {latitude: 42.0667, locality: 'Monção, Valinha', longitude: -8.3833, timezone: Europe/Lisbon}
+    '610': {latitude: 41.695, locality: Viana do Castelo Cidade, longitude: -8.8292,
+        timezone: Europe/Lisbon}
+    '611': {latitude: 41.8228, locality: Montalegre, longitude: -7.788, timezone: Europe/Lisbon}
+    '612': {latitude: 41.8434, locality: Vinhais, longitude: -7.0034, timezone: Europe/Lisbon}
+    '615': {latitude: 41.7501, locality: Ponte de Lima Escola agrícola, longitude: -8.5667,
+        timezone: Europe/Lisbon}
+    '616': {latitude: 41.7252, locality: Chaves Aeródromo, longitude: -7.4654, timezone: Europe/Lisbon}
+    '619': {latitude: 41.7167, locality: Cabril, longitude: -8.0167, timezone: Europe/Lisbon}
+    '622': {latitude: 41.5668, locality: 'Braga, Merelim', longitude: -8.45, timezone: Europe/Lisbon}
+    '630': {latitude: 41.5333, locality: Cabeceiras de Basto, longitude: -7.9667,
+        timezone: Europe/Lisbon}
+    '632': {latitude: 41.5148, locality: Mirandela, longitude: -7.1908, timezone: Europe/Lisbon}
+    '633': {latitude: 41.5667, locality: 'Macedo de Cavaleiros, Bagueixe', longitude: -6.7833,
+        timezone: Europe/Lisbon}
+    '635': {latitude: 41.5167, locality: Miranda do Douro, longitude: -6.2833, timezone: Europe/Lisbon}
+    '637': {latitude: 41.3333, locality: Mogadouro, longitude: -6.7333, timezone: Europe/Lisbon}
+    '643': {latitude: 41.2737, locality: Paços Ferreira, longitude: -8.3801, timezone: Europe/Lisbon}
+    '644': {latitude: 41.2333, locality: Carrazêda de Ansiães, longitude: -7.2833,
+        timezone: Europe/Lisbon}
+    '649': {latitude: 41.1844, locality: 'Porto, S. Gens', longitude: -8.6445, timezone: Europe/Lisbon}
+    '654': {latitude: 41.1833, locality: Moncorvo, longitude: -7.0167, timezone: Europe/Lisbon}
+    '655': {latitude: 41.1728, locality: 'Pinhão, Santa Bárbara', longitude: -7.549,
+        timezone: Europe/Lisbon}
+    '657': {latitude: 41.1459, locality: Luzim, longitude: -8.249, timezone: Europe/Lisbon}
+    '663': {latitude: 40.9833, locality: Moimenta da Beira, longitude: -7.6, timezone: Europe/Lisbon}
+    '666': {latitude: 40.7833, locality: 'Trancoso, Bandarra', longitude: -7.3667,
+        timezone: Europe/Lisbon}
+    '669': {latitude: 40.9333, locality: Arouca, longitude: -8.25, timezone: Europe/Lisbon}
+    '671': {latitude: 40.75, locality: Fig. de Castelo Rodrigo Vila Torpim, longitude: -6.8833,
+        timezone: Europe/Lisbon}
+    '683': {latitude: 40.5333, locality: Guarda, longitude: -7.2667, timezone: Europe/Lisbon}
+    '685': {latitude: 40.5167, locality: Nelas, longitude: -7.85, timezone: Europe/Lisbon}
+    '687': {latitude: 40.2643, locality: Covilhã Aeródromo, longitude: -7.4823, timezone: Europe/Lisbon}
+    '690': {latitude: 40.3543, locality: Aldeia Souto Quinta Lageosa, longitude: -7.3893,
+        timezone: Europe/Lisbon}
+    '697': {latitude: 40.1439, locality: Lousã Aeródromo, longitude: -8.2441, timezone: Europe/Lisbon}
+    '698': {latitude: 40.1406, locality: Fundão, longitude: -7.5536, timezone: Europe/Lisbon}
+    '702': {latitude: 40.6353, locality: Aveiro Universidade, longitude: -8.6596,
+        timezone: Europe/Lisbon}
+    '704': {latitude: 40.446, locality: Dunas de Mira, longitude: -8.7617, timezone: Europe/Lisbon}
+    '705': {latitude: 40.4389, locality: Anadia, longitude: -8.44, timezone: Europe/Lisbon}
+    '707': {latitude: 40.2135, locality: 'Coimbra, Bencanta', longitude: -8.4552,
+        timezone: Europe/Lisbon}
+    '713': {latitude: 40.1398, locality: 'Figueira da Foz, Vila Verde', longitude: -8.8059,
+        timezone: Europe/Lisbon}
+    '716': {latitude: 39.9, locality: Ansião, longitude: -8.4, timezone: Europe/Lisbon}
+    '718': {latitude: 39.7806, locality: Leiria Aeródromo, longitude: -8.8182, timezone: Europe/Lisbon}
+    '721': {latitude: 39.7636, locality: São Pedro de Moel, longitude: -9.0306, timezone: Europe/Lisbon}
+    '724': {latitude: 39.6, locality: 'Tomar, Valdonas', longitude: -8.3667, timezone: Europe/Lisbon}
+    '726': {latitude: 39.5167, locality: Alcobaça, longitude: -8.9667, timezone: Europe/Lisbon}
+    '729': {latitude: 39.35, locality: Rio Maior, longitude: -8.9333, timezone: Europe/Lisbon}
+    '734': {latitude: 39.2012, locality: 'Santarém, Fonte Boa', longitude: -8.7367,
+        timezone: Europe/Lisbon}
+    '739': {latitude: 39.0439, locality: 'Torres Vedras, Dois Portos', longitude: -9.179,
+        timezone: Europe/Lisbon}
+    '744': {latitude: 38.941, locality: Coruche Est. de Regadio  I.N.I.A., longitude: -8.5107,
+        timezone: Europe/Lisbon}
+    '746': {latitude: 39.1259, locality: Santa Cruz Aeródromo, longitude: -9.379,
+        timezone: Europe/Lisbon}
+    '750': {latitude: 38.7817, locality: Cabo da Roca, longitude: -9.4975, timezone: Europe/Lisbon}
+    '762': {latitude: 38.7096, locality: 'Lisboa, Tapada da Ajuda', longitude: -9.1828,
+        timezone: Europe/Lisbon}
+    '765': {latitude: 38.709, locality: Cabo Raso, longitude: -9.4854, timezone: Europe/Lisbon}
+    '766': {latitude: 38.6745, locality: 'Barreiro, Lavradio', longitude: -9.0477,
+        timezone: Europe/Lisbon}
+    '767': {latitude: 38.6508, locality: Pegões, longitude: -8.635, timezone: Europe/Lisbon}
+    '770': {latitude: 38.61, locality: Setúbal Est. de Fruticultura, longitude: -8.8,
+        timezone: Europe/Lisbon}
+    '773': {latitude: 38.6171, locality: 'Almada, P.Rainha', longitude: -9.2128, timezone: Europe/Lisbon}
+    '776': {latitude: 38.3667, locality: 'Alcácer do Sal, Barrosinha', longitude: -8.4833,
+        timezone: Europe/Lisbon}
+    '783': {latitude: 37.9468, locality: Alvalade, longitude: -8.3945, timezone: Europe/Lisbon}
+    '788': {latitude: 37.582, locality: Zambujeira, longitude: -8.7429, timezone: Europe/Lisbon}
+    '789': {latitude: 37.3168, locality: Aljezur, longitude: -8.8, timezone: Europe/Lisbon}
+    '790': {latitude: 37.3143, locality: Foía, longitude: -8.5957, timezone: Europe/Lisbon}
+    '800': {latitude: 40.3392, locality: 'Sabugal, Martim Rei', longitude: -7.0369,
+        timezone: Europe/Lisbon}
+    '803': {latitude: 39.8667, locality: Zebreira, longitude: -7.0167, timezone: Europe/Lisbon}
+    '806': {latitude: 39.7333, locality: 'ProençaaNova, P.Moitas', longitude: -7.8667,
+        timezone: Europe/Lisbon}
+    '812': {latitude: 39.4667, locality: Alvega, longitude: -8.05, timezone: Europe/Lisbon}
+    '824': {latitude: 39.1, locality: 'Avis, Benavila Esc. Abreu Callado', longitude: -7.8667,
+        timezone: Europe/Lisbon}
+    '835': {latitude: 38.8908, locality: Elvas, longitude: -7.1398, timezone: Europe/Lisbon}
+    '837': {latitude: 38.8667, locality: Estremoz, longitude: -7.5167, timezone: Europe/Lisbon}
+    '840': {latitude: 38.4849, locality: 'Reguengos, S.Pedro do Corval', longitude: -7.4729,
+        timezone: Europe/Lisbon}
+    '847': {latitude: 38.3319, locality: Viana do Alentejo, longitude: -8.0455, timezone: Europe/Lisbon}
+    '851': {latitude: 38.2007, locality: Amareleja, longitude: -7.2261, timezone: Europe/Lisbon}
+    '863': {latitude: 37.75, locality: 'Mértola, Vale Formoso', longitude: -7.55,
+        timezone: Europe/Lisbon}
+    '864': {latitude: 37.5766, locality: 'Castro Verde, N.Corvo', longitude: -7.9721,
+        timezone: Europe/Lisbon}
+    '865': {latitude: 37.4333, locality: 'Alcoutim, Mart.Longo', longitude: -7.7667,
+        timezone: Europe/Lisbon}
+    '866': {latitude: 37.1871, locality: Vila Real de S.António, longitude: -7.4163,
+        timezone: Europe/Lisbon}
+    '867': {latitude: 37.2167, locality: Castro Marim RN Sapal, longitude: -7.45,
+        timezone: Europe/Lisbon}
+    '878': {latitude: 37.1492, locality: Portimão Aeródromo, longitude: -8.5814, timezone: Europe/Lisbon}
+    '879': {latitude: 37.0128, locality: 'PortimÃ£o, Praia da Rocha', longitude: -8.9489,
+        timezone: Europe/Lisbon}
+    '881': {latitude: 37.033, locality: 'Olhão, EPPO', longitude: -7.821, timezone: Europe/Lisbon}
+    '903': {latitude: 41.1526, locality: 'Porto, Massarelos', longitude: -8.626, timezone: Europe/Lisbon}
+    '932': {latitude: 37.8326, locality: 'S. Miguel, Nordeste', longitude: -25.1501,
+        timezone: Atlantic/Azores}
+    '956': {latitude: 32.8675, locality: 'Madeira, Porto Moniz', longitude: -17.1714,
+        timezone: Europe/Lisbon}
+    '960': {latitude: 32.8345, locality: 'Madeira, S. Jorge, Santana', longitude: -16.9062,
+        timezone: Europe/Lisbon}
+    '965': {latitude: 32.8082, locality: 'Madeira, Santana', longitude: -16.8864,
+        timezone: Europe/Lisbon}
+    '967': {latitude: 32.8002, locality: 'Madeira, São Vicente', longitude: -17.0447,
+        timezone: Europe/Lisbon}
+    '970': {latitude: 32.7565, locality: 'Madeira, Bica da Cana', longitude: -17.0577,
+        timezone: Europe/Lisbon}
+    '971': {latitude: 32.6365, locality: 'Funchal, Lido', longitude: -16.9356, timezone: Europe/Lisbon}
+    '972': {latitude: 32.6935, locality: Pico Alto, longitude: -16.904, timezone: Europe/Lisbon}
+    '973': {latitude: 32.7167, locality: 'Madeira, Areeiro', longitude: -16.9167,
+        timezone: Europe/Lisbon}
+    '974': {latitude: 32.7351, locality: 'Madeira, Pico do Areeiro', longitude: -16.9283,
+        timezone: Europe/Lisbon}
+    '975': {latitude: 32.7259, locality: 'Madeira, Santo da Serra', longitude: -16.8168,
+        timezone: Europe/Lisbon}
+    '976': {latitude: 32.6758, locality: 'Monte ', longitude: -16.9069, timezone: Europe/Lisbon}
+    '978': {latitude: 32.747, locality: 'Madeira, Caniçal, S. Lourenço', longitude: -16.706,
+        timezone: Europe/Lisbon}
+    '980': {latitude: 32.831, locality: 'Madeira, Lombo da Terça', longitude: -17.202,
+        timezone: Europe/Lisbon}
+    '984': {latitude: 32.663, locality: 'Madeira, Quinta Grande', longitude: -17.015,
+        timezone: Europe/Lisbon}
+    '986': {latitude: 32.6815, locality: 'Madeira, Ponta do Sol', longitude: -17.1042,
+        timezone: Europe/Lisbon}
+    '987': {latitude: 32.7572, locality: 'Madeira, Prazeres', longitude: -17.2016,
+        timezone: Europe/Lisbon}
+    '990': {latitude: 32.8167, locality: 'Madeira, Calheta', longitude: -17.2667,
+        timezone: Europe/Lisbon}

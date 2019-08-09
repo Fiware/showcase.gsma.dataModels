@@ -390,7 +390,6 @@ def setup_stations(stations_limit, station_file):
             result[station]['coordinates'] = [source['stations'][station]['longitude'],
                                               source['stations'][station]['latitude']]
             result[station]['name'] = source['stations'][station]['locality']
-            result[station]['timestamp'] = None
 
     if limit_on:
         if len(result) != len(stations_limit['include']):
