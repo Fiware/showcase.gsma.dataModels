@@ -1,8 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-Extracts the properties, types and  enumerations of a JSON Schema
-converting them into terms of a JSON-LD @Context
+This script provides two files:
+ - context.jsonld, that serves https://schema.lab.fiware.org/ld/fiware-datamodels-context.jsonld
+ - mapping_list.yml, that serves  https://uri.fiware.org/ns/datamodels
+
+context.jsonld is combined by extracting the properties, types and  enumerations of a JSON Schema and
+converting them into terms of a JSON-LD @Context. mapping_list.yml uses the result of extracting
+to prepare a list of terms with schemas and specifications.
 
 Copyright (c) 2019 FIWARE Foundation e.V.
 
@@ -21,7 +26,7 @@ aggregated_context = {
 
 # Here a list of mappings (attribute -> schema/spec) will be stored
 mapping_list = {
-    "attributes": {}
+    "terms": {}
 }
 
 # Here a list of spec alerts will be stored
@@ -153,17 +158,17 @@ def generate_ld_context(properties, uri_prefix, predefined_mappings):
         if p.startswith('ref'):
             context[p] = {
                 '@type': '@id',
-                '@id': uri_prefix + '/' + p
+                '@id': uri_prefix + '#' + p
             }
         elif p.startswith('date'):
             context[p] = {
                 '@type': 'http://uri.etsi.org/ngsi-ld/DateTime',
-                '@id': uri_prefix + '/' + p
+                '@id': uri_prefix + '#' + p
             }
         elif p in predefined_mappings:
             context[p] = predefined_mappings[p]
         else:
-            context[p] = uri_prefix + '/' + p
+            context[p] = uri_prefix + '#' + p
 
     return context
 
@@ -180,7 +185,7 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
         all_properties, uri_prefix, predefined_mappings)
 
     if entity_type is not None:
-        ld_context[entity_type] = uri_prefix + '/' + 'entity-types' + '/' + entity_type
+        ld_context[entity_type] = uri_prefix + '#' + entity_type
 
     return ld_context
 
@@ -204,24 +209,24 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings):
     for p in ld_context:
         aggregated_context[p] = ld_context[p]
 
-        if p not in mapping_list['attributes']:
-            mapping_list['attributes'][p] = dict()
-            mapping_list['attributes'][p]['specs'] = list()
-            mapping_list['attributes'][p]['schemas'] = list()
+        if p not in mapping_list['terms']:
+            mapping_list['terms'][p] = dict()
+            mapping_list['terms'][p]['specs'] = list()
+            mapping_list['terms'][p]['schemas'] = list()
 
-        mapping_list['attributes'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
+        mapping_list['terms'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
 
         try:
             spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
             spec2 = os.path.join(f.rsplit('/', 1)[0], 'doc/introduction.md')
             if os.path.isfile(spec1):
-                mapping_list['attributes'][p]['specs'].append(schema_url.format(spec1.split('../')[1]))
+                mapping_list['terms'][p]['specs'].append(schema_url.format(spec1.split('../')[1]))
             elif os.path.isfile(spec2):
-                mapping_list['attributes'][p]['specs'].append(schema_url.format(spec2.split('../')[1]))
+                mapping_list['terms'][p]['specs'].append(schema_url.format(spec2.split('../')[1]))
             elif 'AgriFood' in f:
                 agri_type = f.split('AgriFood/')[1].split('/schema.json')[0]
                 if agri_type in agri_mapping:
-                    mapping_list['attributes'][p]['specs'].append(agri_url.format(agri_mapping[agri_type]))
+                    mapping_list['terms'][p]['specs'].append(agri_url.format(agri_mapping[agri_type]))
                 else:
                     alert_list.append('spec file not found: ' + f)
             else:
