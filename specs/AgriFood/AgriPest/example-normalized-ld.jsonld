@@ -34,7 +34,7 @@
     "agroVocConcept": {
         "type": "Property",
         "value": "http://aims.fao.org/aos/agrovoc/c_31924"
-    }
+    },
     "description": {
         "type": "Property",
         "value": "Common European grasshopper"

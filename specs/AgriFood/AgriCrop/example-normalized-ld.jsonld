@@ -38,7 +38,7 @@
                 "applicationEntityId": "app:weat"
             }
         ]
-    }
+    },
     "agriSoil": {
         "type": "Relationship",
         "object": [
