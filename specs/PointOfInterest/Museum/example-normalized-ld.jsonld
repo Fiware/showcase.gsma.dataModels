@@ -68,7 +68,7 @@
         "value": {
             "addressCountry": "ES",
             "addressLocality": "Barcelona",
-            "streetAddress": "Plaza Dels \u00c0ngels, 1",
+            "streetAddress": "Plaza Dels Àngels, 1",
             "type": "PostalAddress"
         }
     },
@@ -81,7 +81,7 @@
         "value": "Museo de Arte Contemporaneo de Barcelona"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

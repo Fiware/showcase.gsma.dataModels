@@ -1,7 +1,7 @@
 {
     "@context": [
-        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ],
     "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
     "type": "AgriParcelRecord",
@@ -18,7 +18,7 @@
     },
     "seeAlso": {
         "type": "Property",
-        "value" :[
+        "value": [
             "https://example.org/concept/agriparcelrec",
             "https://datamodel.org/example/agriparcelrec"
         ]

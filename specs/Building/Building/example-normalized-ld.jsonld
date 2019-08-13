@@ -83,7 +83,11 @@
     },
     "openingHours": {
         "type": "Property",
-        "value": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]
+        "value": [
+            "Mo-Fr 10:00-19:00",
+            "Sa 10:00-22:00",
+            "Su 10:00-21:00"
+        ]
     },
     "dataProvider": {
         "type": "Property",
@@ -120,7 +124,7 @@
         }
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

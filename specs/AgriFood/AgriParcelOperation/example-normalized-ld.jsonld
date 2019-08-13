@@ -1,7 +1,7 @@
 {
     "@context": [
-        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ],
     "id": "urn:ngsi-ld:AgriParcelOperation:e1e9d3a3-074f-46f1-9375-52000d05a62b",
     "type": "AgriParcelOperation",
@@ -18,7 +18,7 @@
     },
     "seeAlso": {
         "type": "Property",
-        "value" :[
+        "value": [
             "https://example.org/concept/agriparcelop",
             "https://datamodel.org/example/agriparcelop"
         ]
@@ -42,16 +42,16 @@
     "plannedStartAt": {
         "type": "Property",
         "value": {
-	    "@type": "DateTime",
-	    "@value": "2016-08-22T10:18:16Z"
-	}
+            "@type": "DateTime",
+            "@value": "2016-08-22T10:18:16Z"
+        }
     },
     "plannedEndAt": {
         "type": "Property",
         "value": {
-	    "@type": "DateTime",
-	    "@value": "2016-08-22T10:18:16Z"
-	}
+            "@type": "DateTime",
+            "@value": "2016-08-22T10:18:16Z"
+        }
     },
     "status": {
         "type": "Property",
@@ -64,23 +64,23 @@
     "startedAt": {
         "type": "Property",
         "value": {
-	    "@type": "DateTime",
-	    "@value": "2016-08-22T10:18:16Z"
-	}
+            "@type": "DateTime",
+            "@value": "2016-08-22T10:18:16Z"
+        }
     },
     "endedAt": {
         "type": "Property",
         "value": {
-	    "@type": "DateTime",
-	    "@value": "2016-08-22T10:18:16Z"
-	}
+            "@type": "DateTime",
+            "@value": "2016-08-22T10:18:16Z"
+        }
     },
     "reportedAt": {
         "type": "Property",
         "value": {
-	    "@type": "DateTime",
-	    "@value": "2016-08-22T10:18:16Z"
-	}
+            "@type": "DateTime",
+            "@value": "2016-08-22T10:18:16Z"
+        }
     },
     "agriProduct": {
         "type": "Relationship",

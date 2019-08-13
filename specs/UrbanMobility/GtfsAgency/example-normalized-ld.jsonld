@@ -3,7 +3,7 @@
     "type": "GtfsAgency",
     "name": {
         "type": "Property",
-        "value": "Empresa Malague\u00f1a de Transportes"
+        "value": "Empresa Malagueña de Transportes"
     },
     "language": {
         "type": "Property",
@@ -22,7 +22,7 @@
         "value": "Europe/Madrid"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

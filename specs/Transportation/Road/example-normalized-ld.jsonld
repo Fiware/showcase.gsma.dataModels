@@ -14,11 +14,11 @@
     },
     "description": {
         "type": "Property",
-        "value": "Autov\u00eda de Castilla"
+        "value": "Autovía de Castilla"
     },
     "responsible": {
         "type": "Property",
-        "value": "Ministerio de Fomento - Gobierno de Espa\u00f1a"
+        "value": "Ministerio de Fomento - Gobierno de España"
     },
     "length": {
         "type": "Property",
@@ -33,7 +33,7 @@
         "value": "A-62"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

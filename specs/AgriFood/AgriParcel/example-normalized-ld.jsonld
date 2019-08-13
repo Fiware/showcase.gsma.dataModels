@@ -1,7 +1,7 @@
 {
     "@context": [
-        "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ],
     "id": "urn:ngsi-ld:AgriParcel:72d9fb43-53f8-4ec8-a33c-fa931360259a",
     "type": "AgriParcel",
@@ -58,7 +58,7 @@
     },
     "seeAlso": {
         "type": "Property",
-        "value" :[
+        "value": [
             "https://example.org/concept/agriparcel",
             "https://datamodel.org/example/agriparcel"
         ]
@@ -93,9 +93,9 @@
     "lastPlantedAt": {
         "type": "Property",
         "value": {
-	    "@type": "DateTime",
-	    "@value": "2016-08-22T10:18:16Z"
-	}
+            "@type": "DateTime",
+            "@value": "2016-08-22T10:18:16Z"
+        }
     },
     "agriSoil": {
         "type": "Relationship",

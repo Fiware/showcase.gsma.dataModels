@@ -48,7 +48,7 @@
         "type": "Property",
         "value": {
             "addressCountry": "ES",
-            "addressLocality": "Vilagarc\u00eda de Arousa",
+            "addressLocality": "Vilagarcía de Arousa",
             "type": "PostalAddress"
         }
     },
@@ -69,7 +69,7 @@
         "value": "Playa de a Concha"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

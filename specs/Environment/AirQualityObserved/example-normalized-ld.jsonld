@@ -5,7 +5,7 @@
         "type": "Property",
         "value": "2016-03-15T11:00:00/2016-03-15T12:00:00"
     },
-	"areaServed": {
+    "areaServed": {
         "type": "Property",
         "value": "Brooklands"
     },
@@ -72,7 +72,7 @@
         "value": {
             "addressCountry": "ES",
             "addressLocality": "Madrid",
-            "streetAddress": "Plaza de Espa\u00f1a",
+            "streetAddress": "Plaza de España",
             "type": "PostalAddress"
         }
     },
@@ -98,7 +98,7 @@
         "value": "moderate"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

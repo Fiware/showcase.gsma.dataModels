@@ -13,7 +13,7 @@
     },
     "name": {
         "type": "Property",
-        "value": "Agencia de Innovaci\u00f3n"
+        "value": "Agencia de Innovación"
     },
     "allowedVehicleType": {
         "type": "Property",
@@ -45,7 +45,7 @@
         "type": "Property",
         "value": {
             "addressLocality": "Valladolid",
-            "addressCountry": "Espa\u00f1a",
+            "addressCountry": "España",
             "streetAddress": "Paseo de Zorrilla, 191",
             "type": "PostalAddress"
         }
@@ -61,7 +61,7 @@
         }
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }

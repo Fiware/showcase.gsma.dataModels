@@ -51,8 +51,8 @@
         "type": "Property",
         "value": {
             "addressCountry": "MX",
-            "addressLocality": "Ciudad de M\u00e9xico",
-            "streetAddress": "Colegio Franco-Ingl\u00e9s",
+            "addressLocality": "Ciudad de México",
+            "streetAddress": "Colegio Franco-Inglés",
             "type": "PostalAddress"
         }
     },
@@ -61,7 +61,7 @@
         "value": "moderate"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.lab.fiware.org/ld/context"
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }
