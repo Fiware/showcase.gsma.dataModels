@@ -34,7 +34,8 @@ alert_list = [
 ]
 
 # Template to prepare a valid URL of a schema for a term mapping
-schema_url = 'https://github.com/FIWARE/dataModels/blob/master/{}'
+schema_url = 'https://fiware.github.io/dataModels/{}'
+specification_url = 'https://github.com/FIWARE/dataModels/blob/master/{}'
 
 # Agri* schemas stores at another github organization
 agri_url = 'https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/{}.md'
@@ -219,9 +220,9 @@ def find_file(f, terms_mappings):
         spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
         spec2 = os.path.join(f.rsplit('/', 1)[0], 'doc/introduction.md')
         if os.path.isfile(spec1):
-            return schema_url.format(spec1.split('../')[1])
+            return specification_url.format(spec1.split('../')[1])
         elif os.path.isfile(spec2):
-            return schema_url.format(spec2.split('../')[1])
+            return specification_url.format(spec2.split('../')[1])
         elif 'AgriFood' in f:
             agri_type = f.split('AgriFood/')[1].split('/schema.json')[0]
             if agri_type in terms_mappings:
