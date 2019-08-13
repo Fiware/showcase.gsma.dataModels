@@ -208,7 +208,10 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings, terms_mappings):
         terms_list['terms'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
 
         file_to_add = find_file(f, terms_mappings)
-        (terms_list['terms'][p]['specifications'].append(file_to_add) if file_to_add else alert_list.append(f))
+        if file_to_add:
+            terms_list['terms'][p]['specifications'].append(file_to_add)
+        else:
+            alert_list.append(f)
 
 
 def find_file(f, terms_mappings):
