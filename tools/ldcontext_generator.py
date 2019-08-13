@@ -24,29 +24,20 @@ from argparse import ArgumentParser
 aggregated_context = {
 }
 
-# Here a list of mappings (attribute -> schema/spec) will be stored
-mapping_list = {
+# Here a list of mappings (terms->schemas/specifications) will be stored
+terms_list = {
     "terms": {}
 }
 
-# Here a list of spec alerts will be stored
+# Here a list of terms alerts will be stored
 alert_list = [
 ]
 
-# Template to prepare a valid URL of a schema for a mapping
+# Template to prepare a valid URL of a schema for a term mapping
 schema_url = 'https://github.com/FIWARE/dataModels/blob/master/{}'
 
 # Agri* schemas stores at another github organization
 agri_url = 'https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/{}.md'
-agri_mapping = {
-    'AgriCrop': 'Agri-Crop',
-    'AgriGreenhouse': 'Agri-Greenhouse',
-    'AgriParcelOperation': 'Agri-Parcel-Operation',
-    'AgriParcelRecord': 'Agri-Parcel-Record',
-    'AgriParcel': 'Agri-Parcel',
-    'AgriPest': 'Agri-Pest',
-    'AgriProductType': 'Agri-Product-Type'
-}
 
 
 def read_json(infile):
@@ -190,17 +181,17 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
     return ld_context
 
 
-def process_file(input_file, uri_prefix, predefined_mappings):
+def process_file(input_file, uri_prefix, predefined_mappings, terms_mappings):
     if os.path.isfile(input_file) and input_file.endswith('schema.json'):
         print(input_file)
-        aggregate_ld_context(input_file, uri_prefix, predefined_mappings)
+        aggregate_ld_context(input_file, uri_prefix, predefined_mappings, terms_mappings)
     elif os.path.isdir(input_file):
         for f in (os.listdir(input_file)):
             process_file(os.path.join(input_file, f),
-                         uri_prefix, predefined_mappings)
+                         uri_prefix, predefined_mappings, terms_mappings)
 
 
-def aggregate_ld_context(f, uri_prefix, predefined_mappings):
+def aggregate_ld_context(f, uri_prefix, predefined_mappings, terms_mappings):
     global aggregated_context
 
     schema = read_json(f)
@@ -209,30 +200,35 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings):
     for p in ld_context:
         aggregated_context[p] = ld_context[p]
 
-        if p not in mapping_list['terms']:
-            mapping_list['terms'][p] = dict()
-            mapping_list['terms'][p]['specs'] = list()
-            mapping_list['terms'][p]['schemas'] = list()
+        # adding related specifications and schemas
+        if p not in terms_list['terms']:
+            terms_list['terms'][p] = {'specifications': list(),
+                                      'schemas': list()}
 
-        mapping_list['terms'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
+        terms_list['terms'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
 
-        try:
-            spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
-            spec2 = os.path.join(f.rsplit('/', 1)[0], 'doc/introduction.md')
-            if os.path.isfile(spec1):
-                mapping_list['terms'][p]['specs'].append(schema_url.format(spec1.split('../')[1]))
-            elif os.path.isfile(spec2):
-                mapping_list['terms'][p]['specs'].append(schema_url.format(spec2.split('../')[1]))
-            elif 'AgriFood' in f:
-                agri_type = f.split('AgriFood/')[1].split('/schema.json')[0]
-                if agri_type in agri_mapping:
-                    mapping_list['terms'][p]['specs'].append(agri_url.format(agri_mapping[agri_type]))
-                else:
-                    alert_list.append('spec file not found: ' + f)
+        file_to_add = find_file(f, terms_mappings)
+        (terms_list['terms'][p]['specifications'].append(file_to_add) if file_to_add else alert_list.append(f))
+
+
+def find_file(f, terms_mappings):
+    try:
+        spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
+        spec2 = os.path.join(f.rsplit('/', 1)[0], 'doc/introduction.md')
+        if os.path.isfile(spec1):
+            return schema_url.format(spec1.split('../')[1])
+        elif os.path.isfile(spec2):
+            return schema_url.format(spec2.split('../')[1])
+        elif 'AgriFood' in f:
+            agri_type = f.split('AgriFood/')[1].split('/schema.json')[0]
+            if agri_type in terms_mappings:
+                return agri_url.format(terms_mappings[agri_type])
             else:
-                alert_list.append('spec file not found: ' + f)
-        except UnboundLocalError:
-            pass
+                return None
+        else:
+            return None
+    except UnboundLocalError:
+        pass
 
 
 def write_context_file():
@@ -244,19 +240,21 @@ def write_context_file():
     }
 
     write_json(ld_context, 'context.jsonld')
-    write_yaml(mapping_list, 'mapping_list.yml')
+    write_yaml(terms_list, 'terms_list.yml')
 
 
 def main(args):
     uri_prefix = args.u
 
     predefined_mappings = read_json('ldcontext_mappings.json')
+    terms_mappings = read_json('ldcontext_terms_mappings.json')
 
-    process_file(args.f, uri_prefix, predefined_mappings)
+    process_file(args.f, uri_prefix, predefined_mappings, terms_mappings)
 
     write_context_file()
 
-    print("\n".join(set(alert_list)))
+    print("specification file was  not found for this files")
+    print("\n".join(sorted(set(alert_list))))
 
 
 # Entry point
