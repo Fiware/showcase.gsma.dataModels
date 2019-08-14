@@ -29,7 +29,8 @@ terms_list = {
     "terms": {}
 }
 
-# The list of terms alerts will be stored here (if the specification file associated with the term doesn't exists)
+# The list of terms alerts will be stored here (if the specification file
+# associated with the term doesn't exist)
 alert_list = [
 ]
 
@@ -185,7 +186,11 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
 def process_file(input_file, uri_prefix, predefined_mappings, terms_mappings):
     if os.path.isfile(input_file) and input_file.endswith('schema.json'):
         print(input_file)
-        aggregate_ld_context(input_file, uri_prefix, predefined_mappings, terms_mappings)
+        aggregate_ld_context(
+            input_file,
+            uri_prefix,
+            predefined_mappings,
+            terms_mappings)
     elif os.path.isdir(input_file):
         for f in (os.listdir(input_file)):
             process_file(os.path.join(input_file, f),
@@ -208,7 +213,8 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings, terms_mappings):
             terms_list['terms'][p] = {'specifications': list(),
                                       'schemas': list()}
 
-        terms_list['terms'][p]['schemas'].append(schema_url.format(f.split('../')[1]))
+        terms_list['terms'][p]['schemas'].append(
+            schema_url.format(f.split('../')[1]))
 
         file_to_add = find_file(f, terms_mappings)
         if file_to_add:
