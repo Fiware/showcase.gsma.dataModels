@@ -11,7 +11,7 @@ to prepare a list of terms with schemas and specifications.
 
 Copyright (c) 2019 FIWARE Foundation e.V.
 
-Author: José M. Cantera
+Authors: José M. Cantera, Dmitrii Demin
 """
 
 import json
@@ -20,16 +20,16 @@ import os
 from datetime import datetime
 from argparse import ArgumentParser
 
-# Here the aggregated @context will be stored
+# The aggregated @context will be stored here
 aggregated_context = {
 }
 
-# Here a list of mappings (terms->schemas/specifications) will be stored
+# The list of mappings (term->schema/specification) will be stored here
 terms_list = {
     "terms": {}
 }
 
-# Here a list of terms alerts will be stored
+# The list of terms alerts will be stored here (if the specification file associated with the term doesn't exists)
 alert_list = [
 ]
 
@@ -37,7 +37,7 @@ alert_list = [
 schema_url = 'https://fiware.github.io/dataModels/{}'
 specification_url = 'https://github.com/FIWARE/dataModels/blob/master/{}'
 
-# Agri* schemas stores at another github organization
+# Agri* schemas stored at another github organization
 agri_url = 'https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/{}.md'
 
 
@@ -194,6 +194,8 @@ def process_file(input_file, uri_prefix, predefined_mappings, terms_mappings):
 
 def aggregate_ld_context(f, uri_prefix, predefined_mappings, terms_mappings):
     global aggregated_context
+    global terms_list
+    global alert_list
 
     schema = read_json(f)
     ld_context = schema_2_ld_context(schema, uri_prefix, predefined_mappings)
@@ -215,6 +217,7 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings, terms_mappings):
             alert_list.append(f)
 
 
+# Finds the specification file associated with the term
 def find_file(f, terms_mappings):
     try:
         spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
