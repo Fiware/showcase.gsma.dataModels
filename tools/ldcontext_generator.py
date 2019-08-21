@@ -36,7 +36,7 @@ alert_list = [
 
 # Template to prepare a valid URL of a schema for a term mapping
 schema_url = 'https://fiware.github.io/dataModels/{}'
-specification_url = 'https://github.com/FIWARE/dataModels/blob/master/{}'
+specification_url = 'https://fiware-datamodels.readthedocs.io/en/latest/{}'
 
 # Agri* schemas stored at another github organization
 agri_url = 'https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/{}.md'
@@ -172,13 +172,18 @@ def schema_2_ld_context(schema, uri_prefix, predefined_mappings):
     entity_type = extract_entity_type(schema)
     enumerations = extract_enumerations(schema)
 
-    all_properties = properties + enumerations
+    ld_context = dict()
 
-    ld_context = generate_ld_context(
-        all_properties, uri_prefix, predefined_mappings)
+    ld_context['Attribute'] = generate_ld_context(
+        properties, uri_prefix, predefined_mappings)
+
+    ld_context['Enumeration Value'] = generate_ld_context(
+        enumerations, uri_prefix, predefined_mappings)
+
+    ld_context['Entity Type'] = dict()
 
     if entity_type is not None:
-        ld_context[entity_type] = uri_prefix + '#' + entity_type
+        ld_context['Entity Type'][entity_type] = uri_prefix + '#' + entity_type
 
     return ld_context
 
@@ -205,22 +210,24 @@ def aggregate_ld_context(f, uri_prefix, predefined_mappings, terms_mappings):
     schema = read_json(f)
     ld_context = schema_2_ld_context(schema, uri_prefix, predefined_mappings)
 
-    for p in ld_context:
-        aggregated_context[p] = ld_context[p]
+    for t in ld_context:
+        for p in ld_context[t]:
+            aggregated_context[p] = ld_context[t][p]
 
-        # adding related specifications and schemas
-        if p not in terms_list['terms']:
-            terms_list['terms'][p] = {'specifications': list(),
-                                      'schemas': list()}
+            # adding related specifications and schemas
+            if p not in terms_list['terms']:
+                terms_list['terms'][p] = {'specifications': list(),
+                                          'schemas': list(),
+                                          'type': t}
 
-        terms_list['terms'][p]['schemas'].append(
-            schema_url.format(f.split('../')[1]))
+            terms_list['terms'][p]['schemas'].append(
+                schema_url.format(f.split('../')[1]))
 
-        file_to_add = find_file(f, terms_mappings)
-        if file_to_add:
-            terms_list['terms'][p]['specifications'].append(file_to_add)
-        else:
-            alert_list.append(f)
+            file_to_add = find_file(f, terms_mappings)
+            if file_to_add:
+                terms_list['terms'][p]['specifications'].append(file_to_add)
+            else:
+                alert_list.append(f)
 
 
 # Finds the specification file associated with the term
@@ -229,9 +236,11 @@ def find_file(f, terms_mappings):
         spec1 = os.path.join(f.rsplit('/', 1)[0], 'doc/spec.md')
         spec2 = os.path.join(f.rsplit('/', 1)[0], 'doc/introduction.md')
         if os.path.isfile(spec1):
-            return specification_url.format(spec1.split('../')[1])
+            path = str(spec1.split('../specs/')[1]).split('/spec.md')[0] + '/spec/'
+            return specification_url.format(path)
         elif os.path.isfile(spec2):
-            return specification_url.format(spec2.split('../')[1])
+            path = str(spec2.split('../specs/')[1]).split('/introduction.md')[0] + '/introduction/'
+            return specification_url.format(path)
         elif 'AgriFood' in f:
             agri_type = f.split('AgriFood/')[1].split('/schema.json')[0]
             if agri_type in terms_mappings:
