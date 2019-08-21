@@ -102,7 +102,7 @@ The data model is defined as shown below:
 
     -   Attribute Type: [Organization](https://schema.org/organization)
     -   Normative References:
-        [https://schema.org/organization](https://schema.org/organization
+        [https://schema.org/organization](https://schema.org/organization)
     -   Optional
 
 -   `calculationMethod` : The calculation method used.

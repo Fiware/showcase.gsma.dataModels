@@ -48,7 +48,7 @@ The data model is defined as shown below:
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
     -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
-    -  Mandatory
+    -   Mandatory
 
 -   `description`: Same as GTFS `route_desc`.
 
