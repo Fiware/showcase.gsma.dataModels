@@ -1,6 +1,6 @@
 # Beach
 
-**Note: The latest version of this Data Model can be 
+**Note: The latest version of this Data Model can be
 found at [https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
 
 ## Description
@@ -31,7 +31,7 @@ used by applications.
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 -   `dateModified` : Last update timestamp of this entity.
@@ -50,15 +50,15 @@ used by applications.
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Mandatory
 -   `alternateName` : Alternative name for this beach.
-
+    -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
     -   Optional
 
 -   `description` : Description of this beach.
 
-    -   Normative References:
-        [https://schema.org/description](https://schema.org/description)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `location` : Location of this beach represented by a GeoJSON geometry,

@@ -1,6 +1,6 @@
 # Device Model
 
-**Note: The latest version of this Data Model can be 
+**Note: The latest version of this Data Model can be
 found at [https://github.com/smart-data-models/dataModel.Device](https://github.com/smart-data-models/dataModel.Device)**
 
 ## Description
@@ -17,13 +17,13 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. Text or URL
+    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 -   `category` : Device's category(ies).
@@ -142,13 +142,13 @@ The data model is defined as shown below:
     -   Mandatory
 
 -   `name` : Name given to this device model.
-
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
     -   Mandatory
 
 -   `description` : Device's description
-
-    -   Normative References: [description](https://schema.org/description)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `documentation` : A link to device's documentation.

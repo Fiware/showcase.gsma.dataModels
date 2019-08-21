@@ -1,6 +1,6 @@
 # Air Quality Observed
 
-**Note: The latest version of this Data Model can be 
+**Note: The latest version of this Data Model can be
 found at [https://github.com/smart-data-models/dataModel.Environment](https://github.com/smart-data-models/dataModel.Environment)**
 
 ## Description
@@ -21,7 +21,7 @@ A JSON Schema corresponding to this data model can be found
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 -   `dateModified` : Last update timestamp of this entity.
@@ -40,19 +40,19 @@ A JSON Schema corresponding to this data model can be found
     -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Mandatory if `address` is not defined.
-	
+
 -   `address` : Civic address of the air quality observation. Sometimes it
     corresponds to the air quality station address.
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
     -   Mandatory if `location` is not present.
-	
+
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
     -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an ISO8601
         interval represented as [Text](https://schema.org/Text).
     -   Mandatory
-	
+
 -   `areaServed` : Higher level area to which this air quality measurement belongs to. It
     can be used to group air quality measurements per district, neighbourhood, etc.
     -   Attribute type: [Text](https://schema.org/Text)
@@ -139,7 +139,8 @@ measurand, ex. CO. The structure of such an attribute will be as follows:
         -   Type: [Text](https://schema.org/Text)
         -   Mandatory
     -   `description` : short description of the measurand
-        -   Type: [Text](https://schema.org/Text)
+        -   Attribute type: Property. [Text](https://schema.org/Text)
+        -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
         -   Optional
 
 ### Representing qualitative levels of the different air pollutants

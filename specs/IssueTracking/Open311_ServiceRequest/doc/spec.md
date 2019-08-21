@@ -21,12 +21,12 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. Text or URL
+    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 The following fields defined by Open 311 are allowed to be attributes of this
@@ -41,6 +41,8 @@ entity type:
 -   `service_name`
 
 -   `description`
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
 
 -   `agency_responsible`. Please note that this is semantically equivalent to
     the [provider](http://schema.org/provider) property (name subproperty) of
@@ -92,7 +94,9 @@ following property must be added:
 
 -   `location` : Location of the area on which this service request is
     concerned.
-    -   Attribute type: Property. GeoJSON geometry.
+    -   Attribute type: GeoProperty. `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Mandatory if the service request is geolocated.
 
 Additionally, applications might use the following standard schema.org

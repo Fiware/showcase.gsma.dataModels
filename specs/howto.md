@@ -282,9 +282,13 @@ and so also include standard GSMA terminology such as:
 -   `owner`: An array of URIs or pointers to NGSI entities representing the
     owner(s) of the entity.
 -   `source`: A pointer (eventually an URI) to the service providing the data.
--   `name`: A mnemonic name given to the entity.
--   `alternateName`: An alternative mnemonic name given to the entity.
--   `description`: A textual description of the entity.
+-   `name`: A mnemonic name given to the entity as per
+    [schema.org](http://schema.org/name) defined within the core context as `https://uri.etsi.org/ngsi-ld/name`
+
+-   `alternateName`: An alternative mnemonic name given to the entity as per
+    [schema.org](http://schema.org/alternateName)
+-   `description`: A textual description of the entity as per
+    [schema.org](http://schema.org/description) defined within the core context as `https://uri.etsi.org/ngsi-ld/description`
 -   `dataProvider`: A name identifying the entity providing the data.
 
 See for example the [`Building` Data Model](Building/Building/doc/spec.md).

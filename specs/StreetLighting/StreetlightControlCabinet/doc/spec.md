@@ -1,6 +1,6 @@
 # Streetlight control cabinet
 
-**Note: The latest version of this Data Model can be 
+**Note: The latest version of this Data Model can be
 found at [https://github.com/smart-data-models/dataModel.Streetlighting](https://github.com/smart-data-models/dataModel.Streetlighting)**
 
 It represents equipment, usually on street, used to the automated control of a
@@ -16,13 +16,13 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. Text or URL
+    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 -   `location` : Control cabinet's location represented by a GeoJSON point.
@@ -34,6 +34,7 @@ The data model is defined as shown below:
 
 -   `address` : Civic address where the control cabinet is located.
 
+    -   Attribute type: Property. [Address](https://schema.org/address)
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
     -   Mandatory if `location` is not present.
@@ -46,7 +47,7 @@ The data model is defined as shown below:
     -   Optional
 
 -   `serialNumber` : Serial number of the control cabinet.
-
+    -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/serialNumber](https://schema.org/serialNumber)
     -   Optional

@@ -21,7 +21,7 @@ The data model is defined as shown below:
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 -   `dateCreated` : Entity's creation timestamp.
@@ -42,6 +42,7 @@ The data model is defined as shown below:
 -   `name`: Same as GTFS `agency_name`.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
     -   Mandatory
 
 -   `page`: Same as GTFS `agency_url`.
@@ -69,8 +70,9 @@ The data model is defined as shown below:
     -   Optional
 
 -   `address`: Agency's civic address.
-    -   Attribute type: Property.
-        [PostalAddress](https://schema.org/PostalAddress)
+    -   Attribute type: Property. [Address](https://schema.org/address)
+    -   Normative References:
+        [https://schema.org/address](https://schema.org/address)
     -   Optional
 
 ## Examples

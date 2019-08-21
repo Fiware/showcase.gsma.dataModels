@@ -1,6 +1,6 @@
 # Off Street Parking
 
-**Note: The latest version of this Data Model can be 
+**Note: The latest version of this Data Model can be
 found at [https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
 
 ## Description
@@ -25,13 +25,13 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. Text or URL
+    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
     information
 
-    -   Attribute type: Property. URL
+    -   Attribute type: Property. [URL](https://schema.org/URL)
     -   Optional
 
 -   `dateCreated` : Entity's creation timestamp
@@ -39,7 +39,7 @@ The data model is defined as shown below:
     -   Attribute type: Property. [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
-        -   Attribute type: Text or URL
+        -   Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
         -   Optional
 
 -   `dateModified` : Last update timestamp of this entity
@@ -72,19 +72,20 @@ The data model is defined as shown below:
 
 -   `address` : Registered parking site civic address.
 
+    -   Attribute type: Property. [Address](https://schema.org/address)
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
     -   Mandatory if `location` is not defined.
 
 -   `name` : Name given to the parking site.
-
-    -   Normative References: [https://schema.org/name](https://schema.org/name)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
     -   Mandatory
 
 -   `description` : Description about the parking site.
 
-    -   Normative References:
-        [https://schema.org/description](https://schema.org/description)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `image` : A URL containing a photo of this parking site.
@@ -389,7 +390,7 @@ The data model is defined as shown below:
     -   Optional
 
 -   `provider` : Parking site service provider.
-
+    -   Attribute Type: Property. [Provider](http://schema.org/provider)
     -   Normative references:
         [https://schema.org/provider](https://schema.org/provider)
     -   Optional

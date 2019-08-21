@@ -26,7 +26,7 @@ The proposed model for the animal entity has the following properties:
 -   id: unique identifier
 -   type: Entity type. It must be equal to “Animal”
 -   species: Species to which the animal belongs
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Allowed values: (dairy cattle, beef cattle, sheep, goat, horse, pig)
     -   Mandatory
 -   relatedSource: ID of the animal in external applications
@@ -38,17 +38,17 @@ The proposed model for the animal entity has the following properties:
             -   Type: Text
     -   Optional
 -   legalID: Legal ID of the animal:
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Mandatory
 -   birthdate: Animal’s birthdate
-    -   Attribute type: DateTime
+    -   Attribute type: [DateTime](https://schema.org/DateTime)
     -   Mandatory
 -   sex: Sex of the animal
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Allowed values: (female, male)
     -   Mandatory
 -   breed: Breed of the animal
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Optional
 -   calvedBy: Mother of the animal
     -   Attribute type: Relationship
@@ -57,7 +57,7 @@ The proposed model for the animal entity has the following properties:
     -   Attribute type: Relationship
     -   Optional
 -   location: Location of the animal represented by a GeoJSON geometry.
-    -   Attribute type: geo:json.
+    -   Attribute type: GeoProperty. `geo:json`.
     -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Attribute metadata:
@@ -84,19 +84,19 @@ The proposed model for the animal entity has the following properties:
             -   Type: DateTime
     -   Optional
 -   phenologicalCondition: Phenological condition of the animal
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Attribute metadata:
         -   timestamp: optional timestamp for the observed value.
             -   Type: DateTime
     -   Optional
 -   reproductiveCondition: Reproductive condition of the animal
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Attribute metadata:
         -   timestamp: optional timestamp for the observed value.
             -   Type: DateTime
     -   Optional
 -   healthCondition: Health condition of the animal
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Attribute metadata:
         -   timestamp: optional timestamp for the observed value.
             -   Type: DateTime
@@ -108,7 +108,7 @@ The proposed model for the animal entity has the following properties:
         -   Type: DateTime
     -   Optional
 -   welfareCondition: Indicator of the animal welfare
-    -   Attribute type: Text
+    -   Attribute type: [Text](https://schema.org/Text)
     -   Attribute metadata:
         -   timestamp: optional timestamp for the observed value.
             -   Type: DateTime

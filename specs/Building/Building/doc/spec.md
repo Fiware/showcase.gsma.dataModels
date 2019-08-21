@@ -61,7 +61,9 @@ For a full description of the following attributes refer to GSMA
     -   Required
 
 -   `location`
-
+    -   Attribute type: GeoProperty. `geo:json`.
+    -   Normative References:
+        [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     -   Optional.
 
 -   `containedInPlace`
@@ -69,11 +71,15 @@ For a full description of the following attributes refer to GSMA
     -   Optional.
 
 -   `address`
-
+    -   Attribute type: Property. [Address](https://schema.org/address)
+    -   Normative References:
+        [https://schema.org/address](https://schema.org/address)
     -   Required
 
 -   `description`
 
+    -   Attribute type: Property. [Text](https://schema.org/Text)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `occupier`
