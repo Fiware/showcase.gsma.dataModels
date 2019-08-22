@@ -37,8 +37,8 @@ The data model is defined as shown below:
 -   `source` : A sequence of characters giving the original source of the Entity
     data as a URL. It shall point to the URL of the original GTFS feed used to
     generate this Entity.
-    -  Attribute type: Property. [URL](https://schema.org/URL)
-    -  Mandatory
+    -   Attribute type: Property. [URL](https://schema.org/URL)
+    -   Mandatory
 
 -   `name`: Same as GTFS `agency_name`.
 
