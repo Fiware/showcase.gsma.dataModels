@@ -54,23 +54,23 @@ complement a GTFS static file.
         [StructuredValue](https://schema.org/StructuredValue)
     -   Subproperties (items):
         -   `arrivalDelay`: Delay in seconds (positive or negative). 0 means
-            that the vehicle is on time + Type:
-            [Integer](https://schema.org/Integer) + Optional. Necessary to
-            create GTFS-RT feeds
+            that the vehicle is on time
+            -  Type: [Integer](https://schema.org/Integer)
+            -  Optional. Necessary to create GTFS-RT feeds
         -   `arrivalTime`: Estimated arrival time in absolute time value
-            (timestamp ISO 8601) + Type:
-            [DateTime](https://schema.org/DateTime) + Optional. Mandatory if
-            arrivalDelay is not defined
-        -   `tripId`: Identifier of the trip as defined in the associated GTFS +
-            Type: [Text](https://schema.org/Text) + Optional. Mandatory if
-            neither `vehicleId` or `vehicleLabel` are defined. Necessary to
-            create GTFS-RT feeds
-        -   `vehicleId`: Vehicle identifier corresponding to the estimate +
-            Type: [Text](https://schema.org/Text) + Optional. Mandatory if
-            neither `tripId` or `vehicleLabel` are defined
-        -   `vehicleLabel`: Human readable label to identify the vehicle + Type:
-            [Text](https://schema.org/Text) + Optional. Mandatory if neither
-            `tripId` or `vehicleId` are defined + Mandatory
+            (timestamp ISO 8601)
+            -  Type: [DateTime](https://schema.org/DateTime)
+            -  Optional. Mandatory if arrivalDelay is not defined
+        -   `tripId`: Identifier of the trip as defined in the associated GTFS
+            -   Type: [Text](https://schema.org/Text)
+            -  Optional. Mandatory if neither `vehicleId` or `vehicleLabel` are defined. Necessary to create GTFS-RT feeds
+        -   `vehicleId`: Vehicle identifier corresponding to the estimate
+            -   Type: [Text](https://schema.org/Text)
+            -  Optional. Mandatory if neither `tripId` or `vehicleLabel` are defined
+        -   `vehicleLabel`: Human readable label to identify the vehicle
+            -  Type: [Text](https://schema.org/Text)
+            -  Optional. Mandatory if neither `tripId` or `vehicleId` are defined
+
 
 ### Examples of use 1 (Normalized Format)
 

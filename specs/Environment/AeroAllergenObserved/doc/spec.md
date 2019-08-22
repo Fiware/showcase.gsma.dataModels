@@ -106,7 +106,7 @@ The structure of such an attribute will be as follows:
     allergens) is available at
     [http://www.allergen.org](http://www.allergen.org).
 
--   Attribute type: [Number](https://schema.org/Number)
+-   Attribute type: Property. [Number](https://schema.org/Number)
 
 -   Attribute value: corresponds to the concentration of the allergen as a
     number.
@@ -135,7 +135,7 @@ concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
 -   Attribute name: Equal to the name of the allergen plus the suffix `Level`,
     for instance `alnus_Level`.
--   Attribute type: [Text](https://schema.org/Text)
+-   Attribute type: Property. [Text](https://schema.org/Text)
 -   Attribute value: Example values defined by the
     [European Aeroallergen Network](https://www.ean-net.org/en/): (`none`,
     `low`, `moderate`, `high`, `veryHigh`). As this can be different between
@@ -166,7 +166,7 @@ pollen.
 
 -   Attribute name: Equal to the name of the allergen plus the suffix
     `_Allergenicity`, for instance `alnus_Allergenicity`.
--   Attribute type: [Text](https://schema.org/Text)
+-   Attribute type: Property. [Text](https://schema.org/Text)
 -   Attribute value: Example values defined by the
     [Spanish Network for Aerobiology](https://www.uco.es/rea/infor_rea/interpretacion.html):
     (`1`, `2`, `3`, `4`). As this can be different between countries,

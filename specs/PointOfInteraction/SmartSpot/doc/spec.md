@@ -56,13 +56,13 @@ The data model is defined as shown below:
 
 -   `coverageRadius` : Radius of the spot coverage area in meters.
 
-    -   Attribute Type: [Number](https://schema.org/Number)
+    -   Attribute type: Property. [Number](https://schema.org/Number)
     -   Default unit: Meters.
     -   Optional
 
 -   `announcementPeriod` : Period between announcements.
 
-    -   Attribute Type: [Number](https://schema.org/Number)
+    -   Attribute type: Property. [Number](https://schema.org/Number)
     -   Default unit: Milliseconds.
     -   Mandatory
 

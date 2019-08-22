@@ -39,7 +39,7 @@ The data model is defined as shown below:
     -   Attribute type: Property. [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
-        -   Attribute type: [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+        -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
         -   Optional
 
 -   `dateModified` : Last update timestamp of this entity

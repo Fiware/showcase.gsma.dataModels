@@ -194,7 +194,7 @@ The data model is defined as shown below:
 -   `category` : Type of asset which implements the street light.
     -   AttributeType: List of [Text](https://schema.org/Text).
     -   Allowed Values: (`postTop`, `bollard`, `lamppost`, `lightTower`,
-        `flashingBeacon`, `sideEntry`, `signLight`, `ornamentalLantern`) + Or
+        `flashingBeacon`, `sideEntry`, `signLight`, `ornamentalLantern`) or
         any other value not defined above and meaningful for the application
     -   Optional
 

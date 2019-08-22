@@ -119,19 +119,19 @@ The data model is defined as shown below:
 -   `dateServiceStarted` : Date at which the cabinet controller started giving
     service.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `dateLastProgramming` : Date at which there was a programming operation over
     the cabinet.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `nextActuationDeadline` : Deadline for next actuation to be performed
     (programming, testing, etc.).
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `responsible` : Responsible for the cabinet controller, i.e. entity in
@@ -195,7 +195,7 @@ The data model is defined as shown below:
 
 -   `dateMeteringStarted` : The starting date for metering energy consumed.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Mandatory if `energyConsumed` is present.
 
 -   `lastMeterReading` : Value of the last reading obtained from the energy
@@ -212,7 +212,7 @@ The data model is defined as shown below:
 -   `meterReadingPeriod` : The periodicity of energy consumed meter readings in
     days.
 
-    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Optional
 
 -   `frequency` : The working frequency of the circuit.
@@ -223,7 +223,7 @@ The data model is defined as shown below:
 
 -   `totalActivePower` : Active power currently consumed (counting all phases).
 
-    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Default unit: KiloWatts (kW).
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -234,7 +234,7 @@ The data model is defined as shown below:
 -   `totalReactivePower` : Reactive power currently consumed (counting all
     phases).
 
-    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Default unit: KiloVolts-Ampere-Reactive (kVArh).
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -246,7 +246,7 @@ The data model is defined as shown below:
     conveyed by subproperties which name will be equal to the name of each of
     the alternating current phases, typically R, S, T.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: Kilowatts (kW)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -258,7 +258,7 @@ The data model is defined as shown below:
     subproperties which name will be equal to the name of each of the
     alternating current phases, typically R, S, T.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: KiloVolts-Ampere-Reactive (kVArh)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -268,7 +268,7 @@ The data model is defined as shown below:
 
 -   `powerFactor` : Power factor.
 
-    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Allowed values: A number between -1 and 1.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -278,7 +278,7 @@ The data model is defined as shown below:
 
 -   `cosPhi` : "Cosin of phi" parameter.
 
-    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Allowed values: A number between -1 and 1.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -292,7 +292,7 @@ The data model is defined as shown below:
     depending on world regions. In Europe they are typically named as `R`, `S`,
     `T`.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: Ampers (A)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -306,7 +306,7 @@ The data model is defined as shown below:
     depending on world regions. In Europe they are typically named as `R`, `S`,
     `T`.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: Volts (V)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -319,7 +319,7 @@ The data model is defined as shown below:
     denoting phases can vary depending on world regions. In Europe they are
     typically named as `R`, `S`, `T`.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
     -   Allowed values: A number between 0 and 1.
     -   Optional
 
@@ -328,7 +328,7 @@ The data model is defined as shown below:
     denoting phases can vary depending on world regions. In Europe they are
     typically named as `R`, `S`, `T`.
 
-    -   Attribute Type: [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
     -   Allowed values: A number between 0 and 1.
     -   Optional
 

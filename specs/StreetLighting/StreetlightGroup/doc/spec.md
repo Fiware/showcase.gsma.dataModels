@@ -60,7 +60,7 @@ The data model is defined as shown below:
 
 -   `dateLastSwitchingOn` : Timestamp of the last switching on.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
@@ -69,7 +69,7 @@ The data model is defined as shown below:
 
 -   `dateLastSwitchingOff` : Timestamp of the last switching off.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Attribute metadata:
         -   `timestamp` : Timestamp when the last update of the attribute
             happened.
@@ -108,7 +108,7 @@ The data model is defined as shown below:
 
 -   `illuminanceLevel` : Relative illuminance level setting for the group.
 
-    -   Attribute Type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Allowed values: A number between 0 and 1.
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -128,7 +128,7 @@ The data model is defined as shown below:
 
 -   `dateModified` : Timestamp of the last update made to this entity.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 
 -   `description` : Description about the streetlight group.

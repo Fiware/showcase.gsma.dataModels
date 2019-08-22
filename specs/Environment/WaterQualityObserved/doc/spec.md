@@ -177,7 +177,7 @@ extra measurands are available as part of an observation.
 
 -   `O2` : Level of free, non-compound oxygen present.
 
-    -   Attribute type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
@@ -215,7 +215,7 @@ extra measurands are available as part of an observation.
 
 -   `NH4` : Concentration of ammonium.
 
-    -   Attribute type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
@@ -225,7 +225,7 @@ extra measurands are available as part of an observation.
 
 -   `NH3` : Concentration of ammonia.
 
-    -   Attribute type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
@@ -235,7 +235,7 @@ extra measurands are available as part of an observation.
 
 -   `Cl-` : Concentration of chlorides.
 
-    -   Attribute type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.
@@ -244,7 +244,7 @@ extra measurands are available as part of an observation.
     -   Optional
 
 -   `NO3` : Concentration of nitrates.
-    -   Attribute type: [Number](http://schema.org/Number)
+    -   Attribute type: Property. [Number](http://schema.org/Number)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
             happened.

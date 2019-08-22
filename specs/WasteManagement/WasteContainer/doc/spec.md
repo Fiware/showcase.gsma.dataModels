@@ -203,36 +203,36 @@ A JSON Schema corresponding to this data model can be found
 
 -   `dateServiceStarted` : Date at which the container started giving service.
 
-    -   Attribute Type: [Date](http://schema.org/Date)
+    -   Attribute type: Property. [Date](http://schema.org/Date)
     -   Optional
 
 -   `dateLastEmptying` : Timestamp which represents when the container was
     emptied last time.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `nextActuationDeadline` : Deadline for next actuation to be performed
     (emptying, picking up, etc.).
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `actuationHours` : Hours suitable for performing actuations over the
     container.
 
-    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Attribute type: Property. [Text](http://schema.org/Text)
     -   Normative References: Value must be compliant with
         [https://schema.org/openingHours](https://schema.org/openingHours)
 
 -   `dateLastCleaning` : When the container was cleaned last time.
 
-    -   Attribute Type: [DateTime](http://schema.org/Date)
+    -   Attribute type: Property. [DateTime](http://schema.org/Date)
     -   Optional
 
 -   `nextCleaningDeadline` : Deadline for next cleaning.
 
-    -   Attribute Type: [DateTime](http://schema.org/DateTime)
+    -   Attribute type: Property. [DateTime](http://schema.org/DateTime)
     -   Optional
 
 -   `refWasteContainerIsle` : Isle where the container is placed.
@@ -246,7 +246,7 @@ A JSON Schema corresponding to this data model can be found
     not being modelled specifically. Otherwise, `refWasteContainerIsle` should
     be used.
 
-    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Attribute type: Property. [Text](http://schema.org/Text)
     -   Optional
 
 -   `category` : Container's category.

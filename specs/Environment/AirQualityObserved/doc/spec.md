@@ -55,7 +55,7 @@ A JSON Schema corresponding to this data model can be found
 
 -   `areaServed` : Higher level area to which this air quality measurement belongs to. It
     can be used to group air quality measurements per district, neighbourhood, etc.
-    -   Attribute type: [Text](https://schema.org/Text)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/areaServed](https://schema.org/areaServed)
     -   Optional
@@ -123,7 +123,7 @@ measurand, ex. CO. The structure of such an attribute will be as follows:
 
 -   Attribute name: Equal to the name of the measurand, for instance `CO`.
 
--   Attribute type: [Number](https://schema.org/Number)
+-   Attribute type: Property. [Number](https://schema.org/Number)
 
 -   Attribute value: corresponds to the value for the measurand as a number.
 
@@ -154,7 +154,7 @@ follows:
 
 -   Attribute name: Equal to the name of the measurand plus the suffix `_Level`,
     for instance `CO_Level`.
--   Attribute type: [Text](https://schema.org/Text)
+-   Attribute type: Property. [Text](https://schema.org/Text)
 -   Attribute value: Example values defined by the USA EPA Agency:(`good`,
     `moderate`, `unhealthyForSensitiveGroups`, `unhealthy`, `veryUnhealthy`,
     `hazardous`). As this can be different between countries, regulations or

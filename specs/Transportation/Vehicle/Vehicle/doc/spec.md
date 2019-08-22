@@ -153,14 +153,14 @@ The data model is defined as shown below:
     unique within the issuing authority's region.
 
     -   Normative References: DATEXII `vehicleRegistrationPlateIdentifier`
-    -   Attribute Type: [Text](https://schema.org/Text)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Mandatory if neither `vehicleIdentificationNumber` nor `fleetVehicleId`
         is defined.
 
 -   `fleetVehicleId` : The identifier of the vehicle in the context of the fleet
     of vehicles to which it belongs.
 
-    -   Attribute Type: [Text](https://schema.org/Text)
+    -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Mandatory if neither `vehiclePlateIdentifier` nor
         `vehicleIdentificationNumber` is defined.
 

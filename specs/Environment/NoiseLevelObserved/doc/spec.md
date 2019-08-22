@@ -126,7 +126,7 @@ acoustic measurand name, as follows:
     char, such char shall be substituted by the `_` char. For instance, the
     measurand "LAeq,d" shall be represented by an Attribute which name shall be
     `LAeq_d`.
--   Attribute type: [Number](https://schema.org/Number)
+-   Attribute type: Property. [Number](https://schema.org/Number)
 -   Attribute value: corresponds to the value for the measurand as a number
     expressed in decibels.
 -   Attribute Metadata:

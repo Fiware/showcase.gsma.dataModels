@@ -45,19 +45,19 @@ The data model is defined as shown below:
 
 -   `organization` : Subject organization evaluated by the KPI.
 
-    -   Attribute Type: [Organization](https://schema.org/organization)
+    -   Attribute type: Property. [Organization](https://schema.org/organization)
     -   Normative References:
         [https://schema.org/organization](https://schema.org/organization)
     -   Mandatory
 
 -   `process` : Subject process evaluated by the KPI.
 
-    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Attribute type: Property. [Text](http://schema.org/Text)
     -   Either `process` or `product` must be defined.
 
 -   `product` : Subject _product or service_ evaluated by the KPI.
 
-    -   Attribute Type: [Product](https://schema.org/Product)
+    -   Attribute type: Property. [Product](https://schema.org/Product)
     -   Either `process` or `product` must be defined.
 
 -   `provider` : Provider of the product or service, if any, that this KPI
@@ -69,7 +69,7 @@ The data model is defined as shown below:
 -   `businessTarget` : For informative purposes, the business target to which
     this KPI is related to.
 
-    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Attribute type: Property. [Text](http://schema.org/Text)
     -   Optional
 
 -   `description` : Indicator's description.
@@ -80,7 +80,7 @@ The data model is defined as shown below:
 
 -   `calculationFrequency` : How often the KPI is calculated.
 
-    -   Attribute Type: [Text](http://schema.org/Text)
+    -   Attribute type: Property. [Text](http://schema.org/Text)
     -   Allowed values: one Of (`hourly`, `daily`, `weekly`, `monthly`,
         `yearly`, `quarterly`, `bimonthly`, `biweekly`)
         -   Or any other value meaningful for the application and not covered by
@@ -100,7 +100,7 @@ The data model is defined as shown below:
 
 -   `calculatedBy` : The organization in charge of calculating the KPI.
 
-    -   Attribute Type: [Organization](https://schema.org/organization)
+    -   Attribute type: Property. [Organization](https://schema.org/organization)
     -   Normative References:
         [https://schema.org/organization](https://schema.org/organization)
     -   Optional

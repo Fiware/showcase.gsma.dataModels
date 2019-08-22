@@ -105,7 +105,7 @@ The data model is defined as shown below:
     -   Optional
 
 -   `slope` : Slope of the access point (in relative terms).
-    -   Attribute Type: [Number](https://schema.org/Number)
+    -   Attribute type: Property. [Number](https://schema.org/Number)
     -   Attribute Value: A number between 0 and 1.
     -   Optional
 

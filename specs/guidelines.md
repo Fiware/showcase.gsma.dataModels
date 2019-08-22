@@ -80,18 +80,9 @@ section.
 -   When an entity attribute is used as a link (relationship) to other entities
     two modelling options are possible:
 
-        + A/ Name the attribute with the prefix `ref` plus the name of the target (linked) entity type. For instance `refStreetlightModel`, represents an attribute
+        -  A/ Name the attribute with the prefix `ref` plus the name of the target (linked) entity type. For instance `refStreetlightModel`, represents an attribute which contains a reference to an entity of type `StreetlightModel`. This option has been extensively used by data models initially intended to be used with NGSI v2 .
 
-    which contains a reference to an entity of type `StreetlightModel`. This
-    option has been extensively used by data models initially intended to be
-    used with NGSI v2 .
-
-        + B/ Name the attribute using a verb (plus optionally an
-
-    object) such as `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the
-    one advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities,
-    and NGSI-LD URNs already convey the type of the target entity, for instance
-    `urn:ngsi-ld:gtfs:Stop:S123`.
+        -  B/ Name the attribute using a verb (plus optionally an object) such as `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the one advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities, and NGSI-LD URNs already convey the type of the target entity, for instance `urn:ngsi-ld:gtfs:Stop:S123`.
 
 As the current trend is to align with NGSI-LD as much as possible, B option can
 be considered as the recommended one and A option is to some extent
