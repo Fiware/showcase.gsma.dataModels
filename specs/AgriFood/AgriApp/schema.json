@@ -25,8 +25,7 @@
           "type": "string"
         },
         "provider": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Provider (Person or Organization) of the application"
         },
         "endpoint": {

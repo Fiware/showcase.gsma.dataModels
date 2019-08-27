@@ -30,16 +30,14 @@
           "description": "Contact information of the farm i.e email, telephone, etc"
         },
         "ownedBy": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Owner (Person or Organization) of the farm"
         },
         "hasBuilding": {
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ],
           "description": "List of buildings belonging to the farm"
@@ -48,8 +46,7 @@
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ],
           "description": "List of agri parcels belonging to the farm"

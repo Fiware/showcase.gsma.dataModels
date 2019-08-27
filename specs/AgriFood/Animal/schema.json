@@ -45,26 +45,22 @@
           "description": "Breed of the animal"
         },
         "calvedBy": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Mother of the animal"
         },
         "siredBy": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Father of the animal"
         },
         "weight": {
           "type": "number"
         },
         "ownedBy": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "The owner of the animal"
         },
         "locatedAt": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "AgridataParcel relationship"
         },
         "phenologicalCondition": {
@@ -90,8 +86,7 @@
           "description": "Phenological condition of the animal"
         },
         "fedWith": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Food used for the animal"
         },
         "welfareCondition": {

@@ -19,8 +19,7 @@
           "description": "NGSI Entity Type"
         },
         "agriParcel": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "operationType": {
           "type": "string",
@@ -43,8 +42,7 @@
           "enum": ["planned", "ongoing", "finished", "scheduled", "cancelled"]
         },
         "operator": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "startedAt": {
           "type": "string",
@@ -59,8 +57,7 @@
           "format": "date-time"
         },
         "agriProduct": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "quantity": {
           "type": "number",

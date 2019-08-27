@@ -26,8 +26,7 @@
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ]
         }

@@ -19,36 +19,30 @@
           "description": "NGSI Entity Type"
         },
         "ownedBy": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "belongsTo": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "agriParcelParent": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "agriParcelChildren": {
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ]
         },
         "weatherObserved": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "waterQualityObserved": {
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ]
         },
@@ -90,8 +84,7 @@
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ]
         }

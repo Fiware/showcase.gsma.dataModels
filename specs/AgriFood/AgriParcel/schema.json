@@ -29,33 +29,27 @@
           "value": "string"
         },
         "belongsTo": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "ownedBy": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "agriParcelParent": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "agriParcelChildren": {
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ]
         },
         "agriCrop": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "agriSoil": {
-          "type": "string",
-          "format": "uri"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "cropStatus": {
           "type": "string",
@@ -75,8 +69,7 @@
           "type": "array",
           "items": [
             {
-              "type": "string",
-              "format": "uri"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             }
           ]
         }
