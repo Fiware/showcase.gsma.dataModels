@@ -1,25 +1,24 @@
 {
-    "id": "urn:ngsi-ld:AgriSoil:00411b56-bd1b-4551-96e0-a6e7fde9c840",
-    "type": "AgriSoil",
-    "dateCreated": "2017-01-01T01:20:00Z",
-    "dateModified": "2017-05-04T12:30:00Z",
-    "name": "Clay",
-    "alternateName": "Heavy soil",
-    "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_7951",
-    "seeAlso": [
-      "https://example.org/concept/clay",
-      "https://datamodel.org/example/clay"
-    ],
-    "description": "Fine grained, poor draining soil. Particle size less than 0.002mm",
-    "relatedSource": [
-      {
-        "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-        "applicationEntityId": "app:clay"
-      }
-    ],
-    "agriProduct": [
-      "urn:ngsi-ld:AgriProduct:ea54eedf-d5a7-4e44-bddd-50e9935237c0",
-      "urn:ngsi-ld:AgriProduct:275b4c08-5e52-4bb7-8523-74ce5d0007de"
-    ]
-  }
-  
+  "id": "urn:ngsi-ld:AgriSoil:00411b56-bd1b-4551-96e0-a6e7fde9c840",
+  "type": "AgriSoil",
+  "dateCreated": "2017-01-01T01:20:00Z",
+  "dateModified": "2017-05-04T12:30:00Z",
+  "name": "Clay",
+  "alternateName": "Heavy soil",
+  "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_7951",
+  "seeAlso": [
+    "https://example.org/concept/clay",
+    "https://datamodel.org/example/clay"
+  ],
+  "description": "Fine grained, poor draining soil. Particle size less than 0.002mm",
+  "relatedSource": [
+    {
+      "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+      "applicationEntityId": "app:clay"
+    }
+  ],
+  "agriProduct": [
+    "urn:ngsi-ld:AgriProduct:ea54eedf-d5a7-4e44-bddd-50e9935237c0",
+    "urn:ngsi-ld:AgriProduct:275b4c08-5e52-4bb7-8523-74ce5d0007de"
+  ]
+}
