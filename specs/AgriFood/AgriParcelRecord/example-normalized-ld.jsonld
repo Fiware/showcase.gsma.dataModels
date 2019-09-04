@@ -65,7 +65,12 @@
         "type": "Property",
         "value": 0.08,
         "unitCode": "C62",
-        "observedAt": "2017-05-04T12:30:00Z"
+        "observedAt": "2017-05-04T12:30:00Z",
+        "depth": {
+            "type": "Property",
+            "value": 20,
+            "unitCode": "CMT"
+        }
     },
     "soilMoistureEc": {
         "type": "Property",
