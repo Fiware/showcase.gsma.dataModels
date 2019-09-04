@@ -57,6 +57,11 @@
         "observedAt": {
           "type": "string",
           "format": "date-time"
+        },
+        "depth": {
+          "type": "number",
+          "minimum": 0.0,
+          "description": "Metadata to indicate the associated depth where soil measurements are taken"
         }
       }
     }
