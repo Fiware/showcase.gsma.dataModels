@@ -70,6 +70,51 @@
       },
       "timestamp": {
         "value": "2017-05-04T12:30:00Z"
+      },
+      "method": "EC"
+    }
+  },
+  "soilSalinity": {
+    "value": 1198.11,
+    "metadata": {
+      "unitCode": {
+        "value": "Volumetric Ion Content"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "leafWetness": {
+    "value": 1.0,
+    "metadata": {
+      "unitCode": {
+        "value": "Presence of water drops"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "leafRelativeHumidity": {
+    "value": 0.25,
+    "metadata": {
+      "unitCode": {
+        "value": "C62"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
+      }
+    }
+  },
+  "leafTemperature": {
+    "value": 25.1,
+    "metadata": {
+      "unitCode": {
+        "value": "CEL"
+      },
+      "timestamp": {
+        "value": "2017-05-04T12:30:00Z"
       }
     }
   },

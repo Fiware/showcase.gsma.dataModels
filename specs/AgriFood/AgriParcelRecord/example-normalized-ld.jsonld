@@ -102,6 +102,30 @@
         "unitCode": "A97",
         "observedAt": "2017-05-04T12:30:00Z"
     },
+    "soilSalinity": {
+        "type": "Property",
+        "value": 1198.11,
+        "unitCode": "Volumetric Ion Content"
+        "observedAt": "2017-05-04T12:30:00Z"
+      },
+    "leafWetness": {
+        "type": "Property",
+        "value": 1.0,
+        "unitCode": "Presence of water drops"
+        "observedAt": "2017-05-04T12:30:00Z"
+      },
+    "leafRelativeHumidity": {
+       "type": "Property",
+        "value": 0.25,
+        "unitCode": "C62"
+        "observedAt": "2017-05-04T12:30:00Z"
+      },
+    "leafTemperature": {
+       "type": "Property",
+       "value": 25.1,
+       "unitCode": "CEL"
+       "observedAt": "2017-05-04T12:30:00Z"
+      },
     "description": {
         "type": "Property",
         "value": "Monthly fertiliser application"

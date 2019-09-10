@@ -38,10 +38,24 @@
         "solarRadiaton": {
           "type": "number"
         },
+        "soilSalinity": {
+          "type": "number"
+        },
         "relativeHumidity": {
           "type": "number",
           "minimum": 0.0,
           "maximum": 1.0
+        },
+        "leafWetness": {
+          "type": "number"
+        },
+        "leafRelativeHumidity": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "leafTemperature": {
+          "type": "number"
         },
         "atmosphericPressure": {
           "type": "number"
