@@ -43,7 +43,7 @@
       "timestamp": {
         "value": "2017-05-04T12:30:00Z"
       },
-      "depth":{
+      "depth": {
         "value": {
           "value": 20,
           "unitCode": "CMT"
@@ -70,15 +70,14 @@
       },
       "timestamp": {
         "value": "2017-05-04T12:30:00Z"
-      },
-      "method": "EC"
+      }
     }
   },
   "soilSalinity": {
     "value": 1198.11,
     "metadata": {
       "unitCode": {
-        "value": "Volumetric Ion Content"
+        "value": "D10"
       },
       "timestamp": {
         "value": "2017-05-04T12:30:00Z"
@@ -89,7 +88,7 @@
     "value": 1.0,
     "metadata": {
       "unitCode": {
-        "value": "Presence of water drops"
+        "value": "P1"
       },
       "timestamp": {
         "value": "2017-05-04T12:30:00Z"
@@ -100,7 +99,7 @@
     "value": 0.25,
     "metadata": {
       "unitCode": {
-        "value": "C62"
+        "value": "P1"
       },
       "timestamp": {
         "value": "2017-05-04T12:30:00Z"

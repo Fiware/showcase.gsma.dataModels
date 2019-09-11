@@ -47,7 +47,9 @@
           "maximum": 1.0
         },
         "leafWetness": {
-          "type": "number"
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
         },
         "leafRelativeHumidity": {
           "type": "number",
