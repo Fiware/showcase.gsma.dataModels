@@ -17,7 +17,7 @@
   },
   "description": {
     "type": "Property",
-    "description": "Fine grained, poor draining soil. Particle size less than 0.002mm"
+    "value": "Fine grained, poor draining soil. Particle size less than 0.002mm"
   },
   "agroVocConcept": {
     "type": "Property",
