@@ -19,7 +19,7 @@
         "type": "Property",
         "value": "1.0"
     },
-    "provider": {
+    "hasProvider": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:Organization:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
     },

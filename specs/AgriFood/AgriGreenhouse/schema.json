@@ -24,10 +24,10 @@
         "belongsTo": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "agriParcelParent": {
+        "hasAgriParcelParent": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "agriParcelChildren": {
+        "hasAgriParcelChildren": {
           "type": "array",
           "items": [
             {
@@ -35,10 +35,10 @@
             }
           ]
         },
-        "weatherObserved": {
+        "hasWeatherObserved": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "waterQualityObserved": {
+        "hasWaterQualityObserved": {
           "type": "array",
           "items": [
             {
@@ -80,7 +80,7 @@
             }
           }
         },
-        "devices": {
+        "hasDevice": {
           "type": "array",
           "items": [
             {

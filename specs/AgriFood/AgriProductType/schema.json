@@ -22,10 +22,10 @@
           "type": "string",
           "format": "uri"
         },
-        "agriProductParent": {
+        "hasAgriProductTypeParent": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "agriProductChildren": {
+        "hasAgriProductTypeChildren": {
           "type": "array",
           "items": [
             {

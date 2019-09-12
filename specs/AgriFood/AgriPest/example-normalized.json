@@ -36,7 +36,7 @@
   "description": {
     "value": "Common European grasshopper"
   },
-  "agriProduct": {
+  "hasAgriProductType": {
     "type": "Relationship",
     "value": [
       "urn:ngsi-ld:AgriProductType:06afffde-4488-11e8-861a-cfcf50aaa9cc",

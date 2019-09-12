@@ -21,7 +21,7 @@
           "enum": ["AgriParcelRecord"],
           "description": "NGSI Entity Type"
         },
-        "agriParcel": {
+        "hasAgriParcel": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "soilTemperature": {
@@ -62,7 +62,7 @@
         "atmosphericPressure": {
           "type": "number"
         },
-        "devices": {
+        "hasDevice": {
           "type": "array",
           "items": [
             {

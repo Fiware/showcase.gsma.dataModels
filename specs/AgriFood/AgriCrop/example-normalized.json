@@ -36,21 +36,21 @@
       }
     ]
   },
-  "agriSoil": {
+  "hasAgriSoil": {
     "type": "Relationship",
     "value": [
       "urn:ngsi-ld:AgriSoil:00411b56-bd1b-4551-96e0-a6e7fde9c840",
       "urn:ngsi-ld:AgriSoil:e8a8389a-edf5-4345-8d2c-b98ac1ce8e2a"
     ]
   },
-  "agriFertiliser": {
+  "hasAgriFertiliser": {
     "type": "Relationship",
     "value": [
       "urn:ngsi-ld:AgriFertiliser:1b0d6cf7-320c-4a2b-b2f1-4575ea850c73",
       "urn:ngsi-ld:AgriFertiliser:380973c8-4d3b-4723-a899-0c0c5cc63e7e"
     ]
   },
-  "agriPest": {
+  "hasAgriPest": {
     "type": "Relationship",
     "value": [
       "urn:ngsi-ld:AgriPest:1b0d6cf7-320c-4a2b-b2f1-4575ea850c73",

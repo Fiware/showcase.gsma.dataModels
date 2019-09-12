@@ -18,7 +18,7 @@
           "enum": ["AgriParcelOperation"],
           "description": "NGSI Entity Type"
         },
-        "agriParcel": {
+        "hasAgriParcel": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "operationType": {
@@ -41,7 +41,7 @@
           "type": "string",
           "enum": ["planned", "ongoing", "finished", "scheduled", "cancelled"]
         },
-        "operator": {
+        "hasOperator": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "startedAt": {
@@ -56,7 +56,7 @@
           "type": "string",
           "format": "date-time"
         },
-        "agriProduct": {
+        "hasAgriProductType": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "quantity": {

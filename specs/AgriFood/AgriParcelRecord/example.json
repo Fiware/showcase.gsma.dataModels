@@ -13,7 +13,7 @@
     "https://example.org/concept/agriparcelrec",
     "https://datamodel.org/example/agriparcelrec"
   ],
-  "agriParcel": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed",
+  "hasAgriParcel": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed",
   "location": {
     "type": "Polygon",
     "coordinates": [[[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]]
@@ -30,7 +30,7 @@
   "relativeHumidity": 0.15,
   "atmosphericPressure": 1013.25,
   "description": "Monthly fertiliser application",
-  "devices": [
+  "hasDevice": [
     "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
     "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
     "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",

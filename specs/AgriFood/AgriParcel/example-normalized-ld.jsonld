@@ -71,18 +71,18 @@
         "type": "Relationship",
         "object": "urn:ngsi-ld:Person:fce9dcbc-4479-11e8-9de1-cb228de7a15c"
     },
-    "agriParcelParent": {
+    "hasAgriParcelParent": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriParcel:1ea0f120-4474-11e8-9919-672036642081"
     },
-    "agriParcelChildren": {
+    "hasAgriParcelChildren": {
         "type": "Relationship",
         "object": [
             "urn:ngsi-ld:AgriParcel:26ba4be0-4474-11e8-8ec1-ab9e0ea93835",
             "urn:ngsi-ld:AgriParcel:2d5b8874-4474-11e8-8d6b-dbe14425b5e4"
         ]
     },
-    "agriCrop": {
+    "hasAgriCrop": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriCrop:36021150-4474-11e8-a721-af07c5fae7c8"
     },
@@ -97,11 +97,11 @@
             "@value": "2016-08-22T10:18:16Z"
         }
     },
-    "agriSoil": {
+    "hasAgriSoil": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriSoil:429d1338-4474-11e8-b90a-d3e34ceb73df"
     },
-    "devices": {
+    "hasDevice": {
         "type": "Relationship",
         "object": [
             "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",

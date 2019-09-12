@@ -22,7 +22,7 @@
           "type": "string",
           "format": "uri"
         },
-        "agriProduct": {
+        "hasAgriProductType": {
           "type": "array",
           "items": [
             {

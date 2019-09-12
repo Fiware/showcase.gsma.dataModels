@@ -32,11 +32,11 @@
         "type": "Property",
         "value": true
     },
-    "agriProductParent": {
+    "hasAgriProductTypeParent": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriProductType:b99c940d-7156-4280-9a2b-4a9e533cd20e"
     },
-    "agriProductChildren": {
+    "hasAgriProductTypeChildren": {
         "type": "Relationship",
         "object": [
             "urn:ngsi-ld:AgriProductType:836258d0-448b-11e8-84ec-ef61d9425fe8",

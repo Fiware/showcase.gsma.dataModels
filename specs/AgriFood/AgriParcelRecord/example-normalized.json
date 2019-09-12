@@ -23,7 +23,7 @@
       "https://datamodel.org/example/agriparcelrec"
     ]
   },
-  "agriParcel": {
+  "hasAgriParcel": {
     "type": "Relationship",
     "value": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
   },
@@ -164,7 +164,7 @@
   "description": {
     "value": "Monthly fertiliser application"
   },
-  "devices": {
+  "hasDevice": {
     "type": "Relationship",
     "value": [
       "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",

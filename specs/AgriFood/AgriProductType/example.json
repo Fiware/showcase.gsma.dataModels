@@ -13,8 +13,8 @@
   ],
   "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_3128",
   "root": true,
-  "agriProductParent": "urn:ngsi-ld:AgriProductType:b99c940d-7156-4280-9a2b-4a9e533cd20e",
-  "agriProductChildren": [
+  "hasAgriProductTypeParent": "urn:ngsi-ld:AgriProductType:b99c940d-7156-4280-9a2b-4a9e533cd20e",
+  "hasAgriProductTypeChildren": [
     "urn:ngsi-ld:AgriProductType:836258d0-448b-11e8-84ec-ef61d9425fe8",
     "urn:ngsi-ld:AgriProductType:83d607f8-448b-11e8-9fe3-0fd5140ae8db",
     "urn:ngsi-ld:AgriProductType:90cbac88-448b-11e8-acb0-a78dab9d0555"

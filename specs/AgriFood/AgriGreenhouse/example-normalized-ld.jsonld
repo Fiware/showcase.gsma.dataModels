@@ -31,22 +31,22 @@
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765"
     },
-    "agriParcelParent": {
+    "hasAgriParcelParent": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b"
     },
-    "agriParcelChildren": {
+    "hasAgriParcelChildren": {
         "type": "Relationship",
         "object": [
             "urn:ngsi-ld:AgriParcel:8c3a525d-b42e-4048-bcdd-a119d8ddb0a5",
             "urn:ngsi-ld:AgriParcel:178d74c1-e6fe-4042-b955-2c164fc90b83"
         ]
     },
-    "weatherObserved": {
+    "hasWeatherObserved": {
         "type": "Relationship",
         "object": "urn:ngsi-ld:WeatherObserved:c720cec5-ac6f-40b7-8e89-becb75702d0d"
     },
-    "waterQualityObserved": {
+    "hasWaterQualityObserved": {
         "type": "Relationship",
         "object": [
             "urn:ngsi-ld:WaterQualityObserved:49f86e0b-bb90-4751-a1c3-d5a891920807",
@@ -88,7 +88,7 @@
         "unitCode": "G51",
         "observedAt": "2016-08-22T19:20Z"
     },
-    "devices": {
+    "hasDevice": {
         "type": "Relationship",
         "object": [
             "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",

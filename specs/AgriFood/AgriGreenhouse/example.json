@@ -15,13 +15,13 @@
     "https://datamodel.org/example/agrigreenhouse"
   ],
   "belongsTo": "urn:ngsi-ld:AgriFarm:f67adcbc-4479-22bc-9de1-cb228de7a765",
-  "agriParcelParent": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b",
-  "agriParcelChildren": [
+  "hasAgriParcelParent": "urn:ngsi-ld:AgriParcel:c8b475e5-84a8-4346-ad79-cde1d2a4028b",
+  "hasAgriParcelChildren": [
     "urn:ngsi-ld:AgriParcel:8c3a525d-b42e-4048-bcdd-a119d8ddb0a5",
     "urn:ngsi-ld:AgriParcel:178d74c1-e6fe-4042-b955-2c164fc90b83"
   ],
-  "weatherObserved": "urn:ngsi-ld:WeatherObserved:c720cec5-ac6f-40b7-8e89-becb75702d0d",
-  "waterQualityObserved": [
+  "hasWeatherObserved": "urn:ngsi-ld:WeatherObserved:c720cec5-ac6f-40b7-8e89-becb75702d0d",
+  "hasWaterQualityObserved": [
     "urn:ngsi-ld:WaterQualityObserved:49f86e0b-bb90-4751-a1c3-d5a891920807",
     "urn:ngsi-ld:WaterQualityObserved:853bf420-43fc-11e8-942f-6b7615517118"
   ],
@@ -35,7 +35,7 @@
     "minValue": 25,
     "unitText": "Litre per second"
   },
-  "devices": [
+  "hasDevice": [
     "urn:ngsi-ld:Device:4a40aeba-4474-11e8-86bf-03d82e958ce6",
     "urn:ngsi-ld:Device:63217d24-4474-11e8-9da2-c3dd3c36891b",
     "urn:ngsi-ld:Device:68e091dc-4474-11e8-a398-df010c53b416",

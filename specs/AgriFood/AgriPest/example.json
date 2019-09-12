@@ -17,7 +17,7 @@
   ],
   "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_31924",
   "description": "Common European grasshopper",
-  "agriProduct": [
+  "hasAgriProductType": [
     "urn:ngsi-ld:AgriProductType:06afffde-4488-11e8-861a-cfcf50aaa9cc",
     "urn:ngsi-ld:AgriProductType:0c094486-4488-11e8-a15f-afa816790c64",
     "urn:ngsi-ld:AgriProductType:14bf9f26-4488-11e8-9e3d-bfb78de66dd3"

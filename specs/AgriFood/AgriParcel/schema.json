@@ -34,10 +34,10 @@
         "ownedBy": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "agriParcelParent": {
+        "hasAgriParcelParent": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "agriParcelChildren": {
+        "hasAgriParcelChildren": {
           "type": "array",
           "items": [
             {
@@ -45,10 +45,10 @@
             }
           ]
         },
-        "agriCrop": {
+        "hasAgriCrop": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
-        "agriSoil": {
+        "hasAgriSoil": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "cropStatus": {
@@ -65,7 +65,7 @@
           "type": "string",
           "format": "date-time"
         },
-        "devices": {
+        "hasDevices": {
           "type": "array",
           "items": [
             {

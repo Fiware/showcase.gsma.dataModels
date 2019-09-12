@@ -24,7 +24,7 @@
         "version": {
           "type": "string"
         },
-        "provider": {
+        "hasProvider": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Provider (Person or Organization) of the application"
         },
