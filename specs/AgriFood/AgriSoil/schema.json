@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://raw.githubusercontent.com/Ficodes/dataModels/agriDataModels/specs/AgriFood/AgriCrop/schema.json",
+  "$id": "https://fiware.github.io/dataModels/specs/AgriFood/AgriSoil/schema.json",
   "title": "FIWARE - Agri Food",
   "description": "This entity contains a harmonised description of a generic soil. This entity is primarily associated with the agricultural vertical and related IoT applications.",
   "type": "object",
