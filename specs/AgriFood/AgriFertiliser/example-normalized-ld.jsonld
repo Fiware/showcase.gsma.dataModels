@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://schema.lab.fiware.org/ld/context",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+  ],
+  "id": "urn:ngsi-ld:AgriFertiliser:398aa5f4-6a81-4dea-9f85-e9869441a257",
+  "type": "AgriFertiliser",
+  "createdAt": "2017-01-01T01:20:00Z",
+  "modifiedAt": "2017-05-04T12:30:00Z",
+  "name": {
+    "type": "Property",
+    "value": "Calcium Fertliser"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Agri fertiliser based on Calcium nitrate"
+  },
+  "relatedSource": {
+    "type": "Property",
+    "value": [
+      {
+        "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+        "applicationEntityId": "app:fertiliser1"
+      }
+    ]
+  },
+  "agroVocConcept": {
+    "type": "Property",
+    "value": "http://aims.fao.org/aos/agrovoc/c_1199"
+  }
+}

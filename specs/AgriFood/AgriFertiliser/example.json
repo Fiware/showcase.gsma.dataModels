@@ -1,0 +1,15 @@
+{
+  "id": "urn:ngsi-ld:AgriFertiliser:398aa5f4-6a81-4dea-9f85-e9869441a257",
+  "type": "AgriFertiliser",
+  "dateCreated": "2017-01-01T01:20:00Z",
+  "dateModified": "2017-05-04T12:30:00Z",
+  "name": "Calcium Fertliser",
+  "description": "Agri fertiliser based on Calcium nitrate",
+  "relatedSource": [
+    {
+      "application": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+      "applicationEntityId": "app:fertiliser1"
+    }
+  ],
+  "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_1199"
+}
