@@ -36,11 +36,11 @@
       }
     ]
   },
-  "agriProduct": {
+  "hasAgriProductType": {
     "type": "Relationship",
     "value": [
-      "urn:ngsi-ld:AgriProduct:ea54eedf-d5a7-4e44-bddd-50e9935237c0",
-      "urn:ngsi-ld:AgriProduct:275b4c08-5e52-4bb7-8523-74ce5d0007de"
+      "urn:ngsi-ld:AgriProductType:ea54eedf-d5a7-4e44-bddd-50e9935237c0",
+      "urn:ngsi-ld:AgriProductType:275b4c08-5e52-4bb7-8523-74ce5d0007de"
     ]
   }
 }

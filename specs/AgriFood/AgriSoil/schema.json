@@ -31,7 +31,7 @@
         "description": {
           "type": "string"
         },
-        "agriProduct" : {
+        "hasAgriProductType" : {
           "type": "array",
           "items": [
             {
