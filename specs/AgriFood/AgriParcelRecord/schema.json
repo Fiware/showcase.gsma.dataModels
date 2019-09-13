@@ -82,5 +82,5 @@
       }
     }
   ],
-  "required": ["id", "type", "agriParcel", "location"]
+  "required": ["id", "type", "hasAgriParcel", "location"]
 }

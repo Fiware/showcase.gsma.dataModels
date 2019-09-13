@@ -91,5 +91,5 @@
       }
     }
   ],
-  "required": ["id", "type", "agriParcelParent"]
+  "required": ["id", "type", "hasAgriParcelParent"]
 }

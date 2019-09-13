@@ -76,5 +76,5 @@
       }
     }
   ],
-  "required": ["id", "type", "location", "area", "agriCrop"]
+  "required": ["id", "type", "location", "area", "hasAgriCrop"]
 }
