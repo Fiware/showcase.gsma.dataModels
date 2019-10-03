@@ -11,6 +11,7 @@ This folder is intended to contain data models for Smart Agri Food:
 -   [AgriParcelRecord](https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md)
 -   [AgriPest](https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md)
 -   [AgriProductType](https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md)
+-   [AgriSoil](https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriSoil/schema.json)
 -   [Animal](https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md)
 -   [WeatherObserved](../Weather/WeatherObserved/doc/spec.md)
 -   [WeatherForecast](../Weather/WeatherForecast/doc/spec.md)
