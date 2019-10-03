@@ -28,6 +28,10 @@
         "type": "Property",
         "value": "http://aims.fao.org/aos/agrovoc/c_3128"
     },
+    "category": {
+        "type": "Property",
+        "value": ["cropVariety"]
+    },
     "root": {
         "type": "Property",
         "value": true

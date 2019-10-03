@@ -27,6 +27,9 @@
     "type": "URL",
     "value": "http://aims.fao.org/aos/agrovoc/c_3128"
   },
+  "category": {
+    "value": ["cropVariety"]
+  },
   "root": {
     "value": true
   },

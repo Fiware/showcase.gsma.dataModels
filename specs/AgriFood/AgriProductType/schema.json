@@ -22,6 +22,19 @@
           "type": "string",
           "format": "uri"
         },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "fertiliser",
+              "cropNutrition",
+              "cropProtection",
+              "cropVariety",
+              "harvestCommodity"
+            ]
+          }
+        },
         "hasAgriProductTypeParent": {
           "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
         },

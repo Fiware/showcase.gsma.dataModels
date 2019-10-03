@@ -12,6 +12,7 @@
     }
   ],
   "agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_3128",
+  "category": ["cropVariety"],
   "root": true,
   "hasAgriProductTypeParent": "urn:ngsi-ld:AgriProductType:b99c940d-7156-4280-9a2b-4a9e533cd20e",
   "hasAgriProductTypeChildren": [
