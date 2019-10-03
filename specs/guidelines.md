@@ -60,7 +60,7 @@ section.
 -   If a quantity is expressed in a different unit than the default one, use the
     [unitCode](http://schema.org/unitCode) metadata attribute in NGSI v2.
     
-- In NGSI-LD the Property `unitCode` is already defined and available to be used.     
+-   In NGSI-LD the Property `unitCode` is already defined and available to be used.
 
 ## Relative values
 
@@ -81,9 +81,9 @@ section.
 -   When an Entity Attribute is used as a link (relationship) to other entities
     two modelling options are possible:
 
-  1. Name the attribute with the prefix `ref` plus the name of the target (linked) entity type. For instance `refStreetlightModel`, represents an attribute which contains a reference to an entity of type `StreetlightModel`. This option has been extensively used by data models initially intended to be used with NGSI v2 .
+    1. Name the attribute with the prefix `ref` plus the name of the target (linked) entity type. For instance `refStreetlightModel`, represents an attribute which contains a reference to an entity of type `StreetlightModel`. This option has been extensively used by data models initially intended to be used with NGSI v2 .
 
-  2. Name the attribute using a verb (plus optionally an object) such as `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the one advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities, and NGSI-LD URNs already convey the type of the target entity, for instance `urn:ngsi-ld:gtfs:Stop:S123`.
+    2. Name the attribute using a verb (plus optionally an object) such as `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the one advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities, and NGSI-LD URNs already convey the type of the target entity, for instance `urn:ngsi-ld:gtfs:Stop:S123`.
 
 As the current trend is to align with NGSI-LD as much as possible, 2. option can
 be considered as the recommended one and 1. option is to some extent
