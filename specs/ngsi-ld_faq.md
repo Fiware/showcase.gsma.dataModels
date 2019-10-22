@@ -88,9 +88,9 @@ The full `@context` is also available at
 When it comes to referencing the FIWARE Data Models `@context` 
 in your NGSI-LD Entities, there are three different options: 
 
-*  Use the FIWARE Lab URI [https://schema.lab.fiware.org/ld/context](https://schema.lab.fiware.org/ld/context). 
-*  Use the GitHub URI [https://fiware.github.io/data-models/full-context.jsonld](https://fiware.github.io/data-models/full-context.jsonld).
-*  Host a copy of the Data Models `@context` file within your own premises and use a URI referencing a local server 
+*   Use the FIWARE Lab URI [https://schema.lab.fiware.org/ld/context](https://schema.lab.fiware.org/ld/context).
+*   Use the GitHub URI [https://fiware.github.io/data-models/full-context.jsonld](https://fiware.github.io/data-models/full-context.jsonld).
+*   Host a copy of the Data Models `@context` file within your own premises and use a URI referencing a local server
 
 The main advantage of the first method, is that the FIWARE Lab URI is convenient, as it is shorter and cleaner,
 however it does depend on a redirection made by the FIWARE Lab Infrastructure,  which does not have 100% 
