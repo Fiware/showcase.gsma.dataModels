@@ -1,0 +1,19 @@
+{
+        "id": "Bcn-BikeHireDockingStation-1",
+        "type": "BikeHireDockingStation",
+        "address": {
+            "addressCountry": "ES",
+            "addressLocality": "Barcelona",
+            "streetAddress": "Gran Via Corts Catalanes,760"
+        },
+        "availableBikeNumber": 20,
+        "freeSlotNumber": 10,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                2.180042,
+                41.397952
+            ]
+        },
+        "status": "working"
+}
