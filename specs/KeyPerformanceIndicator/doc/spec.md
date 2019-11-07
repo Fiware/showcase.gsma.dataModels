@@ -45,9 +45,9 @@ The data model is defined as shown below:
 
 -   `organization` : Subject organization evaluated by the KPI.
 
-    -   Attribute type: Property. [Organization](https://schema.org/organization)
+    -   Attribute type: Property. [Organization](https://schema.org/Organization)
     -   Normative References:
-        [https://schema.org/organization](https://schema.org/organization)
+        [https://schema.org/organization](https://schema.org/Organization)
     -   Mandatory
 
 -   `process` : Subject process evaluated by the KPI.
