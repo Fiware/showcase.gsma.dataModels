@@ -21,7 +21,7 @@
         "dateObserved": {
           "type": "string"
         },
-		"areaServed": {
+        "areaServed": {
           "type": "string"
         },
         "airQualityIndex": {

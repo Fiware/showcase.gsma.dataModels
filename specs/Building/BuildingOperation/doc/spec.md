@@ -25,7 +25,8 @@ For a full description of the following attributes refer to GSMA
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Relationship. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Relationship. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -47,7 +48,8 @@ For a full description of the following attributes refer to GSMA
 -   `description`
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `refBuilding`
@@ -100,7 +102,8 @@ These are the modified attributes compared to GSMA model:
     -   Optional
 
 -   `refRelatedDeviceOperation` : Devices related to the current operation.
-    -   Attribute type: Relationship. A list of references to an entity of type Device.
+    -   Attribute type: Relationship. A list of references to an entity of type
+        Device.
 
 **Note**: JSON Schemas are intended to capture the data type and associated
 constraints of the different Attributes, regardless their final representation

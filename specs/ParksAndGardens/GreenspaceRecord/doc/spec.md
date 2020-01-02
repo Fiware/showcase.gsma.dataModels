@@ -58,7 +58,8 @@ A JSON Schema corresponding to this data model can be found
 -   `soilMoistureVwc` : The observed soil moisture measured as Volumetric Water
     Content, VWC (percentage, expressed in parts per one).
 
-    -   Attribute type: Property. [Number](https://schema.org/Number) between 0 and 1.
+    -   Attribute type: Property. [Number](https://schema.org/Number) between 0
+        and 1.
     -   Attribute metadata:
         -   `timestamp` : optional timestamp for the observed value. It can be
             omitted if the observation time is the same as the one captured by
@@ -78,7 +79,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `refGreenspace` : The garden or flower bed to which this record refers to.
 
-    -   Attribute type: Relationship. Reference to an entity of type `Garden` or `FlowerBed`.
+    -   Attribute type: Relationship. Reference to an entity of type `Garden` or
+        `FlowerBed`.
     -   Optional
 
 -   `refDevice` : The device or devices used to obtain the data expressed by

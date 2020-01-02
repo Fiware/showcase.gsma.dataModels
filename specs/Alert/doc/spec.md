@@ -1,7 +1,7 @@
 # Alert data model
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Alert](https://github.com/smart-data-models/dataModel.Alert)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Alert](https://github.com/smart-data-models/dataModel.Alert)**
 
 ## Description
 
@@ -30,7 +30,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -108,7 +109,8 @@ A JSON Schema corresponding to this data model can be found
     Reforma. Emergency services at place).
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `alertSource` : reference to the source of the alert. For example, it could
@@ -120,7 +122,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `data` : used to carry additional data for the alert.
 
-    -   Attribute type: Property. [StructuredValue](https://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](https://schema.org/StructuredValue)
     -   Optional.
 
 -   `severity` : define the level of gravity of a given alert.

@@ -1,7 +1,7 @@
 # Bike Hire Docking Station
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
 
 ## Description
 
@@ -21,7 +21,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -62,7 +63,8 @@ A JSON Schema corresponding to this data model can be found
 -   `name` : Name given to the docking station.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 
 -   `description` : Description about the bike hire docking station.
@@ -145,10 +147,12 @@ A JSON Schema corresponding to this data model can be found
 
 -   `owner` : Bike hire docking station's owner.
 
-    -   Attribute type: Property. List of [Text](http://schema.org/Text) or List of URIs
+    -   Attribute type: Property. List of [Text](http://schema.org/Text) or List
+        of URIs
     -   Optional
 
 -   `provider` : Bike hire service provider.
+
     -   Attribute Type: Property. [Provider](http://schema.org/provider)
     -   Normative references:
         [https://schema.org/provider](https://schema.org/provider)

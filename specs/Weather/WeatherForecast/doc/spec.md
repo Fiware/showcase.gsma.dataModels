@@ -1,7 +1,7 @@
 # Weather Forecast
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Weather](https://github.com/smart-data-models/dataModel.Weather)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Weather](https://github.com/smart-data-models/dataModel.Weather)**
 
 ## Description
 
@@ -39,6 +39,7 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute type: Property. [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 -   `name` : Name given to the weather forecast location.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Optional
@@ -82,7 +83,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `refPointOfInterest` : A reference to a point of interest associated to this
     forecast.
-    -   Attribute type: Relationship. Reference to an entity of type `PointOfInterest`
+    -   Attribute type: Relationship. Reference to an entity of type
+        `PointOfInterest`
     -   Optional
 -   `weatherType` : The forecasted weather type.
     -   See [WeatherObserved.weatherType](../../WeatherObserved/doc/spec.md) for
@@ -132,7 +134,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `dayMinimum` : Minimum values forecasted for the reported period.
 
-    -   Attribute type: Property. [StructuredValue](https://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](https://schema.org/StructuredValue)
     -   Subattributes:
         -   `temperature` : Minimum temperature. Same semantics and units as
             `WeatherForecast.temperature`.
@@ -144,7 +147,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `dayMaximum` : Maximum values for the reported period.
 
-    -   Attribute type: Property. [StructuredValue](https://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](https://schema.org/StructuredValue)
     -   Subattributes:
         -   `temperature` : Maximum temperature. See
             `WeatherForecast.temperature` for description and units.

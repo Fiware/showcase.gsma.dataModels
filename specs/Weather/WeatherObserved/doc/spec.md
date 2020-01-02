@@ -1,7 +1,7 @@
 # Weather Observed
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Weather](https://github.com/smart-data-models/dataModel.Weather)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Weather](https://github.com/smart-data-models/dataModel.Weather)**
 
 ## Description
 
@@ -33,8 +33,10 @@ A JSON Schema corresponding to this data model can be found
     -   Attribute type: Property. [DateTime](https://schema.org/DateTime)
     -   Read-Only. Automatically generated.
 -   `name` : Name given to the weather observed location.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `location` : Location of the weather observation represented by a GeoJSON
@@ -56,8 +58,8 @@ A JSON Schema corresponding to this data model can be found
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
 
-    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an ISO8601
-        interval represented as [Text](https://schema.org/Text).
+    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an
+        ISO8601 interval represented as [Text](https://schema.org/Text).
     -   Mandatory
 
 -   `source` : A sequence of characters giving the source of the entity data.
@@ -74,7 +76,8 @@ A JSON Schema corresponding to this data model can be found
 -   `refPointOfInterest` : A reference to a point of interest (usually a weather
     station) associated to this observation.
 
-    -   Attribute type: Relationship. Reference to an entity of type `PointOfInterest`
+    -   Attribute type: Relationship. Reference to an entity of type
+        `PointOfInterest`
     -   Optional
 
 -   `weatherType` : The observed weather type. It is represented by a comma

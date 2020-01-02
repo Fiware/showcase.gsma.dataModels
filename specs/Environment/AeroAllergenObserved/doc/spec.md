@@ -1,7 +1,7 @@
 # Aero Allergen Observed
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Environment](https://github.com/smart-data-models/dataModel.Environment)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Environment](https://github.com/smart-data-models/dataModel.Environment)**
 
 ## Description
 
@@ -57,8 +57,8 @@ A JSON Schema corresponding to this data model can be found
     -   Mandatory if `location` is not present.
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by a specific time instant or by an ISO8601 interval.
-    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an ISO8601
-        interval represented as [Text](https://schema.org/Text).
+    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an
+        ISO8601 interval represented as [Text](https://schema.org/Text).
     -   Mandatory
 -   `source` : A sequence of characters giving the source of the entity data.
     -   Attribute type: Property. [Text](https://schema.org/Text) or
@@ -122,7 +122,8 @@ The structure of such an attribute will be as follows:
         -   Optional
     -   `description` : short description of the allergen
         -   Attribute type: Property. [Text](https://schema.org/Text)
-        -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+        -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+            equivalent to [description](https://schema.org/description)
         -   Optional
 
 ### Representing qualitative levels of aero allergens
@@ -147,7 +148,8 @@ concentration of [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
     -   `description` : short description of the measurand and its related
         qualitative level
         -   Attribute type: Property. [Text](https://schema.org/Text)
-        -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+        -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+            equivalent to [description](https://schema.org/description)
         -   Optional
     -   `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value.
@@ -178,7 +180,8 @@ pollen.
     -   `description` : short description of the measurand and its related
         qualitative level
         -   Attribute type: Property. [Text](https://schema.org/Text)
-        -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+        -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+            equivalent to [description](https://schema.org/description)
         -   Optional
     -   `referenceSpecification` : Specification that must be taken as reference
         when interpreting the supplied qualitative value.

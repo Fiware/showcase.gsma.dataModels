@@ -1,6 +1,6 @@
 # NGSI-LD HowTo
 
-A tutorial that can complement this howto can be found at 
+A tutorial that can complement this howto can be found at
 [https://github.com/FIWARE/tutorials.Linked-Data](https://github.com/FIWARE/tutorials.Linked-Data).
 
 ## Introduction
@@ -120,12 +120,13 @@ The figure below shows how air quality information, at a certain point of
 interest, can be conveyed using the FIWARE Data Models (involving the entity
 types `AirQualityObserved`, `PointOfInterest`) in NGSI-LD format. The new
 representation has been obtained by applying the conversion rules described
-before. 
+before.
 
-Please note that the FIWARE Data Models `@context` could also be served 
-by [https://fiware.github.io/data-models/context.jsonld](https://fiware.github.io/data-models/context.jsonld)
-and by [https://fiware.github.io/data-models/full-context.jsonld](https://fiware.github.io/data-models/full-context.jsonld).
-The latter includes both the FIWARE Data Models and the Core `@context`. 
+Please note that the FIWARE Data Models `@context` could also be served by
+[https://fiware.github.io/data-models/context.jsonld](https://fiware.github.io/data-models/context.jsonld)
+and by
+[https://fiware.github.io/data-models/full-context.jsonld](https://fiware.github.io/data-models/full-context.jsonld).
+The latter includes both the FIWARE Data Models and the Core `@context`.
 
 ### Airquality in NGSI-LD format
 

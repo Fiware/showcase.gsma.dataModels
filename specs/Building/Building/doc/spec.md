@@ -33,7 +33,8 @@ For a full description of the following attributes refer to GSMA
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -61,6 +62,7 @@ For a full description of the following attributes refer to GSMA
     -   Required
 
 -   `location`
+
     -   Attribute type: GeoProperty. `geo:json`.
     -   Normative References:
         [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
@@ -71,6 +73,7 @@ For a full description of the following attributes refer to GSMA
     -   Optional.
 
 -   `address`
+
     -   Attribute type: Property. [Address](https://schema.org/address)
     -   Normative References:
         [https://schema.org/address](https://schema.org/address)
@@ -79,7 +82,8 @@ For a full description of the following attributes refer to GSMA
 -   `description`
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `occupier`

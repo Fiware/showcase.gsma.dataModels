@@ -40,8 +40,10 @@ allowed to be attributes of this entity type:
 -   `service_name`
 
 -   `description`
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
 
 -   `keywords`
 
@@ -67,6 +69,7 @@ Open 311 model:
     -   Optional
 
 -   `provider` : Provider of the service.
+
     -   Attribute Type: Property. [Provider](http://schema.org/provider)
     -   Normative references:
         [https://schema.org/provider](https://schema.org/provider)

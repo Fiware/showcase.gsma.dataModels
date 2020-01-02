@@ -4,8 +4,9 @@
 
 ## Overview
 
-It performs data harvesting using AEMET's data site as the origin and Orion Context Broker as the destination. It uses
-predefined list of stations (./stations.yml), that can be obtained by other
+It performs data harvesting using AEMET's data site as the origin and Orion
+Context Broker as the destination. It uses predefined list of stations
+(./stations.yml), that can be obtained by other
 [harvester](https://github.com/FIWARE/data-models/tree/master/specs/PointOfInterest/WeatherStation/harvesters/spain).
 
 ## How to run

@@ -50,7 +50,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `name` : Garden's name.
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 -   `alternateName` : Garden's alternate name.
     -   Attribute type: Property. [Text](https://schema.org/Text)
@@ -60,7 +61,8 @@ A JSON Schema corresponding to this data model can be found
 -   `description` : Garden's description
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `category` : Garden's category.

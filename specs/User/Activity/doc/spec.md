@@ -26,7 +26,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this

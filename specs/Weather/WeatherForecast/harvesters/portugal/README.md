@@ -4,7 +4,8 @@
 
 ## Overview
 
-It performs data harvesting using IPMA's data site as the origin and Orion Context Broker as the destination.
+It performs data harvesting using IPMA's data site as the origin and Orion
+Context Broker as the destination.
 
 ## How to run
 

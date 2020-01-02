@@ -1,7 +1,7 @@
 # Traffic flow observed
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
 
 ## Description
 
@@ -19,7 +19,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `vehicleType` : Type of vehicle from the point of view of its structural
@@ -31,6 +32,7 @@ The data model is defined as shown below:
 -   `vehicleSubType` : allows to specify a sub type of `vehicleType` , eg if the
     `vehicleType` is set to `Lorry` the `vehicleSubType` may be `OGV1` or `OGV2`
     to convey more information about the exact type of vehicle
+
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -80,8 +82,9 @@ The data model is defined as shown below:
     interval. As a workaround for the lack of support of Orion Context Broker
     for datetime intervals, it can be used two separate attributes:
     `dateObservedFrom`, `dateObservedTo`.
-    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an ISO8601 interval represented
-    as [Text](https://schema.org/Text).
+
+    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an
+        ISO8601 interval represented as [Text](https://schema.org/Text).
     -   Mandatory
 
 -   `dateObservedFrom` : Observation period start date and time. See
@@ -103,25 +106,29 @@ The data model is defined as shown below:
 -   `name` : Name given to this observation.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `description` : Description of this observation.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `intensity` : Total number of vehicles detected during this observation
     period.
 
-    -   Attribute type: Property. [Number](https://schema.org/Number). Positive integer.
+    -   Attribute type: Property. [Number](https://schema.org/Number). Positive
+        integer.
     -   Optional
 
 -   `occupancy` : Fraction of the observation time where a vehicle has been
     occupying the observed laned.
 
-    -   Attribute type: Property. [Number](https://schema.org/Number) between 0 and 1.
+    -   Attribute type: Property. [Number](https://schema.org/Number) between 0
+        and 1.
     -   Optional
 
 -   `averageVehicleSpeed` : Average speed of the vehicles transiting during the

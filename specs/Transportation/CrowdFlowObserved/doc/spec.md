@@ -1,7 +1,7 @@
 # Crowd Flow Observed
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
 
 ## Description
 
@@ -71,8 +71,8 @@ The data model is defined as shown below:
     for datetime intervals, it can be used two separate attributes:
     `dateObservedFrom`, `dateObservedTo`.
 
-    -   Attribute type: GeoProperty. [DateTime](https://schema.org/DateTime) or an ISO8601
-        interval represented as [Text](https://schema.org/Text).
+    -   Attribute type: GeoProperty. [DateTime](https://schema.org/DateTime) or
+        an ISO8601 interval represented as [Text](https://schema.org/Text).
     -   Mandatory
 
 -   `dateObservedFrom` : Observation period start date and time. See
@@ -91,7 +91,8 @@ The data model is defined as shown below:
 -   `name` : Name given to this observation.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `description` : Description of this observation.
@@ -103,7 +104,8 @@ The data model is defined as shown below:
 -   `peopleCount` : Total number of people detected during this observation
     period.
 
-    -   Attribute type: Property. [Number](https://schema.org/Number). Positive integer.
+    -   Attribute type: Property. [Number](https://schema.org/Number). Positive
+        integer.
     -   Optional
 
 -   `occupancy` : Fraction of the observation time where a person has been

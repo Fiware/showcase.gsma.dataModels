@@ -1,7 +1,7 @@
 # Road Segment
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Transportation](https://github.com/smart-data-models/dataModel.Transportation)**
 
 ## Description
 
@@ -57,10 +57,12 @@ The data model is defined as shown below:
 -   `name` : Name given to this road segment.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 
 -   `alternateName` : An alias for this road segment.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
@@ -120,8 +122,8 @@ The data model is defined as shown below:
 
 -   `totalLaneNumber` : Total number of lanes offered by this road segment.
 
-    -   Attribute type: Property. [Number](https://schema.org/Number). Integer greater
-        than 0.
+    -   Attribute type: Property. [Number](https://schema.org/Number). Integer
+        greater than 0.
     -   Mandatory
 
 -   `length` : Total length of this road segment in kilometers.

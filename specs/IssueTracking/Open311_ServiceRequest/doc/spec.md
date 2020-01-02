@@ -21,7 +21,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -41,8 +42,10 @@ entity type:
 -   `service_name`
 
 -   `description`
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
 
 -   `agency_responsible`. Please note that this is semantically equivalent to
     the [provider](http://schema.org/provider) property (name subproperty) of
@@ -128,7 +131,8 @@ consistency with `ServiceType`):
     corresponding `ServiceType`. The key-value is always an array of strings. If
     an attribute is singled valued then such array will only contain one
     element.
-    -   Attribute type: Property. [StructuredValue](https://schema.org/StructuredValue).
+    -   Attribute type: Property.
+        [StructuredValue](https://schema.org/StructuredValue).
     -   Optional
 
 **Note**: JSON Schemas are intended to capture the data type and associated

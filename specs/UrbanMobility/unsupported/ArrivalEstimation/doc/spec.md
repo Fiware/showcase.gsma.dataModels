@@ -63,14 +63,16 @@ complement a GTFS static file.
             -   Optional. Mandatory if arrivalDelay is not defined
         -   `tripId`: Identifier of the trip as defined in the associated GTFS
             -   Type: [Text](https://schema.org/Text)
-            -   Optional. Mandatory if neither `vehicleId` or `vehicleLabel` are defined. Necessary to create GTFS-RT feeds
+            -   Optional. Mandatory if neither `vehicleId` or `vehicleLabel` are
+                defined. Necessary to create GTFS-RT feeds
         -   `vehicleId`: Vehicle identifier corresponding to the estimate
             -   Type: [Text](https://schema.org/Text)
-            -   Optional. Mandatory if neither `tripId` or `vehicleLabel` are defined
+            -   Optional. Mandatory if neither `tripId` or `vehicleLabel` are
+                defined
         -   `vehicleLabel`: Human readable label to identify the vehicle
             -   Type: [Text](https://schema.org/Text)
-            -   Optional. Mandatory if neither `tripId` or `vehicleId` are defined
-
+            -   Optional. Mandatory if neither `tripId` or `vehicleId` are
+                defined
 
 ### Examples of use 1 (Normalized Format)
 

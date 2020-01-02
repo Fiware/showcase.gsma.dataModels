@@ -108,11 +108,5 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateObservedFrom",
-    "dateObservedTo",
-    "location"
-  ]
+  "required": ["id", "type", "dateObservedFrom", "dateObservedTo", "location"]
 }

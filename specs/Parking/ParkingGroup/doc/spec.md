@@ -1,7 +1,7 @@
 # Parking Group
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
 
 ## Description
 
@@ -22,7 +22,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -88,13 +89,15 @@ The data model is defined as shown below:
 -   `name` : Name given to the parking group.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `description` : Description about the parking group.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `maximumParkingDuration` : Maximum allowed stay encoded as a ISO8601
@@ -148,7 +151,8 @@ The data model is defined as shown below:
     "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00". Applications _SHOULD_
     inspect the value of this property at parent's level if it is not defined.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Mandatory.
 
 -   `reservationType` : Conditions for reservation. Applications _SHOULD_

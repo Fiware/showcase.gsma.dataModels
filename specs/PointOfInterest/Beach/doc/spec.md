@@ -1,7 +1,7 @@
 # Beach
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
 
 ## Description
 
@@ -50,6 +50,7 @@ used by applications.
     -   Normative References: [https://schema.org/name](https://schema.org/name)
     -   Mandatory
 -   `alternateName` : Alternative name for this beach.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
@@ -58,7 +59,8 @@ used by applications.
 -   `description` : Description of this beach.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `location` : Location of this beach represented by a GeoJSON geometry,

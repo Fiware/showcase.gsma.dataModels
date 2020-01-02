@@ -1,7 +1,7 @@
 # Streetlight Model
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Streetlighting](https://github.com/smart-data-models/dataModel.Streetlighting)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Streetlighting](https://github.com/smart-data-models/dataModel.Streetlighting)**
 
 It represents a model of streetlight composed by a specific supporting structure
 model, a lantern model and a lamp model. A streetlight instance will be based on
@@ -17,7 +17,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -29,10 +30,12 @@ The data model is defined as shown below:
 -   `name` : Name given to the streetlight model.
 
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 
 -   `alternateName` : Alternate name given to the streetlight model.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
@@ -41,7 +44,8 @@ The data model is defined as shown below:
 -   `description` : Description of the streetlight model.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `maxPowerConsumption` : Maximum power consumption supported by the lantern.
@@ -194,8 +198,8 @@ The data model is defined as shown below:
 -   `category` : Type of asset which implements the street light.
     -   AttributeType: List of [Text](https://schema.org/Text).
     -   Allowed Values: (`postTop`, `bollard`, `lamppost`, `lightTower`,
-        `flashingBeacon`, `sideEntry`, `signLight`, `ornamentalLantern`) or
-        any other value not defined above and meaningful for the application
+        `flashingBeacon`, `sideEntry`, `signLight`, `ornamentalLantern`) or any
+        other value not defined above and meaningful for the application
     -   Optional
 
 **Note**: JSON Schemas are intended to capture the data type and associated

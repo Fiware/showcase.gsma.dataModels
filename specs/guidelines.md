@@ -20,8 +20,8 @@ section.
 -   Use camel case syntax for attribute names (`camelCase`).
 -   Entity Type names must start with a Capital letter, for instance,
     `WasteContainer`.
--   Use names and not verbs for Attributes of type Property, ex. `name`, qualifying it when
-    necessary, ex. `totalSpotNumber` or `dateCreated`.
+-   Use names and not verbs for Attributes of type Property, ex. `name`,
+    qualifying it when necessary, ex. `totalSpotNumber` or `dateCreated`.
 -   Avoid plurals in Attribute names, but state clearly when a list of items
     fits. Ex. `category`.
 
@@ -59,8 +59,9 @@ section.
 
 -   If a quantity is expressed in a different unit than the default one, use the
     [unitCode](http://schema.org/unitCode) metadata attribute in NGSI v2.
-    
--   In NGSI-LD the Property `unitCode` is already defined and available to be used.
+
+-   In NGSI-LD the Property `unitCode` is already defined and available to be
+    used.
 
 ## Relative values
 
@@ -73,17 +74,25 @@ section.
 -   Use `address` attribute for civic locations as per
     [schema.org](http://schema.org/address)
 
--   Use the `location` Attribute for geographical coordinates. GeoJSON
-    must be used for encoding geospatial properties. 
+-   Use the `location` Attribute for geographical coordinates. GeoJSON must be
+    used for encoding geospatial properties.
 
 ## Modelling linked data
 
 -   When an Entity Attribute is used as a link (relationship) to other entities
     two modelling options are possible:
 
-    1.  Name the attribute with the prefix `ref` plus the name of the target (linked) entity type. For instance `refStreetlightModel`, represents an attribute which contains a reference to an entity of type `StreetlightModel`. This option has been extensively used by data models initially intended to be used with NGSI v2 .
+    1.  Name the attribute with the prefix `ref` plus the name of the target
+        (linked) entity type. For instance `refStreetlightModel`, represents an
+        attribute which contains a reference to an entity of type
+        `StreetlightModel`. This option has been extensively used by data models
+        initially intended to be used with NGSI v2 .
 
-    2.  Name the attribute using a verb (plus optionally an object) such as `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the one advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities, and NGSI-LD URNs already convey the type of the target entity, for instance `urn:ngsi-ld:gtfs:Stop:S123`.
+    2.  Name the attribute using a verb (plus optionally an object) such as
+        `hasStop`, `operatedBy`, `hasTrip`, etc. This option is the one
+        advocated by NGSI-LD, as in NGSI-LD URNs are used to identify entities,
+        and NGSI-LD URNs already convey the type of the target entity, for
+        instance `urn:ngsi-ld:gtfs:Stop:S123`.
 
 As the current trend is to align with NGSI-LD as much as possible, 2. option can
 be considered as the recommended one and 1. option is to some extent
@@ -91,10 +100,10 @@ be considered as the recommended one and 1. option is to some extent
 
 ## Date Attributes
 
--   In NGSI v2 the Attribute type must be `DateTime`. 
+-   In NGSI v2 the Attribute type must be `DateTime`.
 
--   In NGSI-LD, please check the date and time encoding at 
-    the [NGSI-LD FAQ](https://github.com/FIWARE/data-models/blob/master/specs/ngsi-ld_howto.md#airquality-in-ngsi-ld-format). 
+-   In NGSI-LD, please check the date and time encoding at the
+    [NGSI-LD FAQ](https://github.com/FIWARE/data-models/blob/master/specs/ngsi-ld_howto.md#airquality-in-ngsi-ld-format).
 
 -   Use the `date` prefix for naming entity attributes representing dates (or
     complete timestamps). Ex. `dateLastEmptying`.
@@ -119,15 +128,15 @@ be considered as the recommended one and 1. option is to some extent
 
 ## Dynamic attributes
 
--   In NGSI v2 use a metadata attribute named `timestamp` for capturing the last update
-    timestamp of a dynamic attribute. Please note that this is the actual date
-    at which the measured value was obtained (from a sensor, by visual
+-   In NGSI v2 use a metadata attribute named `timestamp` for capturing the last
+    update timestamp of a dynamic attribute. Please note that this is the actual
+    date at which the measured value was obtained (from a sensor, by visual
     observation, etc.), and that date might be different than the date (metadata
     attribute named `dateModified` as per NGSI v2) at which the attribute of the
     digital entity was updated, as typically there might be delay, specially on
     IoT networks which deliver data only at specific timeslots.
 
--   In NGSI-LD use the `observedAt` Property to convey timestamps. 
+-   In NGSI-LD use the `observedAt` Property to convey timestamps.
 
 ## Internationalization (i18N)
 
@@ -146,7 +155,7 @@ follows:
 -   There shall always be a term for the original attribute, i.e. it is not
     allowed to have Entity representations which only contain terms associated
     to language variants.
-    
+
 -   For each language variant of an internationalized attribute, there shall be
     an additional Entity Attribute which name shall be in the form:
 
@@ -190,12 +199,12 @@ In case of doubt check the existing data models!
 
 ## Versioning
 
-FIWARE Data Models Project aim to maintain backwards compatibility,
-however some incompatibilities will inevitably occur over time.
-Data providers may choose to tag Entities with an additional `schemaVersion`
-Attribute so that Data Consumers can behave accordingly.
-This aligns with the [https://schema.org/schemaVersion](https://schema.org/schemaVersion)
-Property definition.
+FIWARE Data Models Project aim to maintain backwards compatibility, however some
+incompatibilities will inevitably occur over time. Data providers may choose to
+tag Entities with an additional `schemaVersion` Attribute so that Data Consumers
+can behave accordingly. This aligns with the
+[https://schema.org/schemaVersion](https://schema.org/schemaVersion) Property
+definition.
 
 ## How to contribute
 

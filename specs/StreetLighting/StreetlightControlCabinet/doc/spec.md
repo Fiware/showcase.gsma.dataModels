@@ -1,7 +1,7 @@
 # Streetlight control cabinet
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Streetlighting](https://github.com/smart-data-models/dataModel.Streetlighting)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Streetlighting](https://github.com/smart-data-models/dataModel.Streetlighting)**
 
 It represents equipment, usually on street, used to the automated control of a
 group(s) of streetlights, i.e. one or more circuits.
@@ -16,7 +16,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -47,6 +48,7 @@ The data model is defined as shown below:
     -   Optional
 
 -   `serialNumber` : Serial number of the control cabinet.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/serialNumber](https://schema.org/serialNumber)
@@ -246,7 +248,8 @@ The data model is defined as shown below:
     conveyed by subproperties which name will be equal to the name of each of
     the alternating current phases, typically R, S, T.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: Kilowatts (kW)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -258,7 +261,8 @@ The data model is defined as shown below:
     subproperties which name will be equal to the name of each of the
     alternating current phases, typically R, S, T.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: KiloVolts-Ampere-Reactive (kVArh)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -292,7 +296,8 @@ The data model is defined as shown below:
     depending on world regions. In Europe they are typically named as `R`, `S`,
     `T`.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: Ampers (A)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -306,7 +311,8 @@ The data model is defined as shown below:
     depending on world regions. In Europe they are typically named as `R`, `S`,
     `T`.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Default unit: Volts (V)
     -   Attribute metadata:
         -   `timestamp`: Timestamp when the last update of the attribute
@@ -319,7 +325,8 @@ The data model is defined as shown below:
     denoting phases can vary depending on world regions. In Europe they are
     typically named as `R`, `S`, `T`.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Allowed values: A number between 0 and 1.
     -   Optional
 
@@ -328,7 +335,8 @@ The data model is defined as shown below:
     denoting phases can vary depending on world regions. In Europe they are
     typically named as `R`, `S`, `T`.
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Allowed values: A number between 0 and 1.
     -   Optional
 

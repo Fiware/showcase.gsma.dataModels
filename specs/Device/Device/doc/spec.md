@@ -1,7 +1,7 @@
 # Device
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Device](https://github.com/smart-data-models/dataModel.Device)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Device](https://github.com/smart-data-models/dataModel.Device)**
 
 ## Description
 
@@ -28,7 +28,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -48,8 +49,8 @@ The data model is defined as shown below:
 -   `controlledAsset` : The asset(s) (building, object, etc.) controlled by the
     device.
 
-    -   Attribute type: Property. List of [Text](https://schema.org) or Reference(s) to
-        another entity.
+    -   Attribute type: Property. List of [Text](https://schema.org) or
+        Reference(s) to another entity.
     -   Optional
 
 -   `mnc` : This property identifies the Mobile Network Code (MNC) of the
@@ -89,7 +90,8 @@ The data model is defined as shown below:
     etc.) and which are not currently covered by the standard attributes defined
     by this model.
 
-    -   Attribute type: Property. [StructuredValue](https://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](https://schema.org/StructuredValue)
     -   Attribute metadata:
         -   `dateModified` : Last update timestamp of this attribute.
             -   Metadata type: [DateTime](https://schema.org/DateTime)
@@ -105,14 +107,17 @@ The data model is defined as shown below:
     -   Optional.
 
 -   `name` : A mnemonic name given to the device.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `description` : Device's description.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `dateInstalled` : A timestamp which denotes when the device was installed
@@ -159,12 +164,14 @@ The data model is defined as shown below:
     -   Optional
 
 -   `serialNumber` : The serial number assigned by the manufacturer.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/serialNumber](https://schema.org/serialNumber)
     -   Optional
 
 -   `provider` : The provider of the device.
+
     -   Attribute Type: Property. [Provider](http://schema.org/provider)
     -   Normative References:
         [https://schema.org/provider](https://schema.org/provider)
@@ -246,8 +253,9 @@ The data model is defined as shown below:
     -   Read-Only. Automatically generated.
 
 -   `owner` : The owners of a Device.
-    -   Attribute type: Property. List of references to [Person](http://schema.org/Person)
-        or [Organization](https://schema.org/Organization) or List of URIs.
+    -   Attribute type: Property. List of references to
+        [Person](http://schema.org/Person) or
+        [Organization](https://schema.org/Organization) or List of URIs.
     -   Optional
 
 **Note**: JSON Schemas are intended to capture the data type and associated

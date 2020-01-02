@@ -33,11 +33,14 @@ The data model is defined as shown below:
 
 -   `name` : Indicator's name which should be meaningful in the context of a
     project or organization. Example `KPI-2016-2018-Incidences-Street`.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 
 -   `alternateName` : An alias for the KPI.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
@@ -45,7 +48,8 @@ The data model is defined as shown below:
 
 -   `organization` : Subject organization evaluated by the KPI.
 
-    -   Attribute type: Property. [Organization](https://schema.org/Organization)
+    -   Attribute type: Property.
+        [Organization](https://schema.org/Organization)
     -   Normative References:
         [https://schema.org/organization](https://schema.org/Organization)
     -   Mandatory
@@ -62,7 +66,9 @@ The data model is defined as shown below:
 
 -   `provider` : Provider of the product or service, if any, that this KPI
     evaluates.
-    -   Attribute Type: Property. [Provider](http://schema.org/provider)    -   Normative references:
+
+    -   Attribute Type: Property. [Provider](http://schema.org/provider) -
+        Normative references:
         [https://schema.org/provider](https://schema.org/provider)
     -   Optional
 
@@ -75,7 +81,8 @@ The data model is defined as shown below:
 -   `description` : Indicator's description.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `calculationFrequency` : How often the KPI is calculated.
@@ -100,7 +107,8 @@ The data model is defined as shown below:
 
 -   `calculatedBy` : The organization in charge of calculating the KPI.
 
-    -   Attribute type: Property. [Organization](https://schema.org/organization)
+    -   Attribute type: Property.
+        [Organization](https://schema.org/organization)
     -   Normative References:
         [https://schema.org/organization](https://schema.org/organization)
     -   Optional
@@ -132,7 +140,8 @@ The data model is defined as shown below:
 
 -   `calculationPeriod` : KPI's period of time.
 
-    -   Attribute type: Property. [StructuredValue](https://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](https://schema.org/StructuredValue)
     -   Subproperties:
         -   `from` : Period start
             -   Type: [DateTime](http://schema.org/DateTime)

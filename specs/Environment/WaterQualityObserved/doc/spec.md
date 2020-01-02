@@ -1,7 +1,7 @@
 # Water Quality
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Environment](https://github.com/smart-data-models/dataModel.Environment)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Environment](https://github.com/smart-data-models/dataModel.Environment)**
 
 ## Description
 
@@ -47,13 +47,14 @@ A JSON Schema corresponding to this data model can be found
 -   `refPointOfInterest` : A reference to a point of interest associated to this
     observation.
 
-    -   Attribute type: Property. Reference to an entity of type `PointOfInterest`
+    -   Attribute type: Property. Reference to an entity of type
+        `PointOfInterest`
     -   Optional
 
 -   `dateObserved` : The date and time of this observation in ISO8601 UTCformat.
     It can be represented by an specific time instant or by an ISO8601 interval.
-    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an ISO8601
-        interval represented as [Text](https://schema.org/Text).
+    -   Attribute type: Property. [DateTime](https://schema.org/DateTime) or an
+        ISO8601 interval represented as [Text](https://schema.org/Text).
     -   Mandatory
 -   `source` : A sequence of characters giving the source of the entity data.
     -   Attribute type: Property. [Text](https://schema.org/Text) or

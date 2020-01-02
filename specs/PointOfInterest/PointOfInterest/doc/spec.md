@@ -1,7 +1,7 @@
 # Point of interest
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
 
 ## Description
 
@@ -49,6 +49,7 @@ A JSON Schema corresponding to this data model can be found
     -   Mandatory
 
 -   `alternateName` : Alternative name for this point of interest.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
@@ -57,7 +58,8 @@ A JSON Schema corresponding to this data model can be found
 -   `description` : Description of this point of interest.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `location` : Location of the point of interest represented by a GeoJSON

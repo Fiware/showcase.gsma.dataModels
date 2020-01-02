@@ -1,7 +1,7 @@
 # Alert data model
 
-**Note: The latest version of these Data Models can be 
-found at [https://github.com/smart-data-models/dataModel.Alert](https://github.com/smart-data-models/dataModel.Alert)**
+**Note: The latest version of these Data Models can be found at
+[https://github.com/smart-data-models/dataModel.Alert](https://github.com/smart-data-models/dataModel.Alert)**
 
 ## Description
 

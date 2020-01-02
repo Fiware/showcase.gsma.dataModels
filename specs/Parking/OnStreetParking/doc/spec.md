@@ -1,7 +1,7 @@
 # On Street Parking
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
 
 ## Description
 
@@ -22,7 +22,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -57,14 +58,17 @@ The data model is defined as shown below:
     -   Mandatory if location not defined
 
 -   `name` : Name given to the onstreet parking zone.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 
 -   `description` : Description about the onstreet parking zone.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `image` : A URL containing a photo of this parking site.
@@ -123,7 +127,8 @@ The data model is defined as shown below:
     instance, a blue zone which is only active on dayweeks will be encoded as
     "blueZonePermit": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00".
 
-    -   Attribute type: Property. [StructuredValue](http://schema.org/StructuredValue)
+    -   Attribute type: Property.
+        [StructuredValue](http://schema.org/StructuredValue)
     -   Mandatory.
 
 -   `maximumParkingDuration` : Maximum allowed stay at site encoded as a ISO8601

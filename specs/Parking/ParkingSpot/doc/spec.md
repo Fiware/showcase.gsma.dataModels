@@ -1,7 +1,7 @@
 # Parking Spot
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.Parking](https://github.com/smart-data-models/dataModel.Parking)**
 
 ## Description
 
@@ -21,7 +21,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -54,13 +55,17 @@ The data model is defined as shown below:
 
 -   `name` : Name of this parking spot. It can denote the number or label used
     to identify it within a parking site.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `description` : Description about the parking spot.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `location` : Geolocation of the parking spot, represented by a GeoJSON
@@ -112,13 +117,15 @@ The data model is defined as shown below:
 -   `refParkingGroup` : Group to which the parking spot belongs to. For model
     simplification purposes only one group is allowed per parking spot.
 
-    -   Attribute type: Relationship. Reference to an entity of type `ParkingGroup`.
+    -   Attribute type: Relationship. Reference to an entity of type
+        `ParkingGroup`.
     -   Optional
 
 -   `refParkingSite` : Parking site to which the parking spot belongs to.
 
-    -   Attribute type: Relationship. Reference to an entity of type `OnStreetParking` or type
-        `OffStreetParking`, depending on the value of the `category` attribute.
+    -   Attribute type: Relationship. Reference to an entity of type
+        `OnStreetParking` or type `OffStreetParking`, depending on the value of
+        the `category` attribute.
     -   Mandatory
 
 -   `category` : Category(ies) of the parking spot.
@@ -135,8 +142,8 @@ The data model is defined as shown below:
     saved by FIWARE's IoT Agent. Note: This attribute has not been harmonized to
     keep backwards compatibility with current FIWARE reference implementations.
 
-    -   Attribute type: Property. [DateTime](https://schema.org/DateTime). There can be
-        production environmments where the attribute type is equal to the
+    -   Attribute type: Property. [DateTime](https://schema.org/DateTime). There
+        can be production environmments where the attribute type is equal to the
         `ISO8601` string. If so, it must be considered as a synonym of
         `DateTime`.
     -   Optional

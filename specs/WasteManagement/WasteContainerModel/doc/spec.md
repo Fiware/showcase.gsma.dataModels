@@ -1,7 +1,7 @@
 # Waste Container Model
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.WasteManagement](https://github.com/smart-data-models/dataModel.WasteManagement)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.WasteManagement](https://github.com/smart-data-models/dataModel.WasteManagement)**
 
 ## Description
 
@@ -18,7 +18,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -30,8 +31,10 @@ The data model is defined as shown below:
 -   `name`. Name given to this container model. It is a "well-known",
     mnemotechnic or codename. This attribute is different than `modelName` which
     conveys the formal model name given by the manufacturer.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 
 -   `width`. Width of the container.
@@ -132,7 +135,8 @@ The data model is defined as shown below:
 -   `description`. Description about the waste container model.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `colors`. Available colors.

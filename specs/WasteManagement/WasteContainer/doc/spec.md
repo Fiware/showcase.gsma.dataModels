@@ -1,7 +1,7 @@
 # Waste Container
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.WasteManagement](https://github.com/smart-data-models/dataModel.WasteManagement)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.WasteManagement](https://github.com/smart-data-models/dataModel.WasteManagement)**
 
 ## Description
 
@@ -18,7 +18,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -180,6 +181,7 @@ A JSON Schema corresponding to this data model can be found
     -   Optional
 
 -   `serialNumber` : Serial number of the container.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/serialNumber](https://schema.org/serialNumber)
@@ -198,7 +200,8 @@ A JSON Schema corresponding to this data model can be found
 
 -   `owner` : Container's owner.
 
-    -   Attribute type: Property. List of [Text](http://schema.org/Text) or List of URIs
+    -   Attribute type: Property. List of [Text](http://schema.org/Text) or List
+        of URIs
     -   Optional
 
 -   `dateServiceStarted` : Date at which the container started giving service.
@@ -312,7 +315,8 @@ A JSON Schema corresponding to this data model can be found
 -   `description` : Description about the container.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `annotations` : A field reserved for annotations (incidences, remarks,
@@ -339,8 +343,8 @@ A JSON Schema corresponding to this data model can be found
     attribute has not been harmonized to keep backwards compatibility with
     current FIWARE reference implementations.
 
-    -   Attribute type: Property. [DateTime](https://schema.org/DateTime). There can be
-        production environmments where the attribute type is equal to the
+    -   Attribute type: Property. [DateTime](https://schema.org/DateTime). There
+        can be production environmments where the attribute type is equal to the
         `ISO8601` string. If so, it must be considered as a synonym of
         `DateTime`.
 

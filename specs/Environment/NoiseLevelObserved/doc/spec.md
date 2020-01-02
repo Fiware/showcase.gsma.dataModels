@@ -19,7 +19,8 @@ The data model is defined as shown below:
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
-    -   Attribute type: Property. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+    -   Attribute type: Property. [Text](https://schema.org/Text) or
+        [URL](https://schema.org/URL)
     -   Optional
 
 -   `dataProvider` : Specifies the URL to information about the provider of this
@@ -52,8 +53,10 @@ The data model is defined as shown below:
     -   Mandatory if `location` is not present.
 
 -   `name` : Name given to this observation.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Optional
 
 -   `description` : Description given to this observation.
@@ -213,7 +216,7 @@ Normalized NGSI Response
     "frequencies": {
         "value": {
             "100": 40,
-            "125":  40,
+            "125": 40,
             "160": 40,
             "200": 40,
             "250": 40,

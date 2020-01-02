@@ -1,7 +1,7 @@
 # Museum
 
-**Note: The latest version of this Data Model can be
-found at [https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
+**Note: The latest version of this Data Model can be found at
+[https://github.com/smart-data-models/dataModel.PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest)**
 
 ## Description
 
@@ -48,9 +48,11 @@ used by applications.
     -   Optional
 -   `name` : Name given to this museum.
     -   Attribute type: Property. [Text](https://schema.org/Text).
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to [name](https://schema.org/name)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/name` equivalent to
+        [name](https://schema.org/name)
     -   Mandatory
 -   `alternateName` : Alternative name given to this museum.
+
     -   Attribute type: Property. [Text](https://schema.org/Text)
     -   Normative References:
         [https://schema.org/alternateName](https://schema.org/alternateName)
@@ -59,7 +61,8 @@ used by applications.
 -   `description` : Description of this museum.
 
     -   Attribute type: Property. [Text](https://schema.org/Text)
-    -   Normative References: `https://uri.etsi.org/ngsi-ld/description` equivalent to [description](https://schema.org/description)
+    -   Normative References: `https://uri.etsi.org/ngsi-ld/description`
+        equivalent to [description](https://schema.org/description)
     -   Optional
 
 -   `location` : Location of this museum represented by a GeoJSON geometry,
@@ -89,8 +92,8 @@ used by applications.
     -   Optional
 -   `owner` : Museum's owner.
 
-    -   Attribute type: Property. List of [Text](https://schema.org/Text) or List of URIs
-        or a List of references to an entity of type
+    -   Attribute type: Property. List of [Text](https://schema.org/Text) or
+        List of URIs or a List of references to an entity of type
         [Person](https://schema.org/Person) or
         [Organization](https://schema.org/Organization)
     -   Optional
