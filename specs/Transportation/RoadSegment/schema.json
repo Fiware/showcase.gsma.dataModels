@@ -1,35 +1,31 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://fiware.github.io/data-models/specs/Transportation/RoadSegment/schema.json",
+  "id": "https://github.com/Fiware/dataModels/tree/master/Transportation/RoadSegment/schema.json",
   "title": "FIWARE - Transportation / Road Segment",
   "description": "This entity contains a harmonised geographic and contextual description of a road segment. A collection of road segments are used to describe a Road. Road segments can include several lanes. This data model allows to convey road segments made up of heterogeneous lanes (different in their usage, speed, height, etc.). Lanes are identified by using integer numbers between 1 and n, being number 1 the lane to the right when going forwards. The forward direction is the direction denoted by the vector which goes from the segment\"s start point to the segment\"s end point. This is the same convention as the one used by OpenStreetMap. This entity is primarily associated with the Automotive and Smart City vertical segments and related IoT applications. This data model has been developed in cooperation with mobile operators and the GSMA.",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
-    },
-    {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/Location-Commons"
-    },
-    {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/PhysicalObject-Commons"
-    },
+  "allOf": [{
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons" },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["RoadSegment"],
+          "enum": [
+            "RoadSegment"
+          ],
           "description": "NGSI Entity type"
         },
         "refRoad": {
-          "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "startPoint": {
-          "$ref": "http://geojson.org/schema/Geometry.json#",
+          "$ref": "http://json-schema.org/geojson/geometry.json#",
           "description": "The start point of this road segment encoded as a GeoJSON point"
         },
         "endPoint": {
-          "$ref": "http://geojson.org/schema/Geometry.json#",
+          "$ref": "http://json-schema.org/geojson/geometry.json#",
           "description": "The end point of this road segment encoded as a GeoJSON point"
         },
         "startKilometer": {
@@ -97,12 +93,19 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["forward", "backward"]
+            "enum": [
+              "forward",
+              "backward"
+            ]
           }
         },
         "category": {
           "type": "string",
-          "enum": ["oneway", "toll", "link"]
+          "enum": [
+            "oneway",
+            "toll",
+            "link"
+          ]
         }
       }
     }

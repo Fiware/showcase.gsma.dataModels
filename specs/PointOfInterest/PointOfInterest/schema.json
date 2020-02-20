@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://fiware.github.io/data-models/specs/PointOfInterest/PointOfInterest/schema.json",
+  "id": "https://fiware.github.io/dataModels/specs/PointOfInterest/PointOfInterest/schema.json",
   "title": "GSMA / FIWARE - Point of Interest schema",
   "description": "A point of interest",
   "type": "object",
@@ -8,27 +8,41 @@
     {
       "anyOf": [
         {
-          "required": ["location"]
+          "required": [
+            "location"
+          ]
         },
         {
-          "required": ["address"]
+          "required": [
+            "address"
+          ]
         }
       ]
     },
     {
-      "required": ["id", "type", "category", "name"]
+      "required": [
+        "id",
+        "type",
+        "category",
+        "name"
+      ]
+    },
+    { 
+      "$ref": "https://github.com/tmforum-rand/schemas/blob/master/Common/Entity.schema.json#/definitions/Entity"
     },
     {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
     },
     {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
     },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["PointOfInterest"],
+          "enum": [
+            "PointOfInterest"
+          ],
           "description": "NGSI Entity type"
         },
         "category": {
@@ -46,7 +60,7 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
               }
             ]
           }

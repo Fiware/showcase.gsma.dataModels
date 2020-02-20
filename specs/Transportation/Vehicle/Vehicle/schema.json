@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://fiware.github.io/data-models/specs/Transportation/Vehicle/Vehicle/schema.json",
+  "id": "https://github.com/Fiware/dataModels/tree/master/Transportation/Vehicle/VehicleModel/schema.json",
   "title": "FIWARE - Vehicle / Vehicle Model",
   "description": "This entity models a particular vehicle model, including all properties which are common to multiple vehicle instances belonging to such model.",
   "type": "object",
   "allOf": [{
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
     },
     {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
     },
     {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/PhysicalObject-Commons"
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/PhysicalObject-Commons"
     },
     {
       "properties": {
@@ -64,29 +64,19 @@
           }
         },
         "previousLocation": {
-          "$ref": "http://geojson.org/schema/Geometry.json#",
+          "$ref": "http://json-schema.org/geojson/geometry.json#",
           "description": "The start point of this road segment encoded as a GeoJSON point"
         },
         "speed": {
-          "type": "number",
-          "minimum": 0
+          "type": "number"
         },
         "heading": {
-          "oneOf": [
-            {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 360
-            },
-            {
-              "type": "number",
-              "const": -1
-            }
-          ]
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
         },
         "cargoWeight": {
-          "type": "number",
-          "exclusiveMinimum": 0
+          "type": "number"
         },
         "vehicleIdentificationNumber": {
           "type": "string"
@@ -116,6 +106,9 @@
           "type": "string"
         },
         "color": {
+          "type": "string"
+        },
+        "owner": {
           "type": "string"
         },
         "feature": {
@@ -170,7 +163,7 @@
           ]
         },
         "refVehicleModel": {
-          "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "areaServed": {
           "type": "string"

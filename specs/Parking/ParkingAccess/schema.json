@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [
     {
+      "$ref": "https://github.com/tmforum-rand/schemas/blob/master/Common/Entity.schema.json#/definitions/Entity"
+    },
+    {
       "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
     },
     {
