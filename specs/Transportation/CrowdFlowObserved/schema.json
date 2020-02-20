@@ -1,26 +1,24 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://fiware.github.io/dataModels/specs/Transportation/CrowdFlowObserved/schema.json",
+  "$id": "https://fiware.github.io/data-models/specs/Transportation/CrowdFlowObserved/schema.json",
   "title": "FIWARE - SynchroniCity - Transportation / CrowdFlowObserved",
   "description": "CrowdFlowObserved",
   "type": "object",
   "allOf": [
-    { 
-      "$ref": "https://github.com/tmforum-rand/schemas/blob/master/Common/Entity.schema.json#/definitions/Entity"
-    },                
     {
-      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+      "$ref": "https://github.com/tmforum-rand/schemas/blob/master/Common/Entity.schema.json#/definitions/Entity"
     },
     {
-      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/Location-Commons"
     },
     {
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "CrowdFlowObserved"
-          ],
+          "enum": ["CrowdFlowObserved"],
           "description": "NGSI Entity type"
         },
         "refRoadSegment": {
@@ -60,22 +58,15 @@
         },
         "direction": {
           "type": "string",
-          "enum": [
-            "inbound",
-            "outbound"
-          ]
+          "enum": ["inbound", "outbound"]
         }
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "dateObserved"
-  ],
+  "required": ["id", "type", "dateObserved"],
   "anyOf": [
-    {"required" : ["refRoadSegment"]},
-    {"required" : ["location"]},
-    {"required" : ["address"]}
+    { "required": ["refRoadSegment"] },
+    { "required": ["location"] },
+    { "required": ["address"] }
   ]
 }
