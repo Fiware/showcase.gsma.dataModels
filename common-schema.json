@@ -77,36 +77,22 @@
     "Location-Commons": {
       "type": "object",
       "properties": {
-        "location": { "$ref": "http://geojson.org/schema/Geometry.json#" },
-        "address": {
-          "type": "object",
-          "properties": {
-            "streetAddress": {
-              "type": "string"
-            },
-            "addressLocality": {
-              "type": "string"
-            },
-            "addressRegion": {
-              "type": "string"
-            },
-            "addressCountry": {
-              "type": "string"
-            },
-            "postalCode": {
-              "type": "string"
-            },
-            "postOfficeBoxNumber": {
-              "type": "string"
-            },
-            "areaServed": {
-              "type": "string"
-            }
+          "location": {"$ref": "http://json-schema.org/geojson/geometry.json#"},
+          "address": {
+              "type": "object",
+              "allOf": [
+                  {"$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/master/Common/Address.schema.json#/definitions/Address"},
+                  {"properties": {
+                      "streetAddress": {"type": "string"},
+                      "addressLocality": {"type": "string"},
+                      "addressRegion": {"type": "string"},
+                      "addressCountry": {"type": "string"},
+                      "postalCode": {"type": "string"},
+                      "postOfficeBoxNumber": {"type": "string"},
+                      "areaServed": {"type": "string"}
+                  }}
+              ]
           }
-        },
-        "areaServed": {
-          "type": "string"
-        }
       }
     },
     "PhysicalObject-Commons": {
