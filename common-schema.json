@@ -81,37 +81,61 @@
           "address": {
               "type": "object",
               "allOf": [
-                  {"$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/master/Common/Address.schema.json#/definitions/Address"},
-                  {"properties": {
-                      "streetAddress": {"type": "string"},
-                      "addressLocality": {"type": "string"},
-                      "addressRegion": {"type": "string"},
-                      "addressCountry": {"type": "string"},
-                      "postalCode": {"type": "string"},
-                      "postOfficeBoxNumber": {"type": "string"},
-                      "areaServed": {"type": "string"}
+                  {
+                    "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/master/Common/Address.schema.json#/definitions/Address"
+                  },
+                  {
+                    "properties": {
+                      "streetAddress": {
+                        "type": "string"
+                      },
+                      "addressLocality": {
+                        "type": "string"
+                      },
+                      "addressRegion": {
+                        "type": "string"
+                      },
+                      "addressCountry": {
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "type": "string"
+                      },
+                      "postOfficeBoxNumber": {
+                        "type": "string"
+                      },
+                      "areaServed": {
+                        "type": "string"
+                      }
                   }}
               ]
-          }
-      }
+            }
+        }
     },
     "PhysicalObject-Commons": {
       "type": "object",
-      "properties": {
-        "color": {
-          "type": "string"
-        },
-        "image": {
-          "type": "string",
-          "format": "uri"
-        },
-        "annotations": {
-          "type": "array",
-          "items": {
-            "type": "string"
+      "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/master/Resource/PhysicalResource.schema.json#/definitions/PhysicalResource"
+          },
+          {
+            "properties": {
+              "color": {
+                "type": "string"
+              },
+              "image": {
+                  "type": "string",
+                  "format": "uri"
+              },
+              "annotations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+              }
           }
         }
-      }
-    }
+      ]
   }
+}
 }
