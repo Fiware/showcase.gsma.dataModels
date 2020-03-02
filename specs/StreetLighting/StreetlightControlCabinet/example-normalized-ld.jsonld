@@ -36,13 +36,17 @@
             "IP54"
         ]
     },
-    "intensity": {
+    "intensityR": {
         "type": "Property",
-        "value": {
-            "S": 14.4,
-            "R": 20.1,
-            "T": 22
-        }
+        "value": 20.1
+    },
+    "intensityS": {
+        "type": "Property",
+        "value": 14.4
+    },
+    "intensityT": {
+        "type": "Property",
+        "value": 22
     },
     "workingMode": {
         "type": "Property",
@@ -74,13 +78,17 @@
             ]
         }
     },
-    "reactivePower": {
+    "reactivePowerR": {
         "type": "Property",
-        "value": {
-            "S": 43.5,
-            "R": 45,
-            "T": 42
-        }
+        "value": 45
+    },
+    "reactivePowerS": {
+        "type": "Property",
+        "value": 43.5
+    },
+    "reactivePowerT": {
+        "type": "Property",
+        "value": 42
     },
     "maximumPowerAvailable": {
         "type": "Property",

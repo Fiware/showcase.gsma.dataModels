@@ -22,12 +22,17 @@
   "compliantWith": {
     "value": ["IP54"]
   },
-  "intensity": {
-    "value": {
-      "S": 14.4,
-      "R": 20.1,
-      "T": 22
-    }
+  "intensityR": {
+    "type": "Number",
+    "value": 20.1
+  },
+  "intensityS": {
+    "type": "Number",
+    "value": 14.4
+  },
+  "intensityT": {
+    "type": "Number",
+    "value": 22
   },
   "workingMode": {
     "value": "automatic"
@@ -51,12 +56,17 @@
       "coordinates": [-3.164485591715449, 40.62785133667262]
     }
   },
-  "reactivePower": {
-    "value": {
-      "S": 43.5,
-      "R": 45,
-      "T": 42
-    }
+  "reactivePowerR": {
+    "type": "Number",
+    "value": 45
+  },
+  "reactivePowerS": {
+    "type": "Number",
+    "value": 43.5
+  },
+  "reactivePowerT": {
+    "type": "Number",
+    "value": 42
   },
   "maximumPowerAvailable": {
     "value": 10

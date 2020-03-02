@@ -16,15 +16,11 @@
   "dateMeteringStarted": "2013-07-07T15:05:59.408Z",
   "lastMeterReading": 161237,
   "meterReadingPeriod": 60,
-  "intensity": {
-    "R": 20.1,
-    "S": 14.4,
-    "T": 22
-  },
-  "reactivePower": {
-    "R": 45,
-    "S": 43.5,
-    "T": 42
-  },
+  "intensityR": 20.1,
+  "intensityS": 14.4,
+  "intensityT": 22,
+  "reactivePowerR": 45,
+  "reactivePowerS": 43.5,
+  "reactivePowerT": 42,
   "workingMode": "automatic"
 }
