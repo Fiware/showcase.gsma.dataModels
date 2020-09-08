@@ -94,10 +94,6 @@ section.
         and NGSI-LD URNs already convey the type of the target entity, for
         instance `urn:ngsi-ld:gtfs:Stop:S123`.
 
-As the current trend is to align with NGSI-LD as much as possible, 2. option can
-be considered as the recommended one and 1. option is to some extent
-"deprecated".
-
 ## Date Attributes
 
 -   In NGSI v2 the Attribute type must be `DateTime`.
