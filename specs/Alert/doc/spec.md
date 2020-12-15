@@ -153,6 +153,7 @@ Normalized NGSI response
         "value": "trafficJam"
     },
     "validTo": {
+        "type": "DateTime",
         "value": "2017-01-02T10:25:55.00Z"
     },
     "description": {
